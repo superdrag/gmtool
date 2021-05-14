@@ -6,40 +6,16 @@ using System.Reflection;
 using System;
 using Net;
 
-public class LoginView : View
+public class ServerItem
 {
     private Button loginBtn;
-    private InputField ipInput;
-    private InputField portInput;
-    private InputField accountInput;
+    private Text ServerName;
 
-    private GameObject SeverBtmList;
-    private GameObject SeverContent;
-
-    private static LoginView ins = null;
-
-    public static LoginView Instance
-    {
-        get
-        {
-            if (ins == null)
-            {
-                ins = new LoginView();
-            }
-            return ins;
-        }
-    }
-
-    private LoginView()
-    {
-        Logger.Log("LoginView Construct Call");
-    }
-
-    override public void OnCreateGo(System.Action action)
+    public void Create()
     {        
-        GameObject go = ResMgr.LoadRes<GameObject>("Assets/ResAB/Prefab/Login/LoginView.prefab");
-
-        
+        GameObject go = ResMgr.LoadRes<GameObject>("Prefab/Login/ServerItem.prefab");
+        ServerName = go.GetComponent<Text>();
+        loginBtn = go.GetComponent<Button>();
     }
 
     private void StartConnetServer(string ip,short port)

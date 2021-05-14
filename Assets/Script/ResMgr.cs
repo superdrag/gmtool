@@ -89,9 +89,16 @@ public class ResMgr
 
     public static T LoadRes<T>(string resPath, bool needCache = false) where T : UObject
     {
-        resPath = resPath.ToLower();
-        //resPath = LOAD_RES_DIR + resPath.ToLower();
-        return Resources.Load<T>(resPath);         
+        //resPath = resPath.ToLower();
+        Debug.Log("LoadRes.........."+resPath);
+        T t = Resources.Load<T>(resPath);
+        if(t == null)
+        {
+            Debug.LogError("LoadRes..........null" + resPath);
+        }         
+        return t;
     }
+
+
 }
 

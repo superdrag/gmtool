@@ -6,22 +6,24 @@ using Net;
 using PBase;
 using PClient;
 
-
+using System;
 using System.IO;
 //using Google.ProtoBuf.MessageExtensions;
+using LitJson;
 
-public class ServerList
-{
-    int index;
-    string name;
-    string ip;
-    int port;
+public class ServerInfo
+{    
+    public int index;
+    public string name;
+    public string ip;
+    public int port;
 }
 
 
 public class AppConfig
 {
-    private static AppConfig ins = null;    
+    private static AppConfig ins = null;  
+    private static List<ServerInfo> ServerList = new List<ServerInfo>();   
 
     public static AppConfig Instance
     {
@@ -37,6 +39,24 @@ public class AppConfig
 
     public void InitLoad()
     {
-        
+        // GameObject go = ResMgr.LoadRes<GameObject>("Prefab/Login/LoginView");
+        // if(go == null)
+        // {
+        //     Debug.LogError("login null");
+        // }
+
+        List<JsonData> jsons = JsonConfig.LoadJsonFile("app_server");
+        foreach (var json in jsons)
+        {
+            ServerInfo  info = new ServerInfo();
+            info.index = JsonConfig.ReadInt32(json,"server_id");
+            info.name = JsonConfig.ReadString(json,"server_name");
+            info.ip = JsonConfig.ReadString(json,"login_ip");
+            info.port = JsonConfig.ReadInt32(json,"login_port");
+            
+            Debug.Log("11111111111111 "+info.ip);
+            ServerList.Add(info);
+        }
+
     }
 }
