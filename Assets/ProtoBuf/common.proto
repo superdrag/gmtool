@@ -1,0 +1,140 @@
+syntax = "proto3";
+
+package PBase;
+
+
+// ***********************************  Stuct Start ***********************************
+
+message PB_Money
+{
+    int32 type = 1;//货币的类型
+    int32 num = 2; //货币数量
+}
+
+//物品
+message PB_Item
+{
+    string itemGuid = 1; //唯一id
+    int32 itemId = 2;  //配置id
+    int32 itemPos = 3;  //位置
+    int32 itemNum = 4;  //数量
+}
+
+message PB_ItemList
+{
+    repeated PB_Item itemList = 1;
+}
+
+//任务计数器
+message PB_TaskCounter
+{
+    int32 cId = 1;  //
+    int32 cArg = 2;  
+    int32 cNum = 3;  //
+}
+
+//任务
+message PB_Task
+{
+    int32 taskId = 1;  //配置id
+    int32 taskState = 2;  //状态
+    int32 acceptTime = 3;  //接受时间
+    int32 submitTime = 4;  //完成时间
+    repeated PB_TaskCounter counters = 5;
+}
+
+//五行属性
+message PB_FiveAttribute
+{
+    int32 type = 1;  //属性类型
+    int32 power = 2;  //属性攻击值
+    int32 addition = 3;  //属性攻击加成值
+    int32 resist = 4;  //属性抵抗值
+}
+
+message PB_TaskList
+{
+    repeated PB_Task taskList = 1;
+}
+
+//普通计数器
+message PB_Counter
+{
+    int32 counterId = 1; //
+    int32 counterNum = 2;  //
+    repeated int32 counterArgs = 3;  //
+}
+
+message PB_CounterList
+{
+    repeated PB_Counter counterList = 1;
+}
+
+//工会数据
+message PB_UnionObj
+{
+    int32 unionId = 1;  //宗门配置id
+    string unionName = 2;  //工会名
+    int32 unionType = 3;  //工会类型
+    repeated int32 npcList = 4;  //npc列表
+    repeated int32 skillList = 5;  //技能列表
+    int32 unionLevel = 6;  //工会等级
+    int64 unionEXP = 7;  //工会经验
+    int64 unionMoney = 8; //工会资金
+    int32 maxMember= 9; //工会人数上限
+    int32 maxVChair = 10;  //副会长数量上限
+    int32 maxElder = 11;  //长老数量上限
+    string unionNotice = 12;  //工会公告
+    int32 unionCreateTime = 13;  //工会创建时间
+    string creatorName = 14;  //帮主的名称
+}
+
+//工会成员数据
+message PB_UnionMember
+{
+    int32 dbid = 1;  //  db数据id       
+    int32 unionDbid = 2;  //  公会唯一id
+    int32 plyerDBid = 3;  //  玩家唯一id
+    string memberName = 4;  //  玩家名字
+    int32 rank = 5;  // 职位
+    int32 offer = 6;  // 贡献  
+    int32 joinTime = 7;  //  加入时间
+    int32 exitTime = 8;  //  退出时间
+    int32 online = 9;  //  在线
+}
+
+//工会申请列表数据
+message PB_UnionApplyInfo
+{
+    int32 playerDbid = 1;  //
+    int32 applyTime = 2;  //
+}
+
+//工会日志数据
+message PB_UnionLogInfo
+{
+    int32 time = 1;  //时间
+    string text = 2;  //文本(例如:xxx加入工会)
+}
+
+message PB_BattleObj
+{
+    int32 objId = 1;  //    
+    int32 cfgId = 2;   
+    string objName = 3;  // 
+    int32 posx = 4;
+    int32 posy = 5;    
+    map<int32,int64> fightAtrr = 9;  
+}
+
+
+message PB_BattleTurn
+{
+    int32 mapId = 1;  //       
+    int32 turnIndex = 2;  //    
+    repeated PB_BattleObj npcList = 3;  
+}
+// ***********************************  Stuct End ***********************************
+
+
+
