@@ -28,16 +28,20 @@ public class AlertMsgView : View
         Logger.Log("AlertMsgView Construct Call");
     }
 
-    override public void OnCreateGo(System.Action action)
+    override public void OnCreateGo()
     {
-        GameObject go = ResMgr.LoadRes<GameObject>("Assets/ResAB/Prefab/Common/AlertMsgView.prefab");
-        ViewRoot = UnityEngine.Object.Instantiate(go);
+        viewRoot = ResMgr.CreateGo("Prefab/Common/AlertMsgView.prefab").transform;
         okBtn = ViewRoot.transform.Find("queding").GetComponent<Button>();
         noticeTxt = ViewRoot.transform.Find("tishi").GetComponent<Text>();
         okBtn.onClick.AddListener(OnOkBtnClick);
         UIHelper.AddChild(UIMgr.UIMain,ViewRoot);
-        action();
     }
+
+    public override void OnShow()
+    {
+        
+    }
+
     private void OnOkBtnClick()
     {    
         Logger.Log("BtnLogin click..........");
@@ -46,11 +50,8 @@ public class AlertMsgView : View
 
     public void ShowAlertInfo(string info)
     {
-        UIMgr.ShowUI(VIEWID.DIALOG_ALERT, 
-            ()=> {
-                noticeTxt.text = info;
-            } 
-        );      
+        UIMgr.ShowUI(VIEWID.DIALOG_ALERT);
+        noticeTxt.text = info;   
     }
 
  

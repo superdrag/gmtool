@@ -9,12 +9,8 @@ using Net;
 public class LoginView : View
 {
     private Button loginBtn;
-    private InputField ipInput;
-    private InputField portInput;
-    private InputField accountInput;
-
     private GameObject SeverBtmList;
-    private GameObject SeverContent;
+    private Transform SeverContent;
 
     private static LoginView ins = null;
 
@@ -35,11 +31,27 @@ public class LoginView : View
         Logger.Log("LoginView Construct Call");
     }
 
-    override public void OnCreateGo(System.Action action)
+    override public void OnCreateGo()
     {        
-        GameObject go = ResMgr.LoadRes<GameObject>("Assets/ResAB/Prefab/Login/LoginView.prefab");
+        viewRoot = ResMgr.CreateGo("Prefab/Login/LoginView").transform;
+        UIHelper.AddChild(UIMgr.UIMain, viewRoot);
 
-        
+        SeverContent = viewRoot.transform.Find("bg/serverList/Viewport/Content");
+    }
+
+    override public void OnShow()
+    {
+        foreach (var item in AppConfig.ServerList)
+        {
+            ServerItem serverItem = new ServerItem();
+            serverItem.Create();
+            serverItem.ip = item.ip;
+            serverItem.port = item.port;
+            serverItem.name.text = item.name;
+            serverItem.index = item.index;
+            //serverItem
+            UIHelper.AddChild(SeverContent,serverItem.view);
+        }
     }
 
     private void StartConnetServer(string ip,short port)

@@ -24,10 +24,10 @@ public class GMApp : MonoBehaviour {
     void Awake()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        this.GameMgrInit();
+        this.AppInit();
     }
 
-    private void GameMgrInit()
+    private void AppInit()
     {
         Logger.Init(GFunc.AppLogPath());
     
@@ -46,7 +46,13 @@ public class GMApp : MonoBehaviour {
         NetMgr.Init();//消息处理相关类
         ResMgr.Instance.Init();
         AllRigstMsgRegedit();
-        UIMgr.Init();        
+        UIMgr.Init(); 
+        OnInitFinish();       
+    }
+
+    private void OnInitFinish()
+    {
+        UIMgr.ShowUI(VIEWID.LOGIN);
     }
 
     private void AllRigstMsgRegedit()

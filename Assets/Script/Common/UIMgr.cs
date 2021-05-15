@@ -29,14 +29,11 @@ public enum VIEWID
 
 public static class UIMgr
 {
-    private static GameObject uiRoot;
-    private static GameObject uiBG;
-    private static GameObject uiGame;    
-    private static GameObject uiMain;
-    private static GameObject uiEff;
-    private static GameObject uiPop;
-    private static GameObject uiAlert;
-    private static GameObject mask;
+    private static Transform uiRoot;
+    private static Transform uiBG; 
+    private static Transform uiMain;
+    private static Transform uiPop;
+    private static Transform mask;
     private static Dictionary<VIEWID, View> viewDict;
     
 
@@ -54,19 +51,16 @@ public static class UIMgr
     public static void Init()
     {
        
-        uiRoot = GameObject.Find("UIRoot");
-        uiBG = GameObject.Find("UIRoot/UIBG");
-        uiGame = GameObject.Find("UIRoot/UIGame");
-        uiMain = GameObject.Find("UIRoot/UIMain");        
-        uiEff = GameObject.Find("UIRoot/UIEff");
-        uiPop = GameObject.Find("UIRoot/UIPop");
-        uiAlert = GameObject.Find("UIRoot/UIAlert");
+        uiRoot = GameObject.Find("UICanvas").transform;
+        uiBG = GameObject.Find("UICanvas/UIBG").transform;
+        uiMain = GameObject.Find("UICanvas/UIMain").transform;        
+        uiPop = GameObject.Find("UICanvas/UIPop").transform;
 
-        mask = GameObject.Find("UIRoot/Mask");
-        if (mask != null)
-        {
-            mask.SetActive(false);
-        }        
+        // mask = GameObject.Find("UIRoot/Mask").transform;
+        // if (mask != null)
+        // {
+        //     mask.gameObject.SetActive(false);
+        // }        
         //uiBG = uiRoot.transform.Find("UIBG").GetComponent<Image>();
         viewDict = new Dictionary<VIEWID, View>();   
         InitReg(); 
@@ -76,13 +70,10 @@ public static class UIMgr
         //GetUI(VIEWID.DIALOG_SIMPLE).OnHide();    
     }
 
-    public static GameObject UIRoot { get { return uiRoot; } }
-    public static GameObject UIBG { get { return uiBG; } }
-    public static GameObject UIGame { get { return uiGame; } }
-    public static GameObject UIMain { get { return uiMain; } }
-    public static GameObject UIEff { get { return uiEff; } }
-    public static GameObject UIPop { get { return uiPop; } }
-    public static GameObject UIAlert { get { return uiAlert; } }
+    public static Transform UIRoot { get { return uiRoot; } }
+    public static Transform UIBG { get { return uiBG; } }
+    public static Transform UIMain { get { return uiMain; } }
+    public static Transform UIPop { get { return uiPop; } }
 
     public static void InitAllUI()
     {
@@ -93,16 +84,14 @@ public static class UIMgr
             view.IsShow = false;
             view.OnDestroy();
         }
-        if (mask != null)
-        {
-            mask.SetActive(false);
-        }
+        // if (mask != null)
+        // {
+        //     mask.gameObject.SetActive(false);
+        // }
     }    
 
     public static void RegisterUI(VIEWID viewId, View view)
-    {
-
-       
+    {       
         if (view == null)
         {
             Debug.LogError("RegisterUI view null " + viewId);
@@ -119,29 +108,8 @@ public static class UIMgr
         viewDict.Add(viewId, view);                        
     }    
 
-    public static void CreateUIGo(VIEWID viewId)
-    {
-        View view = GetUI(viewId);
-        if(view == null)
-        {
-            Debug.LogError("CreateUIGo no find:" + viewId);
-            return;            
-        }
-        
-        if(view.IsCreateGo == true)
-        {
-            Debug.LogError("CreateUIGo has create:" + viewId);
-            return;                
-        }
-        
-        view.OnCreateGo( ()=> {
-            view.IsCreateGo = true;
-            view.OnHide();
-        } ) ; 
- 
-    } 
 
-    public static void ShowUI(VIEWID viewId, Action action = null)
+    public static void ShowUI(VIEWID viewId)
     {        
         View view = GetUI(viewId);
         if(view == null)
@@ -150,32 +118,27 @@ public static class UIMgr
             return;            
         }
 
-        if (!view.IsCreateGo)
+        if(!view.IsCreateGo)
         {          
-           view.OnCreateGo( () => {
-                view.IsCreateGo = true;
-                if (!view.IsShow)
-                {    
-                    view.IsCreateGo = true;            
-                    view.OnShow(); 
-                    if( action != null )
-                    {
-                        action();
-                    }           
-                }                
-            } );            
+            view.OnCreateGo();
+            if(view.ViewRoot == null)
+            {
+                Debug.LogError("ShowUI OnCreateGo fail:" + viewId);
+                return;
+            } 
+            view.IsCreateGo = true;
         }
-        else 
-        {            
-            if (!view.IsShow)
-            {                
-                view.OnShow();  
-                if( action != null )
-                {
-                    action();
-                }                             
-            }
+      
+        if(view.IsShow)
+        {                 
+            Debug.Log( "ShowUI has show:" + viewId );    
+            return;                                                
         }
+
+        Logger.Log("View OnShow:",viewId);
+        view.OnShow();                  
+        view.ViewRoot.gameObject.SetActive(true); 
+        view.IsShow = true;              
     }    
 
     public static void HideUI(VIEWID viewId)
@@ -187,16 +150,26 @@ public static class UIMgr
             return;            
         }        
 
-        if(view.IsShow)
+        if(!view.IsShow)
         {
-            Debug.Log("HideUI ---------------:" + viewId);
-            view.OnHide(); 
-        }        
+            Debug.Log( "HideUI no show:" + viewId );
+            return;
+        }   
+
+        if(null == view.ViewRoot)
+        {
+            Debug.LogError("HideUI ViewRoot null:" + viewId);
+            return;
+        }   
+
+        Logger.Log("View OnHide:",viewId);
+        view.OnHide();
+        view.ViewRoot.gameObject.SetActive(false);  
+        view.IsShow = false;                      
     }
 
     public static View GetUI(VIEWID viewID)
     {
-     
         if (!viewDict.ContainsKey(viewID))
         {
             Logger.Error("GetUIView no find:" + viewID);
@@ -222,7 +195,7 @@ public static class UIMgr
         }
         else
         {
-            Debug.LogError("无效ViewID:" + viewID);
+            Debug.LogError("DestroyUI No Find UI:" + viewID);
         }
     }
 

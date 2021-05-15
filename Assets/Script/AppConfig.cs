@@ -23,7 +23,7 @@ public class ServerInfo
 public class AppConfig
 {
     private static AppConfig ins = null;  
-    private static List<ServerInfo> ServerList = new List<ServerInfo>();   
+    public static List<ServerInfo> ServerList = new List<ServerInfo>();   
 
     public static AppConfig Instance
     {
@@ -39,12 +39,6 @@ public class AppConfig
 
     public void InitLoad()
     {
-        // GameObject go = ResMgr.LoadRes<GameObject>("Prefab/Login/LoginView");
-        // if(go == null)
-        // {
-        //     Debug.LogError("login null");
-        // }
-
         List<JsonData> jsons = JsonConfig.LoadJsonFile("app_server");
         foreach (var json in jsons)
         {
@@ -54,7 +48,7 @@ public class AppConfig
             info.ip = JsonConfig.ReadString(json,"login_ip");
             info.port = JsonConfig.ReadInt32(json,"login_port");
             
-            Debug.Log("11111111111111 "+info.ip);
+            //Debug.Log("11111111111111 "+info.ip);
             ServerList.Add(info);
         }
 

@@ -22,7 +22,7 @@ public class UIHelper
         }
     }
 
-    public static GameObject AddChild(GameObject parent, GameObject go)
+    public static Transform AddChild(Transform parent, Transform go)
     {
         if( parent == null )
         {
@@ -36,49 +36,55 @@ public class UIHelper
             return null;
         }
 
-        Transform t = go.transform;
-        //t.parent = parent.transform;
-        t.SetParent(parent.transform);
-        t.localScale = Vector3.one;
-        go.layer = parent.layer;        
+        go.SetParent(parent.transform);
+
+        go.localScale = Vector3.one;
+        if( go.GetComponent<RectTransform>() )
+        {
+            go.GetComponent<RectTransform>().offsetMin = Vector2.zero;
+            go.GetComponent<RectTransform>().offsetMax = Vector2.zero;
+        }
+        go.localPosition = Vector3.zero;
+
+        go.gameObject.layer = parent.gameObject.layer;        
         return go;
     }
 
-    public static GameObject AddChild(GameObject parent, GameObject go, Vector3 position)
+    public static Transform AddChild(Transform parent, Transform go, Vector3 position)
     {
-        GameObject _go = AddChild(parent, go);
+        Transform _go = AddChild(parent, go);
         if( _go != null )
         {
-            _go.transform.localPosition = position;
+            _go.localPosition = position;
         }   
         return _go;
     }    
 
-    public static GameObject AddChild(GameObject parent, GameObject go, Vector3 position, Vector3 eAngle)
+    public static Transform AddChild(Transform parent, Transform go, Vector3 position, Vector3 eAngle)
     {
-        GameObject _go = AddChild(parent, go);
+        Transform _go = AddChild(parent, go);
         if( _go != null )
         {
-            _go.transform.localPosition = position;
-            _go.transform.localEulerAngles = eAngle;
+            _go.localPosition = position;
+            _go.localEulerAngles = eAngle;
         }        
         return _go;
     }
 
-    public static GameObject FindGo(GameObject go, string path)  
+    public static Transform FindGo(Transform go, string path)  
     {
-        Transform tf = go.transform.Find(path.Trim());
+        Transform tf = go.Find(path.Trim());
         if (tf == null)
         {
             Logger.Error("Error FindGo Find ",path);
             return null;
         }
-        return tf.gameObject;
+        return tf;
     }
 
-    public static TT GetComponent<TT>(GameObject go, string path) where TT : Component 
+    public static TT GetComponent<TT>(Transform go, string path) where TT : Component 
     {
-        GameObject _go = FindGo(go, path.Trim());
+        Transform _go = FindGo(go, path.Trim());
         if (_go == null)
         {
             Logger.Error("Error GetComponentTT Find ",path);

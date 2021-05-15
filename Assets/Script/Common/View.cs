@@ -10,8 +10,8 @@ public abstract class View
 {  
     private VIEWID viewId;
     public VIEWID ViewId { get { return viewId;} set {viewId = value;} }
-    private GameObject viewRoot;
-    public GameObject ViewRoot { get { return viewRoot;} set {viewRoot = value;} }
+    protected Transform viewRoot;
+    public Transform ViewRoot { get { return viewRoot;} }
     private bool isCreateGo;
     public bool IsCreateGo{ get {return isCreateGo;} set {isCreateGo = value;} }
     private bool isShow;
@@ -24,25 +24,13 @@ public abstract class View
         this.viewRoot = null;
     }
 
-    public abstract void OnCreateGo(System.Action action);
+    public abstract void OnCreateGo();
 
-    public virtual void OnShow()
-    {
-        if(viewRoot != null)
-        {
-            Logger.Log("View OnShow:",viewId);
-            viewRoot.SetActive(true);            
-        }
-        IsShow = true;
-    }
+    public abstract void OnShow();
+
     public virtual void OnHide()
     {
-        if(viewRoot != null)
-        {
-            Logger.Log("View OnHide:",viewId);
-            viewRoot.SetActive(false);            
-        }
-        IsShow = false; 
+
     }
 
     public virtual void OnUpdate()
@@ -66,12 +54,12 @@ public abstract class View
 
     public virtual void SetPostion(Vector3 pos)
     {
-        viewRoot.transform.localPosition = pos;            
+        viewRoot.localPosition = pos;            
     }
 
     public virtual void MovePostion(Vector3 pos)
     {
-        viewRoot.transform.localPosition = pos;            
+        viewRoot.localPosition = pos;            
     }
 
 

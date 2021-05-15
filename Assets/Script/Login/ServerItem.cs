@@ -8,17 +8,35 @@ using Net;
 
 public class ServerItem
 {
-    private Button loginBtn;
-    private Text ServerName;
+    public Transform view;
+    public Button loginBtn;
+    public Text name;
+
+    public int port;
+
+    public string ip;
+
+    public int index;
 
     public void Create()
     {        
-        GameObject go = ResMgr.LoadRes<GameObject>("Prefab/Login/ServerItem.prefab");
-        ServerName = go.GetComponent<Text>();
-        loginBtn = go.GetComponent<Button>();
+        view = ResMgr.CreateGo("Prefab/Login/ServerItem").transform;
+        loginBtn = view.Find("Button").GetComponent<Button>();
+        name = view.Find("Button/Text").GetComponent<Text>();        
+
+        Debug.Log("loginBtn....."+loginBtn);
+        Debug.Log("name....."+name);
     }
 
-    private void StartConnetServer(string ip,short port)
+    public void Show(ServerInfo info)
+    {
+        ip = info.ip;
+        port = info.port;
+        name.text = info.name;
+        index = info.index;        
+    }
+
+    private void StartConnetServer(string ip,int port)
     {
         NetMgr.NetClose();        
         NetMgr.NetConnect(ip,port,LoginCtl.Instance.OnConnectCallBack);
@@ -27,20 +45,7 @@ public class ServerItem
     private void OnBtnClick()
     {    
         Logger.Log("BtnLogin click..........");
-        //ViewRoot.SetActive(false);     
-
-        // if(GData.ReleaseMode == true)
-        // {
-        //     NotifyObserver(NOTICE_ID.LOGIN_VIEW_GUEST,"39.100.205.143",9101,"qpjob");
-        // }
-        // else 
-        // {
-        //     if(ipInput.text == "") ipInput.text = "192.168.0.189";
-        //     if(portInput.text == "") portInput.text = "9101";
-        //     if(accountInput.text == "") accountInput.text = "unityClient";
-
-        //     NotifyObserver(NOTICE_ID.LOGIN_VIEW_GUEST,ipInput.text,portInput.text,accountInput.text);
-        // }
+        StartConnetServer( this.ip, this.port );
     }
  
 

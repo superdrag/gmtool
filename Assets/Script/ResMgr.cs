@@ -87,7 +87,13 @@ public class ResMgr
     }
 
 
-    public static T LoadRes<T>(string resPath, bool needCache = false) where T : UObject
+    public static GameObject CreateGo(string resPath)
+    {
+        GameObject go = LoadRes<GameObject>(resPath);
+        return UnityEngine.Object.Instantiate(go);
+    }
+
+    public static T LoadRes<T>(string resPath) where T : UObject
     {
         //resPath = resPath.ToLower();
         Debug.Log("LoadRes.........."+resPath);
