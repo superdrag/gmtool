@@ -1,34 +1,27 @@
 [
     {       
         "server_id":1,      
-        "server_name":"内网测试服务器45",
+        "server_name":"内网服务器",
         "login_ip":"192.168.110.45", 
         "login_port":9101,
         "php_ip":"",    
         "php_port":8101
     },
-    {           
-        "server_id":2,  
-        "server_name":"刘海超VM",
-        "login_ip":"192.168.110.5",
-        "login_port":9101,
-        "php_ip":"",    
-        "php_port":8101
-    },
     {        
-        "server_id":3,      
-        "server_name":"外网测试服务器",
+        "server_id":2,      
+        "server_name":"外网服务器",
         "login_ip":"106.55.240.178",
         "login_port":9101,
         "php_ip":"",    
         "php_port":8101
-    },    
-    {        
-        "server_id":4,      
-        "server_name":"测试服务器28",
-        "login_ip":"192.168.0.28",
+    },      
+    {           
+        "server_id":3,  
+        "server_name":"刘海超服务器",
+        "login_ip":"192.168.110.5",
         "login_port":9101,
         "php_ip":"",    
         "php_port":8101
-    }       
+    }
+      
 ]

@@ -35,7 +35,7 @@ public class GMApp : MonoBehaviour {
 
         DontDestroyOnLoad(this);
         //DontDestroyOnLoad(Camera.main);
-        DontDestroyOnLoad(GameObject.Find("Directional Light"));
+        //DontDestroyOnLoad(GameObject.Find("Directional Light"));
         DontDestroyOnLoad(GameObject.Find("UICamera"));
         DontDestroyOnLoad(GameObject.Find("UICanvas"));
         DontDestroyOnLoad(GameObject.Find("LocalCache"));        

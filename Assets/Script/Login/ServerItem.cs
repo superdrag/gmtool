@@ -22,7 +22,9 @@ public class ServerItem
     {        
         view = ResMgr.CreateGo("Prefab/Login/ServerItem").transform;
         loginBtn = view.Find("Button").GetComponent<Button>();
-        name = view.Find("Button/Text").GetComponent<Text>();        
+        name = view.Find("Button/Text").GetComponent<Text>(); 
+
+        loginBtn.onClick.AddListener(OnBtnClick);     
 
         Debug.Log("loginBtn....."+loginBtn);
         Debug.Log("name....."+name);

@@ -79,6 +79,7 @@
      <Compile Include="Assets\Script\Login\LoginModel.cs" />
      <Compile Include="Assets\Script\Login\LoginScene.cs" />
      <Compile Include="Assets\Script\Login\LoginView.cs" />
+     <Compile Include="Assets\Script\Login\ServerItem.cs" />
      <Compile Include="Assets\Script\MsgId.cs" />
      <Compile Include="Assets\Script\MsgReg.cs" />
      <Compile Include="Assets\Script\Proto\Client.cs" />
