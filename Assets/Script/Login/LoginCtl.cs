@@ -44,7 +44,9 @@ public class LoginCtl
             Logger.Error("account or passwd fail! " + _pb.Acount);
             return;
         }
-        
+
+        UIMgr.HideUI(VIEWID.LOGIN);
+        UIMgr.ShowUI(VIEWID.MENU);
     }
 
     public void StartConnetServer(string ip,int port)

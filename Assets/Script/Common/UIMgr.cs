@@ -11,20 +11,9 @@ public enum VIEWID
     //-------------------------------
     LOGIN   = 11, 
     //-------------------------------
-    HALL_BG    = 51,
-    HALL_CREATEGAME    = 52,
-    HALL_CREATEROOM    = 53, 
+    MENU = 21,
+    Recharge = 31,
     //-------------------------------
-    ROOM_BG      = 101,    
-    ROOM_MENU    = 102,  
-    ROOM_CHEATCARD   = 108, 
-    //-------------------------------  
-    MAH_ROLEINFO = 1001,
-    MAH_CARD_POOL = 1002,
-    MAH_THINK_LIST = 1003,
-
-    //-------------------------------
-    POKER_DDZ_ROLEINFO    = 2001,
 }
 
 public static class UIMgr
@@ -43,9 +32,12 @@ public static class UIMgr
     {
         //COMMON        
         RegisterUI(VIEWID.DIALOG_ALERT,AlertMsgView.Instance);
-
         //LOGIN
-        RegisterUI(VIEWID.LOGIN,LoginView.Instance);        
+        RegisterUI(VIEWID.LOGIN,LoginView.Instance);
+
+        RegisterUI(VIEWID.MENU,MenuView.Instance);   
+         
+        RegisterUI(VIEWID.Recharge,RechargeView.Instance);    
     }    
 
     public static void Init()
@@ -136,7 +128,8 @@ public static class UIMgr
         }
 
         Logger.Log("View OnShow:",viewId);
-        view.OnShow();                  
+        view.OnShow();  
+        view.ViewRoot.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
         view.ViewRoot.gameObject.SetActive(true); 
         view.IsShow = true;              
     }    

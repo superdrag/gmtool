@@ -6,51 +6,58 @@ using System.Reflection;
 using System;
 using Net;
 
-public class LoginView : View
+public class MenuView : View
 {
     private Button loginBtn;
     private GameObject SeverBtmList;
     private Transform SeverContent;
 
-    private static LoginView ins = null;
+    private static MenuView ins = null;
 
-    public static LoginView Instance
+    private Button chongzhiBtn;
+    private Button hexinBtn;
+    private Button youjianBtn;
+
+    int curIndex;
+
+    public static MenuView Instance
     {
         get
         {
             if (ins == null)
             {
-                ins = new LoginView();
+                ins = new MenuView();
             }
             return ins;
         }
     }
 
-    private LoginView()
+    private MenuView()
     {
-        Logger.Log("LoginView Construct Call");
+        Logger.Log("MenuView Construct Call");
     }
 
     override public void OnCreateGo()
     {        
-        viewRoot = ResMgr.CreateGo("Prefab/Login/LoginView").transform;
-        UIHelper.AddChild(UIMgr.UIMain, viewRoot);
+        viewRoot = ResMgr.CreateGo("Prefab/MenuView").transform;
+        UIHelper.AddChild(UIMgr.UIMain, viewRoot);  
 
-        SeverContent = viewRoot.transform.Find("bg/serverList/Viewport/Content");
+        chongzhiBtn = viewRoot.Find("chongzhi").GetComponent<Button>();  
+        hexinBtn = viewRoot.Find("hexin").GetComponent<Button>();
+        youjianBtn = viewRoot.Find("youjian").GetComponent<Button>();
+
+        chongzhiBtn.onClick.AddListener(OnBtnClick);
+        //hexinBtn.onClick.AddListener(OnBtnClick);
+        //youjianBtn.onClick.AddListener(OnBtnClick);
+
+        curIndex = 1;
     }
 
     override public void OnShow()
     {
-        foreach (var item in AppConfig.ServerList)
+        if( this.curIndex == 1 )
         {
-            ServerItem serverItem = new ServerItem();
-            serverItem.Create();
-            serverItem.ip = item.ip;
-            serverItem.port = item.port;
-            serverItem.name.text = item.name;
-            serverItem.index = item.index;
-            //serverItem
-            UIHelper.AddChild(SeverContent,serverItem.view);
+            UIMgr.ShowUI(VIEWID.Recharge);
         }
     }
 
