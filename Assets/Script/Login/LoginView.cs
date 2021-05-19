@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -54,11 +54,7 @@ public class LoginView : View
         }
     }
 
-    private void StartConnetServer(string ip,short port)
-    {
-        NetMgr.NetClose();        
-        NetMgr.NetConnect(ip,port,LoginCtl.Instance.OnConnectCallBack);
-    }
+
 
     private void OnBtnClick()
     {    

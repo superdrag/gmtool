@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package PPhp;
+
+import "common.proto";
+
+// ***********************************  Stuct Start ***********************************
+// ***********************************  Stuct End ***********************************
+
+
+
+
+
+
+// ***********************************  MSG Start ***********************************
+
+
+//--------------------------------------------------
+
+//MsgId.MSG_CL2PHP_GMLOGINACCOUNT          = 1801    --GM账号登陆
+message C2S_GMLogin
+{
+    string acount = 1;
+    string passwd = 2;
+}
+
+//MsgId.MSG_PHP2CL_GMLOGINACCOUNT          = 2801    --GM账号登陆
+message S2C_GMLogin
+{
+    int32 ret = 1;
+    string acount = 2;
+}
+
+//MsgId.MSG_CL2PHP_SENDMONEY                 = 1811    --GM直接发送货币
+message C2S_GMSendMoney
+{
+    string acount = 1;
+    int32 type = 2;
+    int32 num = 3;
+}
+
+//MsgId.MSG_PHP2CL_SENDMONEY                 = 2811 
+message S2C_GMSendMoney
+{
+    int32  ret = 1;
+    string acount = 2;
+    string type = 3;
+    int32 num = 4;
+}

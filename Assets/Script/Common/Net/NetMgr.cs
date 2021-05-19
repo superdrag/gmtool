@@ -168,17 +168,17 @@ namespace Net
                 return;
             }
 
-            Google.Protobuf.IMessage _pb = GetMsgProto(msg.msgid);
-            if(_pb != null)
-            {                       
-                msg.UnpackProtoBuf(_pb);
-                //Logger.Log("recv msgid <---" + (int)msg.msgid +  " pb: " + _pb.ToString());
-            }
-            else
-            {
-                Logger.Error("recv msgid no regedit protobuf id:" + msg.msgid);
-                return;
-            }
+            // Google.Protobuf.IMessage _pb = GetMsgProto(msg.msgid);
+            // if(_pb != null)
+            // {                       
+            //     msg.UnpackProtoBuf(_pb);
+            //     //Logger.Log("recv msgid <---" + (int)msg.msgid +  " pb: " + _pb.ToString());
+            // }
+            // else
+            // {
+            //     Logger.Error("recv msgid no regedit protobuf id:" + msg.msgid);
+            //     return;
+            // }
 
             msgHandler(msg);    
         }

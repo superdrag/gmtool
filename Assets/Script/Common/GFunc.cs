@@ -9,7 +9,7 @@ using System.Text;
 using System.Security.Cryptography;
 using UnityEngine.SceneManagement;
 using PBase;
-using PClient;
+using PPhp;
 
 public class GFunc
 {

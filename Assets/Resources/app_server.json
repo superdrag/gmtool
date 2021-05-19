@@ -4,7 +4,7 @@
         "server_name":"内网服务器",
         "login_ip":"192.168.110.45", 
         "login_port":9101,
-        "php_ip":"",    
+        "php_ip":"192.168.110.45",    
         "php_port":8101
     },
     {        
@@ -12,7 +12,7 @@
         "server_name":"外网服务器",
         "login_ip":"106.55.240.178",
         "login_port":9101,
-        "php_ip":"",    
+        "php_ip":"106.55.240.178",    
         "php_port":8101
     },      
     {           
@@ -20,7 +20,7 @@
         "server_name":"刘海超服务器",
         "login_ip":"192.168.110.5",
         "login_port":9101,
-        "php_ip":"",    
+        "php_ip":"192.168.110.5",    
         "php_port":8101
     }
       

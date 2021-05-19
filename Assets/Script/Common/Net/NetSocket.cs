@@ -261,7 +261,7 @@ namespace Net
 
             //Google.Protobuf.IMessage pb1;
             
-            //Output.Log("recv msgid <---" + msg.msgid.ToString() + " length: " + msg.msglen.ToString());
+            //Debug.Log("recv msgid <---" + msg.msgid.ToString() + " length: " + msg.msglen.ToString());
 
             System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
             stopwatch.Start();

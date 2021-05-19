@@ -4,7 +4,7 @@ using UnityEngine;
 using Net;
 
 using PBase;
-using PClient;
+using PPhp;
 
 using System;
 using System.IO;
@@ -45,9 +45,10 @@ public class AppConfig
             ServerInfo  info = new ServerInfo();
             info.index = JsonConfig.ReadInt32(json,"server_id");
             info.name = JsonConfig.ReadString(json,"server_name");
-            info.ip = JsonConfig.ReadString(json,"login_ip");
-            info.port = JsonConfig.ReadInt32(json,"login_port");
-            
+            info.ip = JsonConfig.ReadString(json,"php_ip");
+            info.port = JsonConfig.ReadInt32(json,"php_port");
+            //info.ip = JsonConfig.ReadString(json,"login_ip");
+            //info.port = JsonConfig.ReadInt32(json,"login_port");
             //Debug.Log("11111111111111 "+info.ip);
             ServerList.Add(info);
         }

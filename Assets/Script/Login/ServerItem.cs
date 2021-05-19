@@ -47,7 +47,7 @@ public class ServerItem
     private void OnBtnClick()
     {    
         Logger.Log("BtnLogin click..........");
-        StartConnetServer( this.ip, this.port );
+        LoginCtl.Instance.StartConnetServer(this.ip, this.port);
     }
  
 

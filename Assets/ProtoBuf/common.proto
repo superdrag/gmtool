@@ -3,8 +3,35 @@ syntax = "proto3";
 package PBase;
 
 
+// ***********************************  MSG Start ***********************************
+
+//错误码 2000
+message S2C_ErrorCode
+{
+    int32 errcode = 1;
+}
+
+//MSG_CL2GT_SOCKETHIT         1999     //客户端心跳包
+message C2S_SocketHit
+{
+
+}
+
+//MSG_GT2CL_SOCKETHIT         2999     //客户端心跳包
+message S2C_SocketHit
+{
+    int32 curtime = 1; //时间戳
+}
+
+
+// ***********************************  MSG End ***********************************
+
+
+
+
 // ***********************************  Stuct Start ***********************************
 
+//货币
 message PB_Money
 {
     int32 type = 1;//货币的类型
@@ -41,15 +68,6 @@ message PB_Task
     int32 acceptTime = 3;  //接受时间
     int32 submitTime = 4;  //完成时间
     repeated PB_TaskCounter counters = 5;
-}
-
-//五行属性
-message PB_FiveAttribute
-{
-    int32 type = 1;  //属性类型
-    int32 power = 2;  //属性攻击值
-    int32 addition = 3;  //属性攻击加成值
-    int32 resist = 4;  //属性抵抗值
 }
 
 message PB_TaskList
@@ -117,22 +135,14 @@ message PB_UnionLogInfo
     string text = 2;  //文本(例如:xxx加入工会)
 }
 
-message PB_BattleObj
+//邮件
+message PB_MailItem
 {
-    int32 objId = 1;  //    
-    int32 cfgId = 2;   
-    string objName = 3;  // 
-    int32 posx = 4;
-    int32 posy = 5;    
-    map<int32,int64> fightAtrr = 9;  
-}
-
-
-message PB_BattleTurn
-{
-    int32 mapId = 1;  //       
-    int32 turnIndex = 2;  //    
-    repeated PB_BattleObj npcList = 3;  
+    int32 mailId = 1; 
+    string mailTitle = 2;   //标题
+    string mailContent = 3; //内容描述
+    string mailItemList = 4; //物品列表
+    int32 mailTime = 5; //时间
 }
 // ***********************************  Stuct End ***********************************
 

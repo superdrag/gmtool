@@ -152,7 +152,7 @@ namespace Net
             Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(stream.ToArray());
             pb.MergeFrom(pbStream);
             //Output.Log("unpack pb <--- ",msgid, pb.ToString());
-            Logger.Log("recv msgid <---" + (int)msgid +  " pb: " + pb.ToString());
+            Logger.Log("recv msgidT <---" + (int)msgid +  " pb: " + pb.ToString());
             return (T)pb;
         }
         
