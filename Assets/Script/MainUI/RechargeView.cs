@@ -51,11 +51,11 @@ public class RechargeView : View
         Transform bg = viewRoot.Find("bg");
         chaxunBtn = bg.Find("chaxun/cha").GetComponent<Button>();  
         chaxunBtn.onClick.AddListener(onClickCha); 
-        zhanghaoText = bg.Find("chaxun/Text").GetComponent<Text>();
+        zhanghaoText = bg.Find("chaxun/shuru/Text").GetComponent<Text>();
 
         chongzhiBtn = bg.Find("chong/chongzhi").GetComponent<Button>();
         chongzhiBtn.onClick.AddListener(onClickChong);      
-        shuliangText = bg.Find("chong/num").GetComponent<Text>();
+        shuliangText = bg.Find("chong/num/Text").GetComponent<Text>();
       
         zhanghaoData = bg.Find("UserInfoView/data/zhanghao").GetComponent<Text>(); 
         idData = bg.Find("UserInfoView/data/id").GetComponent<Text>();
@@ -73,18 +73,12 @@ public class RechargeView : View
 
     private void onClickCha()
     {
-        Logger.Log("onClickCha ...........", GData.OpenId, GData.Unionid);
-        C2S_GMQUERYUSERINFO pb = new C2S_GMQUERYUSERINFO();
-        pb.Account = zhanghaoText.text;
-        NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMLOGINACCOUNT, pb);
+        Logger.Log("onClickCha ...........");
+        GlobalCtl.MSG_CL2PHP_QUERYUSERINFO(zhanghaoText.text);
     }
 
     private void onClickChong()
     {
-        C2S_GMSendMoney pb = new C2S_GMSendMoney();
-        pb.Account = zhanghaoData.text;
-        pb.Type = 1;
-        pb.Num = int.Parse(shuliangText.text);
-        NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMONEY,pb);
+        GlobalCtl.MSG_CL2PHP_SENDMONEY(zhanghaoData.text,1,int.Parse(shuliangText.text));
     }
 }

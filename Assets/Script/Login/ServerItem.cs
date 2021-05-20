@@ -38,12 +38,6 @@ public class ServerItem
         index = info.index;        
     }
 
-    private void StartConnetServer(string ip,int port)
-    {
-        NetMgr.NetClose();        
-        NetMgr.NetConnect(ip,port,LoginCtl.Instance.OnConnectCallBack);
-    }
-
     private void OnBtnClick()
     {    
         Logger.Log("BtnLogin click..........");

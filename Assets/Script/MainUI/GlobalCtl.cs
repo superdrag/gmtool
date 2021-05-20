@@ -51,5 +51,21 @@ public class GlobalCtl
     }    
 
 
+////////////////////////////////////////
 
+    public static void MSG_CL2PHP_QUERYUSERINFO(string account)
+    {
+        C2S_GMQUERYUSERINFO pb = new C2S_GMQUERYUSERINFO();
+        pb.Account = account;
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYUSERINFO, pb);
+    }
+
+    public static void MSG_CL2PHP_SENDMONEY(string account, int type, int num)
+    {
+        C2S_GMSendMoney pb = new C2S_GMSendMoney();
+        pb.Account = account;
+        pb.Type = 1;
+        pb.Num = num;
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMONEY,pb);  
+    }
 }
