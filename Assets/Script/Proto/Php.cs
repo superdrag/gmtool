@@ -24,19 +24,31 @@ namespace PPhp {
     static PhpReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CglwaHAucHJvdG8SBFBQaHAaDGNvbW1vbi5wcm90byItCgtDMlNfR01Mb2dp",
-            "bhIOCgZhY291bnQYASABKAkSDgoGcGFzc3dkGAIgASgJIioKC1MyQ19HTUxv",
-            "Z2luEgsKA3JldBgBIAEoBRIOCgZhY291bnQYAiABKAkiPAoPQzJTX0dNU2Vu",
-            "ZE1vbmV5Eg4KBmFjb3VudBgBIAEoCRIMCgR0eXBlGAIgASgFEgsKA251bRgD",
-            "IAEoBSJJCg9TMkNfR01TZW5kTW9uZXkSCwoDcmV0GAEgASgFEg4KBmFjb3Vu",
-            "dBgCIAEoCRIMCgR0eXBlGAMgASgJEgsKA251bRgEIAEoBWIGcHJvdG8z"));
+            "CglwaHAucHJvdG8SBFBQaHAaDGNvbW1vbi5wcm90byIuCgtDMlNfR01Mb2dp",
+            "bhIPCgdhY2NvdW50GAEgASgJEg4KBnBhc3N3ZBgCIAEoCSIrCgtTMkNfR01M",
+            "b2dpbhILCgNyZXQYASABKAUSDwoHYWNjb3VudBgCIAEoCSI9Cg9DMlNfR01T",
+            "ZW5kTW9uZXkSDwoHYWNjb3VudBgBIAEoCRIMCgR0eXBlGAIgASgFEgsKA251",
+            "bRgDIAEoBSJKCg9TMkNfR01TZW5kTW9uZXkSCwoDcmV0GAEgASgFEg8KB2Fj",
+            "Y291bnQYAiABKAkSDAoEdHlwZRgDIAEoCRILCgNudW0YBCABKAUiJgoTQzJT",
+            "X0dNUVVFUllVU0VSSU5GTxIPCgdhY2NvdW50GAEgASgJIosBChNTMkNfR01R",
+            "VUVSWVVTRVJJTkZPEg8KB2FjY291bnQYASABKAkSDwoHYWNjRGJpZBgCIAEo",
+            "BRIPCgdkaWFtb25kGAMgASgFEgwKBGNhc2gYBCABKAUSDwoHdmlwY2FyZBgF",
+            "IAEoBRIPCgdsb2dpbnR2GAYgASgFEhEKCW9mZmxpbmV0dhgHIAEoBSJHCg5D",
+            "MlNfR01TRU5ETUFJTBIPCgdhY2NvdW50GAEgASgJEiQKCG1haWxEYXRhGAIg",
+            "ASgLMhIuUEJhc2UuUEJfTWFpbEl0ZW0iPgoOUzJDX0dNU0VORE1BSUwSCwoD",
+            "cmV0GAEgASgFEg4KBm1haWxJZBgCIAEoBRIPCgdhY2NvdW50GAMgASgJYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::PBase.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMLogin), global::PPhp.C2S_GMLogin.Parser, new[]{ "Acount", "Passwd" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMLogin), global::PPhp.S2C_GMLogin.Parser, new[]{ "Ret", "Acount" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMSendMoney), global::PPhp.C2S_GMSendMoney.Parser, new[]{ "Acount", "Type", "Num" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMSendMoney), global::PPhp.S2C_GMSendMoney.Parser, new[]{ "Ret", "Acount", "Type", "Num" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMLogin), global::PPhp.C2S_GMLogin.Parser, new[]{ "Account", "Passwd" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMLogin), global::PPhp.S2C_GMLogin.Parser, new[]{ "Ret", "Account" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMSendMoney), global::PPhp.C2S_GMSendMoney.Parser, new[]{ "Account", "Type", "Num" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMSendMoney), global::PPhp.S2C_GMSendMoney.Parser, new[]{ "Ret", "Account", "Type", "Num" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQUERYUSERINFO), global::PPhp.C2S_GMQUERYUSERINFO.Parser, new[]{ "Account" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQUERYUSERINFO), global::PPhp.S2C_GMQUERYUSERINFO.Parser, new[]{ "Account", "AccDbid", "Diamond", "Cash", "Vipcard", "Logintv", "Offlinetv" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMSENDMAIL), global::PPhp.C2S_GMSENDMAIL.Parser, new[]{ "Account", "MailData" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMSENDMAIL), global::PPhp.S2C_GMSENDMAIL.Parser, new[]{ "Ret", "MailId", "Account" }, null, null, null)
           }));
     }
     #endregion
@@ -71,7 +83,7 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public C2S_GMLogin(C2S_GMLogin other) : this() {
-      acount_ = other.acount_;
+      account_ = other.account_;
       passwd_ = other.passwd_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -81,14 +93,14 @@ namespace PPhp {
       return new C2S_GMLogin(this);
     }
 
-    /// <summary>Field number for the "acount" field.</summary>
-    public const int AcountFieldNumber = 1;
-    private string acount_ = "";
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 1;
+    private string account_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Acount {
-      get { return acount_; }
+    public string Account {
+      get { return account_; }
       set {
-        acount_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -116,7 +128,7 @@ namespace PPhp {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Acount != other.Acount) return false;
+      if (Account != other.Account) return false;
       if (Passwd != other.Passwd) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -124,7 +136,7 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Acount.Length != 0) hash ^= Acount.GetHashCode();
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
       if (Passwd.Length != 0) hash ^= Passwd.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -139,9 +151,9 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Acount.Length != 0) {
+      if (Account.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Acount);
+        output.WriteString(Account);
       }
       if (Passwd.Length != 0) {
         output.WriteRawTag(18);
@@ -155,8 +167,8 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Acount.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Acount);
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
       }
       if (Passwd.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Passwd);
@@ -172,8 +184,8 @@ namespace PPhp {
       if (other == null) {
         return;
       }
-      if (other.Acount.Length != 0) {
-        Acount = other.Acount;
+      if (other.Account.Length != 0) {
+        Account = other.Account;
       }
       if (other.Passwd.Length != 0) {
         Passwd = other.Passwd;
@@ -190,7 +202,7 @@ namespace PPhp {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Acount = input.ReadString();
+            Account = input.ReadString();
             break;
           }
           case 18: {
@@ -232,7 +244,7 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public S2C_GMLogin(S2C_GMLogin other) : this() {
       ret_ = other.ret_;
-      acount_ = other.acount_;
+      account_ = other.account_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -252,14 +264,14 @@ namespace PPhp {
       }
     }
 
-    /// <summary>Field number for the "acount" field.</summary>
-    public const int AcountFieldNumber = 2;
-    private string acount_ = "";
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 2;
+    private string account_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Acount {
-      get { return acount_; }
+    public string Account {
+      get { return account_; }
       set {
-        acount_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -277,7 +289,7 @@ namespace PPhp {
         return true;
       }
       if (Ret != other.Ret) return false;
-      if (Acount != other.Acount) return false;
+      if (Account != other.Account) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -285,7 +297,7 @@ namespace PPhp {
     public override int GetHashCode() {
       int hash = 1;
       if (Ret != 0) hash ^= Ret.GetHashCode();
-      if (Acount.Length != 0) hash ^= Acount.GetHashCode();
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -303,9 +315,9 @@ namespace PPhp {
         output.WriteRawTag(8);
         output.WriteInt32(Ret);
       }
-      if (Acount.Length != 0) {
+      if (Account.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(Acount);
+        output.WriteString(Account);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -318,8 +330,8 @@ namespace PPhp {
       if (Ret != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Ret);
       }
-      if (Acount.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Acount);
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -335,8 +347,8 @@ namespace PPhp {
       if (other.Ret != 0) {
         Ret = other.Ret;
       }
-      if (other.Acount.Length != 0) {
-        Acount = other.Acount;
+      if (other.Account.Length != 0) {
+        Account = other.Account;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -354,7 +366,7 @@ namespace PPhp {
             break;
           }
           case 18: {
-            Acount = input.ReadString();
+            Account = input.ReadString();
             break;
           }
         }
@@ -364,7 +376,7 @@ namespace PPhp {
   }
 
   /// <summary>
-  ///MsgId.MSG_CL2PHP_SENDMONEY                 = 1811    --GM直接发送货币
+  ///MsgId.MSG_CL2PHP_SENDMONEY                  = 1815    --GM直接发送货币
   /// </summary>
   public sealed partial class C2S_GMSendMoney : pb::IMessage<C2S_GMSendMoney> {
     private static readonly pb::MessageParser<C2S_GMSendMoney> _parser = new pb::MessageParser<C2S_GMSendMoney>(() => new C2S_GMSendMoney());
@@ -391,7 +403,7 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public C2S_GMSendMoney(C2S_GMSendMoney other) : this() {
-      acount_ = other.acount_;
+      account_ = other.account_;
       type_ = other.type_;
       num_ = other.num_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -402,14 +414,14 @@ namespace PPhp {
       return new C2S_GMSendMoney(this);
     }
 
-    /// <summary>Field number for the "acount" field.</summary>
-    public const int AcountFieldNumber = 1;
-    private string acount_ = "";
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 1;
+    private string account_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Acount {
-      get { return acount_; }
+    public string Account {
+      get { return account_; }
       set {
-        acount_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -448,7 +460,7 @@ namespace PPhp {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Acount != other.Acount) return false;
+      if (Account != other.Account) return false;
       if (Type != other.Type) return false;
       if (Num != other.Num) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -457,7 +469,7 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Acount.Length != 0) hash ^= Acount.GetHashCode();
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
       if (Type != 0) hash ^= Type.GetHashCode();
       if (Num != 0) hash ^= Num.GetHashCode();
       if (_unknownFields != null) {
@@ -473,9 +485,9 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Acount.Length != 0) {
+      if (Account.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Acount);
+        output.WriteString(Account);
       }
       if (Type != 0) {
         output.WriteRawTag(16);
@@ -493,8 +505,8 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Acount.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Acount);
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
       }
       if (Type != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
@@ -513,8 +525,8 @@ namespace PPhp {
       if (other == null) {
         return;
       }
-      if (other.Acount.Length != 0) {
-        Acount = other.Acount;
+      if (other.Account.Length != 0) {
+        Account = other.Account;
       }
       if (other.Type != 0) {
         Type = other.Type;
@@ -534,7 +546,7 @@ namespace PPhp {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Acount = input.ReadString();
+            Account = input.ReadString();
             break;
           }
           case 16: {
@@ -552,7 +564,7 @@ namespace PPhp {
   }
 
   /// <summary>
-  ///MsgId.MSG_PHP2CL_SENDMONEY                 = 2811 
+  ///MsgId.MSG_PHP2CL_SENDMONEY                  = 2815    --GM直接发送货币
   /// </summary>
   public sealed partial class S2C_GMSendMoney : pb::IMessage<S2C_GMSendMoney> {
     private static readonly pb::MessageParser<S2C_GMSendMoney> _parser = new pb::MessageParser<S2C_GMSendMoney>(() => new S2C_GMSendMoney());
@@ -580,7 +592,7 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public S2C_GMSendMoney(S2C_GMSendMoney other) : this() {
       ret_ = other.ret_;
-      acount_ = other.acount_;
+      account_ = other.account_;
       type_ = other.type_;
       num_ = other.num_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -602,14 +614,14 @@ namespace PPhp {
       }
     }
 
-    /// <summary>Field number for the "acount" field.</summary>
-    public const int AcountFieldNumber = 2;
-    private string acount_ = "";
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 2;
+    private string account_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Acount {
-      get { return acount_; }
+    public string Account {
+      get { return account_; }
       set {
-        acount_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -649,7 +661,7 @@ namespace PPhp {
         return true;
       }
       if (Ret != other.Ret) return false;
-      if (Acount != other.Acount) return false;
+      if (Account != other.Account) return false;
       if (Type != other.Type) return false;
       if (Num != other.Num) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -659,7 +671,7 @@ namespace PPhp {
     public override int GetHashCode() {
       int hash = 1;
       if (Ret != 0) hash ^= Ret.GetHashCode();
-      if (Acount.Length != 0) hash ^= Acount.GetHashCode();
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
       if (Type.Length != 0) hash ^= Type.GetHashCode();
       if (Num != 0) hash ^= Num.GetHashCode();
       if (_unknownFields != null) {
@@ -679,9 +691,9 @@ namespace PPhp {
         output.WriteRawTag(8);
         output.WriteInt32(Ret);
       }
-      if (Acount.Length != 0) {
+      if (Account.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(Acount);
+        output.WriteString(Account);
       }
       if (Type.Length != 0) {
         output.WriteRawTag(26);
@@ -702,8 +714,8 @@ namespace PPhp {
       if (Ret != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Ret);
       }
-      if (Acount.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Acount);
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
       }
       if (Type.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Type);
@@ -725,8 +737,8 @@ namespace PPhp {
       if (other.Ret != 0) {
         Ret = other.Ret;
       }
-      if (other.Acount.Length != 0) {
-        Acount = other.Acount;
+      if (other.Account.Length != 0) {
+        Account = other.Account;
       }
       if (other.Type.Length != 0) {
         Type = other.Type;
@@ -750,7 +762,7 @@ namespace PPhp {
             break;
           }
           case 18: {
-            Acount = input.ReadString();
+            Account = input.ReadString();
             break;
           }
           case 26: {
@@ -759,6 +771,792 @@ namespace PPhp {
           }
           case 32: {
             Num = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// MsgId.MSG_CL2PHP_QUERYUSERINFO           = 1812    --GM查询玩家信息
+  /// </summary>
+  public sealed partial class C2S_GMQUERYUSERINFO : pb::IMessage<C2S_GMQUERYUSERINFO> {
+    private static readonly pb::MessageParser<C2S_GMQUERYUSERINFO> _parser = new pb::MessageParser<C2S_GMQUERYUSERINFO>(() => new C2S_GMQUERYUSERINFO());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<C2S_GMQUERYUSERINFO> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMQUERYUSERINFO() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMQUERYUSERINFO(C2S_GMQUERYUSERINFO other) : this() {
+      account_ = other.account_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMQUERYUSERINFO Clone() {
+      return new C2S_GMQUERYUSERINFO(this);
+    }
+
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 1;
+    private string account_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Account {
+      get { return account_; }
+      set {
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as C2S_GMQUERYUSERINFO);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(C2S_GMQUERYUSERINFO other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Account != other.Account) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Account.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Account);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(C2S_GMQUERYUSERINFO other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Account.Length != 0) {
+        Account = other.Account;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Account = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// MsgId.MSG_PHP2CL_QUERYUSERINFO           = 2812    --GM查询玩家信息
+  /// </summary>
+  public sealed partial class S2C_GMQUERYUSERINFO : pb::IMessage<S2C_GMQUERYUSERINFO> {
+    private static readonly pb::MessageParser<S2C_GMQUERYUSERINFO> _parser = new pb::MessageParser<S2C_GMQUERYUSERINFO>(() => new S2C_GMQUERYUSERINFO());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<S2C_GMQUERYUSERINFO> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMQUERYUSERINFO() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMQUERYUSERINFO(S2C_GMQUERYUSERINFO other) : this() {
+      account_ = other.account_;
+      accDbid_ = other.accDbid_;
+      diamond_ = other.diamond_;
+      cash_ = other.cash_;
+      vipcard_ = other.vipcard_;
+      logintv_ = other.logintv_;
+      offlinetv_ = other.offlinetv_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMQUERYUSERINFO Clone() {
+      return new S2C_GMQUERYUSERINFO(this);
+    }
+
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 1;
+    private string account_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Account {
+      get { return account_; }
+      set {
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "accDbid" field.</summary>
+    public const int AccDbidFieldNumber = 2;
+    private int accDbid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int AccDbid {
+      get { return accDbid_; }
+      set {
+        accDbid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "diamond" field.</summary>
+    public const int DiamondFieldNumber = 3;
+    private int diamond_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Diamond {
+      get { return diamond_; }
+      set {
+        diamond_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cash" field.</summary>
+    public const int CashFieldNumber = 4;
+    private int cash_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Cash {
+      get { return cash_; }
+      set {
+        cash_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "vipcard" field.</summary>
+    public const int VipcardFieldNumber = 5;
+    private int vipcard_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Vipcard {
+      get { return vipcard_; }
+      set {
+        vipcard_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "logintv" field.</summary>
+    public const int LogintvFieldNumber = 6;
+    private int logintv_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Logintv {
+      get { return logintv_; }
+      set {
+        logintv_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "offlinetv" field.</summary>
+    public const int OfflinetvFieldNumber = 7;
+    private int offlinetv_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Offlinetv {
+      get { return offlinetv_; }
+      set {
+        offlinetv_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as S2C_GMQUERYUSERINFO);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(S2C_GMQUERYUSERINFO other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Account != other.Account) return false;
+      if (AccDbid != other.AccDbid) return false;
+      if (Diamond != other.Diamond) return false;
+      if (Cash != other.Cash) return false;
+      if (Vipcard != other.Vipcard) return false;
+      if (Logintv != other.Logintv) return false;
+      if (Offlinetv != other.Offlinetv) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (AccDbid != 0) hash ^= AccDbid.GetHashCode();
+      if (Diamond != 0) hash ^= Diamond.GetHashCode();
+      if (Cash != 0) hash ^= Cash.GetHashCode();
+      if (Vipcard != 0) hash ^= Vipcard.GetHashCode();
+      if (Logintv != 0) hash ^= Logintv.GetHashCode();
+      if (Offlinetv != 0) hash ^= Offlinetv.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Account.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Account);
+      }
+      if (AccDbid != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(AccDbid);
+      }
+      if (Diamond != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Diamond);
+      }
+      if (Cash != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Cash);
+      }
+      if (Vipcard != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Vipcard);
+      }
+      if (Logintv != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Logintv);
+      }
+      if (Offlinetv != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Offlinetv);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      }
+      if (AccDbid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AccDbid);
+      }
+      if (Diamond != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Diamond);
+      }
+      if (Cash != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Cash);
+      }
+      if (Vipcard != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Vipcard);
+      }
+      if (Logintv != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Logintv);
+      }
+      if (Offlinetv != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Offlinetv);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(S2C_GMQUERYUSERINFO other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Account.Length != 0) {
+        Account = other.Account;
+      }
+      if (other.AccDbid != 0) {
+        AccDbid = other.AccDbid;
+      }
+      if (other.Diamond != 0) {
+        Diamond = other.Diamond;
+      }
+      if (other.Cash != 0) {
+        Cash = other.Cash;
+      }
+      if (other.Vipcard != 0) {
+        Vipcard = other.Vipcard;
+      }
+      if (other.Logintv != 0) {
+        Logintv = other.Logintv;
+      }
+      if (other.Offlinetv != 0) {
+        Offlinetv = other.Offlinetv;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Account = input.ReadString();
+            break;
+          }
+          case 16: {
+            AccDbid = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            Diamond = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Cash = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            Vipcard = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            Logintv = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            Offlinetv = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// MsgId.MSG_CL2PHP_SENDMAIL                   = 1820    --GM发送邮件
+  /// </summary>
+  public sealed partial class C2S_GMSENDMAIL : pb::IMessage<C2S_GMSENDMAIL> {
+    private static readonly pb::MessageParser<C2S_GMSENDMAIL> _parser = new pb::MessageParser<C2S_GMSENDMAIL>(() => new C2S_GMSENDMAIL());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<C2S_GMSENDMAIL> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMSENDMAIL() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMSENDMAIL(C2S_GMSENDMAIL other) : this() {
+      account_ = other.account_;
+      mailData_ = other.mailData_ != null ? other.mailData_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMSENDMAIL Clone() {
+      return new C2S_GMSENDMAIL(this);
+    }
+
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 1;
+    private string account_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Account {
+      get { return account_; }
+      set {
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "mailData" field.</summary>
+    public const int MailDataFieldNumber = 2;
+    private global::PBase.PB_MailItem mailData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::PBase.PB_MailItem MailData {
+      get { return mailData_; }
+      set {
+        mailData_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as C2S_GMSENDMAIL);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(C2S_GMSENDMAIL other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Account != other.Account) return false;
+      if (!object.Equals(MailData, other.MailData)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (mailData_ != null) hash ^= MailData.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Account.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Account);
+      }
+      if (mailData_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(MailData);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      }
+      if (mailData_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MailData);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(C2S_GMSENDMAIL other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Account.Length != 0) {
+        Account = other.Account;
+      }
+      if (other.mailData_ != null) {
+        if (mailData_ == null) {
+          mailData_ = new global::PBase.PB_MailItem();
+        }
+        MailData.MergeFrom(other.MailData);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Account = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (mailData_ == null) {
+              mailData_ = new global::PBase.PB_MailItem();
+            }
+            input.ReadMessage(mailData_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// MsgId.MSG_PHP2CL_SENDMAIL                  = 2820    --GM发送邮件
+  /// </summary>
+  public sealed partial class S2C_GMSENDMAIL : pb::IMessage<S2C_GMSENDMAIL> {
+    private static readonly pb::MessageParser<S2C_GMSENDMAIL> _parser = new pb::MessageParser<S2C_GMSENDMAIL>(() => new S2C_GMSENDMAIL());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<S2C_GMSENDMAIL> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMSENDMAIL() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMSENDMAIL(S2C_GMSENDMAIL other) : this() {
+      ret_ = other.ret_;
+      mailId_ = other.mailId_;
+      account_ = other.account_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMSENDMAIL Clone() {
+      return new S2C_GMSENDMAIL(this);
+    }
+
+    /// <summary>Field number for the "ret" field.</summary>
+    public const int RetFieldNumber = 1;
+    private int ret_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Ret {
+      get { return ret_; }
+      set {
+        ret_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mailId" field.</summary>
+    public const int MailIdFieldNumber = 2;
+    private int mailId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MailId {
+      get { return mailId_; }
+      set {
+        mailId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 3;
+    private string account_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Account {
+      get { return account_; }
+      set {
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as S2C_GMSENDMAIL);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(S2C_GMSENDMAIL other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Ret != other.Ret) return false;
+      if (MailId != other.MailId) return false;
+      if (Account != other.Account) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Ret != 0) hash ^= Ret.GetHashCode();
+      if (MailId != 0) hash ^= MailId.GetHashCode();
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Ret != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Ret);
+      }
+      if (MailId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(MailId);
+      }
+      if (Account.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Account);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Ret != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Ret);
+      }
+      if (MailId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MailId);
+      }
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(S2C_GMSENDMAIL other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Ret != 0) {
+        Ret = other.Ret;
+      }
+      if (other.MailId != 0) {
+        MailId = other.MailId;
+      }
+      if (other.Account.Length != 0) {
+        Account = other.Account;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Ret = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            MailId = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            Account = input.ReadString();
             break;
           }
         }

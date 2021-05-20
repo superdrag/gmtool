@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using Net;
-using PBase;
 using PPhp;
 
 
@@ -41,7 +40,7 @@ public class LoginCtl
 
         if( _pb.Ret != 0 )
         {
-            Logger.Error("account or passwd fail! " + _pb.Acount);
+            Logger.Error("account or passwd fail! " + _pb.Account);
             return;
         }
 
@@ -75,7 +74,7 @@ public class LoginCtl
     {
         Logger.Log("send_msg_loginaccount ...........", GData.OpenId, GData.Unionid);
         C2S_GMLogin pb = new C2S_GMLogin();
-        pb.Acount = "admin";
+        pb.Account = "admin";
         pb.Passwd = "123456";
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMLOGINACCOUNT, pb);
     }

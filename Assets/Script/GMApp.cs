@@ -31,8 +31,6 @@ public class GMApp : MonoBehaviour {
     {
         Logger.Init(GFunc.AppLogPath());
     
-        GMsgCtl.Instance.MsgRegedit();   
-
         DontDestroyOnLoad(this);
         //DontDestroyOnLoad(Camera.main);
         //DontDestroyOnLoad(GameObject.Find("Directional Light"));
@@ -57,6 +55,7 @@ public class GMApp : MonoBehaviour {
 
     private void AllRigstMsgRegedit()
     {
+        GlobalCtl.Instance.MsgRegedit(); 
         LoginCtl.Instance.MsgRegedit();
     }
 

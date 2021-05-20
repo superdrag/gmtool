@@ -31,7 +31,7 @@ message S2C_GMLogin
     string account = 2;
 }
 
-//MsgId.MSG_CL2PHP_SENDMONEY                 = 1811    --GM直接发送货币
+//MsgId.MSG_CL2PHP_SENDMONEY                  = 1815    --GM直接发送货币
 message C2S_GMSendMoney
 {
     string account = 1;
@@ -39,7 +39,7 @@ message C2S_GMSendMoney
     int32 num = 3;
 }
 
-//MsgId.MSG_PHP2CL_SENDMONEY                 = 2811 
+//MsgId.MSG_PHP2CL_SENDMONEY                  = 2815    --GM直接发送货币
 message S2C_GMSendMoney
 {
     int32  ret = 1;
@@ -47,6 +47,7 @@ message S2C_GMSendMoney
     string type = 3;
     int32 num = 4;
 }
+
 
 // MsgId.MSG_CL2PHP_QUERYUSERINFO           = 1812    --GM查询玩家信息
 message C2S_GMQUERYUSERINFO
@@ -57,10 +58,25 @@ message C2S_GMQUERYUSERINFO
 message S2C_GMQUERYUSERINFO
 {
     string account = 1;
-    int accDbid = 2;
-    int diamond = 3;
-    int cash = 4;
-    int vipcard = 5;
-    int logintv = 6;
-    int offlinetv = 7;
+    int32 accDbid = 2;
+    int32 diamond = 3;
+    int32 cash = 4;
+    int32 vipcard = 5;
+    int32 logintv = 6;
+    int32 offlinetv = 7;
+}
+
+// MsgId.MSG_CL2PHP_SENDMAIL                   = 1820    --GM发送邮件
+message C2S_GMSENDMAIL
+{
+    string account = 1;
+    PBase.PB_MailItem mailData = 2;
+}
+
+// MsgId.MSG_PHP2CL_SENDMAIL                  = 2820    --GM发送邮件
+message S2C_GMSENDMAIL
+{
+    int32 ret = 1;
+    int32 mailId = 2;
+    string account = 3; 
 }
