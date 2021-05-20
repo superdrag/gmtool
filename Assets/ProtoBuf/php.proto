@@ -20,7 +20,7 @@ import "common.proto";
 //MsgId.MSG_CL2PHP_GMLOGINACCOUNT          = 1801    --GM账号登陆
 message C2S_GMLogin
 {
-    string acount = 1;
+    string account = 1;
     string passwd = 2;
 }
 
@@ -28,13 +28,13 @@ message C2S_GMLogin
 message S2C_GMLogin
 {
     int32 ret = 1;
-    string acount = 2;
+    string account = 2;
 }
 
 //MsgId.MSG_CL2PHP_SENDMONEY                 = 1811    --GM直接发送货币
 message C2S_GMSendMoney
 {
-    string acount = 1;
+    string account = 1;
     int32 type = 2;
     int32 num = 3;
 }
@@ -43,7 +43,24 @@ message C2S_GMSendMoney
 message S2C_GMSendMoney
 {
     int32  ret = 1;
-    string acount = 2;
+    string account = 2;
     string type = 3;
     int32 num = 4;
+}
+
+// MsgId.MSG_CL2PHP_QUERYUSERINFO           = 1812    --GM查询玩家信息
+message C2S_GMQUERYUSERINFO
+{
+    string account = 1;
+}
+// MsgId.MSG_PHP2CL_QUERYUSERINFO           = 2812    --GM查询玩家信息
+message S2C_GMQUERYUSERINFO
+{
+    string account = 1;
+    int accDbid = 2;
+    int diamond = 3;
+    int cash = 4;
+    int vipcard = 5;
+    int logintv = 6;
+    int offlinetv = 7;
 }
