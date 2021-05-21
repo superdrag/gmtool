@@ -43,6 +43,7 @@ public class GMApp : MonoBehaviour {
         Timer.Instance.Init();
         NetMgr.Init();//消息处理相关类
         ResMgr.Instance.Init();
+        GlobalModel.Instance.Init();
         AllRigstMsgRegedit();
         UIMgr.Init(); 
         OnInitFinish();       

@@ -2,6 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class QueryUserData
+{
+    public string account;
+    public int accDbid;
+    public int diamond;
+    public int cash;
+    public int vipcard;
+    public int logintv;
+    public int offlinetv;
+}
+
+
 public class GlobalModel {
 
 
@@ -24,9 +36,9 @@ public class GlobalModel {
     public int LoginGatePort;
     public int LoginSign;
     public int LoginGateTime;
+    public static QueryUserData queryUserData = new QueryUserData();
 
-
-    public void GetShuju()
+    public void Init()
     {
         
     }

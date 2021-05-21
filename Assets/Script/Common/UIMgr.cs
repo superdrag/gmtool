@@ -134,6 +134,32 @@ public static class UIMgr
         view.IsShow = true;              
     }    
 
+    public static void RefreshUI(VIEWID viewId)
+    {        
+        View view = GetUI(viewId);
+        if(view == null)
+        {
+            Debug.LogError("RefreshUI no find view:" + viewId);
+            return;            
+        }
+
+        if(!view.IsCreateGo || view.ViewRoot == null)
+        {          
+            Debug.LogError("RefreshUI No CreateGo :" + viewId);
+            return;
+        }
+      
+        // if(!view.IsShow)
+        // {                 
+        //     Debug.Log( "ShowUI No Show:" + viewId );    
+        //     return;                                                
+        // }
+
+        Logger.Log("View RefreshUI:",viewId);
+        view.OnShow();             
+    }    
+
+
     public static void HideUI(VIEWID viewId)
     {
         View view = GetUI(viewId);

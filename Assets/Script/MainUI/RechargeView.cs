@@ -68,7 +68,13 @@ public class RechargeView : View
 
     override public void OnShow()
     {
-        
+        zhanghaoData.text = GlobalModel.queryUserData.account;
+        idData.text = GlobalModel.queryUserData.accDbid.ToString();
+        zhuanshiData.text = GlobalModel.queryUserData.diamond.ToString();
+        chaopiaoData.text = GlobalModel.queryUserData.cash.ToString();
+        vipData.text = GlobalModel.queryUserData.vipcard.ToString();
+        dengluData.text = GlobalModel.queryUserData.logintv.ToString();
+        lixianData.text = GlobalModel.queryUserData.offlinetv.ToString();
     }
 
     private void onClickCha()

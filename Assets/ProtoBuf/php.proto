@@ -44,7 +44,7 @@ message S2C_GMSendMoney
 {
     int32  ret = 1;
     string account = 2;
-    string type = 3;
+    int32 type = 3;
     int32 num = 4;
 }
 
@@ -58,7 +58,7 @@ message C2S_GMQUERYUSERINFO
 message S2C_GMQUERYUSERINFO
 {
     string account = 1;
-    int32 accDbid = 2;
+    int32 accdbid = 2;
     int32 diamond = 3;
     int32 cash = 4;
     int32 vipcard = 5;

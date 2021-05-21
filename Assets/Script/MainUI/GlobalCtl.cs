@@ -43,11 +43,25 @@ public class GlobalCtl
     public void MSG_PHP2CL_QUERYUSERINFO(MsgPack msg)
     {        
         S2C_GMQUERYUSERINFO _pb = msg.UnpackProtoBuf<S2C_GMQUERYUSERINFO>( new S2C_GMQUERYUSERINFO() );
+
+        GlobalModel.queryUserData.account = _pb.Account;
+        GlobalModel.queryUserData.accDbid = _pb.Accdbid;
+        GlobalModel.queryUserData.logintv = _pb.Logintv;
+        GlobalModel.queryUserData.offlinetv = _pb.Offlinetv;
+        GlobalModel.queryUserData.cash = _pb.Cash;
+        GlobalModel.queryUserData.diamond = _pb.Diamond;
+        GlobalModel.queryUserData.vipcard = _pb.Vipcard;
+        UIMgr.RefreshUI(VIEWID.Recharge);
     }
 
     public void MSG_PHP2CL_SENDMONEY(MsgPack msg)
     {        
         S2C_GMSendMoney _pb = msg.UnpackProtoBuf<S2C_GMSendMoney>( new S2C_GMSendMoney() );
+        if( _pb.Ret != 0 )
+        {
+            return;
+        }
+        Logger.Log("MSG_PHP2CL_SENDMONEY "+_pb.Account);
     }    
 
 

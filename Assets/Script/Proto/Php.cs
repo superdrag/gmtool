@@ -29,9 +29,9 @@ namespace PPhp {
             "b2dpbhILCgNyZXQYASABKAUSDwoHYWNjb3VudBgCIAEoCSI9Cg9DMlNfR01T",
             "ZW5kTW9uZXkSDwoHYWNjb3VudBgBIAEoCRIMCgR0eXBlGAIgASgFEgsKA251",
             "bRgDIAEoBSJKCg9TMkNfR01TZW5kTW9uZXkSCwoDcmV0GAEgASgFEg8KB2Fj",
-            "Y291bnQYAiABKAkSDAoEdHlwZRgDIAEoCRILCgNudW0YBCABKAUiJgoTQzJT",
+            "Y291bnQYAiABKAkSDAoEdHlwZRgDIAEoBRILCgNudW0YBCABKAUiJgoTQzJT",
             "X0dNUVVFUllVU0VSSU5GTxIPCgdhY2NvdW50GAEgASgJIosBChNTMkNfR01R",
-            "VUVSWVVTRVJJTkZPEg8KB2FjY291bnQYASABKAkSDwoHYWNjRGJpZBgCIAEo",
+            "VUVSWVVTRVJJTkZPEg8KB2FjY291bnQYASABKAkSDwoHYWNjZGJpZBgCIAEo",
             "BRIPCgdkaWFtb25kGAMgASgFEgwKBGNhc2gYBCABKAUSDwoHdmlwY2FyZBgF",
             "IAEoBRIPCgdsb2dpbnR2GAYgASgFEhEKCW9mZmxpbmV0dhgHIAEoBSJHCg5D",
             "MlNfR01TRU5ETUFJTBIPCgdhY2NvdW50GAEgASgJEiQKCG1haWxEYXRhGAIg",
@@ -46,7 +46,7 @@ namespace PPhp {
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMSendMoney), global::PPhp.C2S_GMSendMoney.Parser, new[]{ "Account", "Type", "Num" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMSendMoney), global::PPhp.S2C_GMSendMoney.Parser, new[]{ "Ret", "Account", "Type", "Num" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQUERYUSERINFO), global::PPhp.C2S_GMQUERYUSERINFO.Parser, new[]{ "Account" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQUERYUSERINFO), global::PPhp.S2C_GMQUERYUSERINFO.Parser, new[]{ "Account", "AccDbid", "Diamond", "Cash", "Vipcard", "Logintv", "Offlinetv" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQUERYUSERINFO), global::PPhp.S2C_GMQUERYUSERINFO.Parser, new[]{ "Account", "Accdbid", "Diamond", "Cash", "Vipcard", "Logintv", "Offlinetv" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMSENDMAIL), global::PPhp.C2S_GMSENDMAIL.Parser, new[]{ "Account", "MailData" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMSENDMAIL), global::PPhp.S2C_GMSENDMAIL.Parser, new[]{ "Ret", "MailId", "Account" }, null, null, null)
           }));
@@ -627,12 +627,12 @@ namespace PPhp {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 3;
-    private string type_ = "";
+    private int type_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Type {
+    public int Type {
       get { return type_; }
       set {
-        type_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        type_ = value;
       }
     }
 
@@ -672,7 +672,7 @@ namespace PPhp {
       int hash = 1;
       if (Ret != 0) hash ^= Ret.GetHashCode();
       if (Account.Length != 0) hash ^= Account.GetHashCode();
-      if (Type.Length != 0) hash ^= Type.GetHashCode();
+      if (Type != 0) hash ^= Type.GetHashCode();
       if (Num != 0) hash ^= Num.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -695,9 +695,9 @@ namespace PPhp {
         output.WriteRawTag(18);
         output.WriteString(Account);
       }
-      if (Type.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Type);
+      if (Type != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Type);
       }
       if (Num != 0) {
         output.WriteRawTag(32);
@@ -717,8 +717,8 @@ namespace PPhp {
       if (Account.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
       }
-      if (Type.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Type);
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
       }
       if (Num != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Num);
@@ -740,7 +740,7 @@ namespace PPhp {
       if (other.Account.Length != 0) {
         Account = other.Account;
       }
-      if (other.Type.Length != 0) {
+      if (other.Type != 0) {
         Type = other.Type;
       }
       if (other.Num != 0) {
@@ -765,8 +765,8 @@ namespace PPhp {
             Account = input.ReadString();
             break;
           }
-          case 26: {
-            Type = input.ReadString();
+          case 24: {
+            Type = input.ReadInt32();
             break;
           }
           case 32: {
@@ -940,7 +940,7 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public S2C_GMQUERYUSERINFO(S2C_GMQUERYUSERINFO other) : this() {
       account_ = other.account_;
-      accDbid_ = other.accDbid_;
+      accdbid_ = other.accdbid_;
       diamond_ = other.diamond_;
       cash_ = other.cash_;
       vipcard_ = other.vipcard_;
@@ -965,14 +965,14 @@ namespace PPhp {
       }
     }
 
-    /// <summary>Field number for the "accDbid" field.</summary>
-    public const int AccDbidFieldNumber = 2;
-    private int accDbid_;
+    /// <summary>Field number for the "accdbid" field.</summary>
+    public const int AccdbidFieldNumber = 2;
+    private int accdbid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int AccDbid {
-      get { return accDbid_; }
+    public int Accdbid {
+      get { return accdbid_; }
       set {
-        accDbid_ = value;
+        accdbid_ = value;
       }
     }
 
@@ -1045,7 +1045,7 @@ namespace PPhp {
         return true;
       }
       if (Account != other.Account) return false;
-      if (AccDbid != other.AccDbid) return false;
+      if (Accdbid != other.Accdbid) return false;
       if (Diamond != other.Diamond) return false;
       if (Cash != other.Cash) return false;
       if (Vipcard != other.Vipcard) return false;
@@ -1058,7 +1058,7 @@ namespace PPhp {
     public override int GetHashCode() {
       int hash = 1;
       if (Account.Length != 0) hash ^= Account.GetHashCode();
-      if (AccDbid != 0) hash ^= AccDbid.GetHashCode();
+      if (Accdbid != 0) hash ^= Accdbid.GetHashCode();
       if (Diamond != 0) hash ^= Diamond.GetHashCode();
       if (Cash != 0) hash ^= Cash.GetHashCode();
       if (Vipcard != 0) hash ^= Vipcard.GetHashCode();
@@ -1081,9 +1081,9 @@ namespace PPhp {
         output.WriteRawTag(10);
         output.WriteString(Account);
       }
-      if (AccDbid != 0) {
+      if (Accdbid != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(AccDbid);
+        output.WriteInt32(Accdbid);
       }
       if (Diamond != 0) {
         output.WriteRawTag(24);
@@ -1116,8 +1116,8 @@ namespace PPhp {
       if (Account.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
       }
-      if (AccDbid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AccDbid);
+      if (Accdbid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Accdbid);
       }
       if (Diamond != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Diamond);
@@ -1148,8 +1148,8 @@ namespace PPhp {
       if (other.Account.Length != 0) {
         Account = other.Account;
       }
-      if (other.AccDbid != 0) {
-        AccDbid = other.AccDbid;
+      if (other.Accdbid != 0) {
+        Accdbid = other.Accdbid;
       }
       if (other.Diamond != 0) {
         Diamond = other.Diamond;
@@ -1182,7 +1182,7 @@ namespace PPhp {
             break;
           }
           case 16: {
-            AccDbid = input.ReadInt32();
+            Accdbid = input.ReadInt32();
             break;
           }
           case 24: {
