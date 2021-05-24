@@ -8,15 +8,17 @@ using Net;
 
 public class MenuView : View
 {
-    private Button loginBtn;
-    private GameObject SeverBtmList;
-    private Transform SeverContent;
-
     private static MenuView ins = null;
 
     private Button chongzhiBtn;
     private Button hexinBtn;
     private Button youjianBtn;
+
+    private Button daidingBtn1;
+    private Button daidingBtn2;
+    private Button daidingBtn3;
+
+    private List<Button> btnList = new List<Button>();
 
     int curIndex;
 
@@ -46,9 +48,23 @@ public class MenuView : View
         hexinBtn = viewRoot.Find("hexin").GetComponent<Button>();
         youjianBtn = viewRoot.Find("youjian").GetComponent<Button>();
 
-        chongzhiBtn.onClick.AddListener(OnBtnClick);
-        //hexinBtn.onClick.AddListener(OnBtnClick);
-        //youjianBtn.onClick.AddListener(OnBtnClick);
+        daidingBtn1 = viewRoot.Find("daiding1").GetComponent<Button>();
+        daidingBtn2 = viewRoot.Find("daiding2").GetComponent<Button>();
+        daidingBtn3 = viewRoot.Find("daiding3").GetComponent<Button>();
+
+        EventTriggerListener.Get(chongzhiBtn.gameObject).onClick = OnBtnEvent;
+        EventTriggerListener.Get(hexinBtn.gameObject).onClick = OnBtnEvent;
+        EventTriggerListener.Get(youjianBtn.gameObject).onClick = OnBtnEvent;
+        EventTriggerListener.Get(daidingBtn1.gameObject).onClick = OnBtnEvent;
+        EventTriggerListener.Get(daidingBtn2.gameObject).onClick = OnBtnEvent;
+        EventTriggerListener.Get(daidingBtn3.gameObject).onClick = OnBtnEvent;
+
+        btnList.Add(chongzhiBtn);
+        btnList.Add(hexinBtn);
+        btnList.Add(youjianBtn);
+        btnList.Add(daidingBtn1);
+        btnList.Add(daidingBtn2);
+        btnList.Add(daidingBtn3);
 
         curIndex = 1;
     }
@@ -61,24 +77,20 @@ public class MenuView : View
         }
     }
 
-    private void OnBtnClick()
-    {    
-        Logger.Log("BtnLogin click..........");
-        //ViewRoot.SetActive(false);     
+    private void OnBtnEvent(GameObject go)
+    {
+        Logger.Log("OnBtnEvent click.........."+go.name);
+        
+        //Image  
+        foreach (var item in btnList)
+        {
+            Image img = item.gameObject.transform.GetComponent<Image>();
+            UIHelper.SetColor(img,"255/255/255/255");
+        }
+        UIHelper.SetColor(go.GetComponent<Image>(),"0/167/255/255");
 
-        // if(GData.ReleaseMode == true)
-        // {
-        //     NotifyObserver(NOTICE_ID.LOGIN_VIEW_GUEST,"39.100.205.143",9101,"qpjob");
-        // }
-        // else 
-        // {
-        //     if(ipInput.text == "") ipInput.text = "192.168.0.189";
-        //     if(portInput.text == "") portInput.text = "9101";
-        //     if(accountInput.text == "") accountInput.text = "unityClient";
-
-        //     NotifyObserver(NOTICE_ID.LOGIN_VIEW_GUEST,ipInput.text,portInput.text,accountInput.text);
-        // }
     }
+
  
 
 }

@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ada162f56be038746bb8651bb2f73672, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 1969576300796546090}
   - component: {fileID: 3475806007825295844}
   m_Layer: 5
-  m_Name: Button
+  m_Name: daiding1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: 568400836775326325}
   - component: {fileID: 3761547321787762114}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: daiding2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1111,7 +1111,7 @@ GameObject:
   - component: {fileID: 8076536820934813157}
   - component: {fileID: 1069392509912011036}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: daiding3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

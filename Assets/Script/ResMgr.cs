@@ -100,7 +100,7 @@ public class ResMgr
         T t = Resources.Load<T>(resPath);
         if(t == null)
         {
-            Debug.LogError("LoadRes..........null" + resPath);
+            Debug.LogError("LoadRes..........null " + resPath);
         }         
         return t;
     }

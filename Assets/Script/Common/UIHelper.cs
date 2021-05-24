@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
+using System.Globalization;
 
 /// <summary>
 ///     UI管理器
@@ -72,7 +73,7 @@ public class UIHelper
         return _go;
     }
 
-    public static Transform FindGo(Transform go, string path)  
+    public static Transform FindTF(Transform go, string path)  
     {
         Transform tf = go.Find(path.Trim());
         if (tf == null)
@@ -85,7 +86,7 @@ public class UIHelper
 
     public static TT GetComponent<TT>(Transform go, string path) where TT : Component 
     {
-        Transform _go = FindGo(go, path.Trim());
+        Transform _go = FindTF(go, path.Trim());
         if (_go == null)
         {
             Logger.Error("Error GetComponentTT Find ",path);
@@ -93,5 +94,36 @@ public class UIHelper
         }
         return (TT)_go.GetComponent<TT>();
     }
+
+    public static void SetSprite(Image image, string path)
+    {
+        if (image == null)
+        {
+            Logger.Error("Image = null path="+path);
+            return;
+        }
+
+        if (string.IsNullOrEmpty(path)) {
+            image.sprite = null;
+            Logger.Error("sprite Path = null ");
+            return;
+        }
+
+        Texture2D tt = ResMgr.LoadRes<Texture2D>(path);
+        Sprite sprite = Sprite.Create(tt, new Rect(0, 0, tt.width, tt.height), Vector2.zero);
+        image.sprite = sprite;
+    }  
     
+    public static void SetColor(Image image, string colorString)
+    {
+        string[] colors = colorString.Split('/');
+        image.color = new Color32(Byte.Parse(colors[0]),Byte.Parse(colors[1]),Byte.Parse(colors[2]),Byte.Parse(colors[3]));        
+    }
+
+    public static void SetColor(Text text, string colorString)
+    {
+        string[] colors = colorString.Split('/');
+        text.color = new Color32(Byte.Parse(colors[0]),Byte.Parse(colors[1]),Byte.Parse(colors[2]),Byte.Parse(colors[3]));  
+    }
+
 }
