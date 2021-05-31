@@ -44,6 +44,13 @@ public class GlobalCtl
     {        
         S2C_GMQUERYUSERINFO _pb = msg.UnpackProtoBuf<S2C_GMQUERYUSERINFO>( new S2C_GMQUERYUSERINFO() );
 
+        if(_pb.Ret != 0)
+        {
+            GlobalModel.alertInfoData = "找不到用户信息";
+            UIMgr.ShowUI(VIEWID.ALERTINFO);
+            return;
+        }
+
         GlobalModel.queryUserData.account = _pb.Account;
         GlobalModel.queryUserData.accDbid = _pb.Accdbid;
         GlobalModel.queryUserData.logintv = _pb.Logintv;
@@ -59,8 +66,13 @@ public class GlobalCtl
         S2C_GMSendMoney _pb = msg.UnpackProtoBuf<S2C_GMSendMoney>( new S2C_GMSendMoney() );
         if( _pb.Ret != 0 )
         {
+            GlobalModel.alertInfoData = "充值失败";
+            UIMgr.ShowUI(VIEWID.ALERTINFO);
             return;
         }
+
+        GlobalModel.alertInfoData = "充值成功";
+        UIMgr.ShowUI(VIEWID.ALERTINFO);        
         Logger.Log("MSG_PHP2CL_SENDMONEY "+_pb.Account);
     }    
 

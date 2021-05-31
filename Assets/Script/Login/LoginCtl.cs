@@ -61,7 +61,7 @@ public class LoginCtl
         if (ret == 0)
         {
             Logger.Log("connect login OK ");
-            send_msg_loginaccount();
+            send_msg_loginaccount(LoginView.Instance.zhanghaoIF.text,LoginView.Instance.mimaIF.text);
         }
         else
         {
@@ -70,12 +70,12 @@ public class LoginCtl
         }
     }
 
-    private void send_msg_loginaccount()
+    private void send_msg_loginaccount(string account, string passwd)
     {
         Logger.Log("send_msg_loginaccount ...........", GData.OpenId, GData.Unionid);
         C2S_GMLogin pb = new C2S_GMLogin();
-        pb.Account = "admin";
-        pb.Passwd = "123456";
+        pb.Account = account;
+        pb.Passwd = passwd;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMLOGINACCOUNT, pb);
     }
 

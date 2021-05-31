@@ -12,6 +12,9 @@ public class LoginView : View
     private GameObject SeverBtmList;
     private Transform SeverContent;
 
+    public InputField zhanghaoIF;
+    public InputField mimaIF;
+
     private static LoginView ins = null;
 
     public static LoginView Instance
@@ -34,13 +37,22 @@ public class LoginView : View
     override public void OnCreateGo()
     {        
         viewRoot = ResMgr.CreateGo("Prefab/Login/LoginView").transform;
-        UIHelper.AddChild(UIMgr.UIMain, viewRoot);
+        UIHelper.AddChild(UIMgr.UIBG, viewRoot);
 
         SeverContent = viewRoot.transform.Find("bg/serverList/Viewport/Content");
+
+        SeverContent = viewRoot.transform.Find("bg/serverList/Viewport/Content");
+
+        zhanghaoIF = viewRoot.transform.Find("bg/account/InputField").GetComponent<InputField>();
+
+        mimaIF = viewRoot.transform.Find("bg/passwd/InputField").GetComponent<InputField>();
+
     }
 
     override public void OnShow()
     {
+        zhanghaoIF.text = "admin";
+        mimaIF.text = "123456";
         foreach (var item in AppConfig.ServerList)
         {
             ServerItem serverItem = new ServerItem();

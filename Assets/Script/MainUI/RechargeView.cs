@@ -80,11 +80,33 @@ public class RechargeView : View
     private void onClickCha()
     {
         Logger.Log("onClickCha ...........");
+
+        if( string.IsNullOrEmpty(zhanghaoText.text) )
+        {
+            GlobalModel.alertInfoData = "账号不能为空";
+            UIMgr.ShowUI(VIEWID.ALERTINFO);
+            return;
+        }
+
         GlobalCtl.MSG_CL2PHP_QUERYUSERINFO(zhanghaoText.text);
     }
 
     private void onClickChong()
     {
-        GlobalCtl.MSG_CL2PHP_SENDMONEY(zhanghaoData.text,1,int.Parse(shuliangText.text));
+        if( string.IsNullOrEmpty(zhanghaoText.text) )
+        {
+            GlobalModel.alertInfoData = "账号不能为空";
+            UIMgr.ShowUI(VIEWID.ALERTINFO);
+            return;
+        }
+
+        if( string.IsNullOrEmpty(shuliangText.text) )
+        {
+            GlobalModel.alertInfoData = "数量不能为空";
+            UIMgr.ShowUI(VIEWID.ALERTINFO);
+            return;
+        }
+
+        GlobalCtl.MSG_CL2PHP_SENDMONEY(zhanghaoText.text,1,int.Parse(shuliangText.text));
     }
 }

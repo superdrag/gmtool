@@ -7,12 +7,14 @@ using UnityEngine.UI;
 public enum VIEWID
 {
     //-------------------------------
-    DIALOG_ALERT = 1,
+    ALERTINFO = 1,
+    BLANK = 2,
     //-------------------------------
     LOGIN   = 11, 
     //-------------------------------
     MENU = 21,
     Recharge = 31,
+    Mail = 32,
     //-------------------------------
 }
 
@@ -21,6 +23,7 @@ public static class UIMgr
     private static Transform uiRoot;
     private static Transform uiBG; 
     private static Transform uiMain;
+    private static Transform uiMenu;
     private static Transform uiPop;
     private static Transform mask;
     private static Dictionary<VIEWID, View> viewDict;
@@ -31,13 +34,15 @@ public static class UIMgr
     public static void InitReg()
     {
         //COMMON        
-        RegisterUI(VIEWID.DIALOG_ALERT,AlertMsgView.Instance);
+        RegisterUI(VIEWID.ALERTINFO,AlertInfoView.Instance);
+        RegisterUI(VIEWID.BLANK,BlankView.Instance);
         //LOGIN
         RegisterUI(VIEWID.LOGIN,LoginView.Instance);
 
         RegisterUI(VIEWID.MENU,MenuView.Instance);   
          
         RegisterUI(VIEWID.Recharge,RechargeView.Instance);    
+        RegisterUI(VIEWID.Mail,MailView.Instance);
     }    
 
     public static void Init()
@@ -46,6 +51,7 @@ public static class UIMgr
         uiRoot = GameObject.Find("UICanvas").transform;
         uiBG = GameObject.Find("UICanvas/UIBG").transform;
         uiMain = GameObject.Find("UICanvas/UIMain").transform;        
+        uiMenu = GameObject.Find("UICanvas/UIMenu").transform;  
         uiPop = GameObject.Find("UICanvas/UIPop").transform;
 
         // mask = GameObject.Find("UIRoot/Mask").transform;
@@ -65,6 +71,7 @@ public static class UIMgr
     public static Transform UIRoot { get { return uiRoot; } }
     public static Transform UIBG { get { return uiBG; } }
     public static Transform UIMain { get { return uiMain; } }
+    public static Transform UIMenu { get { return uiMenu; } }
     public static Transform UIPop { get { return uiPop; } }
 
     public static void InitAllUI()

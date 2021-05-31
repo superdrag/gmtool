@@ -42,7 +42,7 @@ public class MenuView : View
     override public void OnCreateGo()
     {        
         viewRoot = ResMgr.CreateGo("Prefab/MenuView").transform;
-        UIHelper.AddChild(UIMgr.UIMain, viewRoot);  
+        UIHelper.AddChild(UIMgr.UIMenu, viewRoot);  
 
         chongzhiBtn = viewRoot.Find("chongzhi").GetComponent<Button>();  
         hexinBtn = viewRoot.Find("hexin").GetComponent<Button>();
@@ -73,22 +73,61 @@ public class MenuView : View
     {
         if( this.curIndex == 1 )
         {
+            UIMgr.HideUI(VIEWID.BLANK);
+            //UIMgr.HideUI(VIEWID.Mail);
             UIMgr.ShowUI(VIEWID.Recharge);
         }
+        // if( this.curIndex == 2 )
+        // {
+        //     UIMgr.HideUI(VIEWID.BLANK);
+        //     UIMgr.HideUI(VIEWID.Recharge);
+        //     //UIMgr.ShowUI(VIEWID.Mail);
+        // }        
+        else
+        {
+            //UIMgr.HideUI(VIEWID.Mail);
+            UIMgr.HideUI(VIEWID.Recharge);
+            UIMgr.ShowUI(VIEWID.BLANK);
+        }
+
+        foreach (var item in btnList)
+        {
+            Image img = item.GetComponent<Image>();
+            UIHelper.SetColor(img,"255/255/255/255");
+        }
+        UIHelper.SetColor(btnList[this.curIndex-1].GetComponent<Image>(),"0/167/255/255");
+
     }
 
     private void OnBtnEvent(GameObject go)
     {
         Logger.Log("OnBtnEvent click.........."+go.name);
         
-        //Image  
-        foreach (var item in btnList)
+        if( go.name == "chongzhi" )
         {
-            Image img = item.gameObject.transform.GetComponent<Image>();
-            UIHelper.SetColor(img,"255/255/255/255");
+            curIndex = 1;
         }
-        UIHelper.SetColor(go.GetComponent<Image>(),"0/167/255/255");
-
+        else if( go.name == "youjian" )
+        {
+            curIndex = 2;                
+        }        
+        else if( go.name == "hexin" )
+        {
+            curIndex = 3;
+        }
+        else if( go.name == "daiding1" )
+        {
+            curIndex = 4;   
+        }
+        else if( go.name == "daiding2" )
+        {
+            curIndex = 5; 
+        }
+        else if( go.name == "daiding3" )
+        {
+            curIndex = 6; 
+        }   
+        UIMgr.RefreshUI(VIEWID.MENU);           
     }
 
  

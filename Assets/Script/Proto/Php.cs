@@ -30,14 +30,14 @@ namespace PPhp {
             "ZW5kTW9uZXkSDwoHYWNjb3VudBgBIAEoCRIMCgR0eXBlGAIgASgFEgsKA251",
             "bRgDIAEoBSJKCg9TMkNfR01TZW5kTW9uZXkSCwoDcmV0GAEgASgFEg8KB2Fj",
             "Y291bnQYAiABKAkSDAoEdHlwZRgDIAEoBRILCgNudW0YBCABKAUiJgoTQzJT",
-            "X0dNUVVFUllVU0VSSU5GTxIPCgdhY2NvdW50GAEgASgJIosBChNTMkNfR01R",
-            "VUVSWVVTRVJJTkZPEg8KB2FjY291bnQYASABKAkSDwoHYWNjZGJpZBgCIAEo",
-            "BRIPCgdkaWFtb25kGAMgASgFEgwKBGNhc2gYBCABKAUSDwoHdmlwY2FyZBgF",
-            "IAEoBRIPCgdsb2dpbnR2GAYgASgFEhEKCW9mZmxpbmV0dhgHIAEoBSJHCg5D",
-            "MlNfR01TRU5ETUFJTBIPCgdhY2NvdW50GAEgASgJEiQKCG1haWxEYXRhGAIg",
-            "ASgLMhIuUEJhc2UuUEJfTWFpbEl0ZW0iPgoOUzJDX0dNU0VORE1BSUwSCwoD",
-            "cmV0GAEgASgFEg4KBm1haWxJZBgCIAEoBRIPCgdhY2NvdW50GAMgASgJYgZw",
-            "cm90bzM="));
+            "X0dNUVVFUllVU0VSSU5GTxIPCgdhY2NvdW50GAEgASgJIpgBChNTMkNfR01R",
+            "VUVSWVVTRVJJTkZPEgsKA3JldBgBIAEoBRIPCgdhY2NvdW50GAIgASgJEg8K",
+            "B2FjY2RiaWQYAyABKAUSDwoHZGlhbW9uZBgEIAEoBRIMCgRjYXNoGAUgASgF",
+            "Eg8KB3ZpcGNhcmQYBiABKAUSDwoHbG9naW50dhgHIAEoBRIRCglvZmZsaW5l",
+            "dHYYCCABKAUiRwoOQzJTX0dNU0VORE1BSUwSDwoHYWNjb3VudBgBIAEoCRIk",
+            "CghtYWlsRGF0YRgCIAEoCzISLlBCYXNlLlBCX01haWxJdGVtIj4KDlMyQ19H",
+            "TVNFTkRNQUlMEgsKA3JldBgBIAEoBRIOCgZtYWlsSWQYAiABKAUSDwoHYWNj",
+            "b3VudBgDIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::PBase.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -46,7 +46,7 @@ namespace PPhp {
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMSendMoney), global::PPhp.C2S_GMSendMoney.Parser, new[]{ "Account", "Type", "Num" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMSendMoney), global::PPhp.S2C_GMSendMoney.Parser, new[]{ "Ret", "Account", "Type", "Num" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQUERYUSERINFO), global::PPhp.C2S_GMQUERYUSERINFO.Parser, new[]{ "Account" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQUERYUSERINFO), global::PPhp.S2C_GMQUERYUSERINFO.Parser, new[]{ "Account", "Accdbid", "Diamond", "Cash", "Vipcard", "Logintv", "Offlinetv" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQUERYUSERINFO), global::PPhp.S2C_GMQUERYUSERINFO.Parser, new[]{ "Ret", "Account", "Accdbid", "Diamond", "Cash", "Vipcard", "Logintv", "Offlinetv" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMSENDMAIL), global::PPhp.C2S_GMSENDMAIL.Parser, new[]{ "Account", "MailData" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMSENDMAIL), global::PPhp.S2C_GMSENDMAIL.Parser, new[]{ "Ret", "MailId", "Account" }, null, null, null)
           }));
@@ -939,6 +939,7 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public S2C_GMQUERYUSERINFO(S2C_GMQUERYUSERINFO other) : this() {
+      ret_ = other.ret_;
       account_ = other.account_;
       accdbid_ = other.accdbid_;
       diamond_ = other.diamond_;
@@ -954,8 +955,19 @@ namespace PPhp {
       return new S2C_GMQUERYUSERINFO(this);
     }
 
+    /// <summary>Field number for the "ret" field.</summary>
+    public const int RetFieldNumber = 1;
+    private int ret_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Ret {
+      get { return ret_; }
+      set {
+        ret_ = value;
+      }
+    }
+
     /// <summary>Field number for the "account" field.</summary>
-    public const int AccountFieldNumber = 1;
+    public const int AccountFieldNumber = 2;
     private string account_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Account {
@@ -966,7 +978,7 @@ namespace PPhp {
     }
 
     /// <summary>Field number for the "accdbid" field.</summary>
-    public const int AccdbidFieldNumber = 2;
+    public const int AccdbidFieldNumber = 3;
     private int accdbid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Accdbid {
@@ -977,7 +989,7 @@ namespace PPhp {
     }
 
     /// <summary>Field number for the "diamond" field.</summary>
-    public const int DiamondFieldNumber = 3;
+    public const int DiamondFieldNumber = 4;
     private int diamond_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Diamond {
@@ -988,7 +1000,7 @@ namespace PPhp {
     }
 
     /// <summary>Field number for the "cash" field.</summary>
-    public const int CashFieldNumber = 4;
+    public const int CashFieldNumber = 5;
     private int cash_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Cash {
@@ -999,7 +1011,7 @@ namespace PPhp {
     }
 
     /// <summary>Field number for the "vipcard" field.</summary>
-    public const int VipcardFieldNumber = 5;
+    public const int VipcardFieldNumber = 6;
     private int vipcard_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Vipcard {
@@ -1010,7 +1022,7 @@ namespace PPhp {
     }
 
     /// <summary>Field number for the "logintv" field.</summary>
-    public const int LogintvFieldNumber = 6;
+    public const int LogintvFieldNumber = 7;
     private int logintv_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Logintv {
@@ -1021,7 +1033,7 @@ namespace PPhp {
     }
 
     /// <summary>Field number for the "offlinetv" field.</summary>
-    public const int OfflinetvFieldNumber = 7;
+    public const int OfflinetvFieldNumber = 8;
     private int offlinetv_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Offlinetv {
@@ -1044,6 +1056,7 @@ namespace PPhp {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Ret != other.Ret) return false;
       if (Account != other.Account) return false;
       if (Accdbid != other.Accdbid) return false;
       if (Diamond != other.Diamond) return false;
@@ -1057,6 +1070,7 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (Ret != 0) hash ^= Ret.GetHashCode();
       if (Account.Length != 0) hash ^= Account.GetHashCode();
       if (Accdbid != 0) hash ^= Accdbid.GetHashCode();
       if (Diamond != 0) hash ^= Diamond.GetHashCode();
@@ -1077,32 +1091,36 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      if (Ret != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Ret);
+      }
       if (Account.Length != 0) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(18);
         output.WriteString(Account);
       }
       if (Accdbid != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteInt32(Accdbid);
       }
       if (Diamond != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteInt32(Diamond);
       }
       if (Cash != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteInt32(Cash);
       }
       if (Vipcard != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteInt32(Vipcard);
       }
       if (Logintv != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteInt32(Logintv);
       }
       if (Offlinetv != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteInt32(Offlinetv);
       }
       if (_unknownFields != null) {
@@ -1113,6 +1131,9 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (Ret != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Ret);
+      }
       if (Account.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
       }
@@ -1144,6 +1165,9 @@ namespace PPhp {
     public void MergeFrom(S2C_GMQUERYUSERINFO other) {
       if (other == null) {
         return;
+      }
+      if (other.Ret != 0) {
+        Ret = other.Ret;
       }
       if (other.Account.Length != 0) {
         Account = other.Account;
@@ -1177,31 +1201,35 @@ namespace PPhp {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 8: {
+            Ret = input.ReadInt32();
+            break;
+          }
+          case 18: {
             Account = input.ReadString();
             break;
           }
-          case 16: {
+          case 24: {
             Accdbid = input.ReadInt32();
             break;
           }
-          case 24: {
+          case 32: {
             Diamond = input.ReadInt32();
             break;
           }
-          case 32: {
+          case 40: {
             Cash = input.ReadInt32();
             break;
           }
-          case 40: {
+          case 48: {
             Vipcard = input.ReadInt32();
             break;
           }
-          case 48: {
+          case 56: {
             Logintv = input.ReadInt32();
             break;
           }
-          case 56: {
+          case 64: {
             Offlinetv = input.ReadInt32();
             break;
           }

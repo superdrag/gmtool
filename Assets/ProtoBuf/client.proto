@@ -1,0 +1,324 @@
+syntax = "proto3";
+
+package PClient;
+
+import "common.proto";
+
+// ***********************************  Stuct Start ***********************************
+// ***********************************  Stuct End ***********************************
+
+
+
+
+
+
+// ***********************************  MSG Start ***********************************
+
+
+
+//----------------------------- common ---------------------
+
+
+  
+//准备关闭服务器
+message S2C_ShutDwon
+{
+    int32 leftsec = 1; //倒计时秒
+}
+
+//你的帐号在另外设备登录，被踢下线
+message S2C_ReloginKick
+{
+
+}
+
+//----------------------------- login ---------------------
+
+//MSG_CL2LN_LOGINACCOUNT          = 1011,     //账号登陆
+message C2S_Login
+{
+    string account = 1;//微信openid
+    string passwd = 2;//用户密码
+    string version = 3; //版本号
+    string headicon = 4;//用户头像Url
+    int32 guest = 5;    //游客
+}
+
+//MSG_LN2CL_GATEIPANDPORT         = 2011,     //成功登陆返回gate链接信息
+message S2C_Login
+{
+    string account = 1;//帐号dbid
+    int32 accdbid = 2;//帐号dbid
+    string sign = 3;//签名
+    string gateip=4;//服务器地址
+    int32 gateport=5;//服务器端口
+    int32 time=6;//登录时间戳
+}
+
+//MSG_CL2GT_LOGINGATE             = 1012,     //连接gate验证签名
+message C2S_LoginGate
+{
+    string openid = 1;//用户唯一标识。手机mac地址
+    string name= 2;//用户名字
+    int32 accdbid = 3;//账号dbid
+    string sign= 4;//签名
+    int32 time= 5;//登录时间戳
+    string version = 6; //版本号
+}
+
+//MSG_LG2CL_BACKROLEINITDATA      = 2012,     //登录
+message S2C_LoginGate
+{
+    string account = 1;//账号名字
+    int32 userid = 2;//账号id
+    int32 roleid = 3;//角色id
+    string ip=4;//ip地址
+    string headicon = 5;//头像Url
+    int32 sex = 6;//性别 1-男 2-女
+    int32 registertime = 7;//注册时间
+    string phonenumber = 8;//手机码 
+    bool firstlogin = 9;//第一次登录
+    int32 coin = 11;//金钱
+    int32 diamond = 12;//钻石
+    int32 vipcard = 13;//
+    int32 curtime = 14;//
+    // int32 taskid = 12;//任务id
+    // int32 taskarg = 13;//任务参数
+    // repeated int32 facilitylist = 14;//设备
+    // repeated int32 lessonlist = 15;//课程
+    // repeated int32 employlist = 16;//员工    
+}
+
+
+//MsgId.MSG_CL2LG_STOREBASEINFO           = 1201      --基本信息存储
+message C2S_StoreBaseInfo
+{
+    int32 coin = 1;//金钱
+    int32 taskid = 2;//任务id
+    int32 taskarg = 3;//任务参数
+    repeated int32 facilitylist = 4;//设备
+    repeated int32 lessonlist = 5;//课程
+    map<int32,int32> employlist = 6;//员工ID/数量
+}
+
+//MsgId.MSG_WD2CL_ZEROREFRESH             = 2101      --零点刷新
+message S2C_ZeroRefresh
+{
+
+}
+
+// MsgId.MSG_CL2WD_USEDIAMOD               = 1501      --使用钻石
+message C2S_UseDiamod
+{
+    int32 num = 1;  //数量
+}
+
+// MsgId.MSG_WD2CL_USEDIAMOD               = 2501      --使用钻石
+message S2C_UseDiamod
+{
+    int32 ret = 1;  //结果0成功  1失败   
+    int32 num = 2;  //数量
+}
+
+//MsgId.MSG_CL2WD_GETMAILLIST             = 1511      --请求邮件列表
+message C2S_ShowMailList
+{
+    
+}
+
+//MsgId.MSG_WD2CL_GETMAILLIST             = 2511      --请求邮件列表
+message S2C_ShowMailList
+{
+    repeated PBase.PB_MailItem mailList = 1;//邮件列表
+}
+
+
+//MsgId.MSG_CL2WD_OPENMAIL                = 2512      --打开邮件
+message C2S_OpenMail
+{
+    int32 mailId = 1;
+}
+
+//MsgId.MSG_WD2CL_OPENMAIL                = 2512      --打开邮件
+message S2C_OpenMail
+{
+    int32 mailId = 1;
+    string itemList = 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  --------------------------------  以下不适用   -------------------
+
+
+//玩家在线状态设置home键
+message C2S_PhoneHomeOnline
+{
+    bool isOnline = 1;//是否在线
+}
+
+//玩家在线状态设置home键
+message S2C_PhoneHomeOnline
+{
+    int32 userId = 1;
+    bool isOnline = 2;//是否在线
+}
+
+
+//MSG_CL2LG_GETITEMLIST           = 1511,     //请求物品列表
+message C2S_GetItemList
+{
+    int32 type = 1;//物品栏类型
+}
+
+//MSG_LG2CL_BACKITEMLIST          = 2511,     //返回物品列表
+message S2C_BackItemList
+{
+    int32 type = 1;//物品栏类型
+    repeated PBase.PB_Item itemList = 2;//物品列表
+}
+
+
+//MSG_CL2LG_GETEQUIPLIST          = 1512,     //请求装备列表
+message C2S_GetEquipList
+{
+    
+}
+
+//MSG_LG2CL_BACKEQUIPLIST         = 2512,     //返回装备列表	
+message S2C_BackEquipList
+{
+    repeated PBase.PB_Item equipList = 1;//物品列表
+}
+
+
+
+//MSG_CL2LG_GETTASKLIST           = 1521,     //请求任务列表
+message C2S_GetTaskList
+{
+    int32 type = 1;//任务类型
+}
+
+//MSG_LG2CL_BACKTASLLIST          = 2521,     //返回任务列表
+message S2C_BackTaskList
+{
+    int32 type = 1;//任务类型
+    repeated PBase.PB_Task taskList = 2;//物品列表
+}
+
+
+// MSG_CL2LG_GETCOUNTERLIST        = 1531,     //请求计数器列表
+message C2S_GetCounterList
+{
+
+}
+
+// MSG_LG2CL_BACKCOUNTERLIST       = 2531,     //返回计数器列表
+message S2C_BackCounterList
+{
+    repeated PBase.PB_Counter counterList = 1;
+}
+
+
+//-----------------------------  HALL ---------------------------------
+
+
+//发送文字聊天
+message C2S_SendChat
+{
+    string content = 1;//聊天消息内容
+}
+
+//
+message S2C_PushSendChat
+{
+    int32 userId = 1;//发送方id
+    string content = 2;//收到的聊天消息内容
+}
+
+//发送语音
+message C2S_SendVoice
+{
+    bytes content = 1;//语音消息内容
+    int32 flag = 2;//当前状态 0空闲  1接收数据中  2接收数据完成
+}
+
+//发送语音
+message S2C_PushVoice
+{
+    int32 userId = 1; //发送方id
+    bytes content = 2; //收到的语音消息内容
+    int32 flag = 3; //当前状态 0空闲  1接收数据中  2接收数据完成
+}
+
+//做测试牌型
+message C2S_CheatCard
+{
+    string cheatCards1 = 1;//测试牌1
+    string cheatCards2 = 2;//测试牌2
+}
+
+//大厅查询玩家信息
+message C2S_GetHallUserInfo
+{
+    int32 gameId = 1;//游戏id
+    int32 userId = 2;//用户ID
+}
+
+//公告
+message C2S_NoticeInfo
+{
+
+}
+
+//
+message S2C_NoticeInfo
+{
+    string noticecontent=1;    //公告内容
+    int32 starttime=2;         //开始时间
+    int32 endtime=3;           //结束时间
+}
+
+
+//绑定手机
+message C2S_BindPhone
+{
+    string phoneNumber = 1;//手机号
+}
+
+//绑定手机
+message S2C_BindPhone
+{
+    string phoneNumber = 1;//手机号
+}
+
+//绑定邀请码
+message C2S_BindInviteCode
+{
+    int32 inviteCode = 1;//邀请码
+}
+
+//绑定邀请码
+message S2C_BindInviteCode
+{
+    string inviteName = 1;//邀请人名字
+    int32 inviteCode = 2;//邀请码
+    int32 inviteUserId = 3;//邀请码对应的用户id
+}
+
+
+
+
+
+
