@@ -1,5 +1,5 @@
 
-œ
+º
 	php.protoPPhpcommon.proto"?
 C2S_GMLogin
 account (	Raccount
@@ -26,11 +26,12 @@
 cash (Rcash
 vipcard (Rvipcard
 logintv (Rlogintv
-	offlinetv (R	offlinetv"Z
-C2S_GMSENDMAIL
-account (	Raccount.
-mailData (2.PBase.PB_MailItemRmailData"T
-S2C_GMSENDMAIL
+	offlinetv (R	offlinetv"v
+C2S_GMSendMail
+mailtype (Rmailtype
+acclist (	Racclist.
+maildata (2.PBase.PB_MailItemRmaildata"V
+S2C_GMSendMail
 ret (Rret
-mailId (RmailId
-account (	Raccountbproto3
+finish (Rfinish
+mailtype (Rmailtypebproto3

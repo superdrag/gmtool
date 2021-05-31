@@ -29,6 +29,7 @@ public class GlobalCtl
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_SS2CL_ERRORCODE, MSG_SS2CL_ERRORCODE, new S2C_ErrorCode());
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_QUERYUSERINFO, MSG_PHP2CL_QUERYUSERINFO,new S2C_GMQUERYUSERINFO());
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_SENDMONEY, MSG_PHP2CL_SENDMONEY,new S2C_GMSendMoney());
+        NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_SENDMAIL, MSG_PHP2CL_SENDMAIL,new S2C_GMSendMail());
     }
 
     public void MSG_SS2CL_ERRORCODE(MsgPack msg)
@@ -77,6 +78,21 @@ public class GlobalCtl
     }    
 
 
+    public void MSG_PHP2CL_SENDMAIL(MsgPack msg)
+    {        
+        S2C_GMSendMail _pb = msg.UnpackProtoBuf<S2C_GMSendMail>( new S2C_GMSendMail() );
+        if( _pb.Ret != 0 )
+        {
+            GlobalModel.alertInfoData = "发送邮件失败";
+            UIMgr.ShowUI(VIEWID.ALERTINFO);
+            return;
+        }
+
+        GlobalModel.alertInfoData = "发送邮件成功数量:"+_pb.Finish;
+        UIMgr.ShowUI(VIEWID.ALERTINFO);        
+    } 
+
+
 //////////////////////////////////////// 发送
 
     public static void MSG_CL2PHP_QUERYUSERINFO(string account)
@@ -97,14 +113,14 @@ public class GlobalCtl
 
     public static void MSG_CL2PHP_SENDMAIL(int type, string accList, string title, string content, string items)
     {
-        C2S_GMSENDMAIL pb = new C2S_GMSENDMAIL();
+        C2S_GMSendMail pb = new C2S_GMSendMail();
         pb.Mailtype = type;
         pb.Acclist = accList;
         PB_MailItem item = new PB_MailItem();
         item.Title = title;
         item.Content = content;
         item.Itemlist = items;
-        pb.MailData = item;
+        pb.Maildata = item;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMAIL,pb);  
     }
 }

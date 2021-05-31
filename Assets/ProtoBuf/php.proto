@@ -68,17 +68,17 @@ message S2C_GMQUERYUSERINFO
 }
 
 // MsgId.MSG_CL2PHP_SENDMAIL                   = 1820    --GM发送邮件
-message C2S_GMSENDMAIL
+message C2S_GMSendMail
 {
     int32 mailtype = 1; //1 单个多个 2全局
     string acclist = 2; 
-    PBase.PB_MailItem mailData = 3;
+    PBase.PB_MailItem maildata = 3;
 }
 
 // MsgId.MSG_PHP2CL_SENDMAIL                  = 2820    --GM发送邮件
-message S2C_GMSENDMAIL
+message S2C_GMSendMail
 {
     int32 ret = 1;
-    int32 mailId = 2;
-    string account = 3; 
+    int32 finish = 2;
+    int32 mailtype = 3;
 }
