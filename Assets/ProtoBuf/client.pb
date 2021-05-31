@@ -1,45 +1,48 @@
 
-Ñ
+•
 client.protoPClientcommon.proto"(
 S2C_ShutDwon
 leftsec (Rleftsec"
-S2C_ReloginKick"‰
+S2C_ReloginKick"½
 	C2S_Login
 account (	Raccount
 passwd (	Rpasswd
 version (	Rversion
 headicon (	Rheadicon
-guest (Rguest"›
+guest (Rguest
+reconn (Rreconn
+platform (	Rplatform"µ
 	S2C_Login
 account (	Raccount
 accdbid (Raccdbid
 sign (	Rsign
 gateip (	Rgateip
 gateport (Rgateport
-time (Rtime"—
-C2S_LoginGate
-openid (	Ropenid
+time (Rtime
+acccode (	Racccode"™
+C2S_LoginGate
+account (	Raccount
 name (	Rname
 accdbid (Raccdbid
 sign (	Rsign
 time (Rtime
-version (	Rversion"ß
+version (	Rversion"Á
 S2C_LoginGate
-account (	Raccount
-userid (Ruserid
+account (	Raccount
+accdbid (Raccdbid
 roleid (Rroleid
 ip (	Rip
-headicon (	Rheadicon
-sex (Rsex"
-registertime (Rregistertime 
-phonenumber (	Rphonenumber
+headicon (	Rheadicon
 
 firstlogin	 (R
-firstlogin
-coin (Rcoin
-diamond (Rdiamond
-vipcard (Rvipcard
-curtime (Rcurtime"¨
+firstlogin
+curtime
+ (Rcurtime"—
+S2C_LoginRoleData
+coin (Rcoin
+diamond (Rdiamond
+vipcard (Rvipcard:
+teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"¨
 C2S_StoreBaseInfo
 coin (Rcoin
 taskid (Rtaskid
@@ -54,20 +57,44 @@ employlist=
 EmploylistEntry
 key (Rkey
 value (Rvalue:8"
-S2C_ZeroRefresh"!
+S2C_ZeroRefresh"7
 C2S_UseDiamod
-num (Rnum"3
+num (Rnum
+event (Revent"I
 S2C_UseDiamod
 ret (Rret
-num (Rnum"
+num (Rnum
+event (Revent"
+C2S_GetMailNew"*
+S2C_GetMailNew
+newmail (Rnewmail"
 C2S_ShowMailList"B
 S2C_ShowMailList.
-mailList (2.PBase.PB_MailItemRmailList"&
-C2S_OpenMail
-mailId (RmailId"B
-S2C_OpenMail
-mailId (RmailId
-itemList (	RitemList"1
+maillist (2.PBase.PB_MailItemRmaillist"&
+C2S_ReadMail
+mailid (Rmailid"X
+S2C_ReadMail
+ret (Rret
+mailid (Rmailid
+
+mailstatus (R
+mailstatus")
+C2S_MailGetItem
+mailid (Rmailid"[
+S2C_MailGetItem
+ret (Rret
+mailid (Rmailid
+
+mailstatus (R
+mailstatus"
+C2S_ShowTeamCardList"R
+S2C_ShowTeamCardList:
+teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"$
+C2S_DrawCard
+boxid (Rboxid"\
+S2C_DrawCard
+ret (Rret:
+teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"1
 C2S_PhoneHomeOnline
 isOnline (RisOnline"I
 S2C_PhoneHomeOnline

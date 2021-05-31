@@ -37,28 +37,31 @@ message S2C_ReloginKick
 //MSG_CL2LN_LOGINACCOUNT          = 1011,     //账号登陆
 message C2S_Login
 {
-    string account = 1;//微信openid
+    string account = 1;//账号
     string passwd = 2;//用户密码
     string version = 3; //版本号
     string headicon = 4;//用户头像Url
-    int32 guest = 5;    //游客
+    int32 guest = 5;    //1游客 0非游客 
+    int32 reconn = 6;    //1断线重连
+    string platform = 11; //平台id
 }
 
 //MSG_LN2CL_GATEIPANDPORT         = 2011,     //成功登陆返回gate链接信息
 message S2C_Login
 {
-    string account = 1;//帐号dbid
+    string account = 1;//帐号
     int32 accdbid = 2;//帐号dbid
     string sign = 3;//签名
     string gateip=4;//服务器地址
     int32 gateport=5;//服务器端口
     int32 time=6;//登录时间戳
+    string acccode=7;//账号绑定加密码
 }
 
 //MSG_CL2GT_LOGINGATE             = 1012,     //连接gate验证签名
 message C2S_LoginGate
 {
-    string openid = 1;//用户唯一标识。手机mac地址
+    string account = 1;//用户唯一标识。手机mac地址
     string name= 2;//用户名字
     int32 accdbid = 3;//账号dbid
     string sign= 4;//签名
@@ -66,29 +69,26 @@ message C2S_LoginGate
     string version = 6; //版本号
 }
 
-//MSG_LG2CL_BACKROLEINITDATA      = 2012,     //登录
+//MSG_LG2CL_BACKROLEINITDATA      = 2012,     //登录网关成功
 message S2C_LoginGate
 {
     string account = 1;//账号名字
-    int32 userid = 2;//账号id
+    int32 accdbid = 2;//账号id
     int32 roleid = 3;//角色id
     string ip=4;//ip地址
     string headicon = 5;//头像Url
-    int32 sex = 6;//性别 1-男 2-女
-    int32 registertime = 7;//注册时间
-    string phonenumber = 8;//手机码 
     bool firstlogin = 9;//第一次登录
-    int32 coin = 11;//金钱
-    int32 diamond = 12;//钻石
-    int32 vipcard = 13;//
-    int32 curtime = 14;//
-    // int32 taskid = 12;//任务id
-    // int32 taskarg = 13;//任务参数
-    // repeated int32 facilitylist = 14;//设备
-    // repeated int32 lessonlist = 15;//课程
-    // repeated int32 employlist = 16;//员工    
+    int32 curtime = 10;//
 }
 
+//MsgId.MSG_LG2CL_LOGINROLEDATA               = 2013      --返回登录基本数据
+message S2C_LoginRoleData
+{
+    int32 coin = 1;//金钱
+    int32 diamond = 2;//钻石
+    int32 vipcard = 3;//vip
+    repeated PBase.PB_TeamCardInfo teamcardlist = 11;  //卡牌信息
+}
 
 //MsgId.MSG_CL2LG_STOREBASEINFO           = 1201      --基本信息存储
 message C2S_StoreBaseInfo
@@ -110,15 +110,31 @@ message S2C_ZeroRefresh
 // MsgId.MSG_CL2WD_USEDIAMOD               = 1501      --使用钻石
 message C2S_UseDiamod
 {
-    int32 num = 1;  //数量
+    int32 num = 1;  //使用钻石数量
+    int32 event = 2; //
 }
 
 // MsgId.MSG_WD2CL_USEDIAMOD               = 2501      --使用钻石
 message S2C_UseDiamod
 {
     int32 ret = 1;  //结果0成功  1失败   
-    int32 num = 2;  //数量
+    int32 num = 2;  //剩下钻石数量
+    int32 event = 3;
 }
+
+
+// MsgId.MSG_CL2WD_GETMAILNEW              = 1510      --请求是否有新邮件
+message C2S_GetMailNew
+{
+    
+}
+
+// MsgId.MSG_WD2CL_GETMAILNEW              = 2510      --请求是否有新邮件
+message S2C_GetMailNew
+{
+    int32 newmail = 1;
+}
+
 
 //MsgId.MSG_CL2WD_GETMAILLIST             = 1511      --请求邮件列表
 message C2S_ShowMailList
@@ -129,31 +145,62 @@ message C2S_ShowMailList
 //MsgId.MSG_WD2CL_GETMAILLIST             = 2511      --请求邮件列表
 message S2C_ShowMailList
 {
-    repeated PBase.PB_MailItem mailList = 1;//邮件列表
+    repeated PBase.PB_MailItem maillist = 1;//邮件列表
 }
 
 
-//MsgId.MSG_CL2WD_OPENMAIL                = 2512      --打开邮件
-message C2S_OpenMail
+//MsgId.MSG_CL2WD_READMAIL                = 2512      --读邮件
+message C2S_ReadMail
 {
-    int32 mailId = 1;
+    int32 mailid = 1;
 }
 
-//MsgId.MSG_WD2CL_OPENMAIL                = 2512      --打开邮件
-message S2C_OpenMail
+//MsgId.MSG_WD2CL_READMAIL                = 2512      --读邮件
+message S2C_ReadMail
 {
-    int32 mailId = 1;
-    string itemList = 2;
+    int32 ret = 1;
+    int32 mailid = 2;
+    int32 mailstatus = 3;
+}
+
+// MsgId.MSG_CL2WD_MAILGETITEM             = 2513      --领取邮件物品
+message C2S_MailGetItem
+{
+    int32 mailid = 1;
+}
+// MsgId.MSG_WD2CL_MAILGETITEM             = 2513      --领取邮件物品
+message S2C_MailGetItem
+{
+    int32 ret = 1;
+    int32 mailid = 2;
+    int32 mailstatus = 3;
 }
 
 
+// MsgId.MSG_CL2WD_GETTEAMCARDLIST         = 1521      --请求卡牌列表
+message C2S_ShowTeamCardList
+{
+    
+}
 
+// MsgId.MSG_WD2CL_GETTEAMCARDLIST         = 2521      --请求卡牌列表
+message S2C_ShowTeamCardList
+{
+    repeated PBase.PB_TeamCardInfo teamcardlist = 1;
+}
 
+// MsgId.MSG_CL2WD_DRAWCARD                = 1522      --抽卡
+message C2S_DrawCard
+{
+    int32 boxid = 1;
+}
 
-
-
-
-
+// MsgId.MSG_WD2CL_DRAWCARD                = 2522      --抽卡
+message S2C_DrawCard
+{
+    int32 ret = 1;
+    repeated PBase.PB_TeamCardInfo teamcardlist = 2;
+}
 
 
 

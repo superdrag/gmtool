@@ -1,5 +1,5 @@
 
-È
+Ã
 common.protoPBase")
 S2C_ErrorCode
 errcode (Rerrcode"
@@ -8,7 +8,20 @@
 curtime (Rcurtime"0
 PB_Money
 type (Rtype
-num (Rnum"q
+num (Rnum"Õ
+PB_MailItem
+mid (	Rmid
+title (	Rtitle
+content (	Rcontent
+itemlist (	Ritemlist
+sendTime (RsendTime
+readTime (RreadTime
+pastTime (RpastTime
+state (Rstate"I
+PB_TeamCardInfo
+id (Rid
+num (Rnum
+level (Rlevel"q
 PB_Item
 itemGuid (	RitemGuid
 itemId (RitemId
@@ -80,10 +93,4 @@ playerDbid
 	applyTime (R	applyTime"9
 PB_UnionLogInfo
 time (Rtime
-text (	Rtext"¥
-PB_MailItem
-mailId (RmailId
-	mailTitle (	R	mailTitle 
-mailContent (	RmailContent"
-mailItemList (	RmailItemList
-mailTime (RmailTimebproto3
+text (	Rtextbproto3

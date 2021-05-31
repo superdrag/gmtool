@@ -77,7 +77,7 @@ public class GlobalCtl
     }    
 
 
-////////////////////////////////////////
+//////////////////////////////////////// 发送
 
     public static void MSG_CL2PHP_QUERYUSERINFO(string account)
     {
@@ -93,5 +93,18 @@ public class GlobalCtl
         pb.Type = 1;
         pb.Num = num;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMONEY,pb);  
+    }
+
+    public static void MSG_CL2PHP_SENDMAIL(int type, string accList, string title, string content, string items)
+    {
+        C2S_GMSENDMAIL pb = new C2S_GMSENDMAIL();
+        pb.Mailtype = type;
+        pb.Acclist = accList;
+        PB_MailItem item = new PB_MailItem();
+        item.Title = title;
+        item.Content = content;
+        item.Itemlist = items;
+        pb.MailData = item;
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMAIL,pb);  
     }
 }

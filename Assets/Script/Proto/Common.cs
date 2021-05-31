@@ -27,33 +27,35 @@ namespace PBase {
             "Cgxjb21tb24ucHJvdG8SBVBCYXNlIiAKDVMyQ19FcnJvckNvZGUSDwoHZXJy",
             "Y29kZRgBIAEoBSIPCg1DMlNfU29ja2V0SGl0IiAKDVMyQ19Tb2NrZXRIaXQS",
             "DwoHY3VydGltZRgBIAEoBSIlCghQQl9Nb25leRIMCgR0eXBlGAEgASgFEgsK",
-            "A251bRgCIAEoBSJNCgdQQl9JdGVtEhAKCGl0ZW1HdWlkGAEgASgJEg4KBml0",
-            "ZW1JZBgCIAEoBRIPCgdpdGVtUG9zGAMgASgFEg8KB2l0ZW1OdW0YBCABKAUi",
-            "LwoLUEJfSXRlbUxpc3QSIAoIaXRlbUxpc3QYASADKAsyDi5QQmFzZS5QQl9J",
-            "dGVtIjkKDlBCX1Rhc2tDb3VudGVyEgsKA2NJZBgBIAEoBRIMCgRjQXJnGAIg",
-            "ASgFEgwKBGNOdW0YAyABKAUifQoHUEJfVGFzaxIOCgZ0YXNrSWQYASABKAUS",
-            "EQoJdGFza1N0YXRlGAIgASgFEhIKCmFjY2VwdFRpbWUYAyABKAUSEgoKc3Vi",
-            "bWl0VGltZRgEIAEoBRInCghjb3VudGVycxgFIAMoCzIVLlBCYXNlLlBCX1Rh",
-            "c2tDb3VudGVyIi8KC1BCX1Rhc2tMaXN0EiAKCHRhc2tMaXN0GAEgAygLMg4u",
-            "UEJhc2UuUEJfVGFzayJICgpQQl9Db3VudGVyEhEKCWNvdW50ZXJJZBgBIAEo",
-            "BRISCgpjb3VudGVyTnVtGAIgASgFEhMKC2NvdW50ZXJBcmdzGAMgAygFIjgK",
-            "DlBCX0NvdW50ZXJMaXN0EiYKC2NvdW50ZXJMaXN0GAEgAygLMhEuUEJhc2Uu",
-            "UEJfQ291bnRlciKdAgoLUEJfVW5pb25PYmoSDwoHdW5pb25JZBgBIAEoBRIR",
-            "Cgl1bmlvbk5hbWUYAiABKAkSEQoJdW5pb25UeXBlGAMgASgFEg8KB25wY0xp",
-            "c3QYBCADKAUSEQoJc2tpbGxMaXN0GAUgAygFEhIKCnVuaW9uTGV2ZWwYBiAB",
-            "KAUSEAoIdW5pb25FWFAYByABKAMSEgoKdW5pb25Nb25leRgIIAEoAxIRCglt",
-            "YXhNZW1iZXIYCSABKAUSEQoJbWF4VkNoYWlyGAogASgFEhAKCG1heEVsZGVy",
-            "GAsgASgFEhMKC3VuaW9uTm90aWNlGAwgASgJEhcKD3VuaW9uQ3JlYXRlVGlt",
-            "ZRgNIAEoBRITCgtjcmVhdG9yTmFtZRgOIAEoCSKpAQoOUEJfVW5pb25NZW1i",
-            "ZXISDAoEZGJpZBgBIAEoBRIRCgl1bmlvbkRiaWQYAiABKAUSEQoJcGx5ZXJE",
-            "QmlkGAMgASgFEhIKCm1lbWJlck5hbWUYBCABKAkSDAoEcmFuaxgFIAEoBRIN",
-            "CgVvZmZlchgGIAEoBRIQCghqb2luVGltZRgHIAEoBRIQCghleGl0VGltZRgI",
-            "IAEoBRIOCgZvbmxpbmUYCSABKAUiOgoRUEJfVW5pb25BcHBseUluZm8SEgoK",
-            "cGxheWVyRGJpZBgBIAEoBRIRCglhcHBseVRpbWUYAiABKAUiLQoPUEJfVW5p",
-            "b25Mb2dJbmZvEgwKBHRpbWUYASABKAUSDAoEdGV4dBgCIAEoCSJtCgtQQl9N",
-            "YWlsSXRlbRIOCgZtYWlsSWQYASABKAUSEQoJbWFpbFRpdGxlGAIgASgJEhMK",
-            "C21haWxDb250ZW50GAMgASgJEhQKDG1haWxJdGVtTGlzdBgEIAEoCRIQCght",
-            "YWlsVGltZRgFIAEoBWIGcHJvdG8z"));
+            "A251bRgCIAEoBSKRAQoLUEJfTWFpbEl0ZW0SCwoDbWlkGAEgASgJEg0KBXRp",
+            "dGxlGAIgASgJEg8KB2NvbnRlbnQYAyABKAkSEAoIaXRlbWxpc3QYBCABKAkS",
+            "EAoIc2VuZFRpbWUYBSABKAUSEAoIcmVhZFRpbWUYBiABKAUSEAoIcGFzdFRp",
+            "bWUYByABKAUSDQoFc3RhdGUYCCABKAUiOQoPUEJfVGVhbUNhcmRJbmZvEgoK",
+            "AmlkGAEgASgFEgsKA251bRgCIAEoBRINCgVsZXZlbBgDIAEoBSJNCgdQQl9J",
+            "dGVtEhAKCGl0ZW1HdWlkGAEgASgJEg4KBml0ZW1JZBgCIAEoBRIPCgdpdGVt",
+            "UG9zGAMgASgFEg8KB2l0ZW1OdW0YBCABKAUiLwoLUEJfSXRlbUxpc3QSIAoI",
+            "aXRlbUxpc3QYASADKAsyDi5QQmFzZS5QQl9JdGVtIjkKDlBCX1Rhc2tDb3Vu",
+            "dGVyEgsKA2NJZBgBIAEoBRIMCgRjQXJnGAIgASgFEgwKBGNOdW0YAyABKAUi",
+            "fQoHUEJfVGFzaxIOCgZ0YXNrSWQYASABKAUSEQoJdGFza1N0YXRlGAIgASgF",
+            "EhIKCmFjY2VwdFRpbWUYAyABKAUSEgoKc3VibWl0VGltZRgEIAEoBRInCghj",
+            "b3VudGVycxgFIAMoCzIVLlBCYXNlLlBCX1Rhc2tDb3VudGVyIi8KC1BCX1Rh",
+            "c2tMaXN0EiAKCHRhc2tMaXN0GAEgAygLMg4uUEJhc2UuUEJfVGFzayJICgpQ",
+            "Ql9Db3VudGVyEhEKCWNvdW50ZXJJZBgBIAEoBRISCgpjb3VudGVyTnVtGAIg",
+            "ASgFEhMKC2NvdW50ZXJBcmdzGAMgAygFIjgKDlBCX0NvdW50ZXJMaXN0EiYK",
+            "C2NvdW50ZXJMaXN0GAEgAygLMhEuUEJhc2UuUEJfQ291bnRlciKdAgoLUEJf",
+            "VW5pb25PYmoSDwoHdW5pb25JZBgBIAEoBRIRCgl1bmlvbk5hbWUYAiABKAkS",
+            "EQoJdW5pb25UeXBlGAMgASgFEg8KB25wY0xpc3QYBCADKAUSEQoJc2tpbGxM",
+            "aXN0GAUgAygFEhIKCnVuaW9uTGV2ZWwYBiABKAUSEAoIdW5pb25FWFAYByAB",
+            "KAMSEgoKdW5pb25Nb25leRgIIAEoAxIRCgltYXhNZW1iZXIYCSABKAUSEQoJ",
+            "bWF4VkNoYWlyGAogASgFEhAKCG1heEVsZGVyGAsgASgFEhMKC3VuaW9uTm90",
+            "aWNlGAwgASgJEhcKD3VuaW9uQ3JlYXRlVGltZRgNIAEoBRITCgtjcmVhdG9y",
+            "TmFtZRgOIAEoCSKpAQoOUEJfVW5pb25NZW1iZXISDAoEZGJpZBgBIAEoBRIR",
+            "Cgl1bmlvbkRiaWQYAiABKAUSEQoJcGx5ZXJEQmlkGAMgASgFEhIKCm1lbWJl",
+            "ck5hbWUYBCABKAkSDAoEcmFuaxgFIAEoBRINCgVvZmZlchgGIAEoBRIQCghq",
+            "b2luVGltZRgHIAEoBRIQCghleGl0VGltZRgIIAEoBRIOCgZvbmxpbmUYCSAB",
+            "KAUiOgoRUEJfVW5pb25BcHBseUluZm8SEgoKcGxheWVyRGJpZBgBIAEoBRIR",
+            "CglhcHBseVRpbWUYAiABKAUiLQoPUEJfVW5pb25Mb2dJbmZvEgwKBHRpbWUY",
+            "ASABKAUSDAoEdGV4dBgCIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -61,6 +63,8 @@ namespace PBase {
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.C2S_SocketHit), global::PBase.C2S_SocketHit.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.S2C_SocketHit), global::PBase.S2C_SocketHit.Parser, new[]{ "Curtime" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_Money), global::PBase.PB_Money.Parser, new[]{ "Type", "Num" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItem), global::PBase.PB_MailItem.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "SendTime", "ReadTime", "PastTime", "State" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_TeamCardInfo), global::PBase.PB_TeamCardInfo.Parser, new[]{ "Id", "Num", "Level" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_Item), global::PBase.PB_Item.Parser, new[]{ "ItemGuid", "ItemId", "ItemPos", "ItemNum" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_ItemList), global::PBase.PB_ItemList.Parser, new[]{ "ItemList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_TaskCounter), global::PBase.PB_TaskCounter.Parser, new[]{ "CId", "CArg", "CNum" }, null, null, null),
@@ -71,8 +75,7 @@ namespace PBase {
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_UnionObj), global::PBase.PB_UnionObj.Parser, new[]{ "UnionId", "UnionName", "UnionType", "NpcList", "SkillList", "UnionLevel", "UnionEXP", "UnionMoney", "MaxMember", "MaxVChair", "MaxElder", "UnionNotice", "UnionCreateTime", "CreatorName" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_UnionMember), global::PBase.PB_UnionMember.Parser, new[]{ "Dbid", "UnionDbid", "PlyerDBid", "MemberName", "Rank", "Offer", "JoinTime", "ExitTime", "Online" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_UnionApplyInfo), global::PBase.PB_UnionApplyInfo.Parser, new[]{ "PlayerDbid", "ApplyTime" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_UnionLogInfo), global::PBase.PB_UnionLogInfo.Parser, new[]{ "Time", "Text" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItem), global::PBase.PB_MailItem.Parser, new[]{ "MailId", "MailTitle", "MailContent", "MailItemList", "MailTime" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_UnionLogInfo), global::PBase.PB_UnionLogInfo.Parser, new[]{ "Time", "Text" }, null, null, null)
           }));
     }
     #endregion
@@ -617,6 +620,549 @@ namespace PBase {
   }
 
   /// <summary>
+  ///邮件
+  /// </summary>
+  public sealed partial class PB_MailItem : pb::IMessage<PB_MailItem> {
+    private static readonly pb::MessageParser<PB_MailItem> _parser = new pb::MessageParser<PB_MailItem>(() => new PB_MailItem());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<PB_MailItem> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PB_MailItem() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PB_MailItem(PB_MailItem other) : this() {
+      mid_ = other.mid_;
+      title_ = other.title_;
+      content_ = other.content_;
+      itemlist_ = other.itemlist_;
+      sendTime_ = other.sendTime_;
+      readTime_ = other.readTime_;
+      pastTime_ = other.pastTime_;
+      state_ = other.state_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PB_MailItem Clone() {
+      return new PB_MailItem(this);
+    }
+
+    /// <summary>Field number for the "mid" field.</summary>
+    public const int MidFieldNumber = 1;
+    private string mid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Mid {
+      get { return mid_; }
+      set {
+        mid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "title" field.</summary>
+    public const int TitleFieldNumber = 2;
+    private string title_ = "";
+    /// <summary>
+    ///标题
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Title {
+      get { return title_; }
+      set {
+        title_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "content" field.</summary>
+    public const int ContentFieldNumber = 3;
+    private string content_ = "";
+    /// <summary>
+    ///内容描述
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Content {
+      get { return content_; }
+      set {
+        content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "itemlist" field.</summary>
+    public const int ItemlistFieldNumber = 4;
+    private string itemlist_ = "";
+    /// <summary>
+    ///物品列表
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Itemlist {
+      get { return itemlist_; }
+      set {
+        itemlist_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "sendTime" field.</summary>
+    public const int SendTimeFieldNumber = 5;
+    private int sendTime_;
+    /// <summary>
+    ///发送时间
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int SendTime {
+      get { return sendTime_; }
+      set {
+        sendTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "readTime" field.</summary>
+    public const int ReadTimeFieldNumber = 6;
+    private int readTime_;
+    /// <summary>
+    ///读时间
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int ReadTime {
+      get { return readTime_; }
+      set {
+        readTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pastTime" field.</summary>
+    public const int PastTimeFieldNumber = 7;
+    private int pastTime_;
+    /// <summary>
+    ///过期时间
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int PastTime {
+      get { return pastTime_; }
+      set {
+        pastTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "state" field.</summary>
+    public const int StateFieldNumber = 8;
+    private int state_;
+    /// <summary>
+    ///已读状态 1 已读未领取 2 已读已领取
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int State {
+      get { return state_; }
+      set {
+        state_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as PB_MailItem);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(PB_MailItem other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Mid != other.Mid) return false;
+      if (Title != other.Title) return false;
+      if (Content != other.Content) return false;
+      if (Itemlist != other.Itemlist) return false;
+      if (SendTime != other.SendTime) return false;
+      if (ReadTime != other.ReadTime) return false;
+      if (PastTime != other.PastTime) return false;
+      if (State != other.State) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Mid.Length != 0) hash ^= Mid.GetHashCode();
+      if (Title.Length != 0) hash ^= Title.GetHashCode();
+      if (Content.Length != 0) hash ^= Content.GetHashCode();
+      if (Itemlist.Length != 0) hash ^= Itemlist.GetHashCode();
+      if (SendTime != 0) hash ^= SendTime.GetHashCode();
+      if (ReadTime != 0) hash ^= ReadTime.GetHashCode();
+      if (PastTime != 0) hash ^= PastTime.GetHashCode();
+      if (State != 0) hash ^= State.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Mid.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Mid);
+      }
+      if (Title.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Title);
+      }
+      if (Content.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Content);
+      }
+      if (Itemlist.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Itemlist);
+      }
+      if (SendTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(SendTime);
+      }
+      if (ReadTime != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(ReadTime);
+      }
+      if (PastTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(PastTime);
+      }
+      if (State != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(State);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Mid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mid);
+      }
+      if (Title.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Title);
+      }
+      if (Content.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
+      }
+      if (Itemlist.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Itemlist);
+      }
+      if (SendTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SendTime);
+      }
+      if (ReadTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ReadTime);
+      }
+      if (PastTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PastTime);
+      }
+      if (State != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(State);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(PB_MailItem other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Mid.Length != 0) {
+        Mid = other.Mid;
+      }
+      if (other.Title.Length != 0) {
+        Title = other.Title;
+      }
+      if (other.Content.Length != 0) {
+        Content = other.Content;
+      }
+      if (other.Itemlist.Length != 0) {
+        Itemlist = other.Itemlist;
+      }
+      if (other.SendTime != 0) {
+        SendTime = other.SendTime;
+      }
+      if (other.ReadTime != 0) {
+        ReadTime = other.ReadTime;
+      }
+      if (other.PastTime != 0) {
+        PastTime = other.PastTime;
+      }
+      if (other.State != 0) {
+        State = other.State;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Mid = input.ReadString();
+            break;
+          }
+          case 18: {
+            Title = input.ReadString();
+            break;
+          }
+          case 26: {
+            Content = input.ReadString();
+            break;
+          }
+          case 34: {
+            Itemlist = input.ReadString();
+            break;
+          }
+          case 40: {
+            SendTime = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            ReadTime = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            PastTime = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            State = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///卡牌
+  /// </summary>
+  public sealed partial class PB_TeamCardInfo : pb::IMessage<PB_TeamCardInfo> {
+    private static readonly pb::MessageParser<PB_TeamCardInfo> _parser = new pb::MessageParser<PB_TeamCardInfo>(() => new PB_TeamCardInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<PB_TeamCardInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PB_TeamCardInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PB_TeamCardInfo(PB_TeamCardInfo other) : this() {
+      id_ = other.id_;
+      num_ = other.num_;
+      level_ = other.level_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PB_TeamCardInfo Clone() {
+      return new PB_TeamCardInfo(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "num" field.</summary>
+    public const int NumFieldNumber = 2;
+    private int num_;
+    /// <summary>
+    ///总数量
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Num {
+      get { return num_; }
+      set {
+        num_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 3;
+    private int level_;
+    /// <summary>
+    ///强化等级
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as PB_TeamCardInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(PB_TeamCardInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Num != other.Num) return false;
+      if (Level != other.Level) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Num != 0) hash ^= Num.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Num != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Num);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Level);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Num != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Num);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Level);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(PB_TeamCardInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Num != 0) {
+        Num = other.Num;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Num = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            Level = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
   ///物品
   /// </summary>
   public sealed partial class PB_Item : pb::IMessage<PB_Item> {
@@ -627,7 +1173,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[4]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -852,7 +1398,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[5]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -976,7 +1522,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[6]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1168,7 +1714,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[7]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1413,7 +1959,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[8]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1537,7 +2083,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[9]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1721,7 +2267,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[10]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1845,7 +2391,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[11]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2369,7 +2915,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[12]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2752,7 +3298,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[13]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2916,7 +3462,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[14]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3063,262 +3609,6 @@ namespace PBase {
           }
           case 18: {
             Text = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  /// <summary>
-  ///邮件
-  /// </summary>
-  public sealed partial class PB_MailItem : pb::IMessage<PB_MailItem> {
-    private static readonly pb::MessageParser<PB_MailItem> _parser = new pb::MessageParser<PB_MailItem>(() => new PB_MailItem());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<PB_MailItem> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[15]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PB_MailItem() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PB_MailItem(PB_MailItem other) : this() {
-      mailId_ = other.mailId_;
-      mailTitle_ = other.mailTitle_;
-      mailContent_ = other.mailContent_;
-      mailItemList_ = other.mailItemList_;
-      mailTime_ = other.mailTime_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PB_MailItem Clone() {
-      return new PB_MailItem(this);
-    }
-
-    /// <summary>Field number for the "mailId" field.</summary>
-    public const int MailIdFieldNumber = 1;
-    private int mailId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int MailId {
-      get { return mailId_; }
-      set {
-        mailId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "mailTitle" field.</summary>
-    public const int MailTitleFieldNumber = 2;
-    private string mailTitle_ = "";
-    /// <summary>
-    ///标题
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string MailTitle {
-      get { return mailTitle_; }
-      set {
-        mailTitle_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "mailContent" field.</summary>
-    public const int MailContentFieldNumber = 3;
-    private string mailContent_ = "";
-    /// <summary>
-    ///内容描述
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string MailContent {
-      get { return mailContent_; }
-      set {
-        mailContent_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "mailItemList" field.</summary>
-    public const int MailItemListFieldNumber = 4;
-    private string mailItemList_ = "";
-    /// <summary>
-    ///物品列表
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string MailItemList {
-      get { return mailItemList_; }
-      set {
-        mailItemList_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "mailTime" field.</summary>
-    public const int MailTimeFieldNumber = 5;
-    private int mailTime_;
-    /// <summary>
-    ///时间
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int MailTime {
-      get { return mailTime_; }
-      set {
-        mailTime_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as PB_MailItem);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(PB_MailItem other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (MailId != other.MailId) return false;
-      if (MailTitle != other.MailTitle) return false;
-      if (MailContent != other.MailContent) return false;
-      if (MailItemList != other.MailItemList) return false;
-      if (MailTime != other.MailTime) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (MailId != 0) hash ^= MailId.GetHashCode();
-      if (MailTitle.Length != 0) hash ^= MailTitle.GetHashCode();
-      if (MailContent.Length != 0) hash ^= MailContent.GetHashCode();
-      if (MailItemList.Length != 0) hash ^= MailItemList.GetHashCode();
-      if (MailTime != 0) hash ^= MailTime.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (MailId != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(MailId);
-      }
-      if (MailTitle.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(MailTitle);
-      }
-      if (MailContent.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(MailContent);
-      }
-      if (MailItemList.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(MailItemList);
-      }
-      if (MailTime != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(MailTime);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (MailId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MailId);
-      }
-      if (MailTitle.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(MailTitle);
-      }
-      if (MailContent.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(MailContent);
-      }
-      if (MailItemList.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(MailItemList);
-      }
-      if (MailTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MailTime);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(PB_MailItem other) {
-      if (other == null) {
-        return;
-      }
-      if (other.MailId != 0) {
-        MailId = other.MailId;
-      }
-      if (other.MailTitle.Length != 0) {
-        MailTitle = other.MailTitle;
-      }
-      if (other.MailContent.Length != 0) {
-        MailContent = other.MailContent;
-      }
-      if (other.MailItemList.Length != 0) {
-        MailItemList = other.MailItemList;
-      }
-      if (other.MailTime != 0) {
-        MailTime = other.MailTime;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 8: {
-            MailId = input.ReadInt32();
-            break;
-          }
-          case 18: {
-            MailTitle = input.ReadString();
-            break;
-          }
-          case 26: {
-            MailContent = input.ReadString();
-            break;
-          }
-          case 34: {
-            MailItemList = input.ReadString();
-            break;
-          }
-          case 40: {
-            MailTime = input.ReadInt32();
             break;
           }
         }

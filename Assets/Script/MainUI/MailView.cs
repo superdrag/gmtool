@@ -12,19 +12,13 @@ public class MailView : View
 {
     private static MailView ins = null;
 
-    private Button chaxunBtn;
-    private Button chongzhiBtn;
-
-    private Text zhanghaoText;
-    private Text shuliangText;
-
-    private Text zhanghaoData;
-    private Text idData;
-    private Text zhuanshiData;
-    private Text chaopiaoData;
-    private Text vipData;
-    private Text dengluData;
-    private Text lixianData;
+    private Button sendBtn;
+    private InputField titleText;
+    private InputField contentText;
+    private InputField itemListText;
+    private InputField accountText;
+    private Toggle oneTog;
+    private Toggle allTog;
 
     public static MailView Instance
     {
@@ -48,10 +42,18 @@ public class MailView : View
         viewRoot = ResMgr.CreateGo("Prefab/MailView").transform;
         UIHelper.AddChild(UIMgr.UIMain, viewRoot);  
 
-        // Transform bg = viewRoot.Find("bg");
-        // chaxunBtn = bg.Find("chaxun/cha").GetComponent<Button>();  
-        // chaxunBtn.onClick.AddListener(onClickCha); 
-        // zhanghaoText = bg.Find("chaxun/shuru/Text").GetComponent<Text>();
+        Transform bg = viewRoot.Find("bg");
+
+        sendBtn = bg.Find("sendBtn").GetComponent<Button>();  
+        sendBtn.onClick.AddListener(onClickSend); 
+
+        titleText = bg.Find("title/InputField").GetComponent<InputField>();
+        contentText = bg.Find("content/InputField").GetComponent<InputField>();
+        itemListText = bg.Find("itemlist/InputField").GetComponent<InputField>();
+        accountText = bg.Find("account/InputField").GetComponent<InputField>();
+
+        oneTog = bg.Find("account/ToggleGroup/Toggle").GetComponent<Toggle>();
+        allTog = bg.Find("account/ToggleGroup/Toggle2").GetComponent<Toggle>();
 
         // chongzhiBtn = bg.Find("chong/chongzhi").GetComponent<Button>();
         // chongzhiBtn.onClick.AddListener(onClickChong);      
@@ -67,23 +69,23 @@ public class MailView : View
     }
 
     override public void OnShow()
-    {
-
+    {        
+        titleText.text = "这是标题啊 this is title text";
+        contentText.text = "这是内容啊 this is content text";
+        itemListText.text = "currency;cash:1000|currency;diamond:100|item;10103:1|item;40102:1";
+        accountText.text = "AAA123";
     }
 
     private void onClickSend()
     {
         Logger.Log("onClickSend ...........");
-
-        if( string.IsNullOrEmpty(zhanghaoText.text) )
+        int mailType = 1;
+        if( allTog.isOn ) 
         {
-            GlobalModel.alertInfoData = "账号不能为空";
-            UIMgr.ShowUI(VIEWID.ALERTINFO);
-            return;
+            mailType = 2;        
         }
-
-        GlobalCtl.MSG_CL2PHP_QUERYUSERINFO(zhanghaoText.text);
-    }
+        GlobalCtl.MSG_CL2PHP_SENDMAIL( mailType, accountText.text,titleText.text,contentText.text,itemListText.text );
+    } 
 
 
 }

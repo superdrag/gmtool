@@ -46,7 +46,10 @@ public class UIHelper
             go.GetComponent<RectTransform>().offsetMin = Vector2.zero;
             go.GetComponent<RectTransform>().offsetMax = Vector2.zero;
         }
-        go.localPosition = Vector3.zero;
+        else
+        {
+            go.localPosition = Vector3.zero;
+        }        
 
         go.gameObject.layer = parent.gameObject.layer;        
         return go;

@@ -34,10 +34,10 @@ namespace PPhp {
             "VUVSWVVTRVJJTkZPEgsKA3JldBgBIAEoBRIPCgdhY2NvdW50GAIgASgJEg8K",
             "B2FjY2RiaWQYAyABKAUSDwoHZGlhbW9uZBgEIAEoBRIMCgRjYXNoGAUgASgF",
             "Eg8KB3ZpcGNhcmQYBiABKAUSDwoHbG9naW50dhgHIAEoBRIRCglvZmZsaW5l",
-            "dHYYCCABKAUiRwoOQzJTX0dNU0VORE1BSUwSDwoHYWNjb3VudBgBIAEoCRIk",
-            "CghtYWlsRGF0YRgCIAEoCzISLlBCYXNlLlBCX01haWxJdGVtIj4KDlMyQ19H",
-            "TVNFTkRNQUlMEgsKA3JldBgBIAEoBRIOCgZtYWlsSWQYAiABKAUSDwoHYWNj",
-            "b3VudBgDIAEoCWIGcHJvdG8z"));
+            "dHYYCCABKAUiWQoOQzJTX0dNU0VORE1BSUwSEAoIbWFpbHR5cGUYASABKAUS",
+            "DwoHYWNjbGlzdBgCIAEoCRIkCghtYWlsRGF0YRgDIAEoCzISLlBCYXNlLlBC",
+            "X01haWxJdGVtIj4KDlMyQ19HTVNFTkRNQUlMEgsKA3JldBgBIAEoBRIOCgZt",
+            "YWlsSWQYAiABKAUSDwoHYWNjb3VudBgDIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::PBase.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -47,7 +47,7 @@ namespace PPhp {
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMSendMoney), global::PPhp.S2C_GMSendMoney.Parser, new[]{ "Ret", "Account", "Type", "Num" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQUERYUSERINFO), global::PPhp.C2S_GMQUERYUSERINFO.Parser, new[]{ "Account" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQUERYUSERINFO), global::PPhp.S2C_GMQUERYUSERINFO.Parser, new[]{ "Ret", "Account", "Accdbid", "Diamond", "Cash", "Vipcard", "Logintv", "Offlinetv" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMSENDMAIL), global::PPhp.C2S_GMSENDMAIL.Parser, new[]{ "Account", "MailData" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMSENDMAIL), global::PPhp.C2S_GMSENDMAIL.Parser, new[]{ "Mailtype", "Acclist", "MailData" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMSENDMAIL), global::PPhp.S2C_GMSENDMAIL.Parser, new[]{ "Ret", "MailId", "Account" }, null, null, null)
           }));
     }
@@ -1267,7 +1267,8 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public C2S_GMSENDMAIL(C2S_GMSENDMAIL other) : this() {
-      account_ = other.account_;
+      mailtype_ = other.mailtype_;
+      acclist_ = other.acclist_;
       mailData_ = other.mailData_ != null ? other.mailData_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -1277,19 +1278,33 @@ namespace PPhp {
       return new C2S_GMSENDMAIL(this);
     }
 
-    /// <summary>Field number for the "account" field.</summary>
-    public const int AccountFieldNumber = 1;
-    private string account_ = "";
+    /// <summary>Field number for the "mailtype" field.</summary>
+    public const int MailtypeFieldNumber = 1;
+    private int mailtype_;
+    /// <summary>
+    ///1 单个多个 2全局
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Account {
-      get { return account_; }
+    public int Mailtype {
+      get { return mailtype_; }
       set {
-        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        mailtype_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "acclist" field.</summary>
+    public const int AcclistFieldNumber = 2;
+    private string acclist_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Acclist {
+      get { return acclist_; }
+      set {
+        acclist_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "mailData" field.</summary>
-    public const int MailDataFieldNumber = 2;
+    public const int MailDataFieldNumber = 3;
     private global::PBase.PB_MailItem mailData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::PBase.PB_MailItem MailData {
@@ -1312,7 +1327,8 @@ namespace PPhp {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Account != other.Account) return false;
+      if (Mailtype != other.Mailtype) return false;
+      if (Acclist != other.Acclist) return false;
       if (!object.Equals(MailData, other.MailData)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1320,7 +1336,8 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (Mailtype != 0) hash ^= Mailtype.GetHashCode();
+      if (Acclist.Length != 0) hash ^= Acclist.GetHashCode();
       if (mailData_ != null) hash ^= MailData.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1335,12 +1352,16 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Account.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Account);
+      if (Mailtype != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Mailtype);
+      }
+      if (Acclist.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Acclist);
       }
       if (mailData_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteMessage(MailData);
       }
       if (_unknownFields != null) {
@@ -1351,8 +1372,11 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Account.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      if (Mailtype != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Mailtype);
+      }
+      if (Acclist.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Acclist);
       }
       if (mailData_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(MailData);
@@ -1368,8 +1392,11 @@ namespace PPhp {
       if (other == null) {
         return;
       }
-      if (other.Account.Length != 0) {
-        Account = other.Account;
+      if (other.Mailtype != 0) {
+        Mailtype = other.Mailtype;
+      }
+      if (other.Acclist.Length != 0) {
+        Acclist = other.Acclist;
       }
       if (other.mailData_ != null) {
         if (mailData_ == null) {
@@ -1388,11 +1415,15 @@ namespace PPhp {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            Account = input.ReadString();
+          case 8: {
+            Mailtype = input.ReadInt32();
             break;
           }
           case 18: {
+            Acclist = input.ReadString();
+            break;
+          }
+          case 26: {
             if (mailData_ == null) {
               mailData_ = new global::PBase.PB_MailItem();
             }

@@ -60,8 +60,8 @@ public class MenuView : View
         EventTriggerListener.Get(daidingBtn3.gameObject).onClick = OnBtnEvent;
 
         btnList.Add(chongzhiBtn);
-        btnList.Add(hexinBtn);
         btnList.Add(youjianBtn);
+        btnList.Add(hexinBtn);
         btnList.Add(daidingBtn1);
         btnList.Add(daidingBtn2);
         btnList.Add(daidingBtn3);
@@ -71,21 +71,22 @@ public class MenuView : View
 
     override public void OnShow()
     {
+        Logger.Log("OnShow.........this.curIndex "+this.curIndex);
         if( this.curIndex == 1 )
         {
             UIMgr.HideUI(VIEWID.BLANK);
-            //UIMgr.HideUI(VIEWID.Mail);
+            UIMgr.HideUI(VIEWID.Mail);
             UIMgr.ShowUI(VIEWID.Recharge);
         }
-        // if( this.curIndex == 2 )
-        // {
-        //     UIMgr.HideUI(VIEWID.BLANK);
-        //     UIMgr.HideUI(VIEWID.Recharge);
-        //     //UIMgr.ShowUI(VIEWID.Mail);
-        // }        
+        else if( this.curIndex == 2 )
+        {
+            UIMgr.HideUI(VIEWID.BLANK);
+            UIMgr.HideUI(VIEWID.Recharge);
+            UIMgr.ShowUI(VIEWID.Mail);
+        }        
         else
         {
-            //UIMgr.HideUI(VIEWID.Mail);
+            UIMgr.HideUI(VIEWID.Mail);
             UIMgr.HideUI(VIEWID.Recharge);
             UIMgr.ShowUI(VIEWID.BLANK);
         }
