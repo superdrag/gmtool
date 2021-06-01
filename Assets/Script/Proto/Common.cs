@@ -29,7 +29,7 @@ namespace PBase {
             "DwoHY3VydGltZRgBIAEoBSIlCghQQl9Nb25leRIMCgR0eXBlGAEgASgFEgsK",
             "A251bRgCIAEoBSKRAQoLUEJfTWFpbEl0ZW0SCwoDbWlkGAEgASgJEg0KBXRp",
             "dGxlGAIgASgJEg8KB2NvbnRlbnQYAyABKAkSEAoIaXRlbWxpc3QYBCABKAkS",
-            "EAoIc2VuZFRpbWUYBSABKAUSEAoIcmVhZFRpbWUYBiABKAUSEAoIcGFzdFRp",
+            "EAoIc2VuZHRpbWUYBSABKAUSEAoIcmVhZHRpbWUYBiABKAUSEAoIcGFzdHRp",
             "bWUYByABKAUSDQoFc3RhdGUYCCABKAUiOQoPUEJfVGVhbUNhcmRJbmZvEgoK",
             "AmlkGAEgASgFEgsKA251bRgCIAEoBRINCgVsZXZlbBgDIAEoBSJNCgdQQl9J",
             "dGVtEhAKCGl0ZW1HdWlkGAEgASgJEg4KBml0ZW1JZBgCIAEoBRIPCgdpdGVt",
@@ -63,7 +63,7 @@ namespace PBase {
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.C2S_SocketHit), global::PBase.C2S_SocketHit.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.S2C_SocketHit), global::PBase.S2C_SocketHit.Parser, new[]{ "Curtime" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_Money), global::PBase.PB_Money.Parser, new[]{ "Type", "Num" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItem), global::PBase.PB_MailItem.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "SendTime", "ReadTime", "PastTime", "State" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItem), global::PBase.PB_MailItem.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "Sendtime", "Readtime", "Pasttime", "State" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_TeamCardInfo), global::PBase.PB_TeamCardInfo.Parser, new[]{ "Id", "Num", "Level" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_Item), global::PBase.PB_Item.Parser, new[]{ "ItemGuid", "ItemId", "ItemPos", "ItemNum" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_ItemList), global::PBase.PB_ItemList.Parser, new[]{ "ItemList" }, null, null, null),
@@ -651,9 +651,9 @@ namespace PBase {
       title_ = other.title_;
       content_ = other.content_;
       itemlist_ = other.itemlist_;
-      sendTime_ = other.sendTime_;
-      readTime_ = other.readTime_;
-      pastTime_ = other.pastTime_;
+      sendtime_ = other.sendtime_;
+      readtime_ = other.readtime_;
+      pasttime_ = other.pasttime_;
       state_ = other.state_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -716,45 +716,45 @@ namespace PBase {
       }
     }
 
-    /// <summary>Field number for the "sendTime" field.</summary>
-    public const int SendTimeFieldNumber = 5;
-    private int sendTime_;
+    /// <summary>Field number for the "sendtime" field.</summary>
+    public const int SendtimeFieldNumber = 5;
+    private int sendtime_;
     /// <summary>
     ///发送时间
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int SendTime {
-      get { return sendTime_; }
+    public int Sendtime {
+      get { return sendtime_; }
       set {
-        sendTime_ = value;
+        sendtime_ = value;
       }
     }
 
-    /// <summary>Field number for the "readTime" field.</summary>
-    public const int ReadTimeFieldNumber = 6;
-    private int readTime_;
+    /// <summary>Field number for the "readtime" field.</summary>
+    public const int ReadtimeFieldNumber = 6;
+    private int readtime_;
     /// <summary>
     ///读时间
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int ReadTime {
-      get { return readTime_; }
+    public int Readtime {
+      get { return readtime_; }
       set {
-        readTime_ = value;
+        readtime_ = value;
       }
     }
 
-    /// <summary>Field number for the "pastTime" field.</summary>
-    public const int PastTimeFieldNumber = 7;
-    private int pastTime_;
+    /// <summary>Field number for the "pasttime" field.</summary>
+    public const int PasttimeFieldNumber = 7;
+    private int pasttime_;
     /// <summary>
     ///过期时间
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int PastTime {
-      get { return pastTime_; }
+    public int Pasttime {
+      get { return pasttime_; }
       set {
-        pastTime_ = value;
+        pasttime_ = value;
       }
     }
 
@@ -789,9 +789,9 @@ namespace PBase {
       if (Title != other.Title) return false;
       if (Content != other.Content) return false;
       if (Itemlist != other.Itemlist) return false;
-      if (SendTime != other.SendTime) return false;
-      if (ReadTime != other.ReadTime) return false;
-      if (PastTime != other.PastTime) return false;
+      if (Sendtime != other.Sendtime) return false;
+      if (Readtime != other.Readtime) return false;
+      if (Pasttime != other.Pasttime) return false;
       if (State != other.State) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -803,9 +803,9 @@ namespace PBase {
       if (Title.Length != 0) hash ^= Title.GetHashCode();
       if (Content.Length != 0) hash ^= Content.GetHashCode();
       if (Itemlist.Length != 0) hash ^= Itemlist.GetHashCode();
-      if (SendTime != 0) hash ^= SendTime.GetHashCode();
-      if (ReadTime != 0) hash ^= ReadTime.GetHashCode();
-      if (PastTime != 0) hash ^= PastTime.GetHashCode();
+      if (Sendtime != 0) hash ^= Sendtime.GetHashCode();
+      if (Readtime != 0) hash ^= Readtime.GetHashCode();
+      if (Pasttime != 0) hash ^= Pasttime.GetHashCode();
       if (State != 0) hash ^= State.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -836,17 +836,17 @@ namespace PBase {
         output.WriteRawTag(34);
         output.WriteString(Itemlist);
       }
-      if (SendTime != 0) {
+      if (Sendtime != 0) {
         output.WriteRawTag(40);
-        output.WriteInt32(SendTime);
+        output.WriteInt32(Sendtime);
       }
-      if (ReadTime != 0) {
+      if (Readtime != 0) {
         output.WriteRawTag(48);
-        output.WriteInt32(ReadTime);
+        output.WriteInt32(Readtime);
       }
-      if (PastTime != 0) {
+      if (Pasttime != 0) {
         output.WriteRawTag(56);
-        output.WriteInt32(PastTime);
+        output.WriteInt32(Pasttime);
       }
       if (State != 0) {
         output.WriteRawTag(64);
@@ -872,14 +872,14 @@ namespace PBase {
       if (Itemlist.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Itemlist);
       }
-      if (SendTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SendTime);
+      if (Sendtime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Sendtime);
       }
-      if (ReadTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ReadTime);
+      if (Readtime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Readtime);
       }
-      if (PastTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PastTime);
+      if (Pasttime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Pasttime);
       }
       if (State != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(State);
@@ -907,14 +907,14 @@ namespace PBase {
       if (other.Itemlist.Length != 0) {
         Itemlist = other.Itemlist;
       }
-      if (other.SendTime != 0) {
-        SendTime = other.SendTime;
+      if (other.Sendtime != 0) {
+        Sendtime = other.Sendtime;
       }
-      if (other.ReadTime != 0) {
-        ReadTime = other.ReadTime;
+      if (other.Readtime != 0) {
+        Readtime = other.Readtime;
       }
-      if (other.PastTime != 0) {
-        PastTime = other.PastTime;
+      if (other.Pasttime != 0) {
+        Pasttime = other.Pasttime;
       }
       if (other.State != 0) {
         State = other.State;
@@ -947,15 +947,15 @@ namespace PBase {
             break;
           }
           case 40: {
-            SendTime = input.ReadInt32();
+            Sendtime = input.ReadInt32();
             break;
           }
           case 48: {
-            ReadTime = input.ReadInt32();
+            Readtime = input.ReadInt32();
             break;
           }
           case 56: {
-            PastTime = input.ReadInt32();
+            Pasttime = input.ReadInt32();
             break;
           }
           case 64: {

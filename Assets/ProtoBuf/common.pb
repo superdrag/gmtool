@@ -14,9 +14,9 @@
 title (	Rtitle
 content (	Rcontent
 itemlist (	Ritemlist
-sendTime (RsendTime
-readTime (RreadTime
-pastTime (RpastTime
+sendtime (Rsendtime
+readtime (Rreadtime
+pasttime (Rpasttime
 state (Rstate"I
 PB_TeamCardInfo
 id (Rid

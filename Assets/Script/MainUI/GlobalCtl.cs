@@ -111,7 +111,7 @@ public class GlobalCtl
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMONEY,pb);  
     }
 
-    public static void MSG_CL2PHP_SENDMAIL(int type, string accList, string title, string content, string items)
+    public static void MSG_CL2PHP_SENDMAIL(int type, string accList, string title, string content, string items, int passDay)
     {
         C2S_GMSendMail pb = new C2S_GMSendMail();
         pb.Mailtype = type;
@@ -120,6 +120,7 @@ public class GlobalCtl
         item.Title = title;
         item.Content = content;
         item.Itemlist = items;
+        item.Pasttime = passDay;
         pb.Maildata = item;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMAIL,pb);  
     }

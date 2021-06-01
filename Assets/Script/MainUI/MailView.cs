@@ -16,7 +16,10 @@ public class MailView : View
     private InputField titleText;
     private InputField contentText;
     private InputField itemListText;
+    private InputField pastDayText;    
     private InputField accountText;
+
+
     private Toggle oneTog;
     private Toggle allTog;
 
@@ -50,7 +53,8 @@ public class MailView : View
         titleText = bg.Find("title/InputField").GetComponent<InputField>();
         contentText = bg.Find("content/InputField").GetComponent<InputField>();
         itemListText = bg.Find("itemlist/InputField").GetComponent<InputField>();
-        accountText = bg.Find("account/InputField").GetComponent<InputField>();
+        pastDayText = bg.Find("pastday/InputField").GetComponent<InputField>();
+        accountText = bg.Find("account/InputField").GetComponent<InputField>();        
 
         oneTog = bg.Find("account/ToggleGroup/Toggle").GetComponent<Toggle>();
         allTog = bg.Find("account/ToggleGroup/Toggle2").GetComponent<Toggle>();
@@ -74,17 +78,34 @@ public class MailView : View
         contentText.text = "这是内容啊 this is content text";
         itemListText.text = "currency;cash:1000|currency;diamond:100|item;10103:1|item;40102:1";
         accountText.text = "AAA123";
+        pastDayText.text = "7";
     }
 
     private void onClickSend()
     {
         Logger.Log("onClickSend ...........");
+
+        if( String.IsNullOrEmpty(pastDayText.text) )
+        {
+            GlobalModel.alertInfoData = "过期天数未空";
+            UIMgr.ShowUI(VIEWID.ALERTINFO);
+            return;
+        }
+
+        int passDay = int.Parse(pastDayText.text);
+        if( passDay <= 0 )
+        {
+            GlobalModel.alertInfoData = "过期天数错误";
+            UIMgr.ShowUI(VIEWID.ALERTINFO);
+            return;
+        }
+
         int mailType = 1;
         if( allTog.isOn ) 
         {
             mailType = 2;        
         }
-        GlobalCtl.MSG_CL2PHP_SENDMAIL( mailType, accountText.text,titleText.text,contentText.text,itemListText.text );
+        GlobalCtl.MSG_CL2PHP_SENDMAIL( mailType, accountText.text,titleText.text,contentText.text,itemListText.text, passDay );
     } 
 
 
