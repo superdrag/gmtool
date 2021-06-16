@@ -15,6 +15,8 @@ public enum VIEWID
     MENU = 21,
     Recharge = 31,
     Mail = 32,
+    MailSend = 33,
+    //MailItem = 34,
     //-------------------------------
 }
 
@@ -43,6 +45,7 @@ public static class UIMgr
          
         RegisterUI(VIEWID.Recharge,RechargeView.Instance);    
         RegisterUI(VIEWID.Mail,MailView.Instance);
+        RegisterUI(VIEWID.MailSend,MailSendView.Instance);
     }    
 
     public static void Init()

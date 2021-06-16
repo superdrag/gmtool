@@ -10,14 +10,6 @@ public class MenuView : View
 {
     private static MenuView ins = null;
 
-    private Button chongzhiBtn;
-    private Button hexinBtn;
-    private Button youjianBtn;
-
-    private Button daidingBtn1;
-    private Button daidingBtn2;
-    private Button daidingBtn3;
-
     private List<Button> btnList = new List<Button>();
 
     int curIndex;
@@ -44,41 +36,42 @@ public class MenuView : View
         viewRoot = ResMgr.CreateGo("Prefab/MenuView").transform;
         UIHelper.AddChild(UIMgr.UIMenu, viewRoot);  
 
-        chongzhiBtn = viewRoot.Find("chongzhi").GetComponent<Button>();  
-        hexinBtn = viewRoot.Find("hexin").GetComponent<Button>();
-        youjianBtn = viewRoot.Find("youjian").GetComponent<Button>();
+        Button chongzhiBtn = viewRoot.Find("chongzhi").GetComponent<Button>();  
+        Button hexinBtn = viewRoot.Find("hexin").GetComponent<Button>();
+        Button youjianBtn = viewRoot.Find("youjian").GetComponent<Button>();
 
-        daidingBtn1 = viewRoot.Find("daiding1").GetComponent<Button>();
-        daidingBtn2 = viewRoot.Find("daiding2").GetComponent<Button>();
-        daidingBtn3 = viewRoot.Find("daiding3").GetComponent<Button>();
+        Button youjianbackBtn = viewRoot.Find("daiding1").GetComponent<Button>();
+        Button daidingBtn2 = viewRoot.Find("daiding2").GetComponent<Button>();
+        Button daidingBtn3 = viewRoot.Find("daiding3").GetComponent<Button>();
 
         EventTriggerListener.Get(chongzhiBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(hexinBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(youjianBtn.gameObject).onClick = OnBtnEvent;
-        EventTriggerListener.Get(daidingBtn1.gameObject).onClick = OnBtnEvent;
+        EventTriggerListener.Get(youjianbackBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(daidingBtn2.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(daidingBtn3.gameObject).onClick = OnBtnEvent;
 
+        btnList.Add(hexinBtn);
         btnList.Add(chongzhiBtn);
         btnList.Add(youjianBtn);
-        btnList.Add(hexinBtn);
-        btnList.Add(daidingBtn1);
+        btnList.Add(youjianbackBtn);
         btnList.Add(daidingBtn2);
         btnList.Add(daidingBtn3);
 
-        curIndex = 1;
+        curIndex = 3;
     }
 
     override public void OnShow()
     {
         Logger.Log("OnShow.........this.curIndex "+this.curIndex);
-        if( this.curIndex == 1 )
+        if( this.curIndex == 2 )
         {
             UIMgr.HideUI(VIEWID.BLANK);
             UIMgr.HideUI(VIEWID.Mail);
+            UIMgr.HideUI(VIEWID.MailSend);
             UIMgr.ShowUI(VIEWID.Recharge);
         }
-        else if( this.curIndex == 2 )
+        else if( this.curIndex == 3 )
         {
             UIMgr.HideUI(VIEWID.BLANK);
             UIMgr.HideUI(VIEWID.Recharge);
@@ -87,6 +80,7 @@ public class MenuView : View
         else
         {
             UIMgr.HideUI(VIEWID.Mail);
+            UIMgr.HideUI(VIEWID.MailSend);
             UIMgr.HideUI(VIEWID.Recharge);
             UIMgr.ShowUI(VIEWID.BLANK);
         }
@@ -102,32 +96,18 @@ public class MenuView : View
 
     private void OnBtnEvent(GameObject go)
     {
-        Logger.Log("OnBtnEvent click.........."+go.name);
+        Logger.Log("OnBtnEvent click go.........."+go.name);
         
-        if( go.name == "chongzhi" )
+        for (int i = 0; i < btnList.Count; i++)
         {
-            curIndex = 1;
+            if( btnList[i].name == go.name )
+            {
+                curIndex = i + 1;
+                Logger.Log("OnBtnEvent click index.........."+curIndex);
+                break;
+            }
         }
-        else if( go.name == "youjian" )
-        {
-            curIndex = 2;                
-        }        
-        else if( go.name == "hexin" )
-        {
-            curIndex = 3;
-        }
-        else if( go.name == "daiding1" )
-        {
-            curIndex = 4;   
-        }
-        else if( go.name == "daiding2" )
-        {
-            curIndex = 5; 
-        }
-        else if( go.name == "daiding3" )
-        {
-            curIndex = 6; 
-        }   
+
         UIMgr.RefreshUI(VIEWID.MENU);           
     }
 
