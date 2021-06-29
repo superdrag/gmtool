@@ -13,6 +13,8 @@ public class MailSendView : View
     private static MailSendView ins = null;
 
     private Button sendBtn;
+    private Button closeBtn;
+    private Button deleteBtn;
     private InputField titleText;
     private InputField contentText;
     private InputField itemListText;
@@ -49,6 +51,12 @@ public class MailSendView : View
 
         sendBtn = bg.Find("sendBtn").GetComponent<Button>();  
         sendBtn.onClick.AddListener(onClickSend); 
+
+        closeBtn = bg.Find("closeBtn").GetComponent<Button>();  
+        closeBtn.onClick.AddListener(onClickClose); 
+
+        deleteBtn = bg.Find("deleteBtn").GetComponent<Button>();  
+        deleteBtn.onClick.AddListener(onClickDelete);                 
 
         titleText = bg.Find("title/InputField").GetComponent<InputField>();
         contentText = bg.Find("content/InputField").GetComponent<InputField>();
@@ -107,6 +115,18 @@ public class MailSendView : View
         }
         GlobalCtl.MSG_CL2PHP_SENDMAIL( mailType, accountText.text,titleText.text,contentText.text,itemListText.text, passDay );
     } 
+
+
+    private void onClickDelete()
+    {
+
+    }
+
+    private void onClickClose()
+    {
+        UIMgr.HideUI(VIEWID.MailSend);
+    }
+
 
 
 }

@@ -1,6 +1,11 @@
 
-•
-client.protoPClientcommon.proto"(
+æ
+client.protoPClientcommon.proto")
+S2C_ErrorCode
+errcode (Rerrcode"
+C2S_SocketHit")
+S2C_SocketHit
+curtime (Rcurtime"(
 S2C_ShutDwon
 leftsec (Rleftsec"
 S2C_ReloginKick"½
@@ -19,30 +24,33 @@
 gateip (	Rgateip
 gateport (Rgateport
 time (Rtime
-acccode (	Racccode"™
+acccode (	Racccode"±
 C2S_LoginGate
 account (	Raccount
 name (	Rname
 accdbid (Raccdbid
 sign (	Rsign
 time (Rtime
-version (	Rversion"Á
+version (	Rversion
+reconn (Rreconn"Ù
 S2C_LoginGate
 account (	Raccount
 accdbid (Raccdbid
 roleid (Rroleid
 ip (	Rip
-headicon (	Rheadicon
+headicon (	Rheadicon
+reconn (Rreconn
 
 firstlogin	 (R
 firstlogin
 curtime
- (Rcurtime"—
-S2C_LoginRoleData
-coin (Rcoin
+ (Rcurtime"Á
+S2C_LoginRoleData
+reconn (Rreconn
 diamond (Rdiamond
-vipcard (Rvipcard:
-teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"¨
+newmail (Rnewmail:
+teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist$
+firstgiftlist (Rfirstgiftlist"¨
 C2S_StoreBaseInfo
 coin (Rcoin
 taskid (Rtaskid
@@ -57,36 +65,46 @@ employlist=
 EmploylistEntry
 key (Rkey
 value (Rvalue:8"
-S2C_ZeroRefresh"7
+S2C_ZeroRefresh"0
+S2C_UpdateDiamod
+	diamodnum (R	diamodnum"7
 C2S_UseDiamod
 num (Rnum
 event (Revent"I
 S2C_UseDiamod
 ret (Rret
 num (Rnum
-event (Revent"
+event (Revent"E
+C2S_FirstRecharge
+giftid (Rgiftid
+paycode (	Rpaycode"=
+S2C_FirstRecharge
+ret (Rret
+giftid (Rgiftid"
 C2S_GetMailNew"*
 S2C_GetMailNew
-newmail (Rnewmail"
+newmail (Rnewmail"
 C2S_ShowMailList"B
 S2C_ShowMailList.
 maillist (2.PBase.PB_MailItemRmaillist"&
 C2S_ReadMail
-mailid (Rmailid"X
+mailid (	Rmailid"V
 S2C_ReadMail
 ret (Rret
-mailid (Rmailid
-
-mailstatus (R
-mailstatus")
+mailid (	Rmailid
+	mailstate (R	mailstate")
 C2S_MailGetItem
-mailid (Rmailid"[
+mailid (	Rmailid"Y
 S2C_MailGetItem
 ret (Rret
-mailid (Rmailid
-
-mailstatus (R
-mailstatus"
+mailid (	Rmailid
+	mailstate (R	mailstate"
+C2S_MailDeleteRead".
+S2C_MailDeleteRead
+dellist (	Rdellist"
+C2S_MailAllRead"-
+S2C_MailAllRead
+readlist (	Rreadlist"
 C2S_ShowTeamCardList"R
 S2C_ShowTeamCardList:
 teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"$
@@ -94,20 +112,58 @@ mailstatus"
 boxid (Rboxid"\
 S2C_DrawCard
 ret (Rret:
-teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"1
-C2S_PhoneHomeOnline
-isOnline (RisOnline"I
-S2C_PhoneHomeOnline
-userId (RuserId
-isOnline (RisOnline"%
-C2S_GetItemList
-type (Rtype"R
-S2C_BackItemList
-type (Rtype*
-itemList (2.PBase.PB_ItemRitemList"
-C2S_GetEquipList"A
-S2C_BackEquipList,
-	equipList (2.PBase.PB_ItemR	equipList"%
+teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"G
+C2S_UpLevelCard
+cardid (Rcardid
+	cardlevel (R	cardlevel"Y
+S2C_UpLevelCard
+ret (Rret
+cardid (Rcardid
+	cardlevel (R	cardlevel",
+C2S_FundTaskFinish
+taskid (Rtaskid">
+S2C_FundTaskFinish
+ret (Rret
+taskid (Rtaskid"
+C2S_PassInfo"F
+S2C_PassInfo
+passtime (Rpasstime
+tasklist (Rtasklist"
+C2S_BuyPass";
+S2C_BuyPass
+ret (Rret
+passtime (Rpasstime"E
+C2S_GetPassItem
+taskid (Rtaskid
+tasktype (Rtasktype"W
+S2C_GetPassItem
+ret (Rret
+taskid (Rtaskid
+tasktype (Rtasktype"*
+C2S_ShopGiftPack
+giftid (Rgiftid"<
+S2C_ShopGiftPack
+ret (Rret
+giftid (Rgiftid"A
+C2S_IOSPayCheck
+payid (Rpayid
+paycode (	Rpaycode"S
+S2C_IOSPayCheck
+ret (Rret
+payid (Rpayid
+paytype (Rpaytype"8
+C2S_TestRecharge
+type (Rtype
+num (Rnum"8
+S2C_TestRecharge
+type (Rtype
+num (Rnum"G
+C2S_TestGetTeamCard
+cardid (Rcardid
+cardnum (Rcardnum"G
+S2C_TestGetTeamCard
+cardid (Rcardid
+cardnum (Rcardnum"%
 C2S_GetTaskList
 type (Rtype"R
 S2C_BackTaskList
@@ -115,43 +171,4 @@ mailstatus"
 taskList (2.PBase.PB_TaskRtaskList"
 C2S_GetCounterList"J
 S2C_BackCounterList3
-counterList (2.PBase.PB_CounterRcounterList"(
-C2S_SendChat
-content (	Rcontent"D
-S2C_PushSendChat
-userId (RuserId
-content (	Rcontent"=
-C2S_SendVoice
-content (Rcontent
-flag (Rflag"U
-S2C_PushVoice
-userId (RuserId
-content (Rcontent
-flag (Rflag"S
-C2S_CheatCard 
-cheatCards1 (	RcheatCards1 
-cheatCards2 (	RcheatCards2"E
-C2S_GetHallUserInfo
-gameId (RgameId
-userId (RuserId"
-C2S_NoticeInfo"n
-S2C_NoticeInfo$
-noticecontent (	Rnoticecontent
-	starttime (R	starttime
-endtime (Rendtime"1
-C2S_BindPhone 
-phoneNumber (	RphoneNumber"1
-S2C_BindPhone 
-phoneNumber (	RphoneNumber"4
-C2S_BindInviteCode
-
-inviteCode (R
-inviteCode"x
-S2C_BindInviteCode
-
-inviteName (	R
-inviteName
-
-inviteCode (R
-inviteCode"
-inviteUserId (RinviteUserIdbproto3
+counterList (2.PBase.PB_CounterRcounterListbproto3

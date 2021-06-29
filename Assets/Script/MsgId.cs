@@ -25,6 +25,10 @@ public enum MSGID
     MSG_CL2PHP_SENDMAIL                 = 1820,    //GM发送邮件
     MSG_PHP2CL_SENDMAIL                = 2820,    //GM发送邮件
 
+    MSG_CL2PHP_QUERYALLMAIL               = 1821,    //[[GM查询最近全部邮件]]  
+    MSG_PHP2CL_QUERYALLMAIL               = 2821,    //[[GM查询最近全部邮件]]  
+
+
 
 }
 

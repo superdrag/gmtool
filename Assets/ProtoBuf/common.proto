@@ -5,23 +5,7 @@ package PBase;
 
 // ***********************************  MSG Start ***********************************
 
-//错误码 2000
-message S2C_ErrorCode
-{
-    int32 errcode = 1;
-}
 
-//MSG_CL2GT_SOCKETHIT         1999     //客户端心跳包
-message C2S_SocketHit
-{
-
-}
-
-//MSG_GT2CL_SOCKETHIT         2999     //客户端心跳包
-message S2C_SocketHit
-{
-    int32 curtime = 1; //时间戳
-}
 
 
 // ***********************************  MSG End ***********************************

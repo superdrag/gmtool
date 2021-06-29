@@ -18,6 +18,8 @@ public class MailView : View
     private Button newMailBtn;
     private InputField accText;
 
+    public Transform Content;
+
 
     public static MailView Instance
     {
@@ -55,16 +57,27 @@ public class MailView : View
 
 
         accText = bg.Find("btnGroup/InputField").GetComponent<InputField>();
+
+        Content = bg.Find("Scroll View/Viewport/Content");
     }
 
     override public void OnShow()
     {        
-
+        C2S_GMQueryAllMail pb = new C2S_GMQueryAllMail();
+        pb.Type = 1;
+        pb.Account = "";
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYALLMAIL,pb);  
     }
 
     private void onClickQuery(GameObject go)
     {
-
+        if( go.name == "allBtn" )
+        {
+            C2S_GMQueryAllMail pb = new C2S_GMQueryAllMail();
+            pb.Type = 1;
+            pb.Account = "";
+            NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYALLMAIL,pb);  
+        }
     }
 
     private void onClickNewMail(GameObject go)
@@ -80,5 +93,10 @@ public class MailView : View
        
     } 
 
-
+    public void AddMailItem(MailItem mail)
+    {                
+        mail.view.SetParent(Content);
+        mail.view.transform.localScale = Vector3.one;
+        mail.Show();
+    }
 }

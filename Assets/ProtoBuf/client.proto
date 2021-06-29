@@ -18,6 +18,23 @@ import "common.proto";
 
 //----------------------------- common ---------------------
 
+//错误码 2000
+message S2C_ErrorCode
+{
+    int32 errcode = 1;
+}
+
+//MSG_CL2GT_SOCKETHIT         1999     //客户端心跳包
+message C2S_SocketHit
+{
+
+}
+
+//MSG_GT2CL_SOCKETHIT         2999     //客户端心跳包
+message S2C_SocketHit
+{
+    int32 curtime = 1; //时间戳
+}
 
   
 //准备关闭服务器
@@ -42,7 +59,7 @@ message C2S_Login
     string version = 3; //版本号
     string headicon = 4;//用户头像Url
     int32 guest = 5;    //1游客 0非游客 
-    int32 reconn = 6;    //1断线重连
+    int32 reconn = 6;    //断线重连
     string platform = 11; //平台id
 }
 
@@ -67,6 +84,7 @@ message C2S_LoginGate
     string sign= 4;//签名
     int32 time= 5;//登录时间戳
     string version = 6; //版本号
+    int32 reconn = 7;    //断线重连
 }
 
 //MSG_LG2CL_BACKROLEINITDATA      = 2012,     //登录网关成功
@@ -77,6 +95,7 @@ message S2C_LoginGate
     int32 roleid = 3;//角色id
     string ip=4;//ip地址
     string headicon = 5;//头像Url
+    int32 reconn = 6;    //断线重连
     bool firstlogin = 9;//第一次登录
     int32 curtime = 10;//
 }
@@ -84,10 +103,11 @@ message S2C_LoginGate
 //MsgId.MSG_LG2CL_LOGINROLEDATA               = 2013      --返回登录基本数据
 message S2C_LoginRoleData
 {
-    int32 coin = 1;//金钱
+    int32 reconn = 1;    //断线重连
     int32 diamond = 2;//钻石
-    int32 vipcard = 3;//vip
+    bool newmail = 3; //新邮件
     repeated PBase.PB_TeamCardInfo teamcardlist = 11;  //卡牌信息
+    repeated int32 firstgiftlist = 12;  //首冲礼包信息
 }
 
 //MsgId.MSG_CL2LG_STOREBASEINFO           = 1201      --基本信息存储
@@ -107,6 +127,12 @@ message S2C_ZeroRefresh
 
 }
 
+//MsgId.MSG_WD2CL_UPATEDIAMOD             = 2500      --更新钻石数量
+message S2C_UpdateDiamod
+{
+    int32 diamodnum = 1;  //钻石数量
+}
+
 // MsgId.MSG_CL2WD_USEDIAMOD               = 1501      --使用钻石
 message C2S_UseDiamod
 {
@@ -122,6 +148,19 @@ message S2C_UseDiamod
     int32 event = 3;
 }
 
+//MsgId.MSG_CL2WD_FIRSTRECHARGE           = 1502      --[[首冲礼包]] 
+message C2S_FirstRecharge
+{
+    int32 giftid = 1;
+    string paycode = 2;
+}
+
+//MsgId.MSG_WD2CL_FIRSTRECHARGE           = 2502      --[[首冲礼包]]  
+message S2C_FirstRecharge
+{
+    int32 ret = 1;
+    int32 giftid = 2;    
+}
 
 // MsgId.MSG_CL2WD_GETMAILNEW              = 1510      --请求是否有新邮件
 message C2S_GetMailNew
@@ -132,7 +171,7 @@ message C2S_GetMailNew
 // MsgId.MSG_WD2CL_GETMAILNEW              = 2510      --请求是否有新邮件
 message S2C_GetMailNew
 {
-    int32 newmail = 1;
+    bool newmail = 1;
 }
 
 
@@ -149,31 +188,53 @@ message S2C_ShowMailList
 }
 
 
-//MsgId.MSG_CL2WD_READMAIL                = 2512      --读邮件
+//MsgId.MSG_CL2WD_READMAIL                = 1512      --读邮件
 message C2S_ReadMail
 {
-    int32 mailid = 1;
+    string mailid = 1;
 }
 
 //MsgId.MSG_WD2CL_READMAIL                = 2512      --读邮件
 message S2C_ReadMail
 {
     int32 ret = 1;
-    int32 mailid = 2;
-    int32 mailstatus = 3;
+    string mailid = 2;
+    int32 mailstate = 3;
 }
 
-// MsgId.MSG_CL2WD_MAILGETITEM             = 2513      --领取邮件物品
+// MsgId.MSG_CL2WD_MAILGETITEM             = 1513      --领取邮件物品
 message C2S_MailGetItem
 {
-    int32 mailid = 1;
+    string mailid = 1;
 }
 // MsgId.MSG_WD2CL_MAILGETITEM             = 2513      --领取邮件物品
 message S2C_MailGetItem
 {
     int32 ret = 1;
-    int32 mailid = 2;
-    int32 mailstatus = 3;
+    string mailid = 2;
+    int32 mailstate = 3;
+}
+
+// MsgId.MSG_CL2WD_MAILDELETEREAD              = 1514      --一键删除邮件
+message C2S_MailDeleteRead
+{
+    
+}
+// MsgId.MSG_WD2CL_MAILDELETEREAD              = 2514      --一键删除邮件
+message S2C_MailDeleteRead
+{
+    repeated string dellist = 1; //被删除的列表
+}
+
+// MsgId.MSG_CL2WD_MAILALLREAD             = 1515   --[[一键读邮件]]
+message C2S_MailAllRead
+{
+    
+}   
+// MsgId.MSG_WD2CL_MAILALLREAD             = 2515   --[[一键读邮件]]
+message S2C_MailAllRead
+{
+    repeated string readlist = 1;
 }
 
 
@@ -202,11 +263,177 @@ message S2C_DrawCard
     repeated PBase.PB_TeamCardInfo teamcardlist = 2;
 }
 
+// MsgId.MSG_CL2WD_UPLEVELCARD             = 1523      --卡牌等级升级
+message C2S_UpLevelCard
+{
+    int32 cardid = 1;
+    int32 cardlevel = 2;
+}
+// MsgId.MSG_WD2CL_UPLEVELCARD             = 2523      --卡牌等级升级
+message S2C_UpLevelCard
+{
+    int32 ret = 1;
+    int32 cardid = 2;
+    int32 cardlevel = 3;
+}
+
+//----------
+
+
+// MsgId.MSG_CL2WD_FUNDTASKFINISH          = 1525      --基金任务领取奖励
+message C2S_FundTaskFinish
+{
+    int32 taskid = 1;
+}
+
+// MsgId.MSG_WD2CL_FUNDTASKFINISH          = 2525      --基金任务领取奖励
+message S2C_FundTaskFinish
+{
+    int32 ret = 1;
+    int32 taskid = 2;
+}
+
+
+//MsgId.MSG_CL2WD_PASSINFO                = 1530      --[[请求通行证信息]]    
+message C2S_PassInfo
+{
+    
+}
+
+//MsgId.MSG_WD2LC_PASSINFO                = 2530      --[[请求通行证信息]]    
+message S2C_PassInfo
+{
+    int32 passtime = 1;//购买通信证时间
+    repeated int32 tasklist = 2;//领取列表
+}
+
+// MsgId.MSG_CL2WD_BUYPASS                 = 1531      --购买通行证
+message C2S_BuyPass
+{
+    
+}
+// MsgId.MSG_WD2LC_BUYPASS                 = 2531      --购买通行证
+message S2C_BuyPass
+{
+    int32 ret = 1;
+    int32 passtime = 2;       
+}
+
+// MsgId.MSG_CL2WD_GETPASSITEM             = 1532      --领取通行证奖励
+message C2S_GetPassItem
+{
+    int32 taskid = 1;
+    int32 tasktype = 2;
+}
+
+// MsgId.MSG_WD2LC_GETPASSITEM             = 2532      --领取通行证奖励
+message S2C_GetPassItem
+{
+    int32 ret = 1;
+    int32 taskid = 2;
+    int32 tasktype = 3;
+}
+
+
+// MsgId.MSG_CL2WD_SHOPGIFTPACK            = 1541      --[[购买商城礼包]] 
+message C2S_ShopGiftPack
+{
+    int32 giftid = 1;
+}
+// MsgId.MSG_WD2LC_SHOPGIFTPACK            = 2541      --[[购买商城礼包]]  
+message S2C_ShopGiftPack
+{
+    int32 ret = 1;
+    int32 giftid = 2;
+}
+
+
+// MsgId.MSG_CL2WD_IOSPAYCHECK             = 1550      --[[IOS支付]] 
+message C2S_IOSPayCheck
+{
+    int32 payid = 1;    //商品id
+    string paycode = 2;  //支付凭证码
+}
+
+// MsgId.MSG_WD2LC_IOSPAYCHECK             = 2550      --[[IOS支付]]   
+message S2C_IOSPayCheck
+{
+    int32 ret = 1;
+    int32 payid = 2;    //商品id
+    int32 paytype = 3;  //购买类型 101首冲 102商城礼包
+}
+
+// -----------------------------  测试接口 ----------------------------------
+
+//MsgId.MSG_CL2WD_TESTRECHARGEDIAMOND         = 1301      --[[测试充值]] 
+message C2S_TestRecharge
+{
+    int32 type = 1;  //1 钻石 
+    int32 num = 2;
+}
+
+//MsgId.MSG_WD2LC_TESTRECHARGEDIAMOND         = 2301      --[[测试充值]]
+message S2C_TestRecharge
+{
+    int32 type = 1;    //1 钻石 
+    int32 num = 2;
+}
+
+
+//MsgId.MSG_CL2WD_TESTGETTEAMCARD         = 1302      --[[测试获得卡牌]]
+message C2S_TestGetTeamCard
+{
+    int32 cardid = 1; 
+    int32 cardnum = 2;
+}
+
+
+//MsgId.MSG_WD2CL_TESTGETTEAMCARD         = 2302      --[[测试获得卡牌]]   
+message S2C_TestGetTeamCard
+{
+    int32 cardid = 1; 
+    int32 cardnum = 2;
+}
+
+
+
+
 
 
 
 
 //  --------------------------------  以下不适用   -------------------
+
+
+//MSG_CL2LG_GETTASKLIST           = 1521,     //请求任务列表
+message C2S_GetTaskList
+{
+    int32 type = 1;//任务类型
+}
+
+//MSG_LG2CL_BACKTASLLIST          = 2521,     //返回任务列表
+message S2C_BackTaskList
+{
+    int32 type = 1;//任务类型
+    repeated PBase.PB_Task taskList = 2;//物品列表
+}
+
+
+// MSG_CL2LG_GETCOUNTERLIST        = 1531,     //请求计数器列表
+message C2S_GetCounterList
+{
+
+}
+
+// MSG_LG2CL_BACKCOUNTERLIST       = 2531,     //返回计数器列表
+message S2C_BackCounterList
+{
+    repeated PBase.PB_Counter counterList = 1;
+}
+
+
+
+/*
 
 
 //玩家在线状态设置home键
@@ -249,33 +476,6 @@ message S2C_BackEquipList
     repeated PBase.PB_Item equipList = 1;//物品列表
 }
 
-
-
-//MSG_CL2LG_GETTASKLIST           = 1521,     //请求任务列表
-message C2S_GetTaskList
-{
-    int32 type = 1;//任务类型
-}
-
-//MSG_LG2CL_BACKTASLLIST          = 2521,     //返回任务列表
-message S2C_BackTaskList
-{
-    int32 type = 1;//任务类型
-    repeated PBase.PB_Task taskList = 2;//物品列表
-}
-
-
-// MSG_CL2LG_GETCOUNTERLIST        = 1531,     //请求计数器列表
-message C2S_GetCounterList
-{
-
-}
-
-// MSG_LG2CL_BACKCOUNTERLIST       = 2531,     //返回计数器列表
-message S2C_BackCounterList
-{
-    repeated PBase.PB_Counter counterList = 1;
-}
 
 
 //-----------------------------  HALL ---------------------------------
@@ -365,7 +565,7 @@ message S2C_BindInviteCode
 }
 
 
-
+*/
 
 
 

@@ -26,16 +26,19 @@ public class GlobalCtl
 
     public void MsgRegedit()
     {
-        NetMgr.RegisterMsgHandler((int)MSGID.MSG_SS2CL_ERRORCODE, MSG_SS2CL_ERRORCODE, new S2C_ErrorCode());
+        //NetMgr.RegisterMsgHandler((int)MSGID.MSG_SS2CL_ERRORCODE, MSG_SS2CL_ERRORCODE, new S2C_ErrorCode());
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_QUERYUSERINFO, MSG_PHP2CL_QUERYUSERINFO,new S2C_GMQUERYUSERINFO());
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_SENDMONEY, MSG_PHP2CL_SENDMONEY,new S2C_GMSendMoney());
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_SENDMAIL, MSG_PHP2CL_SENDMAIL,new S2C_GMSendMail());
+
+        NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_QUERYALLMAIL, MSG_PHP2CL_QUERYALLMAIL,new S2C_GMQueryAllMail());
+        
     }
 
     public void MSG_SS2CL_ERRORCODE(MsgPack msg)
     {    
-        S2C_ErrorCode _pb = msg.UnpackProtoBuf<S2C_ErrorCode>(new S2C_ErrorCode());
-        Logger.Error("ErrorCode :",_pb.Errcode);
+        //S2C_ErrorCode _pb = msg.UnpackProtoBuf<S2C_ErrorCode>(new S2C_ErrorCode());
+       // Logger.Error("ErrorCode :",_pb.Errcode);
 
         //DialogViewSingle.Instance.ShowErrorCode((ERROR_CODE)_pb.Errcode);
     }
@@ -91,6 +94,27 @@ public class GlobalCtl
         GlobalModel.alertInfoData = "发送邮件成功数量:"+_pb.Finish;
         UIMgr.ShowUI(VIEWID.ALERTINFO);        
     } 
+
+   public void MSG_PHP2CL_QUERYALLMAIL(MsgPack msg)
+    {        
+        S2C_GMQueryAllMail _pb = msg.UnpackProtoBuf<S2C_GMQueryAllMail>( new S2C_GMQueryAllMail() );
+
+        for (int i = 0; i < _pb.Maillist.Count; i++)
+        {
+            PB_MailItem mail =  _pb.Maillist[i];
+            MailItem mailItem = new MailItem();
+            mailItem.mailData = mail;
+            mailItem.Create();
+
+            MailView aaa = (MailView)UIMgr.GetUI(VIEWID.Mail) ;
+            aaa.AddMailItem( mailItem );
+
+        }
+        
+
+    } 
+
+    
 
 
 //////////////////////////////////////// 发送

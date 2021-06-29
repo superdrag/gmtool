@@ -82,3 +82,16 @@ message S2C_GMSendMail
     int32 finish = 2;
     int32 mailtype = 3;
 }
+
+//MsgId.MSG_CL2PHP_QUERYALLMAIL               = 1821    --[[GM查询最近全部邮件]]  
+message C2S_GMQueryAllMail
+{
+    int32 type = 1;  //1全部 2全服 3个人
+    string account = 2;
+}
+
+//MsgId.MSG_PHP2CL_QUERYALLMAIL               = 2821    --[[GM查询最近全部邮件]]  
+message S2C_GMQueryAllMail
+{
+    repeated PBase.PB_MailItem maillist = 1;
+}

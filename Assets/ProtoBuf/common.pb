@@ -1,11 +1,6 @@
 
-Ã
-common.protoPBase")
-S2C_ErrorCode
-errcode (Rerrcode"
-C2S_SocketHit")
-S2C_SocketHit
-curtime (Rcurtime"0
+Ü
+common.protoPBase"0
 PB_Money
 type (Rtype
 num (Rnum"Õ
