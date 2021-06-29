@@ -40,7 +40,9 @@ namespace PPhp {
             "aW5pc2gYAiABKAUSEAoIbWFpbHR5cGUYAyABKAUiMwoSQzJTX0dNUXVlcnlB",
             "bGxNYWlsEgwKBHR5cGUYASABKAUSDwoHYWNjb3VudBgCIAEoCSI8ChJTMkNf",
             "R01RdWVyeUFsbE1haWwSJgoIbWFpbGxpc3QYASADKAsyFC5QQmFzZS5QQl9N",
-            "YWlsSXRlbUV4YgZwcm90bzM="));
+            "YWlsSXRlbUV4IiIKEEMyU19HTURlbGV0ZU1haWwSDgoGbWFpbGlkGAEgASgJ",
+            "Ii8KEFMyQ19HTURlbGV0ZU1haWwSCwoDcmV0GAEgASgFEg4KBm1haWxpZBgC",
+            "IAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::PBase.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -53,7 +55,9 @@ namespace PPhp {
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMSendMail), global::PPhp.C2S_GMSendMail.Parser, new[]{ "Mailtype", "Acclist", "Maildata" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMSendMail), global::PPhp.S2C_GMSendMail.Parser, new[]{ "Ret", "Finish", "Mailtype" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQueryAllMail), global::PPhp.C2S_GMQueryAllMail.Parser, new[]{ "Type", "Account" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryAllMail), global::PPhp.S2C_GMQueryAllMail.Parser, new[]{ "Maillist" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryAllMail), global::PPhp.S2C_GMQueryAllMail.Parser, new[]{ "Maillist" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMDeleteMail), global::PPhp.C2S_GMDeleteMail.Parser, new[]{ "Mailid" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMDeleteMail), global::PPhp.S2C_GMDeleteMail.Parser, new[]{ "Ret", "Mailid" }, null, null, null)
           }));
     }
     #endregion
@@ -1908,6 +1912,298 @@ namespace PPhp {
             break;
           case 10: {
             maillist_.AddEntriesFrom(input, _repeated_maillist_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// MsgId.MSG_CL2PHP_DELETEMAIL               = 1822    --[[GM撤销邮件]]
+  /// </summary>
+  public sealed partial class C2S_GMDeleteMail : pb::IMessage<C2S_GMDeleteMail> {
+    private static readonly pb::MessageParser<C2S_GMDeleteMail> _parser = new pb::MessageParser<C2S_GMDeleteMail>(() => new C2S_GMDeleteMail());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<C2S_GMDeleteMail> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMDeleteMail() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMDeleteMail(C2S_GMDeleteMail other) : this() {
+      mailid_ = other.mailid_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMDeleteMail Clone() {
+      return new C2S_GMDeleteMail(this);
+    }
+
+    /// <summary>Field number for the "mailid" field.</summary>
+    public const int MailidFieldNumber = 1;
+    private string mailid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Mailid {
+      get { return mailid_; }
+      set {
+        mailid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as C2S_GMDeleteMail);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(C2S_GMDeleteMail other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Mailid != other.Mailid) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Mailid.Length != 0) hash ^= Mailid.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Mailid.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Mailid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Mailid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mailid);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(C2S_GMDeleteMail other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Mailid.Length != 0) {
+        Mailid = other.Mailid;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Mailid = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// MsgId.MSG_PHP2CL_DELETEMAIL               = 2822    --[[GM撤销邮件]]
+  /// </summary>
+  public sealed partial class S2C_GMDeleteMail : pb::IMessage<S2C_GMDeleteMail> {
+    private static readonly pb::MessageParser<S2C_GMDeleteMail> _parser = new pb::MessageParser<S2C_GMDeleteMail>(() => new S2C_GMDeleteMail());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<S2C_GMDeleteMail> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMDeleteMail() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMDeleteMail(S2C_GMDeleteMail other) : this() {
+      ret_ = other.ret_;
+      mailid_ = other.mailid_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMDeleteMail Clone() {
+      return new S2C_GMDeleteMail(this);
+    }
+
+    /// <summary>Field number for the "ret" field.</summary>
+    public const int RetFieldNumber = 1;
+    private int ret_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Ret {
+      get { return ret_; }
+      set {
+        ret_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mailid" field.</summary>
+    public const int MailidFieldNumber = 2;
+    private string mailid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Mailid {
+      get { return mailid_; }
+      set {
+        mailid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as S2C_GMDeleteMail);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(S2C_GMDeleteMail other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Ret != other.Ret) return false;
+      if (Mailid != other.Mailid) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Ret != 0) hash ^= Ret.GetHashCode();
+      if (Mailid.Length != 0) hash ^= Mailid.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Ret != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Ret);
+      }
+      if (Mailid.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Mailid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Ret != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Ret);
+      }
+      if (Mailid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mailid);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(S2C_GMDeleteMail other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Ret != 0) {
+        Ret = other.Ret;
+      }
+      if (other.Mailid.Length != 0) {
+        Mailid = other.Mailid;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Ret = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Mailid = input.ReadString();
             break;
           }
         }

@@ -28,6 +28,10 @@ public enum MSGID
     MSG_CL2PHP_QUERYALLMAIL               = 1821,    //[[GM查询最近全部邮件]]  
     MSG_PHP2CL_QUERYALLMAIL               = 2821,    //[[GM查询最近全部邮件]]  
 
+    MSG_CL2PHP_DELETEMAIL                 = 1822,    //[[GM撤销邮件]]  
+    MSG_PHP2CL_DELETEMAIL                 = 2822,    //[[GM撤销邮件]]  
+   
+
 
 
 }

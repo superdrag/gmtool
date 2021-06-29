@@ -95,3 +95,17 @@ message S2C_GMQueryAllMail
 {
     repeated PBase.PB_MailItemEx maillist = 1;
 }
+
+
+// MsgId.MSG_CL2PHP_DELETEMAIL               = 1822    --[[GM撤销邮件]]
+message C2S_GMDeleteMail
+{
+    string mailid = 1;
+}
+
+// MsgId.MSG_PHP2CL_DELETEMAIL               = 2822    --[[GM撤销邮件]]
+message S2C_GMDeleteMail
+{
+    int32 ret = 1;
+    string mailid = 2;
+}

@@ -27,6 +27,10 @@ public class MailSendView : View
     private Toggle oneTog;
     private Toggle allTog;
 
+    string mailId;
+
+    int openType;
+
     public static MailSendView Instance
     {
         get
@@ -84,6 +88,8 @@ public class MailSendView : View
 
     override public void OnShow(params object[] args)
     {        
+        openType = (int)args[0];
+
         if ((int)args[0] == 1)
         {
             titleText.text = "这是标题啊 this is title text";
@@ -100,6 +106,8 @@ public class MailSendView : View
             itemListText.text = data.Itemlist;
             accountText.text = data.Account;
             pastDayText.text = "30";
+
+            mailId = data.Mid;
         }
     }
 
@@ -131,7 +139,12 @@ public class MailSendView : View
 
     private void onClickDelete()
     {
-
+        if (openType == 2)
+        {
+            C2S_GMDeleteMail pb = new C2S_GMDeleteMail();
+            pb.Mailid = mailId ;           
+            NetMgr.SendMsg(MSGID.MSG_CL2PHP_DELETEMAIL,pb); 
+        }
     }
 
     private void onClickClose()
