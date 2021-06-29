@@ -80,7 +80,7 @@ public class MailSendView : View
         // lixianData = bg.Find("UserInfoView/data/lixian").GetComponent<Text>();
     }
 
-    override public void OnShow()
+    override public void OnShow(params string[] args)
     {        
         titleText.text = "这是标题啊 this is title text";
         contentText.text = "这是内容啊 this is content text";
@@ -94,17 +94,15 @@ public class MailSendView : View
         Logger.Log("onClickSend ...........");
 
         if( String.IsNullOrEmpty(pastDayText.text) )
-        {
-            GlobalModel.alertInfoData = "过期天数未空";
-            UIMgr.ShowUI(VIEWID.ALERTINFO);
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"过期天数未空");
             return;
         }
 
         int passDay = int.Parse(pastDayText.text);
         if( passDay <= 0 )
-        {
-            GlobalModel.alertInfoData = "过期天数错误";
-            UIMgr.ShowUI(VIEWID.ALERTINFO);
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"过期天数错误");
             return;
         }
 

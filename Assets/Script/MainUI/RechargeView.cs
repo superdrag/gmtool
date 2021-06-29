@@ -66,7 +66,7 @@ public class RechargeView : View
         lixianData = bg.Find("UserInfoView/data/lixian").GetComponent<Text>();
     }
 
-    override public void OnShow()
+    override public void OnShow(params string[] args)
     {
         zhanghaoData.text = GlobalModel.queryUserData.account;
         idData.text = GlobalModel.queryUserData.accDbid.ToString();
@@ -82,9 +82,8 @@ public class RechargeView : View
         Logger.Log("onClickCha ...........");
 
         if( string.IsNullOrEmpty(zhanghaoText.text) )
-        {
-            GlobalModel.alertInfoData = "账号不能为空";
-            UIMgr.ShowUI(VIEWID.ALERTINFO);
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"账号不能为空");
             return;
         }
 
@@ -94,16 +93,14 @@ public class RechargeView : View
     private void onClickChong()
     {
         if( string.IsNullOrEmpty(zhanghaoText.text) )
-        {
-            GlobalModel.alertInfoData = "账号不能为空";
-            UIMgr.ShowUI(VIEWID.ALERTINFO);
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"账号不能为空");
             return;
         }
 
         if( string.IsNullOrEmpty(shuliangText.text) )
-        {
-            GlobalModel.alertInfoData = "数量不能为空";
-            UIMgr.ShowUI(VIEWID.ALERTINFO);
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"数量不能为空");
             return;
         }
 

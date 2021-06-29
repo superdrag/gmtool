@@ -61,7 +61,7 @@ public class MenuView : View
         curIndex = 3;
     }
 
-    override public void OnShow()
+    override public void OnShow(params string[] args)
     {
         Logger.Log("OnShow.........this.curIndex "+this.curIndex);
         if( this.curIndex == 2 )

@@ -49,9 +49,8 @@ public class GlobalCtl
         S2C_GMQUERYUSERINFO _pb = msg.UnpackProtoBuf<S2C_GMQUERYUSERINFO>( new S2C_GMQUERYUSERINFO() );
 
         if(_pb.Ret != 0)
-        {
-            GlobalModel.alertInfoData = "找不到用户信息";
-            UIMgr.ShowUI(VIEWID.ALERTINFO);
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"找不到用户信息");
             return;
         }
 
@@ -69,14 +68,12 @@ public class GlobalCtl
     {        
         S2C_GMSendMoney _pb = msg.UnpackProtoBuf<S2C_GMSendMoney>( new S2C_GMSendMoney() );
         if( _pb.Ret != 0 )
-        {
-            GlobalModel.alertInfoData = "充值失败";
-            UIMgr.ShowUI(VIEWID.ALERTINFO);
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO, "充值失败");
             return;
         }
-
-        GlobalModel.alertInfoData = "充值成功";
-        UIMgr.ShowUI(VIEWID.ALERTINFO);        
+        
+        UIMgr.ShowUI(VIEWID.ALERTINFO,"充值成功");        
         Logger.Log("MSG_PHP2CL_SENDMONEY "+_pb.Account);
     }    
 
@@ -85,14 +82,12 @@ public class GlobalCtl
     {        
         S2C_GMSendMail _pb = msg.UnpackProtoBuf<S2C_GMSendMail>( new S2C_GMSendMail() );
         if( _pb.Ret != 0 )
-        {
-            GlobalModel.alertInfoData = "发送邮件失败";
-            UIMgr.ShowUI(VIEWID.ALERTINFO);
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"发送邮件失败");
             return;
         }
 
-        GlobalModel.alertInfoData = "发送邮件成功数量:"+_pb.Finish;
-        UIMgr.ShowUI(VIEWID.ALERTINFO);        
+        UIMgr.ShowUI(VIEWID.ALERTINFO,"发送邮件成功数量:"+_pb.Finish);        
     } 
 
    public void MSG_PHP2CL_QUERYALLMAIL(MsgPack msg)

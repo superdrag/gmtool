@@ -43,9 +43,9 @@ public class AlertInfoView : View
         EventTriggerListener.Get(okBtn.gameObject).onClick = onClickOk; 
     }
 
-    override public void OnShow()
+    override public void OnShow(params string[] args)
     {
-        descTx.text = GlobalModel.alertInfoData;
+        descTx.text = args[0];
     }
 
     public void ShowAlert(string s)
@@ -57,7 +57,6 @@ public class AlertInfoView : View
     {
         Logger.Log("onClickOk ...........");
         descTx.text = "";
-        GlobalModel.alertInfoData = "";
         UIMgr.HideUI(VIEWID.ALERTINFO);
     }
 

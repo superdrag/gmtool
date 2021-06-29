@@ -111,7 +111,7 @@ public static class UIMgr
     }    
 
 
-    public static void ShowUI(VIEWID viewId)
+    public static void ShowUI(VIEWID viewId, params string[] args)
     {        
         View view = GetUI(viewId);
         if(view == null)
@@ -138,7 +138,7 @@ public static class UIMgr
         }
 
         Logger.Log("View OnShow:",viewId);
-        view.OnShow();  
+        view.OnShow(args);  
         view.ViewRoot.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
         view.ViewRoot.gameObject.SetActive(true); 
         view.IsShow = true;              

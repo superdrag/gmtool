@@ -38,8 +38,6 @@ public class GlobalModel {
     public int LoginGateTime;
     public static QueryUserData queryUserData = new QueryUserData();
 
-    public static string alertInfoData;
-
     public void Init()
     {
         

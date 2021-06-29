@@ -61,7 +61,7 @@ public class MailView : View
         Content = bg.Find("Scroll View/Viewport/Content");
     }
 
-    override public void OnShow()
+    override public void OnShow(params string[] args)
     {        
         C2S_GMQueryAllMail pb = new C2S_GMQueryAllMail();
         pb.Type = 1;
