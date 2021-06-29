@@ -61,7 +61,7 @@ public class MailView : View
         Content = bg.Find("Scroll View/Viewport/Content");
     }
 
-    override public void OnShow(params string[] args)
+    override public void OnShow(params object[] args)
     {        
         C2S_GMQueryAllMail pb = new C2S_GMQueryAllMail();
         pb.Type = 1;
@@ -82,16 +82,23 @@ public class MailView : View
 
     private void onClickNewMail(GameObject go)
     {
-        UIMgr.ShowUI( VIEWID.MailSend );
+        UIMgr.ShowUI( VIEWID.MailSend, 1 );
     }
 
     private void onClickSend()
     {
         Logger.Log("onClickSend ...........");
-
-
-       
     } 
+
+    
+    public void ClearMailItem()
+    {
+        for (int i = 0; i < Content.childCount; i++)
+        {
+            Transform obj = Content.GetChild(i);
+            GameObject.Destroy(obj.gameObject);
+        }
+    }
 
     public void AddMailItem(MailItem mail)
     {                

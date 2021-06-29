@@ -11,7 +11,7 @@ using PBase;
 
 public class MailItem
 {
-    public PB_MailItem mailData;
+    public PB_MailItemEx mailData;
     public Transform view;
     public Button editBtn;
     public List<Text> infoList = new List<Text>();
@@ -42,15 +42,22 @@ public class MailItem
         //infoList[1].text = mailData..ToString();
         infoList[2].text = mailData.Title.ToString();
         //infoList[3].text = mailData..ToString();
-        //infoList[4].text = mailData..ToString();
+        infoList[4].text = mailData.Account.ToString();
+        if (mailData.Itemlist == "")
+        {
+            infoList[5].text = "无";
+        }
+        else
+        {
+            infoList[5].text = "有";
+        }
         //infoList[5].text = mailData.Sendtime.ToString();
     }
 
     private void OnBtnClick()
     {    
         Logger.Log("editBtn click..........");
-
-        
+        UIMgr.ShowUI( VIEWID.MailSend, 2, mailData );
     }
  
 

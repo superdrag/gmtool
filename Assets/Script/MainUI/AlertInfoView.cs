@@ -43,9 +43,9 @@ public class AlertInfoView : View
         EventTriggerListener.Get(okBtn.gameObject).onClick = onClickOk; 
     }
 
-    override public void OnShow(params string[] args)
+    override public void OnShow(params object[] args)
     {
-        descTx.text = args[0];
+        descTx.text = args[0].ToString();
     }
 
     public void ShowAlert(string s)

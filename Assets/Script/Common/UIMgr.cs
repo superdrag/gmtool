@@ -111,7 +111,7 @@ public static class UIMgr
     }    
 
 
-    public static void ShowUI(VIEWID viewId, params string[] args)
+    public static void ShowUI(VIEWID viewId, params object[] args)
     {        
         View view = GetUI(viewId);
         if(view == null)

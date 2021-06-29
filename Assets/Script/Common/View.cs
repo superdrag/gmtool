@@ -26,7 +26,7 @@ public abstract class View
 
     public abstract void OnCreateGo();
 
-    public abstract void OnShow(params string[] args);
+    public abstract void OnShow(params object[] args);
 
     public virtual void OnHide()
     {

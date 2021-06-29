@@ -6,7 +6,9 @@ using System.Reflection;
 using System;
 using Net;
 
+using Net;
 using PPhp;
+using PBase;
 
 public class MailSendView : View
 {
@@ -80,13 +82,25 @@ public class MailSendView : View
         // lixianData = bg.Find("UserInfoView/data/lixian").GetComponent<Text>();
     }
 
-    override public void OnShow(params string[] args)
+    override public void OnShow(params object[] args)
     {        
-        titleText.text = "这是标题啊 this is title text";
-        contentText.text = "这是内容啊 this is content text";
-        itemListText.text = "Currency;diamond;1000/BaseBaller;1001;1/TreasureChest;103;1/Equip;40102;1";
-        accountText.text = "AAA123";
-        pastDayText.text = "7";
+        if ((int)args[0] == 1)
+        {
+            titleText.text = "这是标题啊 this is title text";
+            contentText.text = "这是内容啊 this is content text";
+            itemListText.text = "Currency;diamond;1000/BaseBaller;1001;1/TreasureChest;103;1/Equip;40102;1";
+            accountText.text = "AAA123";
+            pastDayText.text = "30";   
+        }
+        else if ((int)args[0] == 2)
+        {
+            PB_MailItemEx data = (PB_MailItemEx)args[1];
+            titleText.text = data.Title;
+            contentText.text = data.Content;
+            itemListText.text = data.Itemlist;
+            accountText.text = data.Account;
+            pastDayText.text = "30";
+        }
     }
 
     private void onClickSend()

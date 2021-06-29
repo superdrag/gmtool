@@ -66,7 +66,7 @@ public class RechargeView : View
         lixianData = bg.Find("UserInfoView/data/lixian").GetComponent<Text>();
     }
 
-    override public void OnShow(params string[] args)
+    override public void OnShow(params object[] args)
     {
         zhanghaoData.text = GlobalModel.queryUserData.account;
         idData.text = GlobalModel.queryUserData.accDbid.ToString();

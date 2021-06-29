@@ -35,7 +35,7 @@ public class BlankView : View
         UIHelper.AddChild(UIMgr.UIMain, viewRoot);  
     }
 
-    override public void OnShow(params string[] args)
+    override public void OnShow(params object[] args)
     {
 
     }

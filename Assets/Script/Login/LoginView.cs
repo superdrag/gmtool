@@ -49,7 +49,7 @@ public class LoginView : View
 
     }
 
-    override public void OnShow(params string[] args)
+    override public void OnShow(params object[] args)
     {
         zhanghaoIF.text = "admin";
         mimaIF.text = "123456";

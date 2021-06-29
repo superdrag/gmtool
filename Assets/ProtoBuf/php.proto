@@ -93,5 +93,5 @@ message C2S_GMQueryAllMail
 //MsgId.MSG_PHP2CL_QUERYALLMAIL               = 2821    --[[GM查询最近全部邮件]]  
 message S2C_GMQueryAllMail
 {
-    repeated PBase.PB_MailItem maillist = 1;
+    repeated PBase.PB_MailItemEx maillist = 1;
 }

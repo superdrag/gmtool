@@ -94,19 +94,17 @@ public class GlobalCtl
     {        
         S2C_GMQueryAllMail _pb = msg.UnpackProtoBuf<S2C_GMQueryAllMail>( new S2C_GMQueryAllMail() );
 
+        MailView mailView = (MailView)UIMgr.GetUI(VIEWID.Mail) ;
+        mailView.ClearMailItem();
         for (int i = 0; i < _pb.Maillist.Count; i++)
         {
-            PB_MailItem mail =  _pb.Maillist[i];
+            PB_MailItemEx mail =  _pb.Maillist[i];
             MailItem mailItem = new MailItem();
             mailItem.mailData = mail;
             mailItem.Create();
 
-            MailView aaa = (MailView)UIMgr.GetUI(VIEWID.Mail) ;
-            aaa.AddMailItem( mailItem );
-
+            mailView.AddMailItem( mailItem );
         }
-        
-
     } 
 
     

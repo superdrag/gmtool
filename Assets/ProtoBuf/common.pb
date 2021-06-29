@@ -1,5 +1,5 @@
 
-Ü
+ð
 common.protoPBase"0
 PB_Money
 type (Rtype
@@ -12,7 +12,21 @@
 sendtime (Rsendtime
 readtime (Rreadtime
 pasttime (Rpasttime
-state (Rstate"I
+state (Rstate"‘
+PB_MailItemEx
+mid (	Rmid
+title (	Rtitle
+content (	Rcontent
+itemlist (	Ritemlist
+sendtime (Rsendtime
+readtime (Rreadtime
+pasttime (Rpasttime
+state (Rstate
+
+playerdbid	 (R
+playerdbid
+account
+ (	Raccount"I
 PB_TeamCardInfo
 id (Rid
 num (Rnum

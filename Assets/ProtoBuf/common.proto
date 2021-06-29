@@ -37,6 +37,20 @@ message PB_MailItem
     int32 state = 8; //已读状态 1 已读未领取 2 已读已领取
 }
 
+message PB_MailItemEx
+{
+    string mid = 1;
+    string title = 2;   //标题
+    string content = 3; //内容描述
+    string itemlist = 4; //物品列表
+    int32 sendtime = 5; //发送时间
+    int32 readtime = 6; //读时间
+    int32 pasttime = 7; //过期时间
+    int32 state = 8; //已读状态 1 已读未领取 2 已读已领取
+    int32 playerdbid = 9;
+    string account = 10;
+}
+
 //卡牌
 message PB_TeamCardInfo
 {

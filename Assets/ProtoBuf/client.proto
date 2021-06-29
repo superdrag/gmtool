@@ -293,6 +293,17 @@ message S2C_FundTaskFinish
     int32 taskid = 2;
 }
 
+// MsgId.MSG_CL2WD_GETFUNDTASKLIST          = 1526      --[[基金列表]] 
+message C2S_GetFundTaskList
+{
+    
+}
+// MsgId.MSG_WD2CL_GETFUNDTASKLIST          = 2526      --[[基金列表]]
+message S2C_GetFundTaskList
+{
+    repeated int fundlist = 1;
+}
+
 
 //MsgId.MSG_CL2WD_PASSINFO                = 1530      --[[请求通行证信息]]    
 message C2S_PassInfo

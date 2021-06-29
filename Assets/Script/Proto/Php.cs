@@ -38,9 +38,9 @@ namespace PPhp {
             "DwoHYWNjbGlzdBgCIAEoCRIkCghtYWlsZGF0YRgDIAEoCzISLlBCYXNlLlBC",
             "X01haWxJdGVtIj8KDlMyQ19HTVNlbmRNYWlsEgsKA3JldBgBIAEoBRIOCgZm",
             "aW5pc2gYAiABKAUSEAoIbWFpbHR5cGUYAyABKAUiMwoSQzJTX0dNUXVlcnlB",
-            "bGxNYWlsEgwKBHR5cGUYASABKAUSDwoHYWNjb3VudBgCIAEoCSI6ChJTMkNf",
-            "R01RdWVyeUFsbE1haWwSJAoIbWFpbGxpc3QYASADKAsyEi5QQmFzZS5QQl9N",
-            "YWlsSXRlbWIGcHJvdG8z"));
+            "bGxNYWlsEgwKBHR5cGUYASABKAUSDwoHYWNjb3VudBgCIAEoCSI8ChJTMkNf",
+            "R01RdWVyeUFsbE1haWwSJgoIbWFpbGxpc3QYASADKAsyFC5QQmFzZS5QQl9N",
+            "YWlsSXRlbUV4YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::PBase.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -1831,11 +1831,11 @@ namespace PPhp {
 
     /// <summary>Field number for the "maillist" field.</summary>
     public const int MaillistFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::PBase.PB_MailItem> _repeated_maillist_codec
-        = pb::FieldCodec.ForMessage(10, global::PBase.PB_MailItem.Parser);
-    private readonly pbc::RepeatedField<global::PBase.PB_MailItem> maillist_ = new pbc::RepeatedField<global::PBase.PB_MailItem>();
+    private static readonly pb::FieldCodec<global::PBase.PB_MailItemEx> _repeated_maillist_codec
+        = pb::FieldCodec.ForMessage(10, global::PBase.PB_MailItemEx.Parser);
+    private readonly pbc::RepeatedField<global::PBase.PB_MailItemEx> maillist_ = new pbc::RepeatedField<global::PBase.PB_MailItemEx>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::PBase.PB_MailItem> Maillist {
+    public pbc::RepeatedField<global::PBase.PB_MailItemEx> Maillist {
       get { return maillist_; }
     }
 

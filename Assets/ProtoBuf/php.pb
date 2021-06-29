@@ -1,5 +1,5 @@
 
-Ä
+Æ
 	php.protoPPhpcommon.proto"?
 C2S_GMLogin
 account (	Raccount
@@ -37,6 +37,6 @@
 mailtype (Rmailtype"B
 C2S_GMQueryAllMail
 type (Rtype
-account (	Raccount"D
-S2C_GMQueryAllMail.
-maillist (2.PBase.PB_MailItemRmaillistbproto3
+account (	Raccount"F
+S2C_GMQueryAllMail0
+maillist (2.PBase.PB_MailItemExRmaillistbproto3
