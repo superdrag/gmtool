@@ -32,6 +32,8 @@ public class GlobalCtl
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_SENDMAIL, MSG_PHP2CL_SENDMAIL,new S2C_GMSendMail());
 
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_QUERYALLMAIL, MSG_PHP2CL_QUERYALLMAIL,new S2C_GMQueryAllMail());
+
+        NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_DELETEMAIL, MSG_PHP2CL_DELETEMAIL,new S2C_GMDeleteMail());
         
     }
 
@@ -90,7 +92,7 @@ public class GlobalCtl
         UIMgr.ShowUI(VIEWID.ALERTINFO,"发送邮件成功数量:"+_pb.Finish);        
     } 
 
-   public void MSG_PHP2CL_QUERYALLMAIL(MsgPack msg)
+    public void MSG_PHP2CL_QUERYALLMAIL(MsgPack msg)
     {        
         S2C_GMQueryAllMail _pb = msg.UnpackProtoBuf<S2C_GMQueryAllMail>( new S2C_GMQueryAllMail() );
 
@@ -107,7 +109,18 @@ public class GlobalCtl
         }
     } 
 
-    
+    public void MSG_PHP2CL_DELETEMAIL(MsgPack msg)
+    {
+        S2C_GMDeleteMail _pb = msg.UnpackProtoBuf<S2C_GMDeleteMail>( new S2C_GMDeleteMail() );
+        if (_pb.Ret == 0)
+        {
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"撤回邮件成功");
+        } 
+        else
+        {
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"撤回邮件失败");
+        }
+    }
 
 
 //////////////////////////////////////// 发送

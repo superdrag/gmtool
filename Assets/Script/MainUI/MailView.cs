@@ -63,10 +63,7 @@ public class MailView : View
 
     override public void OnShow(params object[] args)
     {        
-        C2S_GMQueryAllMail pb = new C2S_GMQueryAllMail();
-        pb.Type = 1;
-        pb.Account = "";
-        NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYALLMAIL,pb);  
+        onClickQuery(allBtn.gameObject);
     }
 
     private void onClickQuery(GameObject go)
@@ -78,6 +75,20 @@ public class MailView : View
             pb.Account = "";
             NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYALLMAIL,pb);  
         }
+        else if( go.name == "serverBtn" )
+        {
+            C2S_GMQueryAllMail pb = new C2S_GMQueryAllMail();
+            pb.Type = 2;
+            pb.Account = "";
+            NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYALLMAIL,pb);  
+        } 
+        else if( go.name == "personalBtn" )
+        {
+            C2S_GMQueryAllMail pb = new C2S_GMQueryAllMail();
+            pb.Type = 3;
+            pb.Account = accText.text;
+            NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYALLMAIL,pb);  
+        } 
     }
 
     private void onClickNewMail(GameObject go)

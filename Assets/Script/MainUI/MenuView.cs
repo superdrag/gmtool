@@ -64,17 +64,27 @@ public class MenuView : View
     override public void OnShow(params object[] args)
     {
         Logger.Log("OnShow.........this.curIndex "+this.curIndex);
-        if( this.curIndex == 2 )
+        if( this.curIndex == 1 )
         {
             UIMgr.HideUI(VIEWID.BLANK);
             UIMgr.HideUI(VIEWID.Mail);
             UIMgr.HideUI(VIEWID.MailSend);
+            UIMgr.HideUI(VIEWID.Recharge);
+            UIMgr.ShowUI(VIEWID.CoreView);
+        }        
+        else if( this.curIndex == 2 )
+        {
+            UIMgr.HideUI(VIEWID.BLANK);
+            UIMgr.HideUI(VIEWID.Mail);
+            UIMgr.HideUI(VIEWID.MailSend);
+            UIMgr.HideUI(VIEWID.CoreView);
             UIMgr.ShowUI(VIEWID.Recharge);
         }
         else if( this.curIndex == 3 )
         {
             UIMgr.HideUI(VIEWID.BLANK);
             UIMgr.HideUI(VIEWID.Recharge);
+            UIMgr.HideUI(VIEWID.CoreView);
             UIMgr.ShowUI(VIEWID.Mail);
         }        
         else
@@ -82,6 +92,7 @@ public class MenuView : View
             UIMgr.HideUI(VIEWID.Mail);
             UIMgr.HideUI(VIEWID.MailSend);
             UIMgr.HideUI(VIEWID.Recharge);
+            UIMgr.HideUI(VIEWID.CoreView);
             UIMgr.ShowUI(VIEWID.BLANK);
         }
 

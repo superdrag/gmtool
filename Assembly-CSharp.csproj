@@ -81,6 +81,8 @@
      <Compile Include="Assets\Script\Login\ServerItem.cs" />
      <Compile Include="Assets\Script\MainUI\AlertInfoView.cs" />
      <Compile Include="Assets\Script\MainUI\BlankView.cs" />
+     <Compile Include="Assets\Script\MainUI\CoreItem.cs" />
+     <Compile Include="Assets\Script\MainUI\CoreView.cs" />
      <Compile Include="Assets\Script\MainUI\GlobalCtl.cs" />
      <Compile Include="Assets\Script\MainUI\GlobalModel.cs" />
      <Compile Include="Assets\Script\MainUI\MailItem.cs" />
