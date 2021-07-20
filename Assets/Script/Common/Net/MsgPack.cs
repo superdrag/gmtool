@@ -44,7 +44,8 @@ namespace Net
         {
             msgid = id;
             msglen = len;           
-            msgarg = arg;          
+            msgarg = arg;    
+
             int bodysize = (int)msglen - NetEnv.MSG_HEAD_LEN;
             if (bodysize > 0)
             {
@@ -75,10 +76,10 @@ namespace Net
 
         public void MsgEncrypt()
         {
-            uint __len = (msglen >> 16) | (msglen << 16);
-            int __id = (msgid >> 8) | (msgid << 8);
+            uint __len = (msglen >> 3) | (msglen << 3);
+            int __id = (msgid >> 2) | (msgid << 2);
             msgarg = (int)(__len + __id);
-            //Output.Log("MsgEncrypt...........", arg1);
+            Logger.Log("MsgEncrypt..........." + msgarg);
         }
 
         public byte[] ToBytes()
@@ -95,6 +96,9 @@ namespace Net
         {
             writer.Write(msglen);
             writer.Write(msgid);
+
+            MsgEncrypt();
+
             writer.Write(msgarg);           
         }
 

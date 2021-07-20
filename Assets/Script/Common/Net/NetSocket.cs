@@ -310,6 +310,9 @@ namespace Net
                 ushort _id = BitConverter.ToUInt16(recvbuf, buffpos + sizeof(uint));
                 int _arg = BitConverter.ToInt32(recvbuf, buffpos + sizeof(uint) + sizeof(ushort));
 
+                //_len = _len >> 7;
+                //_id = (ushort)(_id >> 2);
+
                 if (_len < NetEnv.MSG_HEAD_LEN || _len > NetEnv.MSG_RECV_LEN)
                 {
                     if(NetEnv.NET_LOG)Debug.LogError("Recv Msg Len : " + _len);

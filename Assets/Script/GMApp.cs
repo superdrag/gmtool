@@ -46,6 +46,7 @@ public class GMApp : MonoBehaviour {
         GlobalModel.Instance.Init();
         AllRigstMsgRegedit();
         UIMgr.Init(); 
+        RecordModel.Instance.loadFile();
         OnInitFinish();       
     }
 
