@@ -275,5 +275,21 @@ public class GFunc
         string[] split = posMsg.Split(flag);
         return new Vector3(float.Parse(split[0]), float.Parse(split[1]), float.Parse(split[2]));
     }      
+
+    public static int Date2Time(string date)
+    {
+        //date = "2021/07/22-14:15:22";
+        string[] slist = date.Split('-');
+        string[] time1 = slist[0].Split('/');
+        string[] time2 = slist[1].Split(':');
+
+        DateTime UnixTimeStampStart = new DateTime(1970, 1, 1, 8, 0, 0, DateTimeKind.Utc);
+
+        DateTime UnixTimeStampNow = new DateTime(Convert.ToInt32(time1[0]) , Convert.ToInt32(time1[1]), Convert.ToInt32(time1[2]), Convert.ToInt32(time2[0]), Convert.ToInt32(time2[1]), Convert.ToInt32(time2[2]), DateTimeKind.Utc);
+
+        int tv = Convert.ToInt32( (UnixTimeStampNow - UnixTimeStampStart).TotalSeconds );  
+        //Logger.Log("1111111111111 ",tv);              
+        return tv;
+    }
 }
 

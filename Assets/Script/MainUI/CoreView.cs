@@ -59,10 +59,10 @@ public class CoreView : View
 
     private void onClickQuery(GameObject go)
     {
-        // C2S_GMQueryAllMail pb = new C2S_GMQueryAllMail();
-        // pb.Type = 1;
-        // pb.Account = "";
-        // NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYALLMAIL,pb);  
+        for (int i = 0; i < RecordModel.Instance.coreList.Count; i++)
+        {
+            AddCoreItem(i);
+        }
     }
     
     public void ClearCoreItem()
@@ -74,10 +74,12 @@ public class CoreView : View
         }
     }
 
-    public void AddCoreItem(CoreItem coreItem)
-    {                
+    public void AddCoreItem(int dayIndex)
+    {               
+        CoreItem coreItem = new CoreItem();
+        coreItem.Create();
         coreItem.view.SetParent(Content);
         coreItem.view.transform.localScale = Vector3.one;
-        coreItem.Show();
+        coreItem.Show(dayIndex);
     }
 }

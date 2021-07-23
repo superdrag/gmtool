@@ -11,7 +11,6 @@ using PBase;
 
 public class CoreItem
 {
-    public PB_MailItemEx mailData;
     public Transform view;
     public List<Text> infoList = new List<Text>();
 
@@ -28,22 +27,16 @@ public class CoreItem
         infoList.Add(view.Find("bg/acu").GetComponent<Text>());
     }
 
-    public void Show()
+    public void Show(int dayIndex)
     {
-        infoList[0].text = mailData.Sendtime.ToString();
-        //infoList[1].text = mailData..ToString();
-        infoList[2].text = mailData.Title.ToString();
-        //infoList[3].text = mailData..ToString();
-        infoList[4].text = mailData.Account.ToString();
-        if (mailData.Itemlist == "")
-        {
-            infoList[5].text = "无";
-        }
-        else
-        {
-            infoList[5].text = "有";
-        }
-        //infoList[5].text = mailData.Sendtime.ToString();
+        CoreData coreData = RecordModel.Instance.coreList[dayIndex];
+
+        infoList[0].text = coreData.date; 
+        infoList[1].text = coreData.allRegNum.ToString();
+        infoList[2].text = coreData.DAU.ToString();
+        infoList[3].text = coreData.newUser.ToString();
+        infoList[4].text = coreData.income.ToString();
+        infoList[5].text = coreData.sumPayUser.ToString();
     }
 
 
