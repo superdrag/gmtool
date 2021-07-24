@@ -57,20 +57,21 @@ public class CoreView : View
         onClickQuery(queryBtn.gameObject);
     }
 
-    private void onClickQuery(GameObject go)
-    {
-        for (int i = 0; i < RecordModel.Instance.coreList.Count; i++)
-        {
-            AddCoreItem(i);
-        }
-    }
-    
     public void ClearCoreItem()
     {
         for (int i = 0; i < Content.childCount; i++)
         {
             Transform obj = Content.GetChild(i);
             GameObject.Destroy(obj.gameObject);
+        }
+    }
+
+    private void onClickQuery(GameObject go)
+    {
+        ClearCoreItem();
+        for (int i = 0; i < RecordModel.Instance.coreList.Count; i++)
+        {
+            AddCoreItem(i);
         }
     }
 

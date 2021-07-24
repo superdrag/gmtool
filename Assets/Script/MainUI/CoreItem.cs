@@ -17,14 +17,12 @@ public class CoreItem
     public void Create()
     {        
         view = ResMgr.CreateGo("Prefab/CoreItem").transform;
-        infoList.Add(view.Find("bg/date").GetComponent<Text>()); 
-        infoList.Add(view.Find("bg/usernum").GetComponent<Text>());
-        infoList.Add(view.Find("bg/dau").GetComponent<Text>());
-        infoList.Add(view.Find("bg/newuser").GetComponent<Text>());
-        infoList.Add(view.Find("bg/income").GetComponent<Text>());
-        infoList.Add(view.Find("bg/paynum").GetComponent<Text>());
-        infoList.Add(view.Find("bg/pcu").GetComponent<Text>());
-        infoList.Add(view.Find("bg/acu").GetComponent<Text>());
+        Transform bg = view.Find("bg");
+
+        for (int i = 0; i < bg.childCount; i++)
+        {
+            infoList.Add(bg.GetChild(i).GetComponent<Text>());
+        }
     }
 
     public void Show(int dayIndex)
@@ -37,6 +35,15 @@ public class CoreItem
         infoList[3].text = coreData.newUser.ToString();
         infoList[4].text = coreData.income.ToString();
         infoList[5].text = coreData.sumPayUser.ToString();
+        infoList[6].text = coreData.newPayUser.ToString();
+        infoList[7].text = coreData.ARPPU.ToString();
+        infoList[8].text = coreData.ARPPDAU.ToString();
+        infoList[9].text = coreData.PCU.ToString();
+        infoList[10].text = coreData.ACU.ToString();
+        infoList[11].text = coreData.secondLive.ToString();
+        infoList[12].text = coreData.threeLive.ToString();
+        infoList[13].text = coreData.sevenLive.ToString();
+        infoList[14].text = coreData.avgOnlineSec.ToString();
     }
 
 

@@ -58,7 +58,7 @@ public class MenuView : View
         btnList.Add(daidingBtn2);
         btnList.Add(daidingBtn3);
 
-        curIndex = 3;
+        curIndex = 1;
     }
 
     override public void OnShow(params object[] args)

@@ -23,17 +23,18 @@ public class CoreData
     public int newUser;
     public int income; //流水
     public int sumPayUser;
-    public int newPayUser;
-    public int ARPPU;
-    public int ARPPDAU;
+    public int newPayUser; //新增付费用户
+    public float ARPPU; ////时间段内，消费额除以付费用户数。
+    public float ARPPDAU; 
     public int PCU; //最高在线人数
     public int ACU; //平均同时在线人数 ACU=24小时每小时最高同时在线相加总和/24小时
     public int secondLive;
     public int threeLive;
     public int sevenLive;
     public int avgOnlineSec; //平均在线时长
-    public int allRegNum = 0;
+    public int allRegNum; //总注册数
     public Dictionary<string,int> loginAccDict = new Dictionary<string, int>();
+    public Dictionary<string,int> payAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> regAccDict = new Dictionary<string, int>();
 
 }
@@ -66,13 +67,18 @@ public class RecordModel {
     public void loadFile()
     {        
         string dirpath = Application.dataPath + "/record"; 
+        if (!Application.isEditor)
+        {
+            dirpath = Application.dataPath + "/../record";        
+        }        
+        Logger.Log("record path...................",dirpath);
         List<string> filelist = GFunc.GetDirFiles(dirpath);
         for (int i = 0; i < filelist.Count; i++)
-        {
+        {              
             if (filelist[i].EndsWith("meta")) continue;
             string[] lineAry = File.ReadAllLines(filelist[i]);
             dayDataList.Add(lineAry);
-            //Logger.Log("111111111111 "+lineAry);            
+                 
         }
 
         analyseAllCoreData();
@@ -89,7 +95,6 @@ public class RecordModel {
 
     public void analyseDayCoreData(string[] dayData, int dayIndex)
     {        
-
         CoreData coreData = new CoreData();
         int sumOnlineSec = 0;
 
@@ -108,15 +113,20 @@ public class RecordModel {
             
             if (recordType == RECORD_TYPE.RECORD_USERREG)
             {
-                coreData.regAccDict[fields[2]] = 1;
+                string acc = fields[2].Trim();
+
+                coreData.regAccDict[acc] = 1;
+                //Logger.Log("000000000000000 ",fields[2]);
                 coreData.newUser++;
             }
 
             if (recordType == RECORD_TYPE.RECORD_USERLOGIN)
             {
+                string acc = fields[2].Trim();
+
                 if(!coreData.loginAccDict.ContainsKey(fields[2]))
                 {
-                    coreData.loginAccDict[fields[2]] = 1;
+                    coreData.loginAccDict[acc] = 1;
                     //Logger.Log("day login acc.............",fields[2]);
                 }                
             }
@@ -134,6 +144,23 @@ public class RecordModel {
             {   
                 sumOnlineSec += System.Convert.ToInt32(fields[3]);
             }
+
+            if (recordType == RECORD_TYPE.RECORD_RECHARGE)
+            {
+                int _num = Convert.ToInt32( fields[4] );
+                string _acc = fields[2].Trim();
+                coreData.income += Convert.ToInt32( _num );    
+                if ( coreData.payAccDict.ContainsKey(_acc) )
+                {
+                    coreData.payAccDict[_acc] += _num;
+                }   
+                else
+                {
+                    coreData.payAccDict[_acc] = _num;
+                    
+                }         
+            }
+
         }   
 
         foreach (var item in coreData.loginAccDict)
@@ -192,13 +219,27 @@ public class RecordModel {
         }
         coreData.allRegNum += coreData.newUser;
 
+        foreach (var item in coreData.regAccDict)
+        {
+            if (coreData.payAccDict.ContainsKey(item.Key))
+            {
+                coreData.newPayUser++;
+            }     
+        }
+
         coreData.DAU = coreData.loginAccDict.Count;
 
         coreData.avgOnlineSec = sumOnlineSec / coreData.loginAccDict.Count;
 
+        coreData.sumPayUser = coreData.payAccDict.Count;
+
+        coreData.ARPPU = coreData.income / coreData.payAccDict.Count;
+
+        coreData.ARPPDAU = coreData.payAccDict.Count / coreData.loginAccDict.Count;
+
         coreList.Add(coreData);
         
-        Logger.Log("day core.............",coreData.date,coreData.DAU,coreData.PCU,coreData.secondLive,coreData.newUser,coreData.avgOnlineSec);
+        Logger.Log("day core.............",coreData.date,coreData.DAU,coreData.PCU,coreData.secondLive,coreData.newUser,coreData.avgOnlineSec,coreData.newPayUser);
     }
 
 }

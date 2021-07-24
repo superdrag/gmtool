@@ -90,6 +90,7 @@
      <Compile Include="Assets\Script\MainUI\MailView.cs" />
      <Compile Include="Assets\Script\MainUI\MenuView.cs" />
      <Compile Include="Assets\Script\MainUI\RechargeView.cs" />
+     <Compile Include="Assets\Script\MainUI\RecordModel.cs" />
      <Compile Include="Assets\Script\MsgId.cs" />
      <Compile Include="Assets\Script\MsgReg.cs" />
      <Compile Include="Assets\Script\Proto\Common.cs" />
