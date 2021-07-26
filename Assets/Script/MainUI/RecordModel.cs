@@ -36,7 +36,7 @@ public class CoreData
     public Dictionary<string,int> loginAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> payAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> regAccDict = new Dictionary<string, int>();
-
+    public Dictionary<int,int> hourOnlineNumDict = new Dictionary<int, int>();
 }
 
 public class RecordModel {
@@ -98,6 +98,11 @@ public class RecordModel {
         CoreData coreData = new CoreData();
         int sumOnlineSec = 0;
 
+        for (int i = 0; i < 24; i++)
+        {
+            coreData.hourOnlineNumDict[i] = 0;
+        }
+
         for (int j = 0; j < dayData.Length; j++)
         {
             string lineData = dayData[j];
@@ -108,6 +113,8 @@ public class RecordModel {
                 coreData.date = fields[0].Split('-')[0];     //统计日期  
                 //Logger.Log("day date.............",coreData.date);                             
             }
+            string curTime = fields[0].Split('-')[1];
+            int curHour = Convert.ToInt32( curTime.Split(':')[0] );
 
             RECORD_TYPE recordType =(RECORD_TYPE)( System.Convert.ToInt32(fields[1]) ); 
             
@@ -137,6 +144,11 @@ public class RecordModel {
                 if (coreData.PCU < num )
                 {
                     coreData.PCU = num;
+                }
+
+                if( coreData.hourOnlineNumDict[curHour] < num )
+                {
+                    coreData.hourOnlineNumDict[curHour] = num;
                 }                    
             }
 
@@ -170,28 +182,19 @@ public class RecordModel {
             {
                 CoreData preData = coreList[dayIndex-1];
                 
-                foreach (var item2 in preData.regAccDict)
+                if( preData.regAccDict.ContainsKey(item.Key) )
                 {
-                    if (item.Key == item2.Key)
-                    {
-                        coreData.secondLive++;
-                        break;
-                    }
+                    coreData.secondLive++;                    
                 }
             }   
 
             //三留
             if (dayIndex >= 2)
             {
-                CoreData preData = coreList[dayIndex-2];
-                
-                foreach (var item2 in preData.regAccDict)
+                CoreData preData = coreList[dayIndex-2];                
+                if( preData.regAccDict.ContainsKey(item.Key) )
                 {
-                    if (item.Key == item2.Key)
-                    {
-                        coreData.threeLive++;
-                        break;
-                    }
+                    coreData.threeLive++;
                 }
             }
 
@@ -199,14 +202,9 @@ public class RecordModel {
             if (dayIndex >= 6)
             {
                 CoreData preData = coreList[dayIndex-6];
-                
-                foreach (var item2 in preData.regAccDict)
+                if( preData.regAccDict.ContainsKey(item.Key) )
                 {
-                    if (item.Key == item2.Key)
-                    {
-                        coreData.sevenLive++;
-                        break;
-                    }
+                    coreData.sevenLive++;
                 }
             }                                     
         }
@@ -227,15 +225,25 @@ public class RecordModel {
             }     
         }
 
+        int _acusum = 0;
+        foreach (var item in coreData.hourOnlineNumDict)
+        {            
+            _acusum += item.Value;
+        }
+
         coreData.DAU = coreData.loginAccDict.Count;
 
-        coreData.avgOnlineSec = sumOnlineSec / coreData.loginAccDict.Count;
+        if( coreData.loginAccDict.Count > 0 ) coreData.avgOnlineSec = sumOnlineSec / coreData.loginAccDict.Count;
 
         coreData.sumPayUser = coreData.payAccDict.Count;
 
-        coreData.ARPPU = coreData.income / coreData.payAccDict.Count;
+        if(coreData.payAccDict.Count > 0) coreData.ARPPU = coreData.income / coreData.payAccDict.Count;
 
-        coreData.ARPPDAU = coreData.payAccDict.Count / coreData.loginAccDict.Count;
+        if( coreData.loginAccDict.Count > 0 ) coreData.ARPPDAU = coreData.payAccDict.Count / coreData.loginAccDict.Count;
+
+        coreData.ACU = _acusum / 24;
+
+        if( coreData.loginAccDict.Count > 0 ) coreData.ARPPDAU = coreData.income / coreData.loginAccDict.Count;
 
         coreList.Add(coreData);
         
