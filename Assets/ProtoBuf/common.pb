@@ -1,5 +1,5 @@
 
-ð
+¹
 common.protoPBase"0
 PB_Money
 type (Rtype
@@ -30,7 +30,11 @@ playerdbid
 PB_TeamCardInfo
 id (Rid
 num (Rnum
-level (Rlevel"q
+level (Rlevel"G
+PB_GiftPack
+id (Rid
+count (Rcount
+time (Rtime"q
 PB_Item
 itemGuid (	RitemGuid
 itemId (RitemId

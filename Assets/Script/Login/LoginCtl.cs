@@ -34,8 +34,6 @@ public class LoginCtl
 
     public void MSG_PHP2CL_GMLOGINACCOUNT(MsgPack msg)
     {
-        //S2C_Login _pb = S2C_Login.Parser.ParseFrom(msg.GetStream());
-    
         S2C_GMLogin _pb = msg.UnpackProtoBuf<S2C_GMLogin>( new S2C_GMLogin() );
 
         if( _pb.Ret != 0 )
@@ -43,7 +41,7 @@ public class LoginCtl
             Logger.Error("account or passwd fail! " + _pb.Account);
             return;
         }
-
+        LoginModel.Instance.Account = _pb.Account;
         UIMgr.HideUI(VIEWID.LOGIN);
         UIMgr.ShowUI(VIEWID.MENU);
     }

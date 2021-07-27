@@ -1,5 +1,5 @@
 
-æ
+Ó)
 client.protoPClientcommon.proto")
 S2C_ErrorCode
 errcode (Rerrcode"
@@ -32,7 +32,7 @@
 sign (	Rsign
 time (Rtime
 version (	Rversion
-reconn (Rreconn"Ù
+reconn (Rreconn"ù
 S2C_LoginGate
 account (	Raccount
 accdbid (Raccdbid
@@ -44,37 +44,36 @@
 firstlogin	 (R
 firstlogin
 curtime
- (Rcurtime"Á
+ (Rcurtime
+
+dayRefresh (R
+dayRefresh"ì
 S2C_LoginRoleData
 reconn (Rreconn
 diamond (Rdiamond
-newmail (Rnewmail:
-teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist$
-firstgiftlist (Rfirstgiftlist"¨
-C2S_StoreBaseInfo
-coin (Rcoin
-taskid (Rtaskid
-taskarg (Rtaskarg"
-facilitylist (Rfacilitylist
-
-lessonlist (R
-lessonlistJ
-
-employlist (2*.PClient.C2S_StoreBaseInfo.EmploylistEntryR
-employlist=
-EmploylistEntry
-key (Rkey
-value (Rvalue:8"
-S2C_ZeroRefresh"0
+newmail (Rnewmail$
+drawcardcount (Rdrawcardcount:
+teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlistS
+firstgiftlist (2-.PClient.S2C_LoginRoleData.FirstgiftlistEntryRfirstgiftlistT
+FirstgiftlistEntry
+key (Rkey(
+value (2.PBase.PB_GiftPackRvalue:8"
+S2C_ZeroRefresh"%
+S2C_WeekRefresh
+time (Rtime"&
+S2C_MonthRefresh
+time (Rtime"0
 S2C_UpdateDiamod
-	diamodnum (R	diamodnum"7
+	diamodnum (R	diamodnum"O
 C2S_UseDiamod
 num (Rnum
-event (Revent"I
+event (Revent
+params (Rparams"a
 S2C_UseDiamod
 ret (Rret
 num (Rnum
-event (Revent"E
+event (Revent
+params (Rparams"E
 C2S_FirstRecharge
 giftid (Rgiftid
 paycode (	Rpaycode"=
@@ -109,10 +108,11 @@ employlist=
 S2C_ShowTeamCardList:
 teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"$
 C2S_DrawCard
-boxid (Rboxid"\
+boxid (Rboxid"r
 S2C_DrawCard
-ret (Rret:
-teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"G
+ret (Rret
+boxid (Rboxid:
+teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"G
 C2S_UpLevelCard
 cardid (Rcardid
 	cardlevel (R	cardlevel"Y
@@ -120,15 +120,26 @@ employlist=
 ret (Rret
 cardid (Rcardid
 	cardlevel (R	cardlevel",
+C2S_ResetLevelCard
+cardid (Rcardid">
+S2C_ResetLevelCard
+ret (Rret
+cardid (Rcardid",
 C2S_FundTaskFinish
 taskid (Rtaskid">
 S2C_FundTaskFinish
 ret (Rret
-taskid (Rtaskid"
-C2S_PassInfo"F
+taskid (Rtaskid"
+C2S_GetFundTaskList"M
+S2C_GetFundTaskList
+fundpass (Rfundpass
+fundlist (Rfundlist"
+C2S_PassInfo"Ž
 S2C_PassInfo
 passtime (Rpasstime
-tasklist (Rtasklist"
+tasklist (Rtasklist 
+seasoncount (Rseasoncount$
+seasonleftsec (Rseasonleftsec"
 C2S_BuyPass";
 S2C_BuyPass
 ret (Rret
@@ -139,19 +150,49 @@ employlist=
 S2C_GetPassItem
 ret (Rret
 taskid (Rtaskid
-tasktype (Rtasktype"*
-C2S_ShopGiftPack
-giftid (Rgiftid"<
-S2C_ShopGiftPack
-ret (Rret
-giftid (Rgiftid"A
+tasktype (Rtasktype"
+C2S_GetShopInfo"ç
+S2C_GetShopInfo
+curtime (Rcurtime&
+dayrefreshtime (Rdayrefreshtime(
+weekrefreshtime (Rweekrefreshtime*
+monthrefreshtime (Rmonthrefreshtime$
+drawcardcount (RdrawcardcountQ
+firstgiftlist (2+.PClient.S2C_GetShopInfo.FirstgiftlistEntryRfirstgiftlistK
+daygiftlist (2).PClient.S2C_GetShopInfo.DaygiftlistEntryRdaygiftlistN
+weekgiftlist (2*.PClient.S2C_GetShopInfo.WeekgiftlistEntryRweekgiftlistQ
+monthgiftlist (2+.PClient.S2C_GetShopInfo.MonthgiftlistEntryRmonthgiftlistT
+FirstgiftlistEntry
+key (Rkey(
+value (2.PBase.PB_GiftPackRvalue:8R
+DaygiftlistEntry
+key (Rkey(
+value (2.PBase.PB_GiftPackRvalue:8S
+WeekgiftlistEntry
+key (Rkey(
+value (2.PBase.PB_GiftPackRvalue:8T
+MonthgiftlistEntry
+key (Rkey(
+value (2.PBase.PB_GiftPackRvalue:8"A
 C2S_IOSPayCheck
 payid (Rpayid
 paycode (	Rpaycode"S
 S2C_IOSPayCheck
 ret (Rret
 payid (Rpayid
-paytype (Rpaytype"8
+paytype (Rpaytype"@
+C2S_SaveUpload
+filename (	Rfilename
+data (Rdata">
+S2C_SaveUpload
+ret (Rret
+filename (	Rfilename".
+C2S_SaveDownload
+filename (	Rfilename"T
+S2C_SaveDownload
+ret (Rret
+filename (	Rfilename
+data (Rdata"8
 C2S_TestRecharge
 type (Rtype
 num (Rnum"8

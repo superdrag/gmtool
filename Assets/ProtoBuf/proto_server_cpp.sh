@@ -1,0 +1,1 @@
+./../../thirdparty/protobuf-3.6.0/src/protoc --proto_path=./proto --cpp_out=./../service/common/proto common.proto  client.proto  server.proto php.proto

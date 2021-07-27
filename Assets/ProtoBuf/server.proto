@@ -1,0 +1,552 @@
+syntax = "proto3";
+
+package PServer;
+
+import "common.proto";
+
+// ***********************************  Stuct Start ***********************************
+
+
+
+// ***********************************  Stuct End ***********************************
+
+
+
+// ***********************************  MSG Start ***********************************
+
+// MsgId.MSG_WD2DB_WORLDONLINKDB       	= 205       --world与db连接时发送数据
+message WD2DB_WorldOnLinkDB
+{
+
+}
+
+//MsgId.MSG_DB2WD_WORLDONLINKDB       	= 206       --[[world与db连接时返回数据]]
+message DB2WD_WorldOnLinkDB
+{
+    int32 battleseason = 1;
+    repeated PBase.PB_MailItem maillist = 11;//全局邮件列表 
+    
+}
+
+//MsgId.MSG_LN2DB_LOGINCHECKACC           = 301       --[[login发送db检测帐号]]
+message LN2DB_LoginCheckAcc
+{
+    string account = 1;
+    string passwd = 2;
+    string nickname = 3;
+	string headicon = 4;
+    int32 guest =9;  
+}
+
+//MsgId.MSG_DB2LN_LOGINBACKRST            = 302       --[[db返回login帐号信息]]
+message DB2LN_LoginBcakRet
+{
+    int32 ret = 1;
+    string account = 2;
+	int32 accdbid = 3;  
+    bool newuser = 4;
+}
+
+//MsgId.MSG_LN2MT_GETLOWGATE              = 303       --[[login请求master分配gate]]
+message LN2MT_GetLowGate
+{
+    string account = 1;
+	int32 accdbid = 2;  
+}
+
+//MsgId.MSG_MT2LN_BACKLOWGATE             = 304       --[[master分配gate信息给login]]
+message MT2LN_BackLowGate
+{
+    string account = 1;
+	int32 accdbid = 2;  
+    string gateip = 3; 
+    int32 gateport = 4; 
+}
+
+//MsgId.MSG_GT2WD_LOGINWORLD              = 310       --[[gate验证key成功发送world登陆]] 
+message GT2WD_LoginWorld    
+{
+    string account = 1;
+    int32 accdbid = 2;
+    string ip = 3; 
+    int32 reconn = 4;    //断线重连
+}
+
+//MsgId.MSG_WD2DB_GETINITROLEDATA         = 311       --[[world发送db请求玩家初始数据]]
+message WD2DB_GetInitRoleData
+{
+    int32 gateid = 1;
+    string account = 2;
+    int32 accdbid = 3;
+	string ip = 4;
+    int32 logintime = 5;  
+    int32 reconn = 6;    //断线重连  
+}
+
+//MsgId.MSG_DB2WD_BACKINITROLEDATA        = 313       --[[db发送world返回玩家初始数据]]
+message DB2WD_DBLoadInitRoleData
+{
+    int32 gateid = 1;
+    string account = 2;
+    int32 accdbid = 3;
+    int32 playerdbid = 4;
+	string ip = 5;
+    int32 logintv = 6;
+    int32 reconn = 7;    //断线重连
+    
+	string playername = 13;
+	int32 sex = 14;
+	int32 prof = 15;	
+    int32 unionid = 16;
+    int32 firstlogintv = 17;
+    int32 lastlogintv = 18;
+    int32 lastofflinetv = 19;
+    
+    int32 coin = 21;//钞票
+    int32 diamond = 22;//钻石
+    int32 vipcard = 23;//
+    int32 battlepasstv = 24;
+    int32 fundpasstv = 25;
+    int32 drawcardcount = 26;
+
+    string cardstr = 31; 
+    string fundstr = 32; 
+    string passstr = 33;
+    string gmailstr = 34;
+
+    string firstgiftstr = 41;
+    string daygiftstr = 42;
+    string weekgiftstr = 43;
+    string monthgiftstr = 44;
+    string timegiftstr = 45;  
+}
+
+
+//MSG_LG2DB_SAVEPLAYRDATA         = 501,     //玩家数据db存盘
+message LG2DB_SavePlayerData
+{
+    string account = 1;
+    int32 accdbid = 2;
+    int32 playerdbid = 3;
+    string playername = 4;
+    int32 sex = 10;
+	int32 prof = 11;
+	int32 lastlogintime = 13;
+	int32 lastofflinetime = 14;
+	int32 firstlogintime = 15;
+    int32 battlepasstv = 16;
+    int32 fundpasstv = 17;
+    int32 drawcardcount = 18;
+
+    // string taskstr = 21;
+    // string counterstr = 22;
+    string cardstr = 23;
+    string fundstr = 24;
+    string passstr = 25;
+    string gmailstr = 26;
+
+    string firstgiftstr = 31;
+    string daygiftstr = 32;
+    string weekgiftstr = 33;
+    string monthgiftstr = 34;
+    string timegiftstr = 35; 
+
+    int32 coin = 41;//钞票
+    int32 diamond = 42;//钻石
+    int32 vipcard = 43;//
+}
+
+//MsgId.MSG_WD2DB_REFRESHDBDATA           = 502       --[[每天每月每日重置db]]
+message WD2DB_RefreshDBData
+{
+    int32 type = 1; //1每天 2每周 3每月
+}
+
+//MsgId.MSG_DB2WD_BACKINITROLEMAIL        = 315       --db发送world返回玩家mail
+message DB2WD_DBLoadInitRoleMail
+{
+    int32 playerdbid = 1;
+    repeated PBase.PB_MailItem maillist = 2;//邮件列表
+}
+
+
+//MSG_LG2GT_SETGATELOGICID        = 322,      //设置gate的logicid
+message LG2GT_SetGateLogicId
+{
+    int32 playerdbid = 1;
+    string account = 2;
+}
+
+//MSG_GT2LG_SETGATELOGICID        = 323,      //返回gate的logicid
+message GT2LG_SetGateLogicId
+{
+    int32 ret = 1;  
+    int32 playerdbid = 2;  
+    string account = 3;
+}
+
+//MsgId.MSG_WD2DB_SAVEMAIL                = 510        --存储邮件
+message WD2DB_SavePlayerMail
+{
+    int32 playerdbid = 1;
+    repeated PBase.PB_MailItem maillist = 2;//邮件列表
+}
+
+//MsgId.MSG_WD2DB_RESETSBATTLEEASON       = 532      --[[通行证重置]]
+message S2C_ResetBattleSeason
+{
+    int32 battleseason = 1;
+}
+
+
+//MsgId.MSG_WD2DB_IOSPAYRECORD            = 550      --[[IOS支付记录]]
+message WD2DB_IOSPayRecord
+{
+    string account = 1;
+    string platfrom = 2;
+    string country = 3;
+    string order = 4;
+    int32 paynum = 5;
+    int32 paytime = 6;
+    int32 event = 7;
+    int32 status = 8;
+}
+
+//-----------------------------------
+
+
+
+// MsgId.MSG_WD2DB_SAVEUPLOAD              = 601      --[[上传存档]]  
+message WD2DB_SaveUpload
+{
+    string filename = 1;
+    bytes data = 2;
+    int32 playerdbid = 3;
+}
+// MsgId.MSG_DB2WD_SAVEUPLOAD              = 602      --[[上传存档]]  
+message DB2WD_SaveUpload
+{
+    int32 ret = 1;
+    string filename = 2;
+}
+
+// MsgId.MSG_WD2DB_SAVEDOWNLOAD            = 605      --[[下载存档]]  
+message WD2DB_SaveDownload
+{
+    string filename = 1;
+    int32 playerdbid = 2;
+}
+// MsgId.MSG_DB2WD_SAVEDOWNLOAD            = 606      --[[下载存档]]  
+message DB2WD_SaveDownload
+{
+    int32 ret = 1;
+    string filename = 2;
+    bytes data = 3;
+}
+
+
+
+
+
+//-----------------------------GM  PHP START---------------------------
+
+
+// MsgId.MSG_PHP2DB_GMLOGINACCOUNT            = 801
+message PHP2DB_GMLOGIN
+{
+    string account = 1;
+    string passwd = 2;
+}
+
+// MsgId.MSG_DB2PHP_GMLOGINACCOUNT            = 802
+message DB2PHP_GMLOGIN
+{
+    int32 ret = 1;
+    string account = 2;
+}
+
+// MsgId.MSG_PHP2DB_QUERYUSERINFO            = 803
+message PHP2DB_GMQUERYUSERINFO
+{
+    string account = 1;
+}
+// MsgId.MSG_DB2PHP_QUERYUSERINFO            = 804
+message DB2PHP_GMQUERYUSERINFO
+{
+    int32 ret = 1;
+    string account = 2;
+    int32 accdbid = 3;
+    int32 diamond = 4;
+    int32 cash = 5;
+    int32 vipcard = 6;
+    int32 logintv = 7;
+    int32 offlinetv = 8;    
+}
+
+// MsgId.MSG_PHP2DB_SENDMONEY                  = 805
+message PHP2DB_GMSENDMONEY
+{
+    string account = 1;
+    int32 type = 2;
+    int32 num = 3;
+}
+
+// MsgId.MSG_DB2PHP_SENDMONEY                  = 806
+message DB2PHP_GMSENDMONEY
+{
+    int32 ret = 1;
+    string account = 2;
+    int32 type = 3;
+    int32 num = 4;    
+}
+
+
+// MsgId.MSG_PHP2WD_SENDMAIL                   = 811
+message PHP2WD_GMSendMail
+{
+    int32 mailtype = 1;
+    string acclist = 2;
+    PBase.PB_MailItem maildata = 3;
+}
+
+// MsgId.MSG_WD2DB_SENDMAIL                    = 812
+message WD2DB_GMSendMail
+{
+    int32 mailtype = 1;
+    string acclist = 2;
+    PBase.PB_MailItem maildata = 3;
+}
+
+// MsgId.MSG_DB2PHP_SENDMAIL                   = 813
+message DB2PHP_GMSendMail
+{
+    int32 ret = 1;
+    int32 finish = 2;
+    int32 mailtype = 3;
+}
+
+
+// MsgId.MSG_PHP2DB_QUERYALLMAIL                = 815    
+message PHP2DB_GMQueryAllMail
+{
+    int32 type = 1;  //1全部 2全服 3个人
+    string account = 2;
+}
+
+// MsgId.MSG_DB2PHP_QUERYALLMAIL               = 816 
+message DB2PHP_GMQueryAllMail
+{
+    repeated PBase.PB_MailItemEx maillist = 1;
+}
+
+// MsgId.MSG_PHP2WD_DELETEMAIL                = 817
+message PHP2WD_GMDeleteMail
+{
+    string mailid = 1;
+}
+
+// MsgId.MSG_WD2DB_DELETEMAIL                = 818    
+message WD2DB_GMDeleteMail
+{
+    string mailid = 1;
+}
+
+// MsgId.MSG_DB2PHP_DELETEMAIL               = 819       
+message DB2PHP_GMDeleteMail
+{
+    int32 ret = 1;
+    string mailid = 2;
+}
+
+//----------------------------- GM  PHP END---------------------------
+
+
+//--------------------------------HTTP START--------------------------------------------
+
+//MsgId.MSG_WD2HTTP_IOSPAYCHECK             = 701      --[[ios支付验证]]
+message WD2HTTP_IOSPayCheck
+{
+    string account = 1;
+    int32 playerdbid = 2;
+    int32 payid = 3;
+    string paycode = 4;
+    int32 paytype = 5;
+}
+
+//MsgId.MSG_HTTP2WD_IOSPAYCHECK             = 702      --[[ios支付验证]] 
+message HTTP2WD_IOSPayCheck
+{
+    int32 ret = 1;
+    string account = 2;
+    int32 playerdbid = 3;
+    int32 payid = 4;
+    string paycode = 5;
+    int32 paytype = 6;
+}
+
+//--------------------------------HTTP END--------------------------------------------
+
+
+//--------------------------------LOG START--------------------------------------------
+
+message WD2LOG_Record
+{
+    string recordstr = 1;
+}
+
+//--------------------------------LOG END--------------------------------------------
+
+
+/*
+
+
+
+
+//MSG_WD2DB_INITCREATEUNIONFIX    = 601,     //初始化创建固定宗门
+message WD2DB_CreateFixUnion
+{
+    repeated PBase.PB_UnionObj unionFixList = 1;  //
+}
+
+//MSG_DB2WD_INITCREATEUNIONFIX    = 602,     //初始化创建固定宗门
+message DB2WD_CreateFixUnion
+{
+    
+}
+
+// MSG_WD2DB_LOADALLUNION		    = 603,     //加载所有宗门
+message WD2DB_LoadALLUnion
+{
+    
+}
+
+// MSG_DB2WD_LOADALLUNION		    = 604,     //加载所有宗门
+message DB2WD_LoadALLUnion
+{
+    PBase.PB_UnionObj unionInfo = 1;  //工会信息
+    repeated PBase.PB_UnionMember unionMemberList = 2;  //工会成员信息
+    repeated PBase.PB_UnionLogInfo unionLogList = 3;  //工会日志信息
+}
+
+
+// union
+//MSG_WD2DB_CREATEUNION         	= 611,     //
+message WD2DB_CreateUnion
+{
+    string name = 1;
+    int32 level = 2;
+    int32 money = 3;
+    int32 exp = 4;
+    int32 createTime = 5;
+    string notice = 6;
+
+    int32 maxMember = 7;
+    int32 maxVChair = 8;
+    int32 maxElder = 9;
+
+    int32 creatorId = 10;
+    int32 rank = 11;
+    int32 joinTime = 12;
+    string creatorName = 13;
+}
+
+//MSG_DB2WD_CREATEUNION         	= 612,     //
+message DB2WD_CreateUnion
+{
+    int32 ret = 1;
+    PBase.PB_UnionObj unionInfo = 2;  //工会的信息
+    PBase.PB_UnionMember creatorInfo = 3;  //工会创建者的信息
+}
+
+//MSG_WD2DB_JOINUNION         	= 613,     //
+message WD2DB_JoinUnion
+{
+    int32 roleDbid = 1;
+    int32 unionDbid = 2;
+    int32 rank = 3;
+    int32 joinTime = 4;
+    string roleName = 5;
+}
+
+//MSG_DB2WD_JOINUNION         	= 614,     //
+message DB2WD_JoinUnion
+{
+    int32 ret = 1;
+    int32 dbid = 2;   //UnionMember表中id字段
+    int32 unionDbid = 3;
+    int32 memberid = 4;    //UnionMember表中memberid字段
+    int32 rank = 5;
+    int32 joinTime = 6;
+    string memberName = 7;
+}
+
+
+//MSG_WD2LG_SYNCPLAYERUNIONINFO  	= 615,     //同步公会信息
+message WD2LG_SyncPlayerUnionInfo
+{
+    int32 playerDbid = 1;
+    int32 unionDbid = 2;
+}
+
+//MSG_WD2DB_DELETEUNION           = 616,      //删除数据库中的工会信息
+message WD2DB_DeleteUnion
+{
+    int32 unionDbid = 1;  //工会id(对应UnionObj表id字段)
+    string unionName = 2;  //公会名称
+}
+
+//MSG_DB2WD_DELETEUNION           = 617       //删除数据库中的工会信息(由db成功操作数据库后,发向world)
+message DB2WD_DeleteUnion
+{
+    int32 result = 1;  //0:操作失败  1:操作成功
+    string unionName = 2;  //公会名称
+}
+
+//MSG_WD2DB_DELETEUNIONMEMBER     = 618       //删除数据库中工会成员信息
+message WD2DB_DeleteUnionMember
+{
+    int32 dbid = 1;  //数据的id
+    int32 memberDbid = 2;  //成员id(对应UnionMember表memberId字段)
+    string unionName = 3;  //会员所属公会名称
+}
+
+//MSG_DB2WD_DELETEUNIONMEMBER     = 619       //删除数据库中工会成员信息(由db成功操作数据库后,发向world)
+message DB2WD_DeleteUnionMember
+{
+    int32 result = 1;  //0:操作失败  1:操作成功
+    string unionName = 2;  //会员所属公会名称
+}
+
+//MSG_WD2LG_SYNINFOTOLOGIC        = 622,      //同步world信息到logic
+message MSG_WD2LG_SynInfoToLogic
+{
+    int32 unionId = 1;
+    int32 unionLevel = 2;
+    string unionName = 3;
+    int32 unionPost = 4;
+    int32 unionContribution = 5;
+    repeated PBase.PB_Money money = 6;  //货币属性
+}
+
+//MSG_LG2WD_SYNINFOTOWORLD        = 623,      //同步logic信息到world
+message MSG_LG2WD_SynInfoToWorld
+{
+    int32 bodyLevel = 1;
+    int32 practiceLevel = 2;
+    repeated PBase.PB_Money money = 3;  //货币属性
+}
+
+//MSG_WD2DB_SAVEUNIONDATA         = 624,      //工会数据存盘
+message MSG_WD2DB_SaveUnionDta
+{
+    PBase.PB_UnionObj unionInfo = 1;  //工会信息
+    repeated PBase.PB_UnionMember unionMemberList = 2;  //工会成员信息
+    repeated PBase.PB_UnionLogInfo unionLogList = 3;  //工会日志信息
+}
+
+// ***********************************  MSG End ***********************************
+
+/////////////  测试
+
+
+*/

@@ -35,6 +35,10 @@ public class GlobalCtl
 
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_DELETEMAIL, MSG_PHP2CL_DELETEMAIL,new S2C_GMDeleteMail());
         
+
+        NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_GMCOMMAND, MSG_PHP2CL_GMCOMMAND,new S2C_GMCommand());
+        NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_GMPAYDATA, MSG_PHP2CL_GMPAYDATA,new S2C_GMPayData());
+        NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_QUERYNORMALINFO, MSG_PHP2CL_QUERYNORMALINFO,new S2C_GMQueryNormalInfo());  
     }
 
     public void MSG_SS2CL_ERRORCODE(MsgPack msg)
@@ -122,6 +126,61 @@ public class GlobalCtl
         }
     }
 
+    public void MSG_PHP2CL_GMCOMMAND(MsgPack msg)
+    {
+        S2C_GMCommand _pb = msg.UnpackProtoBuf<S2C_GMCommand>( new S2C_GMCommand() );
+        if (_pb.Ret == 0)
+        {
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行成功");
+        } 
+        else
+        {
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行失败");
+            return;
+        }
+
+        if(_pb.Commandid ==(int)PHP_COMMAMD.BLACKUSER)
+        {
+            
+        }
+    }
+
+
+    public void MSG_PHP2CL_QUERYNORMALINFO(MsgPack msg)
+    {
+        S2C_GMQueryNormalInfo _pb = msg.UnpackProtoBuf<S2C_GMQueryNormalInfo>( new S2C_GMQueryNormalInfo() );
+        if (_pb.Ret == 0)
+        {
+            //UIMgr.ShowUI(VIEWID.ALERTINFO,"查询成功");
+        } 
+        else
+        {
+            //UIMgr.ShowUI(VIEWID.ALERTINFO,"查询失败");
+            return;
+        }
+
+        if (_pb.Querytype == (int)PHP_QUERY.BLACKUSER)
+        {
+            LimitView view = (LimitView)UIMgr.GetUI(VIEWID.Limit) ;
+            view.ClearItem();
+
+            for (int i = 0; i < _pb.Result.Count; i++)
+            {
+                PB_ParamStrList rst =  _pb.Result[i];
+                LimitItem item = new LimitItem();
+                item.rstData = rst;
+                item.Create();
+
+                view.AddItem( item );
+            }            
+        }
+    }
+
+    public void MSG_PHP2CL_GMPAYDATA(MsgPack msg)
+    {
+        //S2C_GMPayData _pb = msg.UnpackProtoBuf<S2C_GMPayData>( new S2C_GMPayData() );
+    }
+        
 
 //////////////////////////////////////// 发送
 
@@ -153,5 +212,33 @@ public class GlobalCtl
         item.Pasttime = passDay;
         pb.Maildata = item;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMAIL,pb);  
+    }
+
+    public static void MSG_CL2PHP_GMCOMMAND(string acclist, int commandId, params string[] paramlist)
+    {
+        C2S_GMCommand pb = new C2S_GMCommand();
+        string[] slist = acclist.Split(',');
+        for (int i = 0; i < slist.Length; i++)
+        {
+            pb.Acclist.Add(slist[i]);
+        } 
+        pb.Commandid = commandId;
+        for (int i = 0; i < paramlist.Length; i++)
+        {
+            pb.Params.Add(paramlist[i]);
+        } 
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMCOMMAND,pb);  
+    }
+
+    public static void MSG_CL2PHP_QUERYNORMALINFO(string account, int queryType, params int[] paramlist)
+    {
+        C2S_GMQueryNormalInfo pb = new C2S_GMQueryNormalInfo();
+        pb.Account = account;
+        pb.Querytype = queryType;
+        for (int i = 0; i < paramlist.Length; i++)
+        {
+            pb.Params.Add(paramlist[i]);
+        } 
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYNORMALINFO,pb);  
     }
 }

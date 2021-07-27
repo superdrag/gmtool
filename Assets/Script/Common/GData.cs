@@ -32,6 +32,20 @@ public enum RES_TYPE
     VIDEO = 6
 }
 
+public enum PHP_COMMAMD
+{
+    NONE = 0,
+    SHUTDWON = 101,
+    BLACKUSER = 102,
+}
+
+public enum PHP_QUERY
+{
+    NONE = 0,
+    BLACKUSER = 1001,
+}
+
+
 public class GData
 {
     public static int MSG_SEND_MINID = 1000;
@@ -88,6 +102,9 @@ public class GData
 
     /// 头像Url
     public static string HeadIcon = "http://picture.youth.cn/xwjx/201705/W020170506391821287688.png";
+
+
+
 
 }
 

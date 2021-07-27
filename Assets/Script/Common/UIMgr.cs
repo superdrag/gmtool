@@ -16,7 +16,13 @@ public enum VIEWID
     Recharge = 31,
     Mail = 32,
     MailSend = 33,
+
+    Limit = 35,
+    LimitNew = 36,  
+    
     CoreView = 41,
+
+  
     //-------------------------------
 }
 
@@ -48,6 +54,9 @@ public static class UIMgr
         RegisterUI(VIEWID.MailSend,MailSendView.Instance);
 
         RegisterUI(VIEWID.CoreView,CoreView.Instance);
+
+        RegisterUI(VIEWID.Limit,LimitView.Instance);
+        RegisterUI(VIEWID.LimitNew,LimitNewView.Instance);
     }    
 
     public static void Init()

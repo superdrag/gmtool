@@ -87,7 +87,7 @@ message C2S_LoginGate
     int32 reconn = 7;    //断线重连
 }
 
-//MSG_LG2CL_BACKROLEINITDATA      = 2012,     //登录网关成功
+//MSG_LG2CL_LOGINGATE      = 2012,     //登录网关成功
 message S2C_LoginGate
 {
     string account = 1;//账号名字
@@ -98,6 +98,7 @@ message S2C_LoginGate
     int32 reconn = 6;    //断线重连
     bool firstlogin = 9;//第一次登录
     int32 curtime = 10;//
+    bool dayRefresh = 11; //隔天刷新
 }
 
 //MsgId.MSG_LG2CL_LOGINROLEDATA               = 2013      --返回登录基本数据
@@ -106,25 +107,38 @@ message S2C_LoginRoleData
     int32 reconn = 1;    //断线重连
     int32 diamond = 2;//钻石
     bool newmail = 3; //新邮件
+    int32 drawcardcount = 4; //总抽卡次数
     repeated PBase.PB_TeamCardInfo teamcardlist = 11;  //卡牌信息
-    repeated int32 firstgiftlist = 12;  //首冲礼包信息
+    map<int32, PBase.PB_GiftPack> firstgiftlist = 12;  //礼包信息    
 }
 
 //MsgId.MSG_CL2LG_STOREBASEINFO           = 1201      --基本信息存储
-message C2S_StoreBaseInfo
-{
-    int32 coin = 1;//金钱
-    int32 taskid = 2;//任务id
-    int32 taskarg = 3;//任务参数
-    repeated int32 facilitylist = 4;//设备
-    repeated int32 lessonlist = 5;//课程
-    map<int32,int32> employlist = 6;//员工ID/数量
-}
+// message C2S_StoreBaseInfo
+// {
+//     int32 coin = 1;//金钱
+//     int32 taskid = 2;//任务id
+//     int32 taskarg = 3;//任务参数
+//     repeated int32 facilitylist = 4;//设备
+//     repeated int32 lessonlist = 5;//课程
+//     map<int32,int32> employlist = 6;//员工ID/数量
+// }
 
 //MsgId.MSG_WD2CL_ZEROREFRESH             = 2101      --零点刷新
 message S2C_ZeroRefresh
 {
 
+}
+
+//MsgId.MSG_WD2CL_WEEKREFRESH             = 2102      --[[每周刷新]]  
+message S2C_WeekRefresh
+{
+    int32 time = 1;
+}
+
+//MsgId.MSG_WD2CL_MONTHREFRESH            = 2103      --[[每月刷新]] 
+message S2C_MonthRefresh
+{
+    int32 time = 1;
 }
 
 //MsgId.MSG_WD2CL_UPATEDIAMOD             = 2500      --更新钻石数量
@@ -138,6 +152,7 @@ message C2S_UseDiamod
 {
     int32 num = 1;  //使用钻石数量
     int32 event = 2; //
+    repeated int32 params = 3;
 }
 
 // MsgId.MSG_WD2CL_USEDIAMOD               = 2501      --使用钻石
@@ -146,6 +161,7 @@ message S2C_UseDiamod
     int32 ret = 1;  //结果0成功  1失败   
     int32 num = 2;  //剩下钻石数量
     int32 event = 3;
+    repeated int32 params = 4;
 }
 
 //MsgId.MSG_CL2WD_FIRSTRECHARGE           = 1502      --[[首冲礼包]] 
@@ -260,7 +276,8 @@ message C2S_DrawCard
 message S2C_DrawCard
 {
     int32 ret = 1;
-    repeated PBase.PB_TeamCardInfo teamcardlist = 2;
+    int32 boxid = 2;
+    repeated PBase.PB_TeamCardInfo teamcardlist = 3;
 }
 
 // MsgId.MSG_CL2WD_UPLEVELCARD             = 1523      --卡牌等级升级
@@ -276,6 +293,22 @@ message S2C_UpLevelCard
     int32 cardid = 2;
     int32 cardlevel = 3;
 }
+
+
+// MsgId.MSG_CL2WD_RESETLEVELCARD          = 1524      --[[卡牌等级重置]] 
+message C2S_ResetLevelCard
+{
+    int32 cardid = 1;
+}
+
+// MsgId.MSG_WD2CL_RESETLEVELCARD          = 2524      --[[卡牌等级重置]]  
+message S2C_ResetLevelCard
+{
+    int32 ret = 1;
+    int32 cardid = 2;
+}
+
+
 
 //----------
 
@@ -301,7 +334,8 @@ message C2S_GetFundTaskList
 // MsgId.MSG_WD2CL_GETFUNDTASKLIST          = 2526      --[[基金列表]]
 message S2C_GetFundTaskList
 {
-    repeated int fundlist = 1;
+    int32 fundpass = 1;
+    repeated int32 fundlist = 2;
 }
 
 
@@ -316,6 +350,8 @@ message S2C_PassInfo
 {
     int32 passtime = 1;//购买通信证时间
     repeated int32 tasklist = 2;//领取列表
+    int32 seasoncount = 3;  //第几个赛季
+    int32 seasonleftsec = 4; //赛季剩余时间
 }
 
 // MsgId.MSG_CL2WD_BUYPASS                 = 1531      --购买通行证
@@ -334,7 +370,7 @@ message S2C_BuyPass
 message C2S_GetPassItem
 {
     int32 taskid = 1;
-    int32 tasktype = 2;
+    int32 tasktype = 2; //2收费 3免费
 }
 
 // MsgId.MSG_WD2LC_GETPASSITEM             = 2532      --领取通行证奖励
@@ -346,16 +382,24 @@ message S2C_GetPassItem
 }
 
 
-// MsgId.MSG_CL2WD_SHOPGIFTPACK            = 1541      --[[购买商城礼包]] 
-message C2S_ShopGiftPack
+//MsgId.MSG_CL2WD_GETESHOPINFO            = 1541      --[[商城信息]]   
+message C2S_GetShopInfo
 {
-    int32 giftid = 1;
+    
 }
-// MsgId.MSG_WD2LC_SHOPGIFTPACK            = 2541      --[[购买商城礼包]]  
-message S2C_ShopGiftPack
+
+//MsgId.MSG_WD2LC_GETESHOPINFO            = 2541      --[[商城信息]]  
+message S2C_GetShopInfo
 {
-    int32 ret = 1;
-    int32 giftid = 2;
+    int32 curtime = 1;
+    int32 dayrefreshtime = 2;
+    int32 weekrefreshtime = 3;
+    int32 monthrefreshtime = 4;
+    int32 drawcardcount = 5;
+    map<int32, PBase.PB_GiftPack> firstgiftlist = 11;//
+    map<int32, PBase.PB_GiftPack> daygiftlist = 12;//
+    map<int32, PBase.PB_GiftPack> weekgiftlist = 13;//
+    map<int32, PBase.PB_GiftPack> monthgiftlist = 14;//
 }
 
 
@@ -373,6 +417,42 @@ message S2C_IOSPayCheck
     int32 payid = 2;    //商品id
     int32 paytype = 3;  //购买类型 101首冲 102商城礼包
 }
+
+
+
+//------------------------------
+
+// MsgId.MSG_CL2WD_SAVEUPLOAD              = 1601      --[[上传存档]] 
+message C2S_SaveUpload
+{
+    string filename = 1;
+    bytes data = 2;
+}
+// MsgId.MSG_WD2CL_SAVEUPLOAD              = 2601      --[[上传存档]] 
+message S2C_SaveUpload
+{
+    int32 ret = 1;
+    string filename = 2;
+}
+
+// MsgId.MSG_CL2WD_SAVEDOWNLOAD            = 1605      --[[下载存档]]  
+message C2S_SaveDownload
+{
+    string filename = 1;
+}
+
+// MsgId.MSG_WD2CL_SAVEDOWNLOAD            = 2605      --[[下载存档]]
+message S2C_SaveDownload
+{
+    int32 ret = 1;
+    string filename = 2;
+    bytes data = 3;
+}
+
+
+
+
+
 
 // -----------------------------  测试接口 ----------------------------------
 

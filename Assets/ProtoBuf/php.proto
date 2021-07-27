@@ -109,3 +109,67 @@ message S2C_GMDeleteMail
     int32 ret = 1;
     string mailid = 2;
 }
+
+// MsgId.MSG_CL2PHP_GMCOMMAND                  = 1831    --[[GM发送指令]]  ProtoDict[MsgId.MSG_CL2PHP_GMCOMMAND] = "PPhp.C2S_GMCommand"
+message C2S_GMCommand
+{
+    int32 commandid = 1;  //
+    repeated string acclist = 2;
+    repeated string params = 3;
+}
+// MsgId.MSG_PHP2CL_GMCOMMAND                  = 2831    --[[GM发送指令]]  ProtoDict[MsgId.MSG_PHP2CL_GMCOMMAND] = "PPhp.S2C_GMCommand"
+message S2C_GMCommand
+{
+    int32 ret = 1;
+    int32 commandid = 2;  //
+    repeated string acclist = 3;
+    repeated string params = 4;
+}
+
+// MsgId.MSG_CL2PHP_QUERYNORMALINFO            = 1865    --[[GM通用查询]]  ProtoDict[MsgId.MSG_CL2PHP_QUERYNORMALINFO] = "PPhp.C2S_GMQueryNormalInfo"
+message C2S_GMQueryNormalInfo
+{
+    int32 querytype = 1;  //
+    string account = 2;
+    repeated int32 params = 3;
+}
+// MsgId.MSG_PHP2CL_QUERYNORMALINFO            = 2865    --[[GMGM通用查询]]  ProtoDict[MsgId.MSG_PHP2CL_QUERYNORMALINFO] = "PPhp.S2C_GMQueryNormalInfo"
+message S2C_GMQueryNormalInfo
+{
+    int32 ret = 1;
+    int32 querytype = 2;  //
+    string account = 3;
+    repeated PBase.PB_ParamStrList result = 4;
+}
+
+
+// MsgId.MSG_CL2PHP_GMCOREDATA                 = 1851    --[[GM请求核心数据]]  ProtoDict[MsgId.MSG_CL2PHP_GMCOREDATA] = "PPhp.C2S_GMCoreData"
+message C2S_GMCoreData
+{
+
+}
+// MsgId.MSG_PHP2CL_GMCOREDATA                 = 2851    --[[GM请求核心数据]]  ProtoDict[MsgId.MSG_PHP2CL_GMCOREDATA] = "PPhp.S2C_GMCoreData"
+message S2C_GMCoreData
+{
+
+}
+
+// MsgId.MSG_CL2PHP_GMPAYDATA                  = 1861    --[[GM请求充值详情]]  ProtoDict[MsgId.MSG_CL2PHP_GMPAYDATA] = "PPhp.C2S_GMPayData"
+message C2S_GMPayData
+{
+    int32 page = 1;
+}
+// MsgId.MSG_PHP2DB_GMPAYDATA                  = 861       ProtoDict[MsgId.MSG_PHP2DB_GMPAYDATA] = "PServer.PHP2DB_GMPayData"
+// MsgId.MSG_DB2PHP_GMPAYDATA                  = 862       ProtoDict[MsgId.MSG_DB2PHP_GMPAYDATA] = "PServer.DB2PHP_GMPayData"
+// MsgId.MSG_PHP2CL_GMPAYDATA                  = 2861    --[[GM请求充值详情]]  ProtoDict[MsgId.MSG_PHP2CL_GMPAYDATA] = "PPhp.S2C_GMPayData"
+message S2C_GMPayData
+{
+    int32 page = 1;
+    int32 platfrom = 2;
+    string country = 3;    
+    string orderid = 4;
+    string account = 5;
+    int32 paynum = 6;
+    int32 state = 7;
+    int32 paytime = 8;
+}

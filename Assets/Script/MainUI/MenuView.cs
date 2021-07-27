@@ -12,6 +12,8 @@ public class MenuView : View
 
     private List<Button> btnList = new List<Button>();
 
+    private List<VIEWID> switchViewList = new List<VIEWID>();
+
     int curIndex;
 
     public static MenuView Instance
@@ -58,41 +60,44 @@ public class MenuView : View
         btnList.Add(daidingBtn2);
         btnList.Add(daidingBtn3);
 
-        curIndex = 1;
+        switchViewList.Add(VIEWID.BLANK);
+        switchViewList.Add(VIEWID.Mail);
+        switchViewList.Add(VIEWID.MailSend);
+        switchViewList.Add(VIEWID.Recharge);
+        switchViewList.Add(VIEWID.CoreView);
+        switchViewList.Add(VIEWID.Limit);
+        switchViewList.Add(VIEWID.LimitNew);
+
+        curIndex = 4;
     }
 
     override public void OnShow(params object[] args)
     {
         Logger.Log("OnShow.........this.curIndex "+this.curIndex);
+
+        for (int i = 0; i < switchViewList.Count; i++)
+        {
+             UIMgr.HideUI(switchViewList[i]); 
+        }
+
         if( this.curIndex == 1 )
         {
-            UIMgr.HideUI(VIEWID.BLANK);
-            UIMgr.HideUI(VIEWID.Mail);
-            UIMgr.HideUI(VIEWID.MailSend);
-            UIMgr.HideUI(VIEWID.Recharge);
             UIMgr.ShowUI(VIEWID.CoreView);
         }        
         else if( this.curIndex == 2 )
         {
-            UIMgr.HideUI(VIEWID.BLANK);
-            UIMgr.HideUI(VIEWID.Mail);
-            UIMgr.HideUI(VIEWID.MailSend);
-            UIMgr.HideUI(VIEWID.CoreView);
             UIMgr.ShowUI(VIEWID.Recharge);
         }
         else if( this.curIndex == 3 )
         {
-            UIMgr.HideUI(VIEWID.BLANK);
-            UIMgr.HideUI(VIEWID.Recharge);
-            UIMgr.HideUI(VIEWID.CoreView);
             UIMgr.ShowUI(VIEWID.Mail);
-        }        
+        }    
+        else if( this.curIndex == 4 )
+        {
+            UIMgr.ShowUI(VIEWID.Limit);
+        }               
         else
         {
-            UIMgr.HideUI(VIEWID.Mail);
-            UIMgr.HideUI(VIEWID.MailSend);
-            UIMgr.HideUI(VIEWID.Recharge);
-            UIMgr.HideUI(VIEWID.CoreView);
             UIMgr.ShowUI(VIEWID.BLANK);
         }
 

@@ -19,6 +19,7 @@ public class LoginModel {
         }
     }
 
+    public string Account;
     public int RoleId;
     public string LoginGateIP;
     public int LoginGatePort;

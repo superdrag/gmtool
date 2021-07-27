@@ -15,6 +15,15 @@ package PBase;
 
 // ***********************************  Stuct Start ***********************************
 
+message PB_ParamIntList
+{
+    repeated int32 value = 1;
+}
+
+message PB_ParamStrList
+{
+    repeated string value = 1;
+}
 
 //货币
 message PB_Money
@@ -59,8 +68,13 @@ message PB_TeamCardInfo
     int32 level = 3; //强化等级
 }
 
-
-
+//礼包
+message PB_GiftPack
+{
+    int32 id = 1;   //礼包id
+    int32 count = 2;   //次数
+    int32 time = 3; //最后一次购买时间
+}
 
 
 

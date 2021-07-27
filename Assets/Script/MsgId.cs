@@ -23,15 +23,22 @@ public enum MSGID
     MSG_PHP2CL_SENDMONEY               = 2815,    //GM直接发送货币
 
     MSG_CL2PHP_SENDMAIL                 = 1820,    //GM发送邮件
-    MSG_PHP2CL_SENDMAIL                = 2820,    //GM发送邮件
+    MSG_PHP2CL_SENDMAIL                 = 2820,    //GM发送邮件
 
-    MSG_CL2PHP_QUERYALLMAIL               = 1821,    //[[GM查询最近全部邮件]]  
-    MSG_PHP2CL_QUERYALLMAIL               = 2821,    //[[GM查询最近全部邮件]]  
+    MSG_CL2PHP_QUERYALLMAIL              = 1821,    //[[GM查询最近全部邮件]]  
+    MSG_PHP2CL_QUERYALLMAIL              = 2821,    //[[GM查询最近全部邮件]]  
 
     MSG_CL2PHP_DELETEMAIL                 = 1822,    //[[GM撤销邮件]]  
     MSG_PHP2CL_DELETEMAIL                 = 2822,    //[[GM撤销邮件]]  
    
+    MSG_CL2PHP_GMCOMMAND                  = 1831,   
+    MSG_PHP2CL_GMCOMMAND                  = 2831,    
 
+    MSG_CL2PHP_GMPAYDATA                  = 1861,    
+    MSG_PHP2CL_GMPAYDATA                  = 2861,    
+
+    MSG_CL2PHP_QUERYNORMALINFO            = 1865,    
+    MSG_PHP2CL_QUERYNORMALINFO            = 2865,    
 
 
 }

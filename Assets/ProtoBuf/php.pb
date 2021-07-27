@@ -1,5 +1,5 @@
 
-Æ
+¥
 	php.protoPPhpcommon.proto"?
 C2S_GMLogin
 account (	Raccount
@@ -39,4 +39,31 @@
 type (Rtype
 account (	Raccount"F
 S2C_GMQueryAllMail0
-maillist (2.PBase.PB_MailItemExRmaillistbproto3
+maillist (2.PBase.PB_MailItemExRmaillist"*
+C2S_GMDeleteMail
+mailid (	Rmailid"<
+S2C_GMDeleteMail
+ret (Rret
+mailid (	Rmailid"_
+C2S_GMCommand
+	commandid (R	commandid
+account (	Raccount
+params (Rparams"q
+S2C_GMCommand
+ret (Rret
+	commandid (R	commandid
+account (	Raccount
+params (Rparams"
+C2S_GMCoreData"
+S2C_GMCoreData"#
+C2S_GMPayData
+page (Rpage"Õ
+S2C_GMPayData
+page (Rpage
+platfrom (Rplatfrom
+country (	Rcountry
+orderid (	Rorderid
+account (	Raccount
+paynum (Rpaynum
+state (Rstate
+paytime (Rpaytimebproto3
