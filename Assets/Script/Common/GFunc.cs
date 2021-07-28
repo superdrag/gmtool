@@ -129,15 +129,22 @@ public class GFunc
     }
 
     //DateTime转时间戳
-    public static int DateTime2Int(DateTime time)
+    public static int DateTime2TimeStamp(DateTime dt)
     {
-        return 0;
+        DateTime dateStart = new DateTime(1970, 1, 1, 8, 0, 0);  
+        int timeStamp = Convert.ToInt32((dt - dateStart).TotalSeconds);  
+        return timeStamp; 
     }
 
     //时间戳转DateTime
-    public static DateTime Int2DateTime(int d)
+    public static DateTime TimeStamp2DateTime(int timeStamp)
     {
-        return new DateTime();            
+        DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));  
+        long lTime = ((long)timeStamp * 10000000);  
+        TimeSpan toNow = new TimeSpan(lTime);  
+        DateTime targetDt = dtStart.Add(toNow);  
+        //Logger.Log("tttttttttttttttt ",targetDt.ToString());
+        return targetDt;  
     }    
 
     public static List<string> GetDirFiles(string pathName)

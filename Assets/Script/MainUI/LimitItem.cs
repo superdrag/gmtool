@@ -31,7 +31,7 @@ public class LimitItem
         infoList.Add(view.Find("bg/data/end").GetComponent<Text>());
         infoList.Add(view.Find("bg/data/reason").GetComponent<Text>());
         infoList.Add(view.Find("bg/data/gmacc").GetComponent<Text>());
-        infoList.Add(view.Find("bg/data/status").GetComponent<Text>());
+        //infoList.Add(view.Find("bg/data/status").GetComponent<Text>());
 
         editBtn.onClick.AddListener(OnBtnClick);     
     }
@@ -42,6 +42,8 @@ public class LimitItem
         {
             infoList[i].text = rstData.Value[i];
         }
+        infoList[1].text = GFunc.TimeStamp2DateTime(Convert.ToInt32(infoList[1].text) ).ToString(); 
+        infoList[2].text = GFunc.TimeStamp2DateTime(Convert.ToInt32(infoList[2].text) ).ToString();
     }
 
     private void OnBtnClick()

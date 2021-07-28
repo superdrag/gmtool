@@ -131,7 +131,7 @@ public class GlobalCtl
         S2C_GMCommand _pb = msg.UnpackProtoBuf<S2C_GMCommand>( new S2C_GMCommand() );
         if (_pb.Ret == 0)
         {
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行成功");
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行成功"+ _pb.Acclist.Count+"个");
         } 
         else
         {

@@ -51,7 +51,7 @@ public class LimitView : View
     override public void OnShow(params object[] args)
     {        
         ClearItem();
-        GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("hjgj",(int)PHP_QUERY.BLACKUSER,677);
+        GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("",(int)PHP_QUERY.BLACKUSER,66);
     }
 
     private void onClickNew(GameObject go)

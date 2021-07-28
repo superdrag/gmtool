@@ -94,6 +94,7 @@ public class LimitNewView : View
     private void onClickClose()
     {
         UIMgr.HideUI(VIEWID.LimitNew);
+        UIMgr.RefreshUI(VIEWID.Limit);
     }
 
 
