@@ -68,7 +68,7 @@ public class MenuView : View
         switchViewList.Add(VIEWID.Limit);
         switchViewList.Add(VIEWID.LimitNew);
 
-        curIndex = 4;
+        curIndex = 1;
     }
 
     override public void OnShow(params object[] args)
