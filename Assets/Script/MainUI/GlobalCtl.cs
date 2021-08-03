@@ -38,7 +38,9 @@ public class GlobalCtl
 
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_GMCOMMAND, MSG_PHP2CL_GMCOMMAND,new S2C_GMCommand());
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_GMPAYDATA, MSG_PHP2CL_GMPAYDATA,new S2C_GMPayData());
+        NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_GMPAYREPAIR, MSG_PHP2CL_GMPAYREPAIR,new S2C_GMPayRepair());
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_QUERYNORMALINFO, MSG_PHP2CL_QUERYNORMALINFO,new S2C_GMQueryNormalInfo());  
+        
     }
 
     public void MSG_SS2CL_ERRORCODE(MsgPack msg)
@@ -185,6 +187,16 @@ public class GlobalCtl
     }
         
 
+    public static void MSG_PHP2CL_GMPAYREPAIR(MsgPack msg)
+    {
+        S2C_GMPayRepair _pb = msg.UnpackProtoBuf<S2C_GMPayRepair>( new S2C_GMPayRepair() );        
+
+        PayView payView = UIMgr.GetUI<PayView>(VIEWID.PayView);
+
+        payView.SetItem(_pb);
+    }
+
+
 //////////////////////////////////////// 发送
 
     public static void MSG_CL2PHP_QUERYUSERINFO(string account)
@@ -251,4 +263,6 @@ public class GlobalCtl
         pb.Account = account;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMPAYDATA,pb);  
     }
+
+    
 }

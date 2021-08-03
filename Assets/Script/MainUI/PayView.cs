@@ -18,6 +18,8 @@ public class PayView : View
 
     public Transform Content;
 
+    public List<PayItem> PayItemsList = new List<PayItem>();
+
 
     public static PayView Instance
     {
@@ -59,6 +61,7 @@ public class PayView : View
 
     public void ClearItem()
     {
+        PayItemsList.Clear();
         for (int i = 0; i < Content.childCount; i++)
         {
             Transform obj = Content.GetChild(i);
@@ -78,6 +81,24 @@ public class PayView : View
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
-        item.Show(pb);
+        item.pbData = pb;
+        item.Show();
+        PayItemsList.Add(item);
     }
+
+    public void SetItem(S2C_GMPayRepair pb)
+    {               
+        for (int i = 0; i < PayItemsList.Count; i++)
+        {
+            PayItem item = PayItemsList[i];
+            if (item.pbData.Payorder == pb.Payorder)
+            {
+                item.pbData.State = pb.Ret;
+                item.Show();
+                break;
+            } 
+        }
+
+
+    }    
 }

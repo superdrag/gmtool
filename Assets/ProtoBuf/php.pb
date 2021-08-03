@@ -1,5 +1,5 @@
 
-‚
+À
 	php.protoPPhpcommon.proto"?
 C2S_GMLogin
 account (	Raccount
@@ -80,4 +80,12 @@
 payid	 (Rpayid
 event
  (Revent
-paycode (	Rpaycodebproto3
+paycode (	Rpaycode"a
+C2S_GMPayRepair
+account (	Raccount
+paycode (	Rpaycode
+payorder (	Rpayorder"Y
+S2C_GMPayRepair
+ret (Rret
+paycode (	Rpaycode
+payorder (	Rpayorderbproto3

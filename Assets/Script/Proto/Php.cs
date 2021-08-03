@@ -51,12 +51,15 @@ namespace PPhp {
             "EhEKCXF1ZXJ5dHlwZRgCIAEoBRIPCgdhY2NvdW50GAMgASgJEiYKBnJlc3Vs",
             "dBgEIAMoCzIWLlBCYXNlLlBCX1BhcmFtU3RyTGlzdCIQCg5DMlNfR01Db3Jl",
             "RGF0YSIQCg5TMkNfR01Db3JlRGF0YSIuCg1DMlNfR01QYXlEYXRhEgwKBHBh",
-            "Z2UYASABKAUSDwoHYWNjb3VudBgCIAEoCSLBAQoNUzJDX0dNUGF5RGF0YRIM",
+            "Z2UYASABKAUSDwoHYWNjb3VudBgCIAEoCSLCAQoNUzJDX0dNUGF5RGF0YRIM",
             "CgRwYWdlGAEgASgFEg8KB2FjY291bnQYAiABKAkSEAoIcGxhdGZyb20YAyAB",
-            "KAkSDwoHY291bnRyeRgEIAEoCRIPCgdvcmRlcmlkGAUgASgJEg4KBnBheW51",
-            "bRgGIAEoBRINCgVzdGF0ZRgHIAEoBRIPCgdwYXl0aW1lGAggASgFEg0KBXBh",
-            "eWlkGAkgASgFEg0KBWV2ZW50GAogASgFEg8KB3BheWNvZGUYCyABKAliBnBy",
-            "b3RvMw=="));
+            "KAkSDwoHY291bnRyeRgEIAEoCRIQCghwYXlvcmRlchgFIAEoCRIOCgZwYXlu",
+            "dW0YBiABKAUSDQoFc3RhdGUYByABKAUSDwoHcGF5dGltZRgIIAEoBRINCgVw",
+            "YXlpZBgJIAEoBRINCgVldmVudBgKIAEoBRIPCgdwYXljb2RlGAsgASgJIkUK",
+            "D0MyU19HTVBheVJlcGFpchIPCgdhY2NvdW50GAEgASgJEg8KB3BheWNvZGUY",
+            "AiABKAkSEAoIcGF5b3JkZXIYAyABKAkiQQoPUzJDX0dNUGF5UmVwYWlyEgsK",
+            "A3JldBgBIAEoBRIPCgdwYXljb2RlGAIgASgJEhAKCHBheW9yZGVyGAMgASgJ",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::PBase.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -79,7 +82,9 @@ namespace PPhp {
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMCoreData), global::PPhp.C2S_GMCoreData.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMCoreData), global::PPhp.S2C_GMCoreData.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMPayData), global::PPhp.C2S_GMPayData.Parser, new[]{ "Page", "Account" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMPayData), global::PPhp.S2C_GMPayData.Parser, new[]{ "Page", "Account", "Platfrom", "Country", "Orderid", "Paynum", "State", "Paytime", "Payid", "Event", "Paycode" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMPayData), global::PPhp.S2C_GMPayData.Parser, new[]{ "Page", "Account", "Platfrom", "Country", "Payorder", "Paynum", "State", "Paytime", "Payid", "Event", "Paycode" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMPayRepair), global::PPhp.C2S_GMPayRepair.Parser, new[]{ "Account", "Paycode", "Payorder" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMPayRepair), global::PPhp.S2C_GMPayRepair.Parser, new[]{ "Ret", "Paycode", "Payorder" }, null, null, null)
           }));
     }
     #endregion
@@ -3403,7 +3408,7 @@ namespace PPhp {
       account_ = other.account_;
       platfrom_ = other.platfrom_;
       country_ = other.country_;
-      orderid_ = other.orderid_;
+      payorder_ = other.payorder_;
       paynum_ = other.paynum_;
       state_ = other.state_;
       paytime_ = other.paytime_;
@@ -3462,14 +3467,14 @@ namespace PPhp {
       }
     }
 
-    /// <summary>Field number for the "orderid" field.</summary>
-    public const int OrderidFieldNumber = 5;
-    private string orderid_ = "";
+    /// <summary>Field number for the "payorder" field.</summary>
+    public const int PayorderFieldNumber = 5;
+    private string payorder_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Orderid {
-      get { return orderid_; }
+    public string Payorder {
+      get { return payorder_; }
       set {
-        orderid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        payorder_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -3556,7 +3561,7 @@ namespace PPhp {
       if (Account != other.Account) return false;
       if (Platfrom != other.Platfrom) return false;
       if (Country != other.Country) return false;
-      if (Orderid != other.Orderid) return false;
+      if (Payorder != other.Payorder) return false;
       if (Paynum != other.Paynum) return false;
       if (State != other.State) return false;
       if (Paytime != other.Paytime) return false;
@@ -3573,7 +3578,7 @@ namespace PPhp {
       if (Account.Length != 0) hash ^= Account.GetHashCode();
       if (Platfrom.Length != 0) hash ^= Platfrom.GetHashCode();
       if (Country.Length != 0) hash ^= Country.GetHashCode();
-      if (Orderid.Length != 0) hash ^= Orderid.GetHashCode();
+      if (Payorder.Length != 0) hash ^= Payorder.GetHashCode();
       if (Paynum != 0) hash ^= Paynum.GetHashCode();
       if (State != 0) hash ^= State.GetHashCode();
       if (Paytime != 0) hash ^= Paytime.GetHashCode();
@@ -3609,9 +3614,9 @@ namespace PPhp {
         output.WriteRawTag(34);
         output.WriteString(Country);
       }
-      if (Orderid.Length != 0) {
+      if (Payorder.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(Orderid);
+        output.WriteString(Payorder);
       }
       if (Paynum != 0) {
         output.WriteRawTag(48);
@@ -3657,8 +3662,8 @@ namespace PPhp {
       if (Country.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Country);
       }
-      if (Orderid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Orderid);
+      if (Payorder.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Payorder);
       }
       if (Paynum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Paynum);
@@ -3701,8 +3706,8 @@ namespace PPhp {
       if (other.Country.Length != 0) {
         Country = other.Country;
       }
-      if (other.Orderid.Length != 0) {
-        Orderid = other.Orderid;
+      if (other.Payorder.Length != 0) {
+        Payorder = other.Payorder;
       }
       if (other.Paynum != 0) {
         Paynum = other.Paynum;
@@ -3750,7 +3755,7 @@ namespace PPhp {
             break;
           }
           case 42: {
-            Orderid = input.ReadString();
+            Payorder = input.ReadString();
             break;
           }
           case 48: {
@@ -3775,6 +3780,382 @@ namespace PPhp {
           }
           case 90: {
             Paycode = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// MsgId.MSG_CL2PHP_GMPAYREPAIR                = 1862    --[[GM支付补发]]  
+  /// </summary>
+  public sealed partial class C2S_GMPayRepair : pb::IMessage<C2S_GMPayRepair> {
+    private static readonly pb::MessageParser<C2S_GMPayRepair> _parser = new pb::MessageParser<C2S_GMPayRepair>(() => new C2S_GMPayRepair());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<C2S_GMPayRepair> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[20]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMPayRepair() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMPayRepair(C2S_GMPayRepair other) : this() {
+      account_ = other.account_;
+      paycode_ = other.paycode_;
+      payorder_ = other.payorder_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMPayRepair Clone() {
+      return new C2S_GMPayRepair(this);
+    }
+
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 1;
+    private string account_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Account {
+      get { return account_; }
+      set {
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "paycode" field.</summary>
+    public const int PaycodeFieldNumber = 2;
+    private string paycode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Paycode {
+      get { return paycode_; }
+      set {
+        paycode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "payorder" field.</summary>
+    public const int PayorderFieldNumber = 3;
+    private string payorder_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Payorder {
+      get { return payorder_; }
+      set {
+        payorder_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as C2S_GMPayRepair);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(C2S_GMPayRepair other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Account != other.Account) return false;
+      if (Paycode != other.Paycode) return false;
+      if (Payorder != other.Payorder) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (Paycode.Length != 0) hash ^= Paycode.GetHashCode();
+      if (Payorder.Length != 0) hash ^= Payorder.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Account.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Account);
+      }
+      if (Paycode.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Paycode);
+      }
+      if (Payorder.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Payorder);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      }
+      if (Paycode.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Paycode);
+      }
+      if (Payorder.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Payorder);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(C2S_GMPayRepair other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Account.Length != 0) {
+        Account = other.Account;
+      }
+      if (other.Paycode.Length != 0) {
+        Paycode = other.Paycode;
+      }
+      if (other.Payorder.Length != 0) {
+        Payorder = other.Payorder;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Account = input.ReadString();
+            break;
+          }
+          case 18: {
+            Paycode = input.ReadString();
+            break;
+          }
+          case 26: {
+            Payorder = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// MsgId.MSG_PHP2CL_GMPAYREPAIR                = 2862    --[[GM支付补发]]  
+  /// </summary>
+  public sealed partial class S2C_GMPayRepair : pb::IMessage<S2C_GMPayRepair> {
+    private static readonly pb::MessageParser<S2C_GMPayRepair> _parser = new pb::MessageParser<S2C_GMPayRepair>(() => new S2C_GMPayRepair());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<S2C_GMPayRepair> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[21]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMPayRepair() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMPayRepair(S2C_GMPayRepair other) : this() {
+      ret_ = other.ret_;
+      paycode_ = other.paycode_;
+      payorder_ = other.payorder_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMPayRepair Clone() {
+      return new S2C_GMPayRepair(this);
+    }
+
+    /// <summary>Field number for the "ret" field.</summary>
+    public const int RetFieldNumber = 1;
+    private int ret_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Ret {
+      get { return ret_; }
+      set {
+        ret_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "paycode" field.</summary>
+    public const int PaycodeFieldNumber = 2;
+    private string paycode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Paycode {
+      get { return paycode_; }
+      set {
+        paycode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "payorder" field.</summary>
+    public const int PayorderFieldNumber = 3;
+    private string payorder_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Payorder {
+      get { return payorder_; }
+      set {
+        payorder_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as S2C_GMPayRepair);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(S2C_GMPayRepair other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Ret != other.Ret) return false;
+      if (Paycode != other.Paycode) return false;
+      if (Payorder != other.Payorder) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Ret != 0) hash ^= Ret.GetHashCode();
+      if (Paycode.Length != 0) hash ^= Paycode.GetHashCode();
+      if (Payorder.Length != 0) hash ^= Payorder.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Ret != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Ret);
+      }
+      if (Paycode.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Paycode);
+      }
+      if (Payorder.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Payorder);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Ret != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Ret);
+      }
+      if (Paycode.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Paycode);
+      }
+      if (Payorder.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Payorder);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(S2C_GMPayRepair other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Ret != 0) {
+        Ret = other.Ret;
+      }
+      if (other.Paycode.Length != 0) {
+        Paycode = other.Paycode;
+      }
+      if (other.Payorder.Length != 0) {
+        Payorder = other.Payorder;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Ret = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Paycode = input.ReadString();
+            break;
+          }
+          case 26: {
+            Payorder = input.ReadString();
             break;
           }
         }

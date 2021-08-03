@@ -1,5 +1,5 @@
 
-©)
+Ù)
 server.protoPServercommon.proto"
 WD2DB_WorldOnLinkDB"i
 DB2WD_WorldOnLinkDB"
@@ -212,7 +212,7 @@ playerdbid"V
 mailid (	Rmailid"?
 DB2PHP_GMDeleteMail
 ret (Rret
-mailid (	Rmailid"™
+mailid (	Rmailid"±
 WD2HTTP_IOSPayCheck
 account (	Raccount
 
@@ -220,7 +220,8 @@ playerdbid (R
 playerdbid
 payid (Rpayid
 paycode (	Rpaycode
-paytype (Rpaytype"Ç
+paytype (Rpaytype
+repair (Rrepair"ß
 HTTP2WD_IOSPayCheck
 ret (Rret
 account (	Raccount
@@ -230,6 +231,7 @@ playerdbid
 payid (Rpayid
 paycode (	Rpaycode
 paytype (Rpaytype
-payorder (	Rpayorder"-
+payorder (	Rpayorder
+repair (Rrepair"-
 WD2LOG_Record
 	recordstr (	R	recordstrbproto3

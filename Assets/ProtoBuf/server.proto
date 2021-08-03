@@ -373,6 +373,7 @@ message WD2HTTP_IOSPayCheck
     int32 payid = 3;
     string paycode = 4;
     int32 paytype = 5;
+    int32 repair = 6;
 }
 
 //MsgId.MSG_HTTP2WD_IOSPAYCHECK             = 702      --[[ios支付验证]] 
@@ -385,6 +386,7 @@ message HTTP2WD_IOSPayCheck
     string paycode = 5;
     int32 paytype = 6;
     string payorder = 7;
+    int32 repair = 8;
 }
 
 //--------------------------------HTTP END--------------------------------------------

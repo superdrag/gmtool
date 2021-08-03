@@ -167,11 +167,28 @@ message S2C_GMPayData
     string account = 2;
     string platfrom = 3;
     string country = 4;    
-    string orderid = 5;
+    string payorder = 5;
     int32 paynum = 6;
     int32 state = 7;
     int32 paytime = 8;
     int32 payid = 9;
     int32 event = 10;
     string paycode = 11;
+}
+
+// MsgId.MSG_CL2PHP_GMPAYREPAIR                = 1862    --[[GM支付补发]]  
+message C2S_GMPayRepair
+{
+    string account = 1;
+    string paycode = 2;
+    string payorder = 3;
+
+}
+// MsgId.MSG_PHP2CL_GMPAYREPAIR                = 2862    --[[GM支付补发]]  
+message S2C_GMPayRepair
+{
+    int32 ret = 1;
+    string paycode = 2;
+    string payorder = 3;
+
 }

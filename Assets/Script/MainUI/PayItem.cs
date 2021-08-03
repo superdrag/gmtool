@@ -16,7 +16,7 @@ public class PayItem
 
     private Button repairBtn;
 
-    public string payCode;
+    public S2C_GMPayData pbData;
 
     public void Create()
     {        
@@ -32,35 +32,34 @@ public class PayItem
         EventTriggerListener.Get(repairBtn.gameObject).onClick = onClickRepair;
     }
 
-    public void Show(S2C_GMPayData pb)
+    public void Show()
     {
-        payCode = pb.Paycode;
+        infoList[0].text = pbData.Platfrom.ToString(); 
+        infoList[1].text = pbData.Country.ToString(); 
+        infoList[2].text = pbData.Payorder.ToString(); 
+        infoList[3].text = pbData.Account.ToString();
+        infoList[4].text = pbData.Payid.ToString(); 
+        infoList[5].text = pbData.Paynum.ToString(); 
+        infoList[6].text = pbData.Paytime.ToString(); 
+        infoList[7].text = pbData.State.ToString(); 
 
-        infoList[0].text = pb.Platfrom.ToString(); 
-        infoList[1].text = pb.Country.ToString(); 
-        infoList[2].text = pb.Orderid.ToString(); 
-        infoList[3].text = pb.Account.ToString();
-        infoList[4].text = pb.Payid.ToString(); 
-        infoList[5].text = pb.Paynum.ToString(); 
-        infoList[6].text = pb.Paytime.ToString(); 
-        infoList[7].text = pb.State.ToString(); 
-
-        if ( pb.State == 0)
+        if (pbData.State == 0)
         {
-            repairBtn.gameObject.SetActive(false);
+            repairBtn.gameObject.SetActive(true);
         }
         else
         {
             repairBtn.gameObject.SetActive(true);
         }
-
     }
 
     private void onClickRepair(GameObject go)
     {
-        // C2S_GMPayRepair pb = new C2S_GMPayRepair();
-        // pb.Account = account;
-        // NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMPAYDATA,pb);  
+        C2S_GMPayRepair pb = new C2S_GMPayRepair();
+        pb.Account = pbData.Account;
+        pb.Paycode = pbData.Paycode;
+        pb.Payorder = pbData.Payorder;
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMPAYREPAIR,pb);  
     }
 
 }
