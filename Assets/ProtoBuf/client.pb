@@ -1,5 +1,5 @@
 
-Ó)
+ë*
 client.protoPClientcommon.proto")
 S2C_ErrorCode
 errcode (Rerrcode"
@@ -73,7 +73,13 @@ dayRefresh"ì
 ret (Rret
 num (Rnum
 event (Revent
-params (Rparams"E
+params (Rparams"<
+C2S_WatchAdv
+event (Revent
+params (Rparams"<
+S2C_WatchAdv
+event (Revent
+params (Rparams"E
 C2S_FirstRecharge
 giftid (Rgiftid
 paycode (	Rpaycode"=
@@ -173,10 +179,11 @@ dayRefresh"ì
 value (2.PBase.PB_GiftPackRvalue:8T
 MonthgiftlistEntry
 key (Rkey(
-value (2.PBase.PB_GiftPackRvalue:8"A
+value (2.PBase.PB_GiftPackRvalue:8"]
 C2S_IOSPayCheck
 payid (Rpayid
-paycode (	Rpaycode"S
+paycode (	Rpaycode
+platform (	Rplatform"S
 S2C_IOSPayCheck
 ret (Rret
 payid (Rpayid

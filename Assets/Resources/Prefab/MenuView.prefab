@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5F85\u5B9A"
+  m_Text: "\u7981\u5C01\u7BA1\u7406"
 --- !u!1 &1765909447951906980
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 1969576300796546090}
   - component: {fileID: 3475806007825295844}
   m_Layer: 5
-  m_Name: daiding1
+  m_Name: paydata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -495,7 +495,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5C01\u7981"
+  m_Text: "\u4ED8\u8D39\u6570\u636E"
 --- !u!1 &4212621270149347231
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: 568400836775326325}
   - component: {fileID: 3761547321787762114}
   m_Layer: 5
-  m_Name: daiding2
+  m_Name: limit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -37,8 +37,13 @@ public enum MSGID
     MSG_CL2PHP_GMPAYDATA                  = 1861,    
     MSG_PHP2CL_GMPAYDATA                  = 2861,    
 
+    MSG_CL2PHP_GMPAYREPAIR                = 1862,    
+    MSG_PHP2CL_GMPAYREPAIR                = 2862,  
+
+
     MSG_CL2PHP_QUERYNORMALINFO            = 1865,    
     MSG_PHP2CL_QUERYNORMALINFO            = 2865,    
+
 
 
 }

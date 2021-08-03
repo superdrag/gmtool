@@ -164,6 +164,19 @@ message S2C_UseDiamod
     repeated int32 params = 4;
 }
 
+// MsgId.MSG_CL2WD_WATCHADV               = 1502      --[[看广告]]  
+message C2S_WatchAdv
+{
+    int32 event = 1; //
+    repeated int32 params = 2;
+}
+// MsgId.MSG_WD2CL_WATCHADV               = 2502      --[[看广告]]
+message S2C_WatchAdv
+{
+    int32 event = 1; //
+    repeated int32 params = 2;
+}
+
 //MsgId.MSG_CL2WD_FIRSTRECHARGE           = 1502      --[[首冲礼包]] 
 message C2S_FirstRecharge
 {
@@ -408,6 +421,7 @@ message C2S_IOSPayCheck
 {
     int32 payid = 1;    //商品id
     string paycode = 2;  //支付凭证码
+    string platform = 3; //平台
 }
 
 // MsgId.MSG_WD2LC_IOSPAYCHECK             = 2550      --[[IOS支付]]   

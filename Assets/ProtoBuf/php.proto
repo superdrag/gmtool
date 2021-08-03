@@ -158,18 +158,20 @@ message S2C_GMCoreData
 message C2S_GMPayData
 {
     int32 page = 1;
+    string account = 2;
 }
-// MsgId.MSG_PHP2DB_GMPAYDATA                  = 861       ProtoDict[MsgId.MSG_PHP2DB_GMPAYDATA] = "PServer.PHP2DB_GMPayData"
-// MsgId.MSG_DB2PHP_GMPAYDATA                  = 862       ProtoDict[MsgId.MSG_DB2PHP_GMPAYDATA] = "PServer.DB2PHP_GMPayData"
 // MsgId.MSG_PHP2CL_GMPAYDATA                  = 2861    --[[GM请求充值详情]]  ProtoDict[MsgId.MSG_PHP2CL_GMPAYDATA] = "PPhp.S2C_GMPayData"
 message S2C_GMPayData
 {
     int32 page = 1;
-    int32 platfrom = 2;
-    string country = 3;    
-    string orderid = 4;
-    string account = 5;
+    string account = 2;
+    string platfrom = 3;
+    string country = 4;    
+    string orderid = 5;
     int32 paynum = 6;
     int32 state = 7;
     int32 paytime = 8;
+    int32 payid = 9;
+    int32 event = 10;
+    string paycode = 11;
 }

@@ -42,22 +42,23 @@ public class MenuView : View
         Button hexinBtn = viewRoot.Find("hexin").GetComponent<Button>();
         Button youjianBtn = viewRoot.Find("youjian").GetComponent<Button>();
 
-        Button youjianbackBtn = viewRoot.Find("daiding1").GetComponent<Button>();
-        Button daidingBtn2 = viewRoot.Find("daiding2").GetComponent<Button>();
+        Button paydataBtn = viewRoot.Find("paydata").GetComponent<Button>();
+        Button limitBtn = viewRoot.Find("limit").GetComponent<Button>();
         Button daidingBtn3 = viewRoot.Find("daiding3").GetComponent<Button>();
+        
 
         EventTriggerListener.Get(chongzhiBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(hexinBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(youjianBtn.gameObject).onClick = OnBtnEvent;
-        EventTriggerListener.Get(youjianbackBtn.gameObject).onClick = OnBtnEvent;
-        EventTriggerListener.Get(daidingBtn2.gameObject).onClick = OnBtnEvent;
+        EventTriggerListener.Get(paydataBtn.gameObject).onClick = OnBtnEvent;
+        EventTriggerListener.Get(limitBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(daidingBtn3.gameObject).onClick = OnBtnEvent;
 
         btnList.Add(hexinBtn);
         btnList.Add(chongzhiBtn);
         btnList.Add(youjianBtn);
-        btnList.Add(youjianbackBtn);
-        btnList.Add(daidingBtn2);
+        btnList.Add(paydataBtn);
+        btnList.Add(limitBtn);
         btnList.Add(daidingBtn3);
 
         switchViewList.Add(VIEWID.BLANK);
@@ -67,6 +68,7 @@ public class MenuView : View
         switchViewList.Add(VIEWID.CoreView);
         switchViewList.Add(VIEWID.Limit);
         switchViewList.Add(VIEWID.LimitNew);
+        switchViewList.Add(VIEWID.PayView);
 
         curIndex = 1;
     }
@@ -94,8 +96,12 @@ public class MenuView : View
         }    
         else if( this.curIndex == 4 )
         {
+            UIMgr.ShowUI(VIEWID.PayView);
+        } 
+        else if( this.curIndex == 5 )
+        {
             UIMgr.ShowUI(VIEWID.Limit);
-        }               
+        }                          
         else
         {
             UIMgr.ShowUI(VIEWID.BLANK);

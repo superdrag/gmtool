@@ -50,11 +50,13 @@ namespace PPhp {
             "cxgDIAMoBSJwChVTMkNfR01RdWVyeU5vcm1hbEluZm8SCwoDcmV0GAEgASgF",
             "EhEKCXF1ZXJ5dHlwZRgCIAEoBRIPCgdhY2NvdW50GAMgASgJEiYKBnJlc3Vs",
             "dBgEIAMoCzIWLlBCYXNlLlBCX1BhcmFtU3RyTGlzdCIQCg5DMlNfR01Db3Jl",
-            "RGF0YSIQCg5TMkNfR01Db3JlRGF0YSIdCg1DMlNfR01QYXlEYXRhEgwKBHBh",
-            "Z2UYASABKAUikgEKDVMyQ19HTVBheURhdGESDAoEcGFnZRgBIAEoBRIQCghw",
-            "bGF0ZnJvbRgCIAEoBRIPCgdjb3VudHJ5GAMgASgJEg8KB29yZGVyaWQYBCAB",
-            "KAkSDwoHYWNjb3VudBgFIAEoCRIOCgZwYXludW0YBiABKAUSDQoFc3RhdGUY",
-            "ByABKAUSDwoHcGF5dGltZRgIIAEoBWIGcHJvdG8z"));
+            "RGF0YSIQCg5TMkNfR01Db3JlRGF0YSIuCg1DMlNfR01QYXlEYXRhEgwKBHBh",
+            "Z2UYASABKAUSDwoHYWNjb3VudBgCIAEoCSLBAQoNUzJDX0dNUGF5RGF0YRIM",
+            "CgRwYWdlGAEgASgFEg8KB2FjY291bnQYAiABKAkSEAoIcGxhdGZyb20YAyAB",
+            "KAkSDwoHY291bnRyeRgEIAEoCRIPCgdvcmRlcmlkGAUgASgJEg4KBnBheW51",
+            "bRgGIAEoBRINCgVzdGF0ZRgHIAEoBRIPCgdwYXl0aW1lGAggASgFEg0KBXBh",
+            "eWlkGAkgASgFEg0KBWV2ZW50GAogASgFEg8KB3BheWNvZGUYCyABKAliBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::PBase.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -76,8 +78,8 @@ namespace PPhp {
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryNormalInfo), global::PPhp.S2C_GMQueryNormalInfo.Parser, new[]{ "Ret", "Querytype", "Account", "Result" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMCoreData), global::PPhp.C2S_GMCoreData.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMCoreData), global::PPhp.S2C_GMCoreData.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMPayData), global::PPhp.C2S_GMPayData.Parser, new[]{ "Page" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMPayData), global::PPhp.S2C_GMPayData.Parser, new[]{ "Page", "Platfrom", "Country", "Orderid", "Account", "Paynum", "State", "Paytime" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMPayData), global::PPhp.C2S_GMPayData.Parser, new[]{ "Page", "Account" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMPayData), global::PPhp.S2C_GMPayData.Parser, new[]{ "Page", "Account", "Platfrom", "Country", "Orderid", "Paynum", "State", "Paytime", "Payid", "Event", "Paycode" }, null, null, null)
           }));
     }
     #endregion
@@ -3238,6 +3240,7 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public C2S_GMPayData(C2S_GMPayData other) : this() {
       page_ = other.page_;
+      account_ = other.account_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3257,6 +3260,17 @@ namespace PPhp {
       }
     }
 
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 2;
+    private string account_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Account {
+      get { return account_; }
+      set {
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as C2S_GMPayData);
@@ -3271,6 +3285,7 @@ namespace PPhp {
         return true;
       }
       if (Page != other.Page) return false;
+      if (Account != other.Account) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3278,6 +3293,7 @@ namespace PPhp {
     public override int GetHashCode() {
       int hash = 1;
       if (Page != 0) hash ^= Page.GetHashCode();
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3295,6 +3311,10 @@ namespace PPhp {
         output.WriteRawTag(8);
         output.WriteInt32(Page);
       }
+      if (Account.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Account);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3305,6 +3325,9 @@ namespace PPhp {
       int size = 0;
       if (Page != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Page);
+      }
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3319,6 +3342,9 @@ namespace PPhp {
       }
       if (other.Page != 0) {
         Page = other.Page;
+      }
+      if (other.Account.Length != 0) {
+        Account = other.Account;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -3335,6 +3361,10 @@ namespace PPhp {
             Page = input.ReadInt32();
             break;
           }
+          case 18: {
+            Account = input.ReadString();
+            break;
+          }
         }
       }
     }
@@ -3342,8 +3372,6 @@ namespace PPhp {
   }
 
   /// <summary>
-  /// MsgId.MSG_PHP2DB_GMPAYDATA                  = 861       ProtoDict[MsgId.MSG_PHP2DB_GMPAYDATA] = "PServer.PHP2DB_GMPayData"
-  /// MsgId.MSG_DB2PHP_GMPAYDATA                  = 862       ProtoDict[MsgId.MSG_DB2PHP_GMPAYDATA] = "PServer.DB2PHP_GMPayData"
   /// MsgId.MSG_PHP2CL_GMPAYDATA                  = 2861    --[[GM请求充值详情]]  ProtoDict[MsgId.MSG_PHP2CL_GMPAYDATA] = "PPhp.S2C_GMPayData"
   /// </summary>
   public sealed partial class S2C_GMPayData : pb::IMessage<S2C_GMPayData> {
@@ -3372,13 +3400,16 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public S2C_GMPayData(S2C_GMPayData other) : this() {
       page_ = other.page_;
+      account_ = other.account_;
       platfrom_ = other.platfrom_;
       country_ = other.country_;
       orderid_ = other.orderid_;
-      account_ = other.account_;
       paynum_ = other.paynum_;
       state_ = other.state_;
       paytime_ = other.paytime_;
+      payid_ = other.payid_;
+      event_ = other.event_;
+      paycode_ = other.paycode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3398,19 +3429,30 @@ namespace PPhp {
       }
     }
 
-    /// <summary>Field number for the "platfrom" field.</summary>
-    public const int PlatfromFieldNumber = 2;
-    private int platfrom_;
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 2;
+    private string account_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Platfrom {
+    public string Account {
+      get { return account_; }
+      set {
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "platfrom" field.</summary>
+    public const int PlatfromFieldNumber = 3;
+    private string platfrom_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Platfrom {
       get { return platfrom_; }
       set {
-        platfrom_ = value;
+        platfrom_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "country" field.</summary>
-    public const int CountryFieldNumber = 3;
+    public const int CountryFieldNumber = 4;
     private string country_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Country {
@@ -3421,24 +3463,13 @@ namespace PPhp {
     }
 
     /// <summary>Field number for the "orderid" field.</summary>
-    public const int OrderidFieldNumber = 4;
+    public const int OrderidFieldNumber = 5;
     private string orderid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Orderid {
       get { return orderid_; }
       set {
         orderid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "account" field.</summary>
-    public const int AccountFieldNumber = 5;
-    private string account_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Account {
-      get { return account_; }
-      set {
-        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -3475,6 +3506,39 @@ namespace PPhp {
       }
     }
 
+    /// <summary>Field number for the "payid" field.</summary>
+    public const int PayidFieldNumber = 9;
+    private int payid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Payid {
+      get { return payid_; }
+      set {
+        payid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "event" field.</summary>
+    public const int EventFieldNumber = 10;
+    private int event_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Event {
+      get { return event_; }
+      set {
+        event_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "paycode" field.</summary>
+    public const int PaycodeFieldNumber = 11;
+    private string paycode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Paycode {
+      get { return paycode_; }
+      set {
+        paycode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as S2C_GMPayData);
@@ -3489,13 +3553,16 @@ namespace PPhp {
         return true;
       }
       if (Page != other.Page) return false;
+      if (Account != other.Account) return false;
       if (Platfrom != other.Platfrom) return false;
       if (Country != other.Country) return false;
       if (Orderid != other.Orderid) return false;
-      if (Account != other.Account) return false;
       if (Paynum != other.Paynum) return false;
       if (State != other.State) return false;
       if (Paytime != other.Paytime) return false;
+      if (Payid != other.Payid) return false;
+      if (Event != other.Event) return false;
+      if (Paycode != other.Paycode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3503,13 +3570,16 @@ namespace PPhp {
     public override int GetHashCode() {
       int hash = 1;
       if (Page != 0) hash ^= Page.GetHashCode();
-      if (Platfrom != 0) hash ^= Platfrom.GetHashCode();
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (Platfrom.Length != 0) hash ^= Platfrom.GetHashCode();
       if (Country.Length != 0) hash ^= Country.GetHashCode();
       if (Orderid.Length != 0) hash ^= Orderid.GetHashCode();
-      if (Account.Length != 0) hash ^= Account.GetHashCode();
       if (Paynum != 0) hash ^= Paynum.GetHashCode();
       if (State != 0) hash ^= State.GetHashCode();
       if (Paytime != 0) hash ^= Paytime.GetHashCode();
+      if (Payid != 0) hash ^= Payid.GetHashCode();
+      if (Event != 0) hash ^= Event.GetHashCode();
+      if (Paycode.Length != 0) hash ^= Paycode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3527,21 +3597,21 @@ namespace PPhp {
         output.WriteRawTag(8);
         output.WriteInt32(Page);
       }
-      if (Platfrom != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Platfrom);
+      if (Account.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Account);
+      }
+      if (Platfrom.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Platfrom);
       }
       if (Country.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteString(Country);
       }
       if (Orderid.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Orderid);
-      }
-      if (Account.Length != 0) {
         output.WriteRawTag(42);
-        output.WriteString(Account);
+        output.WriteString(Orderid);
       }
       if (Paynum != 0) {
         output.WriteRawTag(48);
@@ -3555,6 +3625,18 @@ namespace PPhp {
         output.WriteRawTag(64);
         output.WriteInt32(Paytime);
       }
+      if (Payid != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Payid);
+      }
+      if (Event != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Event);
+      }
+      if (Paycode.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Paycode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3566,17 +3648,17 @@ namespace PPhp {
       if (Page != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Page);
       }
-      if (Platfrom != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Platfrom);
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      }
+      if (Platfrom.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Platfrom);
       }
       if (Country.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Country);
       }
       if (Orderid.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Orderid);
-      }
-      if (Account.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
       }
       if (Paynum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Paynum);
@@ -3586,6 +3668,15 @@ namespace PPhp {
       }
       if (Paytime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Paytime);
+      }
+      if (Payid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Payid);
+      }
+      if (Event != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Event);
+      }
+      if (Paycode.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Paycode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3601,7 +3692,10 @@ namespace PPhp {
       if (other.Page != 0) {
         Page = other.Page;
       }
-      if (other.Platfrom != 0) {
+      if (other.Account.Length != 0) {
+        Account = other.Account;
+      }
+      if (other.Platfrom.Length != 0) {
         Platfrom = other.Platfrom;
       }
       if (other.Country.Length != 0) {
@@ -3609,9 +3703,6 @@ namespace PPhp {
       }
       if (other.Orderid.Length != 0) {
         Orderid = other.Orderid;
-      }
-      if (other.Account.Length != 0) {
-        Account = other.Account;
       }
       if (other.Paynum != 0) {
         Paynum = other.Paynum;
@@ -3621,6 +3712,15 @@ namespace PPhp {
       }
       if (other.Paytime != 0) {
         Paytime = other.Paytime;
+      }
+      if (other.Payid != 0) {
+        Payid = other.Payid;
+      }
+      if (other.Event != 0) {
+        Event = other.Event;
+      }
+      if (other.Paycode.Length != 0) {
+        Paycode = other.Paycode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -3637,20 +3737,20 @@ namespace PPhp {
             Page = input.ReadInt32();
             break;
           }
-          case 16: {
-            Platfrom = input.ReadInt32();
+          case 18: {
+            Account = input.ReadString();
             break;
           }
           case 26: {
-            Country = input.ReadString();
+            Platfrom = input.ReadString();
             break;
           }
           case 34: {
-            Orderid = input.ReadString();
+            Country = input.ReadString();
             break;
           }
           case 42: {
-            Account = input.ReadString();
+            Orderid = input.ReadString();
             break;
           }
           case 48: {
@@ -3663,6 +3763,18 @@ namespace PPhp {
           }
           case 64: {
             Paytime = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            Payid = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            Event = input.ReadInt32();
+            break;
+          }
+          case 90: {
+            Paycode = input.ReadString();
             break;
           }
         }

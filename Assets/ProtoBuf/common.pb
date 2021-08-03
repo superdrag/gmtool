@@ -1,6 +1,10 @@
 
-¹
-common.protoPBase"0
+‹
+common.protoPBase"'
+PB_ParamIntList
+value (Rvalue"'
+PB_ParamStrList
+value (	Rvalue"0
 PB_Money
 type (Rtype
 num (Rnum"Õ

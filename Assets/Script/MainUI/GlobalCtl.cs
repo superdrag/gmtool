@@ -178,7 +178,10 @@ public class GlobalCtl
 
     public void MSG_PHP2CL_GMPAYDATA(MsgPack msg)
     {
-        //S2C_GMPayData _pb = msg.UnpackProtoBuf<S2C_GMPayData>( new S2C_GMPayData() );
+        S2C_GMPayData _pb = msg.UnpackProtoBuf<S2C_GMPayData>( new S2C_GMPayData() );
+
+        PayView payView = UIMgr.GetUI<PayView>(VIEWID.PayView);
+        payView.AddItem( _pb );
     }
         
 
@@ -240,5 +243,12 @@ public class GlobalCtl
             pb.Params.Add(paramlist[i]);
         } 
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYNORMALINFO,pb);  
+    }
+
+    public static void MSG_CL2PHP_GMPAYDATA(string account)
+    {
+        C2S_GMPayData pb = new C2S_GMPayData();
+        pb.Account = account;
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMPAYDATA,pb);  
     }
 }

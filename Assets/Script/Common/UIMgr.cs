@@ -22,6 +22,8 @@ public enum VIEWID
     
     CoreView = 41,
 
+    PayView = 45,
+
   
     //-------------------------------
 }
@@ -54,6 +56,8 @@ public static class UIMgr
         RegisterUI(VIEWID.MailSend,MailSendView.Instance);
 
         RegisterUI(VIEWID.CoreView,CoreView.Instance);
+
+        RegisterUI(VIEWID.PayView,PayView.Instance);
 
         RegisterUI(VIEWID.Limit,LimitView.Instance);
         RegisterUI(VIEWID.LimitNew,LimitNewView.Instance);

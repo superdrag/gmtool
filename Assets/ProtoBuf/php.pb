@@ -1,5 +1,5 @@
 
-¥
+‚
 	php.protoPPhpcommon.proto"?
 C2S_GMLogin
 account (	Raccount
@@ -47,23 +47,37 @@
 mailid (	Rmailid"_
 C2S_GMCommand
 	commandid (R	commandid
-account (	Raccount
-params (Rparams"q
+acclist (	Racclist
+params (	Rparams"q
 S2C_GMCommand
 ret (Rret
 	commandid (R	commandid
-account (	Raccount
-params (Rparams"
+acclist (	Racclist
+params (	Rparams"g
+C2S_GMQueryNormalInfo
+	querytype (R	querytype
+account (	Raccount
+params (Rparams"‘
+S2C_GMQueryNormalInfo
+ret (Rret
+	querytype (R	querytype
+account (	Raccount.
+result (2.PBase.PB_ParamStrListRresult"
 C2S_GMCoreData"
-S2C_GMCoreData"#
+S2C_GMCoreData"=
 C2S_GMPayData
-page (Rpage"Õ
+page (Rpage
+account (	Raccount"›
 S2C_GMPayData
-page (Rpage
-platfrom (Rplatfrom
-country (	Rcountry
-orderid (	Rorderid
-account (	Raccount
+page (Rpage
+account (	Raccount
+platfrom (	Rplatfrom
+country (	Rcountry
+orderid (	Rorderid
 paynum (Rpaynum
 state (Rstate
-paytime (Rpaytimebproto3
+paytime (Rpaytime
+payid	 (Rpayid
+event
+ (Revent
+paycode (	Rpaycodebproto3

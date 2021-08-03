@@ -79,7 +79,7 @@ namespace Net
             uint __len = (msglen >> 3) | (msglen << 3);
             int __id = (msgid >> 2) | (msgid << 2);
             msgarg = (int)(__len + __id);
-            Logger.Log("MsgEncrypt..........." + msgarg);
+            //Logger.Log("MsgEncrypt..........." + msgarg);
         }
 
         public byte[] ToBytes()

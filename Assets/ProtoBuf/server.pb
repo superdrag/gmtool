@@ -1,5 +1,5 @@
 
-Ý(
+©)
 server.protoPServercommon.proto"
 WD2DB_WorldOnLinkDB"i
 DB2WD_WorldOnLinkDB"
@@ -132,7 +132,7 @@ playerdbid (R
 playerdbid.
 maillist (2.PBase.PB_MailItemRmaillist";
 S2C_ResetBattleSeason"
-battleseason (Rbattleseason"Ú
+battleseason (Rbattleseason"Š
 WD2DB_IOSPayRecord
 account (	Raccount
 platfrom (	Rplatfrom
@@ -141,7 +141,10 @@ playerdbid.
 paynum (Rpaynum
 paytime (Rpaytime
 event (Revent
-status (Rstatus"b
+status (Rstatus
+payid	 (Rpayid
+paycode
+ (	Rpaycode"b
 WD2DB_SaveUpload
 filename (	Rfilename
 data (Rdata
@@ -217,7 +220,7 @@ playerdbid (R
 playerdbid
 payid (Rpayid
 paycode (	Rpaycode
-paytype (Rpaytype"«
+paytype (Rpaytype"Ç
 HTTP2WD_IOSPayCheck
 ret (Rret
 account (	Raccount
@@ -226,6 +229,7 @@ playerdbid (R
 playerdbid
 payid (Rpayid
 paycode (	Rpaycode
-paytype (Rpaytype"-
+paytype (Rpaytype
+payorder (	Rpayorder"-
 WD2LOG_Record
 	recordstr (	R	recordstrbproto3
