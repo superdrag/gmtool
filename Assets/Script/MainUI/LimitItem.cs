@@ -11,7 +11,7 @@ using PBase;
 
 public class LimitItem
 {
-    public PB_ParamStrList rstData;
+    public PB_ParamStrDict rstData;
     public Transform view;
     public Button editBtn;
     public List<Text> infoList = new List<Text>();
@@ -38,10 +38,12 @@ public class LimitItem
 
     public void Show()
     {
-        for (int i = 0; i < infoList.Count; i++)
-        {
-            infoList[i].text = rstData.Value[i];
-        }
+        infoList[0].text = rstData.Dict["account"];
+        infoList[1].text = rstData.Dict["startTime"];
+        infoList[2].text = rstData.Dict["endTime"];
+        infoList[3].text = rstData.Dict["reason"];
+        infoList[4].text = rstData.Dict["gmAccount"];
+        
         infoList[1].text = GFunc.TimeStamp2DateTime(Convert.ToInt32(infoList[1].text) ).ToString(); 
         infoList[2].text = GFunc.TimeStamp2DateTime(Convert.ToInt32(infoList[2].text) ).ToString();
     }
@@ -49,7 +51,7 @@ public class LimitItem
     private void OnBtnClick()
     {    
         Logger.Log("editBtn click..........");
-        UIMgr.ShowUI( VIEWID.LimitNew, 2, rstData.Value[0],rstData.Value[3] );
+        UIMgr.ShowUI( VIEWID.LimitNew, 2, rstData.Dict["account"],rstData.Dict["reason"] );
     }
  
 

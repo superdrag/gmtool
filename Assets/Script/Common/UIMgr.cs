@@ -11,6 +11,7 @@ public enum VIEWID
     BLANK = 2,
     //-------------------------------
     LOGIN   = 11, 
+    
     //-------------------------------
     MENU = 21,
     Recharge = 31,
@@ -19,6 +20,9 @@ public enum VIEWID
 
     Limit = 35,
     LimitNew = 36,  
+
+    GMAcc = 38,
+    GMAccNew = 39, 
     
     CoreView = 41,
 
@@ -61,6 +65,9 @@ public static class UIMgr
 
         RegisterUI(VIEWID.Limit,LimitView.Instance);
         RegisterUI(VIEWID.LimitNew,LimitNewView.Instance);
+
+        RegisterUI(VIEWID.GMAcc,GMAccView.Instance);
+        RegisterUI(VIEWID.GMAccNew,GMAccNewView.Instance);        
     }    
 
     public static void Init()

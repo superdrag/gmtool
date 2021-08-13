@@ -31,6 +31,29 @@ message S2C_GMLogin
     string account = 2;
 }
 
+// MsgId.MSG_CL2PHP_GMACCOUNTMGR               = 1802    --[[GM账号注册]]
+message C2S_GMAccountMgr
+{
+    int32 type = 1;
+    string account = 2;
+    string passwd = 3;
+    string creator = 4;
+    int32 permission = 5;
+    string nickname = 6;
+}
+
+// MsgId.MSG_PHP2CL_GMACCOUNTMGR               = 2802    --[[GM账号注册]]
+message S2C_GMAccountMgr
+{
+    int32 ret = 1;
+    int32 type = 2;
+    string account = 3;
+    string creator = 4;
+    int32 permission = 5;
+    string nickname = 6;
+}
+
+
 //MsgId.MSG_CL2PHP_SENDMONEY                  = 1815    --GM直接发送货币
 message C2S_GMSendMoney
 {
@@ -139,7 +162,7 @@ message S2C_GMQueryNormalInfo
     int32 ret = 1;
     int32 querytype = 2;  //
     string account = 3;
-    repeated PBase.PB_ParamStrList result = 4;
+    repeated PBase.PB_ParamStrDict result = 4;
 }
 
 

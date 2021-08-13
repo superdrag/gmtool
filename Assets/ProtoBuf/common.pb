@@ -1,10 +1,15 @@
 
-‹
+Ž
 common.protoPBase"'
 PB_ParamIntList
 value (Rvalue"'
 PB_ParamStrList
-value (	Rvalue"0
+value (	Rvalue"€
+PB_ParamStrDict4
+dict (2 .PBase.PB_ParamStrDict.DictEntryRdict7
+	DictEntry
+key (	Rkey
+value (	Rvalue:8"0
 PB_Money
 type (Rtype
 num (Rnum"Õ

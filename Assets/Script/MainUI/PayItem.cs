@@ -40,17 +40,26 @@ public class PayItem
         infoList[3].text = pbData.Account.ToString();
         infoList[4].text = pbData.Payid.ToString(); 
         infoList[5].text = pbData.Paynum.ToString(); 
-        infoList[6].text = pbData.Paytime.ToString(); 
-        infoList[7].text = pbData.State.ToString(); 
+        infoList[6].text = pbData.Paytime.ToString(); //time
 
         if (pbData.State == 0)
         {
-            repairBtn.gameObject.SetActive(true);
+            infoList[7].text = "成功"; 
+        }
+        else
+        {
+            infoList[7].text = "失败"; 
+        }
+        
+        if (pbData.State == 0)
+        {
+            repairBtn.gameObject.SetActive(false);
         }
         else
         {
             repairBtn.gameObject.SetActive(true);
         }
+        infoList[6].text = GFunc.TimeStamp2DateTime(Convert.ToInt32(infoList[6].text) ).ToString(); 
     }
 
     private void onClickRepair(GameObject go)

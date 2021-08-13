@@ -1,12 +1,30 @@
 
-¿
+û
 	php.protoPPhpcommon.proto"?
 C2S_GMLogin
 account (	Raccount
 passwd (	Rpasswd"9
 S2C_GMLogin
 ret (Rret
-account (	Raccount"Q
+account (	Raccount"Æ
+C2S_GMAccountMgr
+type (Rtype
+account (	Raccount
+passwd (	Rpasswd
+creator (	Rcreator
+
+permission (R
+permission
+nickname (	Rnickname"®
+S2C_GMAccountMgr
+ret (Rret
+type (Rtype
+account (	Raccount
+creator (	Rcreator
+
+permission (R
+permission
+nickname (	Rnickname"Q
 C2S_GMSendMoney
 account (	Raccount
 type (Rtype
@@ -62,18 +80,18 @@
 ret (Rret
 	querytype (R	querytype
 account (	Raccount.
-result (2.PBase.PB_ParamStrListRresult"
+result (2.PBase.PB_ParamStrDictRresult"
 C2S_GMCoreData"
 S2C_GMCoreData"=
 C2S_GMPayData
 page (Rpage
-account (	Raccount"õ
+account (	Raccount"ù
 S2C_GMPayData
 page (Rpage
 account (	Raccount
 platfrom (	Rplatfrom
-country (	Rcountry
-orderid (	Rorderid
+country (	Rcountry
+payorder (	Rpayorder
 paynum (Rpaynum
 state (Rstate
 paytime (Rpaytime

@@ -25,6 +25,11 @@ message PB_ParamStrList
     repeated string value = 1;
 }
 
+message PB_ParamStrDict
+{
+    map<string, string> dict = 1;
+}
+
 //货币
 message PB_Money
 {

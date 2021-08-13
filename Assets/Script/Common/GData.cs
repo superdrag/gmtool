@@ -43,8 +43,15 @@ public enum PHP_QUERY
 {
     NONE = 0,
     BLACKUSER = 1001,
+    GMACCLIST = 1002,
 }
 
+public enum MOD_TYPE
+{
+    ADD = 1,
+    DEL = 2,
+    UPATE = 3,
+}
 
 public class GData
 {

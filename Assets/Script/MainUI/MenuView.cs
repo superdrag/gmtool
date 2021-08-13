@@ -44,7 +44,7 @@ public class MenuView : View
 
         Button paydataBtn = viewRoot.Find("paydata").GetComponent<Button>();
         Button limitBtn = viewRoot.Find("limit").GetComponent<Button>();
-        Button daidingBtn3 = viewRoot.Find("daiding3").GetComponent<Button>();
+        Button gmaccBtn = viewRoot.Find("gmacc").GetComponent<Button>();
         
 
         EventTriggerListener.Get(chongzhiBtn.gameObject).onClick = OnBtnEvent;
@@ -52,14 +52,14 @@ public class MenuView : View
         EventTriggerListener.Get(youjianBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(paydataBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(limitBtn.gameObject).onClick = OnBtnEvent;
-        EventTriggerListener.Get(daidingBtn3.gameObject).onClick = OnBtnEvent;
+        EventTriggerListener.Get(gmaccBtn.gameObject).onClick = OnBtnEvent;
 
         btnList.Add(hexinBtn);
         btnList.Add(chongzhiBtn);
         btnList.Add(youjianBtn);
         btnList.Add(paydataBtn);
         btnList.Add(limitBtn);
-        btnList.Add(daidingBtn3);
+        btnList.Add(gmaccBtn);
 
         switchViewList.Add(VIEWID.BLANK);
         switchViewList.Add(VIEWID.Mail);
@@ -69,6 +69,8 @@ public class MenuView : View
         switchViewList.Add(VIEWID.Limit);
         switchViewList.Add(VIEWID.LimitNew);
         switchViewList.Add(VIEWID.PayView);
+        switchViewList.Add(VIEWID.GMAcc);
+        switchViewList.Add(VIEWID.GMAccNew);
 
         curIndex = 1;
     }
@@ -101,7 +103,11 @@ public class MenuView : View
         else if( this.curIndex == 5 )
         {
             UIMgr.ShowUI(VIEWID.Limit);
-        }                          
+        }         
+        else if( this.curIndex == 6 )
+        {
+            UIMgr.ShowUI(VIEWID.GMAcc);
+        }                           
         else
         {
             UIMgr.ShowUI(VIEWID.BLANK);

@@ -27,6 +27,9 @@ public class GlobalCtl
     public void MsgRegedit()
     {
         //NetMgr.RegisterMsgHandler((int)MSGID.MSG_SS2CL_ERRORCODE, MSG_SS2CL_ERRORCODE, new S2C_ErrorCode());
+
+        NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_GMACCOUNTMGR, MSG_PHP2CL_GMACCOUNTMGR,new S2C_GMAccountMgr());
+
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_QUERYUSERINFO, MSG_PHP2CL_QUERYUSERINFO,new S2C_GMQUERYUSERINFO());
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_SENDMONEY, MSG_PHP2CL_SENDMONEY,new S2C_GMSendMoney());
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_SENDMAIL, MSG_PHP2CL_SENDMAIL,new S2C_GMSendMail());
@@ -51,6 +54,19 @@ public class GlobalCtl
         //DialogViewSingle.Instance.ShowErrorCode((ERROR_CODE)_pb.Errcode);
     }
     //------------------------------------ HANDLE MSG
+
+
+    public void MSG_PHP2CL_GMACCOUNTMGR(MsgPack msg)
+    {
+        S2C_GMAccountMgr _pb = msg.UnpackProtoBuf<S2C_GMAccountMgr>( new S2C_GMAccountMgr() );
+        if(_pb.Ret != 0)
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"账号修改失败");
+            return;
+        }
+        
+        UIMgr.ShowUI(VIEWID.ALERTINFO,"账号修改成功");    
+    }
 
     public void MSG_PHP2CL_QUERYUSERINFO(MsgPack msg)
     {        
@@ -168,13 +184,28 @@ public class GlobalCtl
 
             for (int i = 0; i < _pb.Result.Count; i++)
             {
-                PB_ParamStrList rst =  _pb.Result[i];
+                PB_ParamStrDict rst =  _pb.Result[i];
                 LimitItem item = new LimitItem();
                 item.rstData = rst;
                 item.Create();
 
                 view.AddItem( item );
             }            
+        }
+        else if (_pb.Querytype == (int)PHP_QUERY.GMACCLIST)
+        {
+            GMAccView view = (GMAccView)UIMgr.GetUI(VIEWID.GMAcc) ;
+            view.ClearItem();
+
+            for (int i = 0; i < _pb.Result.Count; i++)
+            {
+                PB_ParamStrDict rst =  _pb.Result[i];
+                GMAccItem item = new GMAccItem();
+                item.rstData = rst;
+                item.Create();
+
+                view.AddItem( item );
+            }     
         }
     }
 
@@ -190,6 +221,16 @@ public class GlobalCtl
     public static void MSG_PHP2CL_GMPAYREPAIR(MsgPack msg)
     {
         S2C_GMPayRepair _pb = msg.UnpackProtoBuf<S2C_GMPayRepair>( new S2C_GMPayRepair() );        
+
+        if (_pb.Ret == 0)
+        {
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"支付补发成功");
+        } 
+        else
+        {
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"支付补发失败");
+            return;
+        }
 
         PayView payView = UIMgr.GetUI<PayView>(VIEWID.PayView);
 

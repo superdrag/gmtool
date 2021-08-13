@@ -16,6 +16,11 @@ public enum MSGID
     MSG_DB2PHP_GMLOGINACCOUNT            = 802,
     MSG_PHP2CL_GMLOGINACCOUNT          = 2801,    //GM账号登陆
 
+    MSG_CL2PHP_GMACCOUNTMGR               = 1802,    //[[GM账号管理]]  
+    MSG_PHP2CL_GMACCOUNTMGR               = 2802,    //[[GM账号管理]]  
+
+
+
     MSG_CL2PHP_QUERYUSERINFO           = 1812,    //GM查询玩家信息
     MSG_PHP2CL_QUERYUSERINFO           = 2812,    //GM查询玩家信息
 
