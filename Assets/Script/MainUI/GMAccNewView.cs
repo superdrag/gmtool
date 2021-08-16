@@ -9,6 +9,7 @@ using Net;
 using Net;
 using PPhp;
 using PBase;
+using pbc = global::Google.Protobuf.Collections;
 
 public class GMAccNewView : View
 {
@@ -20,10 +21,11 @@ public class GMAccNewView : View
     private InputField accountText;
     private InputField passwdText;  
     private InputField nameText;
-    private InputField rankText;
+    private Dropdown rankChoose;
+    private Text rankText;
     private int curRank;
 
-    private Dictionary<int,string> rankNameDict = new Dictionary<int, string>();
+    
 
     public static GMAccNewView Instance
     {
@@ -40,9 +42,6 @@ public class GMAccNewView : View
     private GMAccNewView()
     {
         Logger.Log("GMAccNewView Construct Call");
-        rankNameDict[1] = "普通账号";
-        rankNameDict[2] = "高级账号";
-        rankNameDict[9] = "管理员";
     }
 
     override public void OnCreateGo()
@@ -65,7 +64,11 @@ public class GMAccNewView : View
         accountText = bg.Find("account/InputField").GetComponent<InputField>();      
         passwdText = bg.Find("passwd/InputField").GetComponent<InputField>();
         nameText = bg.Find("name/InputField").GetComponent<InputField>();
-        rankText = bg.Find("rank/InputField").GetComponent<InputField>();
+
+        rankChoose = bg.Find("rank/Dropdown").GetComponent<Dropdown>();
+        rankText = bg.Find("rank/Dropdown/Label").GetComponent<Text>();
+        rankChoose.onValueChanged.AddListener( onDropDownHandle );
+        
     }
 
     override public void OnShow(params object[] args)
@@ -76,16 +79,34 @@ public class GMAccNewView : View
             passwdText.text = "";
             nameText.text = "";
             curRank = 1;
-            rankText.text = rankNameDict[curRank];
+            //rankText.text = rankNameDict[curRank];
         }
         else if ((int)args[0] == 2)
-        {
-            accountText.text = args[0].ToString(); 
-            passwdText.text = "";
-            nameText.text = "";
-            curRank = System.Convert.ToInt32(args[0]) ;
-            rankText.text = rankNameDict[curRank];
+        {            
+            // for (int i = 0; i < args.Length; i++)
+            // {
+            //     Debug.Log("1111111111 "+args[i].ToString());
+            // }
+            pbc::MapField<string, string> data = (pbc::MapField<string, string>)(args[1]);
+            accountText.text = data["user"];
+            nameText.text = data["nickName"];
+            curRank = Convert.ToInt32(data["permission"]);            
+            //rankText.text = rankNameDict[curRank];
         }
+
+        rankChoose.ClearOptions();
+        Dropdown.OptionData od1 = new Dropdown.OptionData();
+        od1.text = GlobalModel.rankNameDict[1];
+        Dropdown.OptionData od2 = new Dropdown.OptionData();
+        od2.text =  GlobalModel.rankNameDict[2];
+        Dropdown.OptionData od3 = new Dropdown.OptionData();
+        od3.text =  GlobalModel.rankNameDict[9];  
+
+        rankChoose.options.Add(od1);      
+        rankChoose.options.Add(od2);
+        rankChoose.options.Add(od3);
+
+        rankText.text = GlobalModel.rankNameDict[curRank];
     }
 
     private void onClickSend()
@@ -115,7 +136,11 @@ public class GMAccNewView : View
 
     private void onClickDel()
     {
-
+        C2S_GMAccountMgr pb = new C2S_GMAccountMgr();
+        pb.Type = (int)MOD_TYPE.DEL;
+        pb.Account = accountText.text;
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMACCOUNTMGR,pb); 
+        onClickClose();
     }    
 
     private void onClickClose()
@@ -124,6 +149,21 @@ public class GMAccNewView : View
         UIMgr.RefreshUI(VIEWID.GMAcc);
     }
 
-
+    private void onDropDownHandle(int index)
+    {
+        Debug.Log("onDropDownHandle "+index);
+        if (index == 0)
+        {
+            curRank = 1;
+        }
+        else if (index == 1)
+        {
+            curRank = 2;
+        }
+        else if (index == 2)
+        {
+            curRank = 9;
+        }                
+    }
 
 }

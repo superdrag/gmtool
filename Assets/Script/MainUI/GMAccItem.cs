@@ -43,17 +43,17 @@ public class GMAccItem
     {
         infoList[0].text = rstData.Dict["user"];
         infoList[1].text = rstData.Dict["nickName"];
-        infoList[2].text = rstData.Dict["permission"];
+        infoList[2].text = GlobalModel.rankNameDict[  Convert.ToInt32(rstData.Dict["permission"]) ];
         infoList[3].text = rstData.Dict["registTime"];
-        infoList[4].text = "";
-        
+        infoList[4].text = "";    
+
         infoList[3].text = GFunc.TimeStamp2DateTime(Convert.ToInt32(infoList[3].text) ).ToString(); 
     }
 
     private void onClickEdit()
     {    
         Logger.Log("editBtn click..........");
-        UIMgr.ShowUI( VIEWID.GMAccNew, 2, infoList );
+        UIMgr.ShowUI( VIEWID.GMAccNew, 2, rstData.Dict );
     }
  
 

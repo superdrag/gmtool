@@ -37,10 +37,13 @@ public class GlobalModel {
     public int LoginSign;
     public int LoginGateTime;
     public static QueryUserData queryUserData = new QueryUserData();
+    public static Dictionary<int,string> rankNameDict = new Dictionary<int, string>();
 
     public void Init()
     {
-        
+        rankNameDict[1] = "普通账号";
+        rankNameDict[2] = "高级账号";
+        rankNameDict[9] = "管理员";
     }
     
 
