@@ -14,6 +14,8 @@ public enum RECORD_TYPE
     RECORD_USERREG = 1004,
     RECORD_USERLOGIN = 1010,
     RECORD_USEROFFLINE = 1011,
+
+    RECORD_GMOPERATE = 1020,
 }
 
 public class CoreData
@@ -56,8 +58,9 @@ public class RecordModel {
         }
     }
 
-    public List<string[]> dayDataList = new List<string[]>();
-    public List<CoreData> coreList = new List<CoreData>();
+    public List<string[]> dayDataList = new List<string[]>(); //一天数据
+    public List<CoreData> coreList = new List<CoreData>();  //每天全部数据
+    public List<string[]> operateList = new List<string[]>(); //操作记录
 
     public void Init()
     {
@@ -78,7 +81,6 @@ public class RecordModel {
             if (filelist[i].EndsWith("meta")) continue;
             string[] lineAry = File.ReadAllLines(filelist[i]);
             dayDataList.Add(lineAry);
-                 
         }
 
         analyseAllCoreData();
@@ -168,9 +170,17 @@ public class RecordModel {
                 }   
                 else
                 {
-                    coreData.payAccDict[_acc] = _num;
-                    
+                    coreData.payAccDict[_acc] = _num;                    
                 }         
+            }
+
+            if (recordType == RECORD_TYPE.RECORD_GMOPERATE)
+            {                              
+                // string _acc = fields[2].Trim();
+                // string opt = fields[3].Trim();
+                // string content = fields[4].Trim();
+
+                operateList.Add(fields);
             }
 
         }   

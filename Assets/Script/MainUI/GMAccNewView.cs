@@ -139,6 +139,8 @@ public class GMAccNewView : View
         C2S_GMAccountMgr pb = new C2S_GMAccountMgr();
         pb.Type = (int)MOD_TYPE.DEL;
         pb.Account = accountText.text;
+        pb.Nickname = nameText.text;
+        pb.Permission = curRank;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMACCOUNTMGR,pb); 
         onClickClose();
     }    

@@ -26,6 +26,8 @@ public enum VIEWID
     
     CoreView = 41,
 
+    RecordView = 43,
+
     PayView = 45,
 
   
@@ -67,7 +69,9 @@ public static class UIMgr
         RegisterUI(VIEWID.LimitNew,LimitNewView.Instance);
 
         RegisterUI(VIEWID.GMAcc,GMAccView.Instance);
-        RegisterUI(VIEWID.GMAccNew,GMAccNewView.Instance);        
+        RegisterUI(VIEWID.GMAccNew,GMAccNewView.Instance);    
+
+        RegisterUI(VIEWID.RecordView,RecordView.Instance);
     }    
 
     public static void Init()
