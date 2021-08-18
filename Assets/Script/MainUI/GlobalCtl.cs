@@ -207,6 +207,17 @@ public class GlobalCtl
                 view.AddItem( item );
             }     
         }
+        else if (_pb.Querytype == (int)PHP_QUERY.RECORED_OPERATE)
+        {
+            RecordView view = (RecordView)UIMgr.GetUI(VIEWID.RecordView) ;
+
+
+            for (int i = 0; i < _pb.Result.Count; i++)
+            {
+                PB_ParamStrDict rst =  _pb.Result[i];
+                view.AddItem( rst );
+            }     
+        }        
     }
 
     public void MSG_PHP2CL_GMPAYDATA(MsgPack msg)
@@ -273,16 +284,20 @@ public class GlobalCtl
     public static void MSG_CL2PHP_GMCOMMAND(string acclist, int commandId, params string[] paramlist)
     {
         C2S_GMCommand pb = new C2S_GMCommand();
+
+        pb.Commandid = commandId;
+
         string[] slist = acclist.Split(',');
         for (int i = 0; i < slist.Length; i++)
         {
             pb.Acclist.Add(slist[i]);
         } 
-        pb.Commandid = commandId;
+        
         for (int i = 0; i < paramlist.Length; i++)
         {
             pb.Params.Add(paramlist[i]);
         } 
+
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMCOMMAND,pb);  
     }
 

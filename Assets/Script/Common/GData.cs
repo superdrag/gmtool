@@ -37,6 +37,7 @@ public enum PHP_COMMAMD
     NONE = 0,
     SHUTDWON = 101,
     BLACKUSER = 102,
+    RECORED_OPERATE = 103,
 }
 
 public enum PHP_QUERY
@@ -44,6 +45,7 @@ public enum PHP_QUERY
     NONE = 0,
     BLACKUSER = 1001,
     GMACCLIST = 1002,
+    RECORED_OPERATE = 1003,
 }
 
 public enum MOD_TYPE

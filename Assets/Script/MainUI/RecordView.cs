@@ -7,6 +7,7 @@ using System;
 using Net;
 
 using PPhp;
+using PBase;
 
 public class RecordView : View
 {
@@ -56,15 +57,15 @@ public class RecordView : View
     {        
         onClickQuery(queryBtn.gameObject);
         
-        Transform obj = Content.GetChild(0);
-        RectTransform rect2=obj.GetComponent<RectTransform>();
-        float h = rect2.sizeDelta.y * RecordModel.Instance.operateList.Count;
+        // Transform obj = Content.GetChild(0);
+        // RectTransform rect2=obj.GetComponent<RectTransform>();
+        // float h = rect2.sizeDelta.y * RecordModel.Instance.operateList.Count;
 
-        RectTransform rect=Content.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(rect.sizeDelta.x,h);        
+        // RectTransform rect=Content.GetComponent<RectTransform>();
+        // rect.sizeDelta = new Vector2(rect.sizeDelta.x,h);        
     }
 
-    public void ClearCoreItem()
+    public void ClearItems()
     {
         for (int i = 0; i < Content.childCount; i++)
         {
@@ -75,23 +76,25 @@ public class RecordView : View
 
     private void onClickQuery(GameObject go)
     {
-        ClearCoreItem();
+        // ClearCoreItem();
 
-        for (int i = RecordModel.Instance.operateList.Count-1; i >= 0; i--)
-        {
-            AddCoreItem(i);
-        }
+        // for (int i = RecordModel.Instance.operateList.Count-1; i >= 0; i--)
+        // {
+        //     AddCoreItem(i);
+        // }
+
+        ClearItems();
+        GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("",(int)PHP_QUERY.RECORED_OPERATE,999);
+
     }
 
-    public void AddCoreItem(int index)
+    public void AddItem(PB_ParamStrDict rstData)
     {               
-        string[] slist = RecordModel.Instance.operateList[index];
-        if (slist.Length != 6) return;
-
         RecordItem item = new RecordItem();
+        item.rstData = rstData;
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
-        item.Show(index);
+        item.Show();        
     }
 }
