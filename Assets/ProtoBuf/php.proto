@@ -29,6 +29,8 @@ message S2C_GMLogin
 {
     int32 ret = 1;
     string account = 2;
+    int32 permission = 3;
+    string nickname = 4;    
 }
 
 // MsgId.MSG_CL2PHP_GMACCOUNTMGR               = 1802    --[[GM账号注册]]

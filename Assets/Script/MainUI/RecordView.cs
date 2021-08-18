@@ -85,6 +85,9 @@ public class RecordView : View
 
     public void AddCoreItem(int index)
     {               
+        string[] slist = RecordModel.Instance.operateList[index];
+        if (slist.Length != 6) return;
+
         RecordItem item = new RecordItem();
         item.Create();
         item.view.SetParent(Content);

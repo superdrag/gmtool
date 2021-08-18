@@ -25,51 +25,52 @@ namespace PPhp {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CglwaHAucHJvdG8SBFBQaHAaDGNvbW1vbi5wcm90byIuCgtDMlNfR01Mb2dp",
-            "bhIPCgdhY2NvdW50GAEgASgJEg4KBnBhc3N3ZBgCIAEoCSIrCgtTMkNfR01M",
-            "b2dpbhILCgNyZXQYASABKAUSDwoHYWNjb3VudBgCIAEoCSJ4ChBDMlNfR01B",
-            "Y2NvdW50TWdyEgwKBHR5cGUYASABKAUSDwoHYWNjb3VudBgCIAEoCRIOCgZw",
-            "YXNzd2QYAyABKAkSDwoHY3JlYXRvchgEIAEoCRISCgpwZXJtaXNzaW9uGAUg",
-            "ASgFEhAKCG5pY2tuYW1lGAYgASgJInUKEFMyQ19HTUFjY291bnRNZ3ISCwoD",
-            "cmV0GAEgASgFEgwKBHR5cGUYAiABKAUSDwoHYWNjb3VudBgDIAEoCRIPCgdj",
-            "cmVhdG9yGAQgASgJEhIKCnBlcm1pc3Npb24YBSABKAUSEAoIbmlja25hbWUY",
-            "BiABKAkiPQoPQzJTX0dNU2VuZE1vbmV5Eg8KB2FjY291bnQYASABKAkSDAoE",
-            "dHlwZRgCIAEoBRILCgNudW0YAyABKAUiSgoPUzJDX0dNU2VuZE1vbmV5EgsK",
-            "A3JldBgBIAEoBRIPCgdhY2NvdW50GAIgASgJEgwKBHR5cGUYAyABKAUSCwoD",
-            "bnVtGAQgASgFIiYKE0MyU19HTVFVRVJZVVNFUklORk8SDwoHYWNjb3VudBgB",
-            "IAEoCSKYAQoTUzJDX0dNUVVFUllVU0VSSU5GTxILCgNyZXQYASABKAUSDwoH",
-            "YWNjb3VudBgCIAEoCRIPCgdhY2NkYmlkGAMgASgFEg8KB2RpYW1vbmQYBCAB",
-            "KAUSDAoEY2FzaBgFIAEoBRIPCgd2aXBjYXJkGAYgASgFEg8KB2xvZ2ludHYY",
-            "ByABKAUSEQoJb2ZmbGluZXR2GAggASgFIlkKDkMyU19HTVNlbmRNYWlsEhAK",
-            "CG1haWx0eXBlGAEgASgFEg8KB2FjY2xpc3QYAiABKAkSJAoIbWFpbGRhdGEY",
-            "AyABKAsyEi5QQmFzZS5QQl9NYWlsSXRlbSI/Cg5TMkNfR01TZW5kTWFpbBIL",
-            "CgNyZXQYASABKAUSDgoGZmluaXNoGAIgASgFEhAKCG1haWx0eXBlGAMgASgF",
-            "IjMKEkMyU19HTVF1ZXJ5QWxsTWFpbBIMCgR0eXBlGAEgASgFEg8KB2FjY291",
-            "bnQYAiABKAkiPAoSUzJDX0dNUXVlcnlBbGxNYWlsEiYKCG1haWxsaXN0GAEg",
-            "AygLMhQuUEJhc2UuUEJfTWFpbEl0ZW1FeCIiChBDMlNfR01EZWxldGVNYWls",
-            "Eg4KBm1haWxpZBgBIAEoCSIvChBTMkNfR01EZWxldGVNYWlsEgsKA3JldBgB",
-            "IAEoBRIOCgZtYWlsaWQYAiABKAkiQwoNQzJTX0dNQ29tbWFuZBIRCgljb21t",
-            "YW5kaWQYASABKAUSDwoHYWNjbGlzdBgCIAMoCRIOCgZwYXJhbXMYAyADKAki",
-            "UAoNUzJDX0dNQ29tbWFuZBILCgNyZXQYASABKAUSEQoJY29tbWFuZGlkGAIg",
-            "ASgFEg8KB2FjY2xpc3QYAyADKAkSDgoGcGFyYW1zGAQgAygJIksKFUMyU19H",
-            "TVF1ZXJ5Tm9ybWFsSW5mbxIRCglxdWVyeXR5cGUYASABKAUSDwoHYWNjb3Vu",
-            "dBgCIAEoCRIOCgZwYXJhbXMYAyADKAUicAoVUzJDX0dNUXVlcnlOb3JtYWxJ",
-            "bmZvEgsKA3JldBgBIAEoBRIRCglxdWVyeXR5cGUYAiABKAUSDwoHYWNjb3Vu",
-            "dBgDIAEoCRImCgZyZXN1bHQYBCADKAsyFi5QQmFzZS5QQl9QYXJhbVN0ckRp",
-            "Y3QiEAoOQzJTX0dNQ29yZURhdGEiEAoOUzJDX0dNQ29yZURhdGEiLgoNQzJT",
-            "X0dNUGF5RGF0YRIMCgRwYWdlGAEgASgFEg8KB2FjY291bnQYAiABKAkiwgEK",
-            "DVMyQ19HTVBheURhdGESDAoEcGFnZRgBIAEoBRIPCgdhY2NvdW50GAIgASgJ",
-            "EhAKCHBsYXRmcm9tGAMgASgJEg8KB2NvdW50cnkYBCABKAkSEAoIcGF5b3Jk",
-            "ZXIYBSABKAkSDgoGcGF5bnVtGAYgASgFEg0KBXN0YXRlGAcgASgFEg8KB3Bh",
-            "eXRpbWUYCCABKAUSDQoFcGF5aWQYCSABKAUSDQoFZXZlbnQYCiABKAUSDwoH",
-            "cGF5Y29kZRgLIAEoCSJFCg9DMlNfR01QYXlSZXBhaXISDwoHYWNjb3VudBgB",
-            "IAEoCRIPCgdwYXljb2RlGAIgASgJEhAKCHBheW9yZGVyGAMgASgJIkEKD1My",
-            "Q19HTVBheVJlcGFpchILCgNyZXQYASABKAUSDwoHcGF5Y29kZRgCIAEoCRIQ",
-            "CghwYXlvcmRlchgDIAEoCWIGcHJvdG8z"));
+            "bhIPCgdhY2NvdW50GAEgASgJEg4KBnBhc3N3ZBgCIAEoCSJRCgtTMkNfR01M",
+            "b2dpbhILCgNyZXQYASABKAUSDwoHYWNjb3VudBgCIAEoCRISCgpwZXJtaXNz",
+            "aW9uGAMgASgFEhAKCG5pY2tuYW1lGAQgASgJIngKEEMyU19HTUFjY291bnRN",
+            "Z3ISDAoEdHlwZRgBIAEoBRIPCgdhY2NvdW50GAIgASgJEg4KBnBhc3N3ZBgD",
+            "IAEoCRIPCgdjcmVhdG9yGAQgASgJEhIKCnBlcm1pc3Npb24YBSABKAUSEAoI",
+            "bmlja25hbWUYBiABKAkidQoQUzJDX0dNQWNjb3VudE1nchILCgNyZXQYASAB",
+            "KAUSDAoEdHlwZRgCIAEoBRIPCgdhY2NvdW50GAMgASgJEg8KB2NyZWF0b3IY",
+            "BCABKAkSEgoKcGVybWlzc2lvbhgFIAEoBRIQCghuaWNrbmFtZRgGIAEoCSI9",
+            "Cg9DMlNfR01TZW5kTW9uZXkSDwoHYWNjb3VudBgBIAEoCRIMCgR0eXBlGAIg",
+            "ASgFEgsKA251bRgDIAEoBSJKCg9TMkNfR01TZW5kTW9uZXkSCwoDcmV0GAEg",
+            "ASgFEg8KB2FjY291bnQYAiABKAkSDAoEdHlwZRgDIAEoBRILCgNudW0YBCAB",
+            "KAUiJgoTQzJTX0dNUVVFUllVU0VSSU5GTxIPCgdhY2NvdW50GAEgASgJIpgB",
+            "ChNTMkNfR01RVUVSWVVTRVJJTkZPEgsKA3JldBgBIAEoBRIPCgdhY2NvdW50",
+            "GAIgASgJEg8KB2FjY2RiaWQYAyABKAUSDwoHZGlhbW9uZBgEIAEoBRIMCgRj",
+            "YXNoGAUgASgFEg8KB3ZpcGNhcmQYBiABKAUSDwoHbG9naW50dhgHIAEoBRIR",
+            "CglvZmZsaW5ldHYYCCABKAUiWQoOQzJTX0dNU2VuZE1haWwSEAoIbWFpbHR5",
+            "cGUYASABKAUSDwoHYWNjbGlzdBgCIAEoCRIkCghtYWlsZGF0YRgDIAEoCzIS",
+            "LlBCYXNlLlBCX01haWxJdGVtIj8KDlMyQ19HTVNlbmRNYWlsEgsKA3JldBgB",
+            "IAEoBRIOCgZmaW5pc2gYAiABKAUSEAoIbWFpbHR5cGUYAyABKAUiMwoSQzJT",
+            "X0dNUXVlcnlBbGxNYWlsEgwKBHR5cGUYASABKAUSDwoHYWNjb3VudBgCIAEo",
+            "CSI8ChJTMkNfR01RdWVyeUFsbE1haWwSJgoIbWFpbGxpc3QYASADKAsyFC5Q",
+            "QmFzZS5QQl9NYWlsSXRlbUV4IiIKEEMyU19HTURlbGV0ZU1haWwSDgoGbWFp",
+            "bGlkGAEgASgJIi8KEFMyQ19HTURlbGV0ZU1haWwSCwoDcmV0GAEgASgFEg4K",
+            "Bm1haWxpZBgCIAEoCSJDCg1DMlNfR01Db21tYW5kEhEKCWNvbW1hbmRpZBgB",
+            "IAEoBRIPCgdhY2NsaXN0GAIgAygJEg4KBnBhcmFtcxgDIAMoCSJQCg1TMkNf",
+            "R01Db21tYW5kEgsKA3JldBgBIAEoBRIRCgljb21tYW5kaWQYAiABKAUSDwoH",
+            "YWNjbGlzdBgDIAMoCRIOCgZwYXJhbXMYBCADKAkiSwoVQzJTX0dNUXVlcnlO",
+            "b3JtYWxJbmZvEhEKCXF1ZXJ5dHlwZRgBIAEoBRIPCgdhY2NvdW50GAIgASgJ",
+            "Eg4KBnBhcmFtcxgDIAMoBSJwChVTMkNfR01RdWVyeU5vcm1hbEluZm8SCwoD",
+            "cmV0GAEgASgFEhEKCXF1ZXJ5dHlwZRgCIAEoBRIPCgdhY2NvdW50GAMgASgJ",
+            "EiYKBnJlc3VsdBgEIAMoCzIWLlBCYXNlLlBCX1BhcmFtU3RyRGljdCIQCg5D",
+            "MlNfR01Db3JlRGF0YSIQCg5TMkNfR01Db3JlRGF0YSIuCg1DMlNfR01QYXlE",
+            "YXRhEgwKBHBhZ2UYASABKAUSDwoHYWNjb3VudBgCIAEoCSLCAQoNUzJDX0dN",
+            "UGF5RGF0YRIMCgRwYWdlGAEgASgFEg8KB2FjY291bnQYAiABKAkSEAoIcGxh",
+            "dGZyb20YAyABKAkSDwoHY291bnRyeRgEIAEoCRIQCghwYXlvcmRlchgFIAEo",
+            "CRIOCgZwYXludW0YBiABKAUSDQoFc3RhdGUYByABKAUSDwoHcGF5dGltZRgI",
+            "IAEoBRINCgVwYXlpZBgJIAEoBRINCgVldmVudBgKIAEoBRIPCgdwYXljb2Rl",
+            "GAsgASgJIkUKD0MyU19HTVBheVJlcGFpchIPCgdhY2NvdW50GAEgASgJEg8K",
+            "B3BheWNvZGUYAiABKAkSEAoIcGF5b3JkZXIYAyABKAkiQQoPUzJDX0dNUGF5",
+            "UmVwYWlyEgsKA3JldBgBIAEoBRIPCgdwYXljb2RlGAIgASgJEhAKCHBheW9y",
+            "ZGVyGAMgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::PBase.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMLogin), global::PPhp.C2S_GMLogin.Parser, new[]{ "Account", "Passwd" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMLogin), global::PPhp.S2C_GMLogin.Parser, new[]{ "Ret", "Account" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMLogin), global::PPhp.S2C_GMLogin.Parser, new[]{ "Ret", "Account", "Permission", "Nickname" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMAccountMgr), global::PPhp.C2S_GMAccountMgr.Parser, new[]{ "Type", "Account", "Passwd", "Creator", "Permission", "Nickname" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMAccountMgr), global::PPhp.S2C_GMAccountMgr.Parser, new[]{ "Ret", "Type", "Account", "Creator", "Permission", "Nickname" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMSendMoney), global::PPhp.C2S_GMSendMoney.Parser, new[]{ "Account", "Type", "Num" }, null, null, null),
@@ -288,6 +289,8 @@ namespace PPhp {
     public S2C_GMLogin(S2C_GMLogin other) : this() {
       ret_ = other.ret_;
       account_ = other.account_;
+      permission_ = other.permission_;
+      nickname_ = other.nickname_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -318,6 +321,28 @@ namespace PPhp {
       }
     }
 
+    /// <summary>Field number for the "permission" field.</summary>
+    public const int PermissionFieldNumber = 3;
+    private int permission_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Permission {
+      get { return permission_; }
+      set {
+        permission_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "nickname" field.</summary>
+    public const int NicknameFieldNumber = 4;
+    private string nickname_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Nickname {
+      get { return nickname_; }
+      set {
+        nickname_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as S2C_GMLogin);
@@ -333,6 +358,8 @@ namespace PPhp {
       }
       if (Ret != other.Ret) return false;
       if (Account != other.Account) return false;
+      if (Permission != other.Permission) return false;
+      if (Nickname != other.Nickname) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -341,6 +368,8 @@ namespace PPhp {
       int hash = 1;
       if (Ret != 0) hash ^= Ret.GetHashCode();
       if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (Permission != 0) hash ^= Permission.GetHashCode();
+      if (Nickname.Length != 0) hash ^= Nickname.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -362,6 +391,14 @@ namespace PPhp {
         output.WriteRawTag(18);
         output.WriteString(Account);
       }
+      if (Permission != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Permission);
+      }
+      if (Nickname.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Nickname);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -375,6 +412,12 @@ namespace PPhp {
       }
       if (Account.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      }
+      if (Permission != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Permission);
+      }
+      if (Nickname.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Nickname);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -393,6 +436,12 @@ namespace PPhp {
       if (other.Account.Length != 0) {
         Account = other.Account;
       }
+      if (other.Permission != 0) {
+        Permission = other.Permission;
+      }
+      if (other.Nickname.Length != 0) {
+        Nickname = other.Nickname;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -410,6 +459,14 @@ namespace PPhp {
           }
           case 18: {
             Account = input.ReadString();
+            break;
+          }
+          case 24: {
+            Permission = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            Nickname = input.ReadString();
             break;
           }
         }
