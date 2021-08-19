@@ -24,7 +24,7 @@ public class GMAccNewView : View
     private Dropdown rankChoose;
     private Text rankText;
     private int curRank;
-
+    private int editType;
     
 
     public static GMAccNewView Instance
@@ -73,7 +73,8 @@ public class GMAccNewView : View
 
     override public void OnShow(params object[] args)
     {        
-        if ((int)args[0] == 1)
+        editType = (int)args[0];
+        if (editType == 1)
         {
             accountText.text = ""; 
             passwdText.text = "";
@@ -81,7 +82,7 @@ public class GMAccNewView : View
             curRank = 1;
             //rankText.text = rankNameDict[curRank];
         }
-        else if ((int)args[0] == 2)
+        else if (editType == 2)
         {            
             // for (int i = 0; i < args.Length; i++)
             // {
@@ -113,25 +114,38 @@ public class GMAccNewView : View
     {
         Logger.Log("onClickSend ...........");
 
-        if( String.IsNullOrEmpty(accountText.text) )
-        {            
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"账号为空");
-            return;
+        if (editType == 1)
+        {
+            if( String.IsNullOrEmpty(accountText.text) )
+            {            
+                UIMgr.ShowUI(VIEWID.ALERTINFO,"账号为空");
+                return;
+            }
+
+            if( String.IsNullOrEmpty(passwdText.text) )
+            {            
+                UIMgr.ShowUI(VIEWID.ALERTINFO,"密码错误");
+                return;
+            }        
+
+            C2S_GMAccountMgr pb = new C2S_GMAccountMgr();
+            pb.Type = (int)MOD_TYPE.ADD;
+            pb.Account = accountText.text;
+            pb.Passwd = passwdText.text;
+            pb.Nickname = nameText.text;
+            pb.Permission = curRank;
+            NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMACCOUNTMGR,pb);  
         }
-
-        if( String.IsNullOrEmpty(passwdText.text) )
-        {            
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"密码错误");
-            return;
+        else
+        {
+            C2S_GMAccountMgr pb = new C2S_GMAccountMgr();
+            pb.Type = (int)MOD_TYPE.UPATE;
+            pb.Account = accountText.text;
+            pb.Passwd = passwdText.text;
+            pb.Nickname = nameText.text;
+            pb.Permission = curRank;
+            NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMACCOUNTMGR,pb);  
         }        
-
-        C2S_GMAccountMgr pb = new C2S_GMAccountMgr();
-        pb.Type = (int)MOD_TYPE.ADD;
-        pb.Account = accountText.text;
-        pb.Passwd = passwdText.text;
-        pb.Nickname = nameText.text;
-        pb.Permission = curRank;
-        NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMACCOUNTMGR,pb);          
     } 
 
     private void onClickDel()

@@ -153,7 +153,7 @@ public class GlobalCtl
         } 
         else
         {
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行失败");
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行失败 " + _pb.Ret);
             return;
         }
 
