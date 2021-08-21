@@ -42,16 +42,22 @@ public class GMApp : MonoBehaviour {
         AppConfig.Instance.InitLoad();
         Timer.Instance.Init();
         NetMgr.Init();//消息处理相关类
-        ResMgr.Instance.Init();
         GlobalModel.Instance.Init();
+ 
+        ResMgr.Instance.Init();
+        ResMgr.Instance.StartAppDownload(OnDownloadFinish);
+    }
+
+    private void OnDownloadFinish(int ret)
+    {
         AllRigstMsgRegedit();
-        UIMgr.Init(); 
         RecordModel.Instance.loadFile();
-        OnInitFinish();       
+        OnInitFinish();     
     }
 
     private void OnInitFinish()
     {
+        UIMgr.Init();      
         UIMgr.ShowUI(VIEWID.LOGIN);
     }
 

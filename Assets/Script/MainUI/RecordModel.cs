@@ -97,6 +97,7 @@ public class RecordModel {
 
     public void analyseDayCoreData(string[] dayData, int dayIndex)
     {        
+        Debug.Log("index..............." + dayIndex);
         CoreData coreData = new CoreData();
         int sumOnlineSec = 0;
 
