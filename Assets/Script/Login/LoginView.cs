@@ -61,6 +61,7 @@ public class LoginView : View
             serverItem.port = item.port;
             serverItem.name.text = item.name;
             serverItem.index = item.index;
+            serverItem.record_url = item.record_url;
             //serverItem
             UIHelper.AddChild(SeverContent,serverItem.view);
         }

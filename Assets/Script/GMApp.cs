@@ -45,14 +45,9 @@ public class GMApp : MonoBehaviour {
         GlobalModel.Instance.Init();
  
         ResMgr.Instance.Init();
-        ResMgr.Instance.StartAppDownload(OnDownloadFinish);
-    }
-
-    private void OnDownloadFinish(int ret)
-    {
         AllRigstMsgRegedit();
-        RecordModel.Instance.loadFile();
         OnInitFinish();     
+        
     }
 
     private void OnInitFinish()

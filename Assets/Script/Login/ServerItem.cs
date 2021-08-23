@@ -18,6 +18,8 @@ public class ServerItem
 
     public int index;
 
+    public string record_url;
+
     public void Create()
     {        
         view = ResMgr.CreateGo("Prefab/Login/ServerItem").transform;
@@ -41,6 +43,7 @@ public class ServerItem
     private void OnBtnClick()
     {    
         Logger.Log("BtnLogin click..........");
+        LoginModel.Instance.record_url = this.record_url;
         LoginCtl.Instance.StartConnetServer(this.ip, this.port);
     }
  

@@ -17,6 +17,7 @@ public class ServerInfo
     public string name;
     public string ip;
     public int port;
+    public string record_url;
 }
 
 
@@ -47,6 +48,8 @@ public class AppConfig
             info.name = JsonConfig.ReadString(json,"server_name");
             info.ip = JsonConfig.ReadString(json,"php_ip");
             info.port = JsonConfig.ReadInt32(json,"php_port");
+            info.record_url = JsonConfig.ReadString(json,"record_url");
+
             //info.ip = JsonConfig.ReadString(json,"login_ip");
             //info.port = JsonConfig.ReadInt32(json,"login_port");
             //Debug.Log("11111111111111 "+info.ip);

@@ -26,6 +26,7 @@ public class LoginModel {
     public int LoginSign;
     public int LoginGateTime;
 
+    public string record_url;
 
     public void GetShuju()
     {

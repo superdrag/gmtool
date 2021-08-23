@@ -116,7 +116,7 @@ public class ResMgr
         Logger.Log(" --------------- start dwonload version file  ------------------ ");
         
         string url_listfile = "list.txt";
-        string url_dir ="http://192.168.110.5/record/";
+        string url_dir = LoginModel.Instance.record_url;
         string url_path =url_dir + url_listfile;
 
         Logger.Log("url_path:", url_path);      

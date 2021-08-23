@@ -41,7 +41,15 @@ public class LoginCtl
             Logger.Error("account or passwd fail! " + _pb.Account);
             return;
         }
+
         LoginModel.Instance.Account = _pb.Account;
+
+        ResMgr.Instance.StartAppDownload(OnDownloadFinish);
+    }
+
+    private void OnDownloadFinish(int ret)
+    {
+        RecordModel.Instance.loadFile();
         UIMgr.HideUI(VIEWID.LOGIN);
         UIMgr.ShowUI(VIEWID.MENU);
     }
