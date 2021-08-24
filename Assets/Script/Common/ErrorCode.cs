@@ -18,5 +18,7 @@ public enum ERROR_CODE
 	ERROR_LOGIN_PLATFORMID = 1111,  //平台ID错误
 	ERROR_LOGIN_HASLOGINLIST = 1112,  //已经在登录队列
 
+	ERROR_NOTRANK             = 1235,  //权限不足
+
 	ERROR_PHP_CHECKARGS = 8005,  //php参数错误
 };

@@ -60,12 +60,17 @@ public class GlobalCtl
     {
         S2C_GMAccountMgr _pb = msg.UnpackProtoBuf<S2C_GMAccountMgr>( new S2C_GMAccountMgr() );
         if(_pb.Ret != 0)
-        {            
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"账号修改失败");
+        {     
+            if (_pb.Ret == (int)ERROR_CODE.ERROR_NOTRANK)
+            {
+                UIMgr.ShowUI(VIEWID.ALERTINFO,"权限不足");
+                return;
+            }       
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行失败");
             return;
         }
         
-        UIMgr.ShowUI(VIEWID.ALERTINFO,"账号修改成功");    
+        UIMgr.ShowUI(VIEWID.ALERTINFO,"执行成功");    
     }
 
     public void MSG_PHP2CL_QUERYUSERINFO(MsgPack msg)
