@@ -37,6 +37,7 @@ public class GlobalCtl
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_QUERYALLMAIL, MSG_PHP2CL_QUERYALLMAIL,new S2C_GMQueryAllMail());
 
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_DELETEMAIL, MSG_PHP2CL_DELETEMAIL,new S2C_GMDeleteMail());
+        NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_MODMAIL, MSG_PHP2CL_MODMAIL,new S2C_GMModMail());
         
 
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_GMCOMMAND, MSG_PHP2CL_GMCOMMAND,new S2C_GMCommand());
@@ -116,7 +117,22 @@ public class GlobalCtl
             return;
         }
 
-        UIMgr.ShowUI(VIEWID.ALERTINFO,"发送邮件成功数量:"+_pb.Finish);        
+        UIMgr.ShowUI(VIEWID.ALERTINFO,"发送邮件成功数量:"+_pb.Finish);     
+
+        UIMgr.GetUI(VIEWID.Mail).OnShow();
+    } 
+
+    public void MSG_PHP2CL_MODMAIL(MsgPack msg)
+    {        
+        S2C_GMSendMail _pb = msg.UnpackProtoBuf<S2C_GMSendMail>( new S2C_GMSendMail() );
+        if( _pb.Ret != 0 )
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行失败:" + _pb.Ret.ToString());
+            return;
+        }
+
+        UIMgr.ShowUI(VIEWID.ALERTINFO,"执行成功");     
+        UIMgr.GetUI(VIEWID.Mail).OnShow();   
     } 
 
     public void MSG_PHP2CL_QUERYALLMAIL(MsgPack msg)
@@ -124,7 +140,7 @@ public class GlobalCtl
         S2C_GMQueryAllMail _pb = msg.UnpackProtoBuf<S2C_GMQueryAllMail>( new S2C_GMQueryAllMail() );
 
         MailView mailView = (MailView)UIMgr.GetUI(VIEWID.Mail) ;
-        mailView.ClearMailItem();
+        //mailView.ClearMailItem();
         for (int i = 0; i < _pb.Maillist.Count; i++)
         {
             PB_MailItemEx mail =  _pb.Maillist[i];
@@ -272,19 +288,6 @@ public class GlobalCtl
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMONEY,pb);  
     }
 
-    public static void MSG_CL2PHP_SENDMAIL(int type, string accList, string title, string content, string items, int passDay)
-    {
-        C2S_GMSendMail pb = new C2S_GMSendMail();
-        pb.Mailtype = type;
-        pb.Acclist = accList;
-        PB_MailItem item = new PB_MailItem();
-        item.Title = title;
-        item.Content = content;
-        item.Itemlist = items;
-        item.Pasttime = passDay;
-        pb.Maildata = item;
-        NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMAIL,pb);  
-    }
 
     public static void MSG_CL2PHP_GMCOMMAND(string acclist, int commandId, params string[] paramlist)
     {

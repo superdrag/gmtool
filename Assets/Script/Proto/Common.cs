@@ -32,38 +32,38 @@ namespace PBase {
             "KAUSCwoDbnVtGAIgASgFIpEBCgtQQl9NYWlsSXRlbRILCgNtaWQYASABKAkS",
             "DQoFdGl0bGUYAiABKAkSDwoHY29udGVudBgDIAEoCRIQCghpdGVtbGlzdBgE",
             "IAEoCRIQCghzZW5kdGltZRgFIAEoBRIQCghyZWFkdGltZRgGIAEoBRIQCghw",
-            "YXN0dGltZRgHIAEoBRINCgVzdGF0ZRgIIAEoBSK4AQoNUEJfTWFpbEl0ZW1F",
+            "YXN0dGltZRgHIAEoBRINCgVzdGF0ZRgIIAEoBSLVAQoNUEJfTWFpbEl0ZW1F",
             "eBILCgNtaWQYASABKAkSDQoFdGl0bGUYAiABKAkSDwoHY29udGVudBgDIAEo",
             "CRIQCghpdGVtbGlzdBgEIAEoCRIQCghzZW5kdGltZRgFIAEoBRIQCghyZWFk",
             "dGltZRgGIAEoBRIQCghwYXN0dGltZRgHIAEoBRINCgVzdGF0ZRgIIAEoBRIS",
-            "CgpwbGF5ZXJkYmlkGAkgASgFEg8KB2FjY291bnQYCiABKAkiOQoPUEJfVGVh",
-            "bUNhcmRJbmZvEgoKAmlkGAEgASgFEgsKA251bRgCIAEoBRINCgVsZXZlbBgD",
-            "IAEoBSI2CgtQQl9HaWZ0UGFjaxIKCgJpZBgBIAEoBRINCgVjb3VudBgCIAEo",
-            "BRIMCgR0aW1lGAMgASgFIk0KB1BCX0l0ZW0SEAoIaXRlbUd1aWQYASABKAkS",
-            "DgoGaXRlbUlkGAIgASgFEg8KB2l0ZW1Qb3MYAyABKAUSDwoHaXRlbU51bRgE",
-            "IAEoBSIvCgtQQl9JdGVtTGlzdBIgCghpdGVtTGlzdBgBIAMoCzIOLlBCYXNl",
-            "LlBCX0l0ZW0iOQoOUEJfVGFza0NvdW50ZXISCwoDY0lkGAEgASgFEgwKBGNB",
-            "cmcYAiABKAUSDAoEY051bRgDIAEoBSJ9CgdQQl9UYXNrEg4KBnRhc2tJZBgB",
-            "IAEoBRIRCgl0YXNrU3RhdGUYAiABKAUSEgoKYWNjZXB0VGltZRgDIAEoBRIS",
-            "CgpzdWJtaXRUaW1lGAQgASgFEicKCGNvdW50ZXJzGAUgAygLMhUuUEJhc2Uu",
-            "UEJfVGFza0NvdW50ZXIiLwoLUEJfVGFza0xpc3QSIAoIdGFza0xpc3QYASAD",
-            "KAsyDi5QQmFzZS5QQl9UYXNrIkgKClBCX0NvdW50ZXISEQoJY291bnRlcklk",
-            "GAEgASgFEhIKCmNvdW50ZXJOdW0YAiABKAUSEwoLY291bnRlckFyZ3MYAyAD",
-            "KAUiOAoOUEJfQ291bnRlckxpc3QSJgoLY291bnRlckxpc3QYASADKAsyES5Q",
-            "QmFzZS5QQl9Db3VudGVyIp0CCgtQQl9Vbmlvbk9iahIPCgd1bmlvbklkGAEg",
-            "ASgFEhEKCXVuaW9uTmFtZRgCIAEoCRIRCgl1bmlvblR5cGUYAyABKAUSDwoH",
-            "bnBjTGlzdBgEIAMoBRIRCglza2lsbExpc3QYBSADKAUSEgoKdW5pb25MZXZl",
-            "bBgGIAEoBRIQCgh1bmlvbkVYUBgHIAEoAxISCgp1bmlvbk1vbmV5GAggASgD",
-            "EhEKCW1heE1lbWJlchgJIAEoBRIRCgltYXhWQ2hhaXIYCiABKAUSEAoIbWF4",
-            "RWxkZXIYCyABKAUSEwoLdW5pb25Ob3RpY2UYDCABKAkSFwoPdW5pb25DcmVh",
-            "dGVUaW1lGA0gASgFEhMKC2NyZWF0b3JOYW1lGA4gASgJIqkBCg5QQl9Vbmlv",
-            "bk1lbWJlchIMCgRkYmlkGAEgASgFEhEKCXVuaW9uRGJpZBgCIAEoBRIRCglw",
-            "bHllckRCaWQYAyABKAUSEgoKbWVtYmVyTmFtZRgEIAEoCRIMCgRyYW5rGAUg",
-            "ASgFEg0KBW9mZmVyGAYgASgFEhAKCGpvaW5UaW1lGAcgASgFEhAKCGV4aXRU",
-            "aW1lGAggASgFEg4KBm9ubGluZRgJIAEoBSI6ChFQQl9VbmlvbkFwcGx5SW5m",
-            "bxISCgpwbGF5ZXJEYmlkGAEgASgFEhEKCWFwcGx5VGltZRgCIAEoBSItCg9Q",
-            "Ql9VbmlvbkxvZ0luZm8SDAoEdGltZRgBIAEoBRIMCgR0ZXh0GAIgASgJYgZw",
-            "cm90bzM="));
+            "CgpwbGF5ZXJkYmlkGAkgASgFEg8KB2FjY291bnQYCiABKAkSDAoEdHlwZRgL",
+            "IAEoBRINCgVhZ3JlZRgMIAEoBSI5Cg9QQl9UZWFtQ2FyZEluZm8SCgoCaWQY",
+            "ASABKAUSCwoDbnVtGAIgASgFEg0KBWxldmVsGAMgASgFIjYKC1BCX0dpZnRQ",
+            "YWNrEgoKAmlkGAEgASgFEg0KBWNvdW50GAIgASgFEgwKBHRpbWUYAyABKAUi",
+            "TQoHUEJfSXRlbRIQCghpdGVtR3VpZBgBIAEoCRIOCgZpdGVtSWQYAiABKAUS",
+            "DwoHaXRlbVBvcxgDIAEoBRIPCgdpdGVtTnVtGAQgASgFIi8KC1BCX0l0ZW1M",
+            "aXN0EiAKCGl0ZW1MaXN0GAEgAygLMg4uUEJhc2UuUEJfSXRlbSI5Cg5QQl9U",
+            "YXNrQ291bnRlchILCgNjSWQYASABKAUSDAoEY0FyZxgCIAEoBRIMCgRjTnVt",
+            "GAMgASgFIn0KB1BCX1Rhc2sSDgoGdGFza0lkGAEgASgFEhEKCXRhc2tTdGF0",
+            "ZRgCIAEoBRISCgphY2NlcHRUaW1lGAMgASgFEhIKCnN1Ym1pdFRpbWUYBCAB",
+            "KAUSJwoIY291bnRlcnMYBSADKAsyFS5QQmFzZS5QQl9UYXNrQ291bnRlciIv",
+            "CgtQQl9UYXNrTGlzdBIgCgh0YXNrTGlzdBgBIAMoCzIOLlBCYXNlLlBCX1Rh",
+            "c2siSAoKUEJfQ291bnRlchIRCgljb3VudGVySWQYASABKAUSEgoKY291bnRl",
+            "ck51bRgCIAEoBRITCgtjb3VudGVyQXJncxgDIAMoBSI4Cg5QQl9Db3VudGVy",
+            "TGlzdBImCgtjb3VudGVyTGlzdBgBIAMoCzIRLlBCYXNlLlBCX0NvdW50ZXIi",
+            "nQIKC1BCX1VuaW9uT2JqEg8KB3VuaW9uSWQYASABKAUSEQoJdW5pb25OYW1l",
+            "GAIgASgJEhEKCXVuaW9uVHlwZRgDIAEoBRIPCgducGNMaXN0GAQgAygFEhEK",
+            "CXNraWxsTGlzdBgFIAMoBRISCgp1bmlvbkxldmVsGAYgASgFEhAKCHVuaW9u",
+            "RVhQGAcgASgDEhIKCnVuaW9uTW9uZXkYCCABKAMSEQoJbWF4TWVtYmVyGAkg",
+            "ASgFEhEKCW1heFZDaGFpchgKIAEoBRIQCghtYXhFbGRlchgLIAEoBRITCgt1",
+            "bmlvbk5vdGljZRgMIAEoCRIXCg91bmlvbkNyZWF0ZVRpbWUYDSABKAUSEwoL",
+            "Y3JlYXRvck5hbWUYDiABKAkiqQEKDlBCX1VuaW9uTWVtYmVyEgwKBGRiaWQY",
+            "ASABKAUSEQoJdW5pb25EYmlkGAIgASgFEhEKCXBseWVyREJpZBgDIAEoBRIS",
+            "CgptZW1iZXJOYW1lGAQgASgJEgwKBHJhbmsYBSABKAUSDQoFb2ZmZXIYBiAB",
+            "KAUSEAoIam9pblRpbWUYByABKAUSEAoIZXhpdFRpbWUYCCABKAUSDgoGb25s",
+            "aW5lGAkgASgFIjoKEVBCX1VuaW9uQXBwbHlJbmZvEhIKCnBsYXllckRiaWQY",
+            "ASABKAUSEQoJYXBwbHlUaW1lGAIgASgFIi0KD1BCX1VuaW9uTG9nSW5mbxIM",
+            "CgR0aW1lGAEgASgFEgwKBHRleHQYAiABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -72,7 +72,7 @@ namespace PBase {
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_ParamStrDict), global::PBase.PB_ParamStrDict.Parser, new[]{ "Dict" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_Money), global::PBase.PB_Money.Parser, new[]{ "Type", "Num" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItem), global::PBase.PB_MailItem.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "Sendtime", "Readtime", "Pasttime", "State" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItemEx), global::PBase.PB_MailItemEx.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "Sendtime", "Readtime", "Pasttime", "State", "Playerdbid", "Account" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItemEx), global::PBase.PB_MailItemEx.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "Sendtime", "Readtime", "Pasttime", "State", "Playerdbid", "Account", "Type", "Agree" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_TeamCardInfo), global::PBase.PB_TeamCardInfo.Parser, new[]{ "Id", "Num", "Level" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_GiftPack), global::PBase.PB_GiftPack.Parser, new[]{ "Id", "Count", "Time" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_Item), global::PBase.PB_Item.Parser, new[]{ "ItemGuid", "ItemId", "ItemPos", "ItemNum" }, null, null, null),
@@ -1006,6 +1006,8 @@ namespace PBase {
       state_ = other.state_;
       playerdbid_ = other.playerdbid_;
       account_ = other.account_;
+      type_ = other.type_;
+      agree_ = other.agree_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1145,6 +1147,34 @@ namespace PBase {
       }
     }
 
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 11;
+    private int type_;
+    /// <summary>
+    /// 1个人 2全局
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "agree" field.</summary>
+    public const int AgreeFieldNumber = 12;
+    private int agree_;
+    /// <summary>
+    /// 0 待批准 1同意 2拒绝 
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Agree {
+      get { return agree_; }
+      set {
+        agree_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PB_MailItemEx);
@@ -1168,6 +1198,8 @@ namespace PBase {
       if (State != other.State) return false;
       if (Playerdbid != other.Playerdbid) return false;
       if (Account != other.Account) return false;
+      if (Type != other.Type) return false;
+      if (Agree != other.Agree) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1184,6 +1216,8 @@ namespace PBase {
       if (State != 0) hash ^= State.GetHashCode();
       if (Playerdbid != 0) hash ^= Playerdbid.GetHashCode();
       if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (Type != 0) hash ^= Type.GetHashCode();
+      if (Agree != 0) hash ^= Agree.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1237,6 +1271,14 @@ namespace PBase {
         output.WriteRawTag(82);
         output.WriteString(Account);
       }
+      if (Type != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Type);
+      }
+      if (Agree != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(Agree);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1274,6 +1316,12 @@ namespace PBase {
       }
       if (Account.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      }
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
+      }
+      if (Agree != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Agree);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1315,6 +1363,12 @@ namespace PBase {
       }
       if (other.Account.Length != 0) {
         Account = other.Account;
+      }
+      if (other.Type != 0) {
+        Type = other.Type;
+      }
+      if (other.Agree != 0) {
+        Agree = other.Agree;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1365,6 +1419,14 @@ namespace PBase {
           }
           case 82: {
             Account = input.ReadString();
+            break;
+          }
+          case 88: {
+            Type = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            Agree = input.ReadInt32();
             break;
           }
         }

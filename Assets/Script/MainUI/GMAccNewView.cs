@@ -18,6 +18,7 @@ public class GMAccNewView : View
     private Button sendBtn;
     private Button closeBtn;
     private Button delBtn;
+
     private InputField accountText;
     private InputField passwdText;  
     private InputField nameText;
@@ -100,12 +101,12 @@ public class GMAccNewView : View
         od1.text = GlobalModel.rankNameDict[1];
         Dropdown.OptionData od2 = new Dropdown.OptionData();
         od2.text =  GlobalModel.rankNameDict[2];
-        Dropdown.OptionData od3 = new Dropdown.OptionData();
-        od3.text =  GlobalModel.rankNameDict[9];  
+        // Dropdown.OptionData od3 = new Dropdown.OptionData();
+        // od3.text =  GlobalModel.rankNameDict[9];  
 
         rankChoose.options.Add(od1);      
         rankChoose.options.Add(od2);
-        rankChoose.options.Add(od3);
+        //rankChoose.options.Add(od3);
 
         rankText.text = GlobalModel.rankNameDict[curRank];
     }
@@ -176,10 +177,10 @@ public class GMAccNewView : View
         {
             curRank = 2;
         }
-        else if (index == 2)
-        {
-            curRank = 9;
-        }                
+        // else if (index == 2)
+        // {
+        //     curRank = 9;
+        // }                
     }
 
 }

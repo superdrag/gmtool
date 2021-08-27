@@ -63,6 +63,7 @@ public class MailView : View
 
     override public void OnShow(params object[] args)
     {        
+        ClearMailItem();
         onClickQuery(allBtn.gameObject);
     }
 

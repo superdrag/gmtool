@@ -1,5 +1,5 @@
 
-Ž
+¸
 common.protoPBase"'
 PB_ParamIntList
 value (Rvalue"'
@@ -21,7 +21,7 @@
 sendtime (Rsendtime
 readtime (Rreadtime
 pasttime (Rpasttime
-state (Rstate"‘
+state (Rstate"»
 PB_MailItemEx
 mid (	Rmid
 title (	Rtitle
@@ -35,7 +35,9 @@
 playerdbid	 (R
 playerdbid
 account
- (	Raccount"I
+ (	Raccount
+type (Rtype
+agree (Ragree"I
 PB_TeamCardInfo
 id (Rid
 num (Rnum

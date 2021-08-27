@@ -14,9 +14,14 @@ public class MailSendView : View
 {
     private static MailSendView ins = null;
 
+    PB_MailItemEx pbData;
     private Button sendBtn;
     private Button closeBtn;
     private Button deleteBtn;
+
+    private Text sendBtnTxt;
+    private Text deleteBtnTxt;
+
     private InputField titleText;
     private InputField contentText;
     private InputField itemListText;
@@ -57,12 +62,14 @@ public class MailSendView : View
 
         sendBtn = bg.Find("sendBtn").GetComponent<Button>();  
         sendBtn.onClick.AddListener(onClickSend); 
+        sendBtnTxt = bg.Find("sendBtn/Text").GetComponent<Text>(); 
 
         closeBtn = bg.Find("closeBtn").GetComponent<Button>();  
         closeBtn.onClick.AddListener(onClickClose); 
-
-        deleteBtn = bg.Find("deleteBtn").GetComponent<Button>();  
-        deleteBtn.onClick.AddListener(onClickDelete);                 
+      
+        // deleteBtn = bg.Find("deleteBtn").GetComponent<Button>();  
+        // deleteBtn.onClick.AddListener(onClickDelete);  
+        // deleteBtnTxt = bg.Find("deleteBtn/Text").GetComponent<Text>();               
 
         titleText = bg.Find("title/InputField").GetComponent<InputField>();
         contentText = bg.Find("content/InputField").GetComponent<InputField>();
@@ -90,7 +97,7 @@ public class MailSendView : View
     {        
         openType = (int)args[0];
 
-        if ((int)args[0] == 1)
+        if (openType == 1) //新建
         {
             titleText.text = "这是标题啊 this is title text";
             contentText.text = "这是内容啊 this is content text";
@@ -98,16 +105,32 @@ public class MailSendView : View
             accountText.text = "AAA123";
             pastDayText.text = "30";   
         }
-        else if ((int)args[0] == 2)
+        else if (openType == 2) //编辑
         {
-            PB_MailItemEx data = (PB_MailItemEx)args[1];
-            titleText.text = data.Title;
-            contentText.text = data.Content;
-            itemListText.text = data.Itemlist;
-            accountText.text = data.Account;
+            pbData = (PB_MailItemEx)args[1];
+            titleText.text = pbData.Title;
+            contentText.text = pbData.Content;
+            itemListText.text = pbData.Itemlist;
+            accountText.text = pbData.Account;
             pastDayText.text = "30";
 
-            mailId = data.Mid;
+            mailId = pbData.Mid;
+
+            // if (pbData.Agree == 0) //待审批
+            // {
+            //     sendBtnTxt.text = "同意发送";
+            //     deleteBtnTxt.text = "拒绝";
+            // }
+            // else if (pbData.Agree == 1)//已发送
+            // {
+            //     deleteBtnTxt.text = "撤回";
+            //     deleteBtn.gameObject.SetActive(false);
+            // }
+            // else if (pbData.Agree == 2)//已拒绝
+            // {
+            //     sendBtnTxt.text = "提交";
+            //     deleteBtnTxt.text = "删除";
+            // }                                              
         }
     }
 
@@ -128,24 +151,58 @@ public class MailSendView : View
             return;
         }
 
-        int mailType = 1;
+        int mailType = 1; //查询个人邮件
         if( allTog.isOn ) 
         {
-            mailType = 2;        
+            mailType = 2; //查询全局邮件     
         }
-        GlobalCtl.MSG_CL2PHP_SENDMAIL( mailType, accountText.text,titleText.text,contentText.text,itemListText.text, passDay );
+
+        C2S_GMModMail pb = new C2S_GMModMail();
+
+        if (openType == 1) //新建
+        {
+            pb.Modtype = (int)MOD_TYPE.ADD;
+        }
+        else if (openType == 2) //编辑
+        {
+            pb.Modtype = (int)MOD_TYPE.UPATE;
+        }
+
+        PB_MailItemEx item = new PB_MailItemEx();
+        item.Title = titleText.text;
+        item.Content = contentText.text;
+        item.Itemlist = itemListText.text;
+        item.Pasttime = passDay;
+        item.Account = accountText.text;
+        item.Type = mailType;
+        item.Agree = 0;
+
+        pb.Maildata = item;
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_MODMAIL,pb);          
     } 
 
 
-    private void onClickDelete()
-    {
-        if (openType == 2)
-        {
-            C2S_GMDeleteMail pb = new C2S_GMDeleteMail();
-            pb.Mailid = mailId ;           
-            NetMgr.SendMsg(MSGID.MSG_CL2PHP_DELETEMAIL,pb); 
-        }
-    }
+    // private void onClickDelete()
+    // {
+    //     if (pbData.Agree == 0)  //待审批
+    //     {
+    //         //拒绝            
+    //     }
+    //     else if (pbData.Agree == 1)  //已发送
+    //     {
+    //         if (openType == 2) //撤回
+    //         {
+    //             C2S_GMDeleteMail pb = new C2S_GMDeleteMail();
+    //             pb.Mailid = mailId;           
+    //             NetMgr.SendMsg(MSGID.MSG_CL2PHP_DELETEMAIL,pb); 
+    //         }
+    //     }
+    //     else if (pbData.Agree == 2) //已拒绝
+    //     {
+            
+    //     } 
+
+    // }
 
     private void onClickClose()
     {

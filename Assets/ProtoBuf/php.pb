@@ -1,12 +1,16 @@
 
-ž
+Ÿ
 	php.protoPPhpcommon.proto"?
 C2S_GMLogin
 account (	Raccount
-passwd (	Rpasswd"9
+passwd (	Rpasswd"u
 S2C_GMLogin
 ret (Rret
-account (	Raccount"®
+account (	Raccount
+
+permission (R
+permission
+nickname (	Rnickname"®
 C2S_GMAccountMgr
 type (Rtype
 account (	Raccount
@@ -44,25 +48,33 @@ permission
 cash (Rcash
 vipcard (Rvipcard
 logintv (Rlogintv
-	offlinetv (R	offlinetv"v
+	offlinetv (R	offlinetv"Œ
 C2S_GMSendMail
 mailtype (Rmailtype
 acclist (	Racclist.
-maildata (2.PBase.PB_MailItemRmaildata"V
+maildata (2.PBase.PB_MailItemRmaildata
+agree (Ragree"V
 S2C_GMSendMail
 ret (Rret
 finish (Rfinish
 mailtype (Rmailtype"B
 C2S_GMQueryAllMail
 type (Rtype
-account (	Raccount"F
-S2C_GMQueryAllMail0
-maillist (2.PBase.PB_MailItemExRmaillist"*
+account (	Raccount"Z
+S2C_GMQueryAllMail
+type (Rtype0
+maillist (2.PBase.PB_MailItemExRmaillist"*
 C2S_GMDeleteMail
 mailid (	Rmailid"<
 S2C_GMDeleteMail
 ret (Rret
-mailid (	Rmailid"_
+mailid (	Rmailid"[
+C2S_GMModMail
+modtype (Rmodtype0
+maildata (2.PBase.PB_MailItemExRmaildata";
+S2C_GMModMail
+ret (Rret
+modtype (Rmodtype"_
 C2S_GMCommand
 	commandid (R	commandid
 acclist (	Racclist

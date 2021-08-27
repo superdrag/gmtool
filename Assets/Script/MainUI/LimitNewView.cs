@@ -15,7 +15,9 @@ public class LimitNewView : View
     private static LimitNewView ins = null;
 
     private Button sendBtn;
+    private Text sendBtnTxt;
     private Button closeBtn;
+    private Text closeBtnTxt;
     private InputField timeText;
     private InputField reasonText;  
     private InputField accountText;
@@ -46,7 +48,7 @@ public class LimitNewView : View
 
         sendBtn = bg.Find("sendBtn").GetComponent<Button>();  
         sendBtn.onClick.AddListener(onClickSend); 
-
+ 
         closeBtn = bg.Find("closeBtn").GetComponent<Button>();  
         closeBtn.onClick.AddListener(onClickClose);               
 
@@ -57,13 +59,13 @@ public class LimitNewView : View
 
     override public void OnShow(params object[] args)
     {        
-        if ((int)args[0] == 1)
+        if ((int)args[0] == 1)  //新建
         {
             accountText.text = "AAA123"; 
             timeText.text = "30";
             reasonText.text = "作弊";
         }
-        else if ((int)args[0] == 2)
+        else if ((int)args[0] == 2) //编辑
         {
             accountText.text = args[1].ToString();
             timeText.text = "0";

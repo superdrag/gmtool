@@ -1,5 +1,5 @@
 
-ë*
+¥+
 client.protoPClientcommon.proto")
 S2C_ErrorCode
 errcode (Rerrcode"
@@ -32,7 +32,7 @@
 sign (	Rsign
 time (Rtime
 version (	Rversion
-reconn (Rreconn"ù
+reconn (Rreconn"•
 S2C_LoginGate
 account (	Raccount
 accdbid (Raccdbid
@@ -47,12 +47,14 @@ firstlogin
  (Rcurtime
 
 dayRefresh (R
-dayRefresh"ì
+dayRefresh
+nickname (	Rnickname"ˆ
 S2C_LoginRoleData
 reconn (Rreconn
 diamond (Rdiamond
 newmail (Rnewmail$
-drawcardcount (Rdrawcardcount:
+drawcardcount (Rdrawcardcount
+leaflet3 (Rleaflet3:
 teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlistS
 firstgiftlist (2-.PClient.S2C_LoginRoleData.FirstgiftlistEntryRfirstgiftlistT
 FirstgiftlistEntry
@@ -64,7 +66,10 @@ dayRefresh"ì
 S2C_MonthRefresh
 time (Rtime"0
 S2C_UpdateDiamod
-	diamodnum (R	diamodnum"O
+	diamodnum (R	diamodnum":
+S2C_UpdateCurrency
+type (	Rtype
+num (Rnum"O
 C2S_UseDiamod
 num (Rnum
 event (Revent
@@ -79,13 +84,11 @@ dayRefresh"ì
 params (Rparams"<
 S2C_WatchAdv
 event (Revent
-params (Rparams"E
-C2S_FirstRecharge
-giftid (Rgiftid
-paycode (	Rpaycode"=
-S2C_FirstRecharge
-ret (Rret
-giftid (Rgiftid"
+params (Rparams"%
+C2S_SetNickName
+name (	Rname"%
+S2C_SetNickName
+name (	Rname"
 C2S_GetMailNew"*
 S2C_GetMailNew
 newmail (Rnewmail"
@@ -112,13 +115,16 @@ dayRefresh"ì
 readlist (	Rreadlist"
 C2S_ShowTeamCardList"R
 S2C_ShowTeamCardList:
-teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"$
+teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"D
 C2S_DrawCard
-boxid (Rboxid"r
+boxid (Rboxid
+
+areaunlock (R
+areaunlock"P
 S2C_DrawCard
 ret (Rret
-boxid (Rboxid:
-teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"G
+boxid (Rboxid
+rewards (	Rrewards"G
 C2S_UpLevelCard
 cardid (Rcardid
 	cardlevel (R	cardlevel"Y

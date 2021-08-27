@@ -63,6 +63,8 @@ message PB_MailItemEx
     int32 state = 8; //已读状态 1 已读未领取 2 已读已领取
     int32 playerdbid = 9;
     string account = 10;
+    int32 type = 11; // 1个人 2全局
+    int32 agree = 12; // 0 待批准 1同意 2拒绝 
 }
 
 //卡牌

@@ -35,6 +35,10 @@ public enum MSGID
 
     MSG_CL2PHP_DELETEMAIL                 = 1822,    //[[GM撤销邮件]]  
     MSG_PHP2CL_DELETEMAIL                 = 2822,    //[[GM撤销邮件]]  
+
+    MSG_CL2PHP_MODMAIL                    = 1823,    //[[GM修改邮件]]
+    MSG_PHP2CL_MODMAIL                    = 2823,    //[[GM修改邮件]]
+
    
     MSG_CL2PHP_GMCOMMAND                  = 1831,   
     MSG_PHP2CL_GMCOMMAND                  = 2831,    
@@ -44,7 +48,6 @@ public enum MSGID
 
     MSG_CL2PHP_GMPAYREPAIR                = 1862,    
     MSG_PHP2CL_GMPAYREPAIR                = 2862,  
-
 
     MSG_CL2PHP_QUERYNORMALINFO            = 1865,    
     MSG_PHP2CL_QUERYNORMALINFO            = 2865,    

@@ -99,6 +99,7 @@ message S2C_LoginGate
     bool firstlogin = 9;//第一次登录
     int32 curtime = 10;//
     bool dayRefresh = 11; //隔天刷新
+    string nickname = 12;//昵称名字
 }
 
 //MsgId.MSG_LG2CL_LOGINROLEDATA               = 2013      --返回登录基本数据
@@ -108,6 +109,7 @@ message S2C_LoginRoleData
     int32 diamond = 2;//钻石
     bool newmail = 3; //新邮件
     int32 drawcardcount = 4; //总抽卡次数
+    int32 leaflet3 = 5; //喇叭 抽卡
     repeated PBase.PB_TeamCardInfo teamcardlist = 11;  //卡牌信息
     map<int32, PBase.PB_GiftPack> firstgiftlist = 12;  //礼包信息    
 }
@@ -147,6 +149,13 @@ message S2C_UpdateDiamod
     int32 diamodnum = 1;  //钻石数量
 }
 
+//MsgId.MSG_WD2CL_CURRENCY                = 2503      --[[更新货币数量]]  
+message S2C_UpdateCurrency
+{
+    string type = 1;    //货币类型 
+    int32 num = 2;  //数量
+}
+
 // MsgId.MSG_CL2WD_USEDIAMOD               = 1501      --使用钻石
 message C2S_UseDiamod
 {
@@ -177,18 +186,15 @@ message S2C_WatchAdv
     repeated int32 params = 2;
 }
 
-//MsgId.MSG_CL2WD_FIRSTRECHARGE           = 1502      --[[首冲礼包]] 
-message C2S_FirstRecharge
+// MsgId.MSG_CL2WD_SETNICKNAME             = 1505      --[[改昵称]]  
+message C2S_SetNickName
 {
-    int32 giftid = 1;
-    string paycode = 2;
+    string name = 1; //
 }
-
-//MsgId.MSG_WD2CL_FIRSTRECHARGE           = 2502      --[[首冲礼包]]  
-message S2C_FirstRecharge
+// MsgId.MSG_WD2CL_SETNICKNAME             = 2505      --[[改昵称]] 
+message S2C_SetNickName
 {
-    int32 ret = 1;
-    int32 giftid = 2;    
+    string name = 1; //
 }
 
 // MsgId.MSG_CL2WD_GETMAILNEW              = 1510      --请求是否有新邮件
@@ -283,6 +289,7 @@ message S2C_ShowTeamCardList
 message C2S_DrawCard
 {
     int32 boxid = 1;
+    repeated int32 areaunlock  = 2;
 }
 
 // MsgId.MSG_WD2CL_DRAWCARD                = 2522      --抽卡
@@ -290,7 +297,7 @@ message S2C_DrawCard
 {
     int32 ret = 1;
     int32 boxid = 2;
-    repeated PBase.PB_TeamCardInfo teamcardlist = 3;
+    repeated string rewards = 3;
 }
 
 // MsgId.MSG_CL2WD_UPLEVELCARD             = 1523      --卡牌等级升级
