@@ -107,7 +107,7 @@ public class MailItem
         }  
         else if (mailData.Agree == 2)   //拒绝
         {
-            editBtn.gameObject.SetActive(false);
+            editBtn.gameObject.SetActive(true);
             delBtn.gameObject.SetActive(false);
             agreeBtn.gameObject.SetActive(false);
             disAgreeBtn.gameObject.SetActive(false);
@@ -165,6 +165,7 @@ public class MailItem
 
         pb.Maildata = mailData;
         pb.Maildata.Agree = 2;
+        pb.Maildata.Pasttime = 1;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_MODMAIL,pb);             
     }
 

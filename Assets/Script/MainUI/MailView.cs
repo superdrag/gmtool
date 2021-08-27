@@ -20,6 +20,8 @@ public class MailView : View
 
     public Transform Content;
 
+    public static int curPage = 1;
+
 
     public static MailView Instance
     {
@@ -63,14 +65,27 @@ public class MailView : View
 
     override public void OnShow(params object[] args)
     {        
-        ClearMailItem();
-        onClickQuery(allBtn.gameObject);
+        //ClearMailItem();
+
+        if (curPage == 1)
+        {
+            onClickQuery(allBtn.gameObject);
+        }
+        else if(curPage == 2)
+        {
+            onClickQuery(serverBtn.gameObject);
+        }
+        else if(curPage == 3)
+        {
+            onClickQuery(personalBtn.gameObject);
+        }
     }
 
     private void onClickQuery(GameObject go)
     {
         if( go.name == "allBtn" )
         {
+            curPage = 1;
             C2S_GMQueryAllMail pb = new C2S_GMQueryAllMail();
             pb.Type = 1;
             pb.Account = "";
@@ -78,6 +93,7 @@ public class MailView : View
         }
         else if( go.name == "serverBtn" )
         {
+            curPage = 2;
             C2S_GMQueryAllMail pb = new C2S_GMQueryAllMail();
             pb.Type = 2;
             pb.Account = "";
@@ -85,6 +101,7 @@ public class MailView : View
         } 
         else if( go.name == "personalBtn" )
         {
+            curPage = 3;
             C2S_GMQueryAllMail pb = new C2S_GMQueryAllMail();
             pb.Type = 3;
             pb.Account = accText.text;

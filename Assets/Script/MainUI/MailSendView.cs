@@ -159,6 +159,7 @@ public class MailSendView : View
 
         C2S_GMModMail pb = new C2S_GMModMail();
 
+        PB_MailItemEx item = new PB_MailItemEx();
         if (openType == 1) //新建
         {
             pb.Modtype = (int)MOD_TYPE.ADD;
@@ -166,9 +167,10 @@ public class MailSendView : View
         else if (openType == 2) //编辑
         {
             pb.Modtype = (int)MOD_TYPE.UPATE;
-        }
+            item.Mid = pbData.Mid;
+            item.State = pbData.State;            
+        }    
 
-        PB_MailItemEx item = new PB_MailItemEx();
         item.Title = titleText.text;
         item.Content = contentText.text;
         item.Itemlist = itemListText.text;
@@ -176,6 +178,7 @@ public class MailSendView : View
         item.Account = accountText.text;
         item.Type = mailType;
         item.Agree = 0;
+
 
         pb.Maildata = item;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_MODMAIL,pb);          

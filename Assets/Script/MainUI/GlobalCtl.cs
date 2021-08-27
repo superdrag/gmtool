@@ -132,7 +132,8 @@ public class GlobalCtl
         }
 
         UIMgr.ShowUI(VIEWID.ALERTINFO,"执行成功");     
-        UIMgr.GetUI(VIEWID.Mail).OnShow();   
+
+        UIMgr.GetUI(VIEWID.Mail).OnShow();
     } 
 
     public void MSG_PHP2CL_QUERYALLMAIL(MsgPack msg)
@@ -140,7 +141,7 @@ public class GlobalCtl
         S2C_GMQueryAllMail _pb = msg.UnpackProtoBuf<S2C_GMQueryAllMail>( new S2C_GMQueryAllMail() );
 
         MailView mailView = (MailView)UIMgr.GetUI(VIEWID.Mail) ;
-        //mailView.ClearMailItem();
+        mailView.ClearMailItem();
         for (int i = 0; i < _pb.Maillist.Count; i++)
         {
             PB_MailItemEx mail =  _pb.Maillist[i];
@@ -150,6 +151,8 @@ public class GlobalCtl
 
             mailView.AddMailItem( mailItem );
         }
+        
+        //UIMgr.GetUI(VIEWID.Mail).OnShow(_pb.Type); 
     } 
 
     public void MSG_PHP2CL_DELETEMAIL(MsgPack msg)
@@ -163,6 +166,7 @@ public class GlobalCtl
         {
             UIMgr.ShowUI(VIEWID.ALERTINFO,"撤回邮件失败");
         }
+        UIMgr.GetUI(VIEWID.Mail).OnShow();
     }
 
     public void MSG_PHP2CL_GMCOMMAND(MsgPack msg)
