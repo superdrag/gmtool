@@ -55,6 +55,9 @@ public class CoreView : View
     override public void OnShow(params object[] args)
     {        
         onClickQuery(queryBtn.gameObject);
+
+        RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(0, (float)RecordModel.Instance.coreList.Count * (float)73.6 );
     }
 
     public void ClearCoreItem()

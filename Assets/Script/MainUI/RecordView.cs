@@ -19,6 +19,8 @@ public class RecordView : View
 
     public Transform Content;
 
+    public int itemNum = 0;
+
 
     public static RecordView Instance
     {
@@ -82,7 +84,7 @@ public class RecordView : View
         // {
         //     AddCoreItem(i);
         // }
-
+        itemNum = 0;
         ClearItems();
         GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("",(int)PHP_QUERY.RECORED_OPERATE,999);
 
@@ -95,6 +97,11 @@ public class RecordView : View
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
-        item.Show();        
+        item.Show();   
+
+        itemNum += 1;  
+
+        RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(0, (float)itemNum * (float)73.6 );             
     }
 }

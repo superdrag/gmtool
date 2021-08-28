@@ -22,7 +22,7 @@ public class MailView : View
 
     public static int curPage = 1;
 
-
+    public int itemNum = 0;
     public static MailView Instance
     {
         get
@@ -121,6 +121,7 @@ public class MailView : View
     
     public void ClearMailItem()
     {
+        itemNum = 0;
         for (int i = 0; i < Content.childCount; i++)
         {
             Transform obj = Content.GetChild(i);
@@ -133,5 +134,10 @@ public class MailView : View
         mail.view.SetParent(Content);
         mail.view.transform.localScale = Vector3.one;
         mail.Show();
+
+        itemNum += 1;
+
+        RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(0, (float)itemNum * (float)73.6 );        
     }
 }

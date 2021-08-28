@@ -20,6 +20,7 @@ public class PayView : View
 
     public List<PayItem> PayItemsList = new List<PayItem>();
 
+    public int itemNum = 0;
 
     public static PayView Instance
     {
@@ -71,6 +72,7 @@ public class PayView : View
 
     private void onClickQuery(GameObject go)
     {
+        itemNum = 0;
         ClearItem();
         GlobalCtl.MSG_CL2PHP_GMPAYDATA("");
     }
@@ -84,6 +86,11 @@ public class PayView : View
         item.pbData = pb;
         item.Show();
         PayItemsList.Add(item);
+
+        itemNum += 1;
+
+        RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(0, (float)itemNum * (float)73.6 );            
     }
 
     public void SetItem(S2C_GMPayRepair pb)
