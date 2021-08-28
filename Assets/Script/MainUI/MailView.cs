@@ -80,7 +80,6 @@ public class MailView : View
             onClickQuery(personalBtn.gameObject);
         }
     }
-
     private void onClickQuery(GameObject go)
     {
         if( go.name == "allBtn" )

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Net;
 
 using PBase;
@@ -8,7 +9,6 @@ using PPhp;
 
 using System;
 using System.IO;
-//using Google.ProtoBuf.MessageExtensions;
 using LitJson;
 
 public class ServerInfo
@@ -20,11 +20,22 @@ public class ServerInfo
     public string record_url;
 }
 
+public class ServerInfoEx
+{    
+    public int server_id;
+    public string server_name;
+    public string php_ip;
+    public int php_port;
+    public string record_url;
+}
+
 
 public class AppConfig
 {
     private static AppConfig ins = null;  
     public static List<ServerInfo> ServerList = new List<ServerInfo>();   
+
+    public static List<ServerInfoEx> ServerListEx = new List<ServerInfoEx>();   
 
     public static AppConfig Instance
     {
@@ -40,6 +51,15 @@ public class AppConfig
 
     public void InitLoad()
     {
+        // string dirpath = Application.dataPath + "/record"; 
+        // if (!Application.isEditor)
+        // {
+        //     dirpath = Application.dataPath + "/../record";        
+        // }        
+        // Text tt = ResMgr.LoadRes<Text>( "app_server" );
+
+        // ServerInfoEx si = JsonUtility.FromJson<ServerInfoEx>(tt.text);
+
         List<JsonData> jsons = JsonConfig.LoadJsonFile("app_server");
         foreach (var json in jsons)
         {
@@ -55,6 +75,7 @@ public class AppConfig
             //Debug.Log("11111111111111 "+info.ip);
             ServerList.Add(info);
         }
+        
 
     }
 }
