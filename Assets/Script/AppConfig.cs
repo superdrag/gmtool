@@ -75,7 +75,5 @@ public class AppConfig
             //Debug.Log("11111111111111 "+info.ip);
             ServerList.Add(info);
         }
-        
-
     }
 }
