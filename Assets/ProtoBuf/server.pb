@@ -1,5 +1,5 @@
 
-Ÿ)
+â'
 server.protoPServercommon.proto"
 WD2DB_WorldOnLinkDB"i
 DB2WD_WorldOnLinkDB"
@@ -18,12 +18,13 @@
 newuser (Rnewuser"F
 LN2MT_GetLowGate
 account (	Raccount
-accdbid (Raccdbid"{
+accdbid (Raccdbid"ç
 MT2LN_BackLowGate
 account (	Raccount
 accdbid (Raccdbid
 gateip (	Rgateip
-gateport (Rgateport"n
+gateport (Rgateport
+ret (Rret"n
 GT2WD_LoginWorld
 account (	Raccount
 accdbid (Raccdbid
@@ -35,7 +36,7 @@
 accdbid (Raccdbid
 ip (	Rip
 	logintime (R	logintime
-reconn (Rreconn"‹
+reconn (Rreconn"æ
 DB2WD_DBLoadInitRoleData
 gateid (Rgateid
 account (	Raccount
@@ -62,7 +63,11 @@ playername
 
 fundpasstv (R
 fundpasstv$
-drawcardcount (Rdrawcardcount
+drawcardcount (Rdrawcardcount
+leaflet3 (Rleaflet3
+
+counterstr (	R
+counterstr
 cardstr (	Rcardstr
 fundstr  (	Rfundstr
 passstr! (	Rpassstr
@@ -73,7 +78,8 @@ daygiftstr* (	R
 daygiftstr 
 weekgiftstr+ (	Rweekgiftstr"
 monthgiftstr, (	Rmonthgiftstr 
-timegiftstr- (	Rtimegiftstr"
+timegiftstr- (	Rtimegiftstr$
+randomcardstr. (	Rrandomcardstr"“
 LG2DB_SavePlayerData
 account (	Raccount
 accdbid (Raccdbid
@@ -93,7 +99,10 @@ playername
 
 fundpasstv (R
 fundpasstv$
-drawcardcount (Rdrawcardcount
+drawcardcount (Rdrawcardcount
+
+counterstr (	R
+counterstr
 cardstr (	Rcardstr
 fundstr (	Rfundstr
 passstr (	Rpassstr
@@ -104,10 +113,12 @@ daygiftstr  (	R
 daygiftstr 
 weekgiftstr! (	Rweekgiftstr"
 monthgiftstr" (	Rmonthgiftstr 
-timegiftstr# (	Rtimegiftstr
+timegiftstr# (	Rtimegiftstr$
+randomcardstr$ (	Rrandomcardstr
 coin) (Rcoin
 diamond* (Rdiamond
-vipcard+ (Rvipcard")
+vipcard+ (Rvipcard
+leaflet3, (Rleaflet3")
 WD2DB_RefreshDBData
 type (Rtype"j
 DB2WD_DBLoadInitRoleMail
@@ -162,40 +173,14 @@ playerdbid"V
 DB2WD_SaveDownload
 ret (Rret
 filename (	Rfilename
-data (Rdata"B
-PHP2DB_GMLOGIN
-account (	Raccount
-passwd (	Rpasswd"<
-DB2PHP_GMLOGIN
-ret (Rret
-account (	Raccount"2
-PHP2DB_GMQUERYUSERINFO
-account (	Raccount"ﬁ
-DB2PHP_GMQUERYUSERINFO
-ret (Rret
-account (	Raccount
-accdbid (Raccdbid
-diamond (Rdiamond
-cash (Rcash
-vipcard (Rvipcard
-logintv (Rlogintv
-	offlinetv (R	offlinetv"T
-PHP2DB_GMSENDMONEY
-account (	Raccount
-type (Rtype
-num (Rnum"f
-DB2PHP_GMSENDMONEY
-ret (Rret
-account (	Raccount
-type (Rtype
-num (Rnum"y
+data (Rdata"y
 PHP2WD_GMSendMail
 mailtype (Rmailtype
-acclist (	Racclist.
+account (	Raccount.
 maildata (2.PBase.PB_MailItemRmaildata"x
 WD2DB_GMSendMail
 mailtype (Rmailtype
-acclist (	Racclist.
+account (	Raccount.
 maildata (2.PBase.PB_MailItemRmaildata"Y
 DB2PHP_GMSendMail
 ret (Rret
@@ -203,11 +188,13 @@ playerdbid"V
 mailtype (Rmailtype"E
 PHP2DB_GMQueryAllMail
 type (Rtype
-account (	Raccount"I
-DB2PHP_GMQueryAllMail0
-maillist (2.PBase.PB_MailItemExRmaillist"-
+account (	Raccount"]
+DB2PHP_GMQueryAllMail
+type (Rtype0
+maillist (2.PBase.PB_MailItemExRmaillist"G
 PHP2WD_GMDeleteMail
-mailid (	Rmailid",
+mailid (	Rmailid
+account (	Raccount",
 WD2DB_GMDeleteMail
 mailid (	Rmailid"?
 DB2PHP_GMDeleteMail

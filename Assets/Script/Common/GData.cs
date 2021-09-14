@@ -38,6 +38,7 @@ public enum PHP_COMMAMD
     SHUTDWON = 101,
     BLACKUSER = 102,
     RECORED_OPERATE = 103,
+    CLIENTSAVE = 105,
 }
 
 public enum PHP_QUERY
@@ -46,6 +47,8 @@ public enum PHP_QUERY
     BLACKUSER = 1001,
     GMACCLIST = 1002,
     RECORED_OPERATE = 1003,
+    CLIENTSAVELIST      = 1005, //客户端存档查询
+    CLIENTSAVEDATA      = 1006, //客户端存档查询    
 }
 
 public enum MOD_TYPE

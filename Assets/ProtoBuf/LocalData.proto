@@ -1,0 +1,398 @@
+syntax = "proto3";
+
+package LocalData;
+
+// ***********************************  Stuct Start ***********************************
+// ***********************************  Stuct End ***********************************
+
+
+
+
+
+
+// ***********************************  MSG Start ***********************************
+
+
+
+//----------------------------- common ---------------------
+
+//登录信息
+message Login
+{
+    string account = 1;//账号
+    string passwd = 2;//用户密码
+    string version = 3; //版本号
+    string headicon = 4;//用户头像Url
+    int32 guest = 5;    //1游客 0非游客 
+    int32 reconn = 6;    //断线重连
+    string platform = 11; //平台id
+}
+  
+//主线任务
+message MainTask
+{
+    int32 id = 1; //ID
+    int32 progress=2;//进度
+}
+
+message RoleItem
+{
+    int32 id = 1; //ID
+    int32 curnum=2;//当前数量
+    int32 extnum=3;//
+    int32 countdown=4;//
+    int32 state=5;//
+}
+
+//员工,角色数据
+message Role
+{
+    repeated RoleItem roleList = 1;  //全部角色信息
+}
+
+//货币
+message Currency
+{
+    map<string,int32> list = 1;//
+}
+
+
+//老板类角色关联任务
+message BossRoleTask
+{
+    map<int32, int32> list = 1;
+}
+
+//老板类角色广告解锁
+message BossRoleAds
+{
+    map<int32, int32> list = 1;
+}
+
+// 每个球员信息
+message BallerItem
+{
+    int32 level = 1;            // 等级
+    int32 progress = 2;         // 进度
+    repeated int32 equip = 3;   // 装备
+    int32 starNum = 4;          // 卡牌数量
+}
+
+// 所有球员信息
+message Baller
+{
+    map<int32, BallerItem> list = 1;
+}
+
+//单个礼包信息
+message GiftPackItem
+{
+    bool isActive = 1;      //是否激活
+    int32 buyNum = 2;        //礼包可以购买的次数
+    int64 overTime = 3;     //礼包关闭时间
+    int64 popupTime = 4;    //礼包下次弹出时间
+    int64 activeTime = 5;   //礼包下次自动激活时间
+    int32 adNum = 6;        //广告次数
+}
+
+//所有礼包信息
+message GiftPack
+{
+    map<int32, GiftPackItem> list = 1;
+}
+
+//单个设备信息
+message FacilityItem
+{
+    int32 curLevel = 1;     //设备当前等级
+    int32 time = 2;         //设备升级完成时间
+    bool isBreak = 3;       //设备是否损坏
+}
+//所有房间设备
+message Room
+{
+    map<int32, FacilityItem> list = 1;  //全部设备信息
+}
+
+//单个每日任务信息
+message DailyTask
+{
+    int32 id = 1;       //任务ID
+    int32 curNum = 2;   //当前任务进度
+}
+//所有每日任务
+message AllDailyTask
+{
+    repeated bool isGet = 1;       //任务奖励是否领取
+    map<int32, DailyTask> list = 2; //所有每日任务信息
+}
+
+//已招揽过的游客
+message RecruitTourist
+{
+    repeated int32 list = 1;   // 装备
+}
+
+//双倍收益时间信息
+message DoubleTime
+{
+    int32 time = 1;     //双倍收益时间戳
+}
+
+//区域信息
+message AreaInfo {
+    int32 level=1;//区域等级
+    int32 upgrade_time=2; //开始升级的时间戳
+}
+//所有区域信息
+message AllAreaInfo {
+    map<int32,AreaInfo> list=1;
+}
+//房间信息
+message RoomInfo {
+    int32 level=1;//房间等级
+    int32 upgrade_time=2; //开始升级的时间戳
+}
+//所有房间信息
+message AllRoomInfo {
+    map<int32,AreaInfo> list=1;
+}
+//所有建造工完成时间
+message BuilderFinishTime {
+    repeated int32 list=1;
+}
+
+//挂机奖励时间
+message YieldTime
+{
+    int32 updateTime = 1;   //上一次更新时间
+    int32 curTime = 2;      //当前挂机时间（分）
+}
+//单个挂机信息
+message YieldSingleInfo
+{
+    string id = 1;      //货币ID
+    int32 num = 2;      //挂机数量
+}
+//挂机信息
+message YieldInfo
+{
+    repeated YieldSingleInfo list = 1;      //所有挂机信息
+}
+
+message TimeBeAttacked
+{
+    int32 timeBeAttacked=1;        //上次被挑战时间
+}
+
+message TouristInfo
+{
+    int32 touristID=1;
+    int32 isUnconfirmed=2;
+}
+
+message UnconfirmedTourist
+{
+    repeated TouristInfo list = 1;        //未点击的游客图鉴
+}
+
+//设置信息
+message SettingInfo
+{
+    string language = 1;        //语言
+    bool isShowBubble = 2;      //是否显示气泡
+}
+
+//单个房间挂机收益信息
+message SingleHookInfo
+{
+    int32 roomID = 1;       //房间ID
+    int32 time = 2;         //挂机至时间
+    bool isHook = 3;        //是否在挂机
+    int32 yield = 4;        //挂机收益
+    int32 adNum = 5;        //广告次数
+    repeated int32 baller = 6;  //挂机球员ID
+}
+
+//所有房间挂机收益信息
+message AllHookInfo
+{
+    map<int32,SingleHookInfo> list = 1;     //所有房间挂机收益信息
+}
+
+//单张制作图纸信息
+message SingleProductInfo
+{
+    int32 id = 1;           //图纸ID
+    int32 milestone = 2;    //制作里程碑数量
+    int32 star = 3;         //星级
+    bool isCollect = 4;     //图纸是否收藏
+    int32 productTime = 5;  //上一次制作时间
+}
+//所有制作图纸信息
+message AllProductInfo
+{
+    map<int32,SingleProductInfo> list = 1;      //所有图纸信息
+}
+//单件装备信息
+message SingleEquipInfo
+{
+    int32 id = 1;       //装备唯一ID
+    int32 configID = 2; //装备配置ID
+}
+//自己所有装备的信息
+message OwnEquipInfo
+{
+    map<int32,SingleEquipInfo> list = 1;    //所有装备信息
+}
+//装备是否被锁定
+message EquipIsLock
+{
+    map<int32,bool> list = 1;       //是否被锁定
+}
+//当前装备唯一ID
+message EquipIDNum
+{
+    int32 id = 1;       //ID
+}
+//单个制作中的装备
+message SingleEquipProduct
+{
+    int32 configID = 1;     //装备配置ID
+    int32 time = 2;         //制作完成时间
+    int32 type = 3;         //制作类型
+}
+//所有制作中装备信息
+message AllEquipProduct
+{
+    map<int32,SingleEquipProduct> list = 1;     //所有制作中装备信息
+}
+//制作信息
+message ProductInfo
+{
+    int32 canProductNum = 1;        //能够同时制作的最大数量
+    int32 productIDNum = 2;         //当前制作唯一ID
+}
+//材料增加时间
+message ResTime
+{
+    map<string,int32> list = 1;         //制作材料增加的时间
+}
+
+
+
+//通行证任务信息
+message PassTaskState
+{
+    int32 id=1;                  //任务id
+    int32 curProgress=2;         //任务进度
+    int32 targetProgress=3;      //任务目标
+    int32 isGet=4;               //奖励是否领取
+}
+
+message enemyItem
+{
+    int32 id=1;                   //排名
+    string name=2;                //姓名
+    int32 fightNum=3;             //战力
+    int32 rune_judgment=4;        //符文1
+    int32 rune_tactics=5;         //符文2
+    int32 rune_cooperation=6;     //符文3
+    int32 rune_cohesive=7;        //符文4
+    string head=8;                //头像
+}
+
+message RankTop10
+{
+    repeated enemyItem rankingList=1;//排行榜信息
+}
+
+message RankEnemy
+{
+    repeated enemyItem rankEnamyList=1;//挑战赛对手信息
+}
+
+message RankRecord
+{
+    int32 record=1;           //rank记录
+}
+
+message goodsItem
+{
+    string name=1;
+    int32 state=2;
+}
+
+message GoodsState
+{
+    repeated goodsItem goodsList=1;//基金通行证购买状态
+}
+
+message unlockedNewsItem
+{
+    int32 id=1;                //信息id
+    int32 state=2;             //是否已弹窗
+    int32 time=3;              //1解锁时间/2弹窗时间
+}
+
+message UnlockedNews//已解锁信息状态
+{
+    repeated unlockedNewsItem unlockedNewsList=1;
+}
+
+message LockingNews//未解锁信息
+{
+    repeated int32 lockingNewsList=1;
+}
+
+message PassExp
+{
+    int32 passExp=1;       //当前总经验
+    int32 weekExp=2;       //本周获得经验
+    int32 week=3;          //第几周
+    int32 seasonCount=4;   //第几赛季
+}
+
+message Guide {
+    repeated int32 list=1;//已完成的引导id列表
+}
+
+//竞技场信息
+message ArenaInfo
+{
+    int32 curGameID = 1;        //联赛ID
+    int32 curRankID = 2;        //挑战赛ID
+    int32 rankNum = 3;          //挑战次数
+    int32 rankAddNum = 4;       //挑战增加次数
+    int32 helpNum = 5;          //赞助次数
+    int32 helpSum = 6;          //赞助总次数
+    float peopleTime = 7;       //观众更新时间
+    float peopleNum = 8;        //当前观众数量
+}
+
+message NormalCount
+{
+    int32 count=1;          //普通宣传数量
+    int32 curTime=2;        //使用普通宣传时间
+}
+
+message SpeedUpPower
+{
+    float power=1;          //加速条
+    int32 curTime=2;        //退出加速时间
+}
+
+message HeadID
+{
+    string headID=1;        //头像id
+}
+
+message SpUseTime
+{
+    int32 time=1;           //免费抽卡使用时间
+}
+
+message NormalAdsCount
+{
+    int32 count=1;          //报纸宣传剩余看广告数量
+}

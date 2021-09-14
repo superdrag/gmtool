@@ -86,7 +86,7 @@ public class RecordView : View
         // }
         itemNum = 0;
         ClearItems();
-        GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("",(int)PHP_QUERY.RECORED_OPERATE,999);
+        GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("",(int)PHP_QUERY.RECORED_OPERATE,0);
 
     }
 

@@ -61,6 +61,7 @@ message MT2LN_BackLowGate
 	int32 accdbid = 2;  
     string gateip = 3; 
     int32 gateport = 4; 
+    int32 ret = 5;
 }
 
 //MsgId.MSG_GT2WD_LOGINWORLD              = 310       --[[gate验证key成功发送world登陆]] 
@@ -108,7 +109,9 @@ message DB2WD_DBLoadInitRoleData
     int32 battlepasstv = 24;
     int32 fundpasstv = 25;
     int32 drawcardcount = 26;
+    int32 leaflet3 = 27;
 
+    string counterstr = 30;
     string cardstr = 31; 
     string fundstr = 32; 
     string passstr = 33;
@@ -119,6 +122,7 @@ message DB2WD_DBLoadInitRoleData
     string weekgiftstr = 43;
     string monthgiftstr = 44;
     string timegiftstr = 45;  
+    string randomcardstr = 46; 
 }
 
 
@@ -138,8 +142,8 @@ message LG2DB_SavePlayerData
     int32 fundpasstv = 17;
     int32 drawcardcount = 18;
 
+    string counterstr = 20;
     // string taskstr = 21;
-    // string counterstr = 22;
     string cardstr = 23;
     string fundstr = 24;
     string passstr = 25;
@@ -150,10 +154,12 @@ message LG2DB_SavePlayerData
     string weekgiftstr = 33;
     string monthgiftstr = 34;
     string timegiftstr = 35; 
-
+    string randomcardstr = 36; 
+    
     int32 coin = 41;//钞票
     int32 diamond = 42;//钻石
     int32 vipcard = 43;//
+    int32 leaflet3 = 44;//
 }
 
 //MsgId.MSG_WD2DB_REFRESHDBDATA           = 502       --[[每天每月每日重置db]]
@@ -253,61 +259,11 @@ message DB2WD_SaveDownload
 //-----------------------------GM  PHP START---------------------------
 
 
-// MsgId.MSG_PHP2DB_GMLOGINACCOUNT            = 801
-message PHP2DB_GMLOGIN
-{
-    string account = 1;
-    string passwd = 2;
-}
-
-// MsgId.MSG_DB2PHP_GMLOGINACCOUNT            = 802
-message DB2PHP_GMLOGIN
-{
-    int32 ret = 1;
-    string account = 2;
-}
-
-// MsgId.MSG_PHP2DB_QUERYUSERINFO            = 803
-message PHP2DB_GMQUERYUSERINFO
-{
-    string account = 1;
-}
-// MsgId.MSG_DB2PHP_QUERYUSERINFO            = 804
-message DB2PHP_GMQUERYUSERINFO
-{
-    int32 ret = 1;
-    string account = 2;
-    int32 accdbid = 3;
-    int32 diamond = 4;
-    int32 cash = 5;
-    int32 vipcard = 6;
-    int32 logintv = 7;
-    int32 offlinetv = 8;    
-}
-
-// MsgId.MSG_PHP2DB_SENDMONEY                  = 805
-message PHP2DB_GMSENDMONEY
-{
-    string account = 1;
-    int32 type = 2;
-    int32 num = 3;
-}
-
-// MsgId.MSG_DB2PHP_SENDMONEY                  = 806
-message DB2PHP_GMSENDMONEY
-{
-    int32 ret = 1;
-    string account = 2;
-    int32 type = 3;
-    int32 num = 4;    
-}
-
-
 // MsgId.MSG_PHP2WD_SENDMAIL                   = 811
 message PHP2WD_GMSendMail
 {
     int32 mailtype = 1;
-    string acclist = 2;
+    string account = 2;
     PBase.PB_MailItem maildata = 3;
 }
 
@@ -315,7 +271,7 @@ message PHP2WD_GMSendMail
 message WD2DB_GMSendMail
 {
     int32 mailtype = 1;
-    string acclist = 2;
+    string account = 2;
     PBase.PB_MailItem maildata = 3;
 }
 
@@ -338,13 +294,15 @@ message PHP2DB_GMQueryAllMail
 // MsgId.MSG_DB2PHP_QUERYALLMAIL               = 816 
 message DB2PHP_GMQueryAllMail
 {
-    repeated PBase.PB_MailItemEx maillist = 1;
+    int32 type = 1;
+    repeated PBase.PB_MailItemEx maillist = 2;
 }
 
 // MsgId.MSG_PHP2WD_DELETEMAIL                = 817
 message PHP2WD_GMDeleteMail
 {
     string mailid = 1;
+    string account = 2;
 }
 
 // MsgId.MSG_WD2DB_DELETEMAIL                = 818    
@@ -386,7 +344,7 @@ message HTTP2WD_IOSPayCheck
     string paycode = 5;
     int32 paytype = 6;
     string payorder = 7;
-    int32 repair = 8;
+    int32 repair = 8;    
 }
 
 //--------------------------------HTTP END--------------------------------------------

@@ -29,6 +29,7 @@ public enum VIEWID
     RecordView = 43,
 
     PayView = 45,
+    SaveView = 46,
 
   
     //-------------------------------
@@ -72,6 +73,8 @@ public static class UIMgr
         RegisterUI(VIEWID.GMAccNew,GMAccNewView.Instance);    
 
         RegisterUI(VIEWID.RecordView,RecordView.Instance);
+
+        RegisterUI(VIEWID.SaveView,SaveView.Instance);
     }    
 
     public static void Init()

@@ -46,6 +46,7 @@ public class MenuView : View
         Button limitBtn = viewRoot.Find("limit").GetComponent<Button>();
         Button gmaccBtn = viewRoot.Find("gmacc").GetComponent<Button>();
         Button recordBtn = viewRoot.Find("record").GetComponent<Button>();
+        Button saveBtn = viewRoot.Find("save").GetComponent<Button>();
 
         EventTriggerListener.Get(chongzhiBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(hexinBtn.gameObject).onClick = OnBtnEvent;
@@ -54,6 +55,7 @@ public class MenuView : View
         EventTriggerListener.Get(limitBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(gmaccBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(recordBtn.gameObject).onClick = OnBtnEvent;
+        EventTriggerListener.Get(saveBtn.gameObject).onClick = OnBtnEvent;
 
         btnList.Add(hexinBtn);
         btnList.Add(chongzhiBtn);
@@ -62,6 +64,7 @@ public class MenuView : View
         btnList.Add(limitBtn);
         btnList.Add(gmaccBtn);
         btnList.Add(recordBtn);
+        btnList.Add(saveBtn);
 
         switchViewList.Add(VIEWID.BLANK);
         switchViewList.Add(VIEWID.Mail);
@@ -74,6 +77,7 @@ public class MenuView : View
         switchViewList.Add(VIEWID.GMAcc);
         switchViewList.Add(VIEWID.GMAccNew);
         switchViewList.Add(VIEWID.RecordView);
+        switchViewList.Add(VIEWID.SaveView);
 
         curIndex = 1;
     }
@@ -114,7 +118,11 @@ public class MenuView : View
         else if( this.curIndex == 7 )
         {
             UIMgr.ShowUI(VIEWID.RecordView);
-        }                                 
+        }  
+        else if( this.curIndex == 8)
+        {
+            UIMgr.ShowUI(VIEWID.SaveView);
+        }                                           
         else
         {
             UIMgr.ShowUI(VIEWID.BLANK);

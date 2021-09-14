@@ -61,6 +61,7 @@ message C2S_Login
     int32 guest = 5;    //1游客 0非游客 
     int32 reconn = 6;    //断线重连
     string platform = 11; //平台id
+    int32 country = 12;    //国家
 }
 
 //MSG_LN2CL_GATEIPANDPORT         = 2011,     //成功登陆返回gate链接信息
@@ -73,6 +74,7 @@ message S2C_Login
     int32 gateport=5;//服务器端口
     int32 time=6;//登录时间戳
     string acccode=7;//账号绑定加密码
+    int32 ret = 8;
 }
 
 //MSG_CL2GT_LOGINGATE             = 1012,     //连接gate验证签名
@@ -111,7 +113,9 @@ message S2C_LoginRoleData
     int32 drawcardcount = 4; //总抽卡次数
     int32 leaflet3 = 5; //喇叭 抽卡
     repeated PBase.PB_TeamCardInfo teamcardlist = 11;  //卡牌信息
-    map<int32, PBase.PB_GiftPack> firstgiftlist = 12;  //礼包信息    
+    map<int32, PBase.PB_GiftPack> firstgiftlist = 12;  //礼包信息
+    repeated int32 randomcardlist = 13;  //每日5张随机卡牌
+    int32 randomcardcount = 14;//随机卡牌次数
 }
 
 //MsgId.MSG_CL2LG_STOREBASEINFO           = 1201      --基本信息存储
@@ -162,6 +166,7 @@ message C2S_UseDiamod
     int32 num = 1;  //使用钻石数量
     int32 event = 2; //
     repeated int32 params = 3;
+    int32 goodsid = 4;  //商品id
 }
 
 // MsgId.MSG_WD2CL_USEDIAMOD               = 2501      --使用钻石
@@ -171,6 +176,7 @@ message S2C_UseDiamod
     int32 num = 2;  //剩下钻石数量
     int32 event = 3;
     repeated int32 params = 4;
+    int32 goodsid = 5;  //商品id
 }
 
 // MsgId.MSG_CL2WD_WATCHADV               = 1502      --[[看广告]]  
@@ -178,12 +184,14 @@ message C2S_WatchAdv
 {
     int32 event = 1; //
     repeated int32 params = 2;
+    int32 goodsid = 3;  //商品id
 }
 // MsgId.MSG_WD2CL_WATCHADV               = 2502      --[[看广告]]
 message S2C_WatchAdv
 {
     int32 event = 1; //
     repeated int32 params = 2;
+    int32 goodsid = 3;  //商品id
 }
 
 // MsgId.MSG_CL2WD_SETNICKNAME             = 1505      --[[改昵称]]  
@@ -288,8 +296,8 @@ message S2C_ShowTeamCardList
 // MsgId.MSG_CL2WD_DRAWCARD                = 1522      --抽卡
 message C2S_DrawCard
 {
-    int32 boxid = 1;
-    repeated int32 areaunlock  = 2;
+    int32 boxid = 1;    //101广告抽卡 102 钻石抽卡 103随机出现球员
+    int32 cardid = 2;    //随机球员卡id
 }
 
 // MsgId.MSG_WD2CL_DRAWCARD                = 2522      --抽卡
@@ -297,7 +305,8 @@ message S2C_DrawCard
 {
     int32 ret = 1;
     int32 boxid = 2;
-    repeated string rewards = 3;
+    int32 cardid = 3;
+    repeated string rewards = 4;
 }
 
 // MsgId.MSG_CL2WD_UPLEVELCARD             = 1523      --卡牌等级升级
@@ -436,7 +445,7 @@ message S2C_IOSPayCheck
 {
     int32 ret = 1;
     int32 payid = 2;    //商品id
-    int32 paytype = 3;  //购买类型 101首冲 102商城礼包
+    int32 paytype = 3;  //购买类型 101首冲 102商城礼包 
 }
 
 
@@ -459,7 +468,7 @@ message S2C_SaveUpload
 // MsgId.MSG_CL2WD_SAVEDOWNLOAD            = 1605      --[[下载存档]]  
 message C2S_SaveDownload
 {
-    string filename = 1;
+    string filename = 1;  //all代表全部
 }
 
 // MsgId.MSG_WD2CL_SAVEDOWNLOAD            = 2605      --[[下载存档]]

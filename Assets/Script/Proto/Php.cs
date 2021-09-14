@@ -52,24 +52,28 @@ namespace PPhp {
             "DwoHYWNjb3VudBgDIAEoCSJICg1DMlNfR01Nb2RNYWlsEg8KB21vZHR5cGUY",
             "ASABKAUSJgoIbWFpbGRhdGEYAiABKAsyFC5QQmFzZS5QQl9NYWlsSXRlbUV4",
             "Ii0KDVMyQ19HTU1vZE1haWwSCwoDcmV0GAEgASgFEg8KB21vZHR5cGUYAiAB",
-            "KAUiQwoNQzJTX0dNQ29tbWFuZBIRCgljb21tYW5kaWQYASABKAUSDwoHYWNj",
-            "bGlzdBgCIAMoCRIOCgZwYXJhbXMYAyADKAkiUAoNUzJDX0dNQ29tbWFuZBIL",
-            "CgNyZXQYASABKAUSEQoJY29tbWFuZGlkGAIgASgFEg8KB2FjY2xpc3QYAyAD",
-            "KAkSDgoGcGFyYW1zGAQgAygJIksKFUMyU19HTVF1ZXJ5Tm9ybWFsSW5mbxIR",
-            "CglxdWVyeXR5cGUYASABKAUSDwoHYWNjb3VudBgCIAEoCRIOCgZwYXJhbXMY",
-            "AyADKAUicAoVUzJDX0dNUXVlcnlOb3JtYWxJbmZvEgsKA3JldBgBIAEoBRIR",
-            "CglxdWVyeXR5cGUYAiABKAUSDwoHYWNjb3VudBgDIAEoCRImCgZyZXN1bHQY",
-            "BCADKAsyFi5QQmFzZS5QQl9QYXJhbVN0ckRpY3QiEAoOQzJTX0dNQ29yZURh",
-            "dGEiEAoOUzJDX0dNQ29yZURhdGEiLgoNQzJTX0dNUGF5RGF0YRIMCgRwYWdl",
-            "GAEgASgFEg8KB2FjY291bnQYAiABKAkiwgEKDVMyQ19HTVBheURhdGESDAoE",
-            "cGFnZRgBIAEoBRIPCgdhY2NvdW50GAIgASgJEhAKCHBsYXRmcm9tGAMgASgJ",
-            "Eg8KB2NvdW50cnkYBCABKAkSEAoIcGF5b3JkZXIYBSABKAkSDgoGcGF5bnVt",
-            "GAYgASgFEg0KBXN0YXRlGAcgASgFEg8KB3BheXRpbWUYCCABKAUSDQoFcGF5",
-            "aWQYCSABKAUSDQoFZXZlbnQYCiABKAUSDwoHcGF5Y29kZRgLIAEoCSJFCg9D",
-            "MlNfR01QYXlSZXBhaXISDwoHYWNjb3VudBgBIAEoCRIPCgdwYXljb2RlGAIg",
-            "ASgJEhAKCHBheW9yZGVyGAMgASgJIkEKD1MyQ19HTVBheVJlcGFpchILCgNy",
-            "ZXQYASABKAUSDwoHcGF5Y29kZRgCIAEoCRIQCghwYXlvcmRlchgDIAEoCWIG",
-            "cHJvdG8z"));
+            "KAUiUQoNQzJTX0dNQ29tbWFuZBIRCgljb21tYW5kaWQYASABKAUSDwoHYWNj",
+            "bGlzdBgCIAMoCRIOCgZwYXJhbXMYAyADKAkSDAoEZGF0YRgEIAEoDCJQCg1T",
+            "MkNfR01Db21tYW5kEgsKA3JldBgBIAEoBRIRCgljb21tYW5kaWQYAiABKAUS",
+            "DwoHYWNjbGlzdBgDIAMoCRIOCgZwYXJhbXMYBCADKAkiZAoVQzJTX0dNUXVl",
+            "cnlOb3JtYWxJbmZvEhEKCXF1ZXJ5dHlwZRgBIAEoBRIPCgdhY2NvdW50GAIg",
+            "ASgJEhIKBnBhcmFtcxgDIAMoBUICEAASEwoHcGFyYW1zMhgEIAMoCUICEAAi",
+            "fgoVUzJDX0dNUXVlcnlOb3JtYWxJbmZvEgsKA3JldBgBIAEoBRIRCglxdWVy",
+            "eXR5cGUYAiABKAUSDwoHYWNjb3VudBgDIAEoCRImCgZyZXN1bHQYBCADKAsy",
+            "Fi5QQmFzZS5QQl9QYXJhbVN0ckRpY3QSDAoEZGF0YRgFIAEoDCI2ChVDMlNf",
+            "R01RdWVyeUNsaWVudFNhdmUSDwoHYWNjb3VudBgBIAEoCRIMCgRmaWxlGAIg",
+            "ASgJIlEKFVMyQ19HTVF1ZXJ5Q2xpZW50U2F2ZRILCgNyZXQYASABKAUSDwoH",
+            "YWNjb3VudBgCIAEoCRIMCgRmaWxlGAMgASgJEgwKBGRhdGEYBCABKAwiEAoO",
+            "QzJTX0dNQ29yZURhdGEiEAoOUzJDX0dNQ29yZURhdGEiLgoNQzJTX0dNUGF5",
+            "RGF0YRIMCgRwYWdlGAEgASgFEg8KB2FjY291bnQYAiABKAkiwgEKDVMyQ19H",
+            "TVBheURhdGESDAoEcGFnZRgBIAEoBRIPCgdhY2NvdW50GAIgASgJEhAKCHBs",
+            "YXRmcm9tGAMgASgJEg8KB2NvdW50cnkYBCABKAkSEAoIcGF5b3JkZXIYBSAB",
+            "KAkSDgoGcGF5bnVtGAYgASgFEg0KBXN0YXRlGAcgASgFEg8KB3BheXRpbWUY",
+            "CCABKAUSDQoFcGF5aWQYCSABKAUSDQoFZXZlbnQYCiABKAUSDwoHcGF5Y29k",
+            "ZRgLIAEoCSJFCg9DMlNfR01QYXlSZXBhaXISDwoHYWNjb3VudBgBIAEoCRIP",
+            "CgdwYXljb2RlGAIgASgJEhAKCHBheW9yZGVyGAMgASgJIkEKD1MyQ19HTVBh",
+            "eVJlcGFpchILCgNyZXQYASABKAUSDwoHcGF5Y29kZRgCIAEoCRIQCghwYXlv",
+            "cmRlchgDIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::PBase.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -89,10 +93,12 @@ namespace PPhp {
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMDeleteMail), global::PPhp.S2C_GMDeleteMail.Parser, new[]{ "Ret", "Mailid", "Account" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMModMail), global::PPhp.C2S_GMModMail.Parser, new[]{ "Modtype", "Maildata" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMModMail), global::PPhp.S2C_GMModMail.Parser, new[]{ "Ret", "Modtype" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMCommand), global::PPhp.C2S_GMCommand.Parser, new[]{ "Commandid", "Acclist", "Params" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMCommand), global::PPhp.C2S_GMCommand.Parser, new[]{ "Commandid", "Acclist", "Params", "Data" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMCommand), global::PPhp.S2C_GMCommand.Parser, new[]{ "Ret", "Commandid", "Acclist", "Params" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQueryNormalInfo), global::PPhp.C2S_GMQueryNormalInfo.Parser, new[]{ "Querytype", "Account", "Params" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryNormalInfo), global::PPhp.S2C_GMQueryNormalInfo.Parser, new[]{ "Ret", "Querytype", "Account", "Result" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQueryNormalInfo), global::PPhp.C2S_GMQueryNormalInfo.Parser, new[]{ "Querytype", "Account", "Params", "Params2" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryNormalInfo), global::PPhp.S2C_GMQueryNormalInfo.Parser, new[]{ "Ret", "Querytype", "Account", "Result", "Data" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQueryClientSave), global::PPhp.C2S_GMQueryClientSave.Parser, new[]{ "Account", "File" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryClientSave), global::PPhp.S2C_GMQueryClientSave.Parser, new[]{ "Ret", "Account", "File", "Data" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMCoreData), global::PPhp.C2S_GMCoreData.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMCoreData), global::PPhp.S2C_GMCoreData.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMPayData), global::PPhp.C2S_GMPayData.Parser, new[]{ "Page", "Account" }, null, null, null),
@@ -3296,6 +3302,7 @@ namespace PPhp {
       commandid_ = other.commandid_;
       acclist_ = other.acclist_.Clone();
       params_ = other.params_.Clone();
+      data_ = other.data_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3337,6 +3344,17 @@ namespace PPhp {
       get { return params_; }
     }
 
+    /// <summary>Field number for the "data" field.</summary>
+    public const int DataFieldNumber = 4;
+    private pb::ByteString data_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Data {
+      get { return data_; }
+      set {
+        data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as C2S_GMCommand);
@@ -3353,6 +3371,7 @@ namespace PPhp {
       if (Commandid != other.Commandid) return false;
       if(!acclist_.Equals(other.acclist_)) return false;
       if(!params_.Equals(other.params_)) return false;
+      if (Data != other.Data) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3362,6 +3381,7 @@ namespace PPhp {
       if (Commandid != 0) hash ^= Commandid.GetHashCode();
       hash ^= acclist_.GetHashCode();
       hash ^= params_.GetHashCode();
+      if (Data.Length != 0) hash ^= Data.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3381,6 +3401,10 @@ namespace PPhp {
       }
       acclist_.WriteTo(output, _repeated_acclist_codec);
       params_.WriteTo(output, _repeated_params_codec);
+      if (Data.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteBytes(Data);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3394,6 +3418,9 @@ namespace PPhp {
       }
       size += acclist_.CalculateSize(_repeated_acclist_codec);
       size += params_.CalculateSize(_repeated_params_codec);
+      if (Data.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -3410,6 +3437,9 @@ namespace PPhp {
       }
       acclist_.Add(other.acclist_);
       params_.Add(other.params_);
+      if (other.Data.Length != 0) {
+        Data = other.Data;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3431,6 +3461,10 @@ namespace PPhp {
           }
           case 26: {
             params_.AddEntriesFrom(input, _repeated_params_codec);
+            break;
+          }
+          case 34: {
+            Data = input.ReadBytes();
             break;
           }
         }
@@ -3672,6 +3706,7 @@ namespace PPhp {
       querytype_ = other.querytype_;
       account_ = other.account_;
       params_ = other.params_.Clone();
+      params2_ = other.params2_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3707,11 +3742,21 @@ namespace PPhp {
     /// <summary>Field number for the "params" field.</summary>
     public const int ParamsFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_params_codec
-        = pb::FieldCodec.ForInt32(26);
+        = pb::FieldCodec.ForInt32(24);
     private readonly pbc::RepeatedField<int> params_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> Params {
       get { return params_; }
+    }
+
+    /// <summary>Field number for the "params2" field.</summary>
+    public const int Params2FieldNumber = 4;
+    private static readonly pb::FieldCodec<string> _repeated_params2_codec
+        = pb::FieldCodec.ForString(34);
+    private readonly pbc::RepeatedField<string> params2_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Params2 {
+      get { return params2_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3730,6 +3775,7 @@ namespace PPhp {
       if (Querytype != other.Querytype) return false;
       if (Account != other.Account) return false;
       if(!params_.Equals(other.params_)) return false;
+      if(!params2_.Equals(other.params2_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3739,6 +3785,7 @@ namespace PPhp {
       if (Querytype != 0) hash ^= Querytype.GetHashCode();
       if (Account.Length != 0) hash ^= Account.GetHashCode();
       hash ^= params_.GetHashCode();
+      hash ^= params2_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3761,6 +3808,7 @@ namespace PPhp {
         output.WriteString(Account);
       }
       params_.WriteTo(output, _repeated_params_codec);
+      params2_.WriteTo(output, _repeated_params2_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3776,6 +3824,7 @@ namespace PPhp {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
       }
       size += params_.CalculateSize(_repeated_params_codec);
+      size += params2_.CalculateSize(_repeated_params2_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -3794,6 +3843,7 @@ namespace PPhp {
         Account = other.Account;
       }
       params_.Add(other.params_);
+      params2_.Add(other.params2_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3816,6 +3866,10 @@ namespace PPhp {
           case 26:
           case 24: {
             params_.AddEntriesFrom(input, _repeated_params_codec);
+            break;
+          }
+          case 34: {
+            params2_.AddEntriesFrom(input, _repeated_params2_codec);
             break;
           }
         }
@@ -3856,6 +3910,7 @@ namespace PPhp {
       querytype_ = other.querytype_;
       account_ = other.account_;
       result_ = other.result_.Clone();
+      data_ = other.data_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3909,6 +3964,17 @@ namespace PPhp {
       get { return result_; }
     }
 
+    /// <summary>Field number for the "data" field.</summary>
+    public const int DataFieldNumber = 5;
+    private pb::ByteString data_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Data {
+      get { return data_; }
+      set {
+        data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as S2C_GMQueryNormalInfo);
@@ -3926,6 +3992,7 @@ namespace PPhp {
       if (Querytype != other.Querytype) return false;
       if (Account != other.Account) return false;
       if(!result_.Equals(other.result_)) return false;
+      if (Data != other.Data) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3936,6 +4003,7 @@ namespace PPhp {
       if (Querytype != 0) hash ^= Querytype.GetHashCode();
       if (Account.Length != 0) hash ^= Account.GetHashCode();
       hash ^= result_.GetHashCode();
+      if (Data.Length != 0) hash ^= Data.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3962,6 +4030,10 @@ namespace PPhp {
         output.WriteString(Account);
       }
       result_.WriteTo(output, _repeated_result_codec);
+      if (Data.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteBytes(Data);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3980,6 +4052,9 @@ namespace PPhp {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
       }
       size += result_.CalculateSize(_repeated_result_codec);
+      if (Data.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -4001,6 +4076,9 @@ namespace PPhp {
         Account = other.Account;
       }
       result_.Add(other.result_);
+      if (other.Data.Length != 0) {
+        Data = other.Data;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -4028,6 +4106,386 @@ namespace PPhp {
             result_.AddEntriesFrom(input, _repeated_result_codec);
             break;
           }
+          case 42: {
+            Data = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// MsgId.MSG_CL2PHP_QUERYCLIENTSAVE            = 1869    --[[GM存档查询]]  ProtoDict[MsgId.MSG_CL2PHP_QUERYCLIENTSAVE] = "PPhp.C2S_GMQueryClientSave"
+  /// </summary>
+  public sealed partial class C2S_GMQueryClientSave : pb::IMessage<C2S_GMQueryClientSave> {
+    private static readonly pb::MessageParser<C2S_GMQueryClientSave> _parser = new pb::MessageParser<C2S_GMQueryClientSave>(() => new C2S_GMQueryClientSave());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<C2S_GMQueryClientSave> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[20]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMQueryClientSave() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMQueryClientSave(C2S_GMQueryClientSave other) : this() {
+      account_ = other.account_;
+      file_ = other.file_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public C2S_GMQueryClientSave Clone() {
+      return new C2S_GMQueryClientSave(this);
+    }
+
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 1;
+    private string account_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Account {
+      get { return account_; }
+      set {
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "file" field.</summary>
+    public const int FileFieldNumber = 2;
+    private string file_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string File {
+      get { return file_; }
+      set {
+        file_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as C2S_GMQueryClientSave);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(C2S_GMQueryClientSave other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Account != other.Account) return false;
+      if (File != other.File) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (File.Length != 0) hash ^= File.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Account.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Account);
+      }
+      if (File.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(File);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      }
+      if (File.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(File);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(C2S_GMQueryClientSave other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Account.Length != 0) {
+        Account = other.Account;
+      }
+      if (other.File.Length != 0) {
+        File = other.File;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Account = input.ReadString();
+            break;
+          }
+          case 18: {
+            File = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// MsgId.MSG_PHP2CL_QUERYCLIENTSAVE            = 2869    --[[GM存档查询]]  ProtoDict[MsgId.MSG_PHP2CL_QUERYCLIENTSAVE] = "PPhp.S2C_GMQueryClientSave"
+  /// </summary>
+  public sealed partial class S2C_GMQueryClientSave : pb::IMessage<S2C_GMQueryClientSave> {
+    private static readonly pb::MessageParser<S2C_GMQueryClientSave> _parser = new pb::MessageParser<S2C_GMQueryClientSave>(() => new S2C_GMQueryClientSave());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<S2C_GMQueryClientSave> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[21]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMQueryClientSave() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMQueryClientSave(S2C_GMQueryClientSave other) : this() {
+      ret_ = other.ret_;
+      account_ = other.account_;
+      file_ = other.file_;
+      data_ = other.data_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public S2C_GMQueryClientSave Clone() {
+      return new S2C_GMQueryClientSave(this);
+    }
+
+    /// <summary>Field number for the "ret" field.</summary>
+    public const int RetFieldNumber = 1;
+    private int ret_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Ret {
+      get { return ret_; }
+      set {
+        ret_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 2;
+    private string account_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Account {
+      get { return account_; }
+      set {
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "file" field.</summary>
+    public const int FileFieldNumber = 3;
+    private string file_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string File {
+      get { return file_; }
+      set {
+        file_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "data" field.</summary>
+    public const int DataFieldNumber = 4;
+    private pb::ByteString data_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Data {
+      get { return data_; }
+      set {
+        data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as S2C_GMQueryClientSave);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(S2C_GMQueryClientSave other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Ret != other.Ret) return false;
+      if (Account != other.Account) return false;
+      if (File != other.File) return false;
+      if (Data != other.Data) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Ret != 0) hash ^= Ret.GetHashCode();
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (File.Length != 0) hash ^= File.GetHashCode();
+      if (Data.Length != 0) hash ^= Data.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Ret != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Ret);
+      }
+      if (Account.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Account);
+      }
+      if (File.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(File);
+      }
+      if (Data.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteBytes(Data);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Ret != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Ret);
+      }
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      }
+      if (File.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(File);
+      }
+      if (Data.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(S2C_GMQueryClientSave other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Ret != 0) {
+        Ret = other.Ret;
+      }
+      if (other.Account.Length != 0) {
+        Account = other.Account;
+      }
+      if (other.File.Length != 0) {
+        File = other.File;
+      }
+      if (other.Data.Length != 0) {
+        Data = other.Data;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Ret = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Account = input.ReadString();
+            break;
+          }
+          case 26: {
+            File = input.ReadString();
+            break;
+          }
+          case 34: {
+            Data = input.ReadBytes();
+            break;
+          }
         }
       }
     }
@@ -4045,7 +4503,7 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[20]; }
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4149,7 +4607,7 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[21]; }
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4253,7 +4711,7 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[22]; }
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4413,7 +4871,7 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[23]; }
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4825,7 +5283,7 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[24]; }
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5013,7 +5471,7 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[25]; }
+      get { return global::PPhp.PhpReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

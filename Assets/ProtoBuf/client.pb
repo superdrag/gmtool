@@ -1,5 +1,5 @@
 
-¥+
+›-
 client.protoPClientcommon.proto")
 S2C_ErrorCode
 errcode (Rerrcode"
@@ -8,7 +8,7 @@
 curtime (Rcurtime"(
 S2C_ShutDwon
 leftsec (Rleftsec"
-S2C_ReloginKick"½
+S2C_ReloginKick"×
 	C2S_Login
 account (	Raccount
 passwd (	Rpasswd
@@ -16,7 +16,8 @@
 headicon (	Rheadicon
 guest (Rguest
 reconn (Rreconn
-platform (	Rplatform"µ
+platform (	Rplatform
+country (Rcountry"Ç
 	S2C_Login
 account (	Raccount
 accdbid (Raccdbid
@@ -24,7 +25,8 @@
 gateip (	Rgateip
 gateport (Rgateport
 time (Rtime
-acccode (	Racccode"±
+acccode (	Racccode
+ret (Rret"±
 C2S_LoginGate
 account (	Raccount
 name (	Rname
@@ -48,7 +50,7 @@ firstlogin
 
 dayRefresh (R
 dayRefresh
-nickname (	Rnickname"ˆ
+nickname (	Rnickname"Ú
 S2C_LoginRoleData
 reconn (Rreconn
 diamond (Rdiamond
@@ -56,7 +58,9 @@ dayRefresh
 drawcardcount (Rdrawcardcount
 leaflet3 (Rleaflet3:
 teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlistS
-firstgiftlist (2-.PClient.S2C_LoginRoleData.FirstgiftlistEntryRfirstgiftlistT
+firstgiftlist (2-.PClient.S2C_LoginRoleData.FirstgiftlistEntryRfirstgiftlist&
+randomcardlist (Rrandomcardlist(
+randomcardcount (RrandomcardcountT
 FirstgiftlistEntry
 key (Rkey(
 value (2.PBase.PB_GiftPackRvalue:8"
@@ -69,22 +73,26 @@ dayRefresh
 	diamodnum (R	diamodnum":
 S2C_UpdateCurrency
 type (	Rtype
-num (Rnum"O
+num (Rnum"i
 C2S_UseDiamod
 num (Rnum
 event (Revent
-params (Rparams"a
+params (Rparams
+goodsid (Rgoodsid"{
 S2C_UseDiamod
 ret (Rret
 num (Rnum
 event (Revent
-params (Rparams"<
+params (Rparams
+goodsid (Rgoodsid"V
 C2S_WatchAdv
 event (Revent
-params (Rparams"<
+params (Rparams
+goodsid (Rgoodsid"V
 S2C_WatchAdv
 event (Revent
-params (Rparams"%
+params (Rparams
+goodsid (Rgoodsid"%
 C2S_SetNickName
 name (	Rname"%
 S2C_SetNickName
@@ -115,16 +123,15 @@ dayRefresh
 readlist (	Rreadlist"
 C2S_ShowTeamCardList"R
 S2C_ShowTeamCardList:
-teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"D
+teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"<
 C2S_DrawCard
-boxid (Rboxid
-
-areaunlock (R
-areaunlock"P
+boxid (Rboxid
+cardid (Rcardid"h
 S2C_DrawCard
 ret (Rret
-boxid (Rboxid
-rewards (	Rrewards"G
+boxid (Rboxid
+cardid (Rcardid
+rewards (	Rrewards"G
 C2S_UpLevelCard
 cardid (Rcardid
 	cardlevel (R	cardlevel"Y

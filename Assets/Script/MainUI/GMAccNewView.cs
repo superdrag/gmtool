@@ -23,6 +23,7 @@ public class GMAccNewView : View
     private InputField passwdText;  
     private InputField nameText;
     private Dropdown rankChoose;
+
     private Text rankText;
     private int curRank;
     private int editType;

@@ -236,13 +236,27 @@ public class GlobalCtl
         {
             RecordView view = (RecordView)UIMgr.GetUI(VIEWID.RecordView) ;
 
-
             for (int i = 0; i < _pb.Result.Count; i++)
             {
                 PB_ParamStrDict rst =  _pb.Result[i];
                 view.AddItem( rst );
             }     
-        }        
+        }       
+        else if (_pb.Querytype == (int)PHP_QUERY.CLIENTSAVELIST)
+        {
+            SaveView view = (SaveView)UIMgr.GetUI(VIEWID.SaveView) ;
+
+            for (int i = 0; i < _pb.Result.Count; i++)
+            {
+                PB_ParamStrDict rst =  _pb.Result[i];
+                view.AddDropData(rst);
+            }     
+        }     
+        else if (_pb.Querytype == (int)PHP_QUERY.CLIENTSAVEDATA)
+        {
+            SaveView view = (SaveView)UIMgr.GetUI(VIEWID.SaveView) ;
+            view.SetDataText(_pb.Result[0].Dict["file"],_pb.Data.ToByteArray()); 
+        }
     }
 
     public void MSG_PHP2CL_GMPAYDATA(MsgPack msg)
@@ -251,8 +265,7 @@ public class GlobalCtl
 
         PayView payView = UIMgr.GetUI<PayView>(VIEWID.PayView);
         payView.AddItem( _pb );
-    }
-        
+    }        
 
     public static void MSG_PHP2CL_GMPAYREPAIR(MsgPack msg)
     {
