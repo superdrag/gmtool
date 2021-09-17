@@ -255,7 +255,7 @@ public class GlobalCtl
         else if (_pb.Querytype == (int)PHP_QUERY.CLIENTSAVEDATA)
         {
             SaveView view = (SaveView)UIMgr.GetUI(VIEWID.SaveView) ;
-            view.SetDataText(_pb.Result[0].Dict["file"],_pb.Data.ToByteArray()); 
+            view.SetDataText(_pb.Result[0].Dict["file"],_pb.Result[0].Dict["data"]); 
         }
     }
 

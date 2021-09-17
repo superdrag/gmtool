@@ -85,21 +85,22 @@ public class SaveView : View
     {
         string file = dropdown.options[dropdownIndex].text;
         
-        byte[] bytes = System.Text.Encoding.Default.GetBytes(dataText.text);
+        //byte[] bytes = System.Text.Encoding.Default.GetBytes(dataText.text);
 
         C2S_GMCommand pb = new C2S_GMCommand();
         pb.Commandid = (int)PHP_COMMAMD.CLIENTSAVE;
         pb.Acclist.Add(accountText.text);
         pb.Params.Add(file);
+        pb.Params.Add(dataText.text);
 
-        if (file == "Currency")
-        {
-            Currency cy = new Currency();
-            Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
-            cy.MergeFrom(pbStream);
-            byte[] data = System.Text.Encoding.Default.GetBytes(cy.ToString());
-            pb.Data = Google.Protobuf.ByteString.CopyFrom(data);
-        }
+        // if (file == "Currency")
+        // {
+        //     Currency cy = new Currency();
+        //     Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
+        //     cy.MergeFrom(pbStream);
+        //     byte[] data = System.Text.Encoding.Default.GetBytes(cy.ToString());
+        //     pb.Data = Google.Protobuf.ByteString.CopyFrom(data);
+        // }
         
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMCOMMAND,pb);          
     }
@@ -112,28 +113,31 @@ public class SaveView : View
         dropdown.options.Add(od1);            
     }
 
-    public void SetDataText(string file,byte[] bytes)
+    public void SetDataText(string file,string data)
     {
-        if (file == "Currency" )
-        {
-            Currency cy = new Currency();
-            //byte[] bytes = System.Text.Encoding.Default.GetBytes(s);
-            Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
-            cy.MergeFrom(pbStream);
-            //Output.Log("unpack pb <--- ",msgid, pb.ToString());
-            Logger.Log("SetDataTex" + cy.ToString());
-            dataText.text = cy.ToString();
-        }   
-        if (file == "OwnEquipInfo" )
-        {
-            OwnEquipInfo cy = new OwnEquipInfo();
-            //byte[] bytes = System.Text.Encoding.Default.GetBytes(s);
-            Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
-            cy.MergeFrom(pbStream);
-            //Output.Log("unpack pb <--- ",msgid, pb.ToString());
-            Logger.Log("SetDataTex" + cy.ToString());
-            dataText.text = cy.ToString();
-        }                
+        Logger.Log("SetDataTex" + data);
+        dataText.text = data;
+
+        // if (file == "Currency" )
+        // {
+        //     Currency cy = new Currency();
+        //     //byte[] bytes = System.Text.Encoding.Default.GetBytes(s);
+        //     Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
+        //     cy.MergeFrom(pbStream);
+        //     //Output.Log("unpack pb <--- ",msgid, pb.ToString());
+        //     Logger.Log("SetDataTex" + cy.ToString());
+        //     dataText.text = cy.ToString();
+        // }   
+        // if (file == "OwnEquipInfo" )
+        // {
+        //     OwnEquipInfo cy = new OwnEquipInfo();
+        //     //byte[] bytes = System.Text.Encoding.Default.GetBytes(s);
+        //     Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
+        //     cy.MergeFrom(pbStream);
+        //     //Output.Log("unpack pb <--- ",msgid, pb.ToString());
+        //     Logger.Log("SetDataTex" + cy.ToString());
+        //     dataText.text = cy.ToString();
+        // }                
     }
 
     private void onDropDownHandle(int index)
