@@ -16,6 +16,8 @@ public class MenuView : View
 
     int curIndex;
 
+    public static VIEWID curViewId;
+
     public static MenuView Instance
     {
         get
@@ -93,40 +95,42 @@ public class MenuView : View
 
         if( this.curIndex == 1 )
         {
-            UIMgr.ShowUI(VIEWID.CoreView);
+            curViewId = VIEWID.CoreView;
         }        
         else if( this.curIndex == 2 )
         {
-            UIMgr.ShowUI(VIEWID.Recharge);
+            curViewId = VIEWID.Recharge;
         }
         else if( this.curIndex == 3 )
         {
-            UIMgr.ShowUI(VIEWID.Mail);
+            curViewId = VIEWID.Mail;
         }    
         else if( this.curIndex == 4 )
         {
-            UIMgr.ShowUI(VIEWID.PayView);
+            curViewId = VIEWID.PayView;
         } 
         else if( this.curIndex == 5 )
         {
-            UIMgr.ShowUI(VIEWID.Limit);
+            curViewId = VIEWID.Limit;
         }         
         else if( this.curIndex == 6 )
         {
-            UIMgr.ShowUI(VIEWID.GMAcc);
+            curViewId = VIEWID.GMAcc;
         }     
         else if( this.curIndex == 7 )
         {
-            UIMgr.ShowUI(VIEWID.RecordView);
+            curViewId = VIEWID.RecordView;
         }  
         else if( this.curIndex == 8)
         {
-            UIMgr.ShowUI(VIEWID.SaveView);
+            curViewId = VIEWID.SaveView;
         }                                           
         else
         {
-            UIMgr.ShowUI(VIEWID.BLANK);
+            curViewId = VIEWID.BLANK;
         }
+
+        UIMgr.ShowUI(curViewId);
 
         foreach (var item in btnList)
         {

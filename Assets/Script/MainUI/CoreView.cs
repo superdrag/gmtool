@@ -42,19 +42,12 @@ public class CoreView : View
         UIHelper.AddChild(UIMgr.UIMain, viewRoot);  
 
         Transform bg = viewRoot.Find("bg");
-
-        queryBtn = bg.Find("btnGroup/queryBtn").GetComponent<Button>();  
-        EventTriggerListener.Get(queryBtn.gameObject).onClick = onClickQuery;
-
-        beginDateText = bg.Find("btnGroup/InputField").GetComponent<InputField>();
-        endDateText = bg.Find("btnGroup/InputField2").GetComponent<InputField>();
-
         Content = bg.Find("Scroll View/Viewport/Content");
     }
 
     override public void OnShow(params object[] args)
     {        
-        onClickQuery(queryBtn.gameObject);
+        //onClickQuery(queryBtn.gameObject);
 
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
         rect.sizeDelta = new Vector2(0, (float)RecordModel.Instance.coreList.Count * (float)73.6 );
@@ -69,15 +62,6 @@ public class CoreView : View
         }
     }
 
-    private void onClickQuery(GameObject go)
-    {
-        ClearCoreItem();
-        for (int i = 0; i < RecordModel.Instance.coreList.Count; i++)
-        {
-            AddCoreItem(i);
-        }
-    }
-
     public void AddCoreItem(int dayIndex)
     {               
         CoreItem coreItem = new CoreItem();
@@ -86,4 +70,18 @@ public class CoreView : View
         coreItem.view.transform.localScale = Vector3.one;
         coreItem.Show(dayIndex);
     }
+
+    override public void DoClickQuery()
+    {
+        ClearCoreItem();
+        for (int i = 0; i < RecordModel.Instance.coreList.Count; i++)
+        {
+            AddCoreItem(i);
+        }
+    }
+
+    override public void DoClickExport()
+    {
+
+    }       
 }

@@ -14,6 +14,7 @@ public enum VIEWID
     
     //-------------------------------
     MENU = 21,
+    TITLE = 22,
     Recharge = 31,
     Mail = 32,
     MailSend = 33,
@@ -31,7 +32,7 @@ public enum VIEWID
     PayView = 45,
     SaveView = 46,
 
-  
+
     //-------------------------------
 }
 
@@ -44,6 +45,7 @@ public static class UIMgr
     private static Transform uiPop;
     private static Transform mask;
     private static Dictionary<VIEWID, View> viewDict;
+    public static VIEWID curViewDataId;
     
 
     ////////////////////////////
@@ -57,6 +59,7 @@ public static class UIMgr
         RegisterUI(VIEWID.LOGIN,LoginView.Instance);
 
         RegisterUI(VIEWID.MENU,MenuView.Instance);   
+        RegisterUI(VIEWID.TITLE,TitleView.Instance);   
          
         RegisterUI(VIEWID.Recharge,RechargeView.Instance);    
         RegisterUI(VIEWID.Mail,MailView.Instance);
@@ -168,7 +171,7 @@ public static class UIMgr
 
         Logger.Log("View OnShow:",viewId);
         view.OnShow(args);  
-        view.ViewRoot.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+        //view.ViewRoot.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
         view.ViewRoot.gameObject.SetActive(true); 
         view.IsShow = true;              
     }    

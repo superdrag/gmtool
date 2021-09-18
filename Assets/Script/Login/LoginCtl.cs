@@ -52,6 +52,7 @@ public class LoginCtl
         RecordModel.Instance.loadFile();
         UIMgr.HideUI(VIEWID.LOGIN);
         UIMgr.ShowUI(VIEWID.MENU);
+        UIMgr.ShowUI(VIEWID.TITLE);
     }
 
     public void StartConnetServer(string ip,int port)
