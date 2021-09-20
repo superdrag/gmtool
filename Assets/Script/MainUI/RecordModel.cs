@@ -21,6 +21,7 @@ public enum RECORD_TYPE
 public class CoreData
 {
     public string date;
+    public int timetv;
     public int DAU;
     public int newUser;
     public int income; //流水
@@ -58,9 +59,11 @@ public class RecordModel {
         }
     }
 
-    public List<string[]> dayDataList = new List<string[]>(); //一天数据
-    public List<CoreData> coreList = new List<CoreData>();  //每天全部数据
-    public List<string[]> operateList = new List<string[]>(); //操作记录
+    public static List<string[]> dayDataList = new List<string[]>(); //一天数据
+    public static List<CoreData> coreList = new List<CoreData>();  //每天全部数据
+    public static List<string[]> operateList = new List<string[]>(); //操作记录
+    public static List<string> countryList = new List<string>{ "CN","US","JP","DE"};
+    public static List<string> platformList = new List<string>{ "IOS","Android"};
 
     public void Init()
     {
@@ -116,6 +119,7 @@ public class RecordModel {
                 coreData.date = fields[0].Split('-')[0];     //统计日期  
                 //Logger.Log("day date.............",coreData.date);                             
             }
+            coreData.timetv = GFunc.Date2Time(fields[0]);
             string curTime = fields[0].Split('-')[1];
             int curHour = Convert.ToInt32( curTime.Split(':')[0] );
 
@@ -191,8 +195,7 @@ public class RecordModel {
             //次留
             if (dayIndex >= 1)
             {
-                CoreData preData = coreList[dayIndex-1];
-                
+                CoreData preData = coreList[dayIndex-1];                
                 if( preData.regAccDict.ContainsKey(item.Key) )
                 {
                     coreData.secondLive++;                    

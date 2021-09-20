@@ -8,6 +8,8 @@ using Net;
 
 using PPhp;
 
+
+
 public class TitleView : View
 {
     private static TitleView ins = null;
@@ -20,6 +22,8 @@ public class TitleView : View
     private Dropdown dropdown_date1;
     private Dropdown dropdown_date2;
 
+    public static int startTime = 0;
+    public static int endTime = 0;
 
     public static TitleView Instance
     {
@@ -70,7 +74,50 @@ public class TitleView : View
         Logger.Log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         Text text = dropdown_country.transform.Find("Label").GetComponent<Text>();     
         Logger.Log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"+text);         
-        text.text = "CN" ;        
+        text.text = "CN" ;      
+
+        dropdown_country.ClearOptions();
+        for (int i = 0; i < RecordModel.countryList.Count; i++)
+        {
+            Dropdown.OptionData od1 = new Dropdown.OptionData();
+            od1.text = RecordModel.countryList[i];
+            dropdown_country.options.Add(od1); 
+        } 
+
+        dropdown_platform.ClearOptions();
+        for (int i = 0; i < RecordModel.platformList.Count; i++)
+        {
+            Dropdown.OptionData od1 = new Dropdown.OptionData();
+            od1.text = RecordModel.platformList[i];
+            dropdown_platform.options.Add(od1); 
+        }         
+
+        dropdown_date1.ClearOptions();
+        for (int i = 0; i < RecordModel.coreList.Count; i++)
+        {
+            Dropdown.OptionData od1 = new Dropdown.OptionData();
+            od1.text = RecordModel.coreList[i].date;
+            dropdown_date1.options.Add(od1); 
+        }  
+
+        dropdown_date2.ClearOptions();
+        for (int i = RecordModel.coreList.Count-1; i >= 0; i--)
+        {
+            Dropdown.OptionData od2 = new Dropdown.OptionData();
+            od2.text = RecordModel.coreList[i].date;
+            dropdown_date2.options.Add(od2); 
+        }          
+          
+        //onChooseDate1(0);  
+        //onChooseDate2(dropdown_date2.options.Count-1);
+
+        //dropdown_date2.options[0].text = "aaaaaaaaaaaaa"; 
+
+        // Text text11 = dropdown_date2.transform.Find("Label").GetComponent<Text>();     
+        // Logger.Log("666666666666666666"+text11);         
+        // text11.text = "dropdown_date2.options[dropdown_date2.options.Count-1].text";
+
+        //onClickExport(null);
     }
 
 
@@ -82,7 +129,10 @@ public class TitleView : View
 
     private void onClickExport(GameObject go)
     {
-
+        // dropdown_date2.captionText.text = "aaaa";
+        // Text text11 = dropdown_date2.transform.Find("Label").GetComponent<Text>();     
+        // Logger.Log("666666666666666666"+text11);         
+        // text11.text = "dropdown_date2.options[dropdown_date2.options.Count-1].text";
     }
 
     private void onChooseCountry(int index)
@@ -97,11 +147,11 @@ public class TitleView : View
 
     private void onChooseDate1(int index)
     {
-
+        startTime = RecordModel.coreList[index].timetv;
     }
     private void onChooseDate2(int index)
     {
-
+        endTime = RecordModel.coreList[index].timetv;
     }
 
 

@@ -12,10 +12,6 @@ public class PayView : View
 {
     private static PayView ins = null;
 
-    private Button queryBtn;
-    private InputField beginDateText;
-    private InputField endDateText;
-
     public Transform Content;
 
     public List<PayItem> PayItemsList = new List<PayItem>();
@@ -46,18 +42,12 @@ public class PayView : View
 
         Transform bg = viewRoot.Find("bg");
 
-        queryBtn = bg.Find("btnGroup/queryBtn").GetComponent<Button>();  
-        EventTriggerListener.Get(queryBtn.gameObject).onClick = onClickQuery;
-
-        beginDateText = bg.Find("btnGroup/InputField").GetComponent<InputField>();
-        endDateText = bg.Find("btnGroup/InputField2").GetComponent<InputField>();
-
         Content = bg.Find("Scroll View/Viewport/Content");
     }
 
     override public void OnShow(params object[] args)
     {        
-        onClickQuery(queryBtn.gameObject);
+        
     }
 
     public void ClearItem()
@@ -70,12 +60,18 @@ public class PayView : View
         }
     }
 
-    private void onClickQuery(GameObject go)
+    override public void DoClickQuery()
     {
         itemNum = 0;
         ClearItem();
         GlobalCtl.MSG_CL2PHP_GMPAYDATA("");
     }
+
+    override public void DoClickExport()
+    {
+
+    }  
+
 
     public void AddItem(S2C_GMPayData pb)
     {               

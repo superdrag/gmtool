@@ -1,4 +1,5 @@
 [
+         
     {       
         "server_id":1,      
         "server_name":"内网服务器",
@@ -12,12 +13,12 @@
         "php_ip":"106.55.240.178",    
         "php_port":8101,
         "record_url":"http://106.55.240.178/record/"
-    },      
+    },
     {           
         "server_id":3,  
         "server_name":"刘海超服务器",
-        "php_ip":"192.168.110.5",    
+        "php_ip":"192.168.110.8",    
         "php_port":8101,
-        "record_url":"http://192.168.110.5/record/"
-    }      
+        "record_url":"http://192.168.110.8/record/"
+    }
 ]

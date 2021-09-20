@@ -50,7 +50,7 @@ public class CoreView : View
         //onClickQuery(queryBtn.gameObject);
 
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(0, (float)RecordModel.Instance.coreList.Count * (float)73.6 );
+        rect.sizeDelta = new Vector2(0, (float)RecordModel.coreList.Count * (float)73.6 );
     }
 
     public void ClearCoreItem()
@@ -74,9 +74,12 @@ public class CoreView : View
     override public void DoClickQuery()
     {
         ClearCoreItem();
-        for (int i = 0; i < RecordModel.Instance.coreList.Count; i++)
+        for (int i = 0; i < RecordModel.coreList.Count; i++)
         {
-            AddCoreItem(i);
+            if (RecordModel.coreList[i].timetv >= TitleView.startTime && RecordModel.coreList[i].timetv <= TitleView.endTime)
+            {
+                 AddCoreItem(i); 
+            }           
         }
     }
 

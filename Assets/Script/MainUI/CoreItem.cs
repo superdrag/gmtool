@@ -27,7 +27,7 @@ public class CoreItem
 
     public void Show(int dayIndex)
     {
-        CoreData coreData = RecordModel.Instance.coreList[dayIndex];
+        CoreData coreData = RecordModel.coreList[dayIndex];
 
         infoList[0].text = coreData.date; 
         infoList[1].text = coreData.allRegNum.ToString();
