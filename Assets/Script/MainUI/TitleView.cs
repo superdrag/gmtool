@@ -71,9 +71,9 @@ public class TitleView : View
     override public void OnShow(params object[] args)
     {        
         //onClickQuery(queryBtn.gameObject);
-        Logger.Log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        //Logger.Log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         Text text = dropdown_country.transform.Find("Label").GetComponent<Text>();     
-        Logger.Log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"+text);         
+        //Logger.Log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"+text);         
         text.text = "CN" ;      
 
         dropdown_country.ClearOptions();

@@ -298,5 +298,22 @@ public class GFunc
         //Logger.Log("1111111111111 ",tv);              
         return tv;
     }
+
+    //DateTime转时间戳
+    public static int DateTime2Int(DateTime time)
+    {
+        DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+        return (int)(time - startTime).TotalSeconds;
+    }
+
+    //时间戳转DateTime
+    public static DateTime Int2DateTime(int d)
+    {
+        DateTime time = DateTime.MinValue;
+        DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+        time = startTime.AddSeconds(d);
+        //Logger.Log("Int2DateTime........", time.ToString());
+        return time;
+    }        
 }
 
