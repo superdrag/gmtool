@@ -108,8 +108,8 @@ public class TitleView : View
             dropdown_date2.options.Add(od2); 
         }          
           
-        //onChooseDate1(0);  
-        //onChooseDate2(dropdown_date2.options.Count-1);
+        onChooseDate1(0);  
+        onChooseDate2(0);
 
         //dropdown_date2.options[0].text = "aaaaaaaaaaaaa"; 
 
@@ -151,7 +151,8 @@ public class TitleView : View
     }
     private void onChooseDate2(int index)
     {
-        endTime = RecordModel.coreList[index].timetv;
+        int _index = RecordModel.coreList.Count - 1 - index;
+        endTime = RecordModel.coreList[_index].timetv;
     }
 
 
