@@ -1,0 +1,53 @@
+LuaConfig["LeafletConfig"] = 
+{
+	[101] = 
+	{
+		id = 101,
+		name = "报纸",
+		free_cd = 20,
+		stacklimit = 3,
+		ads_max = 10,
+		tourist = 15,
+		tourist_ex = 20,
+		price = {
+			[1]="Currency",
+			[2]="leaflet2",
+			[3]=1,
+		},
+		reward_num = "0;2",
+		reward_ordinary = 10001,
+		ordinary_weight = 790,
+		reward_rare = 11001,
+		rare_weight = 200,
+		reward_epic = 12001,
+		epic_weight = 10,
+		reward_legend = 13001,
+		legend_weight = 0,
+		mg = 10,
+	},
+	[102] = 
+	{
+		id = 102,
+		name = "广播",
+		free_cd = 1410,
+		stacklimit = 1,
+		ads_max = 0,
+		tourist = 50,
+		tourist_ex = 60,
+		price = {
+			[1]="Currency",
+			[2]="leaflet3",
+			[3]=1,
+		},
+		reward_num = "6;8",
+		reward_ordinary = 20001,
+		ordinary_weight = 370,
+		reward_rare = 21001,
+		rare_weight = 350,
+		reward_epic = 22001,
+		epic_weight = 200,
+		reward_legend = 23001,
+		legend_weight = 80,
+		mg = 10,
+	},
+}

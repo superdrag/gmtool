@@ -60,8 +60,8 @@ message C2S_Login
     string headicon = 4;//用户头像Url
     int32 guest = 5;    //1游客 0非游客 
     int32 reconn = 6;    //断线重连
-    string platform = 11; //平台id
-    int32 country = 12;    //国家
+    string platform = 11; //平台IOS,GOOGLE
+    string country = 12;    //国家
 }
 
 //MSG_LN2CL_GATEIPANDPORT         = 2011,     //成功登陆返回gate链接信息
@@ -116,6 +116,10 @@ message S2C_LoginRoleData
     map<int32, PBase.PB_GiftPack> firstgiftlist = 12;  //礼包信息
     repeated int32 randomcardlist = 13;  //每日5张随机卡牌
     int32 randomcardcount = 14;//随机卡牌次数
+    int32 sevenlogin = 15;//七天领取天数
+    bool sevengain = 16;//七天能否领取
+    map<int32, int32> monthcardinfo = 17;//月卡信息
+    int32 paylevel = 18; //充值水平 1小r 2中r 3大r
 }
 
 //MsgId.MSG_CL2LG_STOREBASEINFO           = 1201      --基本信息存储
@@ -156,7 +160,7 @@ message S2C_UpdateDiamod
 //MsgId.MSG_WD2CL_CURRENCY                = 2503      --[[更新货币数量]]  
 message S2C_UpdateCurrency
 {
-    string type = 1;    //货币类型 
+    string type = 1;    //货币类型  leaflet3 paylevel
     int32 num = 2;  //数量
 }
 
@@ -164,7 +168,7 @@ message S2C_UpdateCurrency
 message C2S_UseDiamod
 {
     int32 num = 1;  //使用钻石数量
-    int32 event = 2; //
+    int32 event = 2; //参考 event.lua
     repeated int32 params = 3;
     int32 goodsid = 4;  //商品id
 }
@@ -182,16 +186,14 @@ message S2C_UseDiamod
 // MsgId.MSG_CL2WD_WATCHADV               = 1502      --[[看广告]]  
 message C2S_WatchAdv
 {
-    int32 event = 1; //
+    int32 event = 1; //  参考 event.lua
     repeated int32 params = 2;
-    int32 goodsid = 3;  //商品id
 }
 // MsgId.MSG_WD2CL_WATCHADV               = 2502      --[[看广告]]
 message S2C_WatchAdv
 {
     int32 event = 1; //
     repeated int32 params = 2;
-    int32 goodsid = 3;  //商品id
 }
 
 // MsgId.MSG_CL2WD_SETNICKNAME             = 1505      --[[改昵称]]  
@@ -292,6 +294,19 @@ message S2C_ShowTeamCardList
 {
     repeated PBase.PB_TeamCardInfo teamcardlist = 1;
 }
+
+
+// MsgId.MSG_CL2WD_DRAWCARDINFO            = 1520      --[[喇叭界面信息]]
+message C2S_DrawCardInfo
+{
+    
+}
+// MsgId.MSG_WD2CL_DRAWCARDINFO            = 2520      --[[喇叭界面信息]]  
+message S2C_DrawCardInfo
+{
+    int32 drawfreetime = 1;
+}
+
 
 // MsgId.MSG_CL2WD_DRAWCARD                = 1522      --抽卡
 message C2S_DrawCard
@@ -425,12 +440,58 @@ message S2C_GetShopInfo
     int32 weekrefreshtime = 3;
     int32 monthrefreshtime = 4;
     int32 drawcardcount = 5;
-    map<int32, PBase.PB_GiftPack> firstgiftlist = 11;//
-    map<int32, PBase.PB_GiftPack> daygiftlist = 12;//
-    map<int32, PBase.PB_GiftPack> weekgiftlist = 13;//
-    map<int32, PBase.PB_GiftPack> monthgiftlist = 14;//
+    map<int32, PBase.PB_GiftPack> firstgiftlist = 11;//     --首冲礼包
+    map<int32, PBase.PB_GiftPack> daygiftlist = 12;//       --每日礼包
+    map<int32, PBase.PB_GiftPack> weekgiftlist = 13;//      --周礼包
+    map<int32, PBase.PB_GiftPack> monthgiftlist = 14;//     --月礼包
+    map<int32, PBase.PB_ParamIntList> shoprancardlist = 15;//   --每日随机卡片商品 { 1配置id 2卡牌id 3购买次数 }
+    map<int32, PBase.PB_ParamIntList> activegitflist = 16;//   --活动礼包 { 1配置id 2时间 3购买次数 }
 }
 
+//MsgId.MSG_WD2LC_UPDATESHOPGIFT          = 2546      --[[商城购买礼包信息]] 
+message S2C_UpdateShopGift
+{
+    PBase.PB_GiftPack giftinfo = 1;
+}   
+
+
+// MsgId.MSG_CL2WD_GETEMONTHCARDINFO       = 1543      --[[月卡信息]]    
+message C2S_GetMonthCardInfo
+{
+    
+}
+// MsgId.MSG_WD2LC_GETEMONTHCARDINFO       = 2543      --[[月卡信息]]    
+message S2C_GetMonthCardInfo
+{
+    map<int32, int32> monthcardinfo = 1;//购买信息
+    map<int32, int32> monthcardtime = 2;//领取时间
+}
+
+
+// MsgId.MSG_CL2WD_GAINMONTHCARDITEM       = 1545      --[[领取月卡物品]]    
+message C2S_GainMonthCardItem
+{
+    int32 monthcardid = 1;
+}
+// MsgId.MSG_WD2LC_GAINMONTHCARDITEM       = 2545      --[[领取月卡物品]]
+message S2C_GainMonthCardItem
+{
+    int32 ret = 1;
+    int32 monthcardid = 2;
+}
+
+// MsgId.MSG_CL2WD_SEVENLOGINGET           = 1542      --[[七日登录领取]]    
+message C2S_SevenLoginGet
+{
+    int32 day = 1;
+}
+// MsgId.MSG_WD2LC_SEVENLOGINGET           = 2542      --[[七日登录领取]]
+message S2C_SevenLoginGet
+{
+    int32 ret = 1;
+    int32 day = 2;
+    string rewards = 3;
+}
 
 // MsgId.MSG_CL2WD_IOSPAYCHECK             = 1550      --[[IOS支付]] 
 message C2S_IOSPayCheck
@@ -480,11 +541,35 @@ message S2C_SaveDownload
 }
 
 
-
+// MsgId.MSG_CL2WD_UPLOADMAINTASK          = 1610      --[[上传主线任务]]  
+message C2S_UploadMainTask
+{
+    int32 taskid = 1;  //任务id
+    int32 taskarg = 2; //任务进度
+}
+// MsgId.MSG_WD2CL_UPLOADMAINTASK          = 2610      --[[上传主线任务]]  
+message S2C_UploadMainTask
+{
+    int32 ret = 1;
+    int32 taskid = 2;
+    int32 taskarg = 3;
+}
 
 
 
 // -----------------------------  测试接口 ----------------------------------
+
+
+// MsgId.MSG_CL2WD_TESTMSG                     = 1300      --[[测试协议]]   
+message C2S_TestMsg
+{
+
+}
+// MsgId.MSG_WD2CL_TESTMSG                     = 2300      --[[测试协议]]  
+message S2C_TestMsg
+{
+    int32 ret = 1;
+}
 
 //MsgId.MSG_CL2WD_TESTRECHARGEDIAMOND         = 1301      --[[测试充值]] 
 message C2S_TestRecharge

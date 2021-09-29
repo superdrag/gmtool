@@ -49,6 +49,7 @@ public class MenuView : View
         Button gmaccBtn = viewRoot.Find("gmacc").GetComponent<Button>();
         Button recordBtn = viewRoot.Find("record").GetComponent<Button>();
         Button saveBtn = viewRoot.Find("save").GetComponent<Button>();
+        Button funcBtn = viewRoot.Find("func").GetComponent<Button>();
 
         EventTriggerListener.Get(chongzhiBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(hexinBtn.gameObject).onClick = OnBtnEvent;
@@ -58,6 +59,7 @@ public class MenuView : View
         EventTriggerListener.Get(gmaccBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(recordBtn.gameObject).onClick = OnBtnEvent;
         EventTriggerListener.Get(saveBtn.gameObject).onClick = OnBtnEvent;
+        EventTriggerListener.Get(funcBtn.gameObject).onClick = OnBtnEvent;
 
         btnList.Add(hexinBtn);
         btnList.Add(chongzhiBtn);
@@ -67,6 +69,7 @@ public class MenuView : View
         btnList.Add(gmaccBtn);
         btnList.Add(recordBtn);
         btnList.Add(saveBtn);
+        btnList.Add(funcBtn);
 
         switchViewList.Add(VIEWID.BLANK);
         switchViewList.Add(VIEWID.Mail);
@@ -80,6 +83,7 @@ public class MenuView : View
         switchViewList.Add(VIEWID.GMAccNew);
         switchViewList.Add(VIEWID.RecordView);
         switchViewList.Add(VIEWID.SaveView);
+        switchViewList.Add(VIEWID.FuncView);
 
         curIndex = 1;
     }
@@ -124,7 +128,11 @@ public class MenuView : View
         else if( this.curIndex == 8)
         {
             curViewId = VIEWID.SaveView;
-        }                                           
+        }   
+        else if( this.curIndex == 9)
+        {
+            curViewId = VIEWID.FuncView;
+        }                                                     
         else
         {
             curViewId = VIEWID.BLANK;

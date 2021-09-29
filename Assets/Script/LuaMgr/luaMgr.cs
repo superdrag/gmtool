@@ -33,15 +33,17 @@ public class LuaMgr {
         
         m_luaEnv.AddLoader(MyLoader);
         m_luaEnv.DoString("require 'GameMain'");
-        action();
-
+        if (action != null)
+        {
+           action(); 
+        }
         return true;
     }
 
     public static byte[] MyLoader(ref string filePath)
     {
         //绝对路径
-        string path = GFunc.AppRunPath() + ResMgr.LOAD_LUA_DIR + filePath + ".lua";
+        string path = ResMgr.LOAD_LUA_DIR + filePath + ".lua";
         //Logger.Log("MyLoader path..........",path);
         //相对路径
        // string path = @"相对路径" + filePath + ".lua.txt";

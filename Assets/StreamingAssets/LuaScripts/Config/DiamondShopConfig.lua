@@ -1,0 +1,81 @@
+LuaConfig["DiamondShopConfig"] = 
+{
+	[11001] = 
+	{
+		id = 11001,
+		comment = "一把钻石",
+		type = "diamond",
+		num = 60,
+		icon = "Shop01/title_Diamonds01",
+		desc = "一把钻石",
+		price = 1,
+		tag = "none",
+		percentage = 3,
+		doubled = 200,
+	},
+	[11002] = 
+	{
+		id = 11002,
+		comment = "一小袋宝石",
+		type = "diamond",
+		num = 330,
+		icon = "Shop01/title_Diamonds02",
+		desc = "一小袋宝石",
+		price = 5,
+		tag = "none",
+		percentage = 3,
+		doubled = 200,
+	},
+	[11003] = 
+	{
+		id = 11003,
+		comment = "一小桶宝石",
+		type = "diamond",
+		num = 1550,
+		icon = "Shop01/title_Diamonds03",
+		desc = "一小桶宝石",
+		price = 10,
+		tag = "none",
+		percentage = 3,
+		doubled = 200,
+	},
+	[11004] = 
+	{
+		id = 11004,
+		comment = "一大桶宝石",
+		type = "diamond",
+		num = 2640,
+		icon = "Shop01/title_Diamonds04",
+		desc = "一大桶宝石",
+		price = 20,
+		tag = "bast_deal",
+		percentage = 2,
+		doubled = 200,
+	},
+	[11005] = 
+	{
+		id = 11005,
+		comment = "一小车宝石",
+		type = "diamond",
+		num = 4800,
+		icon = "Shop01/title_Diamonds05",
+		desc = "一小车宝石",
+		price = 50,
+		tag = "none",
+		percentage = 2,
+		doubled = 200,
+	},
+	[11006] = 
+	{
+		id = 11006,
+		comment = "一堆宝石",
+		type = "diamond",
+		num = 10440,
+		icon = "Shop01/title_Diamonds06",
+		desc = "一堆宝石",
+		price = 60,
+		tag = "bast_sale",
+		percentage = 1,
+		doubled = 200,
+	},
+}

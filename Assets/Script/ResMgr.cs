@@ -44,7 +44,8 @@ public class ResMgr
     private static string  RES_LIST_FILE = "res_list.json";
 
     public static string LOAD_RES_DIR = "Assets/ResAB/";
-    public static string LOAD_LUA_DIR = "Assets/LuaScripts/";
+    public static string LOAD_LUA_DIR =  Application.streamingAssetsPath + "/LuaScripts/";
+    //public static string LOAD_LUACONFIG_DIR = "Assets/LuaScripts/Conifg";
     public static string LOAD_CONFIG_DIR = "Assets/Config/";
 
     public bool Init()

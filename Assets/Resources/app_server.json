@@ -7,8 +7,15 @@
         "php_port":8101,
         "record_url":"http://192.168.110.45/record/"
     },
-    {        
+    {       
         "server_id":2,      
+        "server_name":"内网服务器2",
+        "php_ip":"192.168.110.65",    
+        "php_port":8101,
+        "record_url":"http://192.168.110.65/record/"
+    },    
+    {        
+        "server_id":3,      
         "server_name":"外网服务器",
         "php_ip":"106.55.240.178",    
         "php_port":8101,

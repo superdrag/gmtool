@@ -314,6 +314,14 @@ public class GFunc
         time = startTime.AddSeconds(d);
         //Logger.Log("Int2DateTime........", time.ToString());
         return time;
-    }        
+    }  
+
+    public static string Int2DateStr(int d)
+    {
+        DateTime time = Int2DateTime(d);
+        string s = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        //Logger.Log("Int2DateTime........", time.ToString());
+        return s;
+    }             
 }
 

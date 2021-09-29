@@ -174,7 +174,7 @@ public class GlobalCtl
         S2C_GMCommand _pb = msg.UnpackProtoBuf<S2C_GMCommand>( new S2C_GMCommand() );
         if (_pb.Ret == 0)
         {
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行成功"+ _pb.Acclist.Count+"个");
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行成功");
         } 
         else
         {
@@ -182,9 +182,10 @@ public class GlobalCtl
             return;
         }
 
-        if(_pb.Commandid ==(int)PHP_COMMAMD.BLACKUSER)
+        if(_pb.Commandid ==(int)PHP_COMMAMD.QUERYTIME)
         {
-            
+             FuncView view = (FuncView)UIMgr.GetUI(VIEWID.FuncView) ;
+             view.onQueryServerTime(System.Convert.ToInt32(_pb.Params[0]) );
         }
     }
 

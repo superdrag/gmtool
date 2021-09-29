@@ -1,5 +1,5 @@
 
-›-
+‰9
 client.protoPClientcommon.proto")
 S2C_ErrorCode
 errcode (Rerrcode"
@@ -17,7 +17,7 @@
 guest (Rguest
 reconn (Rreconn
 platform (	Rplatform
-country (Rcountry"Ç
+country (	Rcountry"Ç
 	S2C_Login
 account (	Raccount
 accdbid (Raccdbid
@@ -50,7 +50,7 @@ firstlogin
 
 dayRefresh (R
 dayRefresh
-nickname (	Rnickname"Ú
+nickname (	Rnickname"Ë
 S2C_LoginRoleData
 reconn (Rreconn
 diamond (Rdiamond
@@ -60,10 +60,19 @@ dayRefresh
 teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlistS
 firstgiftlist (2-.PClient.S2C_LoginRoleData.FirstgiftlistEntryRfirstgiftlist&
 randomcardlist (Rrandomcardlist(
-randomcardcount (RrandomcardcountT
+randomcardcount (Rrandomcardcount
+
+sevenlogin (R
+sevenlogin
+	sevengain (R	sevengainS
+monthcardinfo (2-.PClient.S2C_LoginRoleData.MonthcardinfoEntryRmonthcardinfo
+paylevel (RpaylevelT
 FirstgiftlistEntry
 key (Rkey(
-value (2.PBase.PB_GiftPackRvalue:8"
+value (2.PBase.PB_GiftPackRvalue:8@
+MonthcardinfoEntry
+key (Rkey
+value (Rvalue:8"
 S2C_ZeroRefresh"%
 S2C_WeekRefresh
 time (Rtime"&
@@ -84,15 +93,13 @@ dayRefresh
 num (Rnum
 event (Revent
 params (Rparams
-goodsid (Rgoodsid"V
+goodsid (Rgoodsid"<
 C2S_WatchAdv
 event (Revent
-params (Rparams
-goodsid (Rgoodsid"V
+params (Rparams"<
 S2C_WatchAdv
 event (Revent
-params (Rparams
-goodsid (Rgoodsid"%
+params (Rparams"%
 C2S_SetNickName
 name (	Rname"%
 S2C_SetNickName
@@ -123,7 +130,10 @@ dayRefresh
 readlist (	Rreadlist"
 C2S_ShowTeamCardList"R
 S2C_ShowTeamCardList:
-teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"<
+teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"
+C2S_DrawCardInfo"6
+S2C_DrawCardInfo"
+drawfreetime (Rdrawfreetime"<
 C2S_DrawCard
 boxid (Rboxid
 cardid (Rcardid"h
@@ -170,7 +180,7 @@ dayRefresh
 ret (Rret
 taskid (Rtaskid
 tasktype (Rtasktype"
-C2S_GetShopInfo"ç
+C2S_GetShopInfo"Í	
 S2C_GetShopInfo
 curtime (Rcurtime&
 dayrefreshtime (Rdayrefreshtime(
@@ -180,7 +190,9 @@ dayRefresh
 firstgiftlist (2+.PClient.S2C_GetShopInfo.FirstgiftlistEntryRfirstgiftlistK
 daygiftlist (2).PClient.S2C_GetShopInfo.DaygiftlistEntryRdaygiftlistN
 weekgiftlist (2*.PClient.S2C_GetShopInfo.WeekgiftlistEntryRweekgiftlistQ
-monthgiftlist (2+.PClient.S2C_GetShopInfo.MonthgiftlistEntryRmonthgiftlistT
+monthgiftlist (2+.PClient.S2C_GetShopInfo.MonthgiftlistEntryRmonthgiftlistW
+shoprancardlist (2-.PClient.S2C_GetShopInfo.ShoprancardlistEntryRshoprancardlistT
+activegitflist (2,.PClient.S2C_GetShopInfo.ActivegitflistEntryRactivegitflistT
 FirstgiftlistEntry
 key (Rkey(
 value (2.PBase.PB_GiftPackRvalue:8R
@@ -192,7 +204,36 @@ dayRefresh
 value (2.PBase.PB_GiftPackRvalue:8T
 MonthgiftlistEntry
 key (Rkey(
-value (2.PBase.PB_GiftPackRvalue:8"]
+value (2.PBase.PB_GiftPackRvalue:8Z
+ShoprancardlistEntry
+key (Rkey,
+value (2.PBase.PB_ParamIntListRvalue:8Y
+ActivegitflistEntry
+key (Rkey,
+value (2.PBase.PB_ParamIntListRvalue:8"D
+S2C_UpdateShopGift.
+giftinfo (2.PBase.PB_GiftPackRgiftinfo"
+C2S_GetMonthCardInfo"Ê
+S2C_GetMonthCardInfoV
+monthcardinfo (20.PClient.S2C_GetMonthCardInfo.MonthcardinfoEntryRmonthcardinfoV
+monthcardtime (20.PClient.S2C_GetMonthCardInfo.MonthcardtimeEntryRmonthcardtime@
+MonthcardinfoEntry
+key (Rkey
+value (Rvalue:8@
+MonthcardtimeEntry
+key (Rkey
+value (Rvalue:8"9
+C2S_GainMonthCardItem 
+monthcardid (Rmonthcardid"K
+S2C_GainMonthCardItem
+ret (Rret 
+monthcardid (Rmonthcardid"%
+C2S_SevenLoginGet
+day (Rday"Q
+S2C_SevenLoginGet
+ret (Rret
+day (Rday
+rewards (	Rrewards"]
 C2S_IOSPayCheck
 payid (Rpayid
 paycode (	Rpaycode
@@ -212,7 +253,17 @@ dayRefresh
 S2C_SaveDownload
 ret (Rret
 filename (	Rfilename
-data (Rdata"8
+data (Rdata"F
+C2S_UploadMainTask
+taskid (Rtaskid
+taskarg (Rtaskarg"X
+S2C_UploadMainTask
+ret (Rret
+taskid (Rtaskid
+taskarg (Rtaskarg"
+C2S_TestMsg"
+S2C_TestMsg
+ret (Rret"8
 C2S_TestRecharge
 type (Rtype
 num (Rnum"8

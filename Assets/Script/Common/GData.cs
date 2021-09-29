@@ -39,6 +39,11 @@ public enum PHP_COMMAMD
     BLACKUSER = 102,
     RECORED_OPERATE = 103,
     CLIENTSAVE = 105,
+    RESTART = 110,
+    SHUTDOWN = 111,
+    MODTIME = 115,
+    UPCONFIG = 116,  
+    QUERYTIME = 117,
 }
 
 public enum PHP_QUERY
