@@ -493,7 +493,7 @@ message S2C_SevenLoginGet
     string rewards = 3;
 }
 
-// MsgId.MSG_CL2WD_IOSPAYCHECK             = 1550      --[[IOS支付]] 
+// MsgId.MSG_CL2WD_IOSPAYCHECK             = 1550      --[[支付]] 
 message C2S_IOSPayCheck
 {
     int32 payid = 1;    //商品id
@@ -501,7 +501,7 @@ message C2S_IOSPayCheck
     string platform = 3; //平台
 }
 
-// MsgId.MSG_WD2LC_IOSPAYCHECK             = 2550      --[[IOS支付]]   
+// MsgId.MSG_WD2LC_IOSPAYCHECK             = 2550      --[[支付]]   
 message S2C_IOSPayCheck
 {
     int32 ret = 1;
@@ -510,6 +510,19 @@ message S2C_IOSPayCheck
 }
 
 
+//MsgId.MSG_CL2WD_IOSPAYCONDITION         = 1556      --[[支付预检测]]    
+message C2S_IOSPayCondition
+{
+    int32 payid = 1;    //商品id
+    string platform = 2; //平台
+}
+//MsgId.MSG_WD2LC_IOSPAYCONDITION         = 2556      --[[支付预检测]]    
+message S2C_IOSPayCondition
+{
+    int32 ret = 1;
+    int32 payid = 2;    //商品id
+    int32 paytype = 3;  //购买类型 101首冲 102商城礼包 
+}
 
 //------------------------------
 

@@ -101,7 +101,7 @@ public class MailSendView : View
         {
             titleText.text = "这是标题啊 this is title text";
             contentText.text = "这是内容啊 this is content text";
-            itemListText.text = "Currency;diamond;1000/BaseBaller;1001;1/TreasureChest;103;1/Equip;40102;1";
+            itemListText.text = "Currency;diamond;1000/BaseBaller;1001;1/TreasureChest;102;1";
             accountText.text = "AAA123";
             pastDayText.text = "30";   
         }

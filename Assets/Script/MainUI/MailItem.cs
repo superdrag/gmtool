@@ -149,6 +149,7 @@ public class MailItem
             item.Content = mailData.Content;
             item.Itemlist = mailData.Itemlist;
             item.Pasttime = mailData.Pasttime;
+            item.Sendtime = mailData.Sendtime;
             item.State = 0;
 
             pb.Maildata = item;

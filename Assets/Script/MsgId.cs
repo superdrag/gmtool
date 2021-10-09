@@ -6,6 +6,9 @@ using UnityEngine;
 public enum MSGID
 {
     // common
+    MSG_CL2GT_SOCKETHIT  = 1999,
+    MSG_GT2CL_SOCKETHIT  = 2999,
+
     MSG_SS2CL_ERRORCODE = 2000,     //错误码
 
     MSG_GT2SS_CONNECTCLOSE = 1001,      //gate判断断开client连接
@@ -51,6 +54,9 @@ public enum MSGID
 
     MSG_CL2PHP_QUERYNORMALINFO            = 1865,    
     MSG_PHP2CL_QUERYNORMALINFO            = 2865,    
+
+    MSG_CL2PHP_QUERYTASKMAIN              = 1871,    //--[[主线任务查询]] 
+    MSG_PHP2CL_QUERYTASKMAIN              = 2871,    //--[[主线任务查询]]  
 
 
 

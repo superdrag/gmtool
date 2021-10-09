@@ -88,7 +88,8 @@ public class FuncView : View
 
     private void onClickQueryTiime()
     {
-        GlobalCtl.MSG_CL2PHP_GMCOMMAND( "gm", (int)PHP_COMMAMD.QUERYTIME );      
+        GlobalCtl.MSG_CL2PHP_GMCOMMAND( "gm", (int)PHP_COMMAMD.QUERYTIME );     
+        //LuaCall.GetMainTaskInfo();
     }    
 
     private void onClickUpdateConfig()

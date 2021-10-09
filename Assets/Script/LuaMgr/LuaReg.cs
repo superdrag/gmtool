@@ -32,6 +32,10 @@ public delegate void SpriteDelegate(Sprite obj);
 public delegate void MeshDelegate(Mesh obj);
 [CSharpCallLua]
 public delegate void AddToggleList();
+[CSharpCallLua]
+public delegate List<string> FuncDelegateList();
+[CSharpCallLua]
+public delegate XLua.LuaTable FuncDelegateTable();
 
 
 [CSharpCallLua]
@@ -40,7 +44,7 @@ public class LuaCall
 {
     public static void OnHandleMsg(int msgId, byte[] bytes)
     {
-        if( msgId != MsgId.MSG_GT2CL_SOCKETHIT )
+        if( msgId != (int)MSGID.MSG_GT2CL_SOCKETHIT )
         {
             Logger.Log("recv msg <--- id:" +msgId + " len:" + (bytes.Length + 10) );
         }        
@@ -59,7 +63,14 @@ public class LuaCall
         Logger.Log("OnAppInitOver..........");
         SimpleFuncDelegate func = LuaMgr.LuaEnv.Global.Get<SimpleFuncDelegate>("app_init_over");
         func();
-    }    
+    }
+
+    public static void GetMainTaskInfo()
+    {
+        FuncDelegateTable func = LuaMgr.LuaEnv.Global.Get<FuncDelegateTable>("GetTaskInfo");
+        //List<string> list =  func();
+        XLua.LuaTable tb = func();
+    }        
 }
 
 
@@ -113,7 +124,7 @@ public class LuaReg
     public static int SendMsg(int msgId)
     {
         NetMgr.SendMsg((MSGID)msgId);
-        if( msgId != MsgId.MSG_CL2GT_SOCKETHIT ) Logger.Log("send msg ---> id:" + msgId );
+        if( msgId != (int)MSGID.MSG_CL2GT_SOCKETHIT ) Logger.Log("send msg ---> id:" + msgId );
         int msgLen = 10;
         return msgLen;
     }

@@ -1,5 +1,5 @@
 
-‰9
+«:
 client.protoPClientcommon.proto")
 S2C_ErrorCode
 errcode (Rerrcode"
@@ -239,6 +239,13 @@ sevenlogin
 paycode (	Rpaycode
 platform (	Rplatform"S
 S2C_IOSPayCheck
+ret (Rret
+payid (Rpayid
+paytype (Rpaytype"G
+C2S_IOSPayCondition
+payid (Rpayid
+platform (	Rplatform"W
+S2C_IOSPayCondition
 ret (Rret
 payid (Rpayid
 paytype (Rpaytype"@

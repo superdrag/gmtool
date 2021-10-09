@@ -4,7 +4,8 @@ GameMain = {}
 GameMain.__index = GameMain
 local this = GameMain
 
-require "common/config"	      
+require "common/config"	   
+require "gfunc"	         
 
 -- local pb = require "pb"
 
@@ -29,6 +30,16 @@ function GetConfig(name,key)
     return cfg[key];
 end
 
+function GetTaskInfo()
+	local tb = {}
+	for k,v in pairs(LuaConfig["TaskConfig"]) do
+		table.insert( tb, k )		
+	end
+	table.sort( tb )
+	DEBUG_LOG("11111111111111 %s",PrintTable(tb)) 
+	return tb;
+end
+
 function Test1()
 	print('call lua func test1()')
 
@@ -42,6 +53,8 @@ local function init()
 	math.randomseed(tostring(os.time()):reverse():sub(1, 6))
 
 	Test1()
+
+	GetTaskInfo()
 end
 
 init()

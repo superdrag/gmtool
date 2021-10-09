@@ -206,6 +206,18 @@ message S2C_GMQueryClientSave
     bytes data = 4;
 }
 
+//MsgId.MSG_CL2PHP_QUERYTASKMAIN              = 1871    --[[主线任务查询]]  
+message C2S_GMQueryTaskMain
+{
+
+}
+
+//MsgId.MSG_PHP2CL_QUERYTASKMAIN              = 2871    --[[主线任务查询]]  
+message S2C_GMQueryTaskMain
+{
+    int32 ret = 1;    
+    map<int32, int32> data = 2;
+}
 
 // MsgId.MSG_CL2PHP_GMCOREDATA                 = 1851    --[[GM请求核心数据]]  ProtoDict[MsgId.MSG_CL2PHP_GMCOREDATA] = "PPhp.C2S_GMCoreData"
 message C2S_GMCoreData
