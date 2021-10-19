@@ -1,5 +1,5 @@
 
-«:
+Ó>
 client.protoPClientcommon.proto")
 S2C_ErrorCode
 errcode (Rerrcode"
@@ -50,13 +50,14 @@ firstlogin
 
 dayRefresh (R
 dayRefresh
-nickname (	Rnickname"Ë
+nickname (	Rnickname"–
 S2C_LoginRoleData
 reconn (Rreconn
 diamond (Rdiamond
 newmail (Rnewmail$
 drawcardcount (Rdrawcardcount
-leaflet3 (Rleaflet3:
+leaflet2 (Rleaflet2
+leaflet3 (Rleaflet3:
 teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlistS
 firstgiftlist (2-.PClient.S2C_LoginRoleData.FirstgiftlistEntryRfirstgiftlist&
 randomcardlist (Rrandomcardlist(
@@ -66,14 +67,19 @@ sevenlogin (R
 sevenlogin
 	sevengain (R	sevengainS
 monthcardinfo (2-.PClient.S2C_LoginRoleData.MonthcardinfoEntryRmonthcardinfo
-paylevel (RpaylevelT
+paylevel (RpaylevelV
+activegitflist (2..PClient.S2C_LoginRoleData.ActivegitflistEntryRactivegitflistT
 FirstgiftlistEntry
 key (Rkey(
 value (2.PBase.PB_GiftPackRvalue:8@
 MonthcardinfoEntry
 key (Rkey
-value (Rvalue:8"
-S2C_ZeroRefresh"%
+value (Rvalue:8U
+ActivegitflistEntry
+key (Rkey(
+value (2.PBase.PB_GiftPackRvalue:8"%
+S2C_ZeroRefresh
+time (Rtime"%
 S2C_WeekRefresh
 time (Rtime"&
 S2C_MonthRefresh
@@ -153,7 +159,9 @@ sevenlogin
 cardid (Rcardid">
 S2C_ResetLevelCard
 ret (Rret
-cardid (Rcardid",
+cardid (Rcardid"
+C2S_UpdateCard"
+S2C_UpdateCard",
 C2S_FundTaskFinish
 taskid (Rtaskid">
 S2C_FundTaskFinish
@@ -180,7 +188,7 @@ sevenlogin
 ret (Rret
 taskid (Rtaskid
 tasktype (Rtasktype"
-C2S_GetShopInfo"Í	
+C2S_GetShopInfo"¤
 S2C_GetShopInfo
 curtime (Rcurtime&
 dayrefreshtime (Rdayrefreshtime(
@@ -190,9 +198,8 @@ sevenlogin
 firstgiftlist (2+.PClient.S2C_GetShopInfo.FirstgiftlistEntryRfirstgiftlistK
 daygiftlist (2).PClient.S2C_GetShopInfo.DaygiftlistEntryRdaygiftlistN
 weekgiftlist (2*.PClient.S2C_GetShopInfo.WeekgiftlistEntryRweekgiftlistQ
-monthgiftlist (2+.PClient.S2C_GetShopInfo.MonthgiftlistEntryRmonthgiftlistW
-shoprancardlist (2-.PClient.S2C_GetShopInfo.ShoprancardlistEntryRshoprancardlistT
-activegitflist (2,.PClient.S2C_GetShopInfo.ActivegitflistEntryRactivegitflistT
+monthgiftlist (2+.PClient.S2C_GetShopInfo.MonthgiftlistEntryRmonthgiftlist;
+shoprancardlist (2.PBase.PB_RanCardRshoprancardlistT
 FirstgiftlistEntry
 key (Rkey(
 value (2.PBase.PB_GiftPackRvalue:8R
@@ -204,13 +211,7 @@ sevenlogin
 value (2.PBase.PB_GiftPackRvalue:8T
 MonthgiftlistEntry
 key (Rkey(
-value (2.PBase.PB_GiftPackRvalue:8Z
-ShoprancardlistEntry
-key (Rkey,
-value (2.PBase.PB_ParamIntListRvalue:8Y
-ActivegitflistEntry
-key (Rkey,
-value (2.PBase.PB_ParamIntListRvalue:8"D
+value (2.PBase.PB_GiftPackRvalue:8"D
 S2C_UpdateShopGift.
 giftinfo (2.PBase.PB_GiftPackRgiftinfo"
 C2S_GetMonthCardInfo"Ê
@@ -227,13 +228,38 @@ sevenlogin
 monthcardid (Rmonthcardid"K
 S2C_GainMonthCardItem
 ret (Rret 
-monthcardid (Rmonthcardid"%
+monthcardid (Rmonthcardid"E
+C2S_GainItemDaily
+taskid (Rtaskid
+vipcard (Rvipcard"W
+S2C_GainItemDaily
+ret (Rret
+taskid (Rtaskid
+vipcard (Rvipcard"
+C2S_TaskDaliyInfo"/
+S2C_TaskDaliyInfo
+gainlist (Rgainlist"%
 C2S_SevenLoginGet
 day (Rday"Q
 S2C_SevenLoginGet
 ret (Rret
 day (Rday
-rewards (	Rrewards"]
+rewards (	Rrewards"7
+C2S_GainLeafet2
+num (Rnum
+type (Rtype"I
+S2C_GainLeafet2
+ret (Rret
+num (Rnum
+type (Rtype"%
+C2S_GetGiftInfo
+type (Rtype"º
+S2C_GetGiftInfo
+type (RtypeB
+giftlist (2&.PClient.S2C_GetGiftInfo.GiftlistEntryRgiftlistO
+GiftlistEntry
+key (Rkey(
+value (2.PBase.PB_GiftPackRvalue:8"]
 C2S_IOSPayCheck
 payid (Rpayid
 paycode (	Rpaycode

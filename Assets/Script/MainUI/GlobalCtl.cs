@@ -292,7 +292,16 @@ public class GlobalCtl
     public static void MSG_PHP2CL_QUERYTASKMAIN(MsgPack msg)
     {
         S2C_GMQueryTaskMain _pb = msg.UnpackProtoBuf<S2C_GMQueryTaskMain>( new S2C_GMQueryTaskMain() );  
-        
+        TaskView view = UIMgr.GetUI<TaskView>(VIEWID.TaskView);  
+        Dictionary<int,int> dict = new Dictionary<int,int>(); 
+
+        Logger.Log("1111111 ",_pb.Data.ToString());
+
+        foreach (var item in _pb.Data)
+        {
+            dict[item.Key] = item.Value;
+        }
+        view.SetDataText(dict);
     }
     
 

@@ -83,7 +83,14 @@ message PB_GiftPack
     int32 time = 3; //最后一次购买时间
 }
 
-
+//商城随机卡牌
+message PB_RanCard
+{
+    int32 shopid = 1;   //
+    int32 cardid = 2;   //
+    int32 cardnum = 3;      //
+    int32 count = 4; //次数
+}
 
 
 

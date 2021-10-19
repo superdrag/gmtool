@@ -1,5 +1,5 @@
 
-¸
+¦
 common.protoPBase"'
 PB_ParamIntList
 value (Rvalue"'
@@ -45,7 +45,13 @@ playerdbid
 PB_GiftPack
 id (Rid
 count (Rcount
-time (Rtime"q
+time (Rtime"l
+
+PB_RanCard
+shopid (Rshopid
+cardid (Rcardid
+cardnum (Rcardnum
+count (Rcount"q
 PB_Item
 itemGuid (	RitemGuid
 itemId (RitemId

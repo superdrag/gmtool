@@ -14,6 +14,15 @@ public class QueryUserData
 }
 
 
+public class QueryTaskData
+{
+    public int taskId;
+    public int curNum;
+    public int lostNum;
+    public string percent;
+}
+
+
 public class GlobalModel {
 
 
@@ -38,6 +47,7 @@ public class GlobalModel {
     public int LoginGateTime;
     public static QueryUserData queryUserData = new QueryUserData();
     public static Dictionary<int,string> rankNameDict = new Dictionary<int, string>();
+    public static Dictionary<int,QueryTaskData> taskDataDict = new Dictionary<int, QueryTaskData>();
 
     public void Init()
     {

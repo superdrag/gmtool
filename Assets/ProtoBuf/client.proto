@@ -111,7 +111,8 @@ message S2C_LoginRoleData
     int32 diamond = 2;//钻石
     bool newmail = 3; //新邮件
     int32 drawcardcount = 4; //总抽卡次数
-    int32 leaflet3 = 5; //喇叭 抽卡
+    int32 leaflet2 = 5; // 报纸
+    int32 leaflet3 = 6; // 收音机
     repeated PBase.PB_TeamCardInfo teamcardlist = 11;  //卡牌信息
     map<int32, PBase.PB_GiftPack> firstgiftlist = 12;  //礼包信息
     repeated int32 randomcardlist = 13;  //每日5张随机卡牌
@@ -120,6 +121,7 @@ message S2C_LoginRoleData
     bool sevengain = 16;//七天能否领取
     map<int32, int32> monthcardinfo = 17;//月卡信息
     int32 paylevel = 18; //充值水平 1小r 2中r 3大r
+    map<int32, PBase.PB_GiftPack> activegitflist = 19;//   --活动礼包 { 1配置id 2时间 3购买次数 }
 }
 
 //MsgId.MSG_CL2LG_STOREBASEINFO           = 1201      --基本信息存储
@@ -136,7 +138,7 @@ message S2C_LoginRoleData
 //MsgId.MSG_WD2CL_ZEROREFRESH             = 2101      --零点刷新
 message S2C_ZeroRefresh
 {
-
+    int32 time = 1;
 }
 
 //MsgId.MSG_WD2CL_WEEKREFRESH             = 2102      --[[每周刷新]]  
@@ -352,7 +354,17 @@ message S2C_ResetLevelCard
     int32 cardid = 2;
 }
 
+// MsgId.MSG_CL2WD_UPDATECARD              = 1528      --[[刷新卡牌]]  
+message C2S_UpdateCard
+{
+    
+}
 
+// MsgId.MSG_WD2CL_UPDATECARD              = 2528      --[[刷新卡牌]]  
+message S2C_UpdateCard
+{
+    
+}
 
 //----------
 
@@ -444,8 +456,7 @@ message S2C_GetShopInfo
     map<int32, PBase.PB_GiftPack> daygiftlist = 12;//       --每日礼包
     map<int32, PBase.PB_GiftPack> weekgiftlist = 13;//      --周礼包
     map<int32, PBase.PB_GiftPack> monthgiftlist = 14;//     --月礼包
-    map<int32, PBase.PB_ParamIntList> shoprancardlist = 15;//   --每日随机卡片商品 { 1配置id 2卡牌id 3购买次数 }
-    map<int32, PBase.PB_ParamIntList> activegitflist = 16;//   --活动礼包 { 1配置id 2时间 3购买次数 }
+    repeated PBase.PB_RanCard shoprancardlist = 15;//   --每日随机卡片商品 { 1配置id 2卡牌id 卡牌num 4购买次数 }    
 }
 
 //MsgId.MSG_WD2LC_UPDATESHOPGIFT          = 2546      --[[商城购买礼包信息]] 
@@ -480,6 +491,32 @@ message S2C_GainMonthCardItem
     int32 monthcardid = 2;
 }
 
+//MsgId.MSG_CL2WD_GAINITEMDALIY           = 1547      --[[领取每日任务物品]]    
+message C2S_GainItemDaily
+{
+    int32 taskid = 1;
+    int32 vipcard = 2;
+}
+
+//MsgId.MSG_WD2LC_GAINITEMDALIY           = 2547      --[[领取每日任务物品]]   
+message S2C_GainItemDaily
+{
+    int32 ret = 1;
+    int32 taskid = 2;
+    int32 vipcard = 3;
+}
+
+//MsgId.MSG_CL2WD_TASKDALIYINFO           = 1548      --[[每日任务信息]]    
+message C2S_TaskDaliyInfo
+{
+
+}
+//MsgId.MSG_WD2LC_TASKDALIYINFO           = 2548      --[[每日任务信息]]    
+message S2C_TaskDaliyInfo
+{
+    repeated int32 gainlist = 1; //已经领取的列表
+}
+
 // MsgId.MSG_CL2WD_SEVENLOGINGET           = 1542      --[[七日登录领取]]    
 message C2S_SevenLoginGet
 {
@@ -492,6 +529,35 @@ message S2C_SevenLoginGet
     int32 day = 2;
     string rewards = 3;
 }
+
+
+// MsgId.MSG_CL2WD_GAINLEAFET2             = 1506      --[[获得报纸]]  
+message C2S_GainLeafet2
+{
+    int32 num = 1;
+    int32 type = 2; //1时间 2广告
+}
+// MsgId.MSG_WD2CL_GAINLEAFET2             = 2506      --[[获得报纸]]  
+message S2C_GainLeafet2
+{
+    int32 ret = 1;
+    int32 num = 2;
+    int32 type = 3;
+}
+
+
+// MsgId.MSG_CL2WD_GETGIFTINFO             = 1509      --[[请求礼包信息]]  
+message C2S_GetGiftInfo
+{
+    int32 type = 1; //
+}
+// MsgId.MSG_WD2CL_GETGIFTINFO             = 2509      --[[请求礼包信息]]  
+message S2C_GetGiftInfo
+{
+    int32 type = 1;
+    map<int32, PBase.PB_GiftPack> giftlist = 2;//   --礼包 { 1配置id 2时间 3购买次数 }
+}
+
 
 // MsgId.MSG_CL2WD_IOSPAYCHECK             = 1550      --[[支付]] 
 message C2S_IOSPayCheck
