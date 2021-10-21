@@ -46,6 +46,8 @@ public class TitleView : View
     {        
         viewRoot = ResMgr.CreateGo("Prefab/TitleView").transform;
         UIHelper.AddChild(UIMgr.UIMenu, viewRoot);  
+        RectTransform rect = viewRoot.transform.GetComponent<RectTransform>();
+        rect.anchoredPosition = new Vector2(0,-40);
 
         Transform bg = viewRoot.Find("bg");
 

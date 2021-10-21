@@ -97,6 +97,9 @@ public class LoginView : View
         LoginModel.Instance.record_url = sinfo.record_url;
         LoginCtl.Instance.StartConnetServer(sinfo.ip, sinfo.port);   
 
+        
+        UIMgr.SetServTitle(sinfo.name);
+
         // if(GData.ReleaseMode == true)
         // {
         //     NotifyObserver(NOTICE_ID.LOGIN_VIEW_GUEST,"39.100.205.143",9101,"qpjob");

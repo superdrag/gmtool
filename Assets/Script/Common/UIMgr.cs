@@ -305,4 +305,9 @@ public static class UIMgr
         // }
     }
  
+    public static void SetServTitle(string servName)
+    {
+        Text servtxt = uiBG.Find("servText").GetComponent<Text>();
+        servtxt.text = servName;
+    }
 }

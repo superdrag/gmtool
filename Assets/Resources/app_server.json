@@ -2,7 +2,7 @@
          
     {       
         "server_id":1,      
-        "server_name":"内网服务器",
+        "server_name":"内网服务器1",
         "php_ip":"192.168.110.45",    
         "php_port":8101,
         "record_url":"http://192.168.110.45/record/"
