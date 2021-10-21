@@ -51,17 +51,21 @@ public class MenuView : View
         Button saveBtn = viewRoot.Find("save").GetComponent<Button>();
         Button funcBtn = viewRoot.Find("func").GetComponent<Button>();
         Button taskBtn = viewRoot.Find("task").GetComponent<Button>();
+        Button paygiftBtn = viewRoot.Find("paygift").GetComponent<Button>();
+        Button diamondBtn = viewRoot.Find("diamond").GetComponent<Button>();
 
-        EventTriggerListener.Get(chongzhiBtn.gameObject).onClick = OnBtnEvent;
-        EventTriggerListener.Get(hexinBtn.gameObject).onClick = OnBtnEvent;
-        EventTriggerListener.Get(youjianBtn.gameObject).onClick = OnBtnEvent;
-        EventTriggerListener.Get(paydataBtn.gameObject).onClick = OnBtnEvent;
-        EventTriggerListener.Get(limitBtn.gameObject).onClick = OnBtnEvent;
-        EventTriggerListener.Get(gmaccBtn.gameObject).onClick = OnBtnEvent;
-        EventTriggerListener.Get(recordBtn.gameObject).onClick = OnBtnEvent;
-        EventTriggerListener.Get(saveBtn.gameObject).onClick = OnBtnEvent;
-        EventTriggerListener.Get(funcBtn.gameObject).onClick = OnBtnEvent;
-        EventTriggerListener.Get(taskBtn.gameObject).onClick = OnBtnEvent;
+        // EventTriggerListener.Get(chongzhiBtn.gameObject).onClick = OnBtnEvent;
+        // EventTriggerListener.Get(hexinBtn.gameObject).onClick = OnBtnEvent;
+        // EventTriggerListener.Get(youjianBtn.gameObject).onClick = OnBtnEvent;
+        // EventTriggerListener.Get(paydataBtn.gameObject).onClick = OnBtnEvent;
+        // EventTriggerListener.Get(limitBtn.gameObject).onClick = OnBtnEvent;
+        // EventTriggerListener.Get(gmaccBtn.gameObject).onClick = OnBtnEvent;
+        // EventTriggerListener.Get(recordBtn.gameObject).onClick = OnBtnEvent;
+        // EventTriggerListener.Get(saveBtn.gameObject).onClick = OnBtnEvent;
+        // EventTriggerListener.Get(funcBtn.gameObject).onClick = OnBtnEvent;
+        // EventTriggerListener.Get(taskBtn.gameObject).onClick = OnBtnEvent;
+        // EventTriggerListener.Get(taskBtn.gameObject).onClick = OnBtnEvent;
+        // EventTriggerListener.Get(taskBtn.gameObject).onClick = OnBtnEvent;
 
         btnList.Add(hexinBtn);
         btnList.Add(chongzhiBtn);
@@ -73,6 +77,14 @@ public class MenuView : View
         btnList.Add(saveBtn);
         btnList.Add(funcBtn);
         btnList.Add(taskBtn);
+        btnList.Add(paygiftBtn);
+        btnList.Add(diamondBtn);
+
+        for (int i = 0; i < btnList.Count; i++)
+        {
+            EventTriggerListener.Get(btnList[i].gameObject).onClick = OnBtnEvent;
+        }
+
 
         switchViewList.Add(VIEWID.BLANK);
         switchViewList.Add(VIEWID.Mail);
@@ -88,6 +100,8 @@ public class MenuView : View
         switchViewList.Add(VIEWID.SaveView);
         switchViewList.Add(VIEWID.FuncView);
         switchViewList.Add(VIEWID.TaskView);
+        switchViewList.Add(VIEWID.PayGiftView);
+        switchViewList.Add(VIEWID.DiamondView);
 
         curIndex = 1;
     }
@@ -140,7 +154,15 @@ public class MenuView : View
         else if( this.curIndex == 10)
         {
             curViewId = VIEWID.TaskView;
-        }                                                                  
+        }    
+        else if( this.curIndex == 11)
+        {
+            curViewId = VIEWID.PayGiftView;
+        }     
+        else if( this.curIndex == 12)
+        {
+            curViewId = VIEWID.DiamondView;
+        }                                                                                   
         else
         {
             curViewId = VIEWID.BLANK;
@@ -174,6 +196,5 @@ public class MenuView : View
         UIMgr.RefreshUI(VIEWID.MENU);           
     }
 
- 
 
 }
