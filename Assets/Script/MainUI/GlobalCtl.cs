@@ -260,6 +260,11 @@ public class GlobalCtl
             SaveView view = (SaveView)UIMgr.GetUI(VIEWID.SaveView) ;
             view.SetDataText(_pb.Result[0].Dict["file"],_pb.Result[0].Dict["data"]); 
         }
+        else if (_pb.Querytype == (int)PHP_QUERY.PAYGIFT)
+        {
+            PayGiftView view = (PayGiftView)UIMgr.GetUI(VIEWID.PayGiftView) ;
+            view.SetDataText(_pb); 
+        }        
     }
 
     public void MSG_PHP2CL_GMPAYDATA(MsgPack msg)

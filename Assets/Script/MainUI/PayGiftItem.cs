@@ -25,19 +25,21 @@ public class PayGiftItem
         }
     }
 
-    public void Show(QueryTaskData taskData)
+    public void Show(string data)
     {
-        infoList[0].text = taskData.taskId.ToString();
-        infoList[1].text = taskData.curNum.ToString();
-        infoList[2].text = taskData.lostNum.ToString();
-        infoList[3].text = taskData.percent.ToString();
+        string[] slist =  data.Split(',');
+
+        for (int i = 0; i < slist.Length; i++)
+        {
+            infoList[i].text = slist[i];
+        }
     }
 
     public void SetTitle()
     {
-        infoList[0].text = "任务id";
-        infoList[1].text = "停留";
-        infoList[2].text = "流失";
-        infoList[3].text = "通过率";
+        infoList[0].text = "商品id";
+        infoList[1].text = "充值次数";
+        infoList[2].text = "充值人数";
+        infoList[3].text = "首次购买人数";
     }
 }

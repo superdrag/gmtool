@@ -188,7 +188,8 @@ message S2C_GMQueryNormalInfo
     int32 querytype = 2;  //
     string account = 3;
     repeated PBase.PB_ParamStrDict result = 4;
-    bytes data = 5;
+    map<string,string> mapdata = 5;
+    bytes data = 9;
 }
 
 // MsgId.MSG_CL2PHP_QUERYCLIENTSAVE            = 1869    --[[GM存档查询]]  ProtoDict[MsgId.MSG_CL2PHP_QUERYCLIENTSAVE] = "PPhp.C2S_GMQueryClientSave"

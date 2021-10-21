@@ -58,28 +58,30 @@ namespace PPhp {
             "DwoHYWNjbGlzdBgDIAMoCRIOCgZwYXJhbXMYBCADKAkiZAoVQzJTX0dNUXVl",
             "cnlOb3JtYWxJbmZvEhEKCXF1ZXJ5dHlwZRgBIAEoBRIPCgdhY2NvdW50GAIg",
             "ASgJEhIKBnBhcmFtcxgDIAMoBUICEAASEwoHcGFyYW1zMhgEIAMoCUICEAAi",
-            "fgoVUzJDX0dNUXVlcnlOb3JtYWxJbmZvEgsKA3JldBgBIAEoBRIRCglxdWVy",
-            "eXR5cGUYAiABKAUSDwoHYWNjb3VudBgDIAEoCRImCgZyZXN1bHQYBCADKAsy",
-            "Fi5QQmFzZS5QQl9QYXJhbVN0ckRpY3QSDAoEZGF0YRgFIAEoDCI2ChVDMlNf",
-            "R01RdWVyeUNsaWVudFNhdmUSDwoHYWNjb3VudBgBIAEoCRIMCgRmaWxlGAIg",
-            "ASgJIlEKFVMyQ19HTVF1ZXJ5Q2xpZW50U2F2ZRILCgNyZXQYASABKAUSDwoH",
-            "YWNjb3VudBgCIAEoCRIMCgRmaWxlGAMgASgJEgwKBGRhdGEYBCABKAwiJQoT",
-            "QzJTX0dNUXVlcnlUYXNrTWFpbhIOCgZpZGxpc3QYASADKAUiOQoLUEJfVGFz",
-            "a01haW4SDgoGdGFza2lkGAEgASgFEgwKBHN0b3AYAiABKAUSDAoEbG9zdBgD",
-            "IAEoBSKlAQoTUzJDX0dNUXVlcnlUYXNrTWFpbhILCgNyZXQYASABKAUSMQoE",
-            "ZGF0YRgCIAMoCzIjLlBQaHAuUzJDX0dNUXVlcnlUYXNrTWFpbi5EYXRhRW50",
-            "cnkSDgoGc3VtYWNjGAMgASgFGj4KCURhdGFFbnRyeRILCgNrZXkYASABKAUS",
-            "IAoFdmFsdWUYAiABKAsyES5QUGhwLlBCX1Rhc2tNYWluOgI4ASIQCg5DMlNf",
-            "R01Db3JlRGF0YSIQCg5TMkNfR01Db3JlRGF0YSIuCg1DMlNfR01QYXlEYXRh",
-            "EgwKBHBhZ2UYASABKAUSDwoHYWNjb3VudBgCIAEoCSLCAQoNUzJDX0dNUGF5",
-            "RGF0YRIMCgRwYWdlGAEgASgFEg8KB2FjY291bnQYAiABKAkSEAoIcGxhdGZy",
-            "b20YAyABKAkSDwoHY291bnRyeRgEIAEoCRIQCghwYXlvcmRlchgFIAEoCRIO",
-            "CgZwYXludW0YBiABKAUSDQoFc3RhdGUYByABKAUSDwoHcGF5dGltZRgIIAEo",
-            "BRINCgVwYXlpZBgJIAEoBRINCgVldmVudBgKIAEoBRIPCgdwYXljb2RlGAsg",
-            "ASgJIkUKD0MyU19HTVBheVJlcGFpchIPCgdhY2NvdW50GAEgASgJEg8KB3Bh",
-            "eWNvZGUYAiABKAkSEAoIcGF5b3JkZXIYAyABKAkiQQoPUzJDX0dNUGF5UmVw",
-            "YWlyEgsKA3JldBgBIAEoBRIPCgdwYXljb2RlGAIgASgJEhAKCHBheW9yZGVy",
-            "GAMgASgJYgZwcm90bzM="));
+            "6QEKFVMyQ19HTVF1ZXJ5Tm9ybWFsSW5mbxILCgNyZXQYASABKAUSEQoJcXVl",
+            "cnl0eXBlGAIgASgFEg8KB2FjY291bnQYAyABKAkSJgoGcmVzdWx0GAQgAygL",
+            "MhYuUEJhc2UuUEJfUGFyYW1TdHJEaWN0EjkKB21hcGRhdGEYBSADKAsyKC5Q",
+            "UGhwLlMyQ19HTVF1ZXJ5Tm9ybWFsSW5mby5NYXBkYXRhRW50cnkSDAoEZGF0",
+            "YRgJIAEoDBouCgxNYXBkYXRhRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVl",
+            "GAIgASgJOgI4ASI2ChVDMlNfR01RdWVyeUNsaWVudFNhdmUSDwoHYWNjb3Vu",
+            "dBgBIAEoCRIMCgRmaWxlGAIgASgJIlEKFVMyQ19HTVF1ZXJ5Q2xpZW50U2F2",
+            "ZRILCgNyZXQYASABKAUSDwoHYWNjb3VudBgCIAEoCRIMCgRmaWxlGAMgASgJ",
+            "EgwKBGRhdGEYBCABKAwiJQoTQzJTX0dNUXVlcnlUYXNrTWFpbhIOCgZpZGxp",
+            "c3QYASADKAUiOQoLUEJfVGFza01haW4SDgoGdGFza2lkGAEgASgFEgwKBHN0",
+            "b3AYAiABKAUSDAoEbG9zdBgDIAEoBSKlAQoTUzJDX0dNUXVlcnlUYXNrTWFp",
+            "bhILCgNyZXQYASABKAUSMQoEZGF0YRgCIAMoCzIjLlBQaHAuUzJDX0dNUXVl",
+            "cnlUYXNrTWFpbi5EYXRhRW50cnkSDgoGc3VtYWNjGAMgASgFGj4KCURhdGFF",
+            "bnRyeRILCgNrZXkYASABKAUSIAoFdmFsdWUYAiABKAsyES5QUGhwLlBCX1Rh",
+            "c2tNYWluOgI4ASIQCg5DMlNfR01Db3JlRGF0YSIQCg5TMkNfR01Db3JlRGF0",
+            "YSIuCg1DMlNfR01QYXlEYXRhEgwKBHBhZ2UYASABKAUSDwoHYWNjb3VudBgC",
+            "IAEoCSLCAQoNUzJDX0dNUGF5RGF0YRIMCgRwYWdlGAEgASgFEg8KB2FjY291",
+            "bnQYAiABKAkSEAoIcGxhdGZyb20YAyABKAkSDwoHY291bnRyeRgEIAEoCRIQ",
+            "CghwYXlvcmRlchgFIAEoCRIOCgZwYXludW0YBiABKAUSDQoFc3RhdGUYByAB",
+            "KAUSDwoHcGF5dGltZRgIIAEoBRINCgVwYXlpZBgJIAEoBRINCgVldmVudBgK",
+            "IAEoBRIPCgdwYXljb2RlGAsgASgJIkUKD0MyU19HTVBheVJlcGFpchIPCgdh",
+            "Y2NvdW50GAEgASgJEg8KB3BheWNvZGUYAiABKAkSEAoIcGF5b3JkZXIYAyAB",
+            "KAkiQQoPUzJDX0dNUGF5UmVwYWlyEgsKA3JldBgBIAEoBRIPCgdwYXljb2Rl",
+            "GAIgASgJEhAKCHBheW9yZGVyGAMgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::PBase.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -102,7 +104,7 @@ namespace PPhp {
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMCommand), global::PPhp.C2S_GMCommand.Parser, new[]{ "Commandid", "Acclist", "Params", "Data" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMCommand), global::PPhp.S2C_GMCommand.Parser, new[]{ "Ret", "Commandid", "Acclist", "Params" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQueryNormalInfo), global::PPhp.C2S_GMQueryNormalInfo.Parser, new[]{ "Querytype", "Account", "Params", "Params2" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryNormalInfo), global::PPhp.S2C_GMQueryNormalInfo.Parser, new[]{ "Ret", "Querytype", "Account", "Result", "Data" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryNormalInfo), global::PPhp.S2C_GMQueryNormalInfo.Parser, new[]{ "Ret", "Querytype", "Account", "Result", "Mapdata", "Data" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQueryClientSave), global::PPhp.C2S_GMQueryClientSave.Parser, new[]{ "Account", "File" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryClientSave), global::PPhp.S2C_GMQueryClientSave.Parser, new[]{ "Ret", "Account", "File", "Data" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQueryTaskMain), global::PPhp.C2S_GMQueryTaskMain.Parser, new[]{ "Idlist" }, null, null, null),
@@ -3919,6 +3921,7 @@ namespace PPhp {
       querytype_ = other.querytype_;
       account_ = other.account_;
       result_ = other.result_.Clone();
+      mapdata_ = other.mapdata_.Clone();
       data_ = other.data_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -3973,8 +3976,18 @@ namespace PPhp {
       get { return result_; }
     }
 
+    /// <summary>Field number for the "mapdata" field.</summary>
+    public const int MapdataFieldNumber = 5;
+    private static readonly pbc::MapField<string, string>.Codec _map_mapdata_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 42);
+    private readonly pbc::MapField<string, string> mapdata_ = new pbc::MapField<string, string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<string, string> Mapdata {
+      get { return mapdata_; }
+    }
+
     /// <summary>Field number for the "data" field.</summary>
-    public const int DataFieldNumber = 5;
+    public const int DataFieldNumber = 9;
     private pb::ByteString data_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Data {
@@ -4001,6 +4014,7 @@ namespace PPhp {
       if (Querytype != other.Querytype) return false;
       if (Account != other.Account) return false;
       if(!result_.Equals(other.result_)) return false;
+      if (!Mapdata.Equals(other.Mapdata)) return false;
       if (Data != other.Data) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -4012,6 +4026,7 @@ namespace PPhp {
       if (Querytype != 0) hash ^= Querytype.GetHashCode();
       if (Account.Length != 0) hash ^= Account.GetHashCode();
       hash ^= result_.GetHashCode();
+      hash ^= Mapdata.GetHashCode();
       if (Data.Length != 0) hash ^= Data.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -4039,8 +4054,9 @@ namespace PPhp {
         output.WriteString(Account);
       }
       result_.WriteTo(output, _repeated_result_codec);
+      mapdata_.WriteTo(output, _map_mapdata_codec);
       if (Data.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(74);
         output.WriteBytes(Data);
       }
       if (_unknownFields != null) {
@@ -4061,6 +4077,7 @@ namespace PPhp {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
       }
       size += result_.CalculateSize(_repeated_result_codec);
+      size += mapdata_.CalculateSize(_map_mapdata_codec);
       if (Data.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
       }
@@ -4085,6 +4102,7 @@ namespace PPhp {
         Account = other.Account;
       }
       result_.Add(other.result_);
+      mapdata_.Add(other.mapdata_);
       if (other.Data.Length != 0) {
         Data = other.Data;
       }
@@ -4116,6 +4134,10 @@ namespace PPhp {
             break;
           }
           case 42: {
+            mapdata_.AddEntriesFrom(input, _map_mapdata_codec);
+            break;
+          }
+          case 74: {
             Data = input.ReadBytes();
             break;
           }
