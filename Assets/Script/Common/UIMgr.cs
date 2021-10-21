@@ -35,6 +35,7 @@ public enum VIEWID
     PayGiftView = 48,
     DiamondView = 49,
     FuncView = 51,
+    CardView = 52,
 
 
 
@@ -89,6 +90,9 @@ public static class UIMgr
 
         RegisterUI(VIEWID.PayGiftView,PayGiftView.Instance);
         RegisterUI(VIEWID.DiamondView,DiamondView.Instance);
+
+        RegisterUI(VIEWID.CardView,CardView.Instance);
+        
     }    
 
     public static void Init()

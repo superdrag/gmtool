@@ -53,6 +53,7 @@ public class MenuView : View
         Button taskBtn = viewRoot.Find("task").GetComponent<Button>();
         Button paygiftBtn = viewRoot.Find("paygift").GetComponent<Button>();
         Button diamondBtn = viewRoot.Find("diamond").GetComponent<Button>();
+        Button cardBtn = viewRoot.Find("card").GetComponent<Button>();
 
         // EventTriggerListener.Get(chongzhiBtn.gameObject).onClick = OnBtnEvent;
         // EventTriggerListener.Get(hexinBtn.gameObject).onClick = OnBtnEvent;
@@ -79,6 +80,7 @@ public class MenuView : View
         btnList.Add(taskBtn);
         btnList.Add(paygiftBtn);
         btnList.Add(diamondBtn);
+        btnList.Add(cardBtn);
 
         for (int i = 0; i < btnList.Count; i++)
         {
@@ -102,6 +104,7 @@ public class MenuView : View
         switchViewList.Add(VIEWID.TaskView);
         switchViewList.Add(VIEWID.PayGiftView);
         switchViewList.Add(VIEWID.DiamondView);
+        switchViewList.Add(VIEWID.CardView);
 
         curIndex = 1;
     }
@@ -162,7 +165,11 @@ public class MenuView : View
         else if( this.curIndex == 12)
         {
             curViewId = VIEWID.DiamondView;
-        }                                                                                   
+        }        
+        else if( this.curIndex == 13)
+        {
+            curViewId = VIEWID.CardView;
+        }                                                                                          
         else
         {
             curViewId = VIEWID.BLANK;
