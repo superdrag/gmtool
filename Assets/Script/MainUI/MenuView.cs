@@ -68,18 +68,18 @@ public class MenuView : View
         // EventTriggerListener.Get(taskBtn.gameObject).onClick = OnBtnEvent;
         // EventTriggerListener.Get(taskBtn.gameObject).onClick = OnBtnEvent;
 
+        btnList.Add(funcBtn);
         btnList.Add(hexinBtn);
-        btnList.Add(chongzhiBtn);
         btnList.Add(youjianBtn);
         btnList.Add(paydataBtn);
-        btnList.Add(limitBtn);
-        btnList.Add(gmaccBtn);
-        btnList.Add(recordBtn);
-        btnList.Add(saveBtn);
-        btnList.Add(funcBtn);
-        btnList.Add(taskBtn);
         btnList.Add(paygiftBtn);
         btnList.Add(diamondBtn);
+        btnList.Add(chongzhiBtn);
+        btnList.Add(saveBtn);
+        btnList.Add(gmaccBtn);
+        btnList.Add(taskBtn);
+        btnList.Add(limitBtn);
+        btnList.Add(recordBtn);
         btnList.Add(cardBtn);
 
         for (int i = 0; i < btnList.Count; i++)
@@ -118,13 +118,15 @@ public class MenuView : View
              UIMgr.HideUI(switchViewList[i]); 
         }
 
+
+
         if( this.curIndex == 1 )
         {
-            curViewId = VIEWID.CoreView;
+            curViewId = VIEWID.FuncView;            
         }        
         else if( this.curIndex == 2 )
         {
-            curViewId = VIEWID.Recharge;
+            curViewId = VIEWID.CoreView;            
         }
         else if( this.curIndex == 3 )
         {
@@ -136,15 +138,15 @@ public class MenuView : View
         } 
         else if( this.curIndex == 5 )
         {
-            curViewId = VIEWID.Limit;
+            curViewId = VIEWID.PayGiftView;            
         }         
         else if( this.curIndex == 6 )
         {
-            curViewId = VIEWID.GMAcc;
+            curViewId = VIEWID.DiamondView;     
         }     
         else if( this.curIndex == 7 )
         {
-            curViewId = VIEWID.RecordView;
+            curViewId = VIEWID.Recharge;   
         }  
         else if( this.curIndex == 8)
         {
@@ -152,7 +154,7 @@ public class MenuView : View
         }   
         else if( this.curIndex == 9)
         {
-            curViewId = VIEWID.FuncView;
+            curViewId = VIEWID.GMAcc;
         }
         else if( this.curIndex == 10)
         {
@@ -160,11 +162,11 @@ public class MenuView : View
         }    
         else if( this.curIndex == 11)
         {
-            curViewId = VIEWID.PayGiftView;
+            curViewId = VIEWID.Limit;
         }     
         else if( this.curIndex == 12)
         {
-            curViewId = VIEWID.DiamondView;
+            curViewId = VIEWID.RecordView;
         }        
         else if( this.curIndex == 13)
         {

@@ -45,7 +45,7 @@ public class CardView : View
         Transform bg = viewRoot.Find("bg");
 
         Content = bg.Find("Scroll View/Viewport/Content");
-        dataText = Content.Find("Text").GetComponent<Text>();      
+        //dataText = Content.Find("Text").GetComponent<Text>();      
     }
 
     override public void OnShow(params object[] args)
