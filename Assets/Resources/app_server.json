@@ -24,8 +24,8 @@
     {           
         "server_id":3,  
         "server_name":"刘海超服务器",
-        "php_ip":"192.168.110.8",    
+        "php_ip":"192.168.110.40",    
         "php_port":8101,
-        "record_url":"http://192.168.110.8/record/"
+        "record_url":"http://192.168.110.40/record/"
     }
 ]

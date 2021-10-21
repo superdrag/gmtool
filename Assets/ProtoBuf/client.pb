@@ -1,5 +1,5 @@
 
-Ó>
+¤C
 client.protoPClientcommon.proto")
 S2C_ErrorCode
 errcode (Rerrcode"
@@ -17,7 +17,7 @@
 guest (Rguest
 reconn (Rreconn
 platform (	Rplatform
-country (	Rcountry"Ç
+country (	Rcountry"ß
 	S2C_Login
 account (	Raccount
 accdbid (Raccdbid
@@ -26,7 +26,8 @@
 gateport (Rgateport
 time (Rtime
 acccode (	Racccode
-ret (Rret"±
+ret (Rret
+retarg	 (Rretarg"±
 C2S_LoginGate
 account (	Raccount
 name (	Rname
@@ -34,7 +35,7 @@
 sign (	Rsign
 time (Rtime
 version (	Rversion
-reconn (Rreconn"•
+reconn (Rreconn"§
 S2C_LoginGate
 account (	Raccount
 accdbid (Raccdbid
@@ -50,7 +51,8 @@ firstlogin
 
 dayRefresh (R
 dayRefresh
-nickname (	Rnickname"–
+nickname (	Rnickname
+ret (Rret"–
 S2C_LoginRoleData
 reconn (Rreconn
 diamond (Rdiamond
@@ -137,9 +139,18 @@ sevenlogin
 C2S_ShowTeamCardList"R
 S2C_ShowTeamCardList:
 teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"
-C2S_DrawCardInfo"6
+C2S_DrawCardInfo"ä
 S2C_DrawCardInfo"
-drawfreetime (Rdrawfreetime"<
+drawfreetime (Rdrawfreetime
+
+unlocktime (R
+unlocktime,
+drawcountleaflet1 (Rdrawcountleaflet1,
+drawcountleaflet2 (Rdrawcountleaflet2,
+drawcountleaflet3 (Rdrawcountleaflet3*
+drawgainleaflet1 (Rdrawgainleaflet1*
+drawgainleaflet2 (Rdrawgainleaflet2*
+drawgainleaflet3 (Rdrawgainleaflet3"<
 C2S_DrawCard
 boxid (Rboxid
 cardid (Rcardid"h
@@ -259,7 +270,20 @@ sevenlogin
 giftlist (2&.PClient.S2C_GetGiftInfo.GiftlistEntryRgiftlistO
 GiftlistEntry
 key (Rkey(
-value (2.PBase.PB_GiftPackRvalue:8"]
+value (2.PBase.PB_GiftPackRvalue:8".
+C2S_ClientUnlock
+unlockid (Runlockid"`
+S2C_ClientUnlock
+ret (Rret
+unlockid (Runlockid
+
+unlocktime (R
+unlocktime"(
+C2S_GainDrawSumRewards
+id (Rid":
+S2C_GainDrawSumRewards
+ret (Rret
+id (Rid"]
 C2S_IOSPayCheck
 payid (Rpayid
 paycode (	Rpaycode

@@ -33,5 +33,11 @@ public class TaskItem
         infoList[3].text = taskData.percent.ToString();
     }
 
-
+    public void SetTitle()
+    {
+        infoList[0].text = "任务id";
+        infoList[1].text = "停留";
+        infoList[2].text = "流失";
+        infoList[3].text = "通过率";
+    }
 }

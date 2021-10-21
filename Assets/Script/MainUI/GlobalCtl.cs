@@ -297,11 +297,8 @@ public class GlobalCtl
 
         Logger.Log("1111111 ",_pb.Data.ToString());
 
-        foreach (var item in _pb.Data)
-        {
-            dict[item.Key] = item.Value;
-        }
-        view.SetDataText(dict);
+
+        view.SetDataText(_pb);
     }
     
 

@@ -75,9 +75,10 @@ message S2C_Login
     int32 time=6;//登录时间戳
     string acccode=7;//账号绑定加密码
     int32 ret = 8;
+    int32 retarg = 9;
 }
 
-//MSG_CL2GT_LOGINGATE             = 1012,     //连接gate验证签名
+//MSG_CL2GT_LOGINGATE             = 1012,     //连接网关gate验证签名
 message C2S_LoginGate
 {
     string account = 1;//用户唯一标识。手机mac地址
@@ -89,7 +90,7 @@ message C2S_LoginGate
     int32 reconn = 7;    //断线重连
 }
 
-//MSG_LG2CL_LOGINGATE      = 2012,     //登录网关成功
+//MSG_LG2CL_LOGINGATE      = 2012,     //登录网关返回
 message S2C_LoginGate
 {
     string account = 1;//账号名字
@@ -102,6 +103,7 @@ message S2C_LoginGate
     int32 curtime = 10;//
     bool dayRefresh = 11; //隔天刷新
     string nickname = 12;//昵称名字
+    int32 ret = 13;
 }
 
 //MsgId.MSG_LG2CL_LOGINROLEDATA               = 2013      --返回登录基本数据
@@ -307,14 +309,22 @@ message C2S_DrawCardInfo
 message S2C_DrawCardInfo
 {
     int32 drawfreetime = 1;
-}
+    int32 unlocktime = 2;
 
+    int32 drawcountleaflet1 = 5;
+    int32 drawcountleaflet2 = 6;
+    int32 drawcountleaflet3 = 7;
+
+    int32 drawgainleaflet1 = 11;
+    int32 drawgainleaflet2 = 12;
+    int32 drawgainleaflet3 = 13;    
+}
 
 // MsgId.MSG_CL2WD_DRAWCARD                = 1522      --抽卡
 message C2S_DrawCard
 {
-    int32 boxid = 1;    //101广告抽卡 102 钻石抽卡 103随机出现球员
-    int32 cardid = 2;    //随机球员卡id
+    int32 boxid = 1;        //100 喇叭抽卡 101广告抽卡 102 收音机抽卡 103随机出现球员
+    int32 cardid = 2;       //随机球员卡id
 }
 
 // MsgId.MSG_WD2CL_DRAWCARD                = 2522      --抽卡
@@ -558,6 +568,32 @@ message S2C_GetGiftInfo
     map<int32, PBase.PB_GiftPack> giftlist = 2;//   --礼包 { 1配置id 2时间 3购买次数 }
 }
 
+
+// MsgId.MSG_CL2WD_CLIENTUNLOCK            = 1535      --[[客户端解锁模块]]    
+message C2S_ClientUnlock
+{
+    int32 unlockid= 1; // 1 喇叭解锁
+}
+// MsgId.MSG_WD2LC_CLIENTUNLOCK            = 2535      --[[客户端解锁模块]]    
+message S2C_ClientUnlock
+{
+    int32 ret = 1;
+    int32 unlockid = 2; //
+    int32 unlocktime = 3; //
+}
+
+// MsgId.MSG_CL2WD_GAINDRAWSUMREWARDS      = 1536      --[[累计抽卡奖励]]    
+message C2S_GainDrawSumRewards
+{
+    int32 id= 1; // 
+}
+
+// MsgId.MSG_WD2LC_GAINDRAWSUMREWARDS      = 2536      --[[累计抽卡奖励]]    
+message S2C_GainDrawSumRewards
+{
+    int32 ret= 1; // 
+    int32 id= 2; // 
+}
 
 // MsgId.MSG_CL2WD_IOSPAYCHECK             = 1550      --[[支付]] 
 message C2S_IOSPayCheck

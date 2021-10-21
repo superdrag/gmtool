@@ -28,50 +28,53 @@ namespace PBase {
             "YWx1ZRgBIAMoBSIgCg9QQl9QYXJhbVN0ckxpc3QSDQoFdmFsdWUYASADKAki",
             "bgoPUEJfUGFyYW1TdHJEaWN0Ei4KBGRpY3QYASADKAsyIC5QQmFzZS5QQl9Q",
             "YXJhbVN0ckRpY3QuRGljdEVudHJ5GisKCURpY3RFbnRyeRILCgNrZXkYASAB",
-            "KAkSDQoFdmFsdWUYAiABKAk6AjgBIiUKCFBCX01vbmV5EgwKBHR5cGUYASAB",
-            "KAUSCwoDbnVtGAIgASgFIpEBCgtQQl9NYWlsSXRlbRILCgNtaWQYASABKAkS",
-            "DQoFdGl0bGUYAiABKAkSDwoHY29udGVudBgDIAEoCRIQCghpdGVtbGlzdBgE",
-            "IAEoCRIQCghzZW5kdGltZRgFIAEoBRIQCghyZWFkdGltZRgGIAEoBRIQCghw",
-            "YXN0dGltZRgHIAEoBRINCgVzdGF0ZRgIIAEoBSLVAQoNUEJfTWFpbEl0ZW1F",
-            "eBILCgNtaWQYASABKAkSDQoFdGl0bGUYAiABKAkSDwoHY29udGVudBgDIAEo",
-            "CRIQCghpdGVtbGlzdBgEIAEoCRIQCghzZW5kdGltZRgFIAEoBRIQCghyZWFk",
-            "dGltZRgGIAEoBRIQCghwYXN0dGltZRgHIAEoBRINCgVzdGF0ZRgIIAEoBRIS",
-            "CgpwbGF5ZXJkYmlkGAkgASgFEg8KB2FjY291bnQYCiABKAkSDAoEdHlwZRgL",
-            "IAEoBRINCgVhZ3JlZRgMIAEoBSI5Cg9QQl9UZWFtQ2FyZEluZm8SCgoCaWQY",
-            "ASABKAUSCwoDbnVtGAIgASgFEg0KBWxldmVsGAMgASgFIjYKC1BCX0dpZnRQ",
-            "YWNrEgoKAmlkGAEgASgFEg0KBWNvdW50GAIgASgFEgwKBHRpbWUYAyABKAUi",
-            "TAoKUEJfUmFuQ2FyZBIOCgZzaG9waWQYASABKAUSDgoGY2FyZGlkGAIgASgF",
-            "Eg8KB2NhcmRudW0YAyABKAUSDQoFY291bnQYBCABKAUiTQoHUEJfSXRlbRIQ",
-            "CghpdGVtR3VpZBgBIAEoCRIOCgZpdGVtSWQYAiABKAUSDwoHaXRlbVBvcxgD",
-            "IAEoBRIPCgdpdGVtTnVtGAQgASgFIi8KC1BCX0l0ZW1MaXN0EiAKCGl0ZW1M",
-            "aXN0GAEgAygLMg4uUEJhc2UuUEJfSXRlbSI5Cg5QQl9UYXNrQ291bnRlchIL",
-            "CgNjSWQYASABKAUSDAoEY0FyZxgCIAEoBRIMCgRjTnVtGAMgASgFIn0KB1BC",
-            "X1Rhc2sSDgoGdGFza0lkGAEgASgFEhEKCXRhc2tTdGF0ZRgCIAEoBRISCgph",
-            "Y2NlcHRUaW1lGAMgASgFEhIKCnN1Ym1pdFRpbWUYBCABKAUSJwoIY291bnRl",
-            "cnMYBSADKAsyFS5QQmFzZS5QQl9UYXNrQ291bnRlciIvCgtQQl9UYXNrTGlz",
-            "dBIgCgh0YXNrTGlzdBgBIAMoCzIOLlBCYXNlLlBCX1Rhc2siSAoKUEJfQ291",
-            "bnRlchIRCgljb3VudGVySWQYASABKAUSEgoKY291bnRlck51bRgCIAEoBRIT",
-            "Cgtjb3VudGVyQXJncxgDIAMoBSI4Cg5QQl9Db3VudGVyTGlzdBImCgtjb3Vu",
-            "dGVyTGlzdBgBIAMoCzIRLlBCYXNlLlBCX0NvdW50ZXIinQIKC1BCX1VuaW9u",
-            "T2JqEg8KB3VuaW9uSWQYASABKAUSEQoJdW5pb25OYW1lGAIgASgJEhEKCXVu",
-            "aW9uVHlwZRgDIAEoBRIPCgducGNMaXN0GAQgAygFEhEKCXNraWxsTGlzdBgF",
-            "IAMoBRISCgp1bmlvbkxldmVsGAYgASgFEhAKCHVuaW9uRVhQGAcgASgDEhIK",
-            "CnVuaW9uTW9uZXkYCCABKAMSEQoJbWF4TWVtYmVyGAkgASgFEhEKCW1heFZD",
-            "aGFpchgKIAEoBRIQCghtYXhFbGRlchgLIAEoBRITCgt1bmlvbk5vdGljZRgM",
-            "IAEoCRIXCg91bmlvbkNyZWF0ZVRpbWUYDSABKAUSEwoLY3JlYXRvck5hbWUY",
-            "DiABKAkiqQEKDlBCX1VuaW9uTWVtYmVyEgwKBGRiaWQYASABKAUSEQoJdW5p",
-            "b25EYmlkGAIgASgFEhEKCXBseWVyREJpZBgDIAEoBRISCgptZW1iZXJOYW1l",
-            "GAQgASgJEgwKBHJhbmsYBSABKAUSDQoFb2ZmZXIYBiABKAUSEAoIam9pblRp",
-            "bWUYByABKAUSEAoIZXhpdFRpbWUYCCABKAUSDgoGb25saW5lGAkgASgFIjoK",
-            "EVBCX1VuaW9uQXBwbHlJbmZvEhIKCnBsYXllckRiaWQYASABKAUSEQoJYXBw",
-            "bHlUaW1lGAIgASgFIi0KD1BCX1VuaW9uTG9nSW5mbxIMCgR0aW1lGAEgASgF",
-            "EgwKBHRleHQYAiABKAliBnByb3RvMw=="));
+            "KAkSDQoFdmFsdWUYAiABKAk6AjgBIm4KD1BCX1BhcmFtSW50RGljdBIuCgRk",
+            "aWN0GAEgAygLMiAuUEJhc2UuUEJfUGFyYW1JbnREaWN0LkRpY3RFbnRyeRor",
+            "CglEaWN0RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4ASIl",
+            "CghQQl9Nb25leRIMCgR0eXBlGAEgASgFEgsKA251bRgCIAEoBSKRAQoLUEJf",
+            "TWFpbEl0ZW0SCwoDbWlkGAEgASgJEg0KBXRpdGxlGAIgASgJEg8KB2NvbnRl",
+            "bnQYAyABKAkSEAoIaXRlbWxpc3QYBCABKAkSEAoIc2VuZHRpbWUYBSABKAUS",
+            "EAoIcmVhZHRpbWUYBiABKAUSEAoIcGFzdHRpbWUYByABKAUSDQoFc3RhdGUY",
+            "CCABKAUi1QEKDVBCX01haWxJdGVtRXgSCwoDbWlkGAEgASgJEg0KBXRpdGxl",
+            "GAIgASgJEg8KB2NvbnRlbnQYAyABKAkSEAoIaXRlbWxpc3QYBCABKAkSEAoI",
+            "c2VuZHRpbWUYBSABKAUSEAoIcmVhZHRpbWUYBiABKAUSEAoIcGFzdHRpbWUY",
+            "ByABKAUSDQoFc3RhdGUYCCABKAUSEgoKcGxheWVyZGJpZBgJIAEoBRIPCgdh",
+            "Y2NvdW50GAogASgJEgwKBHR5cGUYCyABKAUSDQoFYWdyZWUYDCABKAUiOQoP",
+            "UEJfVGVhbUNhcmRJbmZvEgoKAmlkGAEgASgFEgsKA251bRgCIAEoBRINCgVs",
+            "ZXZlbBgDIAEoBSI2CgtQQl9HaWZ0UGFjaxIKCgJpZBgBIAEoBRINCgVjb3Vu",
+            "dBgCIAEoBRIMCgR0aW1lGAMgASgFIkwKClBCX1JhbkNhcmQSDgoGc2hvcGlk",
+            "GAEgASgFEg4KBmNhcmRpZBgCIAEoBRIPCgdjYXJkbnVtGAMgASgFEg0KBWNv",
+            "dW50GAQgASgFIk0KB1BCX0l0ZW0SEAoIaXRlbUd1aWQYASABKAkSDgoGaXRl",
+            "bUlkGAIgASgFEg8KB2l0ZW1Qb3MYAyABKAUSDwoHaXRlbU51bRgEIAEoBSIv",
+            "CgtQQl9JdGVtTGlzdBIgCghpdGVtTGlzdBgBIAMoCzIOLlBCYXNlLlBCX0l0",
+            "ZW0iOQoOUEJfVGFza0NvdW50ZXISCwoDY0lkGAEgASgFEgwKBGNBcmcYAiAB",
+            "KAUSDAoEY051bRgDIAEoBSJ9CgdQQl9UYXNrEg4KBnRhc2tJZBgBIAEoBRIR",
+            "Cgl0YXNrU3RhdGUYAiABKAUSEgoKYWNjZXB0VGltZRgDIAEoBRISCgpzdWJt",
+            "aXRUaW1lGAQgASgFEicKCGNvdW50ZXJzGAUgAygLMhUuUEJhc2UuUEJfVGFz",
+            "a0NvdW50ZXIiLwoLUEJfVGFza0xpc3QSIAoIdGFza0xpc3QYASADKAsyDi5Q",
+            "QmFzZS5QQl9UYXNrIkgKClBCX0NvdW50ZXISEQoJY291bnRlcklkGAEgASgF",
+            "EhIKCmNvdW50ZXJOdW0YAiABKAUSEwoLY291bnRlckFyZ3MYAyADKAUiOAoO",
+            "UEJfQ291bnRlckxpc3QSJgoLY291bnRlckxpc3QYASADKAsyES5QQmFzZS5Q",
+            "Ql9Db3VudGVyIp0CCgtQQl9Vbmlvbk9iahIPCgd1bmlvbklkGAEgASgFEhEK",
+            "CXVuaW9uTmFtZRgCIAEoCRIRCgl1bmlvblR5cGUYAyABKAUSDwoHbnBjTGlz",
+            "dBgEIAMoBRIRCglza2lsbExpc3QYBSADKAUSEgoKdW5pb25MZXZlbBgGIAEo",
+            "BRIQCgh1bmlvbkVYUBgHIAEoAxISCgp1bmlvbk1vbmV5GAggASgDEhEKCW1h",
+            "eE1lbWJlchgJIAEoBRIRCgltYXhWQ2hhaXIYCiABKAUSEAoIbWF4RWxkZXIY",
+            "CyABKAUSEwoLdW5pb25Ob3RpY2UYDCABKAkSFwoPdW5pb25DcmVhdGVUaW1l",
+            "GA0gASgFEhMKC2NyZWF0b3JOYW1lGA4gASgJIqkBCg5QQl9Vbmlvbk1lbWJl",
+            "chIMCgRkYmlkGAEgASgFEhEKCXVuaW9uRGJpZBgCIAEoBRIRCglwbHllckRC",
+            "aWQYAyABKAUSEgoKbWVtYmVyTmFtZRgEIAEoCRIMCgRyYW5rGAUgASgFEg0K",
+            "BW9mZmVyGAYgASgFEhAKCGpvaW5UaW1lGAcgASgFEhAKCGV4aXRUaW1lGAgg",
+            "ASgFEg4KBm9ubGluZRgJIAEoBSI6ChFQQl9VbmlvbkFwcGx5SW5mbxISCgpw",
+            "bGF5ZXJEYmlkGAEgASgFEhEKCWFwcGx5VGltZRgCIAEoBSItCg9QQl9Vbmlv",
+            "bkxvZ0luZm8SDAoEdGltZRgBIAEoBRIMCgR0ZXh0GAIgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_ParamIntList), global::PBase.PB_ParamIntList.Parser, new[]{ "Value" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_ParamStrList), global::PBase.PB_ParamStrList.Parser, new[]{ "Value" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_ParamStrDict), global::PBase.PB_ParamStrDict.Parser, new[]{ "Dict" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_ParamIntDict), global::PBase.PB_ParamIntDict.Parser, new[]{ "Dict" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_Money), global::PBase.PB_Money.Parser, new[]{ "Type", "Num" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItem), global::PBase.PB_MailItem.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "Sendtime", "Readtime", "Pasttime", "State" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItemEx), global::PBase.PB_MailItemEx.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "Sendtime", "Readtime", "Pasttime", "State", "Playerdbid", "Account", "Type", "Agree" }, null, null, null),
@@ -459,6 +462,127 @@ namespace PBase {
 
   }
 
+  public sealed partial class PB_ParamIntDict : pb::IMessage<PB_ParamIntDict> {
+    private static readonly pb::MessageParser<PB_ParamIntDict> _parser = new pb::MessageParser<PB_ParamIntDict>(() => new PB_ParamIntDict());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<PB_ParamIntDict> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PB_ParamIntDict() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PB_ParamIntDict(PB_ParamIntDict other) : this() {
+      dict_ = other.dict_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PB_ParamIntDict Clone() {
+      return new PB_ParamIntDict(this);
+    }
+
+    /// <summary>Field number for the "dict" field.</summary>
+    public const int DictFieldNumber = 1;
+    private static readonly pbc::MapField<int, int>.Codec _map_dict_codec
+        = new pbc::MapField<int, int>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForInt32(16), 10);
+    private readonly pbc::MapField<int, int> dict_ = new pbc::MapField<int, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<int, int> Dict {
+      get { return dict_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as PB_ParamIntDict);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(PB_ParamIntDict other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!Dict.Equals(other.Dict)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= Dict.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      dict_.WriteTo(output, _map_dict_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += dict_.CalculateSize(_map_dict_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(PB_ParamIntDict other) {
+      if (other == null) {
+        return;
+      }
+      dict_.Add(other.dict_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            dict_.AddEntriesFrom(input, _map_dict_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   /// <summary>
   ///货币
   /// </summary>
@@ -470,7 +594,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[3]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -636,7 +760,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[4]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -982,7 +1106,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[5]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1449,7 +1573,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[6]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1643,7 +1767,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[7]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1840,7 +1964,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[8]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2065,7 +2189,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[9]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2290,7 +2414,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[10]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2414,7 +2538,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[11]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2606,7 +2730,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[12]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2851,7 +2975,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[13]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2975,7 +3099,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[14]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3159,7 +3283,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[15]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3283,7 +3407,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[16]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3807,7 +3931,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[17]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4190,7 +4314,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[18]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4354,7 +4478,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[19]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
