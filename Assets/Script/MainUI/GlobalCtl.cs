@@ -189,6 +189,11 @@ public class GlobalCtl
              FuncView view = (FuncView)UIMgr.GetUI(VIEWID.FuncView) ;
              view.onQueryServerTime(System.Convert.ToInt32(_pb.Params[0]) );
         }
+        else if(_pb.Commandid ==(int)PHP_COMMAMD.DRAWCARD)
+        {
+              CardView view = (CardView)UIMgr.GetUI(VIEWID.CardView);
+              view.SetDataText(_pb);
+        }
     }
 
 
