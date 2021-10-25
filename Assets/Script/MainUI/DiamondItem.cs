@@ -25,19 +25,17 @@ public class DiamondItem
         }
     }
 
-    public void Show(QueryTaskData taskData)
+    public void Show(DiaData data)
     {
-        infoList[0].text = taskData.taskId.ToString();
-        infoList[1].text = taskData.curNum.ToString();
-        infoList[2].text = taskData.lostNum.ToString();
-        infoList[3].text = taskData.percent.ToString();
+        infoList[0].text = data.eventid.ToString();
+        infoList[1].text = data.count.ToString();
+        infoList[2].text = data.num.ToString();        
     }
 
     public void SetTitle()
     {
-        infoList[0].text = "任务id";
-        infoList[1].text = "停留";
-        infoList[2].text = "流失";
-        infoList[3].text = "通过率";
+        infoList[0].text = "商品ID";
+        infoList[1].text = "次数";
+        infoList[2].text = "数量";
     }
 }

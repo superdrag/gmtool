@@ -12,9 +12,10 @@ public enum RECORD_TYPE
     RECORD_RECHARGE = 1002,
     RECORD_USEDIAMOND = 1003,
     RECORD_USERREG = 1004,
+    RECORD_WATCHADV	 = 1005,		//看广告
+
     RECORD_USERLOGIN = 1010,
     RECORD_USEROFFLINE = 1011,
-
     RECORD_GMOPERATE = 1020,
 }
 
@@ -42,6 +43,13 @@ public class CoreData
     public Dictionary<int,int> hourOnlineNumDict = new Dictionary<int, int>();
 }
 
+public class DiaData
+{
+    public int eventid;
+    public int count;
+    public int num;
+}
+
 public class RecordModel {
 
 
@@ -64,6 +72,7 @@ public class RecordModel {
     public static List<string[]> operateList = new List<string[]>(); //操作记录
     public static List<string> countryList = new List<string>{ "CN","US","JP","DE"};
     public static List<string> platformList = new List<string>{ "IOS","Android"};
+    public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
 
     public void Init()
     {
@@ -112,6 +121,12 @@ public class RecordModel {
         for (int j = 0; j < dayData.Length; j++)
         {
             string lineData = dayData[j];
+            //Logger.Log("lineData.............",lineData);  
+            if (lineData == "")
+            {
+                Logger.Error("lineData null.............",dayIndex); 
+                continue;
+            }
 
             string[] fields = lineData.Split(',');
             if (coreData.date == null)
@@ -161,12 +176,13 @@ public class RecordModel {
 
             if (recordType == RECORD_TYPE.RECORD_USEROFFLINE)
             {   
-                sumOnlineSec += System.Convert.ToInt32(fields[3]);
+                //Logger.Log("1111111111111111 "+fields.Length);
+                sumOnlineSec += System.Convert.ToInt32(fields[5]);
             }
 
             if (recordType == RECORD_TYPE.RECORD_RECHARGE)
             {
-                int _num = Convert.ToInt32( fields[4] );
+                int _num = Convert.ToInt32( fields[6] );
                 string _acc = fields[2].Trim();
                 coreData.income += Convert.ToInt32( _num );    
                 if ( coreData.payAccDict.ContainsKey(_acc) )
@@ -188,6 +204,28 @@ public class RecordModel {
                 operateList.Add(fields);
             }
 
+            if (recordType == RECORD_TYPE.RECORD_USEDIAMOND)
+            {                                              
+                int _event = System.Convert.ToInt32(fields[5].Trim());
+                int _num = System.Convert.ToInt32(fields[6].Trim());
+                
+                //Logger.Log("111111111111111111111111111111111 "+_event);
+
+                DiaData _data;
+                if (useDiamondDict.TryGetValue(_event,out _data))
+                {
+                    
+                }
+                else
+                {
+                    _data = new DiaData();
+                    useDiamondDict.Add(_event,_data);
+                }
+
+                _data.eventid = _event;
+                _data.count ++;
+                _data.num += _num;
+            }
         }   
 
         foreach (var item in coreData.loginAccDict)

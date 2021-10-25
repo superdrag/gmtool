@@ -60,8 +60,7 @@ public class DiamondView : View
 
     override public void DoClickQuery()
     {
-        C2S_GMQueryTaskMain pb = new C2S_GMQueryTaskMain();
-        NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYTASKMAIN,pb);  
+        SetDataText();
     }
 
     override public void DoClickExport()
@@ -69,18 +68,18 @@ public class DiamondView : View
 
     }   
 
-    public void AddItem(QueryTaskData taskData)
+    public void AddItem(DiaData data)
     {               
-        TaskItem item = new TaskItem();
+        DiamondItem item = new DiamondItem();
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
-        item.Show(taskData);          
+        item.Show(data);          
     }
 
     public void AddItemTitle()
     {               
-        TaskItem item = new TaskItem();
+        DiamondItem item = new DiamondItem();
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
@@ -96,72 +95,25 @@ public class DiamondView : View
         }
     }    
 
-    public void SetDataText(S2C_GMQueryTaskMain _pb)
+    public void SetDataText()
     {
-        GlobalModel.taskDataDict.Clear();
         ClearAllItem();
+        AddItemTitle();
 
-        foreach (var item in _pb.Data)
-        {
-            QueryTaskData data = new QueryTaskData();
-            data.taskId = item.Value.Taskid;
-            data.curNum = item.Value.Stop;
-            data.lostNum = item.Value.Lost;
-            //data.percent = (item.Value.Pass * 100).ToString("F2") + "%";
-            if (data.curNum > 0)
-            {
-                double pect = Convert.ToDouble(_pb.Sumacc - data.curNum ) / _pb.Sumacc * 100 ;
-                //Logger.Log("1111111111111 " +pect );
-                data.percent = pect.ToString("F2") + "%";
-            }
-            else
-            {
-                data.percent = "100%";
-            }    
-    
-            GlobalModel.taskDataDict.Add(data.taskId,data);
-        }
-
-        List<KeyValuePair<int,QueryTaskData>> lst = new List<KeyValuePair<int,QueryTaskData>>(GlobalModel.taskDataDict);
-
-　　　　 lst.Sort(delegate(KeyValuePair<int,QueryTaskData> s1, KeyValuePair<int,QueryTaskData> s2)  
+        List<KeyValuePair<int,DiaData>> lst = new List<KeyValuePair<int,DiaData>>(RecordModel.useDiamondDict);
+　　　　 lst.Sort(delegate(KeyValuePair<int,DiaData> s1, KeyValuePair<int,DiaData> s2)  
 　　　　　　{
 　　　　　　　　return s1.Key.CompareTo(s2.Key);
-　　　　　　});
+　　　　　　});        
 
-        Logger.Log("SetDataTex " + GlobalModel.taskDataDict.Count);
 
-        RectTransform rect = Content.transform.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(0, (float)GlobalModel.taskDataDict.Count * (float)73.6 );                
-
-        //Logger.Log("SetDataTex sumacc " + _pb.Sumacc);
-
-        AddItemTitle();
         foreach (var item in lst)
         {
             AddItem(item.Value);
         }
 
-        // if (file == "Currency" )
-        // {
-        //     Currency cy = new Currency();
-        //     //byte[] bytes = System.Text.Encoding.Default.GetBytes(s);
-        //     Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
-        //     cy.MergeFrom(pbStream);
-        //     //Output.Log("unpack pb <--- ",msgid, pb.ToString());
-        //     Logger.Log("SetDataTex" + cy.ToString());
-        //     dataText.text = cy.ToString();
-        // }   
-        // if (file == "OwnEquipInfo" )
-        // {
-        //     OwnEquipInfo cy = new OwnEquipInfo();
-        //     //byte[] bytes = System.Text.Encoding.Default.GetBytes(s);
-        //     Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
-        //     cy.MergeFrom(pbStream);
-        //     //Output.Log("unpack pb <--- ",msgid, pb.ToString());
-        //     Logger.Log("SetDataTex" + cy.ToString());
-        //     dataText.text = cy.ToString();
-        // }                
+        Logger.Log("SetDataTex " + RecordModel.useDiamondDict.Count);
+              
     }
 
 }

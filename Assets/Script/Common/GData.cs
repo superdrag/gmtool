@@ -66,6 +66,19 @@ public enum MOD_TYPE
     UPATE = 3,
 }
 
+// Event.EVENT_DRAW_CARD               = 101   --抽卡
+// Event.EVENT_UNLOCK_AREA             = 102   --快速解锁区域
+// Event.EVENT_UNLOCK_ROOM             = 103   --快速解锁房间
+// Event.EVENT_BUY_BATTLE_PASS         = 104   --购买战斗通行证
+// Event.EVENT_BUY_BATTLE_PASS_LEVEL   = 105   --购买战斗通行证等级
+// Event.EVENT_SHOP_GIFTPACK           = 106   --商城钻石礼包
+// Event.EVENT_UPGRADE_FACILIY         = 107   --快速升级设备
+// Event.EVENT_BUY_LEAFLET3            = 108   --钻石购买抽卡收音机
+// Event.EVENT_BUY_BUYSHOPRANDCARD     = 109   --购买商城随机卡牌
+// Event.EVENT_BUY_CASH                = 110   --购买商城钞票
+// Event.EVENT_ROOMPOSUNLOCK           = 111   --房间坑位解锁
+// Event.EVENT_HOOKCD                  = 112   --挂机训练清CD
+
 public class GData
 {
     public static int MSG_SEND_MINID = 1000;
