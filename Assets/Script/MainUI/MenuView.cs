@@ -40,7 +40,7 @@ public class MenuView : View
         viewRoot = ResMgr.CreateGo("Prefab/MenuView").transform;
         UIHelper.AddChild(UIMgr.UIMenu, viewRoot);  
 
-        Button chongzhiBtn = viewRoot.Find("chongzhi").GetComponent<Button>();  
+        Button playerDataBtn = viewRoot.Find("playerdata").GetComponent<Button>();  
         Button hexinBtn = viewRoot.Find("hexin").GetComponent<Button>();
         Button youjianBtn = viewRoot.Find("youjian").GetComponent<Button>();
 
@@ -74,7 +74,7 @@ public class MenuView : View
         btnList.Add(paydataBtn);
         btnList.Add(paygiftBtn);
         btnList.Add(diamondBtn);
-        btnList.Add(chongzhiBtn);
+        btnList.Add(playerDataBtn);
         btnList.Add(saveBtn);
         btnList.Add(gmaccBtn);
         btnList.Add(taskBtn);

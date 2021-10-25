@@ -55,6 +55,10 @@ public class GMApp : MonoBehaviour {
     private void OnInitFinish()
     {
         UIMgr.Init();      
+
+        Image img = UIMgr.UIBG.GetComponent<Image>();
+        img.enabled = true;
+
         UIMgr.ShowUI(VIEWID.LOGIN);
     }
 
@@ -68,6 +72,8 @@ public class GMApp : MonoBehaviour {
         //Logger.Log("GMApp Start..........");
 
         //ScreenFix();
+
+
         
         test();        
     }

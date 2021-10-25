@@ -37,6 +37,7 @@ public class CoreData
     public int sevenLive;
     public int avgOnlineSec; //平均在线时长
     public int allRegNum; //总注册数
+    public int watchAds; //看广告
     public Dictionary<string,int> loginAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> payAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> regAccDict = new Dictionary<string, int>();
@@ -73,6 +74,7 @@ public class RecordModel {
     public static List<string> countryList = new List<string>{ "CN","US","JP","DE"};
     public static List<string> platformList = new List<string>{ "IOS","Android"};
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
+    public static int sumWatchAds = 0;
 
     public void Init()
     {
@@ -225,6 +227,11 @@ public class RecordModel {
                 _data.eventid = _event;
                 _data.count ++;
                 _data.num += _num;
+            }
+
+            if (recordType == RECORD_TYPE.RECORD_WATCHADV)
+            {
+                coreData.watchAds++;
             }
         }   
 

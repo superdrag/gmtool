@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 890655007716082418}
   - component: {fileID: 419005372233444484}
   m_Layer: 5
-  m_Name: chongzhi
+  m_Name: playerdata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2250,7 +2250,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5145\u503C"
+  m_Text: "\u73A9\u5BB6\u6570\u636E"
 --- !u!1 &8446302923230624076
 GameObject:
   m_ObjectHideFlags: 0

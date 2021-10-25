@@ -44,6 +44,7 @@ public class CoreItem
         infoList[12].text = coreData.threeLive.ToString();
         infoList[13].text = coreData.sevenLive.ToString();
         infoList[14].text = coreData.avgOnlineSec.ToString();
+        infoList[15].text = coreData.watchAds.ToString();
     }
 
 
