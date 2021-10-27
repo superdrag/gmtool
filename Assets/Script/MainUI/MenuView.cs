@@ -42,6 +42,7 @@ public class MenuView : View
 
         Button playerDataBtn = viewRoot.Find("playerdata").GetComponent<Button>();  
         Button hexinBtn = viewRoot.Find("hexin").GetComponent<Button>();
+        Button hexinsumBtn = viewRoot.Find("hexinsum").GetComponent<Button>();
         Button youjianBtn = viewRoot.Find("youjian").GetComponent<Button>();
 
         Button paydataBtn = viewRoot.Find("paydata").GetComponent<Button>();
@@ -70,6 +71,7 @@ public class MenuView : View
 
         btnList.Add(funcBtn);
         btnList.Add(hexinBtn);
+        btnList.Add(hexinsumBtn);
         btnList.Add(youjianBtn);
         btnList.Add(paydataBtn);
         btnList.Add(paygiftBtn);
@@ -93,6 +95,7 @@ public class MenuView : View
         switchViewList.Add(VIEWID.MailSend);
         switchViewList.Add(VIEWID.Recharge);
         switchViewList.Add(VIEWID.CoreView);
+        switchViewList.Add(VIEWID.CoreSumView);
         switchViewList.Add(VIEWID.Limit);
         switchViewList.Add(VIEWID.LimitNew);
         switchViewList.Add(VIEWID.PayView);
@@ -118,8 +121,6 @@ public class MenuView : View
              UIMgr.HideUI(switchViewList[i]); 
         }
 
-
-
         if( this.curIndex == 1 )
         {
             curViewId = VIEWID.FuncView;            
@@ -130,45 +131,49 @@ public class MenuView : View
         }
         else if( this.curIndex == 3 )
         {
+            curViewId = VIEWID.CoreSumView;            
+        }        
+        else if( this.curIndex == 4 )
+        {
             curViewId = VIEWID.Mail;
         }    
-        else if( this.curIndex == 4 )
+        else if( this.curIndex == 5 )
         {
             curViewId = VIEWID.PayView;
         } 
-        else if( this.curIndex == 5 )
+        else if( this.curIndex == 6 )
         {
             curViewId = VIEWID.PayGiftView;            
         }         
-        else if( this.curIndex == 6 )
+        else if( this.curIndex == 7 )
         {
             curViewId = VIEWID.DiamondView;     
         }     
-        else if( this.curIndex == 7 )
+        else if( this.curIndex == 8 )
         {
             curViewId = VIEWID.Recharge;   
         }  
-        else if( this.curIndex == 8)
+        else if( this.curIndex == 9)
         {
             curViewId = VIEWID.SaveView;
         }   
-        else if( this.curIndex == 9)
+        else if( this.curIndex == 10)
         {
             curViewId = VIEWID.GMAcc;
         }
-        else if( this.curIndex == 10)
+        else if( this.curIndex == 11)
         {
             curViewId = VIEWID.TaskView;
         }    
-        else if( this.curIndex == 11)
+        else if( this.curIndex == 12)
         {
             curViewId = VIEWID.Limit;
         }     
-        else if( this.curIndex == 12)
+        else if( this.curIndex == 13)
         {
             curViewId = VIEWID.RecordView;
         }        
-        else if( this.curIndex == 13)
+        else if( this.curIndex == 14)
         {
             curViewId = VIEWID.CardView;
         }                                                                                          

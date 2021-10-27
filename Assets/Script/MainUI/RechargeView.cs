@@ -16,15 +16,9 @@ public class RechargeView : View
     private Button chongzhiBtn;
 
     private Text zhanghaoText;
-    private Text shuliangText;
-
-    private Text zhanghaoData;
-    private Text idData;
-    private Text zhuanshiData;
-    private Text chaopiaoData;
-    private Text vipData;
-    private Text dengluData;
-    private Text lixianData;
+    private InputField dataIF;
+    private Text drawIFText;
+    public Transform Content;    
 
     public static RechargeView Instance
     {
@@ -52,58 +46,43 @@ public class RechargeView : View
         chaxunBtn = bg.Find("chaxun/cha").GetComponent<Button>();  
         chaxunBtn.onClick.AddListener(onClickCha); 
         zhanghaoText = bg.Find("chaxun/shuru/Text").GetComponent<Text>();
+ 
+        Content = bg.Find("Scroll View/Viewport/Content");        
+        dataIF = Content.Find("InputField").GetComponent<InputField>();
+        drawIFText = bg.Find("InputField/Text").GetComponent<Text>();   
 
-        chongzhiBtn = bg.Find("chong/chongzhi").GetComponent<Button>();
-        chongzhiBtn.onClick.AddListener(onClickChong);      
-        shuliangText = bg.Find("chong/num/Text").GetComponent<Text>();
-      
-        zhanghaoData = bg.Find("UserInfoView/data/zhanghao").GetComponent<Text>(); 
-        idData = bg.Find("UserInfoView/data/id").GetComponent<Text>();
-        zhuanshiData = bg.Find("UserInfoView/data/zuanshi").GetComponent<Text>();
-        chaopiaoData = bg.Find("UserInfoView/data/chaopiao").GetComponent<Text>();
-        vipData = bg.Find("UserInfoView/data/vip").GetComponent<Text>();
-        dengluData = bg.Find("UserInfoView/data/denglu").GetComponent<Text>();
-        lixianData = bg.Find("UserInfoView/data/lixian").GetComponent<Text>();
     }
 
     override public void OnShow(params object[] args)
     {
-        zhanghaoData.text = GlobalModel.queryUserData.account;
-        idData.text = GlobalModel.queryUserData.accDbid.ToString();
-        zhuanshiData.text = GlobalModel.queryUserData.diamond.ToString();
-        chaopiaoData.text = GlobalModel.queryUserData.cash.ToString();
-        vipData.text = GlobalModel.queryUserData.vipcard.ToString();
-        dengluData.text = GlobalModel.queryUserData.logintv.ToString();
-        lixianData.text = GlobalModel.queryUserData.offlinetv.ToString();
+        
     }
 
     private void onClickCha()
     {
         Logger.Log("onClickCha ...........");
 
+        zhanghaoText.text = "AAA123";
+
         if( string.IsNullOrEmpty(zhanghaoText.text) )
         {            
             UIMgr.ShowUI(VIEWID.ALERTINFO,"账号不能为空");
             return;
         }
 
-        GlobalCtl.MSG_CL2PHP_QUERYUSERINFO(zhanghaoText.text);
+        C2S_GMQueryNormalInfo pb = new C2S_GMQueryNormalInfo();
+        pb.Account = zhanghaoText.text;
+        pb.Querytype = (int)PHP_QUERY.PLAYERDATA;
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYNORMALINFO,pb);
     }
 
-    private void onClickChong()
+    public void SetDataText(S2C_GMQueryNormalInfo _pb)
     {
-        if( string.IsNullOrEmpty(zhanghaoText.text) )
-        {            
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"账号不能为空");
-            return;
+        dataIF.text = "";
+        foreach (var item in _pb.Result[0].Dict)
+        {
+            dataIF.text = dataIF.text + item.Key + ":" + item.Value + "\n";
         }
-
-        if( string.IsNullOrEmpty(shuliangText.text) )
-        {            
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"数量不能为空");
-            return;
-        }
-
-        GlobalCtl.MSG_CL2PHP_SENDMONEY(zhanghaoText.text,1,int.Parse(shuliangText.text));
     }
+    
 }

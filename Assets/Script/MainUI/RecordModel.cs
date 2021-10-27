@@ -44,6 +44,8 @@ public class CoreData
     public Dictionary<int,int> hourOnlineNumDict = new Dictionary<int, int>();
 }
 
+
+
 public class DiaData
 {
     public int eventid;
@@ -74,11 +76,15 @@ public class RecordModel {
     public static List<string> countryList = new List<string>{ "CN","US","JP","DE"};
     public static List<string> platformList = new List<string>{ "IOS","Android"};
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
+    public static List<int> coreSumList = new List<int>();
     public static int sumWatchAds = 0;
 
     public void Init()
     {
-        
+        for (int i = 0; i < 15; i++)
+        {
+            coreSumList.Add(0);
+        }
     }
 
     public void loadFile()
@@ -107,6 +113,23 @@ public class RecordModel {
             string[] dayData = dayDataList[i];
             analyseDayCoreData(dayData,i);
         }
+
+        //sum
+        coreSumList[0] = coreList[coreList.Count-1].timetv;
+
+        for (int i = 0; i < coreList.Count; i++)
+        {
+            CoreData dayData = coreList[i];
+            
+            //coreSumList[1] = 0;
+            coreSumList[1] += dayData.newUser;       
+            foreach (var item in dayData.payAccDict)
+            {
+                coreSumList[2] += item.Value;
+            }                      
+        }
+
+        coreSumList[3] = sumWatchAds;
     }
 
     public void analyseDayCoreData(string[] dayData, int dayIndex)
@@ -149,6 +172,8 @@ public class RecordModel {
                 coreData.regAccDict[acc] = 1;
                 //Logger.Log("000000000000000 ",fields[2]);
                 coreData.newUser++;
+
+                
             }
 
             if (recordType == RECORD_TYPE.RECORD_USERLOGIN)

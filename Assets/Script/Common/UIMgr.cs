@@ -26,7 +26,7 @@ public enum VIEWID
     GMAccNew = 39, 
     
     CoreView = 41,
-
+    CoreSumView = 42,
     RecordView = 43,
 
     PayView = 45,
@@ -72,6 +72,7 @@ public static class UIMgr
         RegisterUI(VIEWID.MailSend,MailSendView.Instance);
 
         RegisterUI(VIEWID.CoreView,CoreView.Instance);
+        RegisterUI(VIEWID.CoreSumView,CoreSumView.Instance);        
 
         RegisterUI(VIEWID.PayView,PayView.Instance);
 

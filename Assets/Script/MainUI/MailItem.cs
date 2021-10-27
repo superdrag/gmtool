@@ -135,27 +135,15 @@ public class MailItem
     {    
         Logger.Log("OnBtnAgreeClick click..........");
 
-        string[] accList = mailData.Account.Split(',');
-        for (int i = 0; i < accList.Length; i++)
-        {
-            C2S_GMSendMail pb = new C2S_GMSendMail();
+        C2S_GMSendMail pb = new C2S_GMSendMail();
 
-            pb.Account = mailData.Account;
-            pb.Mailtype = mailData.Type;
+        pb.Account = mailData.Account;
+        pb.Mailtype = mailData.Type;
 
-            PB_MailItem item = new PB_MailItem();
-            item.Mid = mailData.Mid;
-            item.Title = mailData.Title;
-            item.Content = mailData.Content;
-            item.Itemlist = mailData.Itemlist;
-            item.Pasttime = mailData.Pasttime;
-            item.Sendtime = mailData.Sendtime;
-            item.State = 0;
-
-            pb.Maildata = item;
-            NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMAIL,pb); 
-        }
-    
+        PB_MailItem item = new PB_MailItem();
+        item.Mid = mailData.Mid;
+        pb.Maildata = item;
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMAIL,pb); 
     }
 
     private void OnBtnDisAgreeClick()

@@ -50,6 +50,7 @@ public enum PHP_COMMAMD
 public enum PHP_QUERY
 {
     NONE = 0,
+    PLAYERDATA = 1000,
     BLACKUSER = 1001,
     GMACCLIST = 1002,
     RECORED_OPERATE = 1003,

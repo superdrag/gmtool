@@ -269,6 +269,11 @@ public class GlobalCtl
         {
             PayGiftView view = (PayGiftView)UIMgr.GetUI(VIEWID.PayGiftView) ;
             view.SetDataText(_pb); 
+        }  
+        else if (_pb.Querytype == (int)PHP_QUERY.PLAYERDATA)
+        {
+            RechargeView view = (RechargeView)UIMgr.GetUI(VIEWID.Recharge) ;
+            view.SetDataText(_pb); 
         }        
     }
 
