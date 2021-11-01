@@ -62,8 +62,6 @@ public class RechargeView : View
     {
         Logger.Log("onClickCha ...........");
 
-        zhanghaoText.text = "AAA123";
-
         if( string.IsNullOrEmpty(zhanghaoText.text) )
         {            
             UIMgr.ShowUI(VIEWID.ALERTINFO,"账号不能为空");

@@ -32,9 +32,6 @@ public class CoreData
     public float ARPPDAU; 
     public int PCU; //最高在线人数
     public int ACU; //平均同时在线人数 ACU=24小时每小时最高同时在线相加总和/24小时
-    public int secondLive;
-    public int threeLive;
-    public int sevenLive;
     public int avgOnlineSec; //平均在线时长
     public int allRegNum; //总注册数
     public int watchAds; //看广告
@@ -42,6 +39,7 @@ public class CoreData
     public Dictionary<string,int> payAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> regAccDict = new Dictionary<string, int>();
     public Dictionary<int,int> hourOnlineNumDict = new Dictionary<int, int>();
+    public Dictionary<int,int> remainDict = new Dictionary<int, int>(); //留存
 }
 
 
@@ -84,7 +82,7 @@ public class RecordModel {
         for (int i = 0; i < 15; i++)
         {
             coreSumList.Add(0);
-        }
+        }     
     }
 
     public void loadFile()
@@ -142,6 +140,12 @@ public class RecordModel {
         {
             coreData.hourOnlineNumDict[i] = 0;
         }
+
+        for (int i = 0; i < 30; i++)
+        {
+            coreData.remainDict[i+1] = 0;
+        }   
+
 
         for (int j = 0; j < dayData.Length; j++)
         {
@@ -262,35 +266,28 @@ public class RecordModel {
 
         foreach (var item in coreData.loginAccDict)
         { 
-            //次留
-            if (dayIndex >= 1)
+            //留存
+            for (int i = 1; i <= 30; i++)
             {
-                CoreData preData = coreList[dayIndex-1];                
-                if( preData.regAccDict.ContainsKey(item.Key) )
+                if (dayIndex >= i)
                 {
-                    coreData.secondLive++;                    
-                }
-            }   
-
-            //三留
-            if (dayIndex >= 2)
-            {
-                CoreData preData = coreList[dayIndex-2];                
-                if( preData.regAccDict.ContainsKey(item.Key) )
-                {
-                    coreData.threeLive++;
+                    CoreData preData = coreList[dayIndex-i];                
+                    if( preData.regAccDict.ContainsKey(item.Key) )
+                    {
+                        coreData.remainDict[i+1]++;                    
+                    }                  
                 }
             }
-
-            //7留
-            if (dayIndex >= 6)
-            {
-                CoreData preData = coreList[dayIndex-6];
-                if( preData.regAccDict.ContainsKey(item.Key) )
-                {
-                    coreData.sevenLive++;
-                }
-            }                                     
+            
+            // //次留
+            // if (dayIndex >= 1)
+            // {
+            //     CoreData preData = coreList[dayIndex-1];                
+            //     if( preData.regAccDict.ContainsKey(item.Key) )
+            //     {
+            //         coreData.remainDict[1]++;                    
+            //     }
+            // }                  
         }
 
         for (int i = 0; i < dayIndex; i++)
@@ -331,7 +328,7 @@ public class RecordModel {
 
         coreList.Add(coreData);
         
-        Logger.Log("day core.............",coreData.date,coreData.DAU,coreData.PCU,coreData.secondLive,coreData.newUser,coreData.avgOnlineSec,coreData.newPayUser);
+        Logger.Log("day core.............",coreData.date,coreData.DAU,coreData.PCU,coreData.newUser,coreData.avgOnlineSec,coreData.newPayUser);
     }
 
 }

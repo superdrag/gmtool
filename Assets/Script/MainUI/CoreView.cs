@@ -15,7 +15,8 @@ public class CoreView : View
     private Button queryBtn;
     private InputField beginDateText;
     private InputField endDateText;
-
+    private CoreItem coreItem;
+    private Transform bg;
     public Transform Content;
 
 
@@ -41,16 +42,32 @@ public class CoreView : View
         viewRoot = ResMgr.CreateGo("Prefab/CoreView").transform;
         UIHelper.AddChild(UIMgr.UIMain, viewRoot);  
 
-        Transform bg = viewRoot.Find("bg");
+        bg = viewRoot.Find("bg");
         Content = bg.Find("Scroll View/Viewport/Content");
+
+        //coreItem = bg.Find("CoreItem");
     }
 
     override public void OnShow(params object[] args)
     {        
         //onClickQuery(queryBtn.gameObject);
+        ShowTitle();
 
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
         rect.sizeDelta = new Vector2(0, (float)RecordModel.coreList.Count * (float)73.6 );
+    }
+
+    public void ShowTitle()
+    {
+        CoreItem item = new CoreItem();
+        item.Create();
+        item.view.SetParent(bg);
+
+        RectTransform rect = item.view.transform.GetComponent<RectTransform>();
+        rect.anchoredPosition = new Vector2(-248,487);
+
+        item.view.transform.localScale = Vector3.one;
+        item.SetTittle();     
     }
 
     public void ClearCoreItem()
