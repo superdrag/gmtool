@@ -76,6 +76,7 @@ public class RecordModel {
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
     public static List<int> coreSumList = new List<int>();
     public static int sumWatchAds = 0;
+    public static int sumRegAccNum = 0;
 
     public void Init()
     {
@@ -118,7 +119,8 @@ public class RecordModel {
             foreach (var item in dayData.payAccDict)
             {
                 coreSumList[2] += item.Value;
-            }                      
+            }
+            sumRegAccNum += dayData.allRegNum;                    
         }
 
         coreSumList[3] = sumWatchAds;

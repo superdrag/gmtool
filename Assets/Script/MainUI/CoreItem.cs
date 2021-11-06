@@ -43,10 +43,18 @@ public class CoreItem
         infoList[11].text = coreData.avgOnlineSec.ToString();
         infoList[12].text = coreData.watchAds.ToString();        
 
-        for (int i = 0; i < 8; i++)
+        Logger.Log(",,,,,,,,,,,,,,,,, ",coreData.allRegNum);
+        //留存
+        if (coreData.allRegNum > 0)
         {
-            infoList[13+i].text = coreData.remainDict[2+i].ToString(); 
-        }        
+            for (int i = 0; i < 8; i++)
+            {
+                float penct = (float)coreData.remainDict[2+i] / coreData.allRegNum * 100;
+                infoList[13+i].text = penct.ToString("F1") + "%";      
+            }  
+        }
+
+      
 
     }
 
