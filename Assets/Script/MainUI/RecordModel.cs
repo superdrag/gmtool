@@ -87,13 +87,7 @@ public class RecordModel {
 
     public void loadFile()
     {        
-        string dirpath = Application.dataPath + "/record"; 
-        if (!Application.isEditor)
-        {
-            dirpath = Application.dataPath + "/../record";        
-        }        
-        Logger.Log("record path...................",dirpath);
-        List<string> filelist = GFunc.GetDirFiles(dirpath);
+        List<string> filelist = GFunc.GetDirFiles(ResMgr.recordDir);
         for (int i = 0; i < filelist.Count; i++)
         {              
             if (filelist[i].EndsWith("meta")) continue;

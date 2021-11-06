@@ -1,8 +1,8 @@
-[
-         
+[         
     {       
         "server_id":1,      
         "server_name":"内网服务器1",
+        "debug":1,
         "php_ip":"192.168.110.45",    
         "php_port":8101,
         "record_url":"http://192.168.110.45/record/"
@@ -10,6 +10,7 @@
     {       
         "server_id":2,      
         "server_name":"内网服务器2",
+        "debug":1,
         "php_ip":"192.168.110.65",    
         "php_port":8101,
         "record_url":"http://192.168.110.65/record/"
@@ -17,8 +18,25 @@
     {           
         "server_id":3,  
         "server_name":"刘海超服务器",
+        "debug":1,
         "php_ip":"192.168.110.40",    
         "php_port":8101,
         "record_url":"http://192.168.110.40/record/"
+    },
+    {       
+        "server_id":4,      
+        "server_name":" 阿里国内测试",
+        "debug":0,
+        "php_ip":"47.103.81.220",    
+        "php_port":8101,
+        "record_url":"http://47.103.81.220/record/"
+    },
+    {       
+        "server_id":5,      
+        "server_name":"阿里海外测试",
+        "debug":0,
+        "php_ip":"47.88.56.65",    
+        "php_port":8101,
+        "record_url":"http://47.88.56.65/record/"
     }
 ]

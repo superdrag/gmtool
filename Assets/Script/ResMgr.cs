@@ -47,10 +47,20 @@ public class ResMgr
     public static string LOAD_LUA_DIR =  Application.streamingAssetsPath + "/LuaScripts/";
     //public static string LOAD_LUACONFIG_DIR = "Assets/LuaScripts/Conifg";
     public static string LOAD_CONFIG_DIR = "Assets/Config/";
+    public static string recordDir; 
 
     public bool Init()
     {                
-        
+        recordDir = Application.dataPath + "/record/"; 
+        if (!Application.isEditor)
+        {
+            recordDir = Application.dataPath + "/../record/";        
+        }   
+        if (Directory.Exists(recordDir))
+        {
+            Directory.Delete(recordDir,true);
+        }
+        Directory.CreateDirectory(recordDir);
         return true;
     }
 
@@ -114,7 +124,7 @@ public class ResMgr
     private IEnumerator DownLoadVersionFile(Action<int> cbfunc)
     {
         Logger.Log(" --------------- start dwonload version file  ------------------ ");
-        
+
         string url_listfile = "list.txt";
         string url_dir = LoginModel.Instance.record_url;
         string url_path =url_dir + url_listfile;
@@ -158,13 +168,12 @@ public class ResMgr
                     if (uwr2.isDone)
                     {
                         Logger.Log("download file ok:", path);      
-                        string dirpath = Application.dataPath + "/record/" + listFile[i] ; 
+                        string filepath = recordDir + listFile[i] ; 
                         if (!Application.isEditor)
                         {
-                            dirpath = Application.dataPath + "/../record/" + listFile[i] ;        
+                            filepath = recordDir + listFile[i] ;        
                         }   
-
-                        File.WriteAllBytes(dirpath,  uwr2.downloadHandler.data); 
+                        File.WriteAllBytes(filepath,  uwr2.downloadHandler.data); 
                     }
                 }                
             }                          

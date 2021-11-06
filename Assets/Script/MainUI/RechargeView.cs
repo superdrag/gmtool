@@ -61,6 +61,7 @@ public class RechargeView : View
     private void onClickCha()
     {
         Logger.Log("onClickCha ...........");
+        
 
         if( string.IsNullOrEmpty(zhanghaoText.text) )
         {            
