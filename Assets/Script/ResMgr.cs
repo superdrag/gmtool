@@ -56,11 +56,17 @@ public class ResMgr
         {
             recordDir = Application.dataPath + "/../record/";        
         }   
-        if (Directory.Exists(recordDir))
+
+        if (!Directory.Exists(recordDir))
         {
-            Directory.Delete(recordDir,true);
+            Directory.CreateDirectory(recordDir);
         }
-        Directory.CreateDirectory(recordDir);
+
+        // if (Directory.Exists(recordDir))
+        // {
+        //     Directory.Delete(recordDir,true);
+        // }
+        // Directory.CreateDirectory(recordDir);
         return true;
     }
 
@@ -145,16 +151,32 @@ public class ResMgr
         {
             Logger.Log("download list ok:", url_path);     
 
-            string[] listFile = uwr.downloadHandler.text.Split('\n');                
+            string[] arystr = uwr.downloadHandler.text.Split('\n'); 
 
-            //string[] listFile = File.ReadAllLines(uwr.downloadHandler.text);  
-            for (int i = 0; i < listFile.Length; i++)
+            List<string> listFile = new List<string>(arystr);
+            listFile.RemoveAt(listFile.Count-1);
+
+            for (int i = 0; i < listFile.Count; i++)
             {
                 if (listFile[i] == "")
                 {
                     continue;
                 }
+
                 string path = url_dir + listFile[i];
+
+                string[] slist = path.Split('/');
+                string localPath = recordDir + slist[slist.Length-1];
+                
+                if( i < (listFile.Count - 1) )
+                {                    
+                    if (File.Exists( @localPath ))
+                    {
+                        Logger.Log("localPath has file.......", localPath,i);      
+                        continue;
+                    }
+                }
+
                 Logger.Log("start down........", path);      
                 UnityWebRequest uwr2 = UnityWebRequest.Get(path); 
                 yield return uwr2.SendWebRequest();
