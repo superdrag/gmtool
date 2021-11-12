@@ -50,7 +50,10 @@ public class LoginCtl
 
     private void OnDownloadFinish(int ret)
     {
-        RecordModel.Instance.loadFile();
+        if (RecordModel.Instance.loadFile() == false)
+        {
+            return;
+        }
         UIMgr.HideUI(VIEWID.LOGIN);
         UIMgr.ShowUI(VIEWID.MENU);
         UIMgr.ShowUI(VIEWID.TITLE);

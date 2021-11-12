@@ -86,17 +86,27 @@ public class RecordModel {
         }     
     }
 
-    public void loadFile()
+    public bool loadFile()
     {        
-        List<string> filelist = GFunc.GetDirFiles(ResMgr.recordDir);
-        for (int i = 0; i < filelist.Count; i++)
-        {              
-            if (filelist[i].EndsWith("meta")) continue;
-            string[] lineAry = File.ReadAllLines(filelist[i]);
-            dayDataList.Add(lineAry);
+        if (!Directory.Exists(ResMgr.recordDir))
+        {
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"获取数据失败");
+            return false;
         }
 
-        analyseAllCoreData();
+        List<string> filelist = GFunc.GetDirFiles(ResMgr.recordDir);
+
+        if (filelist.Count > 0)
+        {
+            for (int i = 0; i < filelist.Count; i++)
+            {              
+                if (filelist[i].EndsWith("meta")) continue;
+                string[] lineAry = File.ReadAllLines(filelist[i]);
+                dayDataList.Add(lineAry);
+            }
+            analyseAllCoreData();            
+        }
+        return true;
     }
 
     public void analyseAllCoreData()

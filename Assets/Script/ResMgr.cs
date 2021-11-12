@@ -172,19 +172,22 @@ public class ResMgr
                     continue;
                 }
 
-                string path = url_dir + listFile[i];
+                string filename= listFile[i].Split('|')[0];
+                string md5str = listFile[i].Split('|')[1];
+
+                string path = url_dir + filename;
 
                 string[] slist = path.Split('/');
                 string localPath = recordDir + slist[slist.Length-1];
                 
-                // if( i < (listFile.Count - 1) )
-                // {                    
-                //     if (File.Exists( @localPath ))
-                //     {
-                //         Logger.Log("localPath has file.......", localPath,i);      
-                //         continue;
-                //     }
-                // }
+                if (File.Exists( @localPath ))
+                {
+                    if (md5str == GFunc.MD5file(localPath))
+                    {
+                        Logger.Log("localPath has file.......", localPath,i);      
+                        continue;                            
+                    }
+                }
 
                 Logger.Log("start down........", path);      
                 UnityWebRequest uwr2 = UnityWebRequest.Get(path); 
@@ -199,10 +202,10 @@ public class ResMgr
                     if (uwr2.isDone)
                     {
                         Logger.Log("download file ok:", path);      
-                        string filepath = recordDir + listFile[i] ; 
+                        string filepath = recordDir + filename ; 
                         if (!Application.isEditor)
                         {
-                            filepath = recordDir + listFile[i] ;        
+                            filepath = recordDir + filename ;        
                         }   
                         File.WriteAllBytes(filepath,  uwr2.downloadHandler.data); 
                     }
