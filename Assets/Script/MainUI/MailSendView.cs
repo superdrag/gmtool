@@ -99,10 +99,10 @@ public class MailSendView : View
 
         if (openType == 1) //新建
         {
-            titleText.text = "这是标题啊 this is title text";
-            contentText.text = "这是内容啊 this is content text";
-            itemListText.text = "Currency;diamond;1000/BaseBaller;1001;1";
-            accountText.text = "AAA123";
+            // titleText.text = "这是标题啊 this is title text";
+            // contentText.text = "这是内容啊 this is content text";
+            // itemListText.text = "Currency;diamond;1000/BaseBaller;1001;1";
+            // accountText.text = "AAA123";
             pastDayText.text = "30";   
         }
         else if (openType == 2) //编辑
@@ -112,7 +112,7 @@ public class MailSendView : View
             contentText.text = pbData.Content;
             itemListText.text = pbData.Itemlist;
             accountText.text = pbData.Account;
-            pastDayText.text = "30";
+            pastDayText.text = pbData.Pasttime.ToString();
 
             mailId = pbData.Mid;
 
@@ -138,9 +138,21 @@ public class MailSendView : View
     {
         Logger.Log("onClickSend ...........");
 
+        if( String.IsNullOrEmpty(titleText.text) )
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"标题为空");
+            return;
+        }
+
+        if( String.IsNullOrEmpty(contentText.text) )
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"内容描述为空");
+            return;
+        }        
+
         if( String.IsNullOrEmpty(pastDayText.text) )
         {            
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"过期天数未空");
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"过期天数为空");
             return;
         }
 
