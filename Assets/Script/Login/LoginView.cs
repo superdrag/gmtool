@@ -9,6 +9,7 @@ using Net;
 public class LoginView : View
 {
     private Button loginBtn;
+    private Button cleanBtn;
     private GameObject SeverBtmList;
     private Transform SeverContent;
 
@@ -54,21 +55,27 @@ public class LoginView : View
         loginBtn = viewRoot.transform.Find("bg/Button").GetComponent<Button>();
         loginBtn.onClick.AddListener( OnBtnClick );
 
+        cleanBtn = viewRoot.transform.Find("bg/BtnClean").GetComponent<Button>();
+        cleanBtn.onClick.AddListener( OnBtnClickClean );        
+
         dropdown = viewRoot.transform.Find("bg/Dropdown").GetComponent<Dropdown>();
         dropdown.onValueChanged.AddListener( onDropDownHandle );
     }
 
     override public void OnShow(params object[] args)
     {
-        zhanghaoIF.text = "admin";
-        mimaIF.text = "123456";
+        // zhanghaoIF.text = "admin";
+        // mimaIF.text = "123456";
 
         dropdown.ClearOptions();
         foreach (var item in AppConfig.ServerList)
-        {            
-            Dropdown.OptionData od1 = new Dropdown.OptionData();
-            od1.text = item.name;     
-            dropdown.options.Add(od1);     
+        {           
+            if (GData.DebugMode == item.debug)
+            {
+                Dropdown.OptionData od1 = new Dropdown.OptionData();
+                od1.text = item.name;     
+                dropdown.options.Add(od1);     
+            } 
         }
 
         //rankText.text = GlobalModel.rankNameDict[curRank];
@@ -114,6 +121,11 @@ public class LoginView : View
         // }
     }
  
+    private void OnBtnClickClean()
+    {
+        ResMgr.CleanAllRecord();
+    }
+
     private void onDropDownHandle(int index)
     {
         curServer = index;

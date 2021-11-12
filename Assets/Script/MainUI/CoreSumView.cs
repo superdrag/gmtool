@@ -64,6 +64,11 @@ public class CoreSumView : View
         for (int i = 0; i < list.Count; i++)
         {
             infoList[i].text = list[i].ToString(); 
+
+            if (i >= 5 && i <= 9)
+            {
+                infoList[i].text =( (float)list[i] / RecordModel.coreList.Count ).ToString("F1") + "%";
+            }
         }
     }
 

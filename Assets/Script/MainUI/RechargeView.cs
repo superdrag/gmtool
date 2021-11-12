@@ -49,7 +49,7 @@ public class RechargeView : View
  
         Content = bg.Find("Scroll View/Viewport/Content");        
         dataIF = Content.Find("InputField").GetComponent<InputField>();
-        drawIFText = bg.Find("InputField/Text").GetComponent<Text>();   
+        //drawIFText = bg.Find("InputField/Text").GetComponent<Text>();   
 
     }
 

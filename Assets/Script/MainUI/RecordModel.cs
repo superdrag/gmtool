@@ -39,7 +39,7 @@ public class CoreData
     public Dictionary<string,int> payAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> regAccDict = new Dictionary<string, int>();
     public Dictionary<int,int> hourOnlineNumDict = new Dictionary<int, int>();
-    public Dictionary<int,int> remainDict = new Dictionary<int, int>(); //留存
+    public Dictionary<int,int> remainDict = new Dictionary<int, int>(); //留存  //次留是 i+ 1 = 2 开始        
 }
 
 
@@ -101,13 +101,15 @@ public class RecordModel {
 
     public void analyseAllCoreData()
     {
+        //分析每天
         for (int i = 0; i < dayDataList.Count; i++)
         {
             string[] dayData = dayDataList[i];
             analyseDayCoreData(dayData,i);
         }
 
-        //sum
+
+        //分析总数
         coreSumList[0] = coreList[coreList.Count-1].timetv;
 
         for (int i = 0; i < coreList.Count; i++)
@@ -120,10 +122,54 @@ public class RecordModel {
             {
                 coreSumList[2] += item.Value;
             }
-            sumRegAccNum += dayData.allRegNum;                    
+            sumRegAccNum += dayData.allRegNum;   
+
+
+            foreach (var item in dayData.remainDict)
+            {
+                int day = item.Key;
+                int num = item.Value;
+
+                // int index = 5 + day - 2;
+                // if (index < coreSumList.Count)
+                // {
+                //     coreSumList[index] += num;
+                // }
+            //
+                if (day == 2)
+                {
+                    coreSumList[5] += num;
+                }
+                else if (day == 3)
+                {
+                    coreSumList[6] += num;
+                } 
+                else if (day == 7)
+                {
+                    coreSumList[7] += num;
+                }
+                else if (day == 14)
+                {
+                    coreSumList[8] += num;
+                } 
+                else if (day == 30)
+                {
+                    coreSumList[9] += num;
+                }                                                                                      
+            }             
         }
 
         coreSumList[3] = sumWatchAds;
+
+        //arpu
+        coreSumList[4] = 0;
+
+        //remain
+        // for (int i = 5; i <= 9; i++)
+        // {
+        //     coreSumList[i] = ( coreSumList[i] / (float)coreList.Count ) ;
+        // }
+        
     }
 
     public void analyseDayCoreData(string[] dayData, int dayIndex)
@@ -270,7 +316,8 @@ public class RecordModel {
                     CoreData preData = coreList[dayIndex-i];                
                     if( preData.regAccDict.ContainsKey(item.Key) )
                     {
-                        coreData.remainDict[i+1]++;                    
+                        coreData.remainDict[i+1]++;    
+                        //次留是 i+ 1 = 2 开始                
                     }                  
                 }
             }

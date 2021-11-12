@@ -127,6 +127,15 @@ public class ResMgr
         return t;
     }
 
+    public static void CleanAllRecord()
+    {
+        if (Directory.Exists(recordDir))
+        {
+            Directory.Delete(recordDir,true);
+        }
+    }
+
+
     private IEnumerator DownLoadVersionFile(Action<int> cbfunc)
     {
         Logger.Log(" --------------- start dwonload version file  ------------------ ");
@@ -168,14 +177,14 @@ public class ResMgr
                 string[] slist = path.Split('/');
                 string localPath = recordDir + slist[slist.Length-1];
                 
-                if( i < (listFile.Count - 1) )
-                {                    
-                    if (File.Exists( @localPath ))
-                    {
-                        Logger.Log("localPath has file.......", localPath,i);      
-                        continue;
-                    }
-                }
+                // if( i < (listFile.Count - 1) )
+                // {                    
+                //     if (File.Exists( @localPath ))
+                //     {
+                //         Logger.Log("localPath has file.......", localPath,i);      
+                //         continue;
+                //     }
+                // }
 
                 Logger.Log("start down........", path);      
                 UnityWebRequest uwr2 = UnityWebRequest.Get(path); 
