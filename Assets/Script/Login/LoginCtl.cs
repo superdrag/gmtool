@@ -38,7 +38,8 @@ public class LoginCtl
 
         if( _pb.Ret != 0 )
         {
-            Logger.Error("account or passwd fail! " + _pb.Account);
+            //Logger.Error("account or passwd fail! " + _pb.Account);
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"账号或密码错误");
             return;
         }
 

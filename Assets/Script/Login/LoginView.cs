@@ -64,8 +64,8 @@ public class LoginView : View
 
     override public void OnShow(params object[] args)
     {
-        // zhanghaoIF.text = "admin";
-        // mimaIF.text = "123456";
+        zhanghaoIF.text = "liuhaichao";
+        mimaIF.text = "123456";
 
         dropdown.ClearOptions();
         foreach (var item in AppConfig.ServerList)

@@ -58,22 +58,10 @@ public class GlobalCtl
     }
     //------------------------------------ HANDLE MSG
 
-
     public void MSG_PHP2CL_GMACCOUNTMGR(MsgPack msg)
     {
         S2C_GMAccountMgr _pb = msg.UnpackProtoBuf<S2C_GMAccountMgr>( new S2C_GMAccountMgr() );
-        if(_pb.Ret != 0)
-        {     
-            if (_pb.Ret == (int)ERROR_CODE.ERROR_NOTRANK)
-            {
-                UIMgr.ShowUI(VIEWID.ALERTINFO,"权限不足");
-                return;
-            }       
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行失败");
-            return;
-        }
-        
-        UIMgr.ShowUI(VIEWID.ALERTINFO,"执行成功");    
+        UIMgr.ShowNoticeRet(_pb.Ret);
     }
 
     public void MSG_PHP2CL_QUERYUSERINFO(MsgPack msg)
@@ -98,28 +86,23 @@ public class GlobalCtl
 
     public void MSG_PHP2CL_SENDMONEY(MsgPack msg)
     {        
-        S2C_GMSendMoney _pb = msg.UnpackProtoBuf<S2C_GMSendMoney>( new S2C_GMSendMoney() );
-        if( _pb.Ret != 0 )
-        {            
-            UIMgr.ShowUI(VIEWID.ALERTINFO, "充值失败");
-            return;
-        }
+        // S2C_GMSendMoney _pb = msg.UnpackProtoBuf<S2C_GMSendMoney>( new S2C_GMSendMoney() );
+        // if( _pb.Ret != 0 )
+        // {            
+        //     UIMgr.ShowUI(VIEWID.ALERTINFO, "充值失败");
+        //     return;
+        // }
         
-        UIMgr.ShowUI(VIEWID.ALERTINFO,"充值成功");        
-        Logger.Log("MSG_PHP2CL_SENDMONEY "+_pb.Account);
+        // UIMgr.ShowUI(VIEWID.ALERTINFO,"充值成功");        
+        // Logger.Log("MSG_PHP2CL_SENDMONEY "+_pb.Account);
     }    
 
 
     public void MSG_PHP2CL_SENDMAIL(MsgPack msg)
     {        
         S2C_GMSendMail _pb = msg.UnpackProtoBuf<S2C_GMSendMail>( new S2C_GMSendMail() );
-        if( _pb.Ret != 0 )
-        {            
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"发送邮件失败");
-            return;
-        }
 
-        UIMgr.ShowUI(VIEWID.ALERTINFO,"发送邮件成功数量:"+_pb.Finish);     
+        UIMgr.ShowNoticeRet(_pb.Ret);  
 
         UIMgr.GetUI(VIEWID.Mail).OnShow();
     } 
@@ -127,13 +110,8 @@ public class GlobalCtl
     public void MSG_PHP2CL_MODMAIL(MsgPack msg)
     {        
         S2C_GMSendMail _pb = msg.UnpackProtoBuf<S2C_GMSendMail>( new S2C_GMSendMail() );
-        if( _pb.Ret != 0 )
-        {            
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行失败:" + _pb.Ret.ToString());
-            return;
-        }
 
-        UIMgr.ShowUI(VIEWID.ALERTINFO,"执行成功");     
+        UIMgr.ShowNoticeRet(_pb.Ret);
 
         UIMgr.GetUI(VIEWID.Mail).OnShow();
     } 
@@ -160,29 +138,16 @@ public class GlobalCtl
     public void MSG_PHP2CL_DELETEMAIL(MsgPack msg)
     {
         S2C_GMDeleteMail _pb = msg.UnpackProtoBuf<S2C_GMDeleteMail>( new S2C_GMDeleteMail() );
-        if (_pb.Ret == 0)
-        {
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"撤回邮件成功");
-        } 
-        else
-        {
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"撤回邮件失败");
-        }
+        UIMgr.ShowNoticeRet(_pb.Ret);
         UIMgr.GetUI(VIEWID.Mail).OnShow();
     }
+
+
 
     public void MSG_PHP2CL_GMCOMMAND(MsgPack msg)
     {
         S2C_GMCommand _pb = msg.UnpackProtoBuf<S2C_GMCommand>( new S2C_GMCommand() );
-        if (_pb.Ret == 0)
-        {
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行成功");
-        } 
-        else
-        {
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行失败 " + _pb.Ret);
-            return;
-        }
+        UIMgr.ShowNoticeRet(_pb.Ret);
 
         if(_pb.Commandid ==(int)PHP_COMMAMD.QUERYTIME)
         {
@@ -287,17 +252,9 @@ public class GlobalCtl
 
     public static void MSG_PHP2CL_GMPAYREPAIR(MsgPack msg)
     {
-        S2C_GMPayRepair _pb = msg.UnpackProtoBuf<S2C_GMPayRepair>( new S2C_GMPayRepair() );        
+        S2C_GMPayRepair _pb = msg.UnpackProtoBuf<S2C_GMPayRepair>( new S2C_GMPayRepair() ); 
 
-        if (_pb.Ret == 0)
-        {
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"支付补发成功");
-        } 
-        else
-        {
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"支付补发失败");
-            return;
-        }
+        UIMgr.ShowNoticeRet(_pb.Ret);
 
         PayView payView = UIMgr.GetUI<PayView>(VIEWID.PayView);
 
@@ -309,9 +266,6 @@ public class GlobalCtl
         S2C_GMQueryTaskMain _pb = msg.UnpackProtoBuf<S2C_GMQueryTaskMain>( new S2C_GMQueryTaskMain() );  
         TaskView view = UIMgr.GetUI<TaskView>(VIEWID.TaskView);  
         Dictionary<int,int> dict = new Dictionary<int,int>(); 
-
-        Logger.Log("1111111 ",_pb.Data.ToString());
-
 
         view.SetDataText(_pb);
     }

@@ -71,8 +71,8 @@ public class RecordModel {
     public static List<string[]> dayDataList = new List<string[]>(); //一天数据
     public static List<CoreData> coreList = new List<CoreData>();  //每天全部数据
     public static List<string[]> operateList = new List<string[]>(); //操作记录
-    public static List<string> countryList = new List<string>{ "CN","US","JP","DE"};
-    public static List<string> platformList = new List<string>{ "IOS","Android"};
+    public static List<string> countryList = new List<string>{ "ALL", "CN","US","JP","DE"};
+    public static List<string> platformList = new List<string>{ "ALL", "IOS","Android"};
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
     public static List<int> coreSumList = new List<int>();
     public static int sumWatchAds = 0;

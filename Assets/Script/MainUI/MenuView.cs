@@ -56,6 +56,8 @@ public class MenuView : View
         Button diamondBtn = viewRoot.Find("diamond").GetComponent<Button>();
         Button cardBtn = viewRoot.Find("card").GetComponent<Button>();
 
+
+
         // EventTriggerListener.Get(chongzhiBtn.gameObject).onClick = OnBtnEvent;
         // EventTriggerListener.Get(hexinBtn.gameObject).onClick = OnBtnEvent;
         // EventTriggerListener.Get(youjianBtn.gameObject).onClick = OnBtnEvent;
@@ -110,6 +112,13 @@ public class MenuView : View
         switchViewList.Add(VIEWID.CardView);
 
         curIndex = 1;
+
+        if (GData.DebugMode == false)
+        {
+            funcBtn.gameObject.SetActive(false);
+            cardBtn.gameObject.SetActive(false);
+            gmaccBtn.gameObject.SetActive(false);
+        }        
     }
 
     override public void OnShow(params object[] args)
@@ -191,6 +200,8 @@ public class MenuView : View
         }
         UIHelper.SetColor(btnList[this.curIndex-1].GetComponent<Image>(),"0/167/255/255");
 
+
+  
     }
 
     private void OnBtnEvent(GameObject go)

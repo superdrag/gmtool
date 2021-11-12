@@ -311,4 +311,17 @@ public static class UIMgr
         Text servtxt = uiBG.Find("servText").GetComponent<Text>();
         servtxt.text = servName;
     }
+
+    public static void ShowNoticeRet(int ret)
+    {
+        if (ret == 0)
+        {
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行成功");
+        } 
+        else
+        {
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行失败:"+ret);
+        }
+    }
+
 }
