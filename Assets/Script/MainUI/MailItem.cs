@@ -138,6 +138,10 @@ public class MailItem
         C2S_GMSendMail pb = new C2S_GMSendMail();
 
         pb.Account = mailData.Account;
+        if (mailData.Type == 2)
+        {
+            pb.Account = "";
+        }
         pb.Mailtype = mailData.Type;
 
         PB_MailItem item = new PB_MailItem();

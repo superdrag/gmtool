@@ -61,7 +61,7 @@ public class MailSendView : View
         Transform bg = viewRoot.Find("bg");
 
         sendBtn = bg.Find("sendBtn").GetComponent<Button>();  
-        sendBtn.onClick.AddListener(onClickSend); 
+        sendBtn.onClick.AddListener(onClickEdit); 
         sendBtnTxt = bg.Find("sendBtn/Text").GetComponent<Text>(); 
 
         closeBtn = bg.Find("closeBtn").GetComponent<Button>();  
@@ -134,9 +134,9 @@ public class MailSendView : View
         }
     }
 
-    private void onClickSend()
+    private void onClickEdit()
     {
-        Logger.Log("onClickSend ...........");
+        Logger.Log("onClickEdit mail...........");
 
         if( String.IsNullOrEmpty(titleText.text) )
         {            
@@ -167,6 +167,7 @@ public class MailSendView : View
         if( allTog.isOn ) 
         {
             mailType = 2; //查询全局邮件     
+            accountText.text = "";
         }
 
         C2S_GMModMail pb = new C2S_GMModMail();
@@ -188,6 +189,7 @@ public class MailSendView : View
         item.Itemlist = itemListText.text;
         item.Pasttime = passDay;
         item.Account = accountText.text;
+
         item.Type = mailType;
         item.Agree = 0;
 
