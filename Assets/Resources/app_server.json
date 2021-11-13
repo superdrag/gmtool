@@ -11,9 +11,9 @@
         "server_id":2,      
         "server_name":"内网服务器2",
         "debug":1,
-        "php_ip":"192.168.110.65",    
+        "php_ip":"192.168.110.166",    
         "php_port":8101,
-        "record_url":"http://192.168.110.65/record/"
+        "record_url":"http://192.168.110.166/record/"
     },    
     {           
         "server_id":3,  

@@ -82,7 +82,7 @@ namespace Net
         private static void OnSocketClose(int type)
         {
             Logger.Log("OnSocketClose:",type); 
-            //UIMgr.GetUI<AlertMsgView>(VIEWID.DIALOG_ALERT).ShowAlertInfo("服务器断开");
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"服务器断开");
 
         }        
 

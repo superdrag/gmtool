@@ -19,7 +19,7 @@ public class FuncView : View
 
     private Button restartBtn;
     private Button shutdownBtn;
-    private Button shutDownBtn;
+    private Button stopBtn;
     private Button upConifgBtn;
 
     public static FuncView Instance
@@ -63,6 +63,9 @@ public class FuncView : View
 
         shutdownBtn = bg.Find("shutdown/Button").GetComponent<Button>();
         shutdownBtn.onClick.AddListener(onClickShutDown); 
+
+        stopBtn = bg.Find("stopserver/Button").GetComponent<Button>();
+        stopBtn.onClick.AddListener(onClickStop);         
     }
 
     override public void OnShow(params object[] args)
@@ -107,6 +110,11 @@ public class FuncView : View
         GlobalCtl.MSG_CL2PHP_GMCOMMAND( "gm", (int)PHP_COMMAMD.SHUTDOWN);      
     }     
       
+    private void onClickStop()
+    {
+        GlobalCtl.MSG_CL2PHP_GMCOMMAND( "gm", (int)PHP_COMMAMD.STOPSERVER);      
+    }        
+
     public void onQueryServerTime(int timetv)
     {
         queryTimeTxt.text = GFunc.Int2DateStr(timetv);
