@@ -131,10 +131,7 @@ public class TitleView : View
 
     private void onClickExport(GameObject go)
     {
-        // dropdown_date2.captionText.text = "aaaa";
-        // Text text11 = dropdown_date2.transform.Find("Label").GetComponent<Text>();     
-        // Logger.Log("666666666666666666"+text11);         
-        // text11.text = "dropdown_date2.options[dropdown_date2.options.Count-1].text";
+        ExcelHelper.ExportCore();
     }
 
     private void onChooseCountry(int index)

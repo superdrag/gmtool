@@ -43,7 +43,7 @@ public class CoreItem
         infoList[11].text = coreData.avgOnlineSec.ToString();
         infoList[12].text = coreData.watchAds.ToString();        
 
-        Logger.Log(",,,,,,,,,,,,,,,,, ",coreData.allRegNum);
+        //Logger.Log(",,,,,,,,,,,,,,,,, ",coreData.allRegNum);
         //留存
         if (coreData.allRegNum > 0)
         {

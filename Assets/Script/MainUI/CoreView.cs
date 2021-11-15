@@ -15,7 +15,8 @@ public class CoreView : View
     private Button queryBtn;
     private InputField beginDateText;
     private InputField endDateText;
-    private CoreItem coreItem;
+    public CoreItem titleItem;
+    public List<CoreItem> dataItemList = new List<CoreItem>();
     private Transform bg;
     public Transform Content;
 
@@ -59,15 +60,15 @@ public class CoreView : View
 
     public void ShowTitle()
     {
-        CoreItem item = new CoreItem();
-        item.Create();
-        item.view.SetParent(bg);
+        titleItem = new CoreItem();
+        titleItem.Create();
+        titleItem.view.SetParent(bg);
 
-        RectTransform rect = item.view.transform.GetComponent<RectTransform>();
+        RectTransform rect = titleItem.view.transform.GetComponent<RectTransform>();
         rect.anchoredPosition = new Vector2(-248,487);
 
-        item.view.transform.localScale = Vector3.one;
-        item.SetTittle();     
+        titleItem.view.transform.localScale = Vector3.one;
+        titleItem.SetTittle();     
     }
 
     public void ClearCoreItem()
@@ -86,11 +87,14 @@ public class CoreView : View
         coreItem.view.SetParent(Content);
         coreItem.view.transform.localScale = Vector3.one;
         coreItem.Show(dayIndex);
+        
+        dataItemList.Add(coreItem);
     }
 
     override public void DoClickQuery()
     {
         ClearCoreItem();
+        dataItemList.Clear();
         for (int i = 0; i < RecordModel.coreList.Count; i++)
         {
             if (RecordModel.coreList[i].timetv >= TitleView.startTime && RecordModel.coreList[i].timetv <= TitleView.endTime)
