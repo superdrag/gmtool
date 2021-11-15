@@ -83,7 +83,6 @@ namespace Net
         {
             Logger.Log("OnSocketClose:",type); 
             UIMgr.ShowUI(VIEWID.ALERTINFO,"服务器断开");
-
         }        
 
         public static void NetClose()

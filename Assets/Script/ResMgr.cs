@@ -133,6 +133,7 @@ public class ResMgr
         {
             Directory.Delete(recordDir,true);
         }
+        Directory.CreateDirectory(recordDir);
     }
 
 

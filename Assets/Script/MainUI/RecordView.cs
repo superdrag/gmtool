@@ -13,9 +13,9 @@ public class RecordView : View
 {
     private static RecordView ins = null;
 
-    private Button queryBtn;
-    private InputField beginDateText;
-    private InputField endDateText;
+    //private Button queryBtn;
+    // private InputField beginDateText;
+    // private InputField endDateText;
 
     public Transform Content;
 
@@ -46,18 +46,18 @@ public class RecordView : View
 
         Transform bg = viewRoot.Find("bg");
 
-        queryBtn = bg.Find("btnGroup/queryBtn").GetComponent<Button>();  
-        EventTriggerListener.Get(queryBtn.gameObject).onClick = onClickQuery;
+        //queryBtn = bg.Find("btnGroup/queryBtn").GetComponent<Button>();  
+        //EventTriggerListener.Get(queryBtn.gameObject).onClick = onClickQuery;
 
-        beginDateText = bg.Find("btnGroup/InputField").GetComponent<InputField>();
-        endDateText = bg.Find("btnGroup/InputField2").GetComponent<InputField>();
+        // beginDateText = bg.Find("btnGroup/InputField").GetComponent<InputField>();
+        // endDateText = bg.Find("btnGroup/InputField2").GetComponent<InputField>();
 
         Content = bg.Find("Scroll View/Viewport/Content");
     }
 
     override public void OnShow(params object[] args)
     {        
-        onClickQuery(queryBtn.gameObject);
+        //onClickQuery(queryBtn.gameObject);
         
         // Transform obj = Content.GetChild(0);
         // RectTransform rect2=obj.GetComponent<RectTransform>();
@@ -76,19 +76,13 @@ public class RecordView : View
         }
     }
 
-    private void onClickQuery(GameObject go)
+    override public void DoClickQuery()
     {
-        // ClearCoreItem();
-
-        // for (int i = RecordModel.Instance.operateList.Count-1; i >= 0; i--)
-        // {
-        //     AddCoreItem(i);
-        // }
         itemNum = 0;
         ClearItems();
         GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("",(int)PHP_QUERY.RECORED_OPERATE,999);
-
     }
+
 
     public void AddItem(PB_ParamStrDict rstData)
     {               

@@ -90,7 +90,7 @@ public class GData
     public static int INVALID_POS = -1;
 
     //游戏名称
-    public static string AppName = "kyclient";
+    public static string AppName = "gmtool";
 
     public static bool DebugMode = true;
 

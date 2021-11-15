@@ -20,6 +20,8 @@ public class LoginView : View
 
     public int curServer = 0;
 
+    public List<ServerInfo> selectServerList = new List<ServerInfo>();
+
     private static LoginView ins = null;
 
     public static LoginView Instance
@@ -64,19 +66,42 @@ public class LoginView : View
 
     override public void OnShow(params object[] args)
     {
-        zhanghaoIF.text = "liuhaichao";
-        mimaIF.text = "123456";
-
         dropdown.ClearOptions();
-        foreach (var item in AppConfig.ServerList)
-        {           
-            if (GData.DebugMode == item.debug)
-            {
+        selectServerList.Clear();
+
+        if (Application.isEditor)
+        {
+            zhanghaoIF.text = "admin";
+            mimaIF.text = "aimengyou123!@#";
+
+            zhanghaoIF.text = "liuhaichao";
+            mimaIF.text = "123456";
+
+            foreach (var item in AppConfig.ServerList)
+            {           
                 Dropdown.OptionData od1 = new Dropdown.OptionData();
                 od1.text = item.name;     
-                dropdown.options.Add(od1);     
-            } 
+                dropdown.options.Add(od1);  
+
+                selectServerList.Add(item);   
+            }            
         }
+        else
+        {
+            foreach (var item in AppConfig.ServerList)
+            {           
+                if (GData.DebugMode == item.debug)
+                {
+                    Dropdown.OptionData od1 = new Dropdown.OptionData();
+                    od1.text = item.name;     
+                    dropdown.options.Add(od1);  
+
+                    selectServerList.Add(item);   
+                } 
+            }
+        }
+
+
 
         //rankText.text = GlobalModel.rankNameDict[curRank];
 
@@ -98,7 +123,7 @@ public class LoginView : View
     {            
         //ViewRoot.SetActive(false);     
 
-        ServerInfo sinfo = AppConfig.ServerList[curServer];
+        ServerInfo sinfo = selectServerList[curServer];
 
         Logger.Log("BtnLogin click.........." + sinfo.ip);
         LoginModel.Instance.record_url = sinfo.record_url;

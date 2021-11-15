@@ -320,7 +320,14 @@ public static class UIMgr
         } 
         else
         {
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"执行失败:"+ret);
+            if (ret == (int)ERROR_CODE.ERROR_NOTRANK)
+            {
+                UIMgr.ShowUI(VIEWID.ALERTINFO,"执行失败:权限不足");
+            }
+            else
+            {
+                UIMgr.ShowUI(VIEWID.ALERTINFO,"执行失败:"+ret);
+            }            
         }
     }
 

@@ -45,7 +45,7 @@ public class GMAccItem
         infoList[1].text = rstData.Dict["nickName"];
         infoList[2].text = GlobalModel.rankNameDict[  Convert.ToInt32(rstData.Dict["permission"]) ];
         infoList[3].text = rstData.Dict["registTime"];
-        infoList[4].text = "";    
+        infoList[4].text = rstData.Dict["creator"];    
 
         infoList[3].text = GFunc.TimeStamp2DateTime(Convert.ToInt32(infoList[3].text) ).ToString(); 
     }

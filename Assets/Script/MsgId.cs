@@ -14,6 +14,10 @@ public enum MSGID
     MSG_GT2SS_CONNECTCLOSE = 1001,      //gate判断断开client连接
     MSG_SS2GT_DOCONNECTCLOSE = 2001,      //发送gate踢掉客户端连接
 
+    MSG_SS2CL_SHUTDOWN                = 2002,      //准备关闭服务器
+    MSG_SS2CL_RELOGINOFFLINE          = 2003,      //你的帐号在另外设备登录，被踢下线
+    MSG_SS2CL_FORCEOFFLINE            = 2004,      //强制被踢下线
+
     MSG_CL2PHP_GMLOGINACCOUNT          = 1801,    //GM账号登陆
     MSG_PHP2DB_GMLOGINACCOUNT            = 801,
     MSG_DB2PHP_GMLOGINACCOUNT            = 802,

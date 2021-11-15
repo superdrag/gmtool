@@ -28,6 +28,8 @@ public class GlobalCtl
     {
         //NetMgr.RegisterMsgHandler((int)MSGID.MSG_SS2CL_ERRORCODE, MSG_SS2CL_ERRORCODE, new S2C_ErrorCode());
 
+        NetMgr.RegisterMsgHandler((int)MSGID.MSG_SS2CL_RELOGINOFFLINE, MSG_SS2CL_RELOGINOFFLINE,null);
+
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_GMACCOUNTMGR, MSG_PHP2CL_GMACCOUNTMGR,new S2C_GMAccountMgr());
 
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_QUERYUSERINFO, MSG_PHP2CL_QUERYUSERINFO,new S2C_GMQUERYUSERINFO());
@@ -38,6 +40,8 @@ public class GlobalCtl
 
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_DELETEMAIL, MSG_PHP2CL_DELETEMAIL,new S2C_GMDeleteMail());
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_MODMAIL, MSG_PHP2CL_MODMAIL,new S2C_GMModMail());
+        
+
         
 
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_GMCOMMAND, MSG_PHP2CL_GMCOMMAND,new S2C_GMCommand());
@@ -56,7 +60,15 @@ public class GlobalCtl
 
         //DialogViewSingle.Instance.ShowErrorCode((ERROR_CODE)_pb.Errcode);
     }
+
+    public void MSG_SS2CL_RELOGINOFFLINE(MsgPack msg)
+    {    
+        NetMgr.NetClose();
+        UIMgr.ShowUI(VIEWID.ALERTINFO," 已与服务器断开,你的账号在其他设备登录");
+    }
+
     //------------------------------------ HANDLE MSG
+
 
     public void MSG_PHP2CL_GMACCOUNTMGR(MsgPack msg)
     {
