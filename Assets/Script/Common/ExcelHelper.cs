@@ -82,6 +82,8 @@ public static class ExcelHelper
         //关闭
         MyWorkbook.Close();
         //关闭文件流
-        MyAddress.Dispose();		 
+        MyAddress.Dispose();		
+
+		UIMgr.ShowUI(VIEWID.ALERTINFO,"导出成功"); 
 	 }
 }
