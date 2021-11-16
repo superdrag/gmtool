@@ -78,6 +78,7 @@ public class LoginCtl
         {
             NetMgr.NetClose();
             Logger.Error("connect login fail ret", ret);
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"连接服务器超时");
         }
     }
 

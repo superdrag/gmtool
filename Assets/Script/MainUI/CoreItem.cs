@@ -33,11 +33,11 @@ public class CoreItem
         infoList[1].text = coreData.allRegNum.ToString();
         infoList[2].text = coreData.DAU.ToString();
         infoList[3].text = coreData.newUser.ToString();
-        infoList[4].text = coreData.income.ToString();
+        infoList[4].text = GFunc.US2Cent(coreData.income);
         infoList[5].text = coreData.sumPayUser.ToString();
         infoList[6].text = coreData.newPayUser.ToString();
-        infoList[7].text = coreData.ARPPU.ToString();
-        infoList[8].text = coreData.ARPPDAU.ToString();
+        infoList[7].text = GFunc.US2Cent(coreData.ARPPU); 
+        infoList[8].text = GFunc.US2Cent(coreData.ARPPDAU);
         infoList[9].text = coreData.PCU.ToString();
         infoList[10].text = coreData.ACU.ToString();
         infoList[11].text = coreData.avgOnlineSec.ToString();
@@ -50,7 +50,7 @@ public class CoreItem
             for (int i = 0; i < 8; i++)
             {
                 float penct = (float)coreData.remainDict[2+i] / coreData.allRegNum * 100;
-                infoList[13+i].text = penct.ToString("F1") + "%";      
+                infoList[13+i].text = penct.ToString("F2") + "%";      
             }  
         }
 

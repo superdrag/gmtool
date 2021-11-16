@@ -59,15 +59,19 @@ public class CoreSumView : View
 
     override public void OnShow(params object[] args)
     {        
-        List<int> list = RecordModel.coreSumList;        
+        List<float> list = RecordModel.coreSumList;        
+
+        infoList[0].text = GFunc.Int2DateTime((int)list[0]).ToString(); 
+        infoList[1].text = list[1].ToString(); //总注册
+        infoList[2].text = GFunc.US2Cent(list[2]); //总流水
+        infoList[3].text = list[3].ToString();  //ads
+        infoList[4].text = "$" + list[4].ToString("F2");  //arpu      
 
         for (int i = 0; i < list.Count; i++)
         {
-            infoList[i].text = list[i].ToString(); 
-
-            if (i >= 5 && i <= 9)
+            if (i >= 5 && i <= 14)
             {
-                infoList[i].text =( (float)list[i] / RecordModel.coreList.Count ).ToString("F1") + "%";
+                infoList[i].text =( (float)list[i] / RecordModel.coreList.Count ).ToString("F2") + "%";
             }
         }
     }

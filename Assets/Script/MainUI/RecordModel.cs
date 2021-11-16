@@ -40,6 +40,7 @@ public class CoreData
     public Dictionary<string,int> regAccDict = new Dictionary<string, int>();
     public Dictionary<int,int> hourOnlineNumDict = new Dictionary<int, int>();
     public Dictionary<int,int> remainDict = new Dictionary<int, int>(); //留存  //次留是 i+ 1 = 2 开始        
+    public Dictionary<int,int> remainPayDict = new Dictionary<int, int>(); //付费留存  //次留是 i+ 1 = 2 开始 
 }
 
 
@@ -74,9 +75,10 @@ public class RecordModel {
     public static List<string> countryList = new List<string>{ "ALL", "CN","US","JP","DE"};
     public static List<string> platformList = new List<string>{ "ALL", "IOS","Android"};
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
-    public static List<int> coreSumList = new List<int>();
+    public static List<float> coreSumList = new List<float>();
     public static int sumWatchAds = 0;
     public static int sumRegAccNum = 0;
+    public static int sumDauNum = 0;
 
     public void Init()
     {
@@ -133,7 +135,8 @@ public class RecordModel {
                 coreSumList[2] += item.Value;
             }
             sumRegAccNum += dayData.allRegNum;   
-
+            sumWatchAds += dayData.watchAds;
+            sumDauNum += dayData.DAU;
 
             foreach (var item in dayData.remainDict)
             {
@@ -166,13 +169,47 @@ public class RecordModel {
                 {
                     coreSumList[9] += num;
                 }                                                                                      
-            }             
+            }     
+
+            foreach (var item in dayData.remainPayDict)
+            {
+                int day = item.Key;
+                int num = item.Value;
+
+                // int index = 5 + day - 2;
+                // if (index < coreSumList.Count)
+                // {
+                //     coreSumList[index] += num;
+                // }
+            //
+                if (day == 2)
+                {
+                    coreSumList[10] += num;
+                }
+                else if (day == 3)
+                {
+                    coreSumList[11] += num;
+                } 
+                else if (day == 7)
+                {
+                    coreSumList[12] += num;
+                }
+                else if (day == 14)
+                {
+                    coreSumList[13] += num;
+                } 
+                else if (day == 30)
+                {
+                    coreSumList[14] += num;
+                }                                                                                      
+            }  
+
         }
 
         coreSumList[3] = sumWatchAds;
 
         //arpu
-        coreSumList[4] = 0;
+        coreSumList[4] = coreSumList[2] / sumDauNum;
 
         //remain
         // for (int i = 5; i <= 9; i++)
@@ -196,6 +233,7 @@ public class RecordModel {
         for (int i = 0; i < 30; i++)
         {
             coreData.remainDict[i+1] = 0;
+            coreData.remainPayDict[i+1] = 0;
         }   
 
 
@@ -327,8 +365,14 @@ public class RecordModel {
                     if( preData.regAccDict.ContainsKey(item.Key) )
                     {
                         coreData.remainDict[i+1]++;    
-                        //次留是 i+ 1 = 2 开始                
-                    }                  
+                        //次留是 i+ 1 = 2 开始   
+
+                        if( preData.payAccDict.ContainsKey(item.Key) )
+                        {   
+                            //次留是 i+ 1 = 2 开始  
+                            coreData.remainPayDict[i+1]++;               
+                        }                                      
+                    }                                 
                 }
             }
             

@@ -322,6 +322,11 @@ public class GFunc
         string s = time.ToString("yyyy-MM-dd HH:mm:ss");
         //Logger.Log("Int2DateTime........", time.ToString());
         return s;
-    }             
+    }   
+
+    public static string US2Cent(float us)
+    {
+        return "$"+(us / 100.0).ToString();
+    }          
 }
 
