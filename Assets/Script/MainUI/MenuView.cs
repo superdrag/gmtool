@@ -10,11 +10,13 @@ public class MenuView : View
 {
     private static MenuView ins = null;
 
-    private List<Button> btnList = new List<Button>();
+    //private List<Button> btnList = new List<Button>();
 
-    private List<VIEWID> switchViewList = new List<VIEWID>();
+    //private List<VIEWID> switchViewList = new List<VIEWID>();
 
-    int curIndex;
+    private Dictionary<VIEWID,Button> btnViewDict = new Dictionary<VIEWID, Button>();
+
+    //int curIndex;
 
     public static VIEWID curViewId;
 
@@ -56,62 +58,27 @@ public class MenuView : View
         Button diamondBtn = viewRoot.Find("diamond").GetComponent<Button>();
         Button cardBtn = viewRoot.Find("card").GetComponent<Button>();
 
+        btnViewDict[VIEWID.Mail] = youjianBtn;
+        btnViewDict[VIEWID.CoreView] = hexinBtn;
+        btnViewDict[VIEWID.CoreSumView] = hexinsumBtn;
+        btnViewDict[VIEWID.Recharge] = playerDataBtn;
+        btnViewDict[VIEWID.Limit] = limitBtn;
+        btnViewDict[VIEWID.GMAcc] = gmaccBtn;
+        btnViewDict[VIEWID.RecordView] = recordBtn;
+        btnViewDict[VIEWID.SaveView] = saveBtn;
+        btnViewDict[VIEWID.FuncView] = funcBtn;
+        btnViewDict[VIEWID.TaskView] = taskBtn;
+        btnViewDict[VIEWID.PayView] = paydataBtn;
+        btnViewDict[VIEWID.DiamondView] = diamondBtn;
+        btnViewDict[VIEWID.CardView] = cardBtn;
+        btnViewDict[VIEWID.PayGiftView] = paygiftBtn;
 
-
-        // EventTriggerListener.Get(chongzhiBtn.gameObject).onClick = OnBtnEvent;
-        // EventTriggerListener.Get(hexinBtn.gameObject).onClick = OnBtnEvent;
-        // EventTriggerListener.Get(youjianBtn.gameObject).onClick = OnBtnEvent;
-        // EventTriggerListener.Get(paydataBtn.gameObject).onClick = OnBtnEvent;
-        // EventTriggerListener.Get(limitBtn.gameObject).onClick = OnBtnEvent;
-        // EventTriggerListener.Get(gmaccBtn.gameObject).onClick = OnBtnEvent;
-        // EventTriggerListener.Get(recordBtn.gameObject).onClick = OnBtnEvent;
-        // EventTriggerListener.Get(saveBtn.gameObject).onClick = OnBtnEvent;
-        // EventTriggerListener.Get(funcBtn.gameObject).onClick = OnBtnEvent;
-        // EventTriggerListener.Get(taskBtn.gameObject).onClick = OnBtnEvent;
-        // EventTriggerListener.Get(taskBtn.gameObject).onClick = OnBtnEvent;
-        // EventTriggerListener.Get(taskBtn.gameObject).onClick = OnBtnEvent;
-
-        btnList.Add(funcBtn);
-        btnList.Add(hexinBtn);
-        btnList.Add(hexinsumBtn);
-        btnList.Add(youjianBtn);
-        btnList.Add(paydataBtn);
-        btnList.Add(paygiftBtn);
-        btnList.Add(diamondBtn);
-        btnList.Add(playerDataBtn);
-        btnList.Add(saveBtn);
-        btnList.Add(gmaccBtn);
-        btnList.Add(taskBtn);
-        btnList.Add(limitBtn);
-        btnList.Add(recordBtn);
-        btnList.Add(cardBtn);
-
-        for (int i = 0; i < btnList.Count; i++)
+        foreach (var item in btnViewDict)
         {
-            EventTriggerListener.Get(btnList[i].gameObject).onClick = OnBtnEvent;
+            EventTriggerListener.Get(item.Value.gameObject).onClick = OnBtnEvent;
         }
 
-
-        switchViewList.Add(VIEWID.BLANK);
-        switchViewList.Add(VIEWID.Mail);
-        switchViewList.Add(VIEWID.MailSend);
-        switchViewList.Add(VIEWID.Recharge);
-        switchViewList.Add(VIEWID.CoreView);
-        switchViewList.Add(VIEWID.CoreSumView);
-        switchViewList.Add(VIEWID.Limit);
-        switchViewList.Add(VIEWID.LimitNew);
-        switchViewList.Add(VIEWID.PayView);
-        switchViewList.Add(VIEWID.GMAcc);
-        switchViewList.Add(VIEWID.GMAccNew);
-        switchViewList.Add(VIEWID.RecordView);
-        switchViewList.Add(VIEWID.SaveView);
-        switchViewList.Add(VIEWID.FuncView);
-        switchViewList.Add(VIEWID.TaskView);
-        switchViewList.Add(VIEWID.PayGiftView);
-        switchViewList.Add(VIEWID.DiamondView);
-        switchViewList.Add(VIEWID.CardView);
-
-        curIndex = 1;
+        curViewId = (VIEWID.CoreView);
 
         if (GData.DebugMode == false)
         {
@@ -123,103 +90,35 @@ public class MenuView : View
 
     override public void OnShow(params object[] args)
     {
-        Logger.Log("OnShow.........this.curIndex "+this.curIndex);
-
-        for (int i = 0; i < switchViewList.Count; i++)
+        foreach (var item in btnViewDict)
         {
-             UIMgr.HideUI(switchViewList[i]); 
-        }
-
-        if( this.curIndex == 1 )
-        {
-            curViewId = VIEWID.FuncView;            
-        }        
-        else if( this.curIndex == 2 )
-        {
-            curViewId = VIEWID.CoreView;            
-        }
-        else if( this.curIndex == 3 )
-        {
-            curViewId = VIEWID.CoreSumView;            
-        }        
-        else if( this.curIndex == 4 )
-        {
-            curViewId = VIEWID.Mail;
-        }    
-        else if( this.curIndex == 5 )
-        {
-            curViewId = VIEWID.PayView;
-        } 
-        else if( this.curIndex == 6 )
-        {
-            curViewId = VIEWID.PayGiftView;            
-        }         
-        else if( this.curIndex == 7 )
-        {
-            curViewId = VIEWID.DiamondView;     
-        }     
-        else if( this.curIndex == 8 )
-        {
-            curViewId = VIEWID.Recharge;   
-        }  
-        else if( this.curIndex == 9)
-        {
-            curViewId = VIEWID.SaveView;
-        }   
-        else if( this.curIndex == 10)
-        {
-            curViewId = VIEWID.GMAcc;
-        }
-        else if( this.curIndex == 11)
-        {
-            curViewId = VIEWID.TaskView;
-        }    
-        else if( this.curIndex == 12)
-        {
-            curViewId = VIEWID.Limit;
-        }     
-        else if( this.curIndex == 13)
-        {
-            curViewId = VIEWID.RecordView;
-        }        
-        else if( this.curIndex == 14)
-        {
-            curViewId = VIEWID.CardView;
-        }                                                                                          
-        else
-        {
-            curViewId = VIEWID.BLANK;
+            UIMgr.HideUI(item.Key); 
         }
 
         UIMgr.ShowUI(curViewId);
 
-        foreach (var item in btnList)
+        foreach (var item in btnViewDict)
         {
-            Image img = item.GetComponent<Image>();
+            Image img = item.Value.GetComponent<Image>();
             UIHelper.SetColor(img,"255/255/255/255");
         }
-        UIHelper.SetColor(btnList[this.curIndex-1].GetComponent<Image>(),"0/167/255/255");
-
-
-  
+        UIHelper.SetColor(btnViewDict[curViewId].GetComponent<Image>(),"0/167/255/255");
     }
 
     private void OnBtnEvent(GameObject go)
     {
         Logger.Log("OnBtnEvent click go.........."+go.name);
         
-        for (int i = 0; i < btnList.Count; i++)
+        foreach (var item in btnViewDict)
         {
-            if( btnList[i].name == go.name )
+            if (item.Value.name == go.name)
             {
-                curIndex = i + 1;
-                Logger.Log("OnBtnEvent click index.........."+curIndex);
+                curViewId = item.Key;
+                Logger.Log("OnBtnEvent click curViewId.........."+curViewId);
                 break;
             }
         }
 
         UIMgr.RefreshUI(VIEWID.MENU);           
     }
-
-
 }
