@@ -82,10 +82,25 @@ public class RecordModel {
 
     public void Init()
     {
+        resetCoreSumData();    
+    }
+
+    public static void resetCoreSumData()
+    {
+        if (coreSumList.Count <= 0)
+        {
+            for (int i = 0; i < 15; i++)
+            {
+                coreSumList.Add(0);
+            }      
+        }
         for (int i = 0; i < 15; i++)
         {
-            coreSumList.Add(0);
-        }     
+            coreSumList[i] = 0;
+        }  
+        sumWatchAds = 0;
+        sumRegAccNum = 0;
+        sumDauNum = 0;         
     }
 
     public static bool loadFile()

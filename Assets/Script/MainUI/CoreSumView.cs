@@ -78,14 +78,11 @@ public class CoreSumView : View
 
     override public void DoClickQuery()
     {
-        // ClearCoreItem();
-        // for (int i = 0; i < RecordModel.coreList.Count; i++)
-        // {
-        //     if (RecordModel.coreList[i].timetv >= TitleView.startTime && RecordModel.coreList[i].timetv <= TitleView.endTime)
-        //     {
-        //          AddCoreItem(i); 
-        //     }           
-        // }
+        RecordModel.resetCoreSumData();        
+        RecordModel.analyseAllCoreData(TitleView.country,TitleView.platform);
+        //ClearCoreItem();
+        UIMgr.RefreshUI(VIEWID.CoreSumView);
+
     }
 
     override public void DoClickExport()
