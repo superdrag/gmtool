@@ -93,6 +93,10 @@ public class CoreView : View
 
     override public void DoClickQuery()
     {
+        string curCountry = TitleView.country;
+        Logger.Log("1111111111111 "+ curCountry);
+        RecordModel.analyseAllCoreData(curCountry,"ALL");
+
         ClearCoreItem();
         dataItemList.Clear();
         for (int i = 0; i < RecordModel.coreList.Count; i++)
@@ -106,6 +110,6 @@ public class CoreView : View
 
     override public void DoClickExport()
     {
-
+        ExcelHelper.ExportCore();
     }       
 }

@@ -72,8 +72,8 @@ public class RecordModel {
     public static List<string[]> dayDataList = new List<string[]>(); //一天数据
     public static List<CoreData> coreList = new List<CoreData>();  //每天全部数据
     public static List<string[]> operateList = new List<string[]>(); //操作记录
-    public static List<string> countryList = new List<string>{ "ALL", "CN","US","JP","DE"};
-    public static List<string> platformList = new List<string>{ "ALL", "IOS","Android"};
+    public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","AU","PH","ID","MY","TH"};
+    public static List<string> platformList = new List<string>{"ALL", "IOS","Android"};
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
     public static List<float> coreSumList = new List<float>();
     public static int sumWatchAds = 0;
@@ -88,7 +88,7 @@ public class RecordModel {
         }     
     }
 
-    public bool loadFile()
+    public static bool loadFile()
     {        
         if (!Directory.Exists(ResMgr.recordDir))
         {
@@ -106,20 +106,20 @@ public class RecordModel {
                 string[] lineAry = File.ReadAllLines(filelist[i]);
                 dayDataList.Add(lineAry);
             }
-            analyseAllCoreData();            
+            analyseAllCoreData("ALL","ALL");            
         }
         return true;
     }
 
-    public void analyseAllCoreData()
+    public static void analyseAllCoreData(string country, string platform)
     {
+        coreList.Clear();
         //分析每天
         for (int i = 0; i < dayDataList.Count; i++)
         {
             string[] dayData = dayDataList[i];
-            analyseDayCoreData(dayData,i);
+            analyseDayCoreData(dayData,i,country,platform);
         }
-
 
         //分析总数
         coreSumList[0] = coreList[coreList.Count-1].timetv;
@@ -219,7 +219,7 @@ public class RecordModel {
         
     }
 
-    public void analyseDayCoreData(string[] dayData, int dayIndex)
+    public static void analyseDayCoreData(string[] dayData, int dayIndex, string country, string platform)
     {        
         Debug.Log("index..............." + dayIndex);
         CoreData coreData = new CoreData();
@@ -236,10 +236,10 @@ public class RecordModel {
             coreData.remainPayDict[i+1] = 0;
         }   
 
-
         for (int j = 0; j < dayData.Length; j++)
         {
             string lineData = dayData[j];
+
             //Logger.Log("lineData.............",lineData);  
             if (lineData == "")
             {
@@ -258,25 +258,45 @@ public class RecordModel {
             int curHour = Convert.ToInt32( curTime.Split(':')[0] );
 
             RECORD_TYPE recordType =(RECORD_TYPE)( System.Convert.ToInt32(fields[1]) ); 
+
+            string _acc = "";
+            string _country = "";
+            string _platform = "";
+
+            if (recordType != RECORD_TYPE.RECORD_ONLINENUM)
+            {
+                _acc = fields[2].Trim();
+                _platform = fields[3].Trim();
+                _country = fields[4].Trim();
+                if (_platform == "unity")
+                {
+                    _platform = "ALL";
+                }
+            }            
+
+            if (country != "ALL" && _country != country)
+            {
+                //Logger.Log("222222222222 ",country,_country);
+                continue;
+            }
+
+            if (platform != "ALL" && _platform != platform)
+            {
+                continue;
+            }            
             
             if (recordType == RECORD_TYPE.RECORD_USERREG)
             {
-                string acc = fields[2].Trim();
-
-                coreData.regAccDict[acc] = 1;
+                coreData.regAccDict[_acc] = 1;
                 //Logger.Log("000000000000000 ",fields[2]);
                 coreData.newUser++;
-
-                
             }
 
             if (recordType == RECORD_TYPE.RECORD_USERLOGIN)
             {
-                string acc = fields[2].Trim();
-
                 if(!coreData.loginAccDict.ContainsKey(fields[2]))
                 {
-                    coreData.loginAccDict[acc] = 1;
+                    coreData.loginAccDict[_acc] = 1;
                     //Logger.Log("day login acc.............",fields[2]);
                 }                
             }
@@ -304,7 +324,6 @@ public class RecordModel {
             if (recordType == RECORD_TYPE.RECORD_RECHARGE)
             {
                 int _num = Convert.ToInt32( fields[6] );
-                string _acc = fields[2].Trim();
                 coreData.income += Convert.ToInt32( _num );    
                 if ( coreData.payAccDict.ContainsKey(_acc) )
                 {

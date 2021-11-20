@@ -50,7 +50,7 @@ public class LoginCtl
 
     private void OnDownloadFinish(int ret)
     {
-        if (RecordModel.Instance.loadFile() == false)
+        if (RecordModel.loadFile() == false)
         {
             return;
         }

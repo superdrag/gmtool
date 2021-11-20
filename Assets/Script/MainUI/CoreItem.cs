@@ -40,7 +40,7 @@ public class CoreItem
         infoList[8].text = GFunc.US2Cent(coreData.ARPPDAU);
         infoList[9].text = coreData.PCU.ToString();
         infoList[10].text = coreData.ACU.ToString();
-        infoList[11].text = coreData.avgOnlineSec.ToString();
+        infoList[11].text = (coreData.avgOnlineSec / 60).ToString();
         infoList[12].text = coreData.watchAds.ToString();        
 
         //Logger.Log(",,,,,,,,,,,,,,,,, ",coreData.allRegNum);
@@ -71,7 +71,7 @@ public class CoreItem
         infoList[8].text ="ARPDAU";
         infoList[9].text = "pcu";
         infoList[10].text = "acu";
-        infoList[11].text = "人均在线时长";
+        infoList[11].text = "人均在线时长(分钟)";
         infoList[12].text = "广告";
         infoList[13].text = "次留";
         infoList[14].text = "3留";

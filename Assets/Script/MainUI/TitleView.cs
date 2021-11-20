@@ -24,6 +24,8 @@ public class TitleView : View
 
     public static int startTime = 0;
     public static int endTime = 0;
+    public static string country = "ALL";
+    public static string platform = "ALL";
 
     public static TitleView Instance
     {
@@ -131,17 +133,18 @@ public class TitleView : View
 
     private void onClickExport(GameObject go)
     {
-        ExcelHelper.ExportCore();
+        View view = UIMgr.GetUI(MenuView.curViewId);
+        view.DoClickExport();        
     }
 
     private void onChooseCountry(int index)
     {
-
-    }
+        country = RecordModel.countryList[index];
+    }   
 
     private void onChoosePlatform(int index)
     {
-
+        platform = RecordModel.platformList[index];
     }
 
     private void onChooseDate1(int index)
