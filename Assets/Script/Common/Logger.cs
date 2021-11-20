@@ -85,7 +85,7 @@ public class Logger
 
     private static void WriteLog(LOG_TYPE type, string s, string traceEx = "")
     {
-        return;
+        //return;
         string trackStr = traceEx;
         trackStr += new System.Diagnostics.StackTrace().ToString();
 

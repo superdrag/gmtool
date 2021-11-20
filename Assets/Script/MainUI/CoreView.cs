@@ -93,9 +93,9 @@ public class CoreView : View
 
     override public void DoClickQuery()
     {
-        string curCountry = TitleView.country;
-        Logger.Log("1111111111111 "+ curCountry);
-        RecordModel.analyseAllCoreData(curCountry,"ALL");
+        // string curCountry = TitleView.country;
+        // Logger.Log("1111111111111 "+ curCountry);
+        RecordModel.analyseAllCoreData(TitleView.country,TitleView.platform);
 
         ClearCoreItem();
         dataItemList.Clear();
