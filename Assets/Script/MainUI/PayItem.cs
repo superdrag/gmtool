@@ -48,7 +48,7 @@ public class PayItem
         }
         else
         {
-            infoList[7].text = "失败"; 
+            infoList[7].text = "失败:"+pbData.State; 
         }
         
         if (pbData.State == 0)
