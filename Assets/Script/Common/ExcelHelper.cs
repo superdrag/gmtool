@@ -86,4 +86,56 @@ public static class ExcelHelper
 
 		UIMgr.ShowUI(VIEWID.ALERTINFO,"导出成功"); 
 	 }
+
+
+	public static void ExportCoreSum()
+	{
+		//string path = GFunc.AppRunPath() + "/核心数据.xlsx";
+
+		string path = Application.dataPath + "/../核心数据总览.xlsx";
+
+		if (File.Exists(path))
+		{
+			File.Delete(path);
+		}
+
+		FileStream MyAddress = new FileStream(path, FileMode.CreateNew,FileAccess.ReadWrite);
+
+		HSSFWorkbook MyWorkbook = new HSSFWorkbook();
+
+		HSSFSheet Sheet01 = (HSSFSheet)MyWorkbook.CreateSheet("data1");
+
+		List<Text> coreTitle = CoreSumView.Instance.titleList;		
+		
+		HSSFRow row_title = (HSSFRow)Sheet01.CreateRow(0);
+		for (int j = 0; j < coreTitle.Count; j++)
+		{
+			HSSFCell cell = (HSSFCell)row_title.CreateCell(j);
+			cell.SetCellValue(coreTitle[j].text);
+		}		
+
+
+		HSSFRow row = (HSSFRow)Sheet01.CreateRow(1);
+		for (int j = 0; j < coreTitle.Count; j++)
+		{
+			HSSFCell cell = (HSSFCell)row.CreateCell(j);
+
+			//Logger.Log("row col",i,j);
+
+			//cell.SetCellValue("数值"+i*j);					
+
+			string s = CoreSumView.Instance.infoList[j].text;
+			cell.SetCellValue(s);
+		}
+		
+
+		//写入到文件流
+		MyWorkbook.Write(MyAddress);
+		//关闭
+		MyWorkbook.Close();
+		//关闭文件流
+		MyAddress.Dispose();		
+
+		UIMgr.ShowUI(VIEWID.ALERTINFO,"导出成功"); 
+	}
 }

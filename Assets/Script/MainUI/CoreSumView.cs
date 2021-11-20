@@ -20,8 +20,11 @@ public class CoreSumView : View
 
     public Transform coreSumItem;
     public Transform coreSumItemBg;
+    public Transform coreSumTitle;
+    
 
     public List<Text> infoList = new List<Text>();
+    public List<Text> titleList = new List<Text>();
 
     public static CoreSumView Instance
     {
@@ -49,12 +52,17 @@ public class CoreSumView : View
         Content = bg.Find("Scroll View/Viewport/Content");
         coreSumItem = bg.Find("CoreSumItem");
         coreSumItemBg = bg.Find("CoreSumItem/bg");
+        coreSumTitle = bg.Find("title");
 
         for (int i = 0; i < coreSumItemBg.childCount; i++)
         {
             infoList.Add(coreSumItemBg.GetChild(i).GetComponent<Text>());
         }
 
+        for (int i = 0; i < coreSumTitle.childCount; i++)
+        {
+            titleList.Add(coreSumTitle.GetChild(i).GetComponent<Text>());
+        }
     }
 
     override public void OnShow(params object[] args)
@@ -87,7 +95,7 @@ public class CoreSumView : View
 
     override public void DoClickExport()
     {
-
+        ExcelHelper.ExportCoreSum();
     }       
 
     public void ClearCoreItem()
