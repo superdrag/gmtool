@@ -156,7 +156,7 @@ message S2C_GMModMail
 
 
 
-// MsgId.MSG_CL2PHP_GMCOMMAND                  = 1831    --[[GM发送指令]]  ProtoDict[MsgId.MSG_CL2PHP_GMCOMMAND] = "PPhp.C2S_GMCommand"
+// MsgId.MSG_CL2PHP_GMCOMMAND                  = 1831    --[[GM发送指令]]  
 message C2S_GMCommand
 {
     int32 commandid = 1;  //
@@ -164,7 +164,7 @@ message C2S_GMCommand
     repeated string params = 3;
     bytes data = 4;
 }
-// MsgId.MSG_PHP2CL_GMCOMMAND                  = 2831    --[[GM发送指令]]  ProtoDict[MsgId.MSG_PHP2CL_GMCOMMAND] = "PPhp.S2C_GMCommand"
+// MsgId.MSG_PHP2CL_GMCOMMAND                  = 2831    --[[GM发送指令]] 
 message S2C_GMCommand
 {
     int32 ret = 1;
@@ -173,15 +173,19 @@ message S2C_GMCommand
     repeated string params = 4;
 }
 
-// MsgId.MSG_CL2PHP_QUERYNORMALINFO            = 1865    --[[GM通用查询]]  ProtoDict[MsgId.MSG_CL2PHP_QUERYNORMALINFO] = "PPhp.C2S_GMQueryNormalInfo"
+//MsgId.MSG_CL2PHP_QUERYNORMALINFO            = 1865    --[[GM通用查询]]  
 message C2S_GMQueryNormalInfo
 {
     int32 querytype = 1;  //
     string account = 2;
-    repeated int32 params = 3[packed = false];
-    repeated string params2 = 4[packed = false];
+    int32 starttime = 3;
+    int32 endtime = 4;
+    string platfrom = 5;
+    string country = 6;
+    repeated int32 params = 8[packed = false];
+    repeated string params2 = 9[packed = false];
 }
-// MsgId.MSG_PHP2CL_QUERYNORMALINFO            = 2865    --[[GMGM通用查询]]  ProtoDict[MsgId.MSG_PHP2CL_QUERYNORMALINFO] = "PPhp.S2C_GMQueryNormalInfo"
+// MsgId.MSG_PHP2CL_QUERYNORMALINFO            = 2865    --[[GMGM通用查询]]   
 message S2C_GMQueryNormalInfo
 {
     int32 ret = 1;
@@ -192,13 +196,13 @@ message S2C_GMQueryNormalInfo
     bytes data = 9;
 }
 
-// MsgId.MSG_CL2PHP_QUERYCLIENTSAVE            = 1869    --[[GM存档查询]]  ProtoDict[MsgId.MSG_CL2PHP_QUERYCLIENTSAVE] = "PPhp.C2S_GMQueryClientSave"
+// MsgId.MSG_CL2PHP_QUERYCLIENTSAVE            = 1869    --[[GM存档查询]]  
 message C2S_GMQueryClientSave
 {
     string account = 1;
     string file = 2;
 }
-// MsgId.MSG_PHP2CL_QUERYCLIENTSAVE            = 2869    --[[GM存档查询]]  ProtoDict[MsgId.MSG_PHP2CL_QUERYCLIENTSAVE] = "PPhp.S2C_GMQueryClientSave"
+// MsgId.MSG_PHP2CL_QUERYCLIENTSAVE            = 2869    --[[GM存档查询]] 
 message S2C_GMQueryClientSave
 {
     int32 ret = 1;
@@ -267,6 +271,7 @@ message C2S_GMPayRepair
     string account = 1;
     string paycode = 2;
     string payorder = 3;
+    int32 payid = 4;
 
 }
 // MsgId.MSG_PHP2CL_GMPAYREPAIR                = 2862    --[[GM支付补发]]  
@@ -275,5 +280,5 @@ message S2C_GMPayRepair
     int32 ret = 1;
     string paycode = 2;
     string payorder = 3;
-
+    int32 payid = 4;
 }

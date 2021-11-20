@@ -65,6 +65,7 @@ public class PayItem
     private void onClickRepair(GameObject go)
     {
         C2S_GMPayRepair pb = new C2S_GMPayRepair();
+        pb.Payid = pbData.Payid;
         pb.Account = pbData.Account;
         pb.Paycode = pbData.Paycode;
         pb.Payorder = pbData.Payorder;

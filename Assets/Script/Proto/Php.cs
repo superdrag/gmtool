@@ -55,33 +55,35 @@ namespace PPhp {
             "KAUiUQoNQzJTX0dNQ29tbWFuZBIRCgljb21tYW5kaWQYASABKAUSDwoHYWNj",
             "bGlzdBgCIAMoCRIOCgZwYXJhbXMYAyADKAkSDAoEZGF0YRgEIAEoDCJQCg1T",
             "MkNfR01Db21tYW5kEgsKA3JldBgBIAEoBRIRCgljb21tYW5kaWQYAiABKAUS",
-            "DwoHYWNjbGlzdBgDIAMoCRIOCgZwYXJhbXMYBCADKAkiZAoVQzJTX0dNUXVl",
-            "cnlOb3JtYWxJbmZvEhEKCXF1ZXJ5dHlwZRgBIAEoBRIPCgdhY2NvdW50GAIg",
-            "ASgJEhIKBnBhcmFtcxgDIAMoBUICEAASEwoHcGFyYW1zMhgEIAMoCUICEAAi",
-            "6QEKFVMyQ19HTVF1ZXJ5Tm9ybWFsSW5mbxILCgNyZXQYASABKAUSEQoJcXVl",
-            "cnl0eXBlGAIgASgFEg8KB2FjY291bnQYAyABKAkSJgoGcmVzdWx0GAQgAygL",
-            "MhYuUEJhc2UuUEJfUGFyYW1TdHJEaWN0EjkKB21hcGRhdGEYBSADKAsyKC5Q",
-            "UGhwLlMyQ19HTVF1ZXJ5Tm9ybWFsSW5mby5NYXBkYXRhRW50cnkSDAoEZGF0",
-            "YRgJIAEoDBouCgxNYXBkYXRhRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVl",
-            "GAIgASgJOgI4ASI2ChVDMlNfR01RdWVyeUNsaWVudFNhdmUSDwoHYWNjb3Vu",
-            "dBgBIAEoCRIMCgRmaWxlGAIgASgJIlEKFVMyQ19HTVF1ZXJ5Q2xpZW50U2F2",
-            "ZRILCgNyZXQYASABKAUSDwoHYWNjb3VudBgCIAEoCRIMCgRmaWxlGAMgASgJ",
-            "EgwKBGRhdGEYBCABKAwiJQoTQzJTX0dNUXVlcnlUYXNrTWFpbhIOCgZpZGxp",
-            "c3QYASADKAUiOQoLUEJfVGFza01haW4SDgoGdGFza2lkGAEgASgFEgwKBHN0",
-            "b3AYAiABKAUSDAoEbG9zdBgDIAEoBSKlAQoTUzJDX0dNUXVlcnlUYXNrTWFp",
-            "bhILCgNyZXQYASABKAUSMQoEZGF0YRgCIAMoCzIjLlBQaHAuUzJDX0dNUXVl",
-            "cnlUYXNrTWFpbi5EYXRhRW50cnkSDgoGc3VtYWNjGAMgASgFGj4KCURhdGFF",
-            "bnRyeRILCgNrZXkYASABKAUSIAoFdmFsdWUYAiABKAsyES5QUGhwLlBCX1Rh",
-            "c2tNYWluOgI4ASIQCg5DMlNfR01Db3JlRGF0YSIQCg5TMkNfR01Db3JlRGF0",
-            "YSIuCg1DMlNfR01QYXlEYXRhEgwKBHBhZ2UYASABKAUSDwoHYWNjb3VudBgC",
-            "IAEoCSLCAQoNUzJDX0dNUGF5RGF0YRIMCgRwYWdlGAEgASgFEg8KB2FjY291",
-            "bnQYAiABKAkSEAoIcGxhdGZyb20YAyABKAkSDwoHY291bnRyeRgEIAEoCRIQ",
-            "CghwYXlvcmRlchgFIAEoCRIOCgZwYXludW0YBiABKAUSDQoFc3RhdGUYByAB",
-            "KAUSDwoHcGF5dGltZRgIIAEoBRINCgVwYXlpZBgJIAEoBRINCgVldmVudBgK",
-            "IAEoBRIPCgdwYXljb2RlGAsgASgJIkUKD0MyU19HTVBheVJlcGFpchIPCgdh",
-            "Y2NvdW50GAEgASgJEg8KB3BheWNvZGUYAiABKAkSEAoIcGF5b3JkZXIYAyAB",
-            "KAkiQQoPUzJDX0dNUGF5UmVwYWlyEgsKA3JldBgBIAEoBRIPCgdwYXljb2Rl",
-            "GAIgASgJEhAKCHBheW9yZGVyGAMgASgJYgZwcm90bzM="));
+            "DwoHYWNjbGlzdBgDIAMoCRIOCgZwYXJhbXMYBCADKAkiqwEKFUMyU19HTVF1",
+            "ZXJ5Tm9ybWFsSW5mbxIRCglxdWVyeXR5cGUYASABKAUSDwoHYWNjb3VudBgC",
+            "IAEoCRIRCglzdGFydHRpbWUYAyABKAUSDwoHZW5kdGltZRgEIAEoBRIQCghw",
+            "bGF0ZnJvbRgFIAEoCRIPCgdjb3VudHJ5GAYgASgJEhIKBnBhcmFtcxgIIAMo",
+            "BUICEAASEwoHcGFyYW1zMhgJIAMoCUICEAAi6QEKFVMyQ19HTVF1ZXJ5Tm9y",
+            "bWFsSW5mbxILCgNyZXQYASABKAUSEQoJcXVlcnl0eXBlGAIgASgFEg8KB2Fj",
+            "Y291bnQYAyABKAkSJgoGcmVzdWx0GAQgAygLMhYuUEJhc2UuUEJfUGFyYW1T",
+            "dHJEaWN0EjkKB21hcGRhdGEYBSADKAsyKC5QUGhwLlMyQ19HTVF1ZXJ5Tm9y",
+            "bWFsSW5mby5NYXBkYXRhRW50cnkSDAoEZGF0YRgJIAEoDBouCgxNYXBkYXRh",
+            "RW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASI2ChVDMlNf",
+            "R01RdWVyeUNsaWVudFNhdmUSDwoHYWNjb3VudBgBIAEoCRIMCgRmaWxlGAIg",
+            "ASgJIlEKFVMyQ19HTVF1ZXJ5Q2xpZW50U2F2ZRILCgNyZXQYASABKAUSDwoH",
+            "YWNjb3VudBgCIAEoCRIMCgRmaWxlGAMgASgJEgwKBGRhdGEYBCABKAwiJQoT",
+            "QzJTX0dNUXVlcnlUYXNrTWFpbhIOCgZpZGxpc3QYASADKAUiOQoLUEJfVGFz",
+            "a01haW4SDgoGdGFza2lkGAEgASgFEgwKBHN0b3AYAiABKAUSDAoEbG9zdBgD",
+            "IAEoBSKlAQoTUzJDX0dNUXVlcnlUYXNrTWFpbhILCgNyZXQYASABKAUSMQoE",
+            "ZGF0YRgCIAMoCzIjLlBQaHAuUzJDX0dNUXVlcnlUYXNrTWFpbi5EYXRhRW50",
+            "cnkSDgoGc3VtYWNjGAMgASgFGj4KCURhdGFFbnRyeRILCgNrZXkYASABKAUS",
+            "IAoFdmFsdWUYAiABKAsyES5QUGhwLlBCX1Rhc2tNYWluOgI4ASIQCg5DMlNf",
+            "R01Db3JlRGF0YSIQCg5TMkNfR01Db3JlRGF0YSIuCg1DMlNfR01QYXlEYXRh",
+            "EgwKBHBhZ2UYASABKAUSDwoHYWNjb3VudBgCIAEoCSLCAQoNUzJDX0dNUGF5",
+            "RGF0YRIMCgRwYWdlGAEgASgFEg8KB2FjY291bnQYAiABKAkSEAoIcGxhdGZy",
+            "b20YAyABKAkSDwoHY291bnRyeRgEIAEoCRIQCghwYXlvcmRlchgFIAEoCRIO",
+            "CgZwYXludW0YBiABKAUSDQoFc3RhdGUYByABKAUSDwoHcGF5dGltZRgIIAEo",
+            "BRINCgVwYXlpZBgJIAEoBRINCgVldmVudBgKIAEoBRIPCgdwYXljb2RlGAsg",
+            "ASgJIlQKD0MyU19HTVBheVJlcGFpchIPCgdhY2NvdW50GAEgASgJEg8KB3Bh",
+            "eWNvZGUYAiABKAkSEAoIcGF5b3JkZXIYAyABKAkSDQoFcGF5aWQYBCABKAUi",
+            "UAoPUzJDX0dNUGF5UmVwYWlyEgsKA3JldBgBIAEoBRIPCgdwYXljb2RlGAIg",
+            "ASgJEhAKCHBheW9yZGVyGAMgASgJEg0KBXBheWlkGAQgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::PBase.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -103,7 +105,7 @@ namespace PPhp {
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMModMail), global::PPhp.S2C_GMModMail.Parser, new[]{ "Ret", "Modtype" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMCommand), global::PPhp.C2S_GMCommand.Parser, new[]{ "Commandid", "Acclist", "Params", "Data" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMCommand), global::PPhp.S2C_GMCommand.Parser, new[]{ "Ret", "Commandid", "Acclist", "Params" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQueryNormalInfo), global::PPhp.C2S_GMQueryNormalInfo.Parser, new[]{ "Querytype", "Account", "Params", "Params2" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQueryNormalInfo), global::PPhp.C2S_GMQueryNormalInfo.Parser, new[]{ "Querytype", "Account", "Starttime", "Endtime", "Platfrom", "Country", "Params", "Params2" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryNormalInfo), global::PPhp.S2C_GMQueryNormalInfo.Parser, new[]{ "Ret", "Querytype", "Account", "Result", "Mapdata", "Data" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQueryClientSave), global::PPhp.C2S_GMQueryClientSave.Parser, new[]{ "Account", "File" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryClientSave), global::PPhp.S2C_GMQueryClientSave.Parser, new[]{ "Ret", "Account", "File", "Data" }, null, null, null),
@@ -114,8 +116,8 @@ namespace PPhp {
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMCoreData), global::PPhp.S2C_GMCoreData.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMPayData), global::PPhp.C2S_GMPayData.Parser, new[]{ "Page", "Account" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMPayData), global::PPhp.S2C_GMPayData.Parser, new[]{ "Page", "Account", "Platfrom", "Country", "Payorder", "Paynum", "State", "Paytime", "Payid", "Event", "Paycode" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMPayRepair), global::PPhp.C2S_GMPayRepair.Parser, new[]{ "Account", "Paycode", "Payorder" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMPayRepair), global::PPhp.S2C_GMPayRepair.Parser, new[]{ "Ret", "Paycode", "Payorder" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMPayRepair), global::PPhp.C2S_GMPayRepair.Parser, new[]{ "Account", "Paycode", "Payorder", "Payid" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMPayRepair), global::PPhp.S2C_GMPayRepair.Parser, new[]{ "Ret", "Paycode", "Payorder", "Payid" }, null, null, null)
           }));
     }
     #endregion
@@ -3283,7 +3285,7 @@ namespace PPhp {
   }
 
   /// <summary>
-  /// MsgId.MSG_CL2PHP_GMCOMMAND                  = 1831    --[[GM发送指令]]  ProtoDict[MsgId.MSG_CL2PHP_GMCOMMAND] = "PPhp.C2S_GMCommand"
+  /// MsgId.MSG_CL2PHP_GMCOMMAND                  = 1831    --[[GM发送指令]]  
   /// </summary>
   public sealed partial class C2S_GMCommand : pb::IMessage<C2S_GMCommand> {
     private static readonly pb::MessageParser<C2S_GMCommand> _parser = new pb::MessageParser<C2S_GMCommand>(() => new C2S_GMCommand());
@@ -3485,7 +3487,7 @@ namespace PPhp {
   }
 
   /// <summary>
-  /// MsgId.MSG_PHP2CL_GMCOMMAND                  = 2831    --[[GM发送指令]]  ProtoDict[MsgId.MSG_PHP2CL_GMCOMMAND] = "PPhp.S2C_GMCommand"
+  /// MsgId.MSG_PHP2CL_GMCOMMAND                  = 2831    --[[GM发送指令]] 
   /// </summary>
   public sealed partial class S2C_GMCommand : pb::IMessage<S2C_GMCommand> {
     private static readonly pb::MessageParser<S2C_GMCommand> _parser = new pb::MessageParser<S2C_GMCommand>(() => new S2C_GMCommand());
@@ -3687,7 +3689,7 @@ namespace PPhp {
   }
 
   /// <summary>
-  /// MsgId.MSG_CL2PHP_QUERYNORMALINFO            = 1865    --[[GM通用查询]]  ProtoDict[MsgId.MSG_CL2PHP_QUERYNORMALINFO] = "PPhp.C2S_GMQueryNormalInfo"
+  ///MsgId.MSG_CL2PHP_QUERYNORMALINFO            = 1865    --[[GM通用查询]]  
   /// </summary>
   public sealed partial class C2S_GMQueryNormalInfo : pb::IMessage<C2S_GMQueryNormalInfo> {
     private static readonly pb::MessageParser<C2S_GMQueryNormalInfo> _parser = new pb::MessageParser<C2S_GMQueryNormalInfo>(() => new C2S_GMQueryNormalInfo());
@@ -3716,6 +3718,10 @@ namespace PPhp {
     public C2S_GMQueryNormalInfo(C2S_GMQueryNormalInfo other) : this() {
       querytype_ = other.querytype_;
       account_ = other.account_;
+      starttime_ = other.starttime_;
+      endtime_ = other.endtime_;
+      platfrom_ = other.platfrom_;
+      country_ = other.country_;
       params_ = other.params_.Clone();
       params2_ = other.params2_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -3750,10 +3756,54 @@ namespace PPhp {
       }
     }
 
+    /// <summary>Field number for the "starttime" field.</summary>
+    public const int StarttimeFieldNumber = 3;
+    private int starttime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Starttime {
+      get { return starttime_; }
+      set {
+        starttime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "endtime" field.</summary>
+    public const int EndtimeFieldNumber = 4;
+    private int endtime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Endtime {
+      get { return endtime_; }
+      set {
+        endtime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "platfrom" field.</summary>
+    public const int PlatfromFieldNumber = 5;
+    private string platfrom_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Platfrom {
+      get { return platfrom_; }
+      set {
+        platfrom_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "country" field.</summary>
+    public const int CountryFieldNumber = 6;
+    private string country_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Country {
+      get { return country_; }
+      set {
+        country_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "params" field.</summary>
-    public const int ParamsFieldNumber = 3;
+    public const int ParamsFieldNumber = 8;
     private static readonly pb::FieldCodec<int> _repeated_params_codec
-        = pb::FieldCodec.ForInt32(24);
+        = pb::FieldCodec.ForInt32(64);
     private readonly pbc::RepeatedField<int> params_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> Params {
@@ -3761,9 +3811,9 @@ namespace PPhp {
     }
 
     /// <summary>Field number for the "params2" field.</summary>
-    public const int Params2FieldNumber = 4;
+    public const int Params2FieldNumber = 9;
     private static readonly pb::FieldCodec<string> _repeated_params2_codec
-        = pb::FieldCodec.ForString(34);
+        = pb::FieldCodec.ForString(74);
     private readonly pbc::RepeatedField<string> params2_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> Params2 {
@@ -3785,6 +3835,10 @@ namespace PPhp {
       }
       if (Querytype != other.Querytype) return false;
       if (Account != other.Account) return false;
+      if (Starttime != other.Starttime) return false;
+      if (Endtime != other.Endtime) return false;
+      if (Platfrom != other.Platfrom) return false;
+      if (Country != other.Country) return false;
       if(!params_.Equals(other.params_)) return false;
       if(!params2_.Equals(other.params2_)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -3795,6 +3849,10 @@ namespace PPhp {
       int hash = 1;
       if (Querytype != 0) hash ^= Querytype.GetHashCode();
       if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (Starttime != 0) hash ^= Starttime.GetHashCode();
+      if (Endtime != 0) hash ^= Endtime.GetHashCode();
+      if (Platfrom.Length != 0) hash ^= Platfrom.GetHashCode();
+      if (Country.Length != 0) hash ^= Country.GetHashCode();
       hash ^= params_.GetHashCode();
       hash ^= params2_.GetHashCode();
       if (_unknownFields != null) {
@@ -3818,6 +3876,22 @@ namespace PPhp {
         output.WriteRawTag(18);
         output.WriteString(Account);
       }
+      if (Starttime != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Starttime);
+      }
+      if (Endtime != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Endtime);
+      }
+      if (Platfrom.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Platfrom);
+      }
+      if (Country.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Country);
+      }
       params_.WriteTo(output, _repeated_params_codec);
       params2_.WriteTo(output, _repeated_params2_codec);
       if (_unknownFields != null) {
@@ -3833,6 +3907,18 @@ namespace PPhp {
       }
       if (Account.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      }
+      if (Starttime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Starttime);
+      }
+      if (Endtime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Endtime);
+      }
+      if (Platfrom.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Platfrom);
+      }
+      if (Country.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Country);
       }
       size += params_.CalculateSize(_repeated_params_codec);
       size += params2_.CalculateSize(_repeated_params2_codec);
@@ -3852,6 +3938,18 @@ namespace PPhp {
       }
       if (other.Account.Length != 0) {
         Account = other.Account;
+      }
+      if (other.Starttime != 0) {
+        Starttime = other.Starttime;
+      }
+      if (other.Endtime != 0) {
+        Endtime = other.Endtime;
+      }
+      if (other.Platfrom.Length != 0) {
+        Platfrom = other.Platfrom;
+      }
+      if (other.Country.Length != 0) {
+        Country = other.Country;
       }
       params_.Add(other.params_);
       params2_.Add(other.params2_);
@@ -3874,12 +3972,28 @@ namespace PPhp {
             Account = input.ReadString();
             break;
           }
-          case 26:
           case 24: {
+            Starttime = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Endtime = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            Platfrom = input.ReadString();
+            break;
+          }
+          case 50: {
+            Country = input.ReadString();
+            break;
+          }
+          case 66:
+          case 64: {
             params_.AddEntriesFrom(input, _repeated_params_codec);
             break;
           }
-          case 34: {
+          case 74: {
             params2_.AddEntriesFrom(input, _repeated_params2_codec);
             break;
           }
@@ -3890,7 +4004,7 @@ namespace PPhp {
   }
 
   /// <summary>
-  /// MsgId.MSG_PHP2CL_QUERYNORMALINFO            = 2865    --[[GMGM通用查询]]  ProtoDict[MsgId.MSG_PHP2CL_QUERYNORMALINFO] = "PPhp.S2C_GMQueryNormalInfo"
+  /// MsgId.MSG_PHP2CL_QUERYNORMALINFO            = 2865    --[[GMGM通用查询]]   
   /// </summary>
   public sealed partial class S2C_GMQueryNormalInfo : pb::IMessage<S2C_GMQueryNormalInfo> {
     private static readonly pb::MessageParser<S2C_GMQueryNormalInfo> _parser = new pb::MessageParser<S2C_GMQueryNormalInfo>(() => new S2C_GMQueryNormalInfo());
@@ -4148,7 +4262,7 @@ namespace PPhp {
   }
 
   /// <summary>
-  /// MsgId.MSG_CL2PHP_QUERYCLIENTSAVE            = 1869    --[[GM存档查询]]  ProtoDict[MsgId.MSG_CL2PHP_QUERYCLIENTSAVE] = "PPhp.C2S_GMQueryClientSave"
+  /// MsgId.MSG_CL2PHP_QUERYCLIENTSAVE            = 1869    --[[GM存档查询]]  
   /// </summary>
   public sealed partial class C2S_GMQueryClientSave : pb::IMessage<C2S_GMQueryClientSave> {
     private static readonly pb::MessageParser<C2S_GMQueryClientSave> _parser = new pb::MessageParser<C2S_GMQueryClientSave>(() => new C2S_GMQueryClientSave());
@@ -4308,7 +4422,7 @@ namespace PPhp {
   }
 
   /// <summary>
-  /// MsgId.MSG_PHP2CL_QUERYCLIENTSAVE            = 2869    --[[GM存档查询]]  ProtoDict[MsgId.MSG_PHP2CL_QUERYCLIENTSAVE] = "PPhp.S2C_GMQueryClientSave"
+  /// MsgId.MSG_PHP2CL_QUERYCLIENTSAVE            = 2869    --[[GM存档查询]] 
   /// </summary>
   public sealed partial class S2C_GMQueryClientSave : pb::IMessage<S2C_GMQueryClientSave> {
     private static readonly pb::MessageParser<S2C_GMQueryClientSave> _parser = new pb::MessageParser<S2C_GMQueryClientSave>(() => new S2C_GMQueryClientSave());
@@ -5824,6 +5938,7 @@ namespace PPhp {
       account_ = other.account_;
       paycode_ = other.paycode_;
       payorder_ = other.payorder_;
+      payid_ = other.payid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -5865,6 +5980,17 @@ namespace PPhp {
       }
     }
 
+    /// <summary>Field number for the "payid" field.</summary>
+    public const int PayidFieldNumber = 4;
+    private int payid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Payid {
+      get { return payid_; }
+      set {
+        payid_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as C2S_GMPayRepair);
@@ -5881,6 +6007,7 @@ namespace PPhp {
       if (Account != other.Account) return false;
       if (Paycode != other.Paycode) return false;
       if (Payorder != other.Payorder) return false;
+      if (Payid != other.Payid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5890,6 +6017,7 @@ namespace PPhp {
       if (Account.Length != 0) hash ^= Account.GetHashCode();
       if (Paycode.Length != 0) hash ^= Paycode.GetHashCode();
       if (Payorder.Length != 0) hash ^= Payorder.GetHashCode();
+      if (Payid != 0) hash ^= Payid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5915,6 +6043,10 @@ namespace PPhp {
         output.WriteRawTag(26);
         output.WriteString(Payorder);
       }
+      if (Payid != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Payid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5931,6 +6063,9 @@ namespace PPhp {
       }
       if (Payorder.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Payorder);
+      }
+      if (Payid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Payid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -5951,6 +6086,9 @@ namespace PPhp {
       }
       if (other.Payorder.Length != 0) {
         Payorder = other.Payorder;
+      }
+      if (other.Payid != 0) {
+        Payid = other.Payid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -5973,6 +6111,10 @@ namespace PPhp {
           }
           case 26: {
             Payorder = input.ReadString();
+            break;
+          }
+          case 32: {
+            Payid = input.ReadInt32();
             break;
           }
         }
@@ -6012,6 +6154,7 @@ namespace PPhp {
       ret_ = other.ret_;
       paycode_ = other.paycode_;
       payorder_ = other.payorder_;
+      payid_ = other.payid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -6053,6 +6196,17 @@ namespace PPhp {
       }
     }
 
+    /// <summary>Field number for the "payid" field.</summary>
+    public const int PayidFieldNumber = 4;
+    private int payid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Payid {
+      get { return payid_; }
+      set {
+        payid_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as S2C_GMPayRepair);
@@ -6069,6 +6223,7 @@ namespace PPhp {
       if (Ret != other.Ret) return false;
       if (Paycode != other.Paycode) return false;
       if (Payorder != other.Payorder) return false;
+      if (Payid != other.Payid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -6078,6 +6233,7 @@ namespace PPhp {
       if (Ret != 0) hash ^= Ret.GetHashCode();
       if (Paycode.Length != 0) hash ^= Paycode.GetHashCode();
       if (Payorder.Length != 0) hash ^= Payorder.GetHashCode();
+      if (Payid != 0) hash ^= Payid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -6103,6 +6259,10 @@ namespace PPhp {
         output.WriteRawTag(26);
         output.WriteString(Payorder);
       }
+      if (Payid != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Payid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -6119,6 +6279,9 @@ namespace PPhp {
       }
       if (Payorder.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Payorder);
+      }
+      if (Payid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Payid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -6139,6 +6302,9 @@ namespace PPhp {
       }
       if (other.Payorder.Length != 0) {
         Payorder = other.Payorder;
+      }
+      if (other.Payid != 0) {
+        Payid = other.Payid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -6161,6 +6327,10 @@ namespace PPhp {
           }
           case 26: {
             Payorder = input.ReadString();
+            break;
+          }
+          case 32: {
+            Payid = input.ReadInt32();
             break;
           }
         }

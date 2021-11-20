@@ -1,5 +1,5 @@
 
-¤C
+“H
 client.protoPClientcommon.proto")
 S2C_ErrorCode
 errcode (Rerrcode"
@@ -27,7 +27,7 @@
 time (Rtime
 acccode (	Racccode
 ret (Rret
-retarg	 (Rretarg"±
+retarg	 (Rretarg"Í
 C2S_LoginGate
 account (	Raccount
 name (	Rname
@@ -35,7 +35,8 @@
 sign (	Rsign
 time (Rtime
 version (	Rversion
-reconn (Rreconn"§
+reconn (Rreconn
+downsave	 (Rdownsave"§
 S2C_LoginGate
 account (	Raccount
 accdbid (Raccdbid
@@ -109,9 +110,10 @@ sevenlogin
 event (Revent
 params (Rparams"%
 C2S_SetNickName
-name (	Rname"%
-S2C_SetNickName
-name (	Rname"
+name (	Rname"7
+S2C_SetNickName
+ret (Rret
+name (	Rname"
 C2S_GetMailNew"*
 S2C_GetMailNew
 newmail (Rnewmail"
@@ -270,7 +272,15 @@ unlocktime,
 giftlist (2&.PClient.S2C_GetGiftInfo.GiftlistEntryRgiftlistO
 GiftlistEntry
 key (Rkey(
-value (2.PBase.PB_GiftPackRvalue:8".
+value (2.PBase.PB_GiftPackRvalue:8"C
+C2S_GetRandName
+
+playerdbid (R
+playerdbid
+num (Rnum"?
+S2C_GetRandName
+ret (Rret
+namelist (	Rnamelist".
 C2S_ClientUnlock
 unlockid (Runlockid"`
 S2C_ClientUnlock
@@ -280,15 +290,28 @@ unlocktime,
 unlocktime (R
 unlocktime"(
 C2S_GainDrawSumRewards
-id (Rid":
+id (Rid"T
 S2C_GainDrawSumRewards
 ret (Rret
-id (Rid"]
+id (Rid
+rewards (	Rrewards"y
 C2S_IOSPayCheck
 payid (Rpayid
 paycode (	Rpaycode
-platform (	Rplatform"S
+platform	 (	Rplatform
+payorder
+ (	Rpayorder"‹
 S2C_IOSPayCheck
+ret (Rret
+payid (Rpayid
+paytype (Rpaytype
+platform	 (	Rplatform
+payorder
+ (	Rpayorder"B
+C2S_IOSPayFree
+payid (Rpayid
+platform (	Rplatform"R
+S2C_IOSPayFree
 ret (Rret
 payid (Rpayid
 paytype (Rpaytype"G
@@ -298,26 +321,36 @@ unlocktime"(
 S2C_IOSPayCondition
 ret (Rret
 payid (Rpayid
-paytype (Rpaytype"@
+paytype (Rpaytype"Z
 C2S_SaveUpload
 filename (	Rfilename
-data (Rdata">
+data (Rdata
+datastr (	Rdatastr">
 S2C_SaveUpload
 ret (Rret
 filename (	Rfilename".
 C2S_SaveDownload
-filename (	Rfilename"T
+filename (	Rfilename"n
 S2C_SaveDownload
 ret (Rret
 filename (	Rfilename
-data (Rdata"F
+data (Rdata
+datastr (	Rdatastr"F
 C2S_UploadMainTask
 taskid (Rtaskid
 taskarg (Rtaskarg"X
 S2C_UploadMainTask
 ret (Rret
 taskid (Rtaskid
-taskarg (Rtaskarg"
+taskarg (Rtaskarg"Y
+C2S_ChestData
+type (Rtype
+param (	Rparam
+
+playerdbid (R
+playerdbid"#
+S2C_ChestData
+type (Rtype"
 C2S_TestMsg"
 S2C_TestMsg
 ret (Rret"8

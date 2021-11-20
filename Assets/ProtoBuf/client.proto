@@ -81,13 +81,14 @@ message S2C_Login
 //MSG_CL2GT_LOGINGATE             = 1012,     //连接网关gate验证签名
 message C2S_LoginGate
 {
-    string account = 1;//用户唯一标识。手机mac地址
-    string name= 2;//用户名字
+    string account = 1;//账号用户唯一标识。
+    string name= 2;//用户昵称
     int32 accdbid = 3;//账号dbid
     string sign= 4;//签名
     int32 time= 5;//登录时间戳
     string version = 6; //版本号
     int32 reconn = 7;    //断线重连
+    int32 downsave = 9;//拉取全部存档
 }
 
 //MSG_LG2CL_LOGINGATE      = 2012,     //登录网关返回
@@ -208,7 +209,8 @@ message C2S_SetNickName
 // MsgId.MSG_WD2CL_SETNICKNAME             = 2505      --[[改昵称]] 
 message S2C_SetNickName
 {
-    string name = 1; //
+    int32 ret = 1;
+    string name = 2; //
 }
 
 // MsgId.MSG_CL2WD_GETMAILNEW              = 1510      --请求是否有新邮件
@@ -569,6 +571,20 @@ message S2C_GetGiftInfo
 }
 
 
+// MsgId.MSG_CL2WD_GETRANDNAME             = 1534      --[[随机名字]]    
+message C2S_GetRandName
+{
+    int32 playerdbid = 1; //不需要赋值
+    int32 num = 2;
+}
+
+// MsgId.MSG_WD2LC_GETRANDNAME             = 2534      --[[随机名字]]    
+message S2C_GetRandName
+{
+    int32 ret = 1;
+    repeated string namelist = 2;    
+}
+
 // MsgId.MSG_CL2WD_CLIENTUNLOCK            = 1535      --[[客户端解锁模块]]    
 message C2S_ClientUnlock
 {
@@ -593,6 +609,7 @@ message S2C_GainDrawSumRewards
 {
     int32 ret= 1; // 
     int32 id= 2; // 
+    repeated string rewards = 3;
 }
 
 // MsgId.MSG_CL2WD_IOSPAYCHECK             = 1550      --[[支付]] 
@@ -600,7 +617,8 @@ message C2S_IOSPayCheck
 {
     int32 payid = 1;    //商品id
     string paycode = 2;  //支付凭证码
-    string platform = 3; //平台
+    string platform = 9; //平台
+    string payorder = 10;  //订单号
 }
 
 // MsgId.MSG_WD2LC_IOSPAYCHECK             = 2550      --[[支付]]   
@@ -609,7 +627,25 @@ message S2C_IOSPayCheck
     int32 ret = 1;
     int32 payid = 2;    //商品id
     int32 paytype = 3;  //购买类型 101首冲 102商城礼包 
+    string platform = 9; //平台
+    string payorder = 10;  //订单号
 }
+
+
+// MsgId.MSG_CL2WD_IOSPAYFREE              = 1552      --[[免费直接支付]]   
+message C2S_IOSPayFree
+{
+    int32 payid = 1;    //商品id
+    string platform = 3; //平台
+}
+// MsgId.MSG_WD2LC_IOSPAYFREE              = 2552      --[[免费直接支付]]   
+ message S2C_IOSPayFree
+{
+    int32 ret = 1;
+    int32 payid = 2;    //商品id
+    int32 paytype = 3;  //购买类型 101首冲 102商城礼包 
+}
+
 
 
 //MsgId.MSG_CL2WD_IOSPAYCONDITION         = 1556      --[[支付预检测]]    
@@ -633,6 +669,7 @@ message C2S_SaveUpload
 {
     string filename = 1;
     bytes data = 2;
+    string datastr = 3;
 }
 // MsgId.MSG_WD2CL_SAVEUPLOAD              = 2601      --[[上传存档]] 
 message S2C_SaveUpload
@@ -653,6 +690,7 @@ message S2C_SaveDownload
     int32 ret = 1;
     string filename = 2;
     bytes data = 3;
+    string datastr = 4;
 }
 
 
@@ -668,6 +706,20 @@ message S2C_UploadMainTask
     int32 ret = 1;
     int32 taskid = 2;
     int32 taskarg = 3;
+}
+
+
+// MsgId.MSG_CL2WD_CHEATDATA               = 1621      --[[客户端异常作弊数据上传]]  
+message C2S_ChestData
+{
+    int32 type = 1;  // 1内存修改 2加速器
+    string param = 2; 
+    int32 playerdbid = 11; //客户端不用写
+}
+// MsgId.MSG_WD2CL_CHEATDATA               = 2621      --[[客户端异常作弊数据上传]]  
+message S2C_ChestData
+{
+    int32 type = 1;  // 1内存修改 2加速器    
 }
 
 
