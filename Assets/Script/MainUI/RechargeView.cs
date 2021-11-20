@@ -13,11 +13,14 @@ public class RechargeView : View
     private static RechargeView ins = null;
 
     private Button chaxunBtn;
-    private Button chongzhiBtn;
+    private Button nameBtn;
 
     private Text zhanghaoText;
     private InputField dataIF;
-    private Text drawIFText;
+
+    private Text playernameText;
+    private InputField dataIF2;
+
     public Transform Content;    
 
     public static RechargeView Instance
@@ -46,10 +49,14 @@ public class RechargeView : View
         chaxunBtn = bg.Find("chaxun/cha").GetComponent<Button>();  
         chaxunBtn.onClick.AddListener(onClickCha); 
         zhanghaoText = bg.Find("chaxun/shuru/Text").GetComponent<Text>();
+
+        nameBtn = bg.Find("chaname/cha").GetComponent<Button>();  
+        nameBtn.onClick.AddListener(onClickChaName); 
+        playernameText = bg.Find("chaname/shuru/Text").GetComponent<Text>();
  
         Content = bg.Find("Scroll View/Viewport/Content");        
         dataIF = Content.Find("InputField").GetComponent<InputField>();
-        //drawIFText = bg.Find("InputField/Text").GetComponent<Text>();   
+ 
 
     }
 
@@ -72,6 +79,25 @@ public class RechargeView : View
         C2S_GMQueryNormalInfo pb = new C2S_GMQueryNormalInfo();
         pb.Account = zhanghaoText.text;
         pb.Querytype = (int)PHP_QUERY.PLAYERDATA;
+        pb.Params.Add(1);
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYNORMALINFO,pb);
+    }
+
+    private void onClickChaName()
+    {
+        Logger.Log("onClickChaName ...........");
+        
+
+        if( string.IsNullOrEmpty(playernameText.text) )
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"昵称不能为空");
+            return;
+        }
+
+        C2S_GMQueryNormalInfo pb = new C2S_GMQueryNormalInfo();
+        pb.Account = playernameText.text;
+        pb.Querytype = (int)PHP_QUERY.PLAYERDATA;
+        pb.Params.Add(2);
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYNORMALINFO,pb);
     }
 
