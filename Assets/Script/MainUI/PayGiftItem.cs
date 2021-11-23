@@ -32,6 +32,10 @@ public class PayGiftItem
         for (int i = 0; i < slist.Length; i++)
         {
             infoList[i].text = slist[i];
+            if (i == 0)
+            {
+                infoList[i].text = GFunc.ToShopName(Convert.ToInt32(slist[i]) );
+            }
         }
     }
 

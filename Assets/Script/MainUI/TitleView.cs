@@ -139,20 +139,37 @@ public class TitleView : View
 
     private void onChooseCountry(int index)
     {
+        if (RecordModel.countryList.Count <= 0)
+        {
+            return;
+        }
         country = RecordModel.countryList[index];
     }   
 
     private void onChoosePlatform(int index)
     {
+        if (RecordModel.platformList.Count <= 0)
+        {
+            return;
+        }       
         platform = RecordModel.platformList[index];
     }
 
     private void onChooseDate1(int index)
     {
+        if (RecordModel.coreList.Count <= 0)
+        {
+            return;
+        }        
         startTime = RecordModel.coreList[index].timetv;
     }
     private void onChooseDate2(int index)
     {
+        if (RecordModel.coreList.Count <= 0)
+        {
+            return;
+        }      
+
         int _index = RecordModel.coreList.Count - 1 - index;
         endTime = RecordModel.coreList[_index].timetv;
     }

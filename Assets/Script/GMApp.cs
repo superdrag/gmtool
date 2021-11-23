@@ -45,7 +45,10 @@ public class GMApp : MonoBehaviour {
         GlobalModel.Instance.Init();
         RecordModel.Instance.Init();
 
-        LuaMgr.Init(null);
+        LuaMgr.Init();
+        // LuaCall.Test1();
+        // string aa=  LuaCall.GetShopNameById(11001);
+        //Logger.Warn("111111111111111 ",aa);
  
         ResMgr.Instance.Init();
         AllRigstMsgRegedit();
@@ -115,7 +118,19 @@ public class GMApp : MonoBehaviour {
 
     private void test()
     {
-    
+        //string IVString = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";//IV
+
+        // string aa = AES.Encrypt2("4353","ae125efkk4_54eeff444ferfkny6oxi8");
+        // Logger.Log("1111111111111111111", aa);
+
+        // string aaa = AES.AESEncrypt("1234");
+        // Logger.Log("1111111111111111111xxx", aaa);
+
+        // string bb = AES.AESDEncrypt(aaa);
+        // Logger.Log("2222222222222222222", bb);
+
+
+
         //byte[] wwww = new byte[NetEnv.MSG_RECV_LEN];
         
         //Logger.Log("ssssssssssss", wwww.Length);

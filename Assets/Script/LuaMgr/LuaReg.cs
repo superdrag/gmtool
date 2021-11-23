@@ -36,6 +36,8 @@ public delegate void AddToggleList();
 public delegate List<string> FuncDelegateList();
 [CSharpCallLua]
 public delegate XLua.LuaTable FuncDelegateTable();
+[CSharpCallLua]
+public delegate string GetStringDelegate(int id);
 
 
 [CSharpCallLua]
@@ -70,7 +72,19 @@ public class LuaCall
         FuncDelegateTable func = LuaMgr.LuaEnv.Global.Get<FuncDelegateTable>("GetTaskInfo");
         //List<string> list =  func();
         XLua.LuaTable tb = func();
-    }        
+    }  
+
+    public static void Test1()
+    {        
+        SimpleFuncDelegate func = LuaMgr.LuaEnv.Global.Get<SimpleFuncDelegate>("Test1");
+        func();
+    }       
+
+    public static string GetShopNameById(int payid)
+    {        
+        GetStringDelegate func = LuaMgr.LuaEnv.Global.Get<GetStringDelegate>("GetShopName");
+        return func(payid);
+    }         
 }
 
 

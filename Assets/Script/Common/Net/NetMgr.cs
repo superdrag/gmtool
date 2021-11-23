@@ -167,6 +167,29 @@ namespace Net
                 return;
             }
 
+            /*
+            byte[] _by = msg.GetStream().ToArray();
+            //string aa = Encoding.UTF8.GetString(_by);
+            string aa = System.Text.Encoding.Default.GetString(_by);
+            Logger.Warn("000000000000000 "+aa);
+
+
+            // string aaa = GetStreamString(msg.GetStream());
+            // Logger.Warn("00000000000000022 "+aaa);
+            string ming = AES.AESDEncrypt(aa);    
+
+            //string ming = AES.Decrypt(aa);    
+            
+
+            //string ming = AES.AESDecrypt(aa,"asdfwetyhjuytrfd");   
+            
+
+            Logger.Warn("11111111111111 ",ming);
+
+            
+            byte[] decBytes = System.Text.Encoding.Default.GetBytes(ming);
+            msg.PackByteBuf2(decBytes);
+
             // Google.Protobuf.IMessage _pb = GetMsgProto(msg.msgid);
             // if(_pb != null)
             // {                       
@@ -179,7 +202,16 @@ namespace Net
             //     return;
             // }
 
+            */
+
             msgHandler(msg);    
         }
+
+        public static string GetStreamString(System.IO.MemoryStream ms)
+        {
+            byte[] cache = new System.IO.BinaryReader(ms).ReadBytes((int)ms.Length);
+            return Convert.ToBase64String(cache,0,cache.Length);
+        }
+
     }
 }

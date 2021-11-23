@@ -30,6 +30,14 @@ function GetConfig(name,key)
     return cfg[key];
 end
 
+function GetShopName( payId )
+	local cfg = GetConfig("PurchaseConfig",payId)
+	if cfg == nil then
+		return ""
+	end
+	return cfg.name_display
+end
+
 function GetTaskInfo()
 	local tb = {}
 	for k,v in pairs(LuaConfig["TaskConfig"]) do

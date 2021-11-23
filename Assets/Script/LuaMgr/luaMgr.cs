@@ -22,7 +22,7 @@ public class LuaMgr {
         }
     }
     
-    public static bool Init(Action action)
+    public static bool Init()
     {
         if(m_luaEnv == null) {
             m_luaEnv = new LuaEnv();
@@ -33,10 +33,6 @@ public class LuaMgr {
         
         m_luaEnv.AddLoader(MyLoader);
         m_luaEnv.DoString("require 'GameMain'");
-        if (action != null)
-        {
-           action(); 
-        }
         return true;
     }
 
@@ -71,4 +67,5 @@ public class LuaMgr {
         TextAsset ta = Resources.Load<TextAsset>("TestLua1.lua");//helloworld.lua.txt
         LuaEnv.DoString(ta.text);
     }
+   
 }

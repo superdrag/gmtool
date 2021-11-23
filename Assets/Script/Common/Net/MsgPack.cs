@@ -92,6 +92,11 @@ namespace Net
             return this.stream;
         }
 
+        // public void SetStream(byte[] buff)
+        // {
+        //     this.stream = ms;
+        // }        
+
         public void PackHead()
         {
             writer.Write(msglen);
@@ -115,6 +120,18 @@ namespace Net
             if(mb != null)
             {
                 writer.Write(mb.ToBytes());
+            }            
+            msglen = (uint)stream.Position;
+            stream.Position = 0;
+            PackHead();              
+        }
+
+        public void PackByteBuf2(byte[] data)
+        {            
+            stream.Position = NetEnv.MSG_HEAD_LEN;
+            if(data != null)
+            {
+                writer.Write(data);
             }            
             msglen = (uint)stream.Position;
             stream.Position = 0;

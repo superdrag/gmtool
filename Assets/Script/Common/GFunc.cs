@@ -327,6 +327,11 @@ public class GFunc
     public static string US2Cent(float us)
     {
         return "$"+(us / 100.0).ToString();
-    }          
+    }    
+
+    public static string ToShopName(int payId)
+    {
+        return payId.ToString() + "(" + LuaCall.GetShopNameById( Convert.ToInt32(payId) ) + ")";
+    }         
 }
 
