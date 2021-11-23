@@ -102,16 +102,34 @@ public class PayGiftView : View
         ClearAllItem();
 
         AddItemTitle();
-        foreach (var item in _pb.Mapdata)
-        {
-            AddItem(item.Value);
-        }
-//         List<KeyValuePair<int,QueryTaskData>> lst = new List<KeyValuePair<int,QueryTaskData>>(GlobalModel.taskDataDict);
 
-// 　　　　 lst.Sort(delegate(KeyValuePair<int,QueryTaskData> s1, KeyValuePair<int,QueryTaskData> s2)  
-// 　　　　　　{
-// 　　　　　　　　return s1.Key.CompareTo(s2.Key);
-// 　　　　　　});
+        Dictionary<int,string> _dict = new Dictionary<int, string>(); 
+        Dictionary<string,int> _dict2 = new Dictionary<string,int>(); 
+        foreach (var item in _pb.Mapdata)
+        {            
+            
+            _dict.Add( Convert.ToInt32(item.Key),item.Value);
+            _dict2.Add( item.Value,Convert.ToInt32(item.Key));
+            //AddItem(item.Value);
+        }
+
+        foreach (var item in _dict)
+        {           
+            //AddItem(item.Value);
+        }        
+
+        //var dicSort = from objDic in _dict2 orderby objDic.Value descending select objDic;
+    
+        List<KeyValuePair<string, int>> lst = new List<KeyValuePair<string, int>>(_dict2);
+        lst.Sort(delegate(KeyValuePair<string, int> s1, KeyValuePair<string, int> s2) 
+        {
+            return s1.Value.CompareTo(s2.Value);
+        });
+
+        for (int i = 0; i < lst.Count; i++)
+        {
+            AddItem(lst[i].Key);
+        }
 
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
         rect.sizeDelta = new Vector2(0, (float)_pb.Mapdata.Count * (float)73.6 );                

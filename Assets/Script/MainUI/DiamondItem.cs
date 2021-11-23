@@ -9,6 +9,8 @@ using Net;
 using PPhp;
 using PBase;
 
+
+
 public class DiamondItem
 {
     public Transform view;
@@ -28,6 +30,9 @@ public class DiamondItem
     public void Show(DiaData data)
     {
         infoList[0].text = data.eventid.ToString();
+
+        infoList[0].text = GFunc.ToUseDiamondName( data.eventid);
+
         infoList[1].text = data.count.ToString();
         infoList[2].text = data.num.ToString();        
     }

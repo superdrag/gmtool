@@ -44,7 +44,7 @@ function GetTaskInfo()
 		table.insert( tb, k )		
 	end
 	table.sort( tb )
-	DEBUG_LOG("11111111111111 %s",PrintTable(tb)) 
+	--DEBUG_LOG("11111111111111 %s",PrintTable(tb)) 
 	return tb;
 end
 

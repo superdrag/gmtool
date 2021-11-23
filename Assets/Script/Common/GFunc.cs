@@ -13,6 +13,27 @@ using PPhp;
 
 public class GFunc
 {
+    public static Dictionary<int,string> dia_event_name_dict = new Dictionary<int, string>();
+
+    public static bool Init()
+    {
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_DRAW_CARD] = "抽卡";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_UNLOCK_AREA] = "快速解锁区域";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_UNLOCK_ROOM] = "快速解锁房间";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_BUY_BATTLE_PASS] = "购买战斗通行证";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_BUY_BATTLE_PASS_LEVEL] = "购买战斗通行证等级";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_SHOP_GIFTPACK] = "商城钻石礼包";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_UPGRADE_FACILIY] = "快速升级设备";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_BUY_LEAFLET3] = "钻石购买抽卡收音机";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_BUY_BUYSHOPRANDCARD] = "购买商城随机卡牌";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_BUY_CASH] = "购买商城钞票";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_ROOMPOSUNLOCK] = "房间坑位解锁";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_HOOKCD] = "挂机训练清CD";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_SETNICKNAME] = "改名字";
+        
+        return true;
+    }
+
     public static bool DEBUGMODE()
     {
         return true;
@@ -332,6 +353,18 @@ public class GFunc
     public static string ToShopName(int payId)
     {
         return payId.ToString() + "(" + LuaCall.GetShopNameById( Convert.ToInt32(payId) ) + ")";
-    }         
+    }      
+
+    public static string ToUseDiamondName(int eventid)
+    {
+        string name;
+        if (dia_event_name_dict.TryGetValue(eventid,out name))
+        {
+            return eventid.ToString() + "[" + name + "]";
+        }
+        return eventid.ToString();
+
+       
+    }     
 }
 

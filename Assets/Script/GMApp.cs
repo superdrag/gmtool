@@ -44,8 +44,9 @@ public class GMApp : MonoBehaviour {
         NetMgr.Init();//消息处理相关类
         GlobalModel.Instance.Init();
         RecordModel.Instance.Init();
-
+        GFunc.Init();
         LuaMgr.Init();
+
         // LuaCall.Test1();
         // string aa=  LuaCall.GetShopNameById(11001);
         //Logger.Warn("111111111111111 ",aa);
