@@ -345,9 +345,9 @@ public class GFunc
         return s;
     }   
 
-    public static string US2Cent(float us)
+    public static string US2Cent(double us)
     {
-        return "$"+(us / 100.0).ToString();
+        return "$"+(us / 100.0).ToString("F2");
     }    
 
     public static string ToShopName(int payId)

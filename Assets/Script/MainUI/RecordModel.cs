@@ -41,7 +41,8 @@ public class CoreData
     public Dictionary<int,int> hourOnlineNumDict = new Dictionary<int, int>();
     public Dictionary<int,int> remainDict = new Dictionary<int, int>(); //留存数量  //次留是 i+ 1 = 2 开始        
     public Dictionary<int,double> remainPectDict = new Dictionary<int, double>(); //留存百分比  //次留是 i+ 1 = 2 开始   
-    public Dictionary<int,int> remainPayDict = new Dictionary<int, int>(); //付费留存  //次留是 i+ 1 = 2 开始 
+    public Dictionary<int,int> remainPayDict = new Dictionary<int, int>(); //付费留存  //次留是 i+ 1 = 2 开始
+    public Dictionary<int,double> remainPayPectDict = new Dictionary<int, double>(); //留存百分比  //次留是 i+ 1 = 2 开始    
 }
 
 
@@ -76,7 +77,7 @@ public class RecordModel {
     public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","AU","PH","ID","MY","TH"};
     public static List<string> platformList = new List<string>{"ALL", "IOS","Android","unity"};
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
-    public static List<float> coreSumList = new List<float>();
+    public static List<double> coreSumList = new List<double>();
     public static int sumWatchAds = 0;
     public static int sumRegAccNum = 0;
     public static int sumDauNum = 0;
@@ -140,6 +141,7 @@ public class RecordModel {
         //分析总数
         coreSumList[0] = coreList[coreList.Count-1].timetv;
 
+        float sum_arpdau = 0;
         for (int i = 0; i < coreList.Count; i++)
         {
             CoreData dayData = coreList[i];
@@ -153,11 +155,12 @@ public class RecordModel {
             sumRegAccNum += dayData.allRegNum;   
             sumWatchAds += dayData.watchAds;
             sumDauNum += dayData.DAU;
+            sum_arpdau += dayData.ARPPDAU;
 
-            foreach (var item in dayData.remainDict)
+            foreach (var item in dayData.remainPectDict)
             {
                 int day = item.Key;
-                int num = item.Value;
+                double num = item.Value;
 
                 // int index = 5 + day - 2;
                 // if (index < coreSumList.Count)
@@ -187,10 +190,10 @@ public class RecordModel {
                 }                                                                                      
             }     
 
-            foreach (var item in dayData.remainPayDict)
+            foreach (var item in dayData.remainPayPectDict)
             {
                 int day = item.Key;
-                int num = item.Value;
+                double num = item.Value;
 
                 // int index = 5 + day - 2;
                 // if (index < coreSumList.Count)
@@ -225,7 +228,8 @@ public class RecordModel {
         coreSumList[3] = sumWatchAds;
 
         //arpu
-        coreSumList[4] = coreSumList[2] / sumDauNum;
+        //Logger.Warn("11111111111111 ",coreSumList[2],sumDauNum);
+        coreSumList[4] = sum_arpdau / coreList.Count;
 
         //remain
         // for (int i = 5; i <= 9; i++)
@@ -251,7 +255,10 @@ public class RecordModel {
         for (int i = 1; i <= 30; i++)
         {
             coreData.remainDict[i] = 0;
+            coreData.remainPectDict[i] = 0;
+
             coreData.remainPayDict[i] = 0;
+            coreData.remainPayPectDict[i] = 0;
         }   
 
         for (int j = 0; j < dayData.Length; j++)
@@ -392,6 +399,11 @@ public class RecordModel {
             }
         }   
 
+
+        //-----------------------------------------
+
+
+
         foreach (var item in coreData.loginAccDict)
         { 
             //留存
@@ -418,16 +430,14 @@ public class RecordModel {
             }
         }
 
-        foreach (var item in coreData.remainDict)
-        {
-            int dataIndex = dayIndex+1;
-            //Logger.Log("remainDictaaaaa   day:" + GFunc.Int2DateStr(coreData.timetv) + " rday:" + item.Key + " rnum:" + item.Value);
-        }
 
         foreach (var item in coreData.remainDict)
         {
             int _day = item.Key;
             int _loginNum = item.Value;
+
+            int _loginPayNum = coreData.remainPayDict[_day];
+
     
             int dindex = dayIndex - (_day - 1); 
             coreData.remainPectDict[_day] = 0;
@@ -438,16 +448,13 @@ public class RecordModel {
                 if (preData.regAccDict.Count > 0)
                 {                    
                     coreData.remainPectDict[_day] = _loginNum / (float)preData.regAccDict.Count * 100.0; 
+
+                    coreData.remainPayPectDict[_day] = _loginPayNum / (float)preData.regAccDict.Count * 100.0;
                     //Logger.Warn("xxxxxxxxxxxxx ",coreData.remainPectDict[_day],_loginNum ,preData.regAccDict.Count);
                 }                
             }
         }
 
-        foreach (var item in coreData.remainPectDict)
-        {
-            int dataIndex = dayIndex+1;
-            //Logger.Log("remainPectDictbbbbb day:" +dataIndex+ " rday:" + item.Key + " rnum:" + item.Value +"%");
-        }
 
         for (int i = 0; i < dayIndex; i++)
         {

@@ -76,7 +76,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &1170271186427712094
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &2811273586447946499
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &3176156864420026202
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &3350411441708414537
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +429,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &5238625023246859702
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +506,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &5694331951766266220
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +583,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &5882881088626094521
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +660,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &6617758720918546649
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +737,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &6933931595180957950
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,7 +814,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &7069026407076993748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +1003,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &7763909131393406513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,7 +1080,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &8225710117612263584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &8568327489121805461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1234,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0
 --- !u!1 &9182003906283416842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,4 +1311,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: date
+  m_Text: 0

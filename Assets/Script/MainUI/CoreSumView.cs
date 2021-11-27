@@ -67,19 +67,24 @@ public class CoreSumView : View
 
     override public void OnShow(params object[] args)
     {        
-        List<float> list = RecordModel.coreSumList;        
+
+    }
+
+    private void ShowData()
+    {
+        List<double> list = RecordModel.coreSumList;        
 
         infoList[0].text = GFunc.Int2DateTime((int)list[0]).ToString(); 
         infoList[1].text = list[1].ToString(); //总注册
         infoList[2].text = GFunc.US2Cent(list[2]); //总流水
         infoList[3].text = list[3].ToString();  //ads
-        infoList[4].text = "$" + list[4].ToString("F2");  //arpu      
+        infoList[4].text = GFunc.US2Cent(list[4]);  //arpu      
 
         for (int i = 0; i < list.Count; i++)
         {
             if (i >= 5 && i <= 14)
             {
-                infoList[i].text =( (float)list[i] / RecordModel.coreList.Count ).ToString("F2") + "%";
+                infoList[i].text =( (float)list[i] / (RecordModel.coreList.Count-1) ).ToString("F2") + "%";
             }
         }
     }
@@ -89,7 +94,9 @@ public class CoreSumView : View
         RecordModel.resetCoreSumData();        
         RecordModel.analyseAllCoreData(TitleView.country,TitleView.platform);
         //ClearCoreItem();
-        UIMgr.RefreshUI(VIEWID.CoreSumView);
+        //UIMgr.RefreshUI(VIEWID.CoreSumView);
+
+        ShowData();
 
     }
 
