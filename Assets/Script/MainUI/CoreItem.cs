@@ -45,16 +45,24 @@ public class CoreItem
 
         //Logger.Log(",,,,,,,,,,,,,,,,, ",coreData.allRegNum);
         //留存
-        if (coreData.allRegNum > 0)
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                float penct = (float)coreData.remainDict[2+i] / coreData.allRegNum * 100;
-                infoList[13+i].text = penct.ToString("F2") + "%";      
-            }  
-        }
 
-      
+        infoList[13].text = coreData.remainPectDict[2].ToString("F2") + "%";       //2
+        infoList[14].text = coreData.remainPectDict[3].ToString("F2") + "%";        //3
+        infoList[15].text = coreData.remainPectDict[4].ToString("F2") + "%";        //4
+        infoList[16].text = coreData.remainPectDict[5].ToString("F2") + "%";        //    
+        infoList[17].text = coreData.remainPectDict[6].ToString("F2") + "%";
+        infoList[18].text = coreData.remainPectDict[7].ToString("F2") + "%";
+        infoList[19].text = coreData.remainPectDict[14].ToString("F2") + "%";
+        infoList[20].text = coreData.remainPectDict[30].ToString("F2") + "%";
+          
+        // infoList[13].text = coreData.remainDict[2].ToString("F2") + "%";       //2
+        // infoList[14].text = coreData.remainDict[3].ToString("F2") + "%";        //3
+        // infoList[15].text = coreData.remainDict[4].ToString("F2") + "%";        //4
+        // infoList[16].text = coreData.remainDict[5].ToString("F2") + "%";        //    
+        // infoList[17].text = coreData.remainDict[6].ToString("F2") + "%";
+        // infoList[18].text = coreData.remainDict[7].ToString("F2") + "%";
+        // infoList[19].text = coreData.remainDict[14].ToString("F2") + "%";
+        // infoList[20].text = coreData.remainDict[30].ToString("F2") + "%";          
 
     }
 

@@ -39,7 +39,8 @@ public class CoreData
     public Dictionary<string,int> payAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> regAccDict = new Dictionary<string, int>();
     public Dictionary<int,int> hourOnlineNumDict = new Dictionary<int, int>();
-    public Dictionary<int,int> remainDict = new Dictionary<int, int>(); //留存  //次留是 i+ 1 = 2 开始        
+    public Dictionary<int,int> remainDict = new Dictionary<int, int>(); //留存数量  //次留是 i+ 1 = 2 开始        
+    public Dictionary<int,double> remainPectDict = new Dictionary<int, double>(); //留存百分比  //次留是 i+ 1 = 2 开始   
     public Dictionary<int,int> remainPayDict = new Dictionary<int, int>(); //付费留存  //次留是 i+ 1 = 2 开始 
 }
 
@@ -240,15 +241,17 @@ public class RecordModel {
         CoreData coreData = new CoreData();
         int sumOnlineSec = 0;
 
+        //24小时
         for (int i = 0; i < 24; i++)
         {
             coreData.hourOnlineNumDict[i] = 0;
         }
 
-        for (int i = 0; i < 30; i++)
+        //月留30天
+        for (int i = 1; i <= 30; i++)
         {
-            coreData.remainDict[i+1] = 0;
-            coreData.remainPayDict[i+1] = 0;
+            coreData.remainDict[i] = 0;
+            coreData.remainPayDict[i] = 0;
         }   
 
         for (int j = 0; j < dayData.Length; j++)
@@ -268,7 +271,11 @@ public class RecordModel {
                 coreData.date = fields[0].Split('-')[0];     //统计日期  
                 //Logger.Log("day date.............",coreData.date);                             
             }
-            coreData.timetv = GFunc.Date2Time(fields[0]);
+            if (coreData.timetv == 0)
+            {
+                coreData.timetv = GFunc.Date2Time(fields[0]);
+            }
+            
             string curTime = fields[0].Split('-')[1];
             int curHour = Convert.ToInt32( curTime.Split(':')[0] );
 
@@ -309,11 +316,8 @@ public class RecordModel {
 
             if (recordType == RECORD_TYPE.RECORD_USERLOGIN)
             {
-                if(!coreData.loginAccDict.ContainsKey(fields[2]))
-                {
-                    coreData.loginAccDict[_acc] = 1;
-                    //Logger.Log("day login acc.............",fields[2]);
-                }                
+                coreData.loginAccDict[_acc] = 1;
+                //Logger.Log("day login acc.............",fields[2]);           
             }
 
             if (recordType == RECORD_TYPE.RECORD_ONLINENUM)
@@ -391,34 +395,58 @@ public class RecordModel {
         foreach (var item in coreData.loginAccDict)
         { 
             //留存
-            for (int i = 1; i <= 30; i++)
+            for (int day = 1; day <= 30; day++) //最大月流30天
             {
-                if (dayIndex >= i)
+                int dindex = dayIndex - day; 
+                if (dindex >= 0 && dindex < coreList.Count)
                 {
-                    CoreData preData = coreList[dayIndex-i];                
+                    CoreData preData = coreList[dindex];                
                     if( preData.regAccDict.ContainsKey(item.Key) )
                     {
-                        coreData.remainDict[i+1]++;    
+                        //Logger.Log( " 1111111111++  " + GFunc.Int2DateStr(preData.timetv), day,item.Key);
+                        // day == 1 次留  day = 2 三留
+                        coreData.remainDict[day+1]++;    
                         //次留是 i+ 1 = 2 开始   
 
                         if( preData.payAccDict.ContainsKey(item.Key) )
                         {   
                             //次留是 i+ 1 = 2 开始  
-                            coreData.remainPayDict[i+1]++;               
+                            coreData.remainPayDict[day+1]++;               
                         }                                      
                     }                                 
                 }
             }
-            
-            // //次留
-            // if (dayIndex >= 1)
-            // {
-            //     CoreData preData = coreList[dayIndex-1];                
-            //     if( preData.regAccDict.ContainsKey(item.Key) )
-            //     {
-            //         coreData.remainDict[1]++;                    
-            //     }
-            // }                  
+        }
+
+        foreach (var item in coreData.remainDict)
+        {
+            int dataIndex = dayIndex+1;
+            //Logger.Log("remainDictaaaaa   day:" + GFunc.Int2DateStr(coreData.timetv) + " rday:" + item.Key + " rnum:" + item.Value);
+        }
+
+        foreach (var item in coreData.remainDict)
+        {
+            int _day = item.Key;
+            int _loginNum = item.Value;
+    
+            int dindex = dayIndex - (_day - 1); 
+            coreData.remainPectDict[_day] = 0;
+
+            if (dindex >= 0 && dindex < coreList.Count)
+            {
+                CoreData preData = coreList[dindex];  
+                if (preData.regAccDict.Count > 0)
+                {                    
+                    coreData.remainPectDict[_day] = _loginNum / (float)preData.regAccDict.Count * 100.0; 
+                    //Logger.Warn("xxxxxxxxxxxxx ",coreData.remainPectDict[_day],_loginNum ,preData.regAccDict.Count);
+                }                
+            }
+        }
+
+        foreach (var item in coreData.remainPectDict)
+        {
+            int dataIndex = dayIndex+1;
+            //Logger.Log("remainPectDictbbbbb day:" +dataIndex+ " rday:" + item.Key + " rnum:" + item.Value +"%");
         }
 
         for (int i = 0; i < dayIndex; i++)

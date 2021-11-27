@@ -1,5 +1,5 @@
 
-“H
+×H
 client.protoPClientcommon.proto")
 S2C_ErrorCode
 errcode (Rerrcode"
@@ -8,7 +8,7 @@
 curtime (Rcurtime"(
 S2C_ShutDwon
 leftsec (Rleftsec"
-S2C_ReloginKick"×
+S2C_ReloginKick"ÿ
 	C2S_Login
 account (	Raccount
 passwd (	Rpasswd
@@ -17,7 +17,9 @@
 guest (Rguest
 reconn (Rreconn
 platform (	Rplatform
-country (	Rcountry"ß
+country (	Rcountry
+sign (	Rsign
+time (Rtime"ß
 	S2C_Login
 account (	Raccount
 accdbid (Raccdbid
@@ -127,11 +129,12 @@ sevenlogin
 mailid (	Rmailid
 	mailstate (R	mailstate")
 C2S_MailGetItem
-mailid (	Rmailid"Y
+mailid (	Rmailid"u
 S2C_MailGetItem
 ret (Rret
 mailid (	Rmailid
-	mailstate (R	mailstate"
+	mailstate (R	mailstate
+cardlist (	Rcardlist"
 C2S_MailDeleteRead".
 S2C_MailDeleteRead
 dellist (	Rdellist"

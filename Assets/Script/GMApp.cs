@@ -119,6 +119,9 @@ public class GMApp : MonoBehaviour {
 
     private void test()
     {
+        // float aa = (float)10.22473 + 1637921848 -1637921858;
+        // Logger.Log("111111111111111 aaa",aa);
+
         //string IVString = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";//IV
 
         // string aa = AES.Encrypt2("4353","ae125efkk4_54eeff444ferfkny6oxi8");
@@ -129,7 +132,6 @@ public class GMApp : MonoBehaviour {
 
         // string bb = AES.AESDEncrypt(aaa);
         // Logger.Log("2222222222222222222", bb);
-
 
 
         //byte[] wwww = new byte[NetEnv.MSG_RECV_LEN];

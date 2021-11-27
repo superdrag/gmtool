@@ -22,6 +22,8 @@ public class FuncView : View
     private Button stopBtn;
     private Button upConifgBtn;
 
+    private Button recordBtn;
+
     public static FuncView Instance
     {
         get
@@ -65,7 +67,12 @@ public class FuncView : View
         shutdownBtn.onClick.AddListener(onClickShutDown); 
 
         stopBtn = bg.Find("stopserver/Button").GetComponent<Button>();
-        stopBtn.onClick.AddListener(onClickStop);         
+        stopBtn.onClick.AddListener(onClickStop); 
+
+
+        recordBtn = bg.Find("record/Button").GetComponent<Button>();
+        recordBtn.onClick.AddListener(onClickRecord); 
+                
     }
 
     override public void OnShow(params object[] args)
@@ -114,6 +121,12 @@ public class FuncView : View
     {
         GlobalCtl.MSG_CL2PHP_GMCOMMAND( "gm", (int)PHP_COMMAMD.STOPSERVER);      
     }        
+
+    private void onClickRecord()
+    {
+        GlobalCtl.MSG_CL2PHP_GMCOMMAND( "gm", (int)PHP_COMMAMD.RECORD);      
+    }        
+
 
     public void onQueryServerTime(int timetv)
     {

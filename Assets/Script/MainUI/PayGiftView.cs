@@ -103,23 +103,12 @@ public class PayGiftView : View
 
         AddItemTitle();
 
-        Dictionary<int,string> _dict = new Dictionary<int, string>(); 
         Dictionary<string,int> _dict2 = new Dictionary<string,int>(); 
         foreach (var item in _pb.Mapdata)
         {            
-            
-            _dict.Add( Convert.ToInt32(item.Key),item.Value);
             _dict2.Add( item.Value,Convert.ToInt32(item.Key));
-            //AddItem(item.Value);
         }
 
-        foreach (var item in _dict)
-        {           
-            //AddItem(item.Value);
-        }        
-
-        //var dicSort = from objDic in _dict2 orderby objDic.Value descending select objDic;
-    
         List<KeyValuePair<string, int>> lst = new List<KeyValuePair<string, int>>(_dict2);
         lst.Sort(delegate(KeyValuePair<string, int> s1, KeyValuePair<string, int> s2) 
         {

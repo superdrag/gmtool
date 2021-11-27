@@ -64,6 +64,7 @@ public enum PHP_COMMAMD
     UPCONFIG = 116,  
     QUERYTIME = 117,
     DRAWCARD = 118,
+    RECORD = 119,
 }
 
 public enum PHP_QUERY

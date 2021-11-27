@@ -22,6 +22,7 @@ message C2S_GMLogin
 {
     string account = 1;
     string passwd = 2;
+    string version = 3;
 }
 
 //MsgId.MSG_PHP2CL_GMLOGINACCOUNT          = 2801    --GM账号登陆
