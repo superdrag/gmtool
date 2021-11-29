@@ -71,11 +71,11 @@ public class LoginView : View
 
         if (Application.isEditor)
         {
-            zhanghaoIF.text = "admin";
-            mimaIF.text = "aimengyou123!@#";
+            // zhanghaoIF.text = "admin";
+            // mimaIF.text = "aimengyou123!@#";
 
-            zhanghaoIF.text = "liuhaichao";
-            mimaIF.text = "123456";
+            // zhanghaoIF.text = "liuhaichao";
+            // mimaIF.text = "123456";
 
             foreach (var item in AppConfig.ServerList)
             {           
@@ -99,6 +99,16 @@ public class LoginView : View
                     selectServerList.Add(item);   
                 } 
             }
+        }
+
+        if (PlayerPrefs.GetString("login_acc") != "")
+        {
+            zhanghaoIF.text = PlayerPrefs.GetString("login_acc");
+        }
+
+        if (PlayerPrefs.GetString("login_pwd") != "")
+        {
+            mimaIF.text = PlayerPrefs.GetString("login_pwd");
         }
 
 
@@ -129,7 +139,9 @@ public class LoginView : View
         LoginModel.Instance.record_url = sinfo.record_url;
         LoginCtl.Instance.StartConnetServer(sinfo.ip, sinfo.port);   
 
-        
+        PlayerPrefs.SetString("login_acc",zhanghaoIF.text);
+        PlayerPrefs.SetString("login_pwd",mimaIF.text);
+
         UIMgr.SetServTitle(sinfo.name);
 
         // if(GData.ReleaseMode == true)

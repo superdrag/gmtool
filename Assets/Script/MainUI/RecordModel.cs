@@ -13,6 +13,7 @@ public enum RECORD_TYPE
     RECORD_USEDIAMOND = 1003,
     RECORD_USERREG = 1004,
     RECORD_WATCHADV	 = 1005,		//看广告
+    RECORD_ONLINENUMEX	= 1006,		
 
     RECORD_USERLOGIN = 1010,
     RECORD_USEROFFLINE = 1011,
@@ -292,8 +293,8 @@ public class RecordModel {
             string _country = "";
             string _platform = "";
 
-            if (recordType != RECORD_TYPE.RECORD_ONLINENUM)
-            {
+            if (recordType != RECORD_TYPE.RECORD_ONLINENUM && recordType != RECORD_TYPE.RECORD_ONLINENUMEX)
+            {                
                 _acc = fields[2].Trim();
                 _platform = fields[3].Trim();
                 _country = fields[4].Trim();

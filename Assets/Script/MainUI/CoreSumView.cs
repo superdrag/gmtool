@@ -80,13 +80,35 @@ public class CoreSumView : View
         infoList[3].text = list[3].ToString();  //ads
         infoList[4].text = GFunc.US2Cent(list[4]);  //arpu      
 
-        for (int i = 0; i < list.Count; i++)
-        {
-            if (i >= 5 && i <= 14)
-            {
-                infoList[i].text =( (float)list[i] / (RecordModel.coreList.Count-1) ).ToString("F2") + "%";
-            }
-        }
+        infoList[5].text =( (float)list[5] / (RecordModel.coreList.Count-1) ).ToString("F2") + "%";                    
+        infoList[6].text =( (float)list[6] / (RecordModel.coreList.Count-2) ).ToString("F2") + "%";                    
+        infoList[7].text =( (float)list[7] / (RecordModel.coreList.Count-6) ).ToString("F2") + "%";                    
+        infoList[8].text =( (float)list[8] / (RecordModel.coreList.Count-13) ).ToString("F2") + "%";                    
+        infoList[9].text =( (float)list[9] / (RecordModel.coreList.Count-29) ).ToString("F2") + "%";                    
+
+        infoList[10].text =( (float)list[10] / (RecordModel.coreList.Count-1) ).ToString("F2") + "%";                    
+        infoList[11].text =( (float)list[11] / (RecordModel.coreList.Count-2) ).ToString("F2") + "%";                    
+        infoList[12].text =( (float)list[12] / (RecordModel.coreList.Count-6) ).ToString("F2") + "%";                    
+        infoList[13].text =( (float)list[13] / (RecordModel.coreList.Count-13) ).ToString("F2") + "%";                    
+        infoList[14].text =( (float)list[14] / (RecordModel.coreList.Count-29) ).ToString("F2") + "%";                    
+
+        //int day = 1;
+        //for (int i = 0; i < list.Count; i++)
+        //{
+            // if (i >= 5 && i <= 14) //平局留存
+            // {
+            //     if (RecordModel.coreList.Count-day > 0)
+            //     {
+            //         infoList[i].text =( (float)list[i] / (RecordModel.coreList.Count-day) ).ToString("F2") + "%";                    
+            //     }
+            //     day++;
+            // }
+
+            // if (i >= 10 && i <= 14)//平局付费留存
+            // {
+            //     infoList[i].text =( (float)list[i] / (RecordModel.coreList.Count) ).ToString("F2") + "%";
+            // }            
+        //}
     }
 
     override public void DoClickQuery()
