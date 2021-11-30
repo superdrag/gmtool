@@ -73,7 +73,7 @@ public class MailItem
         }
         else
         {
-            infoList[4].text = "有";
+            infoList[4].text = mailData.Itemlist;
         }
 
         if (mailData.Agree == 0)
@@ -146,6 +146,7 @@ public class MailItem
 
         PB_MailItem item = new PB_MailItem();
         item.Mid = mailData.Mid;
+        item.Itemlist = mailData.Itemlist;
         pb.Maildata = item;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMAIL,pb); 
     }
