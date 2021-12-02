@@ -75,8 +75,8 @@ public class RecordModel {
     public static List<string[]> dayDataList = new List<string[]>(); //一天数据
     public static List<CoreData> coreList = new List<CoreData>();  //每天全部数据
     public static List<string[]> operateList = new List<string[]>(); //操作记录
-    public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","AU","PH","ID","MY","TH"};
-    public static List<string> platformList = new List<string>{"ALL", "IOS","Android","unity"};
+    public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","AU","PH","ID","MY","TH","Other"};
+    public static List<string> platformList = new List<string>{"ALL", "IOS","Android","unity","Other"};
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
     public static List<double> coreSumList = new List<double>();
     public static int sumWatchAds = 0;
@@ -304,16 +304,49 @@ public class RecordModel {
                 // }
             }            
 
-            if (country != "ALL" && _country != country)
+            if (country == "Other")
             {
-                //Logger.Log("222222222222 ",country,_country);
-                continue;
+                bool _flag = false;
+                for (int i = 0; i < countryList.Count-1; i++)
+                {
+                    if (_country == countryList[i])
+                    {
+                        _flag = true;
+                        break;
+                    }
+                }  
+                if( _flag ) continue; 
+            }
+            else
+            {
+                if (country != "ALL" && _country != country)
+                {
+                    //Logger.Log("222222222222 ",country,_country);
+                    continue;
+                }   
             }
 
-            if (platform != "ALL" && _platform != platform)
+            if (platform == "Other")
             {
-                continue;
+                bool _flag = false;
+                for (int i = 0; i < platformList.Count-1; i++)
+                {
+                    if (_platform == platformList[i])
+                    {
+                        _flag = true;
+                        break;
+                    }
+                }  
+                if( _flag ) continue; 
+            }
+            else
+            {
+                if (platform != "ALL" && _platform != platform)
+                {
+                    continue;
+                }  
             }            
+       
             
             if (recordType == RECORD_TYPE.RECORD_USERREG)
             {
