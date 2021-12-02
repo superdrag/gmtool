@@ -1,4 +1,5 @@
-
+LuaConfig = {}
+WordConfig = {}
 
 function TableMerge(x)
 	

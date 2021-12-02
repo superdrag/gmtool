@@ -1,47 +1,10 @@
-LuaConfig["MonthlyCardConfig"] = 
-{
-	[60001] = 
-	{
-		id = 60001,
-		icon = "",
-		reward = {
-			[1]={
-			[1]="Currency",
-			[2]="diamond",
-			[3]=60,
-		},
-		},
-		ruration_reward = {
-			[1]={
-			[1]="Currency",
-			[2]="diamond",
-			[3]=20,
-		},
-		},
-		privilege = "autocollection",
-		price = 1,
-		ruration = 30,
-	},
-	[60002] = 
-	{
-		id = 60002,
-		icon = "",
-		reward = {
-			[1]={
-			[1]="Currency",
-			[2]="diamond",
-			[3]=1000,
-		},
-		},
-		ruration_reward = {
-			[1]={
-			[1]="Currency",
-			[2]="diamond",
-			[3]=100,
-		},
-		},
-		privilege = "AI",
-		price = 15,
-		ruration = 30,
-	},
+
+do
+local function New(a0,a2,a3,a4,a5,a6,a7)
+	return {id=a0,icon=a2,reward=a3,ruration_reward=a4,privilege=a5,price=a6,ruration=a7,}
+end
+LuaConfig["MonthlyCardConfig"] = {
+[60001] = New(60001,"",{{"Currency","diamond",360,},},{{"Currency","diamond",120,},},"autocollection",3,30),
+[60002] = New(60002,"",{{"Currency","diamond",680,},},{{"Currency","diamond",380,},},"AI",10,30),
 }
+end

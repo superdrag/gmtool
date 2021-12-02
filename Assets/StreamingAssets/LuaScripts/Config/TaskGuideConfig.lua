@@ -1,325 +1,78 @@
-LuaConfig["TaskGuideConfig"] = 
-{
-	[201] = 
-	{
-		id = 201,
-		eventType = "click_button",
-		eventArg = "MainView/Down/Card",
-		auto_click = false,
-	},
-	[202] = 
-	{
-		id = 202,
-		eventType = "click_button",
-		eventArg = "MenuView/titlegroup/course",
-		auto_click = false,
-	},
-	[203] = 
-	{
-		id = 203,
-		eventType = "click_item",
-		eventArg = "lesson",
-		auto_click = false,
-	},
-	[204] = 
-	{
-		id = 204,
-		eventType = "click_button",
-		eventArg = "LessonMsgView/Btn_Study",
-		auto_click = false,
-	},
-	[205] = 
-	{
-		id = 205,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
-	[301] = 
-	{
-		id = 301,
-		eventType = "click_button",
-		eventArg = "MainView/Down/Card",
-		auto_click = false,
-	},
-	[302] = 
-	{
-		id = 302,
-		eventType = "click_button",
-		eventArg = "MenuView/titlegroup/staff",
-		auto_click = false,
-	},
-	[303] = 
-	{
-		id = 303,
-		eventType = "click_item",
-		eventArg = "staff_employ",
-		auto_click = false,
-	},
-	[304] = 
-	{
-		id = 304,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
-	[401] = 
-	{
-		id = 401,
-		eventType = "click_button",
-		eventArg = "MainView/Down/Card",
-		auto_click = true,
-	},
-	[402] = 
-	{
-		id = 402,
-		eventType = "click_button",
-		eventArg = "MenuView/titlegroup/course",
-		auto_click = true,
-	},
-	[403] = 
-	{
-		id = 403,
-		eventType = "click_item",
-		eventArg = "lesson",
-		auto_click = true,
-	},
-	[404] = 
-	{
-		id = 404,
-		eventType = "click_button",
-		eventArg = "LessonMsgView/Btn_Study",
-		auto_click = false,
-	},
-	[405] = 
-	{
-		id = 405,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
-	[601] = 
-	{
-		id = 601,
-		eventType = "click_button",
-		eventArg = "MainView/Down/Leaflet",
-		auto_click = false,
-	},
-	[602] = 
-	{
-		id = 602,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
-	[801] = 
-	{
-		id = 801,
-		eventType = "click_facility",
-		eventArg = "",
-		auto_click = false,
-	},
-	[802] = 
-	{
-		id = 802,
-		eventType = "click_button",
-		eventArg = "FacilityView/View/downBg/upBtn",
-		auto_click = false,
-	},
-	[803] = 
-	{
-		id = 803,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
-	[1501] = 
-	{
-		id = 1501,
-		eventType = "click_button",
-		eventArg = "MainView/Down/speedbtn/Speed",
-		auto_click = false,
-	},
-	[1502] = 
-	{
-		id = 1502,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
-	[1601] = 
-	{
-		id = 1601,
-		eventType = "click_button",
-		eventArg = "MainView/Down/Arena",
-		auto_click = false,
-	},
-	[1602] = 
-	{
-		id = 1602,
-		eventType = "click_button",
-		eventArg = "ArenaMainView/down/league",
-		auto_click = false,
-	},
-	[1603] = 
-	{
-		id = 1603,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
-	[1701] = 
-	{
-		id = 1701,
-		eventType = "click_button",
-		eventArg = "MainView/Down/Card",
-		auto_click = true,
-	},
-	[1702] = 
-	{
-		id = 1702,
-		eventType = "click_button",
-		eventArg = "MenuView/titlegroup/staff",
-		auto_click = true,
-	},
-	[1703] = 
-	{
-		id = 1703,
-		eventType = "click_item",
-		eventArg = "staff_employ",
-		auto_click = false,
-	},
-	[1704] = 
-	{
-		id = 1704,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
-	[1801] = 
-	{
-		id = 1801,
-		eventType = "click_button",
-		eventArg = "MainView/Down/Leaflet",
-		auto_click = true,
-	},
-	[1802] = 
-	{
-		id = 1802,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
-	[1901] = 
-	{
-		id = 1901,
-		eventType = "click_room_bubble",
-		eventArg = "facility",
-		auto_click = true,
-	},
-	[1902] = 
-	{
-		id = 1902,
-		eventType = "click_item",
-		eventArg = "facility",
-		auto_click = false,
-	},
-	[1903] = 
-	{
-		id = 1903,
-		eventType = "click_button",
-		eventArg = "FacilityView/list/buildView/downBg/upBtn",
-		auto_click = false,
-	},
-	[1904] = 
-	{
-		id = 1904,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
-	[2001] = 
-	{
-		id = 2001,
-		eventType = "click_room_bubble",
-		eventArg = "room",
-		auto_click = false,
-	},
-	[2002] = 
-	{
-		id = 2002,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
-	[2101] = 
-	{
-		id = 2101,
-		eventType = "click_room_bubble",
-		eventArg = "room",
-		auto_click = true,
-	},
-	[2102] = 
-	{
-		id = 2102,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
-	[2201] = 
-	{
-		id = 2201,
-		eventType = "click_room_bubble",
-		eventArg = "facility",
-		auto_click = true,
-	},
-	[2202] = 
-	{
-		id = 2202,
-		eventType = "click_item",
-		eventArg = "facility",
-		auto_click = true,
-	},
-	[2203] = 
-	{
-		id = 2203,
-		eventType = "click_button",
-		eventArg = "FacilityView/list/buildView/downBg/upBtn",
-		auto_click = false,
-	},
-	[2204] = 
-	{
-		id = 2204,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
-	[2301] = 
-	{
-		id = 2301,
-		eventType = "click_room_bubble",
-		eventArg = "facility",
-		auto_click = false,
-	},
-	[2302] = 
-	{
-		id = 2302,
-		eventType = "click_item",
-		eventArg = "facility",
-		auto_click = false,
-	},
-	[2303] = 
-	{
-		id = 2303,
-		eventType = "click_button",
-		eventArg = "FacilityView/list/buildView/downBg/upBtn",
-		auto_click = false,
-	},
-	[2304] = 
-	{
-		id = 2304,
-		eventType = "end",
-		eventArg = "",
-		auto_click = false,
-	},
+
+do
+local function New(a0,a2,a3,a4)
+	return {id=a0,eventType=a2,eventArg=a3,auto_click=a4,}
+end
+LuaConfig["TaskGuideConfig"] = {
+[201] = New(201,"click_button","MainView/Down/Card",false),
+[202] = New(202,"click_button","MenuView/titlegroup/course",false),
+[203] = New(203,"click_item","lesson",false),
+[204] = New(204,"click_button","LessonMsgView/Btn_Study",false),
+[205] = New(205,"end","",false),
+[301] = New(301,"click_button","MainView/Down/Card",false),
+[302] = New(302,"click_button","MenuView/titlegroup/staff",false),
+[303] = New(303,"click_item","staff_employ",false),
+[304] = New(304,"end","",false),
+[401] = New(401,"click_button","MainView/Down/Card",true),
+[402] = New(402,"click_button","MenuView/titlegroup/course",true),
+[403] = New(403,"click_item","lesson",true),
+[404] = New(404,"click_button","LessonMsgView/Btn_Study",false),
+[405] = New(405,"end","",false),
+[601] = New(601,"click_button","MainView/Down/Leaflet",false),
+[602] = New(602,"send_leaflet","",false),
+[603] = New(603,"end","",false),
+[801] = New(801,"click_facility","",false),
+[802] = New(802,"click_button","FacilityView/View/downBg/upBtn",false),
+[803] = New(803,"end","",false),
+[1501] = New(1501,"click_button","MainView/Down/speedbtn/Speed",false),
+[1502] = New(1502,"end","",false),
+[1601] = New(1601,"click_button","MainView/Down/Arena",false),
+[1602] = New(1602,"click_button","ArenaMainView/down/league",false),
+[1603] = New(1603,"end","",false),
+[1701] = New(1701,"click_button","MainView/Down/Card",true),
+[1702] = New(1702,"click_button","MenuView/titlegroup/staff",true),
+[1703] = New(1703,"click_item","staff_employ",false),
+[1704] = New(1704,"end","",false),
+[1801] = New(1801,"click_button","MainView/Down/Leaflet",true),
+[1802] = New(1802,"end","",false),
+[1901] = New(1901,"click_room_bubble","facility",true),
+[1902] = New(1902,"click_item","facility",false),
+[1903] = New(1903,"click_button","FacilityView/list/buildView/downBg/upBtn",false),
+[1904] = New(1904,"end","",false),
+[2001] = New(2001,"click_room_bubble","room",false),
+[2002] = New(2002,"end","",false),
+[2101] = New(2101,"click_room_bubble","room",true),
+[2102] = New(2102,"end","",false),
+[2201] = New(2201,"click_room_bubble","facility",true),
+[2202] = New(2202,"click_item","facility",true),
+[2203] = New(2203,"click_button","FacilityView/list/buildView/downBg/upBtn",false),
+[2204] = New(2204,"end","",false),
+[2301] = New(2301,"click_room_bubble","facility",false),
+[2302] = New(2302,"click_item","facility",true),
+[2303] = New(2303,"click_button","FacilityView/list/buildView/downBg/upBtn",false),
+[2304] = New(2304,"end","",false),
+[2401] = New(2401,"click_room_bubble","room",false),
+[2402] = New(2402,"click_button","FacilityView/View/roomNameBg/workBg",false),
+[2403] = New(2403,"end","",false),
+[2501] = New(2501,"click_room_bubble","room",true),
+[2502] = New(2502,"click_button","FacilityView/View/roomNameBg/workBg",true),
+[2503] = New(2503,"end","",false),
+[3001] = New(3001,"click_bubble_2D","ObjectPool/Bubble~BubbleArea2DUnlockPool/BubbleArea2DUnlock#103;ObjectPool/Bubble~BubbleArea2DQuickPool/BubbleArea2DQuick#103;ObjectPool/Bubble~BubbleArea2DFinishPool/BubbleArea2DFinish#103",false),
+[3002] = New(3002,"click_button","AreaUnlockView/BG/ButtonUnlock",false),
+[3003] = New(3003,"end","",false),
+[3101] = New(3101,"click_bubble_2D","ObjectPool/Bubble~BubbleArea2DUnlockPool/BubbleArea2DUnlock#102;ObjectPool/Bubble~BubbleArea2DQuickPool/BubbleArea2DQuick#102;ObjectPool/Bubble~BubbleArea2DFinishPool/BubbleArea2DFinish#102",false),
+[3102] = New(3102,"click_button","AreaUnlockView/BG/ButtonUnlock",false),
+[3103] = New(3103,"end","",false),
+[3201] = New(3201,"click_bubble_2D","ObjectPool/Bubble~BubbleArea2DUnlockPool/BubbleArea2DUnlock#104;ObjectPool/Bubble~BubbleArea2DQuickPool/BubbleArea2DQuick#104;ObjectPool/Bubble~BubbleArea2DFinishPool/BubbleArea2DFinish#104",false),
+[3202] = New(3202,"click_button","AreaUnlockView/BG/ButtonUnlock",false),
+[3203] = New(3203,"end","",false),
+[4001] = New(4001,"click_bubble_2D","ObjectPool/Bubble~BubbleRoom2DBuildPool/BubbleRoom2DBuild#102001",false),
+[4002] = New(4002,"click_button","FacilityView/list/buildView/levelUp/upBtn",false),
+[4003] = New(4003,"click_button","ArenaLvUpView/bg/btn",false),
+[4004] = New(4004,"end","",false),
+[4101] = New(4101,"click_bubble_2D","ObjectPool/Bubble~BubbleRoom2DBuildPool/BubbleRoom2DBuild#102001",true),
+[4102] = New(4102,"click_button","FacilityView/list/buildView/levelUp/upBtn",true),
+[4103] = New(4103,"click_button","ArenaLvUpView/bg/btn",false),
+[4104] = New(4104,"end","",false),
 }
+end

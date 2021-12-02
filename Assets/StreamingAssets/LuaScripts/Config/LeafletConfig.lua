@@ -1,53 +1,10 @@
-LuaConfig["LeafletConfig"] = 
-{
-	[101] = 
-	{
-		id = 101,
-		name = "报纸",
-		free_cd = 20,
-		stacklimit = 3,
-		ads_max = 10,
-		tourist = 15,
-		tourist_ex = 20,
-		price = {
-			[1]="Currency",
-			[2]="leaflet2",
-			[3]=1,
-		},
-		reward_num = "0;2",
-		reward_ordinary = 10001,
-		ordinary_weight = 790,
-		reward_rare = 11001,
-		rare_weight = 200,
-		reward_epic = 12001,
-		epic_weight = 10,
-		reward_legend = 13001,
-		legend_weight = 0,
-		mg = 10,
-	},
-	[102] = 
-	{
-		id = 102,
-		name = "广播",
-		free_cd = 1410,
-		stacklimit = 1,
-		ads_max = 0,
-		tourist = 50,
-		tourist_ex = 60,
-		price = {
-			[1]="Currency",
-			[2]="leaflet3",
-			[3]=1,
-		},
-		reward_num = "6;8",
-		reward_ordinary = 20001,
-		ordinary_weight = 370,
-		reward_rare = 21001,
-		rare_weight = 350,
-		reward_epic = 22001,
-		epic_weight = 200,
-		reward_legend = 23001,
-		legend_weight = 80,
-		mg = 10,
-	},
+
+do
+local function New(a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17)
+	return {id=a0,name=a1,free_cd=a2,stacklimit=a3,ads_max=a4,tourist=a5,tourist_ex=a6,price=a7,reward_num=a8,reward_ordinary=a9,ordinary_weight=a10,reward_rare=a11,rare_weight=a12,reward_epic=a13,epic_weight=a14,reward_legend=a15,legend_weight=a16,mg=a17,}
+end
+LuaConfig["LeafletConfig"] = {
+[101] = New(101,"报纸",20,3,10,15,20,{"Currency","leaflet2",1,},{{0,1,},{90,10,},},10001,6383,11001,2553,12001,1064,13001,0,10),
+[102] = New(102,"广播",1410,1,0,30,40,{"Currency","leaflet3",1,},{{5,6,7,8,},{100,100,100,100,},},20001,7166,21001,2034,22001,700,23001,100,10),
 }
+end

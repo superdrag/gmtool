@@ -1,134 +1,27 @@
+
+do
+local function New(a0,a1,a2,a3,a4,a5,a6)
+	return {id=a0,cn=a1,en=a2,tc=a3,jp=a4,kr=a5,flag=a6,}
+end
 local WordSettingConfig = 
 {
-	["text_font"] = 
-	{
-		["id"] = "text_font",
-		["cn"] = "CHS.ttf",
-		["en"] = "EN.ttf",
-		["tc"] = "CHS.ttf",
-		["jp"] = "JPN.otf",
-		["kr"] = "NotoSansCJKsc-Bold.otf",
-		["flag"] = "wordsetconfig",
-	},
-	["set_name_10001"] = 
-	{
-		["id"] = "set_name_10001",
-		["cn"] = "设置",
-		["en"] = "Set up",
-		["tc"] = "設置",
-		["jp"] = "セットアップ",
-		["kr"] = "설정",
-		["flag"] = "wordsetconfig",
-	},
-	["set_name_10002"] = 
-	{
-		["id"] = "set_name_10002",
-		["cn"] = "音量",
-		["en"] = "Volume",
-		["tc"] = "音量",
-		["jp"] = "ボリューム",
-		["kr"] = "음량",
-		["flag"] = "wordsetconfig",
-	},
-	["set_name_10003"] = 
-	{
-		["id"] = "set_name_10003",
-		["cn"] = "音效",
-		["en"] = "Sound effect",
-		["tc"] = "音效",
-		["jp"] = "効果音",
-		["kr"] = "음향 효과",
-		["flag"] = "wordsetconfig",
-	},
-	["set_name_10004"] = 
-	{
-		["id"] = "set_name_10004",
-		["cn"] = "音乐",
-		["en"] = "Music",
-		["tc"] = "音樂",
-		["jp"] = "音楽",
-		["kr"] = "음악",
-		["flag"] = "wordsetconfig",
-	},
-	["set_name_10005"] = 
-	{
-		["id"] = "set_name_10005",
-		["cn"] = "其他",
-		["en"] = "Other",
-		["tc"] = "其他",
-		["jp"] = "その他",
-		["kr"] = "다른",
-		["flag"] = "wordsetconfig",
-	},
-	["set_name_10006"] = 
-	{
-		["id"] = "set_name_10006",
-		["cn"] = "恢复",
-		["en"] = "Restore",
-		["tc"] = "恢復",
-		["jp"] = "戻す",
-		["kr"] = "복원",
-		["flag"] = "wordsetconfig",
-	},
-	["set_name_10007"] = 
-	{
-		["id"] = "set_name_10007",
-		["cn"] = "遇到问题",
-		["en"] = "Q&A",
-		["tc"] = "遇到問題",
-		["jp"] = "遭遇問題",
-		["kr"] = "만남 문제",
-		["flag"] = "wordsetconfig",
-	},
-	["set_name_10008"] = 
-	{
-		["id"] = "set_name_10008",
-		["cn"] = "语言（%s)",
-		["en"] = "Language（%s)",
-		["tc"] = "語言（%s)",
-		["jp"] = "言語（%s)",
-		["kr"] = "언어（%s)",
-		["flag"] = "wordsetconfig",
-	},
-	["set_name_10009"] = 
-	{
-		["id"] = "set_name_10009",
-		["cn"] = "语言设置",
-		["en"] = "language settings",
-		["tc"] = "語言設置",
-		["jp"] = "言語設定",
-		["kr"] = "언어 설정",
-		["flag"] = "wordsetconfig",
-	},
-	["set_name_10010"] = 
-	{
-		["id"] = "set_name_10010",
-		["cn"] = "您确定要更改语言吗？",
-		["en"] = "Are you sure you want to change the language?",
-		["tc"] = "您確定要更改語言嗎？",
-		["jp"] = "言語を変更してもよろしいですか？",
-		["kr"] = "언어를 변경 하시겠습니까?",
-		["flag"] = "wordsetconfig",
-	},
-	["set_name_10011"] = 
-	{
-		["id"] = "set_name_10011",
-		["cn"] = "取消",
-		["en"] = "Cancel",
-		["tc"] = "取消",
-		["jp"] = "キャンセル",
-		["kr"] = "취소",
-		["flag"] = "wordsetconfig",
-	},
-	["set_name_10012"] = 
-	{
-		["id"] = "set_name_10012",
-		["cn"] = "是",
-		["en"] = "Yes",
-		["tc"] = "是",
-		["jp"] = "はい",
-		["kr"] = "예",
-		["flag"] = "wordsetconfig",
-	},
+["text_font"] = New("text_font","CHS.ttf","EN.ttf","CHS.ttf","JPN.otf","NotoSansCJKsc-Bold.otf","wordsetconfig"),
+["set_name_10001"] = New("set_name_10001","设置","Option","設置","セットアップ","설정","wordsetconfig"),
+["set_name_10002"] = New("set_name_10002","音量","Volume","音量","ボリューム","음량","wordsetconfig"),
+["set_name_10003"] = New("set_name_10003","音效","SE","音效","効果音","음향 효과","wordsetconfig"),
+["set_name_10004"] = New("set_name_10004","音乐","BGM","音樂","音楽","음악","wordsetconfig"),
+["set_name_10005"] = New("set_name_10005","其他","more","其他","その他","다른","wordsetconfig"),
+["set_name_10006"] = New("set_name_10006","恢复","Restore","恢復","戻す","복원","wordsetconfig"),
+["set_name_10007"] = New("set_name_10007","遇到问题","Trouble shooting","遇到問題","遭遇問題","만남 문제","wordsetconfig"),
+["set_name_10008"] = New("set_name_10008","语言（%s)","Language（%s)","語言（%s)","言語（%s)","언어（%s)","wordsetconfig"),
+["set_name_10009"] = New("set_name_10009","语言设置","Language Settings","語言設置","言語設定","언어 설정","wordsetconfig"),
+["set_name_10010"] = New("set_name_10010","您确定要更改语言吗？","Sure to change language?","您確定要更改語言嗎？","言語を変更してもよろしいですか？","언어를 변경 하시겠습니까?","wordsetconfig"),
+["set_name_10011"] = New("set_name_10011","取消","Cancel","取消","キャンセル","취소","wordsetconfig"),
+["set_name_10012"] = New("set_name_10012","是","Confirm","是","はい","예","wordsetconfig"),
+["set_name_10013"] = New("set_name_10013","账号","Account","賬號","アカウント","계정","wordsetconfig"),
+["title_id"] = New("title_id","ID号","ID","ID號","ID","ID","wordsetconfig"),
+["button_copy"] = New("button_copy","复制","Copy","複製","コピー","복사합니다","wordsetconfig"),
+["title_optionid"] = New("title_optionid","ID号:%s","ID:%s","ID號:%s","ID:%s","ID:%s","wordsetconfig"),
 }
 TableMerge(WordConfig,WordSettingConfig)
+end

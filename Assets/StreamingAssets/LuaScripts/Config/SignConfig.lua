@@ -1,101 +1,15 @@
-LuaConfig["SignConfig"] = 
-{
-	[1001] = 
-	{
-		id = 1001,
-		days_text = "sign_text_1001",
-		days = 1,
-		reward = {
-			[1]={
-			[1]="Currency",
-			[2]="diamond",
-			[3]=50,
-		},
-		},
-		icon = "Currency/currency_oil",
-	},
-	[1002] = 
-	{
-		id = 1002,
-		days_text = "sign_text_1002",
-		days = 2,
-		reward = {
-			[1]={
-			[1]="Currency",
-			[2]="leaflet2",
-			[3]=3,
-		},
-		},
-		icon = "Currency/currency_oil",
-	},
-	[1003] = 
-	{
-		id = 1003,
-		days_text = "sign_text_1003",
-		days = 3,
-		reward = {
-			[1]={
-			[1]="Card",
-			[2]=13002,
-			[3]=1,
-		},
-		},
-		icon = "Activity/title_3dayCard",
-	},
-	[1004] = 
-	{
-		id = 1004,
-		days_text = "sign_text_1004",
-		days = 4,
-		reward = {
-			[1]={
-			[1]="Currency",
-			[2]="leaflet3",
-			[3]=1,
-		},
-		},
-		icon = "Currency/currency_oil",
-	},
-	[1005] = 
-	{
-		id = 1005,
-		days_text = "sign_text_1005",
-		days = 5,
-		reward = {
-			[1]={
-			[1]="Currency",
-			[2]="exp",
-			[3]=500,
-		},
-		},
-		icon = "Currency/currency_oil",
-	},
-	[1006] = 
-	{
-		id = 1006,
-		days_text = "sign_text_1006",
-		days = 6,
-		reward = {
-			[1]={
-			[1]="Currency",
-			[2]="diamond",
-			[3]=100,
-		},
-		},
-		icon = "Currency/currency_oil",
-	},
-	[1007] = 
-	{
-		id = 1007,
-		days_text = "sign_text_1007",
-		days = 7,
-		reward = {
-			[1]={
-			[1]="Card",
-			[2]=4005,
-			[3]=1,
-		},
-		},
-		icon = "Activity/title_7dayCard",
-	},
+
+do
+local function New(a0,a2,a3,a4,a5)
+	return {id=a0,days_text=a2,days=a3,reward=a4,icon=a5,}
+end
+LuaConfig["SignConfig"] = {
+[1001] = New(1001,"sign_text_1001",1,{{"Currency","Hamburger",5,},},"Menu/att_hamburger"),
+[1002] = New(1002,"sign_text_1002",2,{{"Currency","leaflet2",10,},},"Currency/currency_oil"),
+[1003] = New(1003,"sign_text_1003",3,{{"Card",13002,1,},},"Architecture/tachie_build1200101_0"),
+[1004] = New(1004,"sign_text_1004",4,{{"Currency","leaflet3",2,},},"Currency/currency_oil"),
+[1005] = New(1005,"sign_text_1005",5,{{"Item",2003,5,},},"Currency/currency_oil"),
+[1006] = New(1006,"sign_text_1006",6,{{"Currency","diamond",300,},},"Currency/currency_oil"),
+[1007] = New(1007,"sign_text_1007",7,{{"Card",4005,1,},},"Player/tachie_player3004_4"),
 }
+end

@@ -28,6 +28,10 @@ public class TaskItem
     public void Show(QueryTaskData taskData)
     {
         infoList[0].text = taskData.taskId.ToString();
+        if ( taskData.taskId == 10000)
+        {
+            infoList[0].text = "新手任务阶段";
+        }
         infoList[1].text = taskData.curNum.ToString();
         infoList[2].text = taskData.lostNum.ToString();
         infoList[3].text = taskData.percent.ToString();

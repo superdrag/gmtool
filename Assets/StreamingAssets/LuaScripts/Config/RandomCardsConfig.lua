@@ -1,4683 +1,743 @@
-LuaConfig["RandomCardsConfig"] = 
-{
-	[1] = 
-	{
-		id = 1,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 76,
-	},
-	[2] = 
-	{
-		id = 2,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 75,
-	},
-	[3] = 
-	{
-		id = 3,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1003,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 74,
-	},
-	[4] = 
-	{
-		id = 4,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1004,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 73,
-	},
-	[5] = 
-	{
-		id = 5,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1005,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 72,
-	},
-	[6] = 
-	{
-		id = 6,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1006,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 71,
-	},
-	[7] = 
-	{
-		id = 7,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1007,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 70,
-	},
-	[8] = 
-	{
-		id = 8,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1008,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 69,
-	},
-	[9] = 
-	{
-		id = 9,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1009,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 68,
-	},
-	[10] = 
-	{
-		id = 10,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1010,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 67,
-	},
-	[11] = 
-	{
-		id = 11,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1011,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 66,
-	},
-	[12] = 
-	{
-		id = 12,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1012,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 65,
-	},
-	[13] = 
-	{
-		id = 13,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1013,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 64,
-	},
-	[14] = 
-	{
-		id = 14,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1014,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 63,
-	},
-	[15] = 
-	{
-		id = 15,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1015,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 62,
-	},
-	[16] = 
-	{
-		id = 16,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=1016,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 61,
-	},
-	[17] = 
-	{
-		id = 17,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 59,
-	},
-	[18] = 
-	{
-		id = 18,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 58,
-	},
-	[19] = 
-	{
-		id = 19,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2003,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 57,
-	},
-	[20] = 
-	{
-		id = 20,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2004,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 56,
-	},
-	[21] = 
-	{
-		id = 21,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2005,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 55,
-	},
-	[22] = 
-	{
-		id = 22,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2006,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 54,
-	},
-	[23] = 
-	{
-		id = 23,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2007,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 53,
-	},
-	[24] = 
-	{
-		id = 24,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2008,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 52,
-	},
-	[25] = 
-	{
-		id = 25,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2009,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 51,
-	},
-	[26] = 
-	{
-		id = 26,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2010,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 50,
-	},
-	[27] = 
-	{
-		id = 27,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2011,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 49,
-	},
-	[28] = 
-	{
-		id = 28,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2012,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 48,
-	},
-	[29] = 
-	{
-		id = 29,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2013,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 47,
-	},
-	[30] = 
-	{
-		id = 30,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2014,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 46,
-	},
-	[31] = 
-	{
-		id = 31,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2015,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 45,
-	},
-	[32] = 
-	{
-		id = 32,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2016,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 44,
-	},
-	[33] = 
-	{
-		id = 33,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2017,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 43,
-	},
-	[34] = 
-	{
-		id = 34,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2018,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 42,
-	},
-	[35] = 
-	{
-		id = 35,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2019,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 41,
-	},
-	[36] = 
-	{
-		id = 36,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2020,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 40,
-	},
-	[37] = 
-	{
-		id = 37,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2021,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 39,
-	},
-	[38] = 
-	{
-		id = 38,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=2022,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 38,
-	},
-	[39] = 
-	{
-		id = 39,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 35,
-	},
-	[40] = 
-	{
-		id = 40,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 34,
-	},
-	[41] = 
-	{
-		id = 41,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3003,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 33,
-	},
-	[42] = 
-	{
-		id = 42,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3004,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 32,
-	},
-	[43] = 
-	{
-		id = 43,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3005,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 31,
-	},
-	[44] = 
-	{
-		id = 44,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3006,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 30,
-	},
-	[45] = 
-	{
-		id = 45,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3007,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 29,
-	},
-	[46] = 
-	{
-		id = 46,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3008,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 28,
-	},
-	[47] = 
-	{
-		id = 47,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3009,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 27,
-	},
-	[48] = 
-	{
-		id = 48,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3010,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 26,
-	},
-	[49] = 
-	{
-		id = 49,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3011,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 25,
-	},
-	[50] = 
-	{
-		id = 50,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3012,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 24,
-	},
-	[51] = 
-	{
-		id = 51,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3013,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 23,
-	},
-	[52] = 
-	{
-		id = 52,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3014,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 22,
-	},
-	[53] = 
-	{
-		id = 53,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3015,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 21,
-	},
-	[54] = 
-	{
-		id = 54,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3016,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 20,
-	},
-	[55] = 
-	{
-		id = 55,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3017,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 19,
-	},
-	[56] = 
-	{
-		id = 56,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=3018,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 18,
-	},
-	[57] = 
-	{
-		id = 57,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 15,
-	},
-	[58] = 
-	{
-		id = 58,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 14,
-	},
-	[59] = 
-	{
-		id = 59,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4003,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 13,
-	},
-	[60] = 
-	{
-		id = 60,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4004,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 12,
-	},
-	[61] = 
-	{
-		id = 61,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4005,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 11,
-	},
-	[62] = 
-	{
-		id = 62,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4006,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 10,
-	},
-	[63] = 
-	{
-		id = 63,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4007,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 9,
-	},
-	[64] = 
-	{
-		id = 64,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4008,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 8,
-	},
-	[65] = 
-	{
-		id = 65,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4009,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 7,
-	},
-	[66] = 
-	{
-		id = 66,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4010,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 6,
-	},
-	[67] = 
-	{
-		id = 67,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4011,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 5,
-	},
-	[68] = 
-	{
-		id = 68,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4012,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 4,
-	},
-	[69] = 
-	{
-		id = 69,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4013,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 3,
-	},
-	[70] = 
-	{
-		id = 70,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=4014,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 2,
-	},
-	[71] = 
-	{
-		id = 71,
-		kuid = 10001,
-		reward = {
-			[1]="card",
-			[2]=11001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 60,
-	},
-	[72] = 
-	{
-		id = 72,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=12001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 37,
-	},
-	[73] = 
-	{
-		id = 73,
-		kuid = 11001,
-		reward = {
-			[1]="card",
-			[2]=12002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 36,
-	},
-	[74] = 
-	{
-		id = 74,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=13001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 17,
-	},
-	[75] = 
-	{
-		id = 75,
-		kuid = 12001,
-		reward = {
-			[1]="card",
-			[2]=13002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 16,
-	},
-	[76] = 
-	{
-		id = 76,
-		kuid = 13001,
-		reward = {
-			[1]="card",
-			[2]=14001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 1,
-	},
-	[77] = 
-	{
-		id = 77,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 76,
-	},
-	[78] = 
-	{
-		id = 78,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 75,
-	},
-	[79] = 
-	{
-		id = 79,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1003,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 74,
-	},
-	[80] = 
-	{
-		id = 80,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1004,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 73,
-	},
-	[81] = 
-	{
-		id = 81,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1005,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 72,
-	},
-	[82] = 
-	{
-		id = 82,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1006,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 71,
-	},
-	[83] = 
-	{
-		id = 83,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1007,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 70,
-	},
-	[84] = 
-	{
-		id = 84,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1008,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 69,
-	},
-	[85] = 
-	{
-		id = 85,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1009,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 68,
-	},
-	[86] = 
-	{
-		id = 86,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1010,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 67,
-	},
-	[87] = 
-	{
-		id = 87,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1011,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 66,
-	},
-	[88] = 
-	{
-		id = 88,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1012,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 65,
-	},
-	[89] = 
-	{
-		id = 89,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1013,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 64,
-	},
-	[90] = 
-	{
-		id = 90,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1014,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 63,
-	},
-	[91] = 
-	{
-		id = 91,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1015,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 62,
-	},
-	[92] = 
-	{
-		id = 92,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=1016,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 61,
-	},
-	[93] = 
-	{
-		id = 93,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 59,
-	},
-	[94] = 
-	{
-		id = 94,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 58,
-	},
-	[95] = 
-	{
-		id = 95,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2003,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 57,
-	},
-	[96] = 
-	{
-		id = 96,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2004,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 56,
-	},
-	[97] = 
-	{
-		id = 97,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2005,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 55,
-	},
-	[98] = 
-	{
-		id = 98,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2006,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 54,
-	},
-	[99] = 
-	{
-		id = 99,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2007,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 53,
-	},
-	[100] = 
-	{
-		id = 100,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2008,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 52,
-	},
-	[101] = 
-	{
-		id = 101,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2009,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 51,
-	},
-	[102] = 
-	{
-		id = 102,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2010,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 50,
-	},
-	[103] = 
-	{
-		id = 103,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2011,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 49,
-	},
-	[104] = 
-	{
-		id = 104,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2012,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 48,
-	},
-	[105] = 
-	{
-		id = 105,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2013,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 47,
-	},
-	[106] = 
-	{
-		id = 106,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2014,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 46,
-	},
-	[107] = 
-	{
-		id = 107,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2015,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 45,
-	},
-	[108] = 
-	{
-		id = 108,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2016,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 44,
-	},
-	[109] = 
-	{
-		id = 109,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2017,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 43,
-	},
-	[110] = 
-	{
-		id = 110,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2018,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 42,
-	},
-	[111] = 
-	{
-		id = 111,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2019,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 41,
-	},
-	[112] = 
-	{
-		id = 112,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2020,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 40,
-	},
-	[113] = 
-	{
-		id = 113,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2021,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 39,
-	},
-	[114] = 
-	{
-		id = 114,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=2022,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 38,
-	},
-	[115] = 
-	{
-		id = 115,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 35,
-	},
-	[116] = 
-	{
-		id = 116,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 34,
-	},
-	[117] = 
-	{
-		id = 117,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3003,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 33,
-	},
-	[118] = 
-	{
-		id = 118,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3004,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 32,
-	},
-	[119] = 
-	{
-		id = 119,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3005,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 31,
-	},
-	[120] = 
-	{
-		id = 120,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3006,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 30,
-	},
-	[121] = 
-	{
-		id = 121,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3007,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 29,
-	},
-	[122] = 
-	{
-		id = 122,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3008,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 28,
-	},
-	[123] = 
-	{
-		id = 123,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3009,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 27,
-	},
-	[124] = 
-	{
-		id = 124,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3010,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 26,
-	},
-	[125] = 
-	{
-		id = 125,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3011,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 25,
-	},
-	[126] = 
-	{
-		id = 126,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3012,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 24,
-	},
-	[127] = 
-	{
-		id = 127,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3013,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 23,
-	},
-	[128] = 
-	{
-		id = 128,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3014,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 22,
-	},
-	[129] = 
-	{
-		id = 129,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3015,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 21,
-	},
-	[130] = 
-	{
-		id = 130,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3016,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 20,
-	},
-	[131] = 
-	{
-		id = 131,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3017,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 19,
-	},
-	[132] = 
-	{
-		id = 132,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=3018,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 18,
-	},
-	[133] = 
-	{
-		id = 133,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 15,
-	},
-	[134] = 
-	{
-		id = 134,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 14,
-	},
-	[135] = 
-	{
-		id = 135,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4003,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 13,
-	},
-	[136] = 
-	{
-		id = 136,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4004,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 12,
-	},
-	[137] = 
-	{
-		id = 137,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4005,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 11,
-	},
-	[138] = 
-	{
-		id = 138,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4006,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 10,
-	},
-	[139] = 
-	{
-		id = 139,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4007,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 9,
-	},
-	[140] = 
-	{
-		id = 140,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4008,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 8,
-	},
-	[141] = 
-	{
-		id = 141,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4009,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 7,
-	},
-	[142] = 
-	{
-		id = 142,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4010,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 6,
-	},
-	[143] = 
-	{
-		id = 143,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4011,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 5,
-	},
-	[144] = 
-	{
-		id = 144,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4012,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 4,
-	},
-	[145] = 
-	{
-		id = 145,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4013,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 3,
-	},
-	[146] = 
-	{
-		id = 146,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=4014,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 2,
-	},
-	[147] = 
-	{
-		id = 147,
-		kuid = 20001,
-		reward = {
-			[1]="card",
-			[2]=11001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 60,
-	},
-	[148] = 
-	{
-		id = 148,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=12001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 37,
-	},
-	[149] = 
-	{
-		id = 149,
-		kuid = 21001,
-		reward = {
-			[1]="card",
-			[2]=12002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 36,
-	},
-	[150] = 
-	{
-		id = 150,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=13001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 17,
-	},
-	[151] = 
-	{
-		id = 151,
-		kuid = 22001,
-		reward = {
-			[1]="card",
-			[2]=13002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 16,
-	},
-	[152] = 
-	{
-		id = 152,
-		kuid = 23001,
-		reward = {
-			[1]="card",
-			[2]=14001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 1,
-	},
-	[153] = 
-	{
-		id = 153,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 56,
-	},
-	[154] = 
-	{
-		id = 154,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 55,
-	},
-	[155] = 
-	{
-		id = 155,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1003,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 54,
-	},
-	[156] = 
-	{
-		id = 156,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1004,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 53,
-	},
-	[157] = 
-	{
-		id = 157,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1005,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 52,
-	},
-	[158] = 
-	{
-		id = 158,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1006,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 51,
-	},
-	[159] = 
-	{
-		id = 159,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1007,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 50,
-	},
-	[160] = 
-	{
-		id = 160,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1008,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 49,
-	},
-	[161] = 
-	{
-		id = 161,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1009,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 48,
-	},
-	[162] = 
-	{
-		id = 162,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1010,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 47,
-	},
-	[163] = 
-	{
-		id = 163,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1011,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 46,
-	},
-	[164] = 
-	{
-		id = 164,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1012,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 45,
-	},
-	[165] = 
-	{
-		id = 165,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1013,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 44,
-	},
-	[166] = 
-	{
-		id = 166,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1014,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 43,
-	},
-	[167] = 
-	{
-		id = 167,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1015,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 42,
-	},
-	[168] = 
-	{
-		id = 168,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=1016,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 41,
-	},
-	[169] = 
-	{
-		id = 169,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2001,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 40,
-	},
-	[170] = 
-	{
-		id = 170,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2002,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 39,
-	},
-	[171] = 
-	{
-		id = 171,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2003,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 38,
-	},
-	[172] = 
-	{
-		id = 172,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2004,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 37,
-	},
-	[173] = 
-	{
-		id = 173,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2005,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 36,
-	},
-	[174] = 
-	{
-		id = 174,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2006,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 35,
-	},
-	[175] = 
-	{
-		id = 175,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2007,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 34,
-	},
-	[176] = 
-	{
-		id = 176,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2008,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 33,
-	},
-	[177] = 
-	{
-		id = 177,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2009,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 32,
-	},
-	[178] = 
-	{
-		id = 178,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2010,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 31,
-	},
-	[179] = 
-	{
-		id = 179,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2011,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 30,
-	},
-	[180] = 
-	{
-		id = 180,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2012,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 29,
-	},
-	[181] = 
-	{
-		id = 181,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2013,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 28,
-	},
-	[182] = 
-	{
-		id = 182,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2014,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 27,
-	},
-	[183] = 
-	{
-		id = 183,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2015,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 26,
-	},
-	[184] = 
-	{
-		id = 184,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2016,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 25,
-	},
-	[185] = 
-	{
-		id = 185,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2017,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 24,
-	},
-	[186] = 
-	{
-		id = 186,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2018,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 23,
-	},
-	[187] = 
-	{
-		id = 187,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2019,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 22,
-	},
-	[188] = 
-	{
-		id = 188,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2020,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 21,
-	},
-	[189] = 
-	{
-		id = 189,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2021,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 20,
-	},
-	[190] = 
-	{
-		id = 190,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=2022,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 19,
-	},
-	[191] = 
-	{
-		id = 191,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3001,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 18,
-	},
-	[192] = 
-	{
-		id = 192,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3002,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 17,
-	},
-	[193] = 
-	{
-		id = 193,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3003,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 16,
-	},
-	[194] = 
-	{
-		id = 194,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3004,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 15,
-	},
-	[195] = 
-	{
-		id = 195,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3005,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 14,
-	},
-	[196] = 
-	{
-		id = 196,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3006,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 13,
-	},
-	[197] = 
-	{
-		id = 197,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3007,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 12,
-	},
-	[198] = 
-	{
-		id = 198,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3008,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 11,
-	},
-	[199] = 
-	{
-		id = 199,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3009,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 10,
-	},
-	[200] = 
-	{
-		id = 200,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3010,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 9,
-	},
-	[201] = 
-	{
-		id = 201,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3011,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 8,
-	},
-	[202] = 
-	{
-		id = 202,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3012,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 7,
-	},
-	[203] = 
-	{
-		id = 203,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3013,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 6,
-	},
-	[204] = 
-	{
-		id = 204,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3014,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 5,
-	},
-	[205] = 
-	{
-		id = 205,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3015,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 4,
-	},
-	[206] = 
-	{
-		id = 206,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3016,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 3,
-	},
-	[207] = 
-	{
-		id = 207,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3017,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 2,
-	},
-	[208] = 
-	{
-		id = 208,
-		kuid = 30001,
-		reward = {
-			[1]="card",
-			[2]=3018,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 1,
-	},
-	[209] = 
-	{
-		id = 209,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 1,
-	},
-	[210] = 
-	{
-		id = 210,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 2,
-	},
-	[211] = 
-	{
-		id = 211,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1003,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 3,
-	},
-	[212] = 
-	{
-		id = 212,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1004,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 4,
-	},
-	[213] = 
-	{
-		id = 213,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1005,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 5,
-	},
-	[214] = 
-	{
-		id = 214,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1006,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 6,
-	},
-	[215] = 
-	{
-		id = 215,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1007,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 7,
-	},
-	[216] = 
-	{
-		id = 216,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1008,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 8,
-	},
-	[217] = 
-	{
-		id = 217,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1009,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 9,
-	},
-	[218] = 
-	{
-		id = 218,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1010,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 10,
-	},
-	[219] = 
-	{
-		id = 219,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1011,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 11,
-	},
-	[220] = 
-	{
-		id = 220,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1012,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 12,
-	},
-	[221] = 
-	{
-		id = 221,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1013,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 13,
-	},
-	[222] = 
-	{
-		id = 222,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1014,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 14,
-	},
-	[223] = 
-	{
-		id = 223,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1015,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 15,
-	},
-	[224] = 
-	{
-		id = 224,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=1016,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 16,
-	},
-	[225] = 
-	{
-		id = 225,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2001,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 17,
-	},
-	[226] = 
-	{
-		id = 226,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2002,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 18,
-	},
-	[227] = 
-	{
-		id = 227,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2003,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 19,
-	},
-	[228] = 
-	{
-		id = 228,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2004,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 20,
-	},
-	[229] = 
-	{
-		id = 229,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2005,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 21,
-	},
-	[230] = 
-	{
-		id = 230,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2006,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 22,
-	},
-	[231] = 
-	{
-		id = 231,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2007,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 23,
-	},
-	[232] = 
-	{
-		id = 232,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2008,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 24,
-	},
-	[233] = 
-	{
-		id = 233,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2009,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 25,
-	},
-	[234] = 
-	{
-		id = 234,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2010,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 26,
-	},
-	[235] = 
-	{
-		id = 235,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2011,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 27,
-	},
-	[236] = 
-	{
-		id = 236,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2012,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 28,
-	},
-	[237] = 
-	{
-		id = 237,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2013,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 29,
-	},
-	[238] = 
-	{
-		id = 238,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2014,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 30,
-	},
-	[239] = 
-	{
-		id = 239,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2015,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 31,
-	},
-	[240] = 
-	{
-		id = 240,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2016,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 32,
-	},
-	[241] = 
-	{
-		id = 241,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2017,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 33,
-	},
-	[242] = 
-	{
-		id = 242,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2018,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 34,
-	},
-	[243] = 
-	{
-		id = 243,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2019,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 35,
-	},
-	[244] = 
-	{
-		id = 244,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2020,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 36,
-	},
-	[245] = 
-	{
-		id = 245,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2021,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 37,
-	},
-	[246] = 
-	{
-		id = 246,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=2022,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 38,
-	},
-	[247] = 
-	{
-		id = 247,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3001,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 39,
-	},
-	[248] = 
-	{
-		id = 248,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3002,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 40,
-	},
-	[249] = 
-	{
-		id = 249,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3003,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 41,
-	},
-	[250] = 
-	{
-		id = 250,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3004,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 42,
-	},
-	[251] = 
-	{
-		id = 251,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3005,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 43,
-	},
-	[252] = 
-	{
-		id = 252,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3006,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 44,
-	},
-	[253] = 
-	{
-		id = 253,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3007,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 45,
-	},
-	[254] = 
-	{
-		id = 254,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3008,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 46,
-	},
-	[255] = 
-	{
-		id = 255,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3009,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 47,
-	},
-	[256] = 
-	{
-		id = 256,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3010,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 48,
-	},
-	[257] = 
-	{
-		id = 257,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3011,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 49,
-	},
-	[258] = 
-	{
-		id = 258,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3012,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 50,
-	},
-	[259] = 
-	{
-		id = 259,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3013,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 51,
-	},
-	[260] = 
-	{
-		id = 260,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3014,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 52,
-	},
-	[261] = 
-	{
-		id = 261,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3015,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 53,
-	},
-	[262] = 
-	{
-		id = 262,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3016,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 54,
-	},
-	[263] = 
-	{
-		id = 263,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3017,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 55,
-	},
-	[264] = 
-	{
-		id = 264,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=3018,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 56,
-	},
-	[265] = 
-	{
-		id = 265,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=11001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 57,
-	},
-	[266] = 
-	{
-		id = 266,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=12001,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 58,
-	},
-	[267] = 
-	{
-		id = 267,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=12002,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 59,
-	},
-	[268] = 
-	{
-		id = 268,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=13001,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 60,
-	},
-	[269] = 
-	{
-		id = 269,
-		kuid = 40001,
-		reward = {
-			[1]="card",
-			[2]=13002,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 61,
-	},
-	[270] = 
-	{
-		id = 270,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 62,
-	},
-	[271] = 
-	{
-		id = 271,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 63,
-	},
-	[272] = 
-	{
-		id = 272,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1003,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 64,
-	},
-	[273] = 
-	{
-		id = 273,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1004,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 65,
-	},
-	[274] = 
-	{
-		id = 274,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1005,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 66,
-	},
-	[275] = 
-	{
-		id = 275,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1006,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 67,
-	},
-	[276] = 
-	{
-		id = 276,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1007,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 68,
-	},
-	[277] = 
-	{
-		id = 277,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1008,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 69,
-	},
-	[278] = 
-	{
-		id = 278,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1009,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 70,
-	},
-	[279] = 
-	{
-		id = 279,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1010,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 71,
-	},
-	[280] = 
-	{
-		id = 280,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1011,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 72,
-	},
-	[281] = 
-	{
-		id = 281,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1012,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 73,
-	},
-	[282] = 
-	{
-		id = 282,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1013,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 74,
-	},
-	[283] = 
-	{
-		id = 283,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1014,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 75,
-	},
-	[284] = 
-	{
-		id = 284,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1015,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 76,
-	},
-	[285] = 
-	{
-		id = 285,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=1016,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 77,
-	},
-	[286] = 
-	{
-		id = 286,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2001,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 78,
-	},
-	[287] = 
-	{
-		id = 287,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2002,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 79,
-	},
-	[288] = 
-	{
-		id = 288,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2003,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 80,
-	},
-	[289] = 
-	{
-		id = 289,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2004,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 81,
-	},
-	[290] = 
-	{
-		id = 290,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2005,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 82,
-	},
-	[291] = 
-	{
-		id = 291,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2006,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 83,
-	},
-	[292] = 
-	{
-		id = 292,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2007,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 84,
-	},
-	[293] = 
-	{
-		id = 293,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2008,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 85,
-	},
-	[294] = 
-	{
-		id = 294,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2009,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 86,
-	},
-	[295] = 
-	{
-		id = 295,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2010,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 87,
-	},
-	[296] = 
-	{
-		id = 296,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2011,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 88,
-	},
-	[297] = 
-	{
-		id = 297,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2012,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 89,
-	},
-	[298] = 
-	{
-		id = 298,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2013,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 90,
-	},
-	[299] = 
-	{
-		id = 299,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2014,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 91,
-	},
-	[300] = 
-	{
-		id = 300,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2015,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 92,
-	},
-	[301] = 
-	{
-		id = 301,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2016,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 93,
-	},
-	[302] = 
-	{
-		id = 302,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2017,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 94,
-	},
-	[303] = 
-	{
-		id = 303,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2018,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 95,
-	},
-	[304] = 
-	{
-		id = 304,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2019,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 96,
-	},
-	[305] = 
-	{
-		id = 305,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2020,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 97,
-	},
-	[306] = 
-	{
-		id = 306,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2021,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 98,
-	},
-	[307] = 
-	{
-		id = 307,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=2022,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 99,
-	},
-	[308] = 
-	{
-		id = 308,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3001,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 100,
-	},
-	[309] = 
-	{
-		id = 309,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3002,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 101,
-	},
-	[310] = 
-	{
-		id = 310,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3003,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 102,
-	},
-	[311] = 
-	{
-		id = 311,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3004,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 103,
-	},
-	[312] = 
-	{
-		id = 312,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3005,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 104,
-	},
-	[313] = 
-	{
-		id = 313,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3006,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 105,
-	},
-	[314] = 
-	{
-		id = 314,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3007,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 106,
-	},
-	[315] = 
-	{
-		id = 315,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3008,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 107,
-	},
-	[316] = 
-	{
-		id = 316,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3009,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 108,
-	},
-	[317] = 
-	{
-		id = 317,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3010,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 109,
-	},
-	[318] = 
-	{
-		id = 318,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3011,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 110,
-	},
-	[319] = 
-	{
-		id = 319,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3012,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 111,
-	},
-	[320] = 
-	{
-		id = 320,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3013,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 112,
-	},
-	[321] = 
-	{
-		id = 321,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3014,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 113,
-	},
-	[322] = 
-	{
-		id = 322,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3015,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 114,
-	},
-	[323] = 
-	{
-		id = 323,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3016,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 115,
-	},
-	[324] = 
-	{
-		id = 324,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3017,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 116,
-	},
-	[325] = 
-	{
-		id = 325,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=3018,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 117,
-	},
-	[326] = 
-	{
-		id = 326,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4001,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 118,
-	},
-	[327] = 
-	{
-		id = 327,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4002,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 119,
-	},
-	[328] = 
-	{
-		id = 328,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4003,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 120,
-	},
-	[329] = 
-	{
-		id = 329,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4004,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 121,
-	},
-	[330] = 
-	{
-		id = 330,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4005,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 122,
-	},
-	[331] = 
-	{
-		id = 331,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4006,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 123,
-	},
-	[332] = 
-	{
-		id = 332,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4007,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 124,
-	},
-	[333] = 
-	{
-		id = 333,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4008,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 125,
-	},
-	[334] = 
-	{
-		id = 334,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4009,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 126,
-	},
-	[335] = 
-	{
-		id = 335,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4010,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 127,
-	},
-	[336] = 
-	{
-		id = 336,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4011,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 128,
-	},
-	[337] = 
-	{
-		id = 337,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4012,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 129,
-	},
-	[338] = 
-	{
-		id = 338,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4013,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 130,
-	},
-	[339] = 
-	{
-		id = 339,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=4014,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 131,
-	},
-	[340] = 
-	{
-		id = 340,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=11001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 132,
-	},
-	[341] = 
-	{
-		id = 341,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=12001,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 133,
-	},
-	[342] = 
-	{
-		id = 342,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=12002,
-			[3]=1,
-		},
-		pro = 65,
-		unlock_condition = 101,
-		serial = 134,
-	},
-	[343] = 
-	{
-		id = 343,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=13001,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 135,
-	},
-	[344] = 
-	{
-		id = 344,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=13002,
-			[3]=1,
-		},
-		pro = 20,
-		unlock_condition = 101,
-		serial = 136,
-	},
-	[345] = 
-	{
-		id = 345,
-		kuid = 40002,
-		reward = {
-			[1]="card",
-			[2]=14001,
-			[3]=1,
-		},
-		pro = 5,
-		unlock_condition = 101,
-		serial = 137,
-	},
-	[346] = 
-	{
-		id = 346,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 138,
-	},
-	[347] = 
-	{
-		id = 347,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4002,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 139,
-	},
-	[348] = 
-	{
-		id = 348,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4003,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 140,
-	},
-	[349] = 
-	{
-		id = 349,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4004,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 141,
-	},
-	[350] = 
-	{
-		id = 350,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4005,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 142,
-	},
-	[351] = 
-	{
-		id = 351,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4006,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 143,
-	},
-	[352] = 
-	{
-		id = 352,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4007,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 144,
-	},
-	[353] = 
-	{
-		id = 353,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4008,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 145,
-	},
-	[354] = 
-	{
-		id = 354,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4009,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 146,
-	},
-	[355] = 
-	{
-		id = 355,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4010,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 147,
-	},
-	[356] = 
-	{
-		id = 356,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4011,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 148,
-	},
-	[357] = 
-	{
-		id = 357,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4012,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 149,
-	},
-	[358] = 
-	{
-		id = 358,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4013,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 150,
-	},
-	[359] = 
-	{
-		id = 359,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=4014,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 151,
-	},
-	[360] = 
-	{
-		id = 360,
-		kuid = 40003,
-		reward = {
-			[1]="card",
-			[2]=14001,
-			[3]=1,
-		},
-		pro = 100,
-		unlock_condition = 101,
-		serial = 152,
-	},
+
+do
+local function New(a0,a1,a4,a5,a6,a7)
+	return {id=a0,kuid=a1,reward=a4,pro=a5,unlock_condition=a6,serial=a7,}
+end
+LuaConfig["RandomCardsConfig"] = {
+[1] = New(1,10001,{"card",1001,1,},100,101,76),
+[2] = New(2,10001,{"card",1002,1,},100,101,75),
+[3] = New(3,10001,{"card",1003,1,},100,101,74),
+[4] = New(4,10001,{"card",1004,1,},100,101,73),
+[5] = New(5,10001,{"card",1005,1,},100,101,72),
+[6] = New(6,10001,{"card",1006,1,},100,101,71),
+[7] = New(7,10001,{"card",1007,1,},100,101,70),
+[8] = New(8,10001,{"card",1008,1,},100,101,69),
+[9] = New(9,10001,{"card",1009,1,},100,101,68),
+[10] = New(10,10001,{"card",1010,1,},100,101,67),
+[11] = New(11,10001,{"card",1011,1,},100,101,66),
+[12] = New(12,10001,{"card",1012,1,},100,101,65),
+[13] = New(13,10001,{"card",1013,1,},100,101,64),
+[14] = New(14,10001,{"card",1014,1,},100,101,63),
+[15] = New(15,10001,{"card",1015,1,},100,101,62),
+[16] = New(16,10001,{"card",1016,1,},100,101,61),
+[17] = New(17,10001,{"card",1017,1,},100,101,59),
+[18] = New(18,10001,{"card",1018,1,},100,101,58),
+[19] = New(19,10001,{"card",1019,1,},100,101,57),
+[20] = New(20,10001,{"card",1020,1,},100,101,56),
+[21] = New(21,10001,{"card",1021,1,},100,101,55),
+[22] = New(22,10001,{"card",1022,1,},100,101,54),
+[23] = New(23,10001,{"card",1023,1,},100,101,53),
+[24] = New(24,10001,{"card",1024,1,},100,101,52),
+[25] = New(25,10001,{"card",1025,1,},100,101,51),
+[26] = New(26,10001,{"card",1026,1,},100,101,50),
+[27] = New(27,10001,{"card",1027,1,},100,101,49),
+[28] = New(28,10001,{"card",1028,1,},100,101,48),
+[29] = New(29,10001,{"card",1029,1,},100,101,47),
+[30] = New(30,10001,{"card",1030,1,},100,101,46),
+[31] = New(31,11001,{"card",2001,1,},100,101,45),
+[32] = New(32,11001,{"card",2002,1,},100,101,44),
+[33] = New(33,11001,{"card",2003,1,},100,101,43),
+[34] = New(34,11001,{"card",2004,1,},100,101,42),
+[35] = New(35,11001,{"card",2005,1,},100,101,41),
+[36] = New(36,11001,{"card",2006,1,},100,101,40),
+[37] = New(37,11001,{"card",2007,1,},100,101,39),
+[38] = New(38,11001,{"card",2008,1,},100,101,38),
+[39] = New(39,11001,{"card",2009,1,},100,101,35),
+[40] = New(40,11001,{"card",2010,1,},100,101,34),
+[41] = New(41,11001,{"card",2011,1,},100,101,33),
+[42] = New(42,11001,{"card",2012,1,},100,101,32),
+[43] = New(43,11001,{"card",2013,1,},100,101,31),
+[44] = New(44,11001,{"card",2014,1,},100,101,30),
+[45] = New(45,11001,{"card",2015,1,},100,101,29),
+[46] = New(46,11001,{"card",2016,1,},100,101,28),
+[47] = New(47,11001,{"card",2017,1,},100,101,27),
+[48] = New(48,11001,{"card",2018,1,},100,101,26),
+[49] = New(49,11001,{"card",2019,1,},100,101,25),
+[50] = New(50,11001,{"card",2020,1,},100,101,24),
+[51] = New(51,12001,{"card",3001,1,},100,101,23),
+[52] = New(52,12001,{"card",3002,1,},100,101,22),
+[53] = New(53,12001,{"card",3003,1,},100,101,21),
+[54] = New(54,12001,{"card",3004,1,},100,101,20),
+[55] = New(55,12001,{"card",3005,1,},100,101,19),
+[56] = New(56,12001,{"card",3006,1,},100,101,18),
+[57] = New(57,12001,{"card",3007,1,},100,101,15),
+[58] = New(58,12001,{"card",3008,1,},100,101,14),
+[59] = New(59,12001,{"card",3009,1,},100,101,13),
+[60] = New(60,12001,{"card",3010,1,},100,101,12),
+[61] = New(61,12001,{"card",3011,1,},100,101,11),
+[62] = New(62,12001,{"card",3012,1,},100,101,10),
+[63] = New(63,12001,{"card",3013,1,},100,101,9),
+[64] = New(64,12001,{"card",3014,1,},100,101,8),
+[65] = New(65,12001,{"card",3015,1,},100,101,7),
+[66] = New(66,13001,{"card",4001,1,},100,101,6),
+[67] = New(67,13001,{"card",4002,1,},100,101,5),
+[68] = New(68,13001,{"card",4003,1,},100,101,4),
+[69] = New(69,13001,{"card",4004,1,},100,101,3),
+[70] = New(70,13001,{"card",4005,1,},100,101,2),
+[71] = New(71,10001,{"card",11001,1,},100,101,60),
+[72] = New(72,11001,{"card",12001,1,},100,101,37),
+[73] = New(73,11001,{"card",12002,1,},100,101,36),
+[74] = New(74,12001,{"card",13001,1,},100,101,17),
+[75] = New(75,12001,{"card",13002,1,},100,101,16),
+[76] = New(76,13001,{"card",14001,1,},100,101,1),
+[77] = New(77,20001,{"card",1001,1,},3632,101,76),
+[78] = New(78,20001,{"card",1001,2,},3632,101,76),
+[79] = New(79,20001,{"card",1001,3,},3632,101,76),
+[80] = New(80,20001,{"card",1001,3,},3632,101,76),
+[81] = New(81,20001,{"card",1002,1,},3632,101,75),
+[82] = New(82,20001,{"card",1002,2,},3632,101,75),
+[83] = New(83,20001,{"card",1002,3,},3632,101,75),
+[84] = New(84,20001,{"card",1002,3,},3632,101,75),
+[85] = New(85,20001,{"card",1003,1,},3632,101,74),
+[86] = New(86,20001,{"card",1003,2,},3632,101,74),
+[87] = New(87,20001,{"card",1003,3,},3632,101,74),
+[88] = New(88,20001,{"card",1003,3,},3632,101,74),
+[89] = New(89,20001,{"card",1004,1,},3632,101,73),
+[90] = New(90,20001,{"card",1004,2,},3632,101,73),
+[91] = New(91,20001,{"card",1004,3,},3632,101,73),
+[92] = New(92,20001,{"card",1004,3,},3632,101,73),
+[93] = New(93,20001,{"card",1005,1,},3632,101,72),
+[94] = New(94,20001,{"card",1005,2,},3632,101,72),
+[95] = New(95,20001,{"card",1005,3,},3632,101,72),
+[96] = New(96,20001,{"card",1005,3,},3632,101,72),
+[97] = New(97,20001,{"card",1006,1,},3632,101,71),
+[98] = New(98,20001,{"card",1006,2,},3632,101,71),
+[99] = New(99,20001,{"card",1006,3,},3632,101,71),
+[100] = New(100,20001,{"card",1006,3,},3632,101,71),
+[101] = New(101,20001,{"card",1007,1,},3632,101,70),
+[102] = New(102,20001,{"card",1007,2,},3632,101,70),
+[103] = New(103,20001,{"card",1007,3,},3632,101,70),
+[104] = New(104,20001,{"card",1007,3,},3632,101,70),
+[105] = New(105,20001,{"card",1008,1,},3632,101,69),
+[106] = New(106,20001,{"card",1008,2,},3632,101,69),
+[107] = New(107,20001,{"card",1008,3,},3632,101,69),
+[108] = New(108,20001,{"card",1008,3,},3632,101,69),
+[109] = New(109,20001,{"card",1009,1,},3632,101,68),
+[110] = New(110,20001,{"card",1009,2,},3632,101,68),
+[111] = New(111,20001,{"card",1009,3,},3632,101,68),
+[112] = New(112,20001,{"card",1009,3,},3632,101,68),
+[113] = New(113,20001,{"card",1010,1,},3632,101,67),
+[114] = New(114,20001,{"card",1010,2,},3632,101,67),
+[115] = New(115,20001,{"card",1010,3,},3632,101,67),
+[116] = New(116,20001,{"card",1010,3,},3632,101,67),
+[117] = New(117,20001,{"card",1011,1,},3632,101,66),
+[118] = New(118,20001,{"card",1011,2,},3632,101,66),
+[119] = New(119,20001,{"card",1011,3,},3632,101,66),
+[120] = New(120,20001,{"card",1011,3,},3632,101,66),
+[121] = New(121,20001,{"card",1012,1,},3632,101,65),
+[122] = New(122,20001,{"card",1012,2,},3632,101,65),
+[123] = New(123,20001,{"card",1012,3,},3632,101,65),
+[124] = New(124,20001,{"card",1012,3,},3632,101,65),
+[125] = New(125,20001,{"card",1013,1,},3632,101,64),
+[126] = New(126,20001,{"card",1013,2,},3632,101,64),
+[127] = New(127,20001,{"card",1013,3,},3632,101,64),
+[128] = New(128,20001,{"card",1013,3,},3632,101,64),
+[129] = New(129,20001,{"card",1014,1,},3632,101,63),
+[130] = New(130,20001,{"card",1014,2,},3632,101,63),
+[131] = New(131,20001,{"card",1014,3,},3632,101,63),
+[132] = New(132,20001,{"card",1014,3,},3632,101,63),
+[133] = New(133,20001,{"card",1015,1,},3632,101,62),
+[134] = New(134,20001,{"card",1015,2,},3632,101,62),
+[135] = New(135,20001,{"card",1015,3,},3632,101,62),
+[136] = New(136,20001,{"card",1015,3,},3632,101,62),
+[137] = New(137,20001,{"card",1016,1,},3632,101,61),
+[138] = New(138,20001,{"card",1016,2,},3632,101,61),
+[139] = New(139,20001,{"card",1016,3,},3632,101,61),
+[140] = New(140,20001,{"card",1016,3,},3632,101,61),
+[141] = New(141,20001,{"card",1017,1,},3632,101,59),
+[142] = New(142,20001,{"card",1017,2,},3632,101,59),
+[143] = New(143,20001,{"card",1017,3,},3632,101,59),
+[144] = New(144,20001,{"card",1017,3,},3632,101,59),
+[145] = New(145,20001,{"card",1018,1,},3632,101,58),
+[146] = New(146,20001,{"card",1018,2,},3632,101,58),
+[147] = New(147,20001,{"card",1018,3,},3632,101,58),
+[148] = New(148,20001,{"card",1018,3,},3632,101,58),
+[149] = New(149,20001,{"card",1019,1,},3632,101,57),
+[150] = New(150,20001,{"card",1019,2,},3632,101,57),
+[151] = New(151,20001,{"card",1019,3,},3632,101,57),
+[152] = New(152,20001,{"card",1019,3,},3632,101,57),
+[153] = New(153,20001,{"card",1020,1,},3632,101,56),
+[154] = New(154,20001,{"card",1020,2,},3632,101,56),
+[155] = New(155,20001,{"card",1020,3,},3632,101,56),
+[156] = New(156,20001,{"card",1020,3,},3632,101,56),
+[157] = New(157,20001,{"card",1021,1,},3632,101,55),
+[158] = New(158,20001,{"card",1021,2,},3632,101,55),
+[159] = New(159,20001,{"card",1021,3,},3632,101,55),
+[160] = New(160,20001,{"card",1021,3,},3632,101,55),
+[161] = New(161,20001,{"card",1022,1,},3632,101,54),
+[162] = New(162,20001,{"card",1022,2,},3632,101,54),
+[163] = New(163,20001,{"card",1022,3,},3632,101,54),
+[164] = New(164,20001,{"card",1022,3,},3632,101,54),
+[165] = New(165,20001,{"card",1023,1,},3632,101,53),
+[166] = New(166,20001,{"card",1023,2,},3632,101,53),
+[167] = New(167,20001,{"card",1023,3,},3632,101,53),
+[168] = New(168,20001,{"card",1023,3,},3632,101,53),
+[169] = New(169,20001,{"card",1024,1,},3632,101,52),
+[170] = New(170,20001,{"card",1024,2,},3632,101,52),
+[171] = New(171,20001,{"card",1024,3,},3632,101,52),
+[172] = New(172,20001,{"card",1024,3,},3632,101,52),
+[173] = New(173,20001,{"card",1025,1,},3632,101,51),
+[174] = New(174,20001,{"card",1025,2,},3632,101,51),
+[175] = New(175,20001,{"card",1025,3,},3632,101,51),
+[176] = New(176,20001,{"card",1025,3,},3632,101,51),
+[177] = New(177,20001,{"card",1026,1,},3632,101,50),
+[178] = New(178,20001,{"card",1026,2,},3632,101,50),
+[179] = New(179,20001,{"card",1026,3,},3632,101,50),
+[180] = New(180,20001,{"card",1026,3,},3632,101,50),
+[181] = New(181,20001,{"card",1027,1,},3632,101,49),
+[182] = New(182,20001,{"card",1027,2,},3632,101,49),
+[183] = New(183,20001,{"card",1027,3,},3632,101,49),
+[184] = New(184,20001,{"card",1027,3,},3632,101,49),
+[185] = New(185,20001,{"card",1028,1,},3632,101,48),
+[186] = New(186,20001,{"card",1028,2,},3632,101,48),
+[187] = New(187,20001,{"card",1028,3,},3632,101,48),
+[188] = New(188,20001,{"card",1028,3,},3632,101,48),
+[189] = New(189,20001,{"card",1029,1,},3632,101,47),
+[190] = New(190,20001,{"card",1029,2,},3632,101,47),
+[191] = New(191,20001,{"card",1029,3,},3632,101,47),
+[192] = New(192,20001,{"card",1029,3,},3632,101,47),
+[193] = New(193,20001,{"card",1030,1,},3632,101,46),
+[194] = New(194,20001,{"card",1030,2,},3632,101,46),
+[195] = New(195,20001,{"card",1030,3,},3632,101,46),
+[196] = New(196,20001,{"card",1030,3,},3632,101,46),
+[197] = New(197,20001,{"currency","cash",5000,},45000,101,77),
+[198] = New(198,20001,{"currency","shop_card",10,},45000,101,78),
+[199] = New(199,20001,{"item",2001,1,},45000,101,79),
+[200] = New(200,20001,{"currency","Hamburger",1,},33000,101,80),
+[201] = New(201,20001,{"currency","cash",10000,},33000,101,81),
+[202] = New(202,20001,{"item",4001,5,},11000,101,82),
+[203] = New(203,20001,{"currency","cash",20000,},11000,101,83),
+[204] = New(204,21001,{"card",2001,1,},100,101,59),
+[205] = New(205,21001,{"card",2001,2,},100,101,59),
+[206] = New(206,21001,{"card",2001,2,},100,101,59),
+[207] = New(207,21001,{"card",2001,3,},100,101,59),
+[208] = New(208,21001,{"card",2002,1,},100,101,58),
+[209] = New(209,21001,{"card",2002,2,},100,101,58),
+[210] = New(210,21001,{"card",2002,2,},100,101,58),
+[211] = New(211,21001,{"card",2002,3,},100,101,58),
+[212] = New(212,21001,{"card",2003,1,},100,101,57),
+[213] = New(213,21001,{"card",2003,2,},100,101,57),
+[214] = New(214,21001,{"card",2003,2,},100,101,57),
+[215] = New(215,21001,{"card",2003,3,},100,101,57),
+[216] = New(216,21001,{"card",2004,1,},100,101,56),
+[217] = New(217,21001,{"card",2004,2,},100,101,56),
+[218] = New(218,21001,{"card",2004,2,},100,101,56),
+[219] = New(219,21001,{"card",2004,3,},100,101,56),
+[220] = New(220,21001,{"card",2005,1,},100,101,55),
+[221] = New(221,21001,{"card",2005,2,},100,101,55),
+[222] = New(222,21001,{"card",2005,2,},100,101,55),
+[223] = New(223,21001,{"card",2005,3,},100,101,55),
+[224] = New(224,21001,{"card",2006,1,},100,101,54),
+[225] = New(225,21001,{"card",2006,2,},100,101,54),
+[226] = New(226,21001,{"card",2006,2,},100,101,54),
+[227] = New(227,21001,{"card",2006,3,},100,101,54),
+[228] = New(228,21001,{"card",2007,1,},100,101,53),
+[229] = New(229,21001,{"card",2007,2,},100,101,53),
+[230] = New(230,21001,{"card",2007,2,},100,101,53),
+[231] = New(231,21001,{"card",2007,3,},100,101,53),
+[232] = New(232,21001,{"card",2008,1,},100,101,52),
+[233] = New(233,21001,{"card",2008,2,},100,101,52),
+[234] = New(234,21001,{"card",2008,2,},100,101,52),
+[235] = New(235,21001,{"card",2008,3,},100,101,52),
+[236] = New(236,21001,{"card",2009,1,},100,101,51),
+[237] = New(237,21001,{"card",2009,2,},100,101,51),
+[238] = New(238,21001,{"card",2009,2,},100,101,51),
+[239] = New(239,21001,{"card",2009,3,},100,101,51),
+[240] = New(240,21001,{"card",2010,1,},100,101,50),
+[241] = New(241,21001,{"card",2010,2,},100,101,50),
+[242] = New(242,21001,{"card",2010,2,},100,101,50),
+[243] = New(243,21001,{"card",2010,3,},100,101,50),
+[244] = New(244,21001,{"card",2011,1,},100,101,49),
+[245] = New(245,21001,{"card",2011,2,},100,101,49),
+[246] = New(246,21001,{"card",2011,2,},100,101,49),
+[247] = New(247,21001,{"card",2011,3,},100,101,49),
+[248] = New(248,21001,{"card",2012,1,},100,101,48),
+[249] = New(249,21001,{"card",2012,2,},100,101,48),
+[250] = New(250,21001,{"card",2012,2,},100,101,48),
+[251] = New(251,21001,{"card",2012,3,},100,101,48),
+[252] = New(252,21001,{"card",2013,1,},100,101,47),
+[253] = New(253,21001,{"card",2013,2,},100,101,47),
+[254] = New(254,21001,{"card",2013,2,},100,101,47),
+[255] = New(255,21001,{"card",2013,3,},100,101,47),
+[256] = New(256,21001,{"card",2014,1,},100,101,46),
+[257] = New(257,21001,{"card",2014,2,},100,101,46),
+[258] = New(258,21001,{"card",2014,2,},100,101,46),
+[259] = New(259,21001,{"card",2014,3,},100,101,46),
+[260] = New(260,21001,{"card",2015,1,},100,101,45),
+[261] = New(261,21001,{"card",2015,2,},100,101,45),
+[262] = New(262,21001,{"card",2015,2,},100,101,45),
+[263] = New(263,21001,{"card",2015,3,},100,101,45),
+[264] = New(264,21001,{"card",2016,1,},100,101,44),
+[265] = New(265,21001,{"card",2016,2,},100,101,44),
+[266] = New(266,21001,{"card",2016,2,},100,101,44),
+[267] = New(267,21001,{"card",2016,3,},100,101,44),
+[268] = New(268,21001,{"card",2017,1,},100,101,43),
+[269] = New(269,21001,{"card",2017,2,},100,101,43),
+[270] = New(270,21001,{"card",2017,2,},100,101,43),
+[271] = New(271,21001,{"card",2017,3,},100,101,43),
+[272] = New(272,21001,{"card",2018,1,},100,101,42),
+[273] = New(273,21001,{"card",2018,2,},100,101,42),
+[274] = New(274,21001,{"card",2018,2,},100,101,42),
+[275] = New(275,21001,{"card",2018,3,},100,101,42),
+[276] = New(276,21001,{"card",2019,1,},100,101,41),
+[277] = New(277,21001,{"card",2019,2,},100,101,41),
+[278] = New(278,21001,{"card",2019,2,},100,101,41),
+[279] = New(279,21001,{"card",2019,3,},100,101,41),
+[280] = New(280,21001,{"card",2020,1,},100,101,40),
+[281] = New(281,21001,{"card",2020,2,},100,101,40),
+[282] = New(282,21001,{"card",2020,2,},100,101,40),
+[283] = New(283,21001,{"card",2020,3,},100,101,40),
+[284] = New(284,22001,{"card",3001,1,},100,101,35),
+[285] = New(285,22001,{"card",3001,1,},100,101,35),
+[286] = New(286,22001,{"card",3001,2,},100,101,35),
+[287] = New(287,22001,{"card",3001,2,},100,101,35),
+[288] = New(288,22001,{"card",3002,1,},100,101,34),
+[289] = New(289,22001,{"card",3002,1,},100,101,34),
+[290] = New(290,22001,{"card",3002,2,},100,101,34),
+[291] = New(291,22001,{"card",3002,2,},100,101,34),
+[292] = New(292,22001,{"card",3003,1,},100,101,33),
+[293] = New(293,22001,{"card",3003,1,},100,101,33),
+[294] = New(294,22001,{"card",3003,2,},100,101,33),
+[295] = New(295,22001,{"card",3003,2,},100,101,33),
+[296] = New(296,22001,{"card",3004,1,},100,101,32),
+[297] = New(297,22001,{"card",3004,1,},100,101,32),
+[298] = New(298,22001,{"card",3004,2,},100,101,32),
+[299] = New(299,22001,{"card",3004,2,},100,101,32),
+[300] = New(300,22001,{"card",3005,1,},100,101,31),
+[301] = New(301,22001,{"card",3005,1,},100,101,31),
+[302] = New(302,22001,{"card",3005,2,},100,101,31),
+[303] = New(303,22001,{"card",3005,2,},100,101,31),
+[304] = New(304,22001,{"card",3006,1,},100,101,30),
+[305] = New(305,22001,{"card",3006,1,},100,101,30),
+[306] = New(306,22001,{"card",3006,2,},100,101,30),
+[307] = New(307,22001,{"card",3006,2,},100,101,30),
+[308] = New(308,22001,{"card",3007,1,},100,101,29),
+[309] = New(309,22001,{"card",3007,1,},100,101,29),
+[310] = New(310,22001,{"card",3007,2,},100,101,29),
+[311] = New(311,22001,{"card",3007,2,},100,101,29),
+[312] = New(312,22001,{"card",3008,1,},100,101,28),
+[313] = New(313,22001,{"card",3008,1,},100,101,28),
+[314] = New(314,22001,{"card",3008,2,},100,101,28),
+[315] = New(315,22001,{"card",3008,2,},100,101,28),
+[316] = New(316,22001,{"card",3009,1,},100,101,27),
+[317] = New(317,22001,{"card",3009,1,},100,101,27),
+[318] = New(318,22001,{"card",3009,2,},100,101,27),
+[319] = New(319,22001,{"card",3009,2,},100,101,27),
+[320] = New(320,22001,{"card",3010,1,},100,101,26),
+[321] = New(321,22001,{"card",3010,1,},100,101,26),
+[322] = New(322,22001,{"card",3010,2,},100,101,26),
+[323] = New(323,22001,{"card",3010,2,},100,101,26),
+[324] = New(324,22001,{"card",3011,1,},100,101,25),
+[325] = New(325,22001,{"card",3011,1,},100,101,25),
+[326] = New(326,22001,{"card",3011,2,},100,101,25),
+[327] = New(327,22001,{"card",3011,2,},100,101,25),
+[328] = New(328,22001,{"card",3012,1,},100,101,24),
+[329] = New(329,22001,{"card",3012,1,},100,101,24),
+[330] = New(330,22001,{"card",3012,2,},100,101,24),
+[331] = New(331,22001,{"card",3012,2,},100,101,24),
+[332] = New(332,22001,{"card",3013,1,},100,101,23),
+[333] = New(333,22001,{"card",3013,1,},100,101,23),
+[334] = New(334,22001,{"card",3013,2,},100,101,23),
+[335] = New(335,22001,{"card",3013,2,},100,101,23),
+[336] = New(336,22001,{"card",3014,1,},100,101,22),
+[337] = New(337,22001,{"card",3014,1,},100,101,22),
+[338] = New(338,22001,{"card",3014,2,},100,101,22),
+[339] = New(339,22001,{"card",3014,2,},100,101,22),
+[340] = New(340,22001,{"card",3015,1,},100,101,21),
+[341] = New(341,22001,{"card",3015,1,},100,101,21),
+[342] = New(342,22001,{"card",3015,2,},100,101,21),
+[343] = New(343,22001,{"card",3015,2,},100,101,21),
+[344] = New(344,23001,{"card",4001,1,},100,101,15),
+[345] = New(345,23001,{"card",4001,1,},100,101,15),
+[346] = New(346,23001,{"card",4001,1,},100,101,15),
+[347] = New(347,23001,{"card",4001,2,},100,101,15),
+[348] = New(348,23001,{"card",4002,1,},100,101,14),
+[349] = New(349,23001,{"card",4002,1,},100,101,14),
+[350] = New(350,23001,{"card",4002,1,},100,101,14),
+[351] = New(351,23001,{"card",4002,2,},100,101,14),
+[352] = New(352,23001,{"card",4003,1,},100,101,13),
+[353] = New(353,23001,{"card",4003,1,},100,101,13),
+[354] = New(354,23001,{"card",4003,1,},100,101,13),
+[355] = New(355,23001,{"card",4003,2,},100,101,13),
+[356] = New(356,23001,{"card",4004,1,},100,101,12),
+[357] = New(357,23001,{"card",4004,1,},100,101,12),
+[358] = New(358,23001,{"card",4004,1,},100,101,12),
+[359] = New(359,23001,{"card",4004,2,},100,101,12),
+[360] = New(360,23001,{"card",4005,1,},100,101,11),
+[361] = New(361,23001,{"card",4005,1,},100,101,11),
+[362] = New(362,23001,{"card",4005,1,},100,101,11),
+[363] = New(363,23001,{"card",4005,2,},100,101,11),
+[364] = New(364,20001,{"card",11001,1,},3632,101,60),
+[365] = New(365,20001,{"card",11001,2,},3632,101,60),
+[366] = New(366,20001,{"card",11001,3,},3632,101,60),
+[367] = New(367,20001,{"card",11001,3,},3632,101,60),
+[368] = New(368,21001,{"card",12001,1,},100,101,37),
+[369] = New(369,21001,{"card",12001,2,},100,101,37),
+[370] = New(370,21001,{"card",12001,2,},100,101,37),
+[371] = New(371,21001,{"card",12001,3,},100,101,37),
+[372] = New(372,21001,{"card",12002,1,},100,101,36),
+[373] = New(373,21001,{"card",12002,2,},100,101,36),
+[374] = New(374,21001,{"card",12002,2,},100,101,36),
+[375] = New(375,21001,{"card",12002,3,},100,101,36),
+[376] = New(376,22001,{"card",13001,1,},100,101,17),
+[377] = New(377,22001,{"card",13001,1,},100,101,17),
+[378] = New(378,22001,{"card",13001,2,},100,101,17),
+[379] = New(379,22001,{"card",13001,2,},100,101,17),
+[380] = New(380,22001,{"card",13002,1,},100,101,16),
+[381] = New(381,22001,{"card",13002,1,},100,101,16),
+[382] = New(382,22001,{"card",13002,2,},100,101,16),
+[383] = New(383,22001,{"card",13002,2,},100,101,16),
+[384] = New(384,23001,{"card",14001,1,},100,101,1),
+[385] = New(385,23001,{"card",14001,1,},100,101,1),
+[386] = New(386,23001,{"card",14001,1,},100,101,1),
+[387] = New(387,23001,{"card",14001,2,},100,101,1),
+[388] = New(388,30001,{"card",1001,1,},40,101,65),
+[389] = New(389,30001,{"card",1002,1,},40,101,64),
+[390] = New(390,30001,{"card",1003,1,},40,101,63),
+[391] = New(391,30001,{"card",1004,1,},40,101,62),
+[392] = New(392,30001,{"card",1005,1,},40,101,61),
+[393] = New(393,30001,{"card",1006,1,},40,101,60),
+[394] = New(394,30001,{"card",1007,1,},40,101,59),
+[395] = New(395,30001,{"card",1008,1,},40,101,58),
+[396] = New(396,30001,{"card",1009,1,},40,101,57),
+[397] = New(397,30001,{"card",1010,1,},40,101,56),
+[398] = New(398,30001,{"card",1011,1,},40,101,55),
+[399] = New(399,30001,{"card",1012,1,},40,101,54),
+[400] = New(400,30001,{"card",1013,1,},40,101,53),
+[401] = New(401,30001,{"card",1014,1,},40,101,52),
+[402] = New(402,30001,{"card",1015,1,},40,101,51),
+[403] = New(403,30001,{"card",1016,1,},40,101,50),
+[404] = New(404,30001,{"card",1017,1,},40,101,49),
+[405] = New(405,30001,{"card",1018,1,},40,101,48),
+[406] = New(406,30001,{"card",1019,1,},40,101,47),
+[407] = New(407,30001,{"card",1020,1,},40,101,46),
+[408] = New(408,30001,{"card",1021,1,},40,101,45),
+[409] = New(409,30001,{"card",1022,1,},40,101,44),
+[410] = New(410,30001,{"card",1023,1,},40,101,43),
+[411] = New(411,30001,{"card",1024,1,},40,101,42),
+[412] = New(412,30001,{"card",1025,1,},40,101,41),
+[413] = New(413,30001,{"card",1026,1,},40,101,40),
+[414] = New(414,30001,{"card",1027,1,},40,101,39),
+[415] = New(415,30001,{"card",1028,1,},40,101,38),
+[416] = New(416,30001,{"card",1029,1,},40,101,37),
+[417] = New(417,30001,{"card",1030,1,},40,101,36),
+[418] = New(418,30001,{"card",2001,1,},15,101,35),
+[419] = New(419,30001,{"card",2002,1,},15,101,34),
+[420] = New(420,30001,{"card",2003,1,},15,101,33),
+[421] = New(421,30001,{"card",2004,1,},15,101,32),
+[422] = New(422,30001,{"card",2005,1,},15,101,31),
+[423] = New(423,30001,{"card",2006,1,},15,101,30),
+[424] = New(424,30001,{"card",2007,1,},15,101,29),
+[425] = New(425,30001,{"card",2008,1,},15,101,28),
+[426] = New(426,30001,{"card",2009,1,},15,101,27),
+[427] = New(427,30001,{"card",2010,1,},15,101,26),
+[428] = New(428,30001,{"card",2011,1,},15,101,25),
+[429] = New(429,30001,{"card",2012,1,},15,101,24),
+[430] = New(430,30001,{"card",2013,1,},15,101,23),
+[431] = New(431,30001,{"card",2014,1,},15,101,22),
+[432] = New(432,30001,{"card",2015,1,},15,101,21),
+[433] = New(433,30001,{"card",2016,1,},15,101,20),
+[434] = New(434,30001,{"card",2017,1,},15,101,19),
+[435] = New(435,30001,{"card",2018,1,},15,101,18),
+[436] = New(436,30001,{"card",2019,1,},15,101,17),
+[437] = New(437,30001,{"card",2020,1,},15,101,16),
+[438] = New(438,40001,{"card",1001,5,},5610,101,65),
+[439] = New(439,40001,{"card",1002,5,},5610,101,64),
+[440] = New(440,40001,{"card",1003,5,},5610,101,63),
+[441] = New(441,40001,{"card",1004,5,},5610,101,62),
+[442] = New(442,40001,{"card",1005,5,},5610,101,61),
+[443] = New(443,40001,{"card",1006,5,},5610,101,60),
+[444] = New(444,40001,{"card",1007,5,},5610,101,59),
+[445] = New(445,40001,{"card",1008,5,},5610,101,58),
+[446] = New(446,40001,{"card",1009,5,},5610,101,57),
+[447] = New(447,40001,{"card",1010,5,},5610,101,56),
+[448] = New(448,40001,{"card",1011,5,},5610,101,55),
+[449] = New(449,40001,{"card",1012,5,},5610,101,54),
+[450] = New(450,40001,{"card",1013,5,},5610,101,53),
+[451] = New(451,40001,{"card",1014,5,},5610,101,52),
+[452] = New(452,40001,{"card",1015,5,},5610,101,51),
+[453] = New(453,40001,{"card",1016,5,},5610,101,50),
+[454] = New(454,40001,{"card",1017,5,},5610,101,49),
+[455] = New(455,40001,{"card",1018,5,},5610,101,48),
+[456] = New(456,40001,{"card",1019,5,},5610,101,47),
+[457] = New(457,40001,{"card",1020,5,},5610,101,46),
+[458] = New(458,40001,{"card",1021,5,},5610,101,45),
+[459] = New(459,40001,{"card",1022,5,},5610,101,44),
+[460] = New(460,40001,{"card",1023,5,},5610,101,43),
+[461] = New(461,40001,{"card",1024,5,},5610,101,42),
+[462] = New(462,40001,{"card",1025,5,},5610,101,41),
+[463] = New(463,40001,{"card",1026,5,},5610,101,40),
+[464] = New(464,40001,{"card",1027,5,},5610,101,39),
+[465] = New(465,40001,{"card",1028,5,},5610,101,38),
+[466] = New(466,40001,{"card",1029,5,},5610,101,37),
+[467] = New(467,40001,{"card",1030,5,},5610,101,36),
+[468] = New(468,40001,{"card",2001,2,},4743,101,35),
+[469] = New(469,40001,{"card",2002,2,},4743,101,34),
+[470] = New(470,40001,{"card",2003,2,},4743,101,33),
+[471] = New(471,40001,{"card",2004,2,},4743,101,32),
+[472] = New(472,40001,{"card",2005,2,},4743,101,31),
+[473] = New(473,40001,{"card",2006,2,},4743,101,30),
+[474] = New(474,40001,{"card",2007,2,},4743,101,29),
+[475] = New(475,40001,{"card",2008,2,},4743,101,28),
+[476] = New(476,40001,{"card",2009,2,},4743,101,27),
+[477] = New(477,40001,{"card",2010,2,},4743,101,26),
+[478] = New(478,40001,{"card",2011,2,},4743,101,25),
+[479] = New(479,40001,{"card",2012,2,},4743,101,24),
+[480] = New(480,40001,{"card",2013,2,},4743,101,23),
+[481] = New(481,40001,{"card",2014,2,},4743,101,22),
+[482] = New(482,40001,{"card",2015,2,},4743,101,21),
+[483] = New(483,40001,{"card",2016,2,},4743,101,20),
+[484] = New(484,40001,{"card",2017,2,},4743,101,19),
+[485] = New(485,40001,{"card",2018,2,},4743,101,18),
+[486] = New(486,40001,{"card",2019,2,},4743,101,17),
+[487] = New(487,40001,{"card",2020,2,},4743,101,16),
+[488] = New(488,40001,{"card",3001,1,},4092,101,15),
+[489] = New(489,40001,{"card",3002,1,},4092,101,14),
+[490] = New(490,40001,{"card",3003,1,},4092,101,13),
+[491] = New(491,40001,{"card",3004,1,},4092,101,12),
+[492] = New(492,40001,{"card",3005,1,},4092,101,11),
+[493] = New(493,40001,{"card",3006,1,},4092,101,10),
+[494] = New(494,40001,{"card",3007,1,},4092,101,9),
+[495] = New(495,40001,{"card",3008,1,},4092,101,8),
+[496] = New(496,40001,{"card",3009,1,},4092,101,7),
+[497] = New(497,40001,{"card",3010,1,},4092,101,6),
+[498] = New(498,40001,{"card",3011,1,},4092,101,5),
+[499] = New(499,40001,{"card",3012,1,},4092,101,4),
+[500] = New(500,40001,{"card",3013,1,},4092,101,3),
+[501] = New(501,40001,{"card",3014,1,},4092,101,2),
+[502] = New(502,40001,{"card",3015,1,},4092,101,1),
+[503] = New(503,40001,{"card",11001,5,},5610,101,57),
+[504] = New(504,40001,{"card",12001,2,},4743,101,58),
+[505] = New(505,40001,{"card",12002,2,},4743,101,59),
+[506] = New(506,40001,{"card",13001,1,},4092,101,60),
+[507] = New(507,40001,{"card",13002,1,},4092,101,61),
+[508] = New(508,40002,{"card",1001,8,},4488,101,62),
+[509] = New(509,40002,{"card",1002,8,},4488,101,63),
+[510] = New(510,40002,{"card",1003,8,},4488,101,64),
+[511] = New(511,40002,{"card",1004,8,},4488,101,65),
+[512] = New(512,40002,{"card",1005,8,},4488,101,66),
+[513] = New(513,40002,{"card",1006,8,},4488,101,67),
+[514] = New(514,40002,{"card",1007,8,},4488,101,68),
+[515] = New(515,40002,{"card",1008,8,},4488,101,69),
+[516] = New(516,40002,{"card",1009,8,},4488,101,70),
+[517] = New(517,40002,{"card",1010,8,},4488,101,71),
+[518] = New(518,40002,{"card",1011,8,},4488,101,72),
+[519] = New(519,40002,{"card",1012,8,},4488,101,73),
+[520] = New(520,40002,{"card",1013,8,},4488,101,74),
+[521] = New(521,40002,{"card",1014,8,},4488,101,75),
+[522] = New(522,40002,{"card",1015,8,},4488,101,76),
+[523] = New(523,40002,{"card",1016,8,},4488,101,77),
+[524] = New(524,40002,{"card",1017,8,},4488,101,78),
+[525] = New(525,40002,{"card",1018,8,},4488,101,79),
+[526] = New(526,40002,{"card",1019,8,},4488,101,80),
+[527] = New(527,40002,{"card",1020,8,},4488,101,81),
+[528] = New(528,40002,{"card",1021,8,},4488,101,82),
+[529] = New(529,40002,{"card",1022,8,},4488,101,83),
+[530] = New(530,40002,{"card",1023,8,},4488,101,84),
+[531] = New(531,40002,{"card",1024,8,},4488,101,85),
+[532] = New(532,40002,{"card",1025,8,},4488,101,86),
+[533] = New(533,40002,{"card",1026,8,},4488,101,87),
+[534] = New(534,40002,{"card",1027,8,},4488,101,88),
+[535] = New(535,40002,{"card",1028,8,},4488,101,89),
+[536] = New(536,40002,{"card",1029,8,},4488,101,90),
+[537] = New(537,40002,{"card",1030,8,},4488,101,91),
+[538] = New(538,40002,{"card",2001,5,},4743,101,92),
+[539] = New(539,40002,{"card",2002,5,},4743,101,93),
+[540] = New(540,40002,{"card",2003,5,},4743,101,94),
+[541] = New(541,40002,{"card",2004,5,},4743,101,95),
+[542] = New(542,40002,{"card",2005,5,},4743,101,96),
+[543] = New(543,40002,{"card",2006,5,},4743,101,97),
+[544] = New(544,40002,{"card",2007,5,},4743,101,98),
+[545] = New(545,40002,{"card",2008,5,},4743,101,99),
+[546] = New(546,40002,{"card",2009,5,},4743,101,100),
+[547] = New(547,40002,{"card",2010,5,},4743,101,101),
+[548] = New(548,40002,{"card",2011,5,},4743,101,102),
+[549] = New(549,40002,{"card",2012,5,},4743,101,103),
+[550] = New(550,40002,{"card",2013,5,},4743,101,104),
+[551] = New(551,40002,{"card",2014,5,},4743,101,105),
+[552] = New(552,40002,{"card",2015,5,},4743,101,106),
+[553] = New(553,40002,{"card",2016,5,},4743,101,107),
+[554] = New(554,40002,{"card",2017,5,},4743,101,108),
+[555] = New(555,40002,{"card",2018,5,},4743,101,109),
+[556] = New(556,40002,{"card",2019,5,},4743,101,110),
+[557] = New(557,40002,{"card",2020,5,},4743,101,111),
+[558] = New(558,40002,{"card",3001,3,},4092,101,112),
+[559] = New(559,40002,{"card",3002,3,},4092,101,113),
+[560] = New(560,40002,{"card",3003,3,},4092,101,114),
+[561] = New(561,40002,{"card",3004,3,},4092,101,115),
+[562] = New(562,40002,{"card",3005,3,},4092,101,116),
+[563] = New(563,40002,{"card",3006,3,},4092,101,117),
+[564] = New(564,40002,{"card",3007,3,},4092,101,118),
+[565] = New(565,40002,{"card",3008,3,},4092,101,119),
+[566] = New(566,40002,{"card",3009,3,},4092,101,120),
+[567] = New(567,40002,{"card",3010,3,},4092,101,121),
+[568] = New(568,40002,{"card",3011,3,},4092,101,122),
+[569] = New(569,40002,{"card",3012,3,},4092,101,123),
+[570] = New(570,40002,{"card",3013,3,},4092,101,124),
+[571] = New(571,40002,{"card",3014,3,},4092,101,125),
+[572] = New(572,40002,{"card",3015,3,},4092,101,126),
+[573] = New(573,40002,{"card",4001,1,},5797,101,127),
+[574] = New(574,40002,{"card",4002,1,},5797,101,128),
+[575] = New(575,40002,{"card",4003,1,},5797,101,129),
+[576] = New(576,40002,{"card",4004,1,},5797,101,130),
+[577] = New(577,40002,{"card",4005,1,},5797,101,131),
+[578] = New(578,40002,{"card",11001,8,},4488,101,132),
+[579] = New(579,40002,{"card",12001,5,},4743,101,133),
+[580] = New(580,40002,{"card",12002,5,},4743,101,134),
+[581] = New(581,40002,{"card",13001,3,},4092,101,135),
+[582] = New(582,40002,{"card",13002,3,},4092,101,136),
+[583] = New(583,40002,{"card",14001,1,},5797,101,137),
+[584] = New(584,40003,{"card",1001,8,},1122,101,62),
+[585] = New(585,40003,{"card",1002,8,},1122,101,63),
+[586] = New(586,40003,{"card",1003,8,},1122,101,64),
+[587] = New(587,40003,{"card",1004,8,},1122,101,65),
+[588] = New(588,40003,{"card",1005,8,},1122,101,66),
+[589] = New(589,40003,{"card",1006,8,},1122,101,67),
+[590] = New(590,40003,{"card",1007,8,},1122,101,68),
+[591] = New(591,40003,{"card",1008,8,},1122,101,69),
+[592] = New(592,40003,{"card",1009,8,},1122,101,70),
+[593] = New(593,40003,{"card",1010,8,},1122,101,71),
+[594] = New(594,40003,{"card",1011,8,},1122,101,72),
+[595] = New(595,40003,{"card",1012,8,},1122,101,73),
+[596] = New(596,40003,{"card",1013,8,},1122,101,74),
+[597] = New(597,40003,{"card",1014,8,},1122,101,75),
+[598] = New(598,40003,{"card",1015,8,},1122,101,76),
+[599] = New(599,40003,{"card",1016,8,},1122,101,77),
+[600] = New(600,40003,{"card",1017,8,},1122,101,78),
+[601] = New(601,40003,{"card",1018,8,},1122,101,79),
+[602] = New(602,40003,{"card",1019,8,},1122,101,80),
+[603] = New(603,40003,{"card",1020,8,},1122,101,81),
+[604] = New(604,40003,{"card",1021,8,},1122,101,82),
+[605] = New(605,40003,{"card",1022,8,},1122,101,83),
+[606] = New(606,40003,{"card",1023,8,},1122,101,84),
+[607] = New(607,40003,{"card",1024,8,},1122,101,85),
+[608] = New(608,40003,{"card",1025,8,},1122,101,86),
+[609] = New(609,40003,{"card",1026,8,},1122,101,87),
+[610] = New(610,40003,{"card",1027,8,},1122,101,88),
+[611] = New(611,40003,{"card",1028,8,},1122,101,89),
+[612] = New(612,40003,{"card",1029,8,},1122,101,90),
+[613] = New(613,40003,{"card",1030,8,},1122,101,91),
+[614] = New(614,40003,{"card",2001,5,},3162,101,92),
+[615] = New(615,40003,{"card",2002,5,},3162,101,93),
+[616] = New(616,40003,{"card",2003,5,},3162,101,94),
+[617] = New(617,40003,{"card",2004,5,},3162,101,95),
+[618] = New(618,40003,{"card",2005,5,},3162,101,96),
+[619] = New(619,40003,{"card",2006,5,},3162,101,97),
+[620] = New(620,40003,{"card",2007,5,},3162,101,98),
+[621] = New(621,40003,{"card",2008,5,},3162,101,99),
+[622] = New(622,40003,{"card",2009,5,},3162,101,100),
+[623] = New(623,40003,{"card",2010,5,},3162,101,101),
+[624] = New(624,40003,{"card",2011,5,},3162,101,102),
+[625] = New(625,40003,{"card",2012,5,},3162,101,103),
+[626] = New(626,40003,{"card",2013,5,},3162,101,104),
+[627] = New(627,40003,{"card",2014,5,},3162,101,105),
+[628] = New(628,40003,{"card",2015,5,},3162,101,106),
+[629] = New(629,40003,{"card",2016,5,},3162,101,107),
+[630] = New(630,40003,{"card",2017,5,},3162,101,108),
+[631] = New(631,40003,{"card",2018,5,},3162,101,109),
+[632] = New(632,40003,{"card",2019,5,},3162,101,110),
+[633] = New(633,40003,{"card",2020,5,},3162,101,111),
+[634] = New(634,40003,{"card",3001,3,},6138,101,112),
+[635] = New(635,40003,{"card",3002,3,},6138,101,113),
+[636] = New(636,40003,{"card",3003,3,},6138,101,114),
+[637] = New(637,40003,{"card",3004,3,},6138,101,115),
+[638] = New(638,40003,{"card",3005,3,},6138,101,116),
+[639] = New(639,40003,{"card",3006,3,},6138,101,117),
+[640] = New(640,40003,{"card",3007,3,},6138,101,118),
+[641] = New(641,40003,{"card",3008,3,},6138,101,119),
+[642] = New(642,40003,{"card",3009,3,},6138,101,120),
+[643] = New(643,40003,{"card",3010,3,},6138,101,121),
+[644] = New(644,40003,{"card",3011,3,},6138,101,122),
+[645] = New(645,40003,{"card",3012,3,},6138,101,123),
+[646] = New(646,40003,{"card",3013,3,},6138,101,124),
+[647] = New(647,40003,{"card",3014,3,},6138,101,125),
+[648] = New(648,40003,{"card",3015,3,},6138,101,126),
+[649] = New(649,40003,{"card",4001,1,},23188,101,127),
+[650] = New(650,40003,{"card",4002,1,},23188,101,128),
+[651] = New(651,40003,{"card",4003,1,},23188,101,129),
+[652] = New(652,40003,{"card",4004,1,},23188,101,130),
+[653] = New(653,40003,{"card",4005,1,},23188,101,131),
+[654] = New(654,40003,{"card",11001,8,},1122,101,132),
+[655] = New(655,40003,{"card",12001,5,},3162,101,133),
+[656] = New(656,40003,{"card",12002,5,},3162,101,134),
+[657] = New(657,40003,{"card",13001,3,},6138,101,135),
+[658] = New(658,40003,{"card",13002,3,},6138,101,136),
+[659] = New(659,40003,{"card",14001,1,},23188,101,137),
+[660] = New(660,50001,{"card",1001,1,},100,101,153),
+[661] = New(661,50001,{"card",1002,1,},100,101,154),
+[662] = New(662,50001,{"card",1003,1,},100,101,155),
+[663] = New(663,50001,{"card",1004,1,},100,101,156),
+[664] = New(664,50001,{"card",1005,1,},100,101,157),
+[665] = New(665,50001,{"card",1006,1,},100,101,158),
+[666] = New(666,50001,{"card",1007,1,},100,101,159),
+[667] = New(667,50001,{"card",1008,1,},100,101,160),
+[668] = New(668,50001,{"card",1009,1,},100,101,161),
+[669] = New(669,50001,{"card",1010,1,},100,101,162),
+[670] = New(670,50001,{"card",1011,1,},100,101,163),
+[671] = New(671,50001,{"card",1012,1,},100,101,164),
+[672] = New(672,50001,{"card",1013,1,},100,101,165),
+[673] = New(673,50001,{"card",1014,1,},100,101,166),
+[674] = New(674,50001,{"card",1015,1,},100,101,167),
+[675] = New(675,50001,{"card",1016,1,},100,101,168),
+[676] = New(676,50001,{"card",1017,1,},100,101,169),
+[677] = New(677,50001,{"card",1018,1,},100,101,170),
+[678] = New(678,50001,{"card",1019,1,},100,101,171),
+[679] = New(679,50001,{"card",1020,1,},100,101,172),
+[680] = New(680,50001,{"card",1021,1,},100,101,173),
+[681] = New(681,50001,{"card",1022,1,},100,101,174),
+[682] = New(682,50001,{"card",1023,1,},100,101,175),
+[683] = New(683,50001,{"card",1024,1,},100,101,176),
+[684] = New(684,50001,{"card",1025,1,},100,101,177),
+[685] = New(685,50001,{"card",1026,1,},100,101,178),
+[686] = New(686,50001,{"card",1027,1,},100,101,179),
+[687] = New(687,50001,{"card",1028,1,},100,101,180),
+[688] = New(688,50001,{"card",1029,1,},100,101,181),
+[689] = New(689,50001,{"card",1030,1,},100,101,182),
+[690] = New(690,50002,{"card",2001,1,},100,101,183),
+[691] = New(691,50002,{"card",2002,1,},100,101,184),
+[692] = New(692,50002,{"card",2003,1,},100,101,185),
+[693] = New(693,50002,{"card",2004,1,},100,101,186),
+[694] = New(694,50002,{"card",2005,1,},100,101,187),
+[695] = New(695,50002,{"card",2006,1,},100,101,188),
+[696] = New(696,50002,{"card",2007,1,},100,101,189),
+[697] = New(697,50002,{"card",2008,1,},100,101,190),
+[698] = New(698,50002,{"card",2009,1,},100,101,191),
+[699] = New(699,50002,{"card",2010,1,},100,101,192),
+[700] = New(700,50002,{"card",2011,1,},100,101,193),
+[701] = New(701,50002,{"card",2012,1,},100,101,194),
+[702] = New(702,50002,{"card",2013,1,},100,101,195),
+[703] = New(703,50002,{"card",2014,1,},100,101,196),
+[704] = New(704,50002,{"card",2015,1,},100,101,197),
+[705] = New(705,50002,{"card",2016,1,},100,101,198),
+[706] = New(706,50002,{"card",2017,1,},100,101,199),
+[707] = New(707,50002,{"card",2018,1,},100,101,200),
+[708] = New(708,50002,{"card",2019,1,},100,101,201),
+[709] = New(709,50002,{"card",2020,1,},100,101,202),
+[710] = New(710,50003,{"card",3001,1,},100,101,203),
+[711] = New(711,50003,{"card",3002,1,},100,101,204),
+[712] = New(712,50003,{"card",3003,1,},100,101,205),
+[713] = New(713,50003,{"card",3004,1,},100,101,206),
+[714] = New(714,50003,{"card",3005,1,},100,101,207),
+[715] = New(715,50003,{"card",3006,1,},100,101,208),
+[716] = New(716,50003,{"card",3007,1,},100,101,209),
+[717] = New(717,50003,{"card",3008,1,},100,101,210),
+[718] = New(718,50003,{"card",3009,1,},100,101,211),
+[719] = New(719,50003,{"card",3010,1,},100,101,212),
+[720] = New(720,50003,{"card",3011,1,},100,101,213),
+[721] = New(721,50003,{"card",3012,1,},100,101,214),
+[722] = New(722,50003,{"card",3013,1,},100,101,215),
+[723] = New(723,50003,{"card",3014,1,},100,101,216),
+[724] = New(724,50003,{"card",3015,1,},100,101,217),
+[725] = New(725,50004,{"card",4001,1,},100,101,218),
+[726] = New(726,50004,{"card",4002,1,},100,101,219),
+[727] = New(727,50004,{"card",4003,1,},100,101,220),
+[728] = New(728,50004,{"card",4004,1,},100,101,221),
+[729] = New(729,50004,{"card",4005,1,},100,101,222),
+[730] = New(730,50001,{"card",11001,1,},100,101,132),
+[731] = New(731,50002,{"card",12001,1,},100,101,133),
+[732] = New(732,50002,{"card",12002,1,},100,101,134),
+[733] = New(733,50003,{"card",13001,1,},100,101,135),
+[734] = New(734,50003,{"card",13002,1,},100,101,136),
+[735] = New(735,50004,{"card",14001,1,},100,101,137),
 }
+end

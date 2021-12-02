@@ -1,291 +1,42 @@
-LuaConfig["SystemUnlockConfig"] = 
-{
-	[1001] = 
-	{
-		id = 1001,
-		mark = "竞技场",
-		functions = "Arena",
-		condition = {
-			[1]="vpcard_count",
-			[2]=7815,
-		},
-		hide = false,
-		tips = "vpcard达到890后解锁",
-	},
-	[1002] = 
-	{
-		id = 1002,
-		mark = "菜单",
-		functions = "Menu",
-		condition = {
-			[1]="guide_end",
-			[2]=15010,
-		},
-		hide = true,
-		tips = "",
-	},
-	[1003] = 
-	{
-		id = 1003,
-		mark = "设置",
-		functions = "Setting",
-		condition = {
-			[1]="guide_end",
-			[2]=15010,
-		},
-		hide = true,
-		tips = "",
-	},
-	[1004] = 
-	{
-		id = 1004,
-		mark = "游客图鉴",
-		functions = "Tourist_Illustration",
-		condition = {
-			[1]="guide_end",
-			[2]=15010,
-		},
-		hide = true,
-		tips = "",
-	},
-	[1005] = 
-	{
-		id = 1005,
-		mark = "邮箱",
-		functions = "Mail",
-		condition = {
-			[1]="guide_end",
-			[2]=15010,
-		},
-		hide = true,
-		tips = "",
-	},
-	[1006] = 
-	{
-		id = 1006,
-		mark = "卡牌图鉴",
-		functions = "Card_Illustration",
-		condition = {
-			[1]="facility_upgrade",
-			[2]="101007*1",
-		},
-		hide = true,
-		tips = "",
-	},
-	[1007] = 
-	{
-		id = 1007,
-		mark = "挑战赛",
-		functions = "Ladder",
-		condition = {
-			[1]="first_win_game",
-			[2]=1000003,
-		},
-		hide = false,
-		tips = "开发中，敬请期待",
-	},
-	[1008] = 
-	{
-		id = 1008,
-		mark = "人山人海",
-		functions = "Multiples",
-		condition = {
-			[1]="facility_upgrade",
-			[2]="109003*5",
-		},
-		hide = true,
-		tips = "",
-	},
-	[1009] = 
-	{
-		id = 1009,
-		mark = "管理",
-		functions = "Management",
-		condition = {
-			[1]="facility_upgrade",
-			[2]="101007*1",
-		},
-		hide = true,
-		tips = "",
-	},
-	[1010] = 
-	{
-		id = 1010,
-		mark = "喇叭",
-		functions = "Speaker",
-		condition = {
-			[1]="facility_upgrade",
-			[2]="101007*1",
-		},
-		hide = true,
-		tips = "",
-	},
-	[1011] = 
-	{
-		id = 1011,
-		mark = "加速",
-		functions = "Speed",
-		condition = {
-			[1]="facility_upgrade",
-			[2]="101007*1",
-		},
-		hide = true,
-		tips = "",
-	},
-	[1012] = 
-	{
-		id = 1012,
-		mark = "主线任务",
-		functions = "Main_Task",
-		condition = {
-			[1]="guide_end",
-			[2]=15010,
-		},
-		hide = true,
-		tips = "",
-	},
-	[1013] = 
-	{
-		id = 1013,
-		mark = "每日任务",
-		functions = "Daily_Task",
-		condition = {
-			[1]="guide_end",
-			[2]=15010,
-		},
-		hide = true,
-		tips = "",
-	},
-	[1014] = 
-	{
-		id = 1014,
-		mark = "背包",
-		functions = "Backpack",
-		condition = {
-			[1]="guide_end",
-			[2]=15010,
-		},
-		hide = true,
-		tips = "",
-	},
-	[1015] = 
-	{
-		id = 1015,
-		mark = "赞助",
-		functions = "Sponsor",
-		condition = {
-			[1]="vpcard_count",
-			[2]=7815,
-		},
-		hide = true,
-		tips = "",
-	},
-	[1016] = 
-	{
-		id = 1016,
-		mark = "员工",
-		functions = "Staff",
-		condition = {
-			[1]="facility_upgrade",
-			[2]="101007*1",
-		},
-		hide = true,
-		tips = "",
-	},
-	[1017] = 
-	{
-		id = 1017,
-		mark = "内购商城",
-		functions = "Shop",
-		condition = {
-			[1]="facility_upgrade",
-			[2]="101007*1",
-		},
-		hide = false,
-		tips = "",
-	},
-	[1018] = 
-	{
-		id = 1018,
-		mark = "抽卡",
-		functions = "Chest",
-		condition = {
-			[1]="vpcard_count",
-			[2]=120,
-		},
-		hide = true,
-		tips = "",
-	},
-	[1019] = 
-	{
-		id = 1019,
-		mark = "球员放置",
-		functions = "Employee",
-		condition = {
-			[1]="guide_end",
-			[2]=31010,
-		},
-		hide = true,
-		tips = "",
-	},
-	[1020] = 
-	{
-		id = 1020,
-		mark = "游客生成",
-		functions = "Tourist_Born",
-		condition = {
-			[1]="guide_end",
-			[2]=10010,
-		},
-		hide = false,
-		tips = "",
-	},
-	[1021] = 
-	{
-		id = 1021,
-		mark = "击球游戏解锁",
-		functions = "HitGame",
-		condition = {
-			[1]="guide_end",
-			[2]=65010,
-		},
-		hide = false,
-		tips = "",
-	},
-	[1022] = 
-	{
-		id = 1022,
-		mark = "房间值管理",
-		functions = "RoomValue",
-		condition = {
-			[1]="guide_end",
-			[2]=31010,
-		},
-		hide = true,
-		tips = "",
-	},
-	[1023] = 
-	{
-		id = 1023,
-		mark = "竞技场自动战斗",
-		functions = "Auto_Battle",
-		condition = {
-			[1]="first_win_game",
-			[2]=100003,
-		},
-		hide = false,
-		tips = "通关选拔赛后解锁",
-	},
-	[1024] = 
-	{
-		id = 1024,
-		mark = "七日登录",
-		functions = "Sign",
-		condition = {
-			[1]="guide_end",
-			[2]=20010,
-		},
-		hide = true,
-		tips = "",
-	},
+
+do
+local function New(a0,a1,a2,a3,a4,a5)
+	return {id=a0,mark=a1,functions=a2,condition=a3,hide=a4,tips=a5,}
+end
+LuaConfig["SystemUnlockConfig"] = {
+[1001] = New(1001,"竞技场","Arena",{"unlock_area",103,},false,"vpcard达到890后解锁"),
+[1002] = New(1002,"菜单","Menu",{"guide_end",15010,},true,""),
+[1003] = New(1003,"设置","Setting",{"guide_end",15010,},true,""),
+[1004] = New(1004,"游客图鉴","Tourist_Illustration",{"guide_end",15010,},true,""),
+[1005] = New(1005,"邮箱","Mail",{"guide_end",15010,},true,""),
+[1006] = New(1006,"卡牌图鉴","Card_Illustration",{"facility_upgrade","101007*1",},true,""),
+[1007] = New(1007,"锦标赛","Ladder",{"unlock_area",104,},false,"开发中，敬请期待"),
+[1008] = New(1008,"人山人海","Multiples",{"vpcard_count",750,},true,""),
+[1009] = New(1009,"管理","Management",{"facility_upgrade","101007*1",},true,""),
+[1010] = New(1010,"喇叭","Speaker",{"facility_upgrade","101007*1",},true,""),
+[1011] = New(1011,"加速","Speed",{"facility_upgrade","101007*1",},true,""),
+[1012] = New(1012,"主线任务","Main_Task",{"guide_end",15010,},true,""),
+[1013] = New(1013,"每日任务","Daily_Task",{"vpcard_count",350,},true,""),
+[1014] = New(1014,"背包","Backpack",{"guide_end",15010,},true,""),
+[1015] = New(1015,"赞助","Sponsor",{"vpcard_count",7815,},true,""),
+[1016] = New(1016,"员工","Staff",{"facility_upgrade","101007*1",},true,""),
+[1017] = New(1017,"内购商城","Shop",{"facility_upgrade","101007*1",},false,""),
+[1018] = New(1018,"抽卡","Chest",{"vpcard_count",180,},true,""),
+[1019] = New(1019,"球员放置","Employee",{"guide_end",26010,},true,""),
+[1020] = New(1020,"游客生成","Tourist_Born",{"guide_end",10010,},false,""),
+[1021] = New(1021,"击球游戏解锁","HitGame",{"guide_end",65010,},false,""),
+[1022] = New(1022,"房间值管理","RoomValue",{"guide_end",31010,},true,""),
+[1023] = New(1023,"竞技场自动战斗","Auto_Battle",{"first_win_game",100005,},false,"通关选拔赛后解锁"),
+[1024] = New(1024,"七日登录","Sign",{"vpcard_count",500,},true,""),
+[1025] = New(1025,"累计抽卡","DrawRebate",{"guide_end",27010,},true,""),
+[1026] = New(1026,"C区域游客生成","EquipTourist",{"guide_end",82010,},false,""),
+[1027] = New(1027,"清洁值","cleanliness",{"vpcard_count",230,},false,""),
+[1028] = New(1028,"安保值","safety",{"vpcard_count",400,},false,""),
+[1029] = New(1029,"修理值","upkeep",{"vpcard_count",1200,},false,""),
+[1030] = New(1030,"服务值","SQI",{"vpcard_count",4500,},false,""),
+[1031] = New(1031,"销售值","ardor",{"vpcard_count",2000,},false,""),
+[1032] = New(1032,"收银值","consume",{"vpcard_count",2500,},false,""),
+[1033] = New(1033,"长按经验药水","exp_continued",{"guide_end",71010,},false,""),
+[1034] = New(1034,"加速能量补充弹窗","Speed_add",{"guide_end",10010,},false,""),
 }
+end
