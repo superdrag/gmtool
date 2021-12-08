@@ -352,7 +352,16 @@ public class GFunc
 
     public static string ToShopName(int payId)
     {
-        return payId.ToString() + "(" + LuaCall.GetShopNameById( Convert.ToInt32(payId) ) + ")";
+        try
+        {
+             string name = LuaCall.GetShopNameById( Convert.ToInt32(payId) );
+             return payId.ToString() + "(" +name + ")";
+        }
+        catch (System.Exception err)
+        {
+            Logger.Error("ToShopName err",err.ToString());
+            throw;
+        }
     }      
 
     public static string ToUseDiamondName(int eventid)

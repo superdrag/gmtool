@@ -39,6 +39,7 @@ public class PayItem
         infoList[2].text = pbData.Payorder.ToString(); 
         infoList[3].text = pbData.Account.ToString();
         infoList[4].text = GFunc.ToShopName(pbData.Payid);
+        //infoList[4].text = pbData.Payid.ToString();
         infoList[5].text = GFunc.US2Cent(pbData.Paynum);
         infoList[6].text = pbData.Paytime.ToString(); //time
 

@@ -47,6 +47,8 @@ public class GMApp : MonoBehaviour {
         GFunc.Init();
         LuaMgr.Init();
 
+        LuaCall.Test1();
+
         // LuaCall.Test1();
         // string aa=  LuaCall.GetShopNameById(11001);
         //Logger.Warn("111111111111111 ",aa);

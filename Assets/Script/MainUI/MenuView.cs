@@ -84,7 +84,7 @@ public class MenuView : View
         {
             funcBtn.gameObject.SetActive(false);
             cardBtn.gameObject.SetActive(false);
-            //gmaccBtn.gameObject.SetActive(false);
+            gmaccBtn.gameObject.SetActive(false);
         }        
     }
 

@@ -384,15 +384,29 @@ public class RecordModel {
             if (recordType == RECORD_TYPE.RECORD_RECHARGE)
             {
                 int _num = Convert.ToInt32( fields[6] );
-                coreData.income += Convert.ToInt32( _num );    
-                if ( coreData.payAccDict.ContainsKey(_acc) )
+                int _purchaseType = 0;
+                if (fields.Length >= 11)
                 {
-                    coreData.payAccDict[_acc] += _num;
-                }   
-                else
+                    _purchaseType = Convert.ToInt32( fields[10] );
+                }    
+
+                if (GData.DebugMode == true)
                 {
-                    coreData.payAccDict[_acc] = _num;                    
-                }         
+                    _purchaseType = 1;
+                }
+
+                if( _purchaseType > 0 )
+                {                    
+                    coreData.income += Convert.ToInt32( _num );    
+                    if ( coreData.payAccDict.ContainsKey(_acc) )
+                    {
+                        coreData.payAccDict[_acc] += _num;
+                    }   
+                    else
+                    {
+                        coreData.payAccDict[_acc] = _num;                    
+                    } 
+                }        
             }
 
             if (recordType == RECORD_TYPE.RECORD_GMOPERATE)

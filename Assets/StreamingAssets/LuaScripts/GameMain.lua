@@ -49,7 +49,7 @@ function GetTaskInfo()
 end
 
 function Test1()
-	print('call lua func test1()')
+	print('-------------------call lua func test1()--------------')
 
 	-- local DOtween = CS.DG.Tweening.DOTween
 	-- Logger:Log("DOtween............................",DOtween)
@@ -59,8 +59,6 @@ end
 local function init()
 
 	math.randomseed(tostring(os.time()):reverse():sub(1, 6))
-
-	Test1()
 
 	GetTaskInfo()
 end
