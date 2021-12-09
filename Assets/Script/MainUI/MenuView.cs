@@ -57,6 +57,8 @@ public class MenuView : View
         Button paygiftBtn = viewRoot.Find("paygift").GetComponent<Button>();
         Button diamondBtn = viewRoot.Find("diamond").GetComponent<Button>();
         Button cardBtn = viewRoot.Find("card").GetComponent<Button>();
+        Button vipBtn = viewRoot.Find("vipcard").GetComponent<Button>();
+        Button guideBtn = viewRoot.Find("guide").GetComponent<Button>();
 
         btnViewDict[VIEWID.Mail] = youjianBtn;
         btnViewDict[VIEWID.CoreView] = hexinBtn;
@@ -72,6 +74,8 @@ public class MenuView : View
         btnViewDict[VIEWID.DiamondView] = diamondBtn;
         btnViewDict[VIEWID.CardView] = cardBtn;
         btnViewDict[VIEWID.PayGiftView] = paygiftBtn;
+        btnViewDict[VIEWID.VipView] = vipBtn;
+        btnViewDict[VIEWID.GuideView] = guideBtn;
 
         foreach (var item in btnViewDict)
         {
@@ -84,8 +88,11 @@ public class MenuView : View
         {
             funcBtn.gameObject.SetActive(false);
             cardBtn.gameObject.SetActive(false);
-            gmaccBtn.gameObject.SetActive(false);
+            //gmaccBtn.gameObject.SetActive(false);
         }        
+
+        vipBtn.gameObject.SetActive(false);
+        
     }
 
     override public void OnShow(params object[] args)

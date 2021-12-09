@@ -150,8 +150,10 @@ namespace Net
                 if(NetEnv.NET_LOG)Debug.LogError("Socket OnCheckSendQueue msg null");
                 return;
             }
-            
-            Debug.Log("send q msgid --->" + msg.msgid.ToString() + " len: " + msg.msglen.ToString());
+            if (msg.msgid != (int)MSGID.MSG_CL2GT_SOCKETHIT)
+            {
+                Debug.Log("send q msgid --->" + msg.msgid.ToString() + " len: " + msg.msglen.ToString());
+            }            
             IAsyncResult sendAsyncRet = socket.BeginSend(msg.ToBytes(), 0, (int)msg.msglen, SocketFlags.None, SendMsgCallback, socket);            
         }
 

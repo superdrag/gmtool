@@ -11,35 +11,35 @@ using PPhp;
 using PBase;
 using LocalData;
 
-public class TaskView : View
+public class VipView : View
 {
-    private static TaskView ins = null;
+    private static VipView ins = null;
 
     private Button queryBtn;
     private Button modBtn;
     private Text dataText;
     public Transform Content;
    
-    public static TaskView Instance
+    public static VipView Instance
     {
         get
         {
             if (ins == null)
             {
-                ins = new TaskView();
+                ins = new VipView();
             }
             return ins;
         }
     }
 
-    private TaskView()
+    private VipView()
     {
-        Logger.Log("TaskView Construct Call");
+        Logger.Log("VipView Construct Call");
     }
 
     override public void OnCreateGo()
     {        
-        viewRoot = ResMgr.CreateGo("Prefab/TaskView").transform;
+        viewRoot = ResMgr.CreateGo("Prefab/VipView").transform;
         UIHelper.AddChild(UIMgr.UIMain, viewRoot);  
 
         Transform bg = viewRoot.Find("bg");
@@ -61,7 +61,6 @@ public class TaskView : View
     override public void DoClickQuery()
     {
         C2S_GMQueryTaskMain pb = new C2S_GMQueryTaskMain();
-        pb.Type = 2;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYTASKMAIN,pb);  
     }
 

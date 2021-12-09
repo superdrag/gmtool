@@ -118,7 +118,7 @@ public class ResMgr
     public static T LoadRes<T>(string resPath) where T : UObject
     {
         //resPath = resPath.ToLower();
-        Debug.Log("LoadRes.........."+resPath);
+        //Debug.Log("LoadRes.........."+resPath);
         T t = Resources.Load<T>(resPath);
         if(t == null)
         {

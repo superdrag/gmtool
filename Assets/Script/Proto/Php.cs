@@ -68,23 +68,23 @@ namespace PPhp {
             "AiABKAk6AjgBIjYKFUMyU19HTVF1ZXJ5Q2xpZW50U2F2ZRIPCgdhY2NvdW50",
             "GAEgASgJEgwKBGZpbGUYAiABKAkiUQoVUzJDX0dNUXVlcnlDbGllbnRTYXZl",
             "EgsKA3JldBgBIAEoBRIPCgdhY2NvdW50GAIgASgJEgwKBGZpbGUYAyABKAkS",
-            "DAoEZGF0YRgEIAEoDCIlChNDMlNfR01RdWVyeVRhc2tNYWluEg4KBmlkbGlz",
-            "dBgBIAMoBSI5CgtQQl9UYXNrTWFpbhIOCgZ0YXNraWQYASABKAUSDAoEc3Rv",
-            "cBgCIAEoBRIMCgRsb3N0GAMgASgFIqUBChNTMkNfR01RdWVyeVRhc2tNYWlu",
-            "EgsKA3JldBgBIAEoBRIxCgRkYXRhGAIgAygLMiMuUFBocC5TMkNfR01RdWVy",
-            "eVRhc2tNYWluLkRhdGFFbnRyeRIOCgZzdW1hY2MYAyABKAUaPgoJRGF0YUVu",
-            "dHJ5EgsKA2tleRgBIAEoBRIgCgV2YWx1ZRgCIAEoCzIRLlBQaHAuUEJfVGFz",
-            "a01haW46AjgBIhAKDkMyU19HTUNvcmVEYXRhIhAKDlMyQ19HTUNvcmVEYXRh",
-            "Ii4KDUMyU19HTVBheURhdGESDAoEcGFnZRgBIAEoBRIPCgdhY2NvdW50GAIg",
-            "ASgJIsIBCg1TMkNfR01QYXlEYXRhEgwKBHBhZ2UYASABKAUSDwoHYWNjb3Vu",
-            "dBgCIAEoCRIQCghwbGF0ZnJvbRgDIAEoCRIPCgdjb3VudHJ5GAQgASgJEhAK",
-            "CHBheW9yZGVyGAUgASgJEg4KBnBheW51bRgGIAEoBRINCgVzdGF0ZRgHIAEo",
-            "BRIPCgdwYXl0aW1lGAggASgFEg0KBXBheWlkGAkgASgFEg0KBWV2ZW50GAog",
-            "ASgFEg8KB3BheWNvZGUYCyABKAkiVAoPQzJTX0dNUGF5UmVwYWlyEg8KB2Fj",
-            "Y291bnQYASABKAkSDwoHcGF5Y29kZRgCIAEoCRIQCghwYXlvcmRlchgDIAEo",
-            "CRINCgVwYXlpZBgEIAEoBSJQCg9TMkNfR01QYXlSZXBhaXISCwoDcmV0GAEg",
-            "ASgFEg8KB3BheWNvZGUYAiABKAkSEAoIcGF5b3JkZXIYAyABKAkSDQoFcGF5",
-            "aWQYBCABKAViBnByb3RvMw=="));
+            "DAoEZGF0YRgEIAEoDCIzChNDMlNfR01RdWVyeVRhc2tNYWluEgwKBHR5cGUY",
+            "ASABKAUSDgoGaWRsaXN0GAIgAygFIjkKC1BCX1Rhc2tNYWluEg4KBnRhc2tp",
+            "ZBgBIAEoBRIMCgRzdG9wGAIgASgFEgwKBGxvc3QYAyABKAUiswEKE1MyQ19H",
+            "TVF1ZXJ5VGFza01haW4SCwoDcmV0GAEgASgFEgwKBHR5cGUYAiABKAUSMQoE",
+            "ZGF0YRgDIAMoCzIjLlBQaHAuUzJDX0dNUXVlcnlUYXNrTWFpbi5EYXRhRW50",
+            "cnkSDgoGc3VtYWNjGAQgASgFGj4KCURhdGFFbnRyeRILCgNrZXkYASABKAUS",
+            "IAoFdmFsdWUYAiABKAsyES5QUGhwLlBCX1Rhc2tNYWluOgI4ASIQCg5DMlNf",
+            "R01Db3JlRGF0YSIQCg5TMkNfR01Db3JlRGF0YSIuCg1DMlNfR01QYXlEYXRh",
+            "EgwKBHBhZ2UYASABKAUSDwoHYWNjb3VudBgCIAEoCSLCAQoNUzJDX0dNUGF5",
+            "RGF0YRIMCgRwYWdlGAEgASgFEg8KB2FjY291bnQYAiABKAkSEAoIcGxhdGZy",
+            "b20YAyABKAkSDwoHY291bnRyeRgEIAEoCRIQCghwYXlvcmRlchgFIAEoCRIO",
+            "CgZwYXludW0YBiABKAUSDQoFc3RhdGUYByABKAUSDwoHcGF5dGltZRgIIAEo",
+            "BRINCgVwYXlpZBgJIAEoBRINCgVldmVudBgKIAEoBRIPCgdwYXljb2RlGAsg",
+            "ASgJIlQKD0MyU19HTVBheVJlcGFpchIPCgdhY2NvdW50GAEgASgJEg8KB3Bh",
+            "eWNvZGUYAiABKAkSEAoIcGF5b3JkZXIYAyABKAkSDQoFcGF5aWQYBCABKAUi",
+            "UAoPUzJDX0dNUGF5UmVwYWlyEgsKA3JldBgBIAEoBRIPCgdwYXljb2RlGAIg",
+            "ASgJEhAKCHBheW9yZGVyGAMgASgJEg0KBXBheWlkGAQgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::PBase.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -110,9 +110,9 @@ namespace PPhp {
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryNormalInfo), global::PPhp.S2C_GMQueryNormalInfo.Parser, new[]{ "Ret", "Querytype", "Account", "Result", "Mapdata", "Data" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQueryClientSave), global::PPhp.C2S_GMQueryClientSave.Parser, new[]{ "Account", "File" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryClientSave), global::PPhp.S2C_GMQueryClientSave.Parser, new[]{ "Ret", "Account", "File", "Data" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQueryTaskMain), global::PPhp.C2S_GMQueryTaskMain.Parser, new[]{ "Idlist" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMQueryTaskMain), global::PPhp.C2S_GMQueryTaskMain.Parser, new[]{ "Type", "Idlist" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.PB_TaskMain), global::PPhp.PB_TaskMain.Parser, new[]{ "Taskid", "Stop", "Lost" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryTaskMain), global::PPhp.S2C_GMQueryTaskMain.Parser, new[]{ "Ret", "Data", "Sumacc" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMQueryTaskMain), global::PPhp.S2C_GMQueryTaskMain.Parser, new[]{ "Ret", "Type", "Data", "Sumacc" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMCoreData), global::PPhp.C2S_GMCoreData.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.S2C_GMCoreData), global::PPhp.S2C_GMCoreData.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PPhp.C2S_GMPayData), global::PPhp.C2S_GMPayData.Parser, new[]{ "Page", "Account" }, null, null, null),
@@ -4694,6 +4694,7 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public C2S_GMQueryTaskMain(C2S_GMQueryTaskMain other) : this() {
+      type_ = other.type_;
       idlist_ = other.idlist_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -4703,10 +4704,21 @@ namespace PPhp {
       return new C2S_GMQueryTaskMain(this);
     }
 
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 1;
+    private int type_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
     /// <summary>Field number for the "idlist" field.</summary>
-    public const int IdlistFieldNumber = 1;
+    public const int IdlistFieldNumber = 2;
     private static readonly pb::FieldCodec<int> _repeated_idlist_codec
-        = pb::FieldCodec.ForInt32(10);
+        = pb::FieldCodec.ForInt32(18);
     private readonly pbc::RepeatedField<int> idlist_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> Idlist {
@@ -4726,6 +4738,7 @@ namespace PPhp {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Type != other.Type) return false;
       if(!idlist_.Equals(other.idlist_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -4733,6 +4746,7 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (Type != 0) hash ^= Type.GetHashCode();
       hash ^= idlist_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -4747,6 +4761,10 @@ namespace PPhp {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      if (Type != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Type);
+      }
       idlist_.WriteTo(output, _repeated_idlist_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -4756,6 +4774,9 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
+      }
       size += idlist_.CalculateSize(_repeated_idlist_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4767,6 +4788,9 @@ namespace PPhp {
     public void MergeFrom(C2S_GMQueryTaskMain other) {
       if (other == null) {
         return;
+      }
+      if (other.Type != 0) {
+        Type = other.Type;
       }
       idlist_.Add(other.idlist_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -4780,8 +4804,12 @@ namespace PPhp {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
           case 8: {
+            Type = input.ReadInt32();
+            break;
+          }
+          case 18:
+          case 16: {
             idlist_.AddEntriesFrom(input, _repeated_idlist_codec);
             break;
           }
@@ -5005,6 +5033,7 @@ namespace PPhp {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public S2C_GMQueryTaskMain(S2C_GMQueryTaskMain other) : this() {
       ret_ = other.ret_;
+      type_ = other.type_;
       data_ = other.data_.Clone();
       sumacc_ = other.sumacc_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -5026,10 +5055,21 @@ namespace PPhp {
       }
     }
 
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 2;
+    private int type_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
     /// <summary>Field number for the "data" field.</summary>
-    public const int DataFieldNumber = 2;
+    public const int DataFieldNumber = 3;
     private static readonly pbc::MapField<int, global::PPhp.PB_TaskMain>.Codec _map_data_codec
-        = new pbc::MapField<int, global::PPhp.PB_TaskMain>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::PPhp.PB_TaskMain.Parser), 18);
+        = new pbc::MapField<int, global::PPhp.PB_TaskMain>.Codec(pb::FieldCodec.ForInt32(8), pb::FieldCodec.ForMessage(18, global::PPhp.PB_TaskMain.Parser), 26);
     private readonly pbc::MapField<int, global::PPhp.PB_TaskMain> data_ = new pbc::MapField<int, global::PPhp.PB_TaskMain>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<int, global::PPhp.PB_TaskMain> Data {
@@ -5037,7 +5077,7 @@ namespace PPhp {
     }
 
     /// <summary>Field number for the "sumacc" field.</summary>
-    public const int SumaccFieldNumber = 3;
+    public const int SumaccFieldNumber = 4;
     private int sumacc_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Sumacc {
@@ -5061,6 +5101,7 @@ namespace PPhp {
         return true;
       }
       if (Ret != other.Ret) return false;
+      if (Type != other.Type) return false;
       if (!Data.Equals(other.Data)) return false;
       if (Sumacc != other.Sumacc) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -5070,6 +5111,7 @@ namespace PPhp {
     public override int GetHashCode() {
       int hash = 1;
       if (Ret != 0) hash ^= Ret.GetHashCode();
+      if (Type != 0) hash ^= Type.GetHashCode();
       hash ^= Data.GetHashCode();
       if (Sumacc != 0) hash ^= Sumacc.GetHashCode();
       if (_unknownFields != null) {
@@ -5089,9 +5131,13 @@ namespace PPhp {
         output.WriteRawTag(8);
         output.WriteInt32(Ret);
       }
+      if (Type != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Type);
+      }
       data_.WriteTo(output, _map_data_codec);
       if (Sumacc != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteInt32(Sumacc);
       }
       if (_unknownFields != null) {
@@ -5104,6 +5150,9 @@ namespace PPhp {
       int size = 0;
       if (Ret != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Ret);
+      }
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
       }
       size += data_.CalculateSize(_map_data_codec);
       if (Sumacc != 0) {
@@ -5122,6 +5171,9 @@ namespace PPhp {
       }
       if (other.Ret != 0) {
         Ret = other.Ret;
+      }
+      if (other.Type != 0) {
+        Type = other.Type;
       }
       data_.Add(other.data_);
       if (other.Sumacc != 0) {
@@ -5142,11 +5194,15 @@ namespace PPhp {
             Ret = input.ReadInt32();
             break;
           }
-          case 18: {
+          case 16: {
+            Type = input.ReadInt32();
+            break;
+          }
+          case 26: {
             data_.AddEntriesFrom(input, _map_data_codec);
             break;
           }
-          case 24: {
+          case 32: {
             Sumacc = input.ReadInt32();
             break;
           }

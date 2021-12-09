@@ -112,7 +112,11 @@ public class LoginView : View
         }
 
 
-
+        if (Application.isEditor)
+        {
+            dropdown.value = 2;
+            curServer = 2;
+        }
         //rankText.text = GlobalModel.rankNameDict[curRank];
 
         // foreach (var item in AppConfig.ServerList)
@@ -165,6 +169,7 @@ public class LoginView : View
 
     private void onDropDownHandle(int index)
     {
+        Logger.Log("onDropDownHandle .........." + index);
         curServer = index;
     }
 }

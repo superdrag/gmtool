@@ -36,6 +36,8 @@ public enum VIEWID
     DiamondView = 49,
     FuncView = 51,
     CardView = 52,
+    GuideView = 53,
+    VipView = 54,
 
 
 
@@ -88,11 +90,16 @@ public static class UIMgr
 
         RegisterUI(VIEWID.FuncView,FuncView.Instance);
         RegisterUI(VIEWID.TaskView,TaskView.Instance);
+        RegisterUI(VIEWID.GuideView,GuideView.Instance);
+        RegisterUI(VIEWID.VipView,VipView.Instance);
 
         RegisterUI(VIEWID.PayGiftView,PayGiftView.Instance);
         RegisterUI(VIEWID.DiamondView,DiamondView.Instance);
 
         RegisterUI(VIEWID.CardView,CardView.Instance);
+
+        
+        
         
     }    
 
@@ -229,7 +236,7 @@ public static class UIMgr
 
         if(!view.IsShow)
         {
-            Debug.Log( "HideUI no show:" + viewId );
+            //Debug.Log( "HideUI no show:" + viewId );
             return;
         }   
 

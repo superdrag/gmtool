@@ -215,7 +215,8 @@ message S2C_GMQueryClientSave
 //MsgId.MSG_CL2PHP_QUERYTASKMAIN              = 1871    --[[主线任务查询]]  
 message C2S_GMQueryTaskMain
 {
-    repeated int32 idlist = 1;
+    int32 type = 1;
+    repeated int32 idlist = 2;
 }
 
 message PB_TaskMain
@@ -228,9 +229,10 @@ message PB_TaskMain
 //MsgId.MSG_PHP2CL_QUERYTASKMAIN              = 2871    --[[主线任务查询]]  
 message S2C_GMQueryTaskMain
 {
-    int32 ret = 1;    
-    map<int32, PB_TaskMain> data = 2; 
-    int32 sumacc = 3;   
+    int32 ret = 1;   
+    int32 type = 2; 
+    map<int32, PB_TaskMain> data = 3; 
+    int32 sumacc = 4;   
 }
 
 // MsgId.MSG_CL2PHP_GMCOREDATA                 = 1851    --[[GM请求核心数据]]  ProtoDict[MsgId.MSG_CL2PHP_GMCOREDATA] = "PPhp.C2S_GMCoreData"
