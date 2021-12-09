@@ -77,7 +77,8 @@ public enum PHP_QUERY
     CLIENTSAVELIST      = 1005, //客户端存档查询
     CLIENTSAVEDATA      = 1006, //客户端存档查询    
     MAINTASK            = 1007, //主线任务查询
-    PAYGIFT             = 1008, //礼包付费统计   
+    PAYGIFT             = 1008, //礼包付费统计 
+    VIPCARD             = 1009,  
 }
 
 public enum MOD_TYPE

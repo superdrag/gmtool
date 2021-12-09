@@ -28,20 +28,16 @@ public class VipItem
     public void Show(QueryTaskData taskData)
     {
         infoList[0].text = taskData.taskId.ToString();
-        if ( taskData.taskId == 10000)
-        {
-            infoList[0].text = "新手任务阶段";
-        }
         infoList[1].text = taskData.curNum.ToString();
         infoList[2].text = taskData.lostNum.ToString();
-        infoList[3].text = taskData.percent.ToString();
+        //infoList[3].text = taskData.percent.ToString();
     }
 
     public void SetTitle()
     {
-        infoList[0].text = "任务id";
-        infoList[1].text = "停留";
+        infoList[0].text = "vpcard区间";
+        infoList[1].text = "人数";
         infoList[2].text = "流失";
-        infoList[3].text = "通过率";
+        //infoList[3].text = "通过率";
     }
 }

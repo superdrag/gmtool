@@ -91,7 +91,7 @@ public class MenuView : View
             //gmaccBtn.gameObject.SetActive(false);
         }        
 
-        vipBtn.gameObject.SetActive(false);
+        //vipBtn.gameObject.SetActive(false);
         
     }
 

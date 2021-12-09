@@ -61,6 +61,7 @@ public class VipView : View
     override public void DoClickQuery()
     {
         C2S_GMQueryTaskMain pb = new C2S_GMQueryTaskMain();
+        pb.Type = 3;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYTASKMAIN,pb);  
     }
 
@@ -71,7 +72,7 @@ public class VipView : View
 
     public void AddItem(QueryTaskData taskData)
     {               
-        TaskItem item = new TaskItem();
+        VipItem item = new VipItem();
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
@@ -80,7 +81,7 @@ public class VipView : View
 
     public void AddItemTitle()
     {               
-        TaskItem item = new TaskItem();
+        VipItem item = new VipItem();
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;

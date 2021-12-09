@@ -289,7 +289,12 @@ public class GlobalCtl
             Dictionary<int,int> dict = new Dictionary<int,int>(); 
             view.SetDataText(_pb);
         }
-
+        else if (_pb.Type == 3)
+        {
+            VipView view = UIMgr.GetUI<VipView>(VIEWID.VipView);  
+            Dictionary<int,int> dict = new Dictionary<int,int>(); 
+            view.SetDataText(_pb);
+        }
         
     }
     
