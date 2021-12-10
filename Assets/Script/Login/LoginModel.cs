@@ -25,6 +25,7 @@ public class LoginModel {
     public int LoginGatePort;
     public int LoginSign;
     public int LoginGateTime;
+    public int Permission;
 
     public string record_url;
 

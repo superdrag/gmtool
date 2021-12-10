@@ -91,7 +91,16 @@ public class MenuView : View
             //gmaccBtn.gameObject.SetActive(false);
         }        
 
-        //vipBtn.gameObject.SetActive(false);
+        if( LoginModel.Instance.Permission == 1 )
+        {
+            hexinBtn.gameObject.SetActive(false);
+            hexinsumBtn.gameObject.SetActive(false);
+        }
+
+        if (Application.isEditor == false)
+        {
+            vipBtn.gameObject.SetActive(false);
+        }
         
     }
 

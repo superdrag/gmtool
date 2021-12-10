@@ -64,6 +64,9 @@ public class LoginCtl
         }       
 
         LoginModel.Instance.Account = _pb.Account;
+        LoginModel.Instance.Permission = _pb.Permission;
+
+        Logger.Log("login info ",LoginModel.Instance.Account,LoginModel.Instance.Permission);
 
         ResMgr.Instance.StartAppDownload(OnDownloadFinish);
 
@@ -114,7 +117,7 @@ public class LoginCtl
         C2S_GMLogin pb = new C2S_GMLogin();
         pb.Account = account;
         pb.Passwd = passwd;
-        pb.Version = "0.1.2021-11-27";
+        pb.Version = "0.1.2021-12-10";
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMLOGINACCOUNT, pb);
     }
 
