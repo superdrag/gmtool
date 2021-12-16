@@ -106,10 +106,12 @@ public class MenuView : View
 
     override public void OnShow(params object[] args)
     {
-        foreach (var item in btnViewDict)
-        {
-            UIMgr.HideUI(item.Key); 
-        }
+        // foreach (var item in btnViewDict)
+        // {
+        //     UIMgr.HideUI(item.Key); 
+        //     LimitNewView.Instance.OnHide();
+        // }
+        UIMgr.HideAllUI();
 
         UIMgr.ShowUI(curViewId);
 

@@ -148,6 +148,9 @@ public class LoginView : View
 
         UIMgr.SetServTitle(sinfo.name);
 
+        //loginBtn.gameObject.SetActive(false);
+        loginBtn.enabled = false;
+
         // if(GData.ReleaseMode == true)
         // {
         //     NotifyObserver(NOTICE_ID.LOGIN_VIEW_GUEST,"39.100.205.143",9101,"qpjob");
@@ -165,6 +168,7 @@ public class LoginView : View
     private void OnBtnClickClean()
     {
         ResMgr.CleanAllRecord();
+        UIMgr.ShowUI(VIEWID.ALERTINFO,"清除完成");
     }
 
     private void onDropDownHandle(int index)

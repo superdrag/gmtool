@@ -164,7 +164,7 @@ public class ResMgr
             string[] arystr = uwr.downloadHandler.text.Split('\n'); 
 
             List<string> listFile = new List<string>(arystr);
-            listFile.RemoveAt(listFile.Count-1);
+            //listFile.RemoveAt(listFile.Count-1);
 
             for (int i = 0; i < listFile.Count; i++)
             {

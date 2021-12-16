@@ -338,4 +338,27 @@ public static class UIMgr
         }
     }
 
+    public static void HideAllUI()
+    {
+        foreach (var dic in viewDict)
+        {
+            VIEWID id = dic.Key;
+            View view = dic.Value;
+
+            if (id == VIEWID.MENU || id == VIEWID.TITLE)
+            {
+                continue;
+            }
+
+            if(view == null)
+            {
+                Logger.Error("UIMgr HideAllUI view null id:"+id);
+            }
+            //if (view.IsShow)
+            {
+                HideUI(id);
+            }
+        }
+    } 
+
 }

@@ -75,6 +75,10 @@ public class PayView : View
 
     public void AddItem(S2C_GMPayData pb)
     {               
+        if (pb.Paynum <= 0)
+        {
+            return;
+        }
         PayItem item = new PayItem();
         item.Create();
         item.view.SetParent(Content);
