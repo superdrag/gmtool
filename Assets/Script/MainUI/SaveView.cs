@@ -110,7 +110,9 @@ public class SaveView : View
         Dropdown.OptionData od1 = new Dropdown.OptionData();
         od1.text = rst.Dict["file"];
         Logger.Log("AddDropData click.........." + od1.text);
-        dropdown.options.Add(od1);            
+        dropdown.options.Add(od1);
+
+        dropdown.value = 1;            
     }
 
     public void SetDataText(string file,string data)
