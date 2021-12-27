@@ -121,6 +121,7 @@ public class RecordModel {
             for (int i = 0; i < filelist.Count; i++)
             {              
                 if (filelist[i].EndsWith("meta")) continue;
+                if (filelist[i].EndsWith("txt")) continue;
                 string[] lineAry = File.ReadAllLines(filelist[i]);
                 dayDataList.Add(lineAry);
             }
@@ -273,11 +274,19 @@ public class RecordModel {
                 continue;
             }
 
+            //Logger.Warn("lineData .............",lineData); 
+
             string[] fields = lineData.Split(',');
+
+            if (fields.Length <= 0)
+            {
+                continue;
+            }
+
             if (coreData.date == null)
             {                
                 coreData.date = fields[0].Split('-')[0];     //统计日期  
-                //Logger.Log("day date.............",coreData.date);                             
+                Logger.Log("day date.............",coreData.date);                             
             }
             if (coreData.timetv == 0)
             {

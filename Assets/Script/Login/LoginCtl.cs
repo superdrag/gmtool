@@ -46,6 +46,8 @@ public class LoginCtl
         {
             //Logger.Error("account or passwd fail! " + _pb.Account);
             UIMgr.ShowUI(VIEWID.ALERTINFO,"版本错误");
+            UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginButtonVis(true);
+            UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("登录失败");
             return;
         }
 
@@ -53,6 +55,8 @@ public class LoginCtl
         {
             //Logger.Error("account or passwd fail! " + _pb.Account);
             UIMgr.ShowUI(VIEWID.ALERTINFO,"账号或密码错误");
+            UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginButtonVis(true);
+            UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("登录失败");
             return;
         }
 
@@ -60,6 +64,8 @@ public class LoginCtl
         {
             //Logger.Error("account or passwd fail! " + _pb.Account);
             UIMgr.ShowUI(VIEWID.ALERTINFO,"登录错误码：" +  _pb.Ret);
+            UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginButtonVis(true);
+            UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("登录失败");
             return;
         }       
 
@@ -90,6 +96,7 @@ public class LoginCtl
 
     public void StartConnetServer(string ip,int port)
     {
+        UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("连接中");
         NetMgr.NetClose();        
         NetMgr.NetConnect(ip,port,OnConnectCallBack);
     }
@@ -102,12 +109,16 @@ public class LoginCtl
         {
             Logger.Log("connect login OK ");
             send_msg_loginaccount(LoginView.Instance.zhanghaoIF.text,LoginView.Instance.mimaIF.text);
+            UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("登录中");
         }
         else
         {
+            UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("登录失败");
             NetMgr.NetClose();
             Logger.Error("connect login fail ret", ret);
             UIMgr.ShowUI(VIEWID.ALERTINFO,"连接服务器超时");
+            
+            UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginButtonVis(true);
         }
     }
 
@@ -117,7 +128,7 @@ public class LoginCtl
         C2S_GMLogin pb = new C2S_GMLogin();
         pb.Account = account;
         pb.Passwd = passwd;
-        pb.Version = "0.1.2021-12-10";
+        pb.Version = "0.1.2021-12-17";
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMLOGINACCOUNT, pb);
     }
 

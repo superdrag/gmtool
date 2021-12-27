@@ -60,6 +60,7 @@ public enum PHP_COMMAMD
     RESTART = 110,
     SHUTDOWN = 111,
     STOPSERVER = 112,
+    TICKOFF    = 113, //踢所有下线
     MODTIME = 115,
     UPCONFIG = 116,  
     QUERYTIME = 117,

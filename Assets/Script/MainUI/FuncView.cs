@@ -20,6 +20,7 @@ public class FuncView : View
     private Button restartBtn;
     private Button shutdownBtn;
     private Button stopBtn;
+    private Button tickoffBtn;
     private Button upConifgBtn;
 
     private Button recordBtn;
@@ -69,6 +70,8 @@ public class FuncView : View
         stopBtn = bg.Find("stopserver/Button").GetComponent<Button>();
         stopBtn.onClick.AddListener(onClickStop); 
 
+        tickoffBtn = bg.Find("tickoff/Button").GetComponent<Button>();
+        tickoffBtn.onClick.AddListener(onClickTick); 
 
         recordBtn = bg.Find("record/Button").GetComponent<Button>();
         recordBtn.onClick.AddListener(onClickRecord); 
@@ -127,6 +130,10 @@ public class FuncView : View
         GlobalCtl.MSG_CL2PHP_GMCOMMAND( "gm", (int)PHP_COMMAMD.RECORD);      
     }        
 
+    private void onClickTick()
+    {
+        GlobalCtl.MSG_CL2PHP_GMCOMMAND( "gm", (int)PHP_COMMAMD.TICKOFF);      
+    }   
 
     public void onQueryServerTime(int timetv)
     {

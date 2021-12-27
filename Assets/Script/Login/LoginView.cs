@@ -22,6 +22,8 @@ public class LoginView : View
 
     public List<ServerInfo> selectServerList = new List<ServerInfo>();
 
+    public Text loginInfoTxt;
+
     private static LoginView ins = null;
 
     public static LoginView Instance
@@ -62,6 +64,8 @@ public class LoginView : View
 
         dropdown = viewRoot.transform.Find("bg/Dropdown").GetComponent<Dropdown>();
         dropdown.onValueChanged.AddListener( onDropDownHandle );
+
+        loginInfoTxt = viewRoot.transform.Find("loginInfo").GetComponent<Text>();
     }
 
     override public void OnShow(params object[] args)
@@ -176,4 +180,15 @@ public class LoginView : View
         Logger.Log("onDropDownHandle .........." + index);
         curServer = index;
     }
+
+    public void SetLoginInfo(string progress)
+    {
+        loginInfoTxt.gameObject.SetActive(true);
+        loginInfoTxt.text = progress;
+    }
+
+    public void SetLoginButtonVis(bool flag)
+    {
+        loginBtn.enabled = flag;
+    }  
 }

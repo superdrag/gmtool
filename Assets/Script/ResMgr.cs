@@ -136,6 +136,41 @@ public class ResMgr
         Directory.CreateDirectory(recordDir);
     }
 
+    private IEnumerator DownLoadVersionFile2(Action<int> cbfunc)
+    {
+        // string url_listfile = "list.txt";
+        // string url_dir = LoginModel.Instance.record_url;
+        // string url_path =url_dir + url_listfile;
+
+        // WebClient client = new WebClient();
+        
+        // client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProcessChanged);
+        // client.DownloadFileCompleted += new System.ComponentModel.AsyncCompletedEventHandler(DownLoadComplete);
+        // client.DownloadFileAsync(url_path, url_listfile);
+        
+        // Logger.Log("----------------check down record file over-----------");      
+        cbfunc(0);
+        yield break;        
+    }
+
+    private void DownLoadComplete(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+    {  
+        Console.WriteLine(sender.ToString());  //触发事件的对象
+
+        Console.WriteLine(e.UserState);
+
+        Console.WriteLine(e.Cancelled);
+
+        Console.WriteLine("异步下载完成！");
+    }
+
+    private void ProcessChanged(object sender, DownloadProgressChangedEventArgs e)
+    {
+        // DownLoadFile downloadfile = (DownLoadFile)e.UserState;
+        // downloadfile.Process = (float)e.ProgressPercentage / 100;
+        // downloadfile.AlreadyDownLoadSize = e.BytesReceived;
+        // UpdateDownLoadProcess();
+    }
 
     private IEnumerator DownLoadVersionFile(Action<int> cbfunc)
     {
@@ -149,12 +184,25 @@ public class ResMgr
 
         UnityWebRequest uwr = UnityWebRequest.Get(url_path); 
         yield return uwr.SendWebRequest();
+        UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("登录成功,开始下载 => " + "list.text");
 
         if(uwr.isNetworkError || uwr.isHttpError)
         {                
             Logger.Error("down list net err ",uwr.isNetworkError,uwr.isHttpError,uwr.error);
+            UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("登录成功,下载list错误");
+            UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginButtonVis(true);
             cbfunc(1);
             yield break;
+        }
+
+        if (uwr.isDone)
+        {
+            string filepath = recordDir + "list.txt" ; 
+            if (!Application.isEditor)
+            {
+                filepath = recordDir + "list.txt" ;        
+            }   
+            File.WriteAllBytes(filepath,  uwr.downloadHandler.data); 
         }
 
         if (uwr.isDone)
@@ -188,8 +236,14 @@ public class ResMgr
                         Logger.Log("localPath has file.......", localPath,i);      
                         continue;                            
                     }
+                    else
+                    {
+                        Logger.Log("localPath need down file1.......", md5str, GFunc.MD5file(localPath)); 
+                        Logger.Log("localPath need down file2.......", localPath,i);      
+                    }
                 }
 
+                UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("登录成功,开始下载 => " + filename);
                 Logger.Log("start down........", path);      
                 UnityWebRequest uwr2 = UnityWebRequest.Get(path); 
                 yield return uwr2.SendWebRequest();
@@ -197,6 +251,8 @@ public class ResMgr
                 if(uwr2.isNetworkError || uwr2.isHttpError)
                 {                
                     Logger.Error("down file net err ",uwr2.isNetworkError,uwr2.isHttpError,uwr2.error);
+                    UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("登录成功,下载" + filename + "错误");
+                    UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginButtonVis(true);
                 }
                 else
                 {
@@ -218,6 +274,9 @@ public class ResMgr
             Logger.Error("down list net err2 "+ url_path);
         }         
 
+        UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("下载数据完成");
+
+        Logger.Log("----------------check down record file ovev-----------");      
         cbfunc(0);
         yield break;
     }

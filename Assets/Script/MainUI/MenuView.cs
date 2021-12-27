@@ -91,15 +91,25 @@ public class MenuView : View
             //gmaccBtn.gameObject.SetActive(false);
         }        
 
+        if( LoginModel.Instance.Account == "liuhaichao" )
+        {
+            funcBtn.gameObject.SetActive(true);
+        }
+
         if( LoginModel.Instance.Permission == 1 )
         {
-            hexinBtn.gameObject.SetActive(false);
-            hexinsumBtn.gameObject.SetActive(false);
+            gmaccBtn.gameObject.SetActive(false);
+            saveBtn.gameObject.SetActive(false);
+            limitBtn.gameObject.SetActive(false);
+
+            // hexinBtn.gameObject.SetActive(false);
+            // hexinsumBtn.gameObject.SetActive(false);
+            curViewId = (VIEWID.Mail);
         }
 
         if (Application.isEditor == false)
         {
-            vipBtn.gameObject.SetActive(false);
+            //vipBtn.gameObject.SetActive(false);
         }
         
     }
