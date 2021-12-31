@@ -57,6 +57,7 @@ public enum PHP_COMMAMD
     BLACKUSER = 102,
     RECORED_OPERATE = 103,
     CLIENTSAVE = 105,
+    DELETESAVE = 106,
     RESTART = 110,
     SHUTDOWN = 111,
     STOPSERVER = 112,
@@ -103,7 +104,7 @@ public class GData
     //游戏名称
     public static string AppName = "gmtool";
 
-    public static bool DebugMode = true;
+    public static bool DebugMode = false;
 
     //PC测试模式 会用到C盘目录资源模拟热更新
     public static bool DebugHotFix = false;

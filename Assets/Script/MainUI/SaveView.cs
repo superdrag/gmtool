@@ -17,6 +17,7 @@ public class SaveView : View
 
     private Button queryBtn;
     private Button modBtn;
+    private Button delBtn;
     private InputField accountText;
     public Transform Content;
     private Dropdown dropdown;
@@ -53,6 +54,9 @@ public class SaveView : View
 
         modBtn = bg.Find("btnGroup/modBtn").GetComponent<Button>();  
         EventTriggerListener.Get(modBtn.gameObject).onClick = onClickMod;        
+
+        delBtn = bg.Find("btnGroup/delBtn").GetComponent<Button>();  
+        EventTriggerListener.Get(delBtn.gameObject).onClick = onClickDel;  
 
         accountText = bg.Find("btnGroup/InputField").GetComponent<InputField>();
 
@@ -104,6 +108,16 @@ public class SaveView : View
         
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMCOMMAND,pb);          
     }
+
+    private void onClickDel(GameObject go)
+    {
+        C2S_GMCommand pb = new C2S_GMCommand();
+        pb.Commandid = (int)PHP_COMMAMD.DELETESAVE;
+        pb.Acclist.Add(accountText.text);
+        
+        NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMCOMMAND,pb);          
+    }    
+    
 
     public void AddDropData(PB_ParamStrDict rst)
     {
