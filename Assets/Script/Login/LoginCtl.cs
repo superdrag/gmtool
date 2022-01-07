@@ -96,6 +96,8 @@ public class LoginCtl
 
     public void StartConnetServer(string ip,int port)
     {
+        LoginModel.Instance.LoginIP = ip;
+        LoginModel.Instance.LoginPort = port;
         UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("连接中");
         NetMgr.NetClose();        
         NetMgr.NetConnect(ip,port,OnConnectCallBack);
@@ -119,6 +121,8 @@ public class LoginCtl
             UIMgr.ShowUI(VIEWID.ALERTINFO,"连接服务器超时");
             
             UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginButtonVis(true);
+            // LoginModel.Instance.LoginIP = "";
+            // LoginModel.Instance.LoginPort = 0;
         }
     }
 

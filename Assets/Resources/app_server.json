@@ -25,7 +25,7 @@
     },
     {       
         "server_id":4,      
-        "server_name":" 阿里国内测试",
+        "server_name":"阿里国内测试",
         "debug":1,
         "php_ip":"47.103.81.220",    
         "php_port":8101,
@@ -33,7 +33,7 @@
     },
     {       
         "server_id":5,      
-        "server_name":"阿里海外测试",
+        "server_name":"5XGAME海外测试",
         "debug":1,
         "php_ip":"47.88.56.65",    
         "php_port":8101,
@@ -41,10 +41,18 @@
     },
     {       
         "server_id":6,      
-        "server_name":"阿里正式服务器",
+        "server_name":"5XGAME正式服务器",
         "debug":0,
         "php_ip":"47.254.90.181",    
         "php_port":8101,
         "record_url":"http://150.158.85.139/record/"
-    }
+    },
+    {       
+        "server_id":7,      
+        "server_name":"成都正式服务器",
+        "debug":0,
+        "php_ip":"47.88.11.49",    
+        "php_port":8101,
+        "record_url":"http://150.158.85.139/record_cd/"
+    }    
 ]

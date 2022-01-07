@@ -21,6 +21,8 @@ public class LoginModel {
 
     public string Account;
     public int RoleId;
+    public string LoginIP;
+    public int LoginPort;
     public string LoginGateIP;
     public int LoginGatePort;
     public int LoginSign;

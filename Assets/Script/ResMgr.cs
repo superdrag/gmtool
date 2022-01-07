@@ -51,16 +51,7 @@ public class ResMgr
 
     public bool Init()
     {                
-        recordDir = Application.dataPath + "/record/"; 
-        if (!Application.isEditor)
-        {
-            recordDir = Application.dataPath + "/../record/";        
-        }   
 
-        if (!Directory.Exists(recordDir))
-        {
-            Directory.CreateDirectory(recordDir);
-        }
 
         // if (Directory.Exists(recordDir))
         // {
@@ -175,6 +166,21 @@ public class ResMgr
     private IEnumerator DownLoadVersionFile(Action<int> cbfunc)
     {
         Logger.Log(" --------------- start dwonload version file  ------------------ ");
+
+        recordDir = Application.dataPath + "/" + LoginModel.Instance.LoginIP + "/"; 
+        if (!Application.isEditor)
+        {
+            recordDir = Application.dataPath + "/../" + LoginModel.Instance.LoginIP+ "/";        
+        }   
+
+        // Logger.Log("11111111111111111 " + recordDir);
+        // Logger.Log("2222222222222222 " + LoginModel.Instance.LoginIP);
+
+        if (!Directory.Exists(recordDir))
+        {
+            Directory.CreateDirectory(recordDir);
+        }
+
 
         string url_listfile = "list.txt";
         string url_dir = LoginModel.Instance.record_url;
