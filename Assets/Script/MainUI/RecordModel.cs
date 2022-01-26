@@ -154,7 +154,7 @@ public class RecordModel {
             {
                 coreSumList[2] += item.Value;
             }
-            sumRegAccNum += dayData.allRegNum;   
+            sumRegAccNum += dayData.newUser;   
             sumWatchAds += dayData.watchAds;
             sumDauNum += dayData.DAU;
             sum_arpdau += dayData.ARPPDAU;
@@ -230,8 +230,9 @@ public class RecordModel {
         coreSumList[3] = sumWatchAds;
 
         //arpu
-        //Logger.Warn("11111111111111 ",coreSumList[2],sumDauNum);
-        coreSumList[4] = sum_arpdau / coreList.Count;
+        //Logger.Warn("00000000000000 ",coreSumList[2],sumRegAccNum);
+        coreSumList[4] = coreSumList[2] / sumRegAccNum;
+        //Logger.Warn("11111111111111 ",coreSumList[4]);
 
         //remain
         // for (int i = 5; i <= 9; i++)
@@ -474,13 +475,24 @@ public class RecordModel {
                     {
                         //Logger.Log( " 1111111111++  " + GFunc.Int2DateStr(preData.timetv), day,item.Key);
                         // day == 1 次留  day = 2 三留
-                        coreData.remainDict[day+1]++;    
+                        if (true)
+                        {
+                            
+                        }
+
+                        if (day < 30)
+                        {
+                            coreData.remainDict[day+1]++;    
+                        }
                         //次留是 i+ 1 = 2 开始   
 
                         if( preData.payAccDict.ContainsKey(item.Key) )
                         {   
                             //次留是 i+ 1 = 2 开始  
-                            coreData.remainPayDict[day+1]++;               
+                            if (day < 30)
+                            {
+                                coreData.remainPayDict[day+1]++;  
+                            }                                         
                         }                                      
                     }                                 
                 }
@@ -543,7 +555,7 @@ public class RecordModel {
 
         if(coreData.payAccDict.Count > 0) coreData.ARPPU = coreData.income / coreData.payAccDict.Count;
 
-        if( coreData.loginAccDict.Count > 0 ) coreData.ARPPDAU = coreData.payAccDict.Count / coreData.loginAccDict.Count;
+        //if( coreData.loginAccDict.Count > 0 ) coreData.ARPPDAU = coreData.payAccDict.Count / coreData.loginAccDict.Count;
 
         coreData.ACU = _acusum / 24;
 

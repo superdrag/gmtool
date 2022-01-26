@@ -102,6 +102,8 @@ public class TaskView : View
         GlobalModel.taskDataDict.Clear();
         ClearAllItem();
 
+        //Logger.Log("111111111111111111111111 "+_pb.Data.Count);
+
         foreach (var item in _pb.Data)
         {
             QueryTaskData data = new QueryTaskData();
@@ -125,10 +127,11 @@ public class TaskView : View
 
         List<KeyValuePair<int,QueryTaskData>> lst = new List<KeyValuePair<int,QueryTaskData>>(GlobalModel.taskDataDict);
 
-　　　　 lst.Sort(delegate(KeyValuePair<int,QueryTaskData> s1, KeyValuePair<int,QueryTaskData> s2)  
-　　　　　　{
-　　　　　　　　return s1.Key.CompareTo(s2.Key);
-　　　　　　});
+        lst.Sort(delegate(KeyValuePair<int,QueryTaskData> s1, KeyValuePair<int,QueryTaskData> s2)  
+        {
+                return s1.Key.CompareTo(s2.Key);
+        }
+        );
 
         Logger.Log("SetDataTex " + GlobalModel.taskDataDict.Count);
 

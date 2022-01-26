@@ -286,7 +286,7 @@ public class GlobalCtl
         else if (_pb.Type == 2)
         {
             TaskView view = UIMgr.GetUI<TaskView>(VIEWID.TaskView);  
-            Dictionary<int,int> dict = new Dictionary<int,int>(); 
+
             view.SetDataText(_pb);
         }
         else if (_pb.Type == 3)

@@ -45,6 +45,8 @@ public class UIHelper
             go.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
             go.GetComponent<RectTransform>().offsetMin = Vector2.zero;
             go.GetComponent<RectTransform>().offsetMax = Vector2.zero;
+            go.GetComponent<RectTransform>().localPosition = new Vector3( go.GetComponent<RectTransform>().localPosition.x, go.GetComponent<RectTransform>().localPosition.y, 0 );
+    
         }
         else
         {

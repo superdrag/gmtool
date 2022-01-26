@@ -23,7 +23,7 @@ public class GFunc
         dia_event_name_dict[(int)DIA_EVENT.EVENT_BUY_BATTLE_PASS] = "购买战斗通行证";
         dia_event_name_dict[(int)DIA_EVENT.EVENT_BUY_BATTLE_PASS_LEVEL] = "购买战斗通行证等级";
         dia_event_name_dict[(int)DIA_EVENT.EVENT_SHOP_GIFTPACK] = "商城钻石礼包";
-        dia_event_name_dict[(int)DIA_EVENT.EVENT_UPGRADE_FACILIY] = "快速升级设备";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_UPGRADE_FACILIY] = "解锁设备";
         dia_event_name_dict[(int)DIA_EVENT.EVENT_BUY_LEAFLET3] = "钻石购买抽卡收音机";
         dia_event_name_dict[(int)DIA_EVENT.EVENT_BUY_BUYSHOPRANDCARD] = "购买商城随机卡牌";
         dia_event_name_dict[(int)DIA_EVENT.EVENT_BUY_CASH] = "购买商城钞票";
@@ -160,8 +160,9 @@ public class GFunc
     //时间戳转DateTime
     public static DateTime TimeStamp2DateTime(int timeStamp)
     {
-        DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));  
-        long lTime = ((long)timeStamp * 10000000);  
+        timeStamp = timeStamp -13*3600; //美国时间
+        DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1,0,0,0));  
+        long lTime = ((long)timeStamp * 10000000) ;  
         TimeSpan toNow = new TimeSpan(lTime);  
         DateTime targetDt = dtStart.Add(toNow);  
         //Logger.Log("tttttttttttttttt ",targetDt.ToString());

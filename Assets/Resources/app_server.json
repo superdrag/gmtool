@@ -54,5 +54,13 @@
         "php_ip":"47.88.11.49",    
         "php_port":8101,
         "record_url":"http://150.158.85.139/record_cd/"
-    }    
+    },    
+    {       
+        "server_id":8,      
+        "server_name":"成都测试",
+        "debug":1,
+        "php_ip":"47.254.41.189",    
+        "php_port":8101,
+        "record_url":"http://47.254.41.189/record/"
+    }        
 ]
