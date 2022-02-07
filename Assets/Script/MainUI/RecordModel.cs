@@ -76,7 +76,7 @@ public class RecordModel {
     public static List<CoreData> coreList = new List<CoreData>();  //每天全部数据
     public static List<string[]> operateList = new List<string[]>(); //操作记录
     public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","AU","PH","ID","MY","TH","Other"};
-    public static List<string> platformList = new List<string>{"ALL", "IOS","Android","unity","Other"};
+    public static List<string> platformList = new List<string>{"ALL", "ios","android","unity","Other"};
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
     public static List<double> coreSumList = new List<double>();
     public static int sumWatchAds = 0;
@@ -244,7 +244,7 @@ public class RecordModel {
 
     public static void analyseDayCoreData(string[] dayData, int dayIndex, string country, string platform)
     {        
-        Debug.Log("index..............." + dayIndex);
+        Debug.Log("analyseDayCoreData..............." + dayIndex + " " + platform + " " + country);
         CoreData coreData = new CoreData();
         int sumOnlineSec = 0;
 
@@ -351,12 +351,18 @@ public class RecordModel {
             }
             else
             {
+            
                 if (platform != "ALL" && _platform != platform)
                 {
                     continue;
                 }  
             }            
        
+            if (platform == "ios" && _platform == "ios")
+            {
+                //Logger.Log("11111111111111111  ",_platform,platform);    
+            }    
+
             
             if (recordType == RECORD_TYPE.RECORD_USERREG)
             {
@@ -401,6 +407,11 @@ public class RecordModel {
                 }    
 
                 if (GData.DebugMode == true)
+                {
+                    _purchaseType = 1;
+                }
+
+                if (_platform == "ios")
                 {
                     _purchaseType = 1;
                 }
