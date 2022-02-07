@@ -51,8 +51,6 @@ public class ResMgr
 
     public bool Init()
     {                
-
-
         // if (Directory.Exists(recordDir))
         // {
         //     Directory.Delete(recordDir,true);
@@ -120,11 +118,17 @@ public class ResMgr
 
     public static void CleanAllRecord()
     {
-        if (Directory.Exists(recordDir))
+        string recordDirPath = Application.dataPath + "/record/";
+        if (!Application.isEditor)
         {
-            Directory.Delete(recordDir,true);
+            recordDirPath = Application.dataPath + "/../record/";
+        }  
+
+        if (Directory.Exists(recordDirPath))
+        {
+            Directory.Delete(recordDirPath,true);
         }
-        Directory.CreateDirectory(recordDir);
+        Directory.CreateDirectory(recordDirPath);
     }
 
     private IEnumerator DownLoadVersionFile2(Action<int> cbfunc)
@@ -167,10 +171,10 @@ public class ResMgr
     {
         Logger.Log(" --------------- start dwonload version file  ------------------ ");
 
-        recordDir = Application.dataPath + "/" + LoginModel.Instance.LoginIP + "/"; 
+        recordDir = Application.dataPath + "/record/" + LoginModel.Instance.LoginIP + "/"; 
         if (!Application.isEditor)
         {
-            recordDir = Application.dataPath + "/../" + LoginModel.Instance.LoginIP+ "/";        
+            recordDir = Application.dataPath + "/../record/" + LoginModel.Instance.LoginIP+ "/";        
         }   
 
         // Logger.Log("11111111111111111 " + recordDir);
