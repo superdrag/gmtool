@@ -63,6 +63,8 @@ public class TaskView : View
         C2S_GMQueryTaskMain pb = new C2S_GMQueryTaskMain();
         pb.Type = 2;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYTASKMAIN,pb);  
+
+        //SetDataText2();
     }
 
     override public void DoClickExport()
@@ -95,6 +97,38 @@ public class TaskView : View
             Transform obj = Content.GetChild(i);
             GameObject.Destroy(obj.gameObject);
         }
+    }
+
+    public void SetDataText2()
+    {
+        ClearAllItem();
+
+        Dictionary<int,QueryTaskData> dict = new Dictionary<int, QueryTaskData>();
+
+        for (int i = 0; i < RecordModel.coreList.Count; i++)
+        {
+            foreach (var item in RecordModel.coreList[i].mainTaskDict)
+            {
+                QueryTaskData data = null;
+                if (dict.TryGetValue( item.Key, out data) == false)
+                {
+                    data = new QueryTaskData();
+                    data.taskId = item.Key;
+                    dict[item.Key] = data;
+                }
+                
+                dict[item.Key].curNum += item.Value[0];
+                dict[item.Key].lostNum += item.Value[1];
+                dict[item.Key].percent = "100%";
+            }            
+        }
+
+        AddItemTitle();
+
+        foreach (var item in dict)
+        {
+            AddItem(item.Value);
+        }        
     }    
 
     public void SetDataText(S2C_GMQueryTaskMain _pb)

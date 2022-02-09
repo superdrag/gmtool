@@ -17,6 +17,11 @@ public enum RECORD_TYPE
 
     RECORD_USERLOGIN = 1010,
     RECORD_USEROFFLINE = 1011,
+
+    RECORD_GUIDETASk	  	= 1012,		//新手任务
+    RECORD_MAINTASK	  		= 1013,		//主线任务
+    RECORD_VIPCARD	  		= 1014,		//vipcard
+
     RECORD_GMOPERATE = 1020,
 }
 
@@ -44,6 +49,9 @@ public class CoreData
     public Dictionary<int,double> remainPectDict = new Dictionary<int, double>(); //留存百分比  //次留是 i+ 1 = 2 开始   
     public Dictionary<int,int> remainPayDict = new Dictionary<int, int>(); //付费留存  //次留是 i+ 1 = 2 开始
     public Dictionary<int,double> remainPayPectDict = new Dictionary<int, double>(); //留存百分比  //次留是 i+ 1 = 2 开始    
+
+    public Dictionary<int,List<int>> guideTaskDict = new Dictionary<int, List<int>>(); //新手引导
+    public Dictionary<int,List<int>> mainTaskDict = new Dictionary<int, List<int>>();   //主线任务
 }
 
 
@@ -358,10 +366,10 @@ public class RecordModel {
                 }  
             }            
        
-            if (platform == "ios" && _platform == "ios")
-            {
-                //Logger.Log("11111111111111111  ",_platform,platform);    
-            }    
+            // if (platform == "ios" && _platform == "ios")
+            // {
+            //     //Logger.Log("11111111111111111  ",_platform,platform);    
+            // }    
 
             
             if (recordType == RECORD_TYPE.RECORD_USERREG)
@@ -466,6 +474,44 @@ public class RecordModel {
             {
                 coreData.watchAds++;
             }
+
+            if (recordType == RECORD_TYPE.RECORD_GUIDETASk)
+            {
+
+            }
+
+            if (recordType == RECORD_TYPE.RECORD_MAINTASK)
+            {
+                // int _taskid = System.Convert.ToInt32(fields[5].Trim());
+
+                // List<int> list = null;
+                // if (coreData.mainTaskDict.TryGetValue(_taskid,out list) == false)
+                // {
+                //     list = new List<int>{0,0};
+                //     coreData.mainTaskDict[_taskid] = list;
+                // }
+
+                // bool lost = true;
+                // for (int day = 1; day <= 7; day++)
+                // {
+                //     int dindex = dayIndex - day; 
+                //     if (dindex >= 0 && dindex < coreList.Count) 
+                //     {
+                //         CoreData preData = coreList[dindex];           
+                //         if (preData.loginAccDict.ContainsKey(_acc))
+                //         {
+                //             lost = false;
+                //             break;
+                //         }
+                //     }  
+                // }
+
+                // coreData.mainTaskDict[_taskid][0] += 1;
+                // if(lost == true)
+                // {
+                //     coreData.mainTaskDict[_taskid][1] += 1;
+                // }                
+            }            
         }   
 
 
