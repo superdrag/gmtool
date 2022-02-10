@@ -419,7 +419,7 @@ public class RecordModel {
                     _purchaseType = 1;
                 }
 
-                if (_platform == "ios")
+                if (_platform == "ios" && coreData.timetv < 1644253299)
                 {
                     _purchaseType = 1;
                 }
