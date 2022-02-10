@@ -198,6 +198,7 @@ public class GFunc
                 }
             }
         }
+        filelist.Sort();
         return filelist;
     }
 

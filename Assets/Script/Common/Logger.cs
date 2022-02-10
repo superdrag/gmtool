@@ -52,9 +52,11 @@ public class Logger
 
     public static void Log(string content, params object[] objs)
     {
-        if (Application.isMobilePlatform) return;
         string logstr = logFormat(LOG_TYPE.NORMAL, content, objs);
         Debug.Log(logstr);
+
+        if (Application.isMobilePlatform) return;
+
         if (!IsInit()) return;
         WriteLog(LOG_TYPE.NORMAL, logstr);
     }
@@ -63,6 +65,7 @@ public class Logger
     {
         string logstr = logFormat(LOG_TYPE.WARNING, content, objs);
         Debug.LogWarning(logstr);
+        if (Application.isMobilePlatform) return;
         if (!IsInit()) return;
         WriteLog(LOG_TYPE.WARNING, logstr);
     }
@@ -71,6 +74,7 @@ public class Logger
     {
         string logstr = logFormat(LOG_TYPE.ERROR, content, objs);
         Debug.LogError(logstr);
+        if (Application.isMobilePlatform) return;
         if (!IsInit()) return;
         WriteLog(LOG_TYPE.ERROR, logstr);
     }
@@ -79,6 +83,7 @@ public class Logger
     {
         string logstr = logFormat(LOG_TYPE.ERROR, content, objs);
         Debug.LogError(logstr + "\n" + luaTrace);
+        if (Application.isMobilePlatform) return;
         if (!IsInit()) return;
         WriteLog(LOG_TYPE.ERROR, logstr, luaTrace);
     }

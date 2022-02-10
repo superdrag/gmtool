@@ -124,7 +124,7 @@ public class CoreSumView : View
 
     override public void DoClickExport()
     {
-        ExcelHelper.ExportCoreSum();
+        //ExcelHelper.ExportCoreSum();
     }       
 
     public void ClearCoreItem()

@@ -86,13 +86,19 @@ public class CoreView : View
         coreItem.Create();
         coreItem.view.SetParent(Content);
         coreItem.view.transform.localScale = Vector3.one;
+
+        coreItem.view.GetComponent<RectTransform>().localPosition = new Vector3( coreItem.view.GetComponent<RectTransform>().localPosition.x, coreItem.view.GetComponent<RectTransform>().localPosition.y, 0 );
+
         coreItem.Show(dayIndex);
         
         dataItemList.Add(coreItem);
+
+        Logger.Log("AddCoreItem....",dayIndex,coreItem.view.GetComponent<RectTransform>().anchoredPosition);
     }
 
     override public void DoClickQuery()
     {
+        //Debug.Log("DoClickQuery core");
         // string curCountry = TitleView.country;
         // Logger.Log("1111111111111 "+ curCountry);
         RecordModel.analyseAllCoreData(TitleView.country,TitleView.platform);
@@ -106,10 +112,11 @@ public class CoreView : View
                  AddCoreItem(i); 
             }           
         }
+        //Debug.Log("DoClickQuery core end");
     }
 
     override public void DoClickExport()
     {
-        ExcelHelper.ExportCore();
+        //ExcelHelper.ExportCore();
     }       
 }

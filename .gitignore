@@ -1,0 +1,12 @@
+
+Library/*
+Temp/*
+Assets/XLua/Gen/*
+Assets/record/
+HCLogs/
+obj/
+.vscode/
+.DS_Store
+Logs/
+Packages/
+Assets/Script/ThirdParty/LitJson/

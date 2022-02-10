@@ -128,6 +128,7 @@ public class RecordModel {
         {
             for (int i = 0; i < filelist.Count; i++)
             {              
+                Logger.Log("file.........",filelist[i]);
                 if (filelist[i].EndsWith("meta")) continue;
                 if (filelist[i].EndsWith("txt")) continue;
                 string[] lineAry = File.ReadAllLines(filelist[i]);
@@ -619,8 +620,8 @@ public class RecordModel {
         if( coreData.loginAccDict.Count > 0 ) coreData.ARPPDAU = coreData.income / coreData.loginAccDict.Count;
 
         coreList.Add(coreData);
-        
-        Logger.Log("day core.............",coreData.date,coreData.DAU,coreData.PCU,coreData.newUser,coreData.avgOnlineSec,coreData.newPayUser);
+
+        Logger.Log("day core end.............",coreData.date,coreData.DAU,coreData.PCU,coreData.newUser,coreData.avgOnlineSec,coreData.newPayUser);
     }
 
 }

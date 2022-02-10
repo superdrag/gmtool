@@ -76,12 +76,9 @@ public class GMApp : MonoBehaviour {
     }
 
     void Start () {
-        //Logger.Log("GMApp Start..........");
+        Logger.Log("GMApp Start..........");
 
         //ScreenFix();
-
-
-        
         test();        
     }
 	

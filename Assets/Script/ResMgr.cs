@@ -119,10 +119,15 @@ public class ResMgr
     public static void CleanAllRecord()
     {
         string recordDirPath = Application.dataPath + "/record/";
-        if (!Application.isEditor)
+        if (Application.platform == RuntimePlatform.WindowsPlayer)
         {
             recordDirPath = Application.dataPath + "/../record/";
         }  
+        else if (Application.isMobilePlatform)
+        {
+            string appName = GData.AppName.ToLower();
+            recordDirPath = Application.persistentDataPath + "/" + appName + "/../record/";
+        }
 
         if (Directory.Exists(recordDirPath))
         {
@@ -172,10 +177,16 @@ public class ResMgr
         Logger.Log(" --------------- start dwonload version file  ------------------ ");
 
         recordDir = Application.dataPath + "/record/" + LoginModel.Instance.LoginIP + "/"; 
-        if (!Application.isEditor)
+        if (Application.platform == RuntimePlatform.WindowsPlayer)
         {
             recordDir = Application.dataPath + "/../record/" + LoginModel.Instance.LoginIP+ "/";        
         }   
+        else if (Application.isMobilePlatform)
+        {
+            string appName = GData.AppName.ToLower();
+            recordDir = Application.persistentDataPath + "/" + appName + "/" + LoginModel.Instance.LoginIP+ "/";
+        }
+
 
         // Logger.Log("11111111111111111 " + recordDir);
         // Logger.Log("2222222222222222 " + LoginModel.Instance.LoginIP);
