@@ -93,7 +93,7 @@ public class CoreView : View
         
         dataItemList.Add(coreItem);
 
-        Logger.Log("AddCoreItem....",dayIndex,coreItem.view.GetComponent<RectTransform>().anchoredPosition);
+        //Logger.Log("AddCoreItem....",dayIndex,coreItem.view.GetComponent<RectTransform>().anchoredPosition);
     }
 
     override public void DoClickQuery()
