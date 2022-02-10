@@ -65,7 +65,7 @@ public class CoreView : View
         titleItem.view.SetParent(bg);
 
         RectTransform rect = titleItem.view.transform.GetComponent<RectTransform>();
-        rect.anchoredPosition = new Vector2(-248,487);
+        rect.anchoredPosition = new Vector2(648,-39);
 
         titleItem.view.transform.localScale = Vector3.one;
         titleItem.SetTittle();     
