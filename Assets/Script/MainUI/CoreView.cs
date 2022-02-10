@@ -117,6 +117,8 @@ public class CoreView : View
 
     override public void DoClickExport()
     {
+#if UNITY_STANDALONE
         ExcelHelper.ExportCore();
+#endif        
     }       
 }
