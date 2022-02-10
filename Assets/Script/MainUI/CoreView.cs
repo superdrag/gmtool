@@ -117,6 +117,6 @@ public class CoreView : View
 
     override public void DoClickExport()
     {
-        //ExcelHelper.ExportCore();
+        ExcelHelper.ExportCore();
     }       
 }
