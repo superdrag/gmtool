@@ -63,8 +63,6 @@ public static class ExcelHelper
 
 		HSSFSheet Sheet01 = (HSSFSheet)MyWorkbook.CreateSheet("data1");			
 		
-		
-
 		HSSFRow row_title = (HSSFRow)Sheet01.CreateRow(0);
 		for (int j = 0; j < title.Count; j++)
 		{
