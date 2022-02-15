@@ -40,6 +40,12 @@ public class LuaMgr {
     {
         //绝对路径
         string path = ResMgr.LOAD_LUA_DIR + filePath + ".lua";
+
+        // if (Application.isMobilePlatform)
+        // {
+        //     path = Application.persistentDataPath + "/LuaScripts/"  + filePath + ".lua";
+        // }        
+
         //Logger.Log("MyLoader path..........",path);
         //相对路径
        // string path = @"相对路径" + filePath + ".lua.txt";

@@ -14,6 +14,7 @@ public enum RECORD_TYPE
     RECORD_USERREG = 1004,
     RECORD_WATCHADV	 = 1005,		//看广告
     RECORD_ONLINENUMEX	= 1006,		
+    RECORD_ONLINENUMEX2	= 1007,		
 
     RECORD_USERLOGIN = 1010,
     RECORD_USEROFFLINE = 1011,
@@ -312,16 +313,26 @@ public class RecordModel {
             string _country = "";
             string _platform = "";
 
-            if (recordType != RECORD_TYPE.RECORD_ONLINENUM && recordType != RECORD_TYPE.RECORD_ONLINENUMEX)
+            if (recordType == RECORD_TYPE.RECORD_ONLINENUM )
             {                
+
+            }  
+            else if( recordType == RECORD_TYPE.RECORD_ONLINENUMEX )       
+            {
+                //_acc = fields[2].Trim();
+                _country = fields[3].Trim();
+            }  
+            else if( recordType == RECORD_TYPE.RECORD_ONLINENUMEX2 )       
+            {
+                //_acc = fields[2].Trim();
+                _platform = fields[3].Trim();
+            }             
+            else
+            {
                 _acc = fields[2].Trim();
                 _platform = fields[3].Trim();
                 _country = fields[4].Trim();
-                // if (_platform == "unity")
-                // {
-                //     _platform = "ALL";
-                // }
-            }            
+            }
 
             if (country == "Other")
             {
@@ -388,17 +399,54 @@ public class RecordModel {
 
             if (recordType == RECORD_TYPE.RECORD_ONLINENUM)
             {
-                int num = System.Convert.ToInt32(fields[2]);
-                if (coreData.PCU < num )
+                if (platform == "ALL")
                 {
-                    coreData.PCU = num;
-                }
+                    int num = System.Convert.ToInt32(fields[2]);
+                    if (coreData.PCU < num )
+                    {
+                        coreData.PCU = num;
+                    }
 
-                if( coreData.hourOnlineNumDict[curHour] < num )
-                {
-                    coreData.hourOnlineNumDict[curHour] = num;
-                }                    
+                    if( coreData.hourOnlineNumDict[curHour] < num )
+                    {
+                        coreData.hourOnlineNumDict[curHour] = num;
+                    } 
+                }                   
             }
+
+            if (recordType == RECORD_TYPE.RECORD_ONLINENUMEX)
+            {
+                if (country == _country)
+                {
+                    int num = System.Convert.ToInt32(fields[2]);
+                    if (coreData.PCU < num )
+                    {
+                        coreData.PCU = num;
+                    }
+
+                    if( coreData.hourOnlineNumDict[curHour] < num )
+                    {
+                        coreData.hourOnlineNumDict[curHour] = num;
+                    }  
+                }
+            }               
+
+            if (recordType == RECORD_TYPE.RECORD_ONLINENUMEX2)
+            {
+                if (platform == _platform)
+                {
+                    int num = System.Convert.ToInt32(fields[2]);
+                    if (coreData.PCU < num )
+                    {
+                        coreData.PCU = num;
+                    }
+
+                    if( coreData.hourOnlineNumDict[curHour] < num )
+                    {
+                        coreData.hourOnlineNumDict[curHour] = num;
+                    }  
+                }
+            }                          
 
             if (recordType == RECORD_TYPE.RECORD_USEROFFLINE)
             {   
