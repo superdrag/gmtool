@@ -19,6 +19,10 @@ public class GuideView : View
     private Button modBtn;
     private Text dataText;
     public Transform Content;
+
+    public GuideItem titleItem;
+    public List<GuideItem> dataItemList = new List<GuideItem>(); 
+
    
     public static GuideView Instance
     {
@@ -67,7 +71,25 @@ public class GuideView : View
 
     override public void DoClickExport()
     {
+        for (int i = 0; i < titleItem.infoList.Count; i++)
+        {
+            titleData.Add( titleItem.infoList[i].text.ToString());     
+        }   
 
+        for (int index = 0; index < dataItemList.Count; index++)
+        {
+            List<string> _date = new List<string>();
+            for (int i = 0; i < dataItemList[index].infoList.Count; i++)
+            {
+                _date.Add( dataItemList[index].infoList[i].text.ToString());     
+            }    
+            itemDataList.Add(_date);
+        }
+
+        ExcelHelper.Export("新手引导",titleData,itemDataList);
+
+        titleData.Clear();
+        itemDataList.Clear();
     }   
 
     public void AddItem(QueryTaskData taskData)
@@ -76,7 +98,9 @@ public class GuideView : View
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
-        item.Show(taskData);          
+        item.Show(taskData); 
+
+        dataItemList.Add(item);          
     }
 
     public void AddItemTitle()
@@ -85,16 +109,20 @@ public class GuideView : View
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
-        item.SetTitle();      
+        item.SetTitle();   
+
+        titleItem = item;   
     }
 
     public void ClearAllItem()
     {
+        dataItemList.Clear();
         for (int i = 0; i < Content.childCount; i++)
         {
             Transform obj = Content.GetChild(i);
             GameObject.Destroy(obj.gameObject);
         }
+        
     }    
 
     public void SetDataText(S2C_GMQueryTaskMain _pb)
@@ -125,7 +153,7 @@ public class GuideView : View
 
         List<KeyValuePair<int,QueryTaskData>> lst = new List<KeyValuePair<int,QueryTaskData>>(GlobalModel.taskDataDict);
 
-　　　　 lst.Sort(delegate(KeyValuePair<int,QueryTaskData> s1, KeyValuePair<int,QueryTaskData> s2)  
+        lst.Sort(delegate(KeyValuePair<int,QueryTaskData> s1, KeyValuePair<int,QueryTaskData> s2)  
 　　　　　　{
 　　　　　　　　return s1.Key.CompareTo(s2.Key);
 　　　　　　});

@@ -19,6 +19,9 @@ public class VipView : View
     private Button modBtn;
     private Text dataText;
     public Transform Content;
+
+    public VipItem titleItem;
+    public List<VipItem> dataItemList = new List<VipItem>();    
    
     public static VipView Instance
     {
@@ -67,7 +70,25 @@ public class VipView : View
 
     override public void DoClickExport()
     {
+        for (int i = 0; i < titleItem.infoList.Count; i++)
+        {
+            titleData.Add( titleItem.infoList[i].text.ToString());     
+        }   
 
+        for (int index = 0; index < dataItemList.Count; index++)
+        {
+            List<string> _date = new List<string>();
+            for (int i = 0; i < dataItemList[index].infoList.Count; i++)
+            {
+                _date.Add( dataItemList[index].infoList[i].text.ToString());     
+            }    
+            itemDataList.Add(_date);
+        }
+
+        ExcelHelper.Export("VIPCARD",titleData,itemDataList);
+
+        titleData.Clear();
+        itemDataList.Clear();
     }   
 
     public void AddItem(QueryTaskData taskData)
@@ -76,7 +97,9 @@ public class VipView : View
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
-        item.Show(taskData);          
+        item.Show(taskData); 
+
+        dataItemList.Add(item);
     }
 
     public void AddItemTitle()
@@ -85,11 +108,14 @@ public class VipView : View
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
-        item.SetTitle();      
+        item.SetTitle(); 
+
+        titleItem = item;     
     }
 
     public void ClearAllItem()
     {
+        dataItemList.Clear();
         for (int i = 0; i < Content.childCount; i++)
         {
             Transform obj = Content.GetChild(i);

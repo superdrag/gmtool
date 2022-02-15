@@ -73,6 +73,7 @@ public class CoreView : View
 
     public void ClearCoreItem()
     {
+        dataItemList.Clear();
         for (int i = 0; i < Content.childCount; i++)
         {
             Transform obj = Content.GetChild(i);
@@ -104,7 +105,7 @@ public class CoreView : View
         RecordModel.analyseAllCoreData(TitleView.country,TitleView.platform);
 
         ClearCoreItem();
-        dataItemList.Clear();
+        
         for (int i = 0; i < RecordModel.coreList.Count; i++)
         {
             if (RecordModel.coreList[i].timetv >= TitleView.startTime && RecordModel.coreList[i].timetv <= TitleView.endTime)

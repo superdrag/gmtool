@@ -1,4 +1,4 @@
-﻿#if UNITY_STANDALONE
+﻿//#if UNITY_STANDALONE
 
 using System.Collections;
 using System.Collections.Generic;
@@ -34,6 +34,60 @@ public static class ExcelHelper
         //关闭文件流
         MyAddress.Dispose();
 	 } 
+
+
+	public static void Export(string name, List<string> title, List<List<string>> itemList)
+	{
+		//string path = GFunc.AppRunPath() + "/核心数据.xlsx";
+
+		string path = Application.dataPath + "/../" + name + ".xlsx";
+
+		if (File.Exists(path))
+		{
+			File.Delete(path);
+		}
+
+		FileStream MyAddress = new FileStream(path, FileMode.CreateNew,FileAccess.ReadWrite);
+
+		HSSFWorkbook MyWorkbook = new HSSFWorkbook();
+
+		HSSFSheet Sheet01 = (HSSFSheet)MyWorkbook.CreateSheet("data1");			
+		
+		HSSFRow row_title = (HSSFRow)Sheet01.CreateRow(0);
+		for (int j = 0; j < title.Count; j++)
+		{
+			HSSFCell cell = (HSSFCell)row_title.CreateCell(j);
+			cell.SetCellValue(title[j]);
+		}		
+
+		int row_num = itemList.Count;
+
+		for (int i = 0; i < row_num; i++)
+		{
+			HSSFRow row = (HSSFRow)Sheet01.CreateRow(i+1);
+			for (int j = 0; j < title.Count; j++)
+			{
+				HSSFCell cell = (HSSFCell)row.CreateCell(j);
+
+				//Logger.Log("row col",i,j);
+
+				//cell.SetCellValue("数值"+i*j);					
+
+				string s = itemList[i][j];
+				cell.SetCellValue(s);
+			}
+		}
+
+		//写入到文件流
+		MyWorkbook.Write(MyAddress);
+		//关闭
+		MyWorkbook.Close();
+		//关闭文件流
+		MyAddress.Dispose();		
+
+		UIMgr.ShowUI(VIEWID.ALERTINFO,"导出成功"); 
+	}
+
 
 	 public static void ExportCore()
 	 {
@@ -142,4 +196,4 @@ public static class ExcelHelper
 	}
 }
 
-#endif
+//#endif

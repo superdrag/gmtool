@@ -19,6 +19,10 @@ public abstract class View
 
     public Action<View> onClickCallBack = null;
 
+    public List<string> titleData = new List<string>();
+
+    public List<List<string>> itemDataList = new List<List<string>>();
+
     public View()
     {
         this.viewRoot = null;
