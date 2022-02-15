@@ -19,6 +19,9 @@ public class DiamondView : View
     private Button modBtn;
     private Text dataText;
     public Transform Content;
+
+    public DiamondItem titleItem;
+    public List<DiamondItem> dataItemList = new List<DiamondItem>();         
    
     public static DiamondView Instance
     {
@@ -65,7 +68,25 @@ public class DiamondView : View
 
     override public void DoClickExport()
     {
+        for (int i = 0; i < titleItem.infoList.Count; i++)
+        {
+            titleData.Add( titleItem.infoList[i].text.ToString());     
+        }   
 
+        for (int index = 0; index < dataItemList.Count; index++)
+        {
+            List<string> _date = new List<string>();
+            for (int i = 0; i < dataItemList[index].infoList.Count; i++)
+            {
+                _date.Add( dataItemList[index].infoList[i].text.ToString());     
+            }    
+            itemDataList.Add(_date);
+        }
+
+        ExcelHelper.Export("钻石消费",titleData,itemDataList);
+
+        titleData.Clear();
+        itemDataList.Clear();  
     }   
 
     public void AddItem(DiaData data)
@@ -74,7 +95,9 @@ public class DiamondView : View
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
-        item.Show(data);          
+        item.Show(data);  
+
+        dataItemList.Add(item);
     }
 
     public void AddItemTitle()
@@ -83,11 +106,14 @@ public class DiamondView : View
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
-        item.SetTitle();      
+        item.SetTitle();    
+
+        titleItem = item;  
     }
 
     public void ClearAllItem()
     {
+        dataItemList.Clear();
         for (int i = 0; i < Content.childCount; i++)
         {
             Transform obj = Content.GetChild(i);

@@ -19,6 +19,9 @@ public class PayGiftView : View
     private Button modBtn;
     private Text dataText;
     public Transform Content;
+
+    public PayGiftItem titleItem;
+    public List<PayGiftItem> dataItemList = new List<PayGiftItem>();      
    
     public static PayGiftView Instance
     {
@@ -67,7 +70,25 @@ public class PayGiftView : View
 
     override public void DoClickExport()
     {
+        for (int i = 0; i < titleItem.infoList.Count; i++)
+        {
+            titleData.Add( titleItem.infoList[i].text.ToString());     
+        }   
 
+        for (int index = 0; index < dataItemList.Count; index++)
+        {
+            List<string> _date = new List<string>();
+            for (int i = 0; i < dataItemList[index].infoList.Count; i++)
+            {
+                _date.Add( dataItemList[index].infoList[i].text.ToString());     
+            }    
+            itemDataList.Add(_date);
+        }
+
+        ExcelHelper.Export("商品消费",titleData,itemDataList);
+
+        titleData.Clear();
+        itemDataList.Clear();        
     }   
 
     public void AddItem(string data)
@@ -76,7 +97,9 @@ public class PayGiftView : View
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
-        item.Show(data);          
+        item.Show(data); 
+
+        dataItemList.Add(item);        
     }
 
     public void AddItemTitle()
@@ -85,11 +108,14 @@ public class PayGiftView : View
         item.Create();
         item.view.SetParent(Content);
         item.view.transform.localScale = Vector3.one;
-        item.SetTitle();      
+        item.SetTitle();  
+
+        titleItem = item;
     }
 
     public void ClearAllItem()
     {
+        dataItemList.Clear();
         for (int i = 0; i < Content.childCount; i++)
         {
             Transform obj = Content.GetChild(i);

@@ -30,6 +30,15 @@ public class GFunc
         dia_event_name_dict[(int)DIA_EVENT.EVENT_ROOMPOSUNLOCK] = "房间坑位解锁";
         dia_event_name_dict[(int)DIA_EVENT.EVENT_HOOKCD] = "挂机训练清CD";
         dia_event_name_dict[(int)DIA_EVENT.EVENT_SETNICKNAME] = "改名字";
+
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_DIAMOND_HANDUP] = "挂机收益翻倍领取";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_DIAMOND_SHOPGIFT] = "商城礼包购买";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_DIAMOND_ARENALEAGUECD] = "竞技场秒联赛CD";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_DIAMOND_SETNAME] = "改名";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_DIAMOND_ARENAWATCHER] = "竞技场观众补满";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_DIAMOND_ROOMBUILDCD] = "秒房间建造CD";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_DIAMOND_BUYRADIO] = "购买收音机";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_DIAMOND_BUYPASSLEVEL] = "通行证等级购买";
         
         return true;
     }

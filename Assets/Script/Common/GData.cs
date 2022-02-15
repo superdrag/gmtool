@@ -37,6 +37,16 @@ public enum DIA_EVENT
     EVENT_ROOMPOSUNLOCK           = 111,   //房间坑位解锁
     EVENT_HOOKCD                  = 112,   //挂机训练清CD
     EVENT_SETNICKNAME             = 113,   //改名字
+
+
+    EVENT_DIAMOND_HANDUP              = 201,   //挂机收益翻倍领取
+    EVENT_DIAMOND_SHOPGIFT            = 202,   //商城礼包购买
+    EVENT_DIAMOND_ARENALEAGUECD       = 203,   //竞技场秒联赛CD
+    EVENT_DIAMOND_SETNAME             = 204,   //改名
+    EVENT_DIAMOND_ARENAWATCHER        = 205,   //竞技场观众补满
+    EVENT_DIAMOND_ROOMBUILDCD         = 206,   //秒房间建造CD
+    EVENT_DIAMOND_BUYRADIO            = 207,   //购买收音机
+    EVENT_DIAMOND_BUYPASSLEVEL        = 208,   //通行证等级购买    
 }
 
 
