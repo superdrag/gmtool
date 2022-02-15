@@ -92,16 +92,22 @@ public class LoginView : View
         }
         else
         {
+            List<ServerInfo> list = new List<ServerInfo>();
             foreach (var item in AppConfig.ServerList)
-            {           
-                if (GData.DebugMode == item.debug)
+            {
+                list.Add(item);
+            }
+
+            for (int i = list.Count - 1; i >= 0 ; i--)
+            {
+                if (GData.DebugMode == list[i].debug)
                 {
                     Dropdown.OptionData od1 = new Dropdown.OptionData();
-                    od1.text = item.name;     
-                    dropdown.options.Add(od1);  
+                    od1.text = list[i].name;     
+                    dropdown.options.Add(od1);
 
-                    selectServerList.Add(item);   
-                } 
+                    selectServerList.Add(list[i]);   
+                }                 
             }
         }
 
