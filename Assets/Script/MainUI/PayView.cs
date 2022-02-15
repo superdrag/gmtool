@@ -14,6 +14,8 @@ public class PayView : View
 
     public Transform Content;
 
+    public Transform TitleNote;
+
     public List<PayItem> PayItemsList = new List<PayItem>();
 
     public int itemNum = 0;
@@ -43,6 +45,8 @@ public class PayView : View
         Transform bg = viewRoot.Find("bg");
 
         Content = bg.Find("Scroll View/Viewport/Content");
+
+        TitleNote = bg.Find("title");
     }
 
     override public void OnShow(params object[] args)
@@ -69,7 +73,29 @@ public class PayView : View
 
     override public void DoClickExport()
     {
+        for (int i = 0; i < TitleNote.childCount; i++)
+        {
+            Text txt = TitleNote.GetChild(i).GetComponent<Text>();
+            titleData.Add(txt.text.ToString());
+        }
 
+        for (int index = 0; index < PayItemsList.Count; index++)
+        {
+            List<string> _date = new List<string>();
+            for (int i = 0; i < PayItemsList[index].infoList.Count; i++)
+            {
+                if (PayItemsList[index].infoList[i])
+                {
+                    _date.Add( PayItemsList[index].infoList[i].text.ToString());     
+                }                
+            }    
+            itemDataList.Add(_date);
+        }
+
+        ExcelHelper.Export("支付订单",titleData,itemDataList);
+
+        titleData.Clear();
+        itemDataList.Clear();        
     }  
 
 
