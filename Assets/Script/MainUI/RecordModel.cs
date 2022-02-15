@@ -84,8 +84,8 @@ public class RecordModel {
     public static List<string[]> dayDataList = new List<string[]>(); //一天数据
     public static List<CoreData> coreList = new List<CoreData>();  //每天全部数据
     public static List<string[]> operateList = new List<string[]>(); //操作记录
-    public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","AU","PH","ID","MY","TH","Other"};
-    public static List<string> platformList = new List<string>{"ALL", "ios","android","unity","Other"};
+    public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","AU","PH","ID","MY","TH","other"};
+    public static List<string> platformList = new List<string>{"ALL", "ios","android","unity","other"};
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
     public static List<double> coreSumList = new List<double>();
     public static int sumWatchAds = 0;
@@ -334,7 +334,7 @@ public class RecordModel {
                 _country = fields[4].Trim();
             }
 
-            if (country == "Other")
+            if (country == "other")
             {
                 bool _flag = false;
                 for (int i = 0; i < countryList.Count-1; i++)
@@ -356,7 +356,7 @@ public class RecordModel {
                 }   
             }
 
-            if (platform == "Other")
+            if (platform == "other")
             {
                 bool _flag = false;
                 for (int i = 0; i < platformList.Count-1; i++)
