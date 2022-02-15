@@ -1,5 +1,6 @@
 ﻿#if UNITY_STANDALONE
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,9 +43,18 @@ public static class ExcelHelper
 
 		string path = Application.dataPath + "/../" + name + ".xlsx";
 
-		if (File.Exists(path))
+		try
 		{
-			File.Delete(path);
+			if (File.Exists(path))
+			{
+				File.Delete(path);
+			}			
+		}
+		catch( Exception e )
+		{
+			Logger.Error("Export OpenFile err:",e.ToString());
+			UIMgr.ShowUI(VIEWID.ALERTINFO,"导出失败,已经打开Execel文件?"); 
+			return;
 		}
 
 		FileStream MyAddress = new FileStream(path, FileMode.CreateNew,FileAccess.ReadWrite);
@@ -53,17 +63,24 @@ public static class ExcelHelper
 
 		HSSFSheet Sheet01 = (HSSFSheet)MyWorkbook.CreateSheet("data1");			
 		
+		
+
 		HSSFRow row_title = (HSSFRow)Sheet01.CreateRow(0);
 		for (int j = 0; j < title.Count; j++)
 		{
 			HSSFCell cell = (HSSFCell)row_title.CreateCell(j);
 			cell.SetCellValue(title[j]);
+
+			//Logger.Log("wwww ",Sheet01.GetColumnWidth(j));
+
+			Sheet01.SetColumnWidth(j,Sheet01.GetColumnWidth(j) * 3);
 		}		
 
 		int row_num = itemList.Count;
 
 		for (int i = 0; i < row_num; i++)
 		{
+			
 			HSSFRow row = (HSSFRow)Sheet01.CreateRow(i+1);
 			for (int j = 0; j < title.Count; j++)
 			{
