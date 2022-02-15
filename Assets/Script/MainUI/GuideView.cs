@@ -86,7 +86,7 @@ public class GuideView : View
             itemDataList.Add(_date);
         }
 
-        ExcelHelper.Export("新手引导",titleData,itemDataList);
+        GFunc.ExportExcel("新手引导",titleData,itemDataList);
 
         titleData.Clear();
         itemDataList.Clear();

@@ -83,7 +83,7 @@ public class DiamondView : View
             itemDataList.Add(_date);
         }
 
-        ExcelHelper.Export("钻石消费",titleData,itemDataList);
+        GFunc.ExportExcel("钻石消费",titleData,itemDataList);
 
         titleData.Clear();
         itemDataList.Clear();  

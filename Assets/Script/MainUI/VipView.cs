@@ -85,7 +85,7 @@ public class VipView : View
             itemDataList.Add(_date);
         }
 
-        ExcelHelper.Export("VIPCARD",titleData,itemDataList);
+        GFunc.ExportExcel("VIPCARD",titleData,itemDataList);
 
         titleData.Clear();
         itemDataList.Clear();

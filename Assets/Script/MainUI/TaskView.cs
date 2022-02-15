@@ -87,7 +87,7 @@ public class TaskView : View
             itemDataList.Add(_date);
         }
 
-        ExcelHelper.Export("主线任务",titleData,itemDataList);
+        GFunc.ExportExcel("主线任务",titleData,itemDataList);
 
         titleData.Clear();
         itemDataList.Clear();

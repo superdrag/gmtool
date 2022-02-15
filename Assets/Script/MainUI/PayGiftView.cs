@@ -85,7 +85,7 @@ public class PayGiftView : View
             itemDataList.Add(_date);
         }
 
-        ExcelHelper.Export("商品消费",titleData,itemDataList);
+        GFunc.ExportExcel("商品消费",titleData,itemDataList);
 
         titleData.Clear();
         itemDataList.Clear();        

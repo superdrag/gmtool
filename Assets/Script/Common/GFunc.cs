@@ -382,9 +382,14 @@ public class GFunc
         {
             return eventid.ToString() + "[" + name + "]";
         }
-        return eventid.ToString();
-
-       
+        return eventid.ToString();       
     }     
+
+    public static void ExportExcel(string name, List<string> title, List<List<string>> itemList)
+    {
+#if UNITY_STANDALONE        
+        ExcelHelper.Export(name,title,itemList);
+#endif                 
+    }  
 }
 

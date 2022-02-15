@@ -92,7 +92,7 @@ public class PayView : View
             itemDataList.Add(_date);
         }
 
-        ExcelHelper.Export("支付订单",titleData,itemDataList);
+        GFunc.ExportExcel("支付订单",titleData,itemDataList);
 
         titleData.Clear();
         itemDataList.Clear();        
