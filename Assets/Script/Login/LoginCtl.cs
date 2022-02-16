@@ -90,8 +90,8 @@ public class LoginCtl
             return;
         }
         UIMgr.HideUI(VIEWID.LOGIN);
-        UIMgr.ShowUI(VIEWID.MENU);
         UIMgr.ShowUI(VIEWID.TITLE);
+        UIMgr.ShowUI(VIEWID.MENU);
     }
 
     public void StartConnetServer(string ip,int port)

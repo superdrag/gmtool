@@ -56,6 +56,13 @@ public class CoreView : View
 
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
         rect.sizeDelta = new Vector2(0, (float)RecordModel.coreList.Count * (float)73.6 );
+
+        int startIndex = RecordModel.coreList.Count - 9; //开始为倒数9天
+        if (startIndex < 0)
+        {
+            startIndex = 0;
+        }
+        UIMgr.GetUI<TitleView>(VIEWID.TITLE).SetInitDate(startIndex,0);
     }
 
     public void ShowTitle()

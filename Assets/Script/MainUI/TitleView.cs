@@ -111,9 +111,10 @@ public class TitleView : View
             od2.text = RecordModel.coreList[i].date;
             dropdown_date2.options.Add(od2); 
         }          
-          
+
         onChooseDate1(0);  
-        onChooseDate2(0);
+        onChooseDate2(0);          
+
 
         //dropdown_date2.options[0].text = "aaaaaaaaaaaaa"; 
 
@@ -124,6 +125,16 @@ public class TitleView : View
         //onClickExport(null);
     }
 
+    public void SetInitDate(int start, int end)
+    {
+        onChooseDate1(start);  
+
+        dropdown_date1.value = start;
+
+        onChooseDate2(end);
+
+        dropdown_date2.value = end;
+    }
 
     private void onClickQuery(GameObject go)
     {
