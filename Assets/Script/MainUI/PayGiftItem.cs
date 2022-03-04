@@ -44,6 +44,6 @@ public class PayGiftItem
         infoList[0].text = "商品id";
         infoList[1].text = "充值次数";
         infoList[2].text = "充值人数";
-        infoList[3].text = "首次购买人数";
+        infoList[3].text = "仅充值一次人数";
     }
 }

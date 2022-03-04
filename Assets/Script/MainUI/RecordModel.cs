@@ -137,6 +137,39 @@ public class RecordModel {
             }
             analyseAllCoreData("ALL","ALL");            
         }
+
+
+
+        // for (int i = 0; i < coreList.Count; i++)
+        // {
+        //     CoreData coreData = coreList[i];
+        //     foreach (var item in coreData.remainDict)
+        //     {
+        //         int _day = item.Key;
+        //         int _loginNum = item.Value;
+
+        //         if (_loginNum > 0)
+        //         {
+        //             Logger.Warn("1111111111111 " +i + "  "+_day+"   "+_loginNum);
+        //         }
+
+        //         int dindex = i + _day; 
+        //         coreData.remainPectDict[_day] = 0;
+
+        //         if (dindex < coreList.Count)
+        //         {
+        //             CoreData nextData = coreList[dindex];  
+        //             if (nextData.regAccDict.Count > 0)
+        //             {                    
+        //                 coreData.remainPectDict[_day] = _loginNum / (float)coreData.regAccDict.Count * 100.0; 
+
+        //                 //coreData.remainPayPectDict[_day] = _loginPayNum / (float)preData.regAccDict.Count * 100.0;
+        //                 //Logger.Warn("xxxxxxxxxxxxx ",coreData.remainPectDict[_day],_loginNum ,preData.regAccDict.Count);
+        //             }                
+        //         }
+        //     }
+        // }
+
         return true;
     }
 
@@ -148,6 +181,47 @@ public class RecordModel {
         {
             string[] dayData = dayDataList[i];
             analyseDayCoreData(dayData,i,country,platform);
+        }
+
+
+        for (int i = 0; i < coreList.Count; i++)
+        {
+            CoreData todayData = coreList[i];
+            foreach (var item in todayData.regAccDict)
+            {
+                string acc = item.Key;
+                int num = item.Value;
+                for (int day = 1; day <= 30; day++) //最大月流30天
+                {
+                    int nextIndex = i + day; 
+                    if (nextIndex < coreList.Count)
+                    {
+                        foreach (var item2 in coreList[nextIndex].loginAccDict)
+                        {
+                            if (acc == item2.Key)
+                            {
+                                //Logger.Warn("1111111111111 "+acc+"   "+item2.Value);
+                                todayData.remainDict[day] += 1;  
+                            }                    
+                        }
+                    }
+                }
+            }         
+        }
+
+        for (int i = 0; i < coreList.Count; i++)
+        {
+            CoreData coreData = coreList[i];
+            
+            for (int day = 1; day < 30; day++)
+            {
+                if (coreData.remainDict[day] > 0)
+                {
+                    coreData.remainPectDict[day] = coreData.remainDict[day] / (float)coreData.regAccDict.Count * 100.0;
+                    //Logger.Warn("1111111111111 ",i,day,coreData.remainPectDict[day]); 
+                }
+                
+            }
         }
 
         //分析总数
@@ -568,67 +642,46 @@ public class RecordModel {
 
 
 
-        foreach (var item in coreData.loginAccDict)
-        { 
-            //留存
-            for (int day = 1; day <= 30; day++) //最大月流30天
-            {
-                int dindex = dayIndex - day; 
-                if (dindex >= 0 && dindex < coreList.Count)
-                {
-                    CoreData preData = coreList[dindex];                
-                    if( preData.regAccDict.ContainsKey(item.Key) )
-                    {
-                        //Logger.Log( " 1111111111++  " + GFunc.Int2DateStr(preData.timetv), day,item.Key);
-                        // day == 1 次留  day = 2 三留
-                        if (true)
-                        {
-                            
-                        }
 
+
+        /*
+        //留存
+        for (int day = 1; day <= 30; day++) //最大月流30天
+        {
+            int nextIndex = dayIndex + day; 
+            if (nextIndex < coreList.Count)
+            {
+                CoreData nextData = coreList[nextIndex];   
+
+                nextData.loginAccDict    
+
+                if( nextData.regAccDict.ContainsKey(item.Key) )
+                {
+                    //Logger.Log( " 1111111111++  " + GFunc.Int2DateStr(nextData.timetv), day,item.Key);
+                    // day == 1 次留  day = 2 三留
+                    if (true)
+                    {
+                        
+                    }
+
+                    if (day < 30)
+                    {
+                        coreData.remainDict[day+1]++;    
+                    }
+                    //次留是 i+ 1 = 2 开始   
+
+                    if( nextData.payAccDict.ContainsKey(item.Key) )
+                    {   
+                        //次留是 i+ 1 = 2 开始  
                         if (day < 30)
                         {
-                            coreData.remainDict[day+1]++;    
-                        }
-                        //次留是 i+ 1 = 2 开始   
-
-                        if( preData.payAccDict.ContainsKey(item.Key) )
-                        {   
-                            //次留是 i+ 1 = 2 开始  
-                            if (day < 30)
-                            {
-                                coreData.remainPayDict[day+1]++;  
-                            }                                         
-                        }                                      
-                    }                                 
-                }
+                            coreData.remainPayDict[day+1]++;  
+                        }                                         
+                    }                                      
+                }                                 
             }
         }
-
-
-        foreach (var item in coreData.remainDict)
-        {
-            int _day = item.Key;
-            int _loginNum = item.Value;
-
-            int _loginPayNum = coreData.remainPayDict[_day];
-
-    
-            int dindex = dayIndex - (_day - 1); 
-            coreData.remainPectDict[_day] = 0;
-
-            if (dindex >= 0 && dindex < coreList.Count)
-            {
-                CoreData preData = coreList[dindex];  
-                if (preData.regAccDict.Count > 0)
-                {                    
-                    coreData.remainPectDict[_day] = _loginNum / (float)preData.regAccDict.Count * 100.0; 
-
-                    coreData.remainPayPectDict[_day] = _loginPayNum / (float)preData.regAccDict.Count * 100.0;
-                    //Logger.Warn("xxxxxxxxxxxxx ",coreData.remainPectDict[_day],_loginNum ,preData.regAccDict.Count);
-                }                
-            }
-        }
+        */
 
 
         for (int i = 0; i < dayIndex; i++)
