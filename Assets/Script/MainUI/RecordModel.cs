@@ -254,23 +254,23 @@ public class RecordModel {
                 //     coreSumList[index] += num;
                 // }
             //
-                if (day == 2)
+                if (day == 1)
                 {
                     coreSumList[5] += num;
                 }
-                else if (day == 3)
+                else if (day == 2)
                 {
                     coreSumList[6] += num;
                 } 
-                else if (day == 7)
+                else if (day == 6)
                 {
                     coreSumList[7] += num;
                 }
-                else if (day == 14)
+                else if (day == 13)
                 {
                     coreSumList[8] += num;
                 } 
-                else if (day == 30)
+                else if (day == 29)
                 {
                     coreSumList[9] += num;
                 }                                                                                      
@@ -287,23 +287,23 @@ public class RecordModel {
                 //     coreSumList[index] += num;
                 // }
             //
-                if (day == 2)
+                if (day == 1)
                 {
                     coreSumList[10] += num;
                 }
-                else if (day == 3)
+                else if (day == 2)
                 {
                     coreSumList[11] += num;
                 } 
-                else if (day == 7)
+                else if (day == 6)
                 {
                     coreSumList[12] += num;
                 }
-                else if (day == 14)
+                else if (day == 13)
                 {
                     coreSumList[13] += num;
                 } 
-                else if (day == 30)
+                else if (day == 29)
                 {
                     coreSumList[14] += num;
                 }                                                                                      
