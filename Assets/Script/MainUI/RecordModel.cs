@@ -129,7 +129,7 @@ public class RecordModel {
         {
             for (int i = 0; i < filelist.Count; i++)
             {              
-                Logger.Log("file.........",filelist[i]);
+                if (GFunc.DEBUGMODE()) Logger.Log("file.........",filelist[i]);
                 if (filelist[i].EndsWith("meta")) continue;
                 if (filelist[i].EndsWith("txt")) continue;
                 string[] lineAry = File.ReadAllLines(filelist[i]);
@@ -328,7 +328,7 @@ public class RecordModel {
 
     public static void analyseDayCoreData(string[] dayData, int dayIndex, string country, string platform)
     {        
-        Debug.Log("analyseDayCoreData..............." + dayIndex + " " + platform + " " + country);
+        //Debug.Log("analyseDayCoreData..............." + dayIndex + " " + platform + " " + country);
         CoreData coreData = new CoreData();
         int sumOnlineSec = 0;
 
@@ -371,7 +371,7 @@ public class RecordModel {
             if (coreData.date == null)
             {                
                 coreData.date = fields[0].Split('-')[0];     //统计日期  
-                Logger.Log("day date.............",coreData.date);                             
+                //Logger.Log("day date.............",coreData.date);                             
             }
             if (coreData.timetv == 0)
             {
@@ -722,7 +722,7 @@ public class RecordModel {
 
         coreList.Add(coreData);
 
-        Logger.Log("day core end.............",coreData.date,coreData.DAU,coreData.PCU,coreData.newUser,coreData.avgOnlineSec,coreData.newPayUser);
+        if (GFunc.DEBUGMODE()) Logger.Log("day core end.............",coreData.date,coreData.DAU,coreData.PCU,coreData.newUser,coreData.avgOnlineSec,coreData.newPayUser);
     }
 
 }

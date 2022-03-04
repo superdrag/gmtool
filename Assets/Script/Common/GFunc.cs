@@ -45,7 +45,7 @@ public class GFunc
 
     public static bool DEBUGMODE()
     {
-        return true;
+        return GData.DebugMode;
     }
 
     public static string AppRunPath()

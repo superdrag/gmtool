@@ -254,7 +254,7 @@ public class ResMgr
                 {
                     if (md5str == GFunc.MD5file(localPath))
                     {
-                        Logger.Log("localPath has file.......", localPath,i);      
+                        if (GFunc.DEBUGMODE())Logger.Log("localPath has file.......", localPath,i);      
                         continue;                            
                     }
                     else
