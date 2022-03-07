@@ -77,6 +77,7 @@ public enum PHP_COMMAMD
     QUERYTIME = 117,
     DRAWCARD = 118,
     RECORD = 119,
+    CLEANDB = 120,
 }
 
 public enum PHP_QUERY
@@ -114,7 +115,7 @@ public class GData
     //游戏名称
     public static string AppName = "gmtool";
 
-    public static bool DebugMode = false;
+    public static bool DebugMode = true;
 
     //PC测试模式 会用到C盘目录资源模拟热更新
     public static bool DebugHotFix = false;

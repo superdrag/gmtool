@@ -25,6 +25,8 @@ public class FuncView : View
 
     private Button recordBtn;
 
+    private Button cleanDbBtn;
+
     public static FuncView Instance
     {
         get
@@ -76,11 +78,18 @@ public class FuncView : View
         recordBtn = bg.Find("record/Button").GetComponent<Button>();
         recordBtn.onClick.AddListener(onClickRecord); 
                 
+        cleanDbBtn = bg.Find("cleardb/Button").GetComponent<Button>();
+        cleanDbBtn.onClick.AddListener(onClickCleanDb);                
     }
 
     override public void OnShow(params object[] args)
     {        
         //onClickQuery(queryBtn.gameObject);
+
+        if (GFunc.DEBUGMODE() == false)
+        {
+            cleanDbBtn.gameObject.SetActive(false);
+        }
 
     }
 
@@ -133,7 +142,12 @@ public class FuncView : View
     private void onClickTick()
     {
         GlobalCtl.MSG_CL2PHP_GMCOMMAND( "gm", (int)PHP_COMMAMD.TICKOFF);      
-    }   
+    }  
+
+    private void onClickCleanDb()
+    {
+        GlobalCtl.MSG_CL2PHP_GMCOMMAND( "gm", (int)PHP_COMMAMD.CLEANDB);      
+    }      
 
     public void onQueryServerTime(int timetv)
     {

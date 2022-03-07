@@ -176,6 +176,7 @@ public class RecordModel {
     public static void analyseAllCoreData(string country, string platform)
     {
         coreList.Clear();
+
         //分析每天
         for (int i = 0; i < dayDataList.Count; i++)
         {
@@ -183,7 +184,9 @@ public class RecordModel {
             analyseDayCoreData(dayData,i,country,platform);
         }
 
+        
 
+        //留存
         for (int i = 0; i < coreList.Count; i++)
         {
             CoreData todayData = coreList[i];
