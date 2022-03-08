@@ -109,21 +109,52 @@ public class GlobalCtl
         // Logger.Log("MSG_PHP2CL_SENDMONEY "+_pb.Account);
     }    
 
-
+    //审批回调
     public void MSG_PHP2CL_SENDMAIL(MsgPack msg)
     {        
         S2C_GMSendMail _pb = msg.UnpackProtoBuf<S2C_GMSendMail>( new S2C_GMSendMail() );
 
-        UIMgr.ShowNoticeRet(_pb.Ret);  
+        if (_pb.Ret == 0)
+        {
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"审核邮件成功" + _pb.Finish  + "封");
+        } 
+        else
+        {
+            if (_pb.Ret == (int)ERROR_CODE.ERROR_NOTRANK)
+            {
+                UIMgr.ShowUI(VIEWID.ALERTINFO,"审核邮件失败:权限不足");
+            }
+            else
+            {
+                UIMgr.ShowUI(VIEWID.ALERTINFO,"审核邮件失败:"+_pb.Ret);
+            }            
+        }
 
         UIMgr.GetUI(VIEWID.Mail).OnShow();
     } 
 
+    //发送回调
     public void MSG_PHP2CL_MODMAIL(MsgPack msg)
     {        
         S2C_GMSendMail _pb = msg.UnpackProtoBuf<S2C_GMSendMail>( new S2C_GMSendMail() );
 
-        UIMgr.ShowNoticeRet(_pb.Ret);
+        //UIMgr.ShowNoticeRet(_pb.Ret);
+
+        if (_pb.Ret == 0)
+        {
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"成功发送邮件,待审核");
+        } 
+        else
+        {
+            if (_pb.Ret == (int)ERROR_CODE.ERROR_NOTRANK)
+            {
+                UIMgr.ShowUI(VIEWID.ALERTINFO,"发送邮件失败:权限不足");
+            }
+            else
+            {
+                UIMgr.ShowUI(VIEWID.ALERTINFO,"发送邮件失败");
+            }            
+        }
 
         UIMgr.GetUI(VIEWID.Mail).OnShow();
     } 
