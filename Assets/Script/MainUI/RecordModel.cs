@@ -81,7 +81,7 @@ public class RecordModel {
         }
     }
 
-    public static List<string[]> dayDataList = new List<string[]>(); //一天数据
+    public static List<List<string>> dayDataList = new List<List<string>>(); //一天数据
     public static List<CoreData> coreList = new List<CoreData>();  //每天全部数据
     public static List<string[]> operateList = new List<string[]>(); //操作记录
     public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","AU","PH","ID","MY","TH","other"};
@@ -133,7 +133,19 @@ public class RecordModel {
                 if (filelist[i].EndsWith("meta")) continue;
                 if (filelist[i].EndsWith("txt")) continue;
                 string[] lineAry = File.ReadAllLines(filelist[i]);
-                dayDataList.Add(lineAry);
+
+                List<string> tmpary=new List<string>();                   
+                for (int j = 0; j < lineAry.Length; j++)
+                {
+                    int findindex = lineAry[j].IndexOf(",1012,");
+                    int findindex2 = lineAry[j].IndexOf(",1013,");
+                    if (findindex == -1 && findindex2 == -1)
+                    {
+                        tmpary.Add(lineAry[j]);
+                    }
+                }
+
+                dayDataList.Add(tmpary);
             }
             analyseAllCoreData("ALL","ALL");            
         }
@@ -180,11 +192,9 @@ public class RecordModel {
         //分析每天
         for (int i = 0; i < dayDataList.Count; i++)
         {
-            string[] dayData = dayDataList[i];
-            analyseDayCoreData(dayData,i,country,platform);
+            List<string> _dayData = dayDataList[i];
+            analyseDayCoreData(_dayData.ToArray(),i,country,platform);
         }
-
-        
 
         //留存
         for (int i = 0; i < coreList.Count; i++)
@@ -608,7 +618,8 @@ public class RecordModel {
 
             if (recordType == RECORD_TYPE.RECORD_MAINTASK)
             {
-                // int _taskid = System.Convert.ToInt32(fields[5].Trim());
+                //Logger.Log("11111111111111111");
+                //int _taskid = System.Convert.ToInt32(fields[5].Trim());
 
                 // List<int> list = null;
                 // if (coreData.mainTaskDict.TryGetValue(_taskid,out list) == false)
