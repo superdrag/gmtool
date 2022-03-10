@@ -55,6 +55,8 @@ public class CoreData
     public Dictionary<int,List<int>> guideTaskDict = new Dictionary<int, List<int>>(); //新手引导
     public Dictionary<int,List<int>> mainTaskDict = new Dictionary<int, List<int>>();   //主线任务
     public Dictionary<string,List<string>> rankListDict = new Dictionary<string, List<string>>();   //排行榜
+
+    public Dictionary<int,int> payAccLTV = new Dictionary<int, int>();
 }
 
 
@@ -187,7 +189,7 @@ public class RecordModel {
         return true;
     }
 
-    public static void analyseAllCoreData(string country, string platform)
+    public static async void analyseAllCoreData(string country, string platform)
     {
         coreList.Clear();
 
@@ -234,10 +236,44 @@ public class RecordModel {
                 {
                     coreData.remainPectDict[day] = coreData.remainDict[day] / (float)coreData.regAccDict.Count * 100.0;
                     //Logger.Warn("1111111111111 ",i,day,coreData.remainPectDict[day]); 
-                }
-                
+                }                
             }
         }
+
+        //LTV
+        for (int i = 0; i < coreList.Count; i++)
+        {
+            CoreData coreData = coreList[i];
+        
+            for (int day = 0; day < 30; day++)
+            {
+                int nextIndex = i + day;
+
+                if (nextIndex < coreList.Count)
+                {
+                    CoreData nextCoreData = coreList[nextIndex];
+
+                    foreach (var item in nextCoreData.payAccDict)
+                    {
+                        if (coreData.loginAccDict.ContainsKey(item.Key))
+                        {
+                            //Logger.Warn("11111111111111111111111 ",i,day+1,item.Value);
+                            coreData.payAccLTV[day+1] += item.Value;
+                        }                
+                    }
+                }
+            }
+
+            for (int j = 0; j < 30; j++)
+            {
+                int day = j + 1;
+                if (day < 30)
+                {
+                    coreData.payAccLTV[day+1] += coreData.payAccLTV[day];
+                }                
+            }
+        }        
+
 
         //分析总数
         coreSumList[0] = coreList[coreList.Count-1].timetv;
@@ -361,6 +397,7 @@ public class RecordModel {
 
             coreData.remainPayDict[i] = 0;
             coreData.remainPayPectDict[i] = 0;
+            coreData.payAccLTV[i] = 0;
         }   
 
         for (int j = 0; j < dayData.Length; j++)

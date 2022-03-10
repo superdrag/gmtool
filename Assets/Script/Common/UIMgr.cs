@@ -27,7 +27,8 @@ public enum VIEWID
     
     CoreView = 41,
     CoreSumView = 42,
-    RecordView = 43,
+    PayCoreView = 43,
+    RecordView = 44,
 
     PayView = 45,
     SaveView = 46,
@@ -75,7 +76,8 @@ public static class UIMgr
         RegisterUI(VIEWID.MailSend,MailSendView.Instance);
 
         RegisterUI(VIEWID.CoreView,CoreView.Instance);
-        RegisterUI(VIEWID.CoreSumView,CoreSumView.Instance);        
+        RegisterUI(VIEWID.CoreSumView,CoreSumView.Instance);   
+        RegisterUI(VIEWID.PayCoreView,PayCoreView.Instance);     
 
         RegisterUI(VIEWID.PayView,PayView.Instance);
 
@@ -99,8 +101,7 @@ public static class UIMgr
 
         RegisterUI(VIEWID.CardView,CardView.Instance);
 
-        
-        
+        RegisterUI(VIEWID.RankView,RankView.Instance);
         
     }    
 

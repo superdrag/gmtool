@@ -60,6 +60,7 @@ public class MenuView : View
         Button vipBtn = viewRoot.Find("vipcard").GetComponent<Button>();
         Button guideBtn = viewRoot.Find("guide").GetComponent<Button>();
         Button rankBtn = viewRoot.Find("rank").GetComponent<Button>();
+        Button payCoreBtn = viewRoot.Find("paycore").GetComponent<Button>();
 
         btnViewDict[VIEWID.Mail] = youjianBtn;
         btnViewDict[VIEWID.CoreView] = hexinBtn;
@@ -78,7 +79,8 @@ public class MenuView : View
         btnViewDict[VIEWID.VipView] = vipBtn;
         btnViewDict[VIEWID.GuideView] = guideBtn;
         btnViewDict[VIEWID.RankView] = rankBtn;
-
+        btnViewDict[VIEWID.PayCoreView] = payCoreBtn;
+        
         foreach (var item in btnViewDict)
         {
             EventTriggerListener.Get(item.Value.gameObject).onClick = OnBtnEvent;
@@ -122,6 +124,8 @@ public class MenuView : View
 
         curViewId = (VIEWID.CoreView);
 
+
+        //暂时屏蔽
         rankBtn.gameObject.SetActive(false);
 
         if (Application.isEditor == false)
