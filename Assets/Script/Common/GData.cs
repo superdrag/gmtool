@@ -92,6 +92,7 @@ public enum PHP_QUERY
     MAINTASK            = 1007, //主线任务查询
     PAYGIFT             = 1008, //礼包付费统计 
     VIPCARD             = 1009,  
+    RANKLIS             = 1010,  //排行榜
 }
 
 public enum MOD_TYPE
@@ -115,7 +116,7 @@ public class GData
     //游戏名称
     public static string AppName = "gmtool";
 
-    public static bool DebugMode = true;
+    public static bool DebugMode = false;
 
     //PC测试模式 会用到C盘目录资源模拟热更新
     public static bool DebugHotFix = false;

@@ -22,6 +22,7 @@ public enum RECORD_TYPE
     RECORD_GUIDETASk	  	= 1012,		//新手任务
     RECORD_MAINTASK	  		= 1013,		//主线任务
     RECORD_VIPCARD	  		= 1014,		//vipcard
+    RECORD_RANKLIST	  		= 1015,		//ranklist
 
     RECORD_GMOPERATE = 1020,
 }
@@ -53,6 +54,7 @@ public class CoreData
 
     public Dictionary<int,List<int>> guideTaskDict = new Dictionary<int, List<int>>(); //新手引导
     public Dictionary<int,List<int>> mainTaskDict = new Dictionary<int, List<int>>();   //主线任务
+    public Dictionary<string,List<string>> rankListDict = new Dictionary<string, List<string>>();   //排行榜
 }
 
 
@@ -413,7 +415,11 @@ public class RecordModel {
             {
                 //_acc = fields[2].Trim();
                 _platform = fields[3].Trim();
-            }             
+            }   
+            else if( recordType == RECORD_TYPE.RECORD_RANKLIST )       
+            {
+
+            }                         
             else
             {
                 _acc = fields[2].Trim();
@@ -609,6 +615,22 @@ public class RecordModel {
             if (recordType == RECORD_TYPE.RECORD_WATCHADV)
             {
                 coreData.watchAds++;
+            }
+
+            if (recordType == RECORD_TYPE.RECORD_RANKLIST)
+            {        
+                Logger.Log("rankgroup data -- "+lineData);        
+                List<string> tmplist = new List<string>();
+                tmplist.Add(fields[2]);
+                tmplist.Add(fields[3]);
+                tmplist.Add(fields[4]);
+                tmplist.Add(fields[5]);
+                tmplist.Add(fields[6]);
+                tmplist.Add(fields[7]);
+                tmplist.Add(fields[8]);
+                tmplist.Add(fields[9]);
+                tmplist.Add(fields[10]);
+                coreData.rankListDict[fields[2]] = tmplist;
             }
 
             if (recordType == RECORD_TYPE.RECORD_GUIDETASk)

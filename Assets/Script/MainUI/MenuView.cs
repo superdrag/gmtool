@@ -59,6 +59,7 @@ public class MenuView : View
         Button cardBtn = viewRoot.Find("card").GetComponent<Button>();
         Button vipBtn = viewRoot.Find("vipcard").GetComponent<Button>();
         Button guideBtn = viewRoot.Find("guide").GetComponent<Button>();
+        Button rankBtn = viewRoot.Find("rank").GetComponent<Button>();
 
         btnViewDict[VIEWID.Mail] = youjianBtn;
         btnViewDict[VIEWID.CoreView] = hexinBtn;
@@ -76,6 +77,7 @@ public class MenuView : View
         btnViewDict[VIEWID.PayGiftView] = paygiftBtn;
         btnViewDict[VIEWID.VipView] = vipBtn;
         btnViewDict[VIEWID.GuideView] = guideBtn;
+        btnViewDict[VIEWID.RankView] = rankBtn;
 
         foreach (var item in btnViewDict)
         {
@@ -98,14 +100,29 @@ public class MenuView : View
 
         if( LoginModel.Instance.Permission == 1 )
         {
-            gmaccBtn.gameObject.SetActive(false);
-            saveBtn.gameObject.SetActive(false);
-            limitBtn.gameObject.SetActive(false);
+            foreach (var item in btnViewDict)
+            {
+                item.Value.gameObject.SetActive(false);
+            }
+
+            hexinBtn.gameObject.SetActive(true);
+            hexinsumBtn.gameObject.SetActive(true);
 
             // hexinBtn.gameObject.SetActive(false);
             // hexinsumBtn.gameObject.SetActive(false);
-            curViewId = (VIEWID.Mail);
+            curViewId = (VIEWID.CoreView);
         }
+        else if (LoginModel.Instance.Permission == 2)
+        {
+            gmaccBtn.gameObject.SetActive(false);
+            funcBtn.gameObject.SetActive(false);
+            limitBtn.gameObject.SetActive(false);
+            saveBtn.gameObject.SetActive(false);
+        }
+
+        curViewId = (VIEWID.CoreView);
+
+        rankBtn.gameObject.SetActive(false);
 
         if (Application.isEditor == false)
         {

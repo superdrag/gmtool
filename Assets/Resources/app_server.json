@@ -33,22 +33,6 @@
     },
     {       
         "server_id":5,      
-        "server_name":"5XGAME海外测试",
-        "debug":1,
-        "php_ip":"47.88.56.65",    
-        "php_port":8101,
-        "record_url":"http://47.88.56.65/record/"
-    },
-    {       
-        "server_id":6,      
-        "server_name":"5XGAME正式服务器",
-        "debug":0,
-        "php_ip":"47.254.90.181",    
-        "php_port":8101,
-        "record_url":"http://150.158.85.139/record/"
-    },
-    {       
-        "server_id":7,      
         "server_name":"成都正式服务器",
         "debug":0,
         "php_ip":"47.88.11.49",    
@@ -56,7 +40,7 @@
         "record_url":"http://150.158.85.139/record_cd/"
     },    
     {       
-        "server_id":8,      
+        "server_id":6,      
         "server_name":"成都测试",
         "debug":1,
         "php_ip":"47.254.41.189",    

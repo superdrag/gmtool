@@ -282,7 +282,12 @@ public class GlobalCtl
         {
             RechargeView view = (RechargeView)UIMgr.GetUI(VIEWID.Recharge) ;
             view.SetDataText(_pb); 
-        }        
+        }   
+        else if (_pb.Querytype == (int)PHP_QUERY.RANKLIS)
+        {
+            RankView view = (RankView)UIMgr.GetUI(VIEWID.RankView) ;
+            view.AddItem(_pb); 
+        }              
     }
 
     public void MSG_PHP2CL_GMPAYDATA(MsgPack msg)

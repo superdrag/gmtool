@@ -58,7 +58,6 @@ public class PayGiftView : View
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
         //rect.sizeDelta = new Vector2(0, (float)RecordModel.Instance.coreList.Count * (float)73.6 );
 
-
     }
 
     override public void DoClickQuery()

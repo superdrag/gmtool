@@ -132,8 +132,8 @@ public class LoginCtl
         C2S_GMLogin pb = new C2S_GMLogin();
         pb.Account = account;
         pb.Passwd = passwd;
-        pb.Version = "0.1.2021-12-17";
-        //pb.Version = "0.1.2022-03-09";
+        //pb.Version = "0.1.2021-12-17";
+        pb.Version = "0.1.2022-03-09";
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMLOGINACCOUNT, pb);
     }
 

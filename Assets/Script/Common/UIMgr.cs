@@ -38,6 +38,7 @@ public enum VIEWID
     CardView = 52,
     GuideView = 53,
     VipView = 54,
+    RankView = 55,
 
 
 
