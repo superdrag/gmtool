@@ -19,29 +19,29 @@ public static class ExcelHelper
 		Logger.Log("ExcelHelper init");
 		//XSSFWorkbook Mybook = new XSSFWorkbook("path");
 
-		string path = GFunc.AppRunPath() + "/1.xlsx";
+		// string path = GFunc.AppRunPath() + "/1.xls";
 	
-		FileStream MyAddress = new FileStream(path, FileMode.CreateNew);
+		// FileStream MyAddress = new FileStream(path, FileMode.CreateNew);
 
-		HSSFWorkbook MyWorkbook = new HSSFWorkbook();
+		// HSSFWorkbook MyWorkbook = new HSSFWorkbook();
 
- 		HSSFSheet Sheet01 = (HSSFSheet)MyWorkbook.CreateSheet("表一");
+ 		// HSSFSheet Sheet01 = (HSSFSheet)MyWorkbook.CreateSheet("表一");
 
 		
-        //写入到文件流
-        MyWorkbook.Write(MyAddress);
-        //关闭
-        MyWorkbook.Close();
-        //关闭文件流
-        MyAddress.Dispose();
+        // //写入到文件流
+        // MyWorkbook.Write(MyAddress);
+        // //关闭
+        // MyWorkbook.Close();
+        // //关闭文件流
+        // MyAddress.Dispose();
 	 } 
 
 
 	public static void Export(string name, List<string> title, List<List<string>> itemList)
 	{
-		//string path = GFunc.AppRunPath() + "/核心数据.xlsx";
+		//string path = GFunc.AppRunPath() + "/核心数据.xls";
 
-		string path = Application.dataPath + "/../" + name + ".xlsx";
+		string path = Application.dataPath + "/../" + name + ".xls";
 
 		try
 		{
@@ -71,7 +71,7 @@ public static class ExcelHelper
 
 			//Logger.Log("wwww ",Sheet01.GetColumnWidth(j));
 
-			Sheet01.SetColumnWidth(j,Sheet01.GetColumnWidth(j) * 3);
+			Sheet01.SetColumnWidth(j,Sheet01.GetColumnWidth(j) * 2);
 		}		
 
 		int row_num = itemList.Count;
@@ -106,9 +106,9 @@ public static class ExcelHelper
 
 	 public static void ExportCore()
 	 {
-		//string path = GFunc.AppRunPath() + "/核心数据.xlsx";
+		//string path = GFunc.AppRunPath() + "/核心数据.xls";
 
-		string path = Application.dataPath + "/../核心数据.xlsx";
+		string path = Application.dataPath + "/../核心数据.xls";
 
 		if (File.Exists(path))
 		{
@@ -128,6 +128,8 @@ public static class ExcelHelper
 		{
 			HSSFCell cell = (HSSFCell)row_title.CreateCell(j);
 			cell.SetCellValue(coreTitle.infoList[j].text);
+
+			Sheet01.SetColumnWidth(j,Sheet01.GetColumnWidth(j) * 2);
 		}		
 
 		int row_num = CoreView.Instance.dataItemList.Count;
@@ -155,15 +157,15 @@ public static class ExcelHelper
         //关闭文件流
         MyAddress.Dispose();		
 
-		UIMgr.ShowUI(VIEWID.ALERTINFO,"导出成功"); 
+		UIMgr.ShowUI(VIEWID.ALERTINFO,"导出成功-->核心数据"); 
 	 }
 
 
 	public static void ExportCoreSum()
 	{
-		//string path = GFunc.AppRunPath() + "/核心数据.xlsx";
+		//string path = GFunc.AppRunPath() + "/核心数据.xls";
 
-		string path = Application.dataPath + "/../核心数据总览.xlsx";
+		string path = Application.dataPath + "/../核心数据总览.xls";
 
 		if (File.Exists(path))
 		{
@@ -183,6 +185,8 @@ public static class ExcelHelper
 		{
 			HSSFCell cell = (HSSFCell)row_title.CreateCell(j);
 			cell.SetCellValue(coreTitle[j].text);
+
+			Sheet01.SetColumnWidth(j,Sheet01.GetColumnWidth(j) * 2);
 		}		
 
 
@@ -207,7 +211,7 @@ public static class ExcelHelper
 		//关闭文件流
 		MyAddress.Dispose();		
 
-		UIMgr.ShowUI(VIEWID.ALERTINFO,"导出成功"); 
+		UIMgr.ShowUI(VIEWID.ALERTINFO,"导出成功-->核心数据总览"); 
 	}
 }
 
