@@ -46,14 +46,19 @@ public class CoreItem
         //Logger.Log(",,,,,,,,,,,,,,,,, ",coreData.allRegNum);
         //留存
 
-        infoList[13].text = coreData.remainPectDict[1].ToString("F2") + "%" + "\n(" +coreData.remainDict[1] + ")";       //2
-        infoList[14].text = coreData.remainPectDict[2].ToString("F2") + "%" + "\n(" +coreData.remainDict[2] + ")";       //3
-        infoList[15].text = coreData.remainPectDict[3].ToString("F2") + "%" + "\n(" +coreData.remainDict[3] + ")";        //4
-        infoList[16].text = coreData.remainPectDict[4].ToString("F2") + "%" + "\n(" +coreData.remainDict[4] + ")";       //    
-        infoList[17].text = coreData.remainPectDict[5].ToString("F2") + "%"+ "\n(" +coreData.remainDict[5] + ")";
-        infoList[18].text = coreData.remainPectDict[6].ToString("F2") + "%"+ "\n(" +coreData.remainDict[6] + ")";
-        infoList[19].text = coreData.remainPectDict[13].ToString("F2") + "%"+ "\n(" +coreData.remainDict[13] + ")";
-        infoList[20].text = coreData.remainPectDict[29].ToString("F2") + "%"+ "\n(" +coreData.remainDict[29] + ")";
+        for (int i = 13; i <= 20; i++)
+        {
+            infoList[i].text = "";
+        }
+
+        if( coreData.remainPectDict[1] != -1 ) infoList[13].text = coreData.remainPectDict[1].ToString("F2") + "%" + "\n(" +coreData.remainDict[1] + ")";       //2
+        if( coreData.remainPectDict[2] != -1 ) infoList[14].text = coreData.remainPectDict[2].ToString("F2") + "%" + "\n(" +coreData.remainDict[2] + ")";       //3
+        if( coreData.remainPectDict[3] != -1 ) infoList[15].text = coreData.remainPectDict[3].ToString("F2") + "%" + "\n(" +coreData.remainDict[3] + ")";        //4
+        if( coreData.remainPectDict[4] != -1 ) infoList[16].text = coreData.remainPectDict[4].ToString("F2") + "%" + "\n(" +coreData.remainDict[4] + ")";       //    
+        if( coreData.remainPectDict[5] != -1 ) infoList[17].text = coreData.remainPectDict[5].ToString("F2") + "%"+ "\n(" +coreData.remainDict[5] + ")";
+        if( coreData.remainPectDict[6] != -1 ) infoList[18].text = coreData.remainPectDict[6].ToString("F2") + "%"+ "\n(" +coreData.remainDict[6] + ")";
+        if( coreData.remainPectDict[13] != -1 ) infoList[19].text = coreData.remainPectDict[13].ToString("F2") + "%"+ "\n(" +coreData.remainDict[13] + ")";
+        if( coreData.remainPectDict[29] != -1 ) infoList[20].text = coreData.remainPectDict[29].ToString("F2") + "%"+ "\n(" +coreData.remainDict[29] + ")";
           
         // infoList[13].text = coreData.remainDict[2].ToString("F2") + "%";       //2
         // infoList[14].text = coreData.remainDict[3].ToString("F2") + "%";        //3

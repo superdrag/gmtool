@@ -32,12 +32,24 @@ public class PayCoreItem
         infoList[0].text = coreData.date; 
         infoList[1].text = coreData.newUser.ToString();
 
-        for (int i = 0; i < 14; i++)
+        for (int i = 0; i < 15; i++)
         {
-            infoList[i+2].text = (coreData.payAccLTV[i+1] /coreData.newUser / 100.0).ToString("F2") + "\n(" +  GFunc.US2CentInt(coreData.payAccLTV[i+1])  + ")"; 
+            infoList[i+2].text = "";
         }
 
-        infoList[16].text = (coreData.payAccLTV[30] /coreData.newUser / 100.0).ToString("F2") + "\n(" +  GFunc.US2CentInt(coreData.payAccLTV[30])  + ")"; 
+        for (int i = 0; i < 14; i++)
+        {
+            if( coreData.payAccLTV[i+1] != -1 )
+            {
+                infoList[i+2].text = (coreData.payAccLTV[i+1] /coreData.newUser / 100.0).ToString("F2") + "\n(" +  GFunc.US2CentInt(coreData.payAccLTV[i+1])  + ")"; 
+            }
+        }
+
+        if( coreData.payAccLTV[30] != -1 )
+        {
+            infoList[16].text = (coreData.payAccLTV[30] /coreData.newUser / 100.0).ToString("F2") + "\n(" +  GFunc.US2CentInt(coreData.payAccLTV[30])  + ")"; 
+        }
+        
     }
 
     public void SetTittle()

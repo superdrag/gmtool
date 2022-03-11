@@ -222,6 +222,10 @@ public class RecordModel {
                             }                    
                         }
                     }
+                    else
+                    {
+                        todayData.remainDict[day] = -1;
+                    }
                 }
             }         
         }
@@ -232,11 +236,18 @@ public class RecordModel {
             
             for (int day = 1; day < 30; day++)
             {
-                if (coreData.remainDict[day] > 0)
+                if( coreData.remainDict[day] != -1 )
                 {
-                    coreData.remainPectDict[day] = coreData.remainDict[day] / (float)coreData.regAccDict.Count * 100.0;
-                    //Logger.Warn("1111111111111 ",i,day,coreData.remainPectDict[day]); 
-                }                
+                    if (coreData.remainDict[day] > 0)
+                    {
+                        coreData.remainPectDict[day] = coreData.remainDict[day] / (float)coreData.regAccDict.Count * 100.0;
+                        //Logger.Warn("1111111111111 ",i,day,coreData.remainPectDict[day]); 
+                    }     
+                }
+                else
+                {
+                    coreData.remainPectDict[day] = -1;
+                }
             }
         }
 
@@ -262,6 +273,10 @@ public class RecordModel {
                         }                
                     }
                 }
+                else
+                {
+                    coreData.payAccLTV[day+1] = -1;
+                }
             }
 
             for (int j = 0; j < 30; j++)
@@ -269,7 +284,10 @@ public class RecordModel {
                 int day = j + 1;
                 if (day < 30)
                 {
-                    coreData.payAccLTV[day+1] += coreData.payAccLTV[day];
+                    if (coreData.payAccLTV[day+1] != -1)
+                    {
+                        coreData.payAccLTV[day+1] += coreData.payAccLTV[day];
+                    }
                 }                
             }
         }        
