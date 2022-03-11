@@ -125,8 +125,24 @@ public class PayCoreView : View
 
     override public void DoClickExport()
     {
-#if UNITY_STANDALONE
-        ExcelHelper.ExportCore();
-#endif        
+        for (int i = 0; i < titleItem.infoList.Count; i++)
+        {
+            titleData.Add( titleItem.infoList[i].text.ToString());     
+        }   
+
+        for (int index = 0; index < dataItemList.Count; index++)
+        {
+            List<string> _date = new List<string>();
+            for (int i = 0; i < dataItemList[index].infoList.Count; i++)
+            {
+                _date.Add( dataItemList[index].infoList[i].text.ToString());     
+            }    
+            itemDataList.Add(_date);
+        }
+
+        GFunc.ExportExcel("付费LTV",titleData,itemDataList);
+
+        titleData.Clear();
+        itemDataList.Clear();      
     }       
 }

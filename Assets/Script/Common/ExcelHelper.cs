@@ -100,7 +100,7 @@ public static class ExcelHelper
 		//关闭文件流
 		MyAddress.Dispose();		
 
-		UIMgr.ShowUI(VIEWID.ALERTINFO,"导出成功"); 
+		UIMgr.ShowUI(VIEWID.ALERTINFO,"导出成功 -->" + name); 
 	}
 
 
