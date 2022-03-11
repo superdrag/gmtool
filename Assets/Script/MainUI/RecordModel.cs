@@ -189,7 +189,7 @@ public class RecordModel {
         return true;
     }
 
-    public static async void analyseAllCoreData(string country, string platform)
+    public static void analyseAllCoreData(string country, string platform)
     {
         coreList.Clear();
 

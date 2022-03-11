@@ -361,6 +361,11 @@ public class GFunc
         return "$"+(us / 100.0).ToString("F2");
     }    
 
+    public static string US2CentInt(double us)
+    {
+        return "$"+ System.Convert.ToInt32(us / 100);
+    }        
+
     public static string ToShopName(int payId)
     {
         try

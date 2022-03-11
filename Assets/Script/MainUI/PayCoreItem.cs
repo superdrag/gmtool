@@ -34,10 +34,10 @@ public class PayCoreItem
 
         for (int i = 0; i < 14; i++)
         {
-            infoList[i+2].text = (coreData.payAccLTV[i+1] /coreData.newUser / 100.0).ToString("F2") + "%" + "\n(" +  GFunc.US2Cent(coreData.payAccLTV[i+1])  + ")"; 
+            infoList[i+2].text = (coreData.payAccLTV[i+1] /coreData.newUser / 100.0).ToString("F2") + "\n(" +  GFunc.US2CentInt(coreData.payAccLTV[i+1])  + ")"; 
         }
 
-        infoList[16].text = (coreData.payAccLTV[30] /coreData.newUser / 100.0).ToString("F2") + "%" + "\n(" +  GFunc.US2Cent(coreData.payAccLTV[30])  + ")"; 
+        infoList[16].text = (coreData.payAccLTV[30] /coreData.newUser / 100.0).ToString("F2") + "\n(" +  GFunc.US2CentInt(coreData.payAccLTV[30])  + ")"; 
     }
 
     public void SetTittle()
