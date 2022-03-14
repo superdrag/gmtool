@@ -5,6 +5,8 @@ using System.IO;
 using System.Text;
 using System;
 
+
+
 public enum RECORD_TYPE
 {
     NONE = 0,
@@ -54,7 +56,7 @@ public class CoreData
 
     public Dictionary<int,List<int>> guideTaskDict = new Dictionary<int, List<int>>(); //新手引导
     public Dictionary<int,List<int>> mainTaskDict = new Dictionary<int, List<int>>();   //主线任务
-    public Dictionary<string,List<string>> rankListDict = new Dictionary<string, List<string>>();   //排行榜
+    public Dictionary<string,RankData> rankListDict = new Dictionary<string, RankData>();   //排行榜
 
     public Dictionary<int,int> payAccLTV = new Dictionary<int, int>();
 }
@@ -67,6 +69,20 @@ public class DiaData
     public int count;
     public int num;
 }
+
+public class RankData
+{
+    public string id;
+    public string member;
+    public int createtime;
+    public int rewardtime; 
+    public int rewardcount;
+    public int addRobotTime;
+    public int addRobotInterval;
+    public int endtime;
+    public int maxnum;
+}
+
 
 public class RecordModel {
 
@@ -266,7 +282,7 @@ public class RecordModel {
 
                     foreach (var item in nextCoreData.payAccDict)
                     {
-                        if (coreData.loginAccDict.ContainsKey(item.Key))
+                        if (coreData.regAccDict.ContainsKey(item.Key))
                         {
                             //Logger.Warn("11111111111111111111111 ",i,day+1,item.Value);
                             coreData.payAccLTV[day+1] += item.Value;
@@ -674,18 +690,22 @@ public class RecordModel {
 
             if (recordType == RECORD_TYPE.RECORD_RANKLIST)
             {        
-                Logger.Log("rankgroup data -- "+lineData);        
-                List<string> tmplist = new List<string>();
-                tmplist.Add(fields[2]);
-                tmplist.Add(fields[3]);
-                tmplist.Add(fields[4]);
-                tmplist.Add(fields[5]);
-                tmplist.Add(fields[6]);
-                tmplist.Add(fields[7]);
-                tmplist.Add(fields[8]);
-                tmplist.Add(fields[9]);
-                tmplist.Add(fields[10]);
-                coreData.rankListDict[fields[2]] = tmplist;
+                Logger.Log("rankgroup data -- "+lineData);   
+
+                RankData rankData = new RankData();
+                rankData.id = fields[2];
+                rankData.createtime = System.Convert.ToInt32(fields[3]);
+                rankData.maxnum = System.Convert.ToInt32(fields[4]);
+                rankData.rewardtime = System.Convert.ToInt32(fields[5]);
+                rankData.rewardcount = System.Convert.ToInt32(fields[6]);
+                rankData.addRobotTime = System.Convert.ToInt32(fields[7]);
+                rankData.addRobotInterval = System.Convert.ToInt32(fields[8]);
+                rankData.endtime = System.Convert.ToInt32(fields[9]);
+                rankData.createtime = System.Convert.ToInt32(fields[10]);
+                rankData.createtime = System.Convert.ToInt32(fields[11]);
+                rankData.member = fields[12];
+
+                coreData.rankListDict[rankData.id] = rankData;
             }
 
             if (recordType == RECORD_TYPE.RECORD_GUIDETASk)

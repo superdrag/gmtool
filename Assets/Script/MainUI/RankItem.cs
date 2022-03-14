@@ -14,10 +14,6 @@ public class RankItem
     public Transform view;
     public List<Text> infoList = new List<Text>();
 
-    private Button repairBtn;
-
-    public S2C_GMPayData pbData;
-
     public void Create()
     {        
         view = ResMgr.CreateGo("Prefab/RankItem").transform;
@@ -27,45 +23,34 @@ public class RankItem
         {
             infoList.Add(bg.GetChild(i).GetComponent<Text>());
         }
-
-        repairBtn = bg.Find("Button").GetComponent<Button>(); 
-        EventTriggerListener.Get(repairBtn.gameObject).onClick = onClickDetail;
     }
 
-    public void Show()
+    public void Show(RankData data)
     {
-        infoList[0].text = pbData.Platfrom.ToString(); 
-        infoList[1].text = pbData.Country.ToString(); 
-        infoList[2].text = pbData.Payorder.ToString(); 
-        infoList[3].text = pbData.Account.ToString();
-        infoList[4].text = GFunc.ToShopName(pbData.Payid);
-        //infoList[4].text = pbData.Payid.ToString();
-        infoList[5].text = GFunc.US2Cent(pbData.Paynum);
-        infoList[6].text = pbData.Paytime.ToString(); //time
-
-        if (pbData.State == 0)
-        {
-            infoList[7].text = "成功"; 
-        }
-        else
-        {
-            infoList[7].text = "失败:"+pbData.State; 
-        }
-        
-        if (pbData.State == 0)
-        {
-            repairBtn.gameObject.SetActive(false);
-        }
-        else
-        {
-            repairBtn.gameObject.SetActive(true);
-        }
-        infoList[6].text = GFunc.TimeStamp2DateTime(Convert.ToInt32(infoList[6].text) ).ToString(); 
+        infoList[0].text = GFunc.TimeStamp2DateTime(data.createtime).ToString();
+        infoList[1].text = data.id;
+        infoList[2].text = data.rewardcount.ToString();
+        infoList[3].text = "2";
+        infoList[4].text = "3";
+        infoList[5].text = "4";
+        infoList[6].text = "5";
+        infoList[7].text ="6";
+        infoList[8].text ="7";
     }
 
-    private void onClickDetail(GameObject go)
+    public void SetTittle()
     {
+        infoList[0].text = "日期";
+        infoList[1].text = "id";
+        infoList[2].text = "1";
+        infoList[3].text = "2";
+        infoList[4].text = "3日";
+        infoList[5].text = "4日";
+        infoList[6].text = "5日";
+        infoList[7].text ="6日";
+        infoList[8].text ="7日";
 
-    }
+    }    
+
 
 }

@@ -16,9 +16,11 @@ public class RankView : View
 
     public Transform TitleNote;
 
-    public List<RankItem> PayItemsList = new List<RankItem>();
+    private Transform bg;
 
-    public int itemNum = 0;
+    public RankItem titleItem;
+
+    public List<RankItem> RankItemsList = new List<RankItem>();
 
     public static RankView Instance
     {
@@ -42,11 +44,8 @@ public class RankView : View
         viewRoot = ResMgr.CreateGo("Prefab/RankView").transform;
         UIHelper.AddChild(UIMgr.UIMain, viewRoot);  
 
-        Transform bg = viewRoot.Find("bg");
-
+        bg = viewRoot.Find("bg");
         Content = bg.Find("Scroll View/Viewport/Content");
-
-        TitleNote = bg.Find("title");
     }
 
     override public void OnShow(params object[] args)
@@ -56,7 +55,7 @@ public class RankView : View
 
     public void ClearItem()
     {
-        PayItemsList.Clear();
+        RankItemsList.Clear();
         for (int i = 0; i < Content.childCount; i++)
         {
             Transform obj = Content.GetChild(i);
@@ -66,9 +65,21 @@ public class RankView : View
 
     override public void DoClickQuery()
     {
-        itemNum = 0;
+        //Logger.Log("11111111111111111111111");
         ClearItem();
-        GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("",(int)PHP_QUERY.RANKLIS,999);
+
+        for (int i = 0; i < RecordModel.coreList.Count; i++)
+        {
+            if (RecordModel.coreList[i].timetv >= TitleView.startTime && RecordModel.coreList[i].timetv <= TitleView.endTime)
+            {
+                AddRankItem(i); 
+            }           
+        }
+
+
+        // itemNum = 0;
+        // ClearItem();
+        // GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("",(int)PHP_QUERY.RANKLIS,999);
     }
 
     override public void DoClickExport()
@@ -99,6 +110,37 @@ public class RankView : View
     }  
 
 
+    public void ShowTitle()
+    {
+        titleItem = new RankItem();
+        titleItem.Create();
+        titleItem.view.SetParent(bg);
+
+        RectTransform rect = titleItem.view.transform.GetComponent<RectTransform>();
+        rect.anchoredPosition = new Vector2(648,-39);
+
+        titleItem.view.transform.localScale = Vector3.one;
+        titleItem.SetTittle();     
+    }
+
+    public void AddRankItem(int dayIndex)
+    {
+        CoreData dayData = RecordModel.coreList[dayIndex];
+        foreach (var item in dayData.rankListDict)
+        {
+            RankItem itemUI = new RankItem();
+            itemUI.Create();
+            itemUI.view.SetParent(Content);
+            itemUI.view.transform.localScale = Vector3.one;
+
+            itemUI.view.GetComponent<RectTransform>().localPosition = new Vector3( itemUI.view.GetComponent<RectTransform>().localPosition.x, itemUI.view.GetComponent<RectTransform>().localPosition.y, 0 );
+
+            itemUI.Show(item.Value);
+            
+            //PayItemsList.Add(itemUI);
+        }
+    }
+
     public void AddItem(S2C_GMQueryNormalInfo pb)
     {               
         // RankItem item = new RankItem();
@@ -127,18 +169,6 @@ public class RankView : View
 
     }
 
-    public void SetItem(S2C_GMPayRepair pb)
-    {               
-        for (int i = 0; i < PayItemsList.Count; i++)
-        {
-            RankItem item = PayItemsList[i];
-            if (item.pbData.Payorder == pb.Payorder)
-            {
-                item.pbData.State = pb.Ret;
-                item.Show();
-                break;
-            } 
-        }
-    }    
+   
     
 }
