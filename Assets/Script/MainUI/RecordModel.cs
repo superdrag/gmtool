@@ -338,17 +338,17 @@ public class RecordModel {
                 }
             }
 
-            for (int j = 0; j < 30; j++)
-            {
-                int day = j + 1;
-                if (day < 30)
-                {
-                    if (coreData.adsAccLTV[day+1] != -1)
-                    {
-                        coreData.adsAccLTV[day+1] += coreData.adsAccLTV[day];
-                    }
-                }                
-            }
+            // for (int j = 0; j < 30; j++)
+            // {
+            //     int day = j + 1;
+            //     if (day < 30)
+            //     {
+            //         if (coreData.adsAccLTV[day+1] != -1)
+            //         {
+            //             coreData.adsAccLTV[day+1] += coreData.adsAccLTV[day];
+            //         }
+            //     }                
+            // }
         } 
 
         //分析总数
@@ -730,13 +730,13 @@ public class RecordModel {
             {
                 coreData.watchAds++;
 
-                if ( coreData.payAccDict.ContainsKey(_acc) )
+                if ( coreData.adsAccDict.ContainsKey(_acc) )
                 {
-                    coreData.payAccDict[_acc] += 1;
+                    coreData.adsAccDict[_acc] += 1;
                 }   
                 else
                 {
-                    coreData.payAccDict[_acc] = 1;                    
+                    coreData.adsAccDict[_acc] = 1;                    
                 }                 
             }
 

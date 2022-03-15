@@ -55,7 +55,7 @@ public class PayCoreView : View
         ShowTitle();
 
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(0, (float)RecordModel.coreList.Count * (float)73.6 );
+        rect.sizeDelta = new Vector2(0, (float)RecordModel.coreList.Count * (float)120 );
 
         int startIndex = RecordModel.coreList.Count - 9; //开始为倒数9天
         if (startIndex < 0)
@@ -72,7 +72,10 @@ public class PayCoreView : View
         titleItem.view.SetParent(bg);
 
         RectTransform rect = titleItem.view.transform.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(1300,73);
         rect.anchoredPosition = new Vector2(648,-39);
+        Transform _bg = titleItem.view.Find("bg");
+        _bg.GetComponent<RectTransform>().sizeDelta = new Vector2(1300,73);
 
         titleItem.view.transform.localScale = Vector3.one;
         titleItem.SetTittle();     

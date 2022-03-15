@@ -25,7 +25,7 @@ public class PayCoreItem
         }
     }
 
-    public void Show(int dayIndex)
+    public async void Show(int dayIndex)
     {
         CoreData coreData = RecordModel.coreList[dayIndex];
 
@@ -41,7 +41,17 @@ public class PayCoreItem
         {
             if( coreData.payAccLTV[i+1] != -1 )
             {
-                infoList[i+2].text = (coreData.payAccLTV[i+1] /coreData.newUser / 100.0).ToString("F2") + "\n(" +  GFunc.US2CentInt(coreData.payAccLTV[i+1])  + ")"; 
+                string row1 = "NA";
+                if ( i > 0 && coreData.remainDict[i] != -1)
+                {
+                    row1 = coreData.remainDict[i].ToString();
+                }                
+                string row2 = (coreData.payAccLTV[i+1] /coreData.newUser / 100.0).ToString("F2");
+                string row3 = "(" +  GFunc.US2CentInt(coreData.payAccLTV[i+1])  + ")";
+                string row4 = (coreData.adsAccLTV[i+1]*1.0 / coreData.newUser ).ToString("F2");
+                string row5 = "(" +  (coreData.adsAccLTV[i+1])  + ")";
+
+                infoList[i+2].text = row1 + "\n" + row2 + "\n" + row3 + "\n" + row4 + "\n" + row5;
             }
         }
 
