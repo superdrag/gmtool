@@ -47,6 +47,7 @@ public class CoreData
     public int watchAds; //看广告
     public Dictionary<string,int> loginAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> payAccDict = new Dictionary<string, int>();
+    public Dictionary<string,int> adsAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> regAccDict = new Dictionary<string, int>();
     public Dictionary<int,int> hourOnlineNumDict = new Dictionary<int, int>();
     public Dictionary<int,int> remainDict = new Dictionary<int, int>(); //留存数量  //次留是 i+ 1 = 2 开始        
@@ -59,6 +60,7 @@ public class CoreData
     public Dictionary<string,RankData> rankListDict = new Dictionary<string, RankData>();   //排行榜
 
     public Dictionary<int,int> payAccLTV = new Dictionary<int, int>();
+    public Dictionary<int,int> adsAccLTV = new Dictionary<int, int>();
 }
 
 
@@ -267,7 +269,7 @@ public class RecordModel {
             }
         }
 
-        //LTV
+        //内购LTV
         for (int i = 0; i < coreList.Count; i++)
         {
             CoreData coreData = coreList[i];
@@ -306,8 +308,48 @@ public class RecordModel {
                     }
                 }                
             }
-        }        
+        }       
 
+        //广告LTV 
+        for (int i = 0; i < coreList.Count; i++)
+        {
+            CoreData coreData = coreList[i];
+        
+            for (int day = 0; day < 30; day++)
+            {
+                int nextIndex = i + day;
+
+                if (nextIndex < coreList.Count)
+                {
+                    CoreData nextCoreData = coreList[nextIndex];
+
+                    foreach (var item in nextCoreData.adsAccDict)
+                    {
+                        if (coreData.regAccDict.ContainsKey(item.Key))
+                        {
+                            //Logger.Warn("11111111111111111111111 ",i,day+1,item.Value);
+                            coreData.adsAccLTV[day+1] += item.Value;
+                        }                
+                    }
+                }
+                else
+                {
+                    coreData.adsAccLTV[day+1] = -1;
+                }
+            }
+
+            for (int j = 0; j < 30; j++)
+            {
+                int day = j + 1;
+                if (day < 30)
+                {
+                    if (coreData.adsAccLTV[day+1] != -1)
+                    {
+                        coreData.adsAccLTV[day+1] += coreData.adsAccLTV[day];
+                    }
+                }                
+            }
+        } 
 
         //分析总数
         coreSumList[0] = coreList[coreList.Count-1].timetv;
@@ -432,6 +474,7 @@ public class RecordModel {
             coreData.remainPayDict[i] = 0;
             coreData.remainPayPectDict[i] = 0;
             coreData.payAccLTV[i] = 0;
+            coreData.adsAccLTV[i] = 0;
         }   
 
         for (int j = 0; j < dayData.Length; j++)
@@ -686,6 +729,15 @@ public class RecordModel {
             if (recordType == RECORD_TYPE.RECORD_WATCHADV)
             {
                 coreData.watchAds++;
+
+                if ( coreData.payAccDict.ContainsKey(_acc) )
+                {
+                    coreData.payAccDict[_acc] += 1;
+                }   
+                else
+                {
+                    coreData.payAccDict[_acc] = 1;                    
+                }                 
             }
 
             if (recordType == RECORD_TYPE.RECORD_RANKLIST)
@@ -751,48 +803,6 @@ public class RecordModel {
 
         //-----------------------------------------
 
-
-
-
-
-        /*
-        //留存
-        for (int day = 1; day <= 30; day++) //最大月流30天
-        {
-            int nextIndex = dayIndex + day; 
-            if (nextIndex < coreList.Count)
-            {
-                CoreData nextData = coreList[nextIndex];   
-
-                nextData.loginAccDict    
-
-                if( nextData.regAccDict.ContainsKey(item.Key) )
-                {
-                    //Logger.Log( " 1111111111++  " + GFunc.Int2DateStr(nextData.timetv), day,item.Key);
-                    // day == 1 次留  day = 2 三留
-                    if (true)
-                    {
-                        
-                    }
-
-                    if (day < 30)
-                    {
-                        coreData.remainDict[day+1]++;    
-                    }
-                    //次留是 i+ 1 = 2 开始   
-
-                    if( nextData.payAccDict.ContainsKey(item.Key) )
-                    {   
-                        //次留是 i+ 1 = 2 开始  
-                        if (day < 30)
-                        {
-                            coreData.remainPayDict[day+1]++;  
-                        }                                         
-                    }                                      
-                }                                 
-            }
-        }
-        */
 
 
         for (int i = 0; i < dayIndex; i++)
