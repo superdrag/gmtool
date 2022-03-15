@@ -69,7 +69,20 @@ public class PayCoreItem
 
         if( coreData.payAccLTV[30] != -1 )
         {
-            infoList[16].text = (coreData.payAccLTV[30] /coreData.newUser / 100.0).ToString("F2") + "\n(" +  GFunc.US2CentInt(coreData.payAccLTV[30])  + ")"; 
+            string row1 = "NA";
+            if (coreData.remainDict[30] != -1)
+            {
+                row1 = coreData.remainDict[30].ToString();
+            }                         
+            string row2 = (coreData.payAccLTV[30] /coreData.newUser / 100.0).ToString("F2");
+            string row3 = "(" +  GFunc.US2CentInt(coreData.payAccLTV[30])  + ")";
+            string row4 = (coreData.adsAccLTV[30]*1.0 / coreData.newUser ).ToString("F2");
+            string row5 = "(" +  (coreData.adsAccLTV[30])  + ")";
+
+            infoList[16].text = row1 + "\n" + row2 + "\n" + row3 + "\n" + row4 + "\n" + row5;
+
+
+            //infoList[16].text = (coreData.payAccLTV[30] /coreData.newUser / 100.0).ToString("F2") + "\n(" +  GFunc.US2CentInt(coreData.payAccLTV[30])  + ")"; 
         }
         
     }
