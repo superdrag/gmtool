@@ -20,6 +20,8 @@ public class PayCoreView : View
     private Transform bg;
     public Transform Content;
 
+    public int itemNum = 0;
+
 
     public static PayCoreView Instance
     {
@@ -53,9 +55,6 @@ public class PayCoreView : View
     {        
         //onClickQuery(queryBtn.gameObject);
         ShowTitle();
-
-        RectTransform rect = Content.transform.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(0, (float)RecordModel.coreList.Count * (float)120 );
 
         int startIndex = RecordModel.coreList.Count - 9; //开始为倒数9天
         if (startIndex < 0)
@@ -104,6 +103,11 @@ public class PayCoreView : View
         
         dataItemList.Add(coreItem);
 
+        itemNum += 1;
+
+        RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(0, (float)itemNum * (float)120 );
+
         //Logger.Log("AddCoreItem....",dayIndex,coreItem.view.GetComponent<RectTransform>().anchoredPosition);
     }
 
@@ -115,6 +119,7 @@ public class PayCoreView : View
         RecordModel.analyseAllCoreData(TitleView.country,TitleView.platform);
 
         ClearCoreItem();
+        itemNum = 0;
         
         for (int i = 0; i < RecordModel.coreList.Count; i++)
         {

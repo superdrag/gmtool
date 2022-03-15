@@ -22,6 +22,8 @@ public class RankView : View
 
     public List<RankItem> RankItemsList = new List<RankItem>();
 
+    public int itemNum = 0;
+
     public static RankView Instance
     {
         get
@@ -67,6 +69,7 @@ public class RankView : View
     {
         //Logger.Log("11111111111111111111111");
         ClearItem();
+        itemNum = 0;
 
         for (int i = 0; i < RecordModel.coreList.Count; i++)
         {
@@ -137,8 +140,13 @@ public class RankView : View
 
             itemUI.Show(item.Value);
             
-            //PayItemsList.Add(itemUI);
+            RankItemsList.Add(itemUI);
+
+            itemNum += 1;
         }
+
+        RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(0, (float)itemNum * (float)120 );        
     }
 
     public void AddItem(S2C_GMQueryNormalInfo pb)

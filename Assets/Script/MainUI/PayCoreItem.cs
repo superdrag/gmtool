@@ -25,7 +25,7 @@ public class PayCoreItem
         }
     }
 
-    public async void Show(int dayIndex)
+    public void Show(int dayIndex)
     {
         CoreData coreData = RecordModel.coreList[dayIndex];
 
@@ -39,16 +39,28 @@ public class PayCoreItem
 
         for (int i = 0; i < 14; i++)
         {
+            if (coreData.newUser <= 0)
+            {
+                continue;
+            }  
+
+            int remainNum = coreData.newUser ;  
+
+            if (i > 0)
+            {
+                remainNum = coreData.remainDict[i];    
+            }
+
             if( coreData.payAccLTV[i+1] != -1 )
             {
                 string row1 = "NA";
-                if ( i > 0 && coreData.remainDict[i] != -1)
+                //if ( i > 0 && remainNum != -1)
                 {
-                    row1 = coreData.remainDict[i].ToString();
+                    row1 = remainNum.ToString();
                 }                
                 string row2 = (coreData.payAccLTV[i+1] /coreData.newUser / 100.0).ToString("F2");
                 string row3 = "(" +  GFunc.US2CentInt(coreData.payAccLTV[i+1])  + ")";
-                string row4 = (coreData.adsAccLTV[i+1]*1.0 / coreData.newUser ).ToString("F2");
+                string row4 = (coreData.adsAccLTV[i+1]*1.0 / remainNum ).ToString("F2");
                 string row5 = "(" +  (coreData.adsAccLTV[i+1])  + ")";
 
                 infoList[i+2].text = row1 + "\n" + row2 + "\n" + row3 + "\n" + row4 + "\n" + row5;
@@ -66,7 +78,7 @@ public class PayCoreItem
     {
         infoList[0].text = "统计日期";
         infoList[1].text = "新增注册用户";
-        infoList[2].text = "首日";
+        infoList[2].text = "当日";
         infoList[3].text = "次日";
         infoList[4].text = "3日";
         infoList[5].text = "4日";
