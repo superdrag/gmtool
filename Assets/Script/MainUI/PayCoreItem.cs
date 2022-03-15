@@ -60,7 +60,7 @@ public class PayCoreItem
                 }                
                 string row2 = (coreData.payAccLTV[i+1] /coreData.newUser / 100.0).ToString("F2");
                 string row3 = "(" +  GFunc.US2CentInt(coreData.payAccLTV[i+1])  + ")";
-                string row4 = (coreData.adsAccLTV[i+1]*1.0 / remainNum ).ToString("F2");
+                string row4 = (coreData.adsAccLTV[i+1]*1.0 / coreData.newUser ).ToString("F2");
                 string row5 = "(" +  (coreData.adsAccLTV[i+1])  + ")";
 
                 infoList[i+2].text = row1 + "\n" + row2 + "\n" + row3 + "\n" + row4 + "\n" + row5;

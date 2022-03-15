@@ -338,17 +338,17 @@ public class RecordModel {
                 }
             }
 
-            // for (int j = 0; j < 30; j++)
-            // {
-            //     int day = j + 1;
-            //     if (day < 30)
-            //     {
-            //         if (coreData.adsAccLTV[day+1] != -1)
-            //         {
-            //             coreData.adsAccLTV[day+1] += coreData.adsAccLTV[day];
-            //         }
-            //     }                
-            // }
+            for (int j = 0; j < 30; j++)
+            {
+                int day = j + 1;
+                if (day < 30)
+                {
+                    if (coreData.adsAccLTV[day+1] != -1)
+                    {
+                        coreData.adsAccLTV[day+1] += coreData.adsAccLTV[day];
+                    }
+                }                
+            }
         } 
 
         //分析总数
