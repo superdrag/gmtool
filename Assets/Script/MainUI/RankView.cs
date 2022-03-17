@@ -126,11 +126,40 @@ public class RankView : View
         titleItem.SetTittle();     
     }
 
-    public void AddRankItem(int dayIndex)
+    public void analyzeData(int dayIndex)
     {
+        List<RankData> rankDataList = new List<RankData>();
         CoreData dayData = RecordModel.coreList[dayIndex];
         foreach (var item in dayData.rankListDict)
         {
+            RankData rankData = item.Value;
+            if (rankData.rewardcount == 0)
+            {
+                rankDataList.Add(rankData);
+            } 
+            else
+            {
+
+            }
+        }
+    } 
+
+    public void AddRankItem(int dayIndex)
+    {
+        List<RankData> rankDataList = new List<RankData>();
+        CoreData dayData = RecordModel.coreList[dayIndex];
+        foreach (var item in dayData.rankListDict)
+        {
+            RankData rankData = item.Value;
+            // if (rankData.rewardcount == 0)
+            // {
+            //     rankDataList.Add(rankData);
+            // } 
+            // else
+            // {
+
+            // }
+
             RankItem itemUI = new RankItem();
             itemUI.Create();
             itemUI.view.SetParent(Content);
@@ -147,34 +176,6 @@ public class RankView : View
 
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
         rect.sizeDelta = new Vector2(0, (float)itemNum * (float)120 );        
-    }
-
-    public void AddItem(S2C_GMQueryNormalInfo pb)
-    {               
-        // RankItem item = new RankItem();
-        // item.Create();
-        // item.view.SetParent(Content);
-        // item.view.transform.localScale = Vector3.one;
-        // item.pbData = pb;
-        // item.Show();
-        // PayItemsList.Add(item);
-
-        // itemNum += 1;
-
-        // RectTransform rect = Content.transform.GetComponent<RectTransform>();
-        // rect.sizeDelta = new Vector2(0, (float)itemNum * (float)73.6 );   
-
-
-        		// 		pb.mapdata["uid"] = pb_rank.uid
-				// pb.mapdata["members"] = pb_rank.members
-				// pb.mapdata["createTime"] = pb_rank.createTime
-				// pb.mapdata["maxnum"] = pb_rank.maxnum
-				// pb.mapdata["rewardtime"] = pb_rank.rewardtime
-				// pb.mapdata["rewardcount"] = pb_rank.rewardcount
-				// pb.mapdata["addRobotTime"] = pb_rank.addRobotTime
-				// pb.mapdata["addRobotInterval"] = pb_rank.addRobotInterval
-				// pb.mapdata["endtime"] = pb_rank.endtime				
-
     }
 
    

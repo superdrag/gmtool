@@ -285,8 +285,8 @@ public class GlobalCtl
         }   
         else if (_pb.Querytype == (int)PHP_QUERY.RANKLIS)
         {
-            RankView view = (RankView)UIMgr.GetUI(VIEWID.RankView) ;
-            view.AddItem(_pb); 
+            // RankView view = (RankView)UIMgr.GetUI(VIEWID.RankView) ;
+            // view.AddItem(_pb); 
         }              
     }
 

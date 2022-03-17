@@ -126,11 +126,11 @@ public class MenuView : View
 
 
         //暂时屏蔽
-        rankBtn.gameObject.SetActive(false);
+        //rankBtn.gameObject.SetActive(false);
 
         if (Application.isEditor == false)
         {
-            //vipBtn.gameObject.SetActive(false);
+            rankBtn.gameObject.SetActive(false);
         }
         
     }
