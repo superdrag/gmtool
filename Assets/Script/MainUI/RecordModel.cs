@@ -74,6 +74,7 @@ public class DiaData
 
 public class RankData
 {
+    public string daytime;
     public string id;
     public string member;
     public int createtime;
@@ -753,9 +754,7 @@ public class RecordModel {
                 rankData.addRobotTime = System.Convert.ToInt32(fields[7]);
                 rankData.addRobotInterval = System.Convert.ToInt32(fields[8]);
                 rankData.endtime = System.Convert.ToInt32(fields[9]);
-                rankData.createtime = System.Convert.ToInt32(fields[10]);
-                rankData.createtime = System.Convert.ToInt32(fields[11]);
-                rankData.member = fields[12];
+                rankData.member = fields[10];
 
                 coreData.rankListDict[rankData.id] = rankData;
             }

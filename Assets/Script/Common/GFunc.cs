@@ -169,7 +169,10 @@ public class GFunc
     //时间戳转DateTime
     public static DateTime TimeStamp2DateTime(int timeStamp)
     {
-        timeStamp = timeStamp -13*3600; //美国时间
+        if (GData.DebugMode == false)
+        {
+            timeStamp = timeStamp -14*3600; //美国时间
+        }        
         DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1,0,0,0));  
         long lTime = ((long)timeStamp * 10000000) ;  
         TimeSpan toNow = new TimeSpan(lTime);  

@@ -14,8 +14,6 @@ public class RankView : View
 
     public Transform Content;
 
-    public Transform TitleNote;
-
     private Transform bg;
 
     public RankItem titleItem;
@@ -52,7 +50,7 @@ public class RankView : View
 
     override public void OnShow(params object[] args)
     {        
-        
+        ShowTitle();
     }
 
     public void ClearItem()
@@ -87,29 +85,25 @@ public class RankView : View
 
     override public void DoClickExport()
     {
-        // for (int i = 0; i < TitleNote.childCount; i++)
-        // {
-        //     Text txt = TitleNote.GetChild(i).GetComponent<Text>();
-        //     titleData.Add(txt.text.ToString());
-        // }
+        for (int i = 0; i < titleItem.infoList.Count; i++)
+        {
+            titleData.Add( titleItem.infoList[i].text.ToString());     
+        }   
 
-        // for (int index = 0; index < PayItemsList.Count; index++)
-        // {
-        //     List<string> _date = new List<string>();
-        //     for (int i = 0; i < PayItemsList[index].infoList.Count; i++)
-        //     {
-        //         if (PayItemsList[index].infoList[i])
-        //         {
-        //             _date.Add( PayItemsList[index].infoList[i].text.ToString());     
-        //         }                
-        //     }    
-        //     itemDataList.Add(_date);
-        // }
+        for (int index = 0; index < RankItemsList.Count; index++)
+        {
+            List<string> _date = new List<string>();
+            for (int i = 0; i < RankItemsList[index].infoList.Count; i++)
+            {
+                _date.Add( RankItemsList[index].infoList[i].text.ToString());     
+            }    
+            itemDataList.Add(_date);
+        }
 
-        // GFunc.ExportExcel("支付订单",titleData,itemDataList);
+        GFunc.ExportExcel("排行榜",titleData,itemDataList);
 
-        // titleData.Clear();
-        // itemDataList.Clear();        
+        titleData.Clear();
+        itemDataList.Clear();        
     }  
 
 
@@ -151,14 +145,8 @@ public class RankView : View
         foreach (var item in dayData.rankListDict)
         {
             RankData rankData = item.Value;
-            // if (rankData.rewardcount == 0)
-            // {
-            //     rankDataList.Add(rankData);
-            // } 
-            // else
-            // {
 
-            // }
+            rankData.daytime = dayData.date;
 
             RankItem itemUI = new RankItem();
             itemUI.Create();
@@ -167,7 +155,7 @@ public class RankView : View
 
             itemUI.view.GetComponent<RectTransform>().localPosition = new Vector3( itemUI.view.GetComponent<RectTransform>().localPosition.x, itemUI.view.GetComponent<RectTransform>().localPosition.y, 0 );
 
-            itemUI.Show(item.Value);
+            itemUI.Show(rankData);
             
             RankItemsList.Add(itemUI);
 
@@ -175,7 +163,7 @@ public class RankView : View
         }
 
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(0, (float)itemNum * (float)120 );        
+        rect.sizeDelta = new Vector2(0, (float)itemNum * (float)76 );        
     }
 
    

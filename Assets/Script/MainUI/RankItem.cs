@@ -27,29 +27,50 @@ public class RankItem
 
     public void Show(RankData data)
     {
-        infoList[0].text = GFunc.TimeStamp2DateTime(data.createtime).ToString();
+        Logger.Warn("111     " + data.member);
+        List<int> playerIDList = new List<int>();        
+        string[] ary1 = data.member.Split('|');
+        for (int i = 0; i < ary1.Length; i++)
+        {
+            string[] ary2 = ary1[i].Split(':');
+            
+            int id = Convert.ToInt32(ary2[0]); 
+            if (id > 0)
+            {
+                playerIDList.Add(id);
+            }
+        }
+
+        infoList[0].text = data.daytime.ToString();
         infoList[1].text = data.id;
-        infoList[2].text = data.rewardcount.ToString();
-        infoList[3].text = "2";
-        infoList[4].text = "3";
-        infoList[5].text = "4";
-        infoList[6].text = "5";
-        infoList[7].text ="6";
-        infoList[8].text ="7";
+        infoList[2].text = GFunc.TimeStamp2DateTime(data.createtime).ToString();
+        infoList[3].text = data.rewardcount.ToString(); 
+        infoList[4].text = GFunc.TimeStamp2DateTime(data.rewardtime).ToString();
+        infoList[5].text = GFunc.TimeStamp2DateTime(data.addRobotTime).ToString();       
+        infoList[6].text = data.addRobotInterval.ToString();   
+        infoList[7].text = "";
+        if (data.endtime > 0)
+        {
+            infoList[7].text = GFunc.TimeStamp2DateTime(data.endtime).ToString(); 
+        }                     
+        infoList[8].text = data.maxnum.ToString();       
+        infoList[9].text = playerIDList.Count.ToString();   
+        infoList[10].text = data.member.ToString(); 
     }
 
     public void SetTittle()
     {
         infoList[0].text = "日期";
-        infoList[1].text = "id";
-        infoList[2].text = "1";
-        infoList[3].text = "2";
-        infoList[4].text = "3日";
-        infoList[5].text = "4日";
-        infoList[6].text = "5日";
-        infoList[7].text ="6日";
-        infoList[8].text ="7日";
-
+        infoList[1].text = "ID";
+        infoList[2].text = "创建时间";
+        infoList[3].text = "领奖次数";
+        infoList[4].text = "下次领奖时间";
+        infoList[5].text = "加入AI时间";
+        infoList[6].text = "加入AI间隔";
+        infoList[7].text ="关闭时间";
+        infoList[8].text ="当前人数";
+        infoList[9].text = "玩家数量";
+        infoList[10].text = "成员信息";
     }    
 
 
