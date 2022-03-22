@@ -27,7 +27,7 @@ public class RankItem
 
     public void Show(RankData data)
     {
-        Logger.Warn("111     " + data.member);
+        //Logger.Warn("111     " + data.member);
         List<int> playerIDList = new List<int>();        
         string[] ary1 = data.member.Split('|');
         for (int i = 0; i < ary1.Length; i++)
