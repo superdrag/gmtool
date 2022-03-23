@@ -59,6 +59,94 @@ public class ResMgr
         return true;
     }
 
+  public void StartAppResCheck(Action cbfunc)
+    {
+        if( Application.isEditor )
+        {
+            Logger.Log("--------------- Res No Handle Edit Mode ------------",cbfunc);
+            cbfunc();
+        }
+        else
+        {
+            cbfunc();
+            // if (File.Exists(GFunc.AppRunPath() + APP_CONFIG_FILE) )  
+            // {
+            //     Logger.Log("--------------- Res Check HotFix Mode ------------",cbfunc);
+            //     //有版本文件 更新检查           
+            //     //GMApp.Instance.StartCoroutine(DownLoadVersionFile(cbfunc));
+            // }
+            // else
+            // {
+            //     Logger.Log("--------------- Res Install UnPack Mode ------------");
+            //     //无版本文件 解压包
+            //     GMApp.Instance.StartCoroutine(UnPackRes(cbfunc));
+            // }    
+        }        
+    }
+
+    
+    //资源解包
+    // private IEnumerator UnPackRes(Action cbfunc)
+    // {
+    //     Logger.Log("--------------- start unpack res  ------------------");
+
+    //     Logger.Log("packge zip res flie :", GFunc.AppResPath() + APP_PACKAGE_UPK_RES );
+    //     Logger.Log("packge zip run flie:", GFunc.AppRunPath() + APP_PACKAGE_UPK_RES );
+
+    //     if (Directory.Exists(GFunc.AppRunPath())) 
+    //     { 
+    //         Directory.Delete(GFunc.AppRunPath(), true); 
+    //     }
+    //     Directory.CreateDirectory(GFunc.AppRunPath());   
+
+    //     //压缩包 从资源目录拷贝到运行目录
+    //     if (Application.platform == RuntimePlatform.Android)
+    //     {
+    //         WWW www = new WWW(GFunc.AppResPath() + APP_PACKAGE_UPK_RES);
+    //         yield return www;
+
+    //         if (www.isDone)
+    //         {            
+    //             File.WriteAllBytes(GFunc.AppRunPath() + APP_PACKAGE_UPK_RES, www.bytes);                
+    //         }
+    //         yield return 0;
+
+    //         // www = new WWW(GFunc.AppResPath() + APP_PACKAGE_UPK_LUA);
+    //         // yield return www;
+
+    //         // if (www.isDone)
+    //         // {            
+    //         //     File.WriteAllBytes(GFunc.AppRunPath() + APP_PACKAGE_UPK_LUA, www.bytes);                
+    //         // }
+    //         // yield return 0;
+
+    //     }
+    //     else
+    //     {
+    //         File.Copy(GFunc.AppResPath() + APP_PACKAGE_UPK_RES, GFunc.AppRunPath() + APP_PACKAGE_UPK_RES, true);
+    //         // File.Copy(GFunc.AppResPath() + APP_PACKAGE_UPK_LUA, GFunc.AppRunPath() + APP_PACKAGE_UPK_LUA, true);
+    //         // File.Copy(GFunc.AppResPath() + APP_PACKAGE_UPK_CONFIG, GFunc.AppRunPath() + APP_PACKAGE_UPK_CONFIG, true);
+    //     }
+
+    //     //yield return new WaitForEndOfFrame(); //???
+
+    //     //解压
+    //     //ResMgr.LZMADeCompress(runFile, runPath, null);
+
+    //     //释放资源
+    //     ResPack.UnPackFolder(GFunc.AppRunPath() + APP_PACKAGE_UPK_RES,GFunc.AppRunPath(),null);
+    //     //释放lua
+    //     // ResPack.UnPackFolder(GFunc.AppRunPath() + APP_PACKAGE_UPK_LUA,GFunc.AppRunPath(),null);
+    //     // //释放config
+    //     // ResPack.UnPackFolder(GFunc.AppRunPath() + APP_PACKAGE_UPK_CONFIG,GFunc.AppRunPath(),null);
+
+    //     Logger.Log("--------------- finish unpack res  ------------------");
+    //     //cbfunc();
+    //     GameApp.Instance.StartCoroutine(DownLoadVersionFile(cbfunc));
+    // }
+
+
+
     public void StartAppDownload(Action<int> cbfunc)
     {
         GMApp.Instance.StartCoroutine(DownLoadVersionFile(cbfunc));

@@ -45,18 +45,25 @@ public class GMApp : MonoBehaviour {
         GlobalModel.Instance.Init();
         RecordModel.Instance.Init();
         GFunc.Init();
-        LuaMgr.Init();
-
-        LuaCall.Test1();
+  
 
         // LuaCall.Test1();
         // string aa=  LuaCall.GetShopNameById(11001);
         //Logger.Warn("111111111111111 ",aa);
  
         ResMgr.Instance.Init();
-        AllRigstMsgRegedit();
-        OnInitFinish();     
+        ResMgr.Instance.StartAppResCheck(OnResLoadOver);//LUA代码必须
         
+    }
+
+    public void OnResLoadOver()
+    {
+        Logger.Log("OnResLoadOver...."); 
+        LuaMgr.Init();
+        LuaCall.Test1();
+
+        AllRigstMsgRegedit();
+        OnInitFinish();         
     }
 
     private void OnInitFinish()

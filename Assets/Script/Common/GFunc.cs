@@ -171,7 +171,7 @@ public class GFunc
     {
         if (GData.DebugMode == false)
         {
-            timeStamp = timeStamp -14*3600; //美国时间
+            timeStamp = timeStamp -12*3600; //美国时间
         }        
         DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1,0,0,0));  
         long lTime = ((long)timeStamp * 10000000) ;  
