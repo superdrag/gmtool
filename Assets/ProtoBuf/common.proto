@@ -54,6 +54,8 @@ message PB_MailItem
     int32 readtime = 6; //读时间
     int32 pasttime = 7; //过期时间
     int32 state = 8; //已读状态 1 已读未领取 2 已读已领取
+    int32 configid = 9; //配置id
+    string paramlist = 10; //参数列表 分割符号";"
 }
 
 message PB_MailItemEx
@@ -98,7 +100,17 @@ message PB_RanCard
 }
 
 
-
+//排行榜成员
+message PB_RankObj
+{
+    int32 id = 1;   //
+    string account = 2;   //
+    string name = 3; //
+    int32 vipcard = 4;
+    int32 rank = 5; //当前排名
+    string icon = 6;//头像
+    //repeated int32 params = 9;
+}
 
 //-------------------------------------------------- 以下不用
 

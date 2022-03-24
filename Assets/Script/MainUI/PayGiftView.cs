@@ -60,7 +60,7 @@ public class PayGiftView : View
 
     }
 
-    override public void DoClickQuery()
+    override public void DoClickQuery(int start, int end)
     {
         C2S_GMQueryNormalInfo pb = new C2S_GMQueryNormalInfo();
         pb.Querytype = (int)PHP_QUERY.PAYGIFT;

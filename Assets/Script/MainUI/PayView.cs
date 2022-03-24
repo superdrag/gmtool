@@ -64,7 +64,7 @@ public class PayView : View
         }
     }
 
-    override public void DoClickQuery()
+    override public void DoClickQuery(int start, int end)
     {
         itemNum = 0;
         ClearItem();

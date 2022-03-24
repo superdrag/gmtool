@@ -130,7 +130,7 @@ public class MenuView : View
 
         if (Application.isEditor == false)
         {
-            rankBtn.gameObject.SetActive(false);
+            //rankBtn.gameObject.SetActive(false);
         }
         
     }

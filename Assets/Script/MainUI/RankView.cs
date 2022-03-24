@@ -63,7 +63,7 @@ public class RankView : View
         }
     }
 
-    override public void DoClickQuery()
+    override public void DoClickQuery(int start, int end)
     {
         //Logger.Log("11111111111111111111111");
         ClearItem();
@@ -71,10 +71,7 @@ public class RankView : View
 
         for (int i = 0; i < RecordModel.coreList.Count; i++)
         {
-            if (RecordModel.coreList[i].timetv >= TitleView.startTime && RecordModel.coreList[i].timetv <= TitleView.endTime)
-            {
-                AddRankItem(i); 
-            }           
+            AddRankItem(i);        
         }
 
 

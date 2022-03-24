@@ -212,6 +212,11 @@ public class GlobalCtl
         {
             //UIMgr.ShowUI(VIEWID.ALERTINFO,"查询成功");
         } 
+        else if( _pb.Ret == 1 )
+        {
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"查询无数据");
+            return;
+        }
         else
         {
             //UIMgr.ShowUI(VIEWID.ALERTINFO,"查询失败");

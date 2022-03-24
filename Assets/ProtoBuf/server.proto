@@ -14,6 +14,12 @@ import "common.proto";
 
 // ***********************************  MSG Start ***********************************
 
+//MsgId.MSG_SS2DB_SQLTICK                 = 220     --[[db执行sql心跳]]  
+message SS2DB_SQLTICK
+{
+
+}
+
 // MsgId.MSG_WD2DB_WORLDONLINKDB       	= 205       --world与db连接时发送数据
 message WD2DB_WorldOnLinkDB
 {
@@ -25,7 +31,19 @@ message DB2WD_WorldOnLinkDB
 {
     int32 battleseason = 1;
     repeated PBase.PB_MailItem maillist = 11;//全局邮件列表 
-    
+    string rankrobotlist1 = 12;
+    string rankrobotlist2 = 13;
+    string rankrobotlist3 = 14;
+}
+
+
+//MsgId.MSG_WD2DB_SAVEINITDB       	    = 207       --[[存储db初始化数据]]   
+message WD2DB_SaveInitDB
+{
+    int32 battleseason = 1;
+    string rankrobotlist1 = 12;
+    string rankrobotlist2 = 13;
+    string rankrobotlist3 = 14;
 }
 
 //MsgId.MSG_LN2DB_LOGINCHECKACC           = 301       --[[login发送db检测帐号]]
@@ -35,7 +53,10 @@ message LN2DB_LoginCheckAcc
     string passwd = 2;
     string nickname = 3;
 	string headicon = 4;
+    string token = 5;
     int32 guest =9;  
+    string platform = 11; //平台IOS,GOOGLE
+    string country = 12;    //国家
 }
 
 //MsgId.MSG_DB2LN_LOGINBACKRST            = 302       --[[db返回login帐号信息]]
@@ -45,6 +66,10 @@ message DB2LN_LoginBcakRet
     string account = 2;
 	int32 accdbid = 3;  
     bool newuser = 4;
+    string platform = 5; //平台IOS,GOOGLE
+    string country = 6;    //国家    
+    string token = 7;     
+    int32 upsavetime = 8;
 }
 
 //MsgId.MSG_LN2MT_GETLOWGATE              = 303       --[[login请求master分配gate]]
@@ -52,6 +77,8 @@ message LN2MT_GetLowGate
 {
     string account = 1;
 	int32 accdbid = 2;  
+    int32 upsavetime = 3;
+    bool newuser = 4;
 }
 
 //MsgId.MSG_MT2LN_BACKLOWGATE             = 304       --[[master分配gate信息给login]]
@@ -62,7 +89,35 @@ message MT2LN_BackLowGate
     string gateip = 3; 
     int32 gateport = 4; 
     int32 ret = 5;
+    int32 upsavetime = 6;
+    bool newuser = 7;
 }
+
+
+// MsgId.MSG_LN2HTTP_TOKEN                 = 305       --[[token]]  
+message LN2HTTP_Token
+{
+    string token = 1;
+    bool newuser = 2;
+    string account = 3;
+    string platform = 11; //平台IOS,GOOGLE
+    string country = 12;    //国家
+
+}
+
+// MsgId.MSG_HTTP2LN_TOKEN                 = 306       --[[token]]  
+message HTTP2LN_Token
+{
+    int32 ret = 1;
+    bool newuser = 2;
+    string account = 3;
+    string token = 4;
+    string platform = 5; //平台IOS,GOOGLE
+    string country = 6;    //国家   
+}
+
+//----------------
+
 
 //MsgId.MSG_GT2WD_LOGINWORLD              = 310       --[[gate验证key成功发送world登陆]] 
 message GT2WD_LoginWorld    
@@ -71,9 +126,33 @@ message GT2WD_LoginWorld
     int32 accdbid = 2;
     string ip = 3; 
     int32 reconn = 4;    //断线重连
+    int32 downsave = 9;//拉取全部存档
 }
 
-//MsgId.MSG_WD2DB_GETINITROLEDATA         = 311       --[[world发送db请求玩家初始数据]]
+
+// MsgId.MSG_WD2DB_LOGINSAVE               = 311       --[[拉取客户端存档]]  
+message WD2DB_LoginSave    
+{
+    int32 gateid = 1;
+    string account = 2;
+    int32 accdbid = 3;
+	string ip = 4;
+    int32 reconn = 5;    //断线重连  
+    int32 downsave = 9;//拉取全部存档
+}
+
+// MsgId.MSG_DB2WD_LOGINSAVE               = 312       --[[拉取客户端存档]]  
+message DB2WD_LoginSave    
+{
+    string account = 1;
+    int32 accdbid = 2;
+    string ip = 3; 
+    int32 reconn = 4;    //断线重连
+    int32 gateid = 5;
+}
+
+
+//MsgId.MSG_WD2DB_GETINITROLEDATA         = 313       --[[world发送db请求玩家初始数据]]
 message WD2DB_GetInitRoleData
 {
     int32 gateid = 1;
@@ -84,17 +163,22 @@ message WD2DB_GetInitRoleData
     int32 reconn = 6;    //断线重连  
 }
 
-//MsgId.MSG_DB2WD_BACKINITROLEDATA        = 313       --[[db发送world返回玩家初始数据]]
+//MsgId.MSG_DB2WD_BACKINITROLEDATA        = 314       --[[db发送world返回玩家初始数据]]
 message DB2WD_DBLoadInitRoleData
 {
-    int32 gateid = 1;
-    string account = 2;
-    int32 accdbid = 3;
-    int32 playerdbid = 4;
-	string ip = 5;
-    int32 logintv = 6;
-    int32 reconn = 7;    //断线重连
+    int32 ret = 1;
+    int32 gateid = 2;
+    string account = 3;
+    int32 accdbid = 4;
+    int32 playerdbid = 5;
+	string ip = 6;
+    int32 logintv = 7;
+    int32 reconn = 8;    //断线重连
+    string platform = 9;
+    string country = 10;
+    int32 regtime = 11;
     
+    string headicon = 12;
 	string playername = 13;
 	int32 sex = 14;
 	int32 prof = 15;	
@@ -109,7 +193,8 @@ message DB2WD_DBLoadInitRoleData
     int32 battlepasstv = 24;
     int32 fundpasstv = 25;
     int32 drawcardcount = 26;
-    int32 leaflet3 = 27;
+    int32 leaflet2 = 27;
+    int32 leaflet3 = 28;
 
     string counterstr = 30;
     string cardstr = 31; 
@@ -123,6 +208,28 @@ message DB2WD_DBLoadInitRoleData
     string monthgiftstr = 44;
     string timegiftstr = 45;  
     string randomcardstr = 46; 
+    string monthcard = 47;
+    string shoprancardstr = 48;
+    string activegiftstr = 49;
+    string daliytaskstr = 50;
+    string bigtaskstr = 51; 
+    string areastepstr = 52; 
+
+    int32 maintaskid = 61;
+    int32 maintaskarg = 62;
+    int32 upsavetime = 63;
+    string rankgroupid = 64;
+
+    int32 paytop = 81;
+    int32 paysum = 82;
+    int32 adssum = 83;    
+}
+
+//MsgId.MSG_DB2WD_BACKINITROLEMAIL        = 315       --db发送world返回玩家mail
+message DB2WD_DBLoadInitRoleMail
+{
+    int32 playerdbid = 1;
+    repeated PBase.PB_MailItem maillist = 2;//邮件列表
 }
 
 
@@ -133,8 +240,11 @@ message LG2DB_SavePlayerData
     int32 accdbid = 2;
     int32 playerdbid = 3;
     string playername = 4;
+    //int32 regtime = 5;
+
     int32 sex = 10;
 	int32 prof = 11;
+    string headicon = 12;
 	int32 lastlogintime = 13;
 	int32 lastofflinetime = 14;
 	int32 firstlogintime = 15;
@@ -155,12 +265,69 @@ message LG2DB_SavePlayerData
     string monthgiftstr = 34;
     string timegiftstr = 35; 
     string randomcardstr = 36; 
+    string monthcard = 37;
+    string shoprancardstr = 38;
+    string activegiftstr = 39;   
+    string daliytaskstr = 40; 
+    string bigtaskstr = 41; 
+    string areastepstr = 42; 
     
-    int32 coin = 41;//钞票
-    int32 diamond = 42;//钻石
-    int32 vipcard = 43;//
-    int32 leaflet3 = 44;//
+    int32 coin = 51;//钞票
+    int32 diamond = 52;//钻石
+    int32 vipcard = 53;//
+    int32 leaflet2 = 54;//
+    int32 leaflet3 = 55;//
+
+    int32 maintaskid = 61;
+    int32 maintaskarg = 62;
+    int32 upsavetime = 63;
+    string rankgroupid = 64;
+
+    int32 paytop = 81;
+    int32 paysum = 82;
+    int32 adssum = 83;        
 }
+
+//MsgId.MSG_LG2DB_SAVEPLAYRDATA2          = 502       --[[玩家数据db存盘部分]]  
+message LG2DB_SavePlayerData2
+{
+    string account = 1;
+    int32 accdbid = 2;
+    int32 playerdbid = 3;
+    string playername = 4;
+	int32 lastlogintime = 13;
+	int32 lastofflinetime = 14;
+	int32 firstlogintime = 15;
+    int32 battlepasstv = 16;
+    int32 fundpasstv = 17;
+    int32 drawcardcount = 18;
+
+    string counterstr = 20;
+    string cardstr = 23;
+
+    string firstgiftstr = 31;
+    string daygiftstr = 32;
+    string weekgiftstr = 33;
+    string monthgiftstr = 34;
+    string timegiftstr = 35; 
+    string randomcardstr = 36; 
+    string monthcard = 37;
+    string shoprancardstr = 38;
+    string activegiftstr = 39;   
+    string daliytaskstr = 40; 
+    string bigtaskstr = 41;
+    string areastepstr = 42; 
+    
+    int32 coin = 51;//钞票
+    int32 diamond = 52;//钻石
+    int32 vipcard = 53;//
+    int32 leaflet2 = 54;//
+    int32 leaflet3 = 55;//
+
+    int32 maintaskid = 61;
+    int32 maintaskarg = 62;
+}
+
 
 //MsgId.MSG_WD2DB_REFRESHDBDATA           = 502       --[[每天每月每日重置db]]
 message WD2DB_RefreshDBData
@@ -168,12 +335,7 @@ message WD2DB_RefreshDBData
     int32 type = 1; //1每天 2每周 3每月
 }
 
-//MsgId.MSG_DB2WD_BACKINITROLEMAIL        = 315       --db发送world返回玩家mail
-message DB2WD_DBLoadInitRoleMail
-{
-    int32 playerdbid = 1;
-    repeated PBase.PB_MailItem maillist = 2;//邮件列表
-}
+
 
 
 //MSG_LG2GT_SETGATELOGICID        = 322,      //设置gate的logicid
@@ -217,7 +379,44 @@ message WD2DB_IOSPayRecord
     int32 event = 7;
     int32 status = 8;
     int32 payid = 9;
-    string paycode = 10;
+    int32 purchasetype = 10;
+    string paycode = 11;
+}
+
+//MsgId.MSG_WD2DB_IOSPAYREPAIR            = 551      --[[支付补单]]    
+message WD2DB_IOSPayRepair
+{
+    string order = 1;
+    string paycode = 2;    
+    int32 payid = 3;
+}
+
+
+// MsgId.MSG_DB2WD_INITRANK            = 560       --[[初始化排行榜]]     
+ message WD2DB_InitRank
+{
+    string uid = 1;
+    string members = 2;    
+    int32 createTime = 3;
+    int32 maxnum = 4;
+    int32 rewardtime = 5;
+    int32 rewardcount = 6;
+    int32 addRobotTime = 7;
+    int32 addRobotInterval = 8;
+    int32 endtime = 9;
+}
+// MsgId.MSG_WD2DB_SAVERANK            = 561       --[[存储排行榜]]        
+message WD2DB_SaveRank
+{
+    string uid = 1;
+    string members = 2;    
+    int32 createTime = 3;
+    int32 maxnum = 4;
+    int32 rewardtime = 5;
+    int32 rewardcount = 6;
+    int32 addRobotTime = 7;
+    int32 addRobotInterval = 8;
+    int32 endtime = 9;
 }
 
 //-----------------------------------
@@ -230,12 +429,15 @@ message WD2DB_SaveUpload
     string filename = 1;
     bytes data = 2;
     int32 playerdbid = 3;
+    string datastr = 4;
+    int32 time = 5;
 }
 // MsgId.MSG_DB2WD_SAVEUPLOAD              = 602      --[[上传存档]]  
 message DB2WD_SaveUpload
 {
     int32 ret = 1;
     string filename = 2;
+    int32 time = 3;
 }
 
 // MsgId.MSG_WD2DB_SAVEDOWNLOAD            = 605      --[[下载存档]]  
@@ -250,9 +452,24 @@ message DB2WD_SaveDownload
     int32 ret = 1;
     string filename = 2;
     bytes data = 3;
+    string datastr = 4;
+    int32 gateid = 5;
 }
 
 
+// MsgId.MSG_WD2HTTP_DELETESAVE            = 631      --[[删除存档]]  
+message WD2HTTP_DeleteSave
+{
+    string url = 1;
+    string account = 2;
+}
+
+// MsgId.MSG_HTTP2WD_DELETESAVE            = 632      --[[删除存档]]  
+message HTTP2WD_DeleteSave
+{
+    int32 ret = 1;
+    string account = 2;
+}
 
 
 
@@ -267,8 +484,16 @@ message PHP2WD_GMSendMail
     PBase.PB_MailItem maildata = 3;
 }
 
-// MsgId.MSG_WD2DB_SENDMAIL                    = 812
-message WD2DB_GMSendMail
+// MsgId.MSG_PHP2DB_SENDMAIL                    = 812
+message PHP2DB_GMSendMail
+{
+    int32 mailtype = 1;
+    string account = 2;
+    PBase.PB_MailItem maildata = 3;
+    int32 checkmail = 4;
+}
+
+message DB2WD_GMSendMail
 {
     int32 mailtype = 1;
     string account = 2;
@@ -332,6 +557,9 @@ message WD2HTTP_IOSPayCheck
     string paycode = 4;
     int32 paytype = 5;
     int32 repair = 6;
+    string payorder = 7;  //订单号
+    string platform = 9; //平台
+    string payidstr = 10;
 }
 
 //MsgId.MSG_HTTP2WD_IOSPAYCHECK             = 702      --[[ios支付验证]] 
@@ -345,6 +573,9 @@ message HTTP2WD_IOSPayCheck
     int32 paytype = 6;
     string payorder = 7;
     int32 repair = 8;    
+    string platform = 9; //平台
+    int32 purchasetype = 10;
+    string country = 11; 
 }
 
 //--------------------------------HTTP END--------------------------------------------

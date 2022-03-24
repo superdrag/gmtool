@@ -51,7 +51,7 @@ public class GMAccView : View
     override public void OnShow(params object[] args)
     {        
         ClearItem();
-        GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("",(int)PHP_QUERY.GMACCLIST,999);
+        
     }
 
     private void onClickNew(GameObject go)
@@ -59,10 +59,12 @@ public class GMAccView : View
         UIMgr.ShowUI( VIEWID.GMAccNew, 1 );
     }
 
-    private void onClickSend()
+    override public void DoClickQuery(int start, int end)
     {
         Logger.Log("onClickSend ...........");
-    }
+        ClearItem();
+        GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("",(int)PHP_QUERY.GMACCLIST,999);
+    }    
     
     public void ClearItem()
     {

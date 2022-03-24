@@ -57,11 +57,9 @@ public class VipView : View
 
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
         //rect.sizeDelta = new Vector2(0, (float)RecordModel.Instance.coreList.Count * (float)73.6 );
-
-
     }
 
-    override public void DoClickQuery()
+    override public void DoClickQuery(int start, int end)
     {
         C2S_GMQueryTaskMain pb = new C2S_GMQueryTaskMain();
         pb.Type = 3;

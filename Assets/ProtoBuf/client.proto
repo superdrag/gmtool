@@ -60,10 +60,11 @@ message C2S_Login
     string headicon = 4;//用户头像Url
     int32 guest = 5;    //1游客 0非游客 
     int32 reconn = 6;    //断线重连
-    string platform = 11; //平台IOS,GOOGLE
+    string platform = 11; //平台ios,android
     string country = 12;    //国家
     string sign = 13;
     int32 time = 14;    
+    string token = 15;
 }
 
 //MSG_LN2CL_GATEIPANDPORT         = 2011,     //成功登陆返回gate链接信息
@@ -78,6 +79,9 @@ message S2C_Login
     string acccode=7;//账号绑定加密码
     int32 ret = 8;
     int32 retarg = 9;
+    int32 upsavetime = 10;
+    bool newuser = 11;//新账号
+    int32 startmin = 12; //服务器还有少分钟开启登录  0为已经开启
 }
 
 //MSG_CL2GT_LOGINGATE             = 1012,     //连接网关gate验证签名
@@ -100,7 +104,7 @@ message S2C_LoginGate
     int32 accdbid = 2;//账号id
     int32 roleid = 3;//角色id
     string ip=4;//ip地址
-    string headicon = 5;//头像Url
+    string headicon = 5;//头像
     int32 reconn = 6;    //断线重连
     bool firstlogin = 9;//第一次登录
     int32 curtime = 10;//
@@ -127,6 +131,11 @@ message S2C_LoginRoleData
     map<int32, int32> monthcardinfo = 17;//月卡信息
     int32 paylevel = 18; //充值水平 1小r 2中r 3大r
     map<int32, PBase.PB_GiftPack> activegitflist = 19;//   --活动礼包 { 1配置id 2时间 3购买次数 }
+    repeated int32 bigtasklist = 20; //成就任务列表
+    int32 zerotime = 21; // 当天的零点
+    string rankgroupid = 22;    //排行榜id
+    repeated int32 areasteplist = 23; //竞技场阶段奖励列表
+    string headicon = 24;//头像
 }
 
 //MsgId.MSG_CL2LG_STOREBASEINFO           = 1201      --基本信息存储
@@ -214,6 +223,20 @@ message S2C_SetNickName
     int32 ret = 1;
     string name = 2; //
 }
+
+//MsgId.MSG_CL2WD_SETHEADICON             = 1507      --[[改头像]]  
+message C2S_SetHeadIcon
+{
+    string icon = 1; //
+}
+
+//MsgId.MSG_WD2CL_SETHEADICON             = 2507      --[[改头像]]  
+message S2C_SetHeadIcon
+{
+    int32 ret = 1;
+    string icon = 2; //
+}
+
 
 // MsgId.MSG_CL2WD_GETMAILNEW              = 1510      --请求是否有新邮件
 message C2S_GetMailNew
@@ -323,6 +346,8 @@ message S2C_DrawCardInfo
     int32 drawgainleaflet1 = 11;
     int32 drawgainleaflet2 = 12;
     int32 drawgainleaflet3 = 13;    
+
+    int32 lefttime = 20;
 }
 
 // MsgId.MSG_CL2WD_DRAWCARD                = 1522      --抽卡
@@ -615,6 +640,63 @@ message S2C_GainDrawSumRewards
     repeated string rewards = 3;
 }
 
+// MsgId.MSG_CL2WD_TIMETASK                = 1538      --[[领取限时任务]]    
+message C2S_TimeTask
+{
+    int32 taskid = 1; // 
+    int32 vpcard = 2; //
+    bool isdouble = 3;
+    bool timeout = 4;
+}
+// MsgId.MSG_WD2LC_TIMETASK                = 2538      --[[领取限时任务]]    
+message S2C_TimeTask
+{
+    int32 ret= 1; //
+    repeated string rewards = 2;
+    bool isdouble = 3;
+    bool timeout = 4;
+}
+
+
+// MsgId.MSG_CL2WD_GETRANKLIST         = 1561      --[[请求排行榜列表]]   
+message C2S_GetRankList
+{
+
+}
+// MsgId.MSG_WD2LC_GETRANKLIST         = 2561      --[[请求排行榜列表]]    
+message S2C_GetRankList
+{
+    repeated PBase.PB_RankObj rankobjlist = 1; // 成员列表
+    int32 rewardsec = 2; //每日领奖倒计时秒
+    int32 rewardcount = 3; //领奖次数
+    int32 rankclose = 4; //排行榜关闭 1 关闭 0正常
+    int32 rewardfinalsec = 5; //最终领奖倒计时秒
+    int32 rewardendsec = 6; //功能关闭倒计时秒
+}
+
+//MsgId.MSG_WD2LC_JOINRANKLIST        = 2562      --[[玩家加入排行榜信息]] 
+message S2C_JoinRankList
+{
+    string rankgroupid = 1;
+}
+
+
+// MsgId.MSG_CL2WD_AREASTEPREWARD        = 1565      --[[领取竞技场阶段奖励]]    
+message C2S_AreaStepReward
+{
+    int32 taskid = 1;
+}
+// MsgId.MSG_WD2LC_AREASTEPREWARD        = 2565      --[[领取竞技场阶段奖励]]    
+message S2C_AreaStepReward
+{
+    int32 ret = 1;
+    int32 taskid = 2;
+    //string rewardstr = 3;
+}
+
+////////////////////////////////////////
+
+
 // MsgId.MSG_CL2WD_IOSPAYCHECK             = 1550      --[[支付]] 
 message C2S_IOSPayCheck
 {
@@ -622,6 +704,7 @@ message C2S_IOSPayCheck
     string paycode = 2;  //支付凭证码
     string platform = 9; //平台
     string payorder = 10;  //订单号
+    int32 repair = 11; //补单  1补单    
 }
 
 // MsgId.MSG_WD2LC_IOSPAYCHECK             = 2550      --[[支付]]   
@@ -632,6 +715,9 @@ message S2C_IOSPayCheck
     int32 paytype = 3;  //购买类型 101首冲 102商城礼包 
     string platform = 9; //平台
     string payorder = 10;  //订单号
+    int32 repair = 11;
+    string paycode = 12;
+    int32 purchasetype = 13; //0沙盒支付 >0正式支付
 }
 
 
@@ -649,6 +735,33 @@ message C2S_IOSPayFree
     int32 paytype = 3;  //购买类型 101首冲 102商城礼包 
 }
 
+//MsgId.MSG_WD2LC_PAYNOUSETOKEN           = 2554      --[[没有消耗token订单]]    
+message S2C_PayNoUseToken
+{
+    string account = 1;
+    string payorder = 2;
+    string token = 3;
+    int32 payid = 4; 
+}
+
+
+// MsgId.MSG_CL2WD_PAYCHECKORDER           = 1555      --[[消耗订单]]    
+message C2S_PayCheckOrder
+{
+    string payorder = 1;
+    int32 payid = 2;    
+    string token = 3;
+    int32 playerdbid = 9; //不用填  
+}
+
+// MsgId.MSG_WD2LC_PAYCHECKORDER           = 2555      --[[消耗订单]]    
+message S2C_PayCheckOrder
+{
+    int32 ret = 1;
+    string payorder = 2;
+    int32 payid = 3;    
+    string token = 4;
+}
 
 
 //MsgId.MSG_CL2WD_IOSPAYCONDITION         = 1556      --[[支付预检测]]    
@@ -667,6 +780,21 @@ message S2C_IOSPayCondition
 
 //------------------------------
 
+
+// MsgId.MSG_CL2WD_DELETEACC               = 1631      --[[删除账号]]  
+message C2S_DeleteAcc
+{
+    string account = 1;
+}
+
+// MsgId.MSG_WD2CL_DELETEACC               = 2631      --[[删除账号]]  
+message S2C_DeleteAcc
+{
+    int32 ret = 1;
+    string account = 2;
+}
+
+
 // MsgId.MSG_CL2WD_SAVEUPLOAD              = 1601      --[[上传存档]] 
 message C2S_SaveUpload
 {
@@ -679,6 +807,7 @@ message S2C_SaveUpload
 {
     int32 ret = 1;
     string filename = 2;
+    int32 time = 3;
 }
 
 // MsgId.MSG_CL2WD_SAVEDOWNLOAD            = 1605      --[[下载存档]]  
@@ -711,6 +840,35 @@ message S2C_UploadMainTask
     int32 taskarg = 3;
 }
 
+// MsgId.MSG_CL2WD_UPLOADBIGTASK           = 1612      --[[上传大任务]]  
+message C2S_UploadBigTask
+{
+    int32 taskid = 1;  //任务id
+    int32 taskarg = 2; //任务进度
+}
+// MsgId.MSG_WD2CL_UPLOADBIGTASK           = 2612      --[[上传大任务]]  
+message S2C_UploadBigTask
+{
+    int32 ret = 1;
+    int32 taskid = 2;
+    int32 taskarg = 3;
+}
+
+
+//MsgId.MSG_CL2WD_UPLOADPLAYERINFO         = 1611      --[[上传玩家信息]]  
+message C2S_UploadPlayerInfo
+{
+    int32 typeid = 1;  //id
+    repeated int32 paramlist = 2; //参数列表
+}
+
+//MsgId.MSG_WD2CL_UPLOADPLAYERINFO         = 2611      --[[上传玩家信息]]
+message S2C_UploadPlayerInfo
+{
+    int32 ret = 1;
+    int32 typeid = 2;  //id
+    repeated int32 paramlist = 3; //参数列表
+}
 
 // MsgId.MSG_CL2WD_CHEATDATA               = 1621      --[[客户端异常作弊数据上传]]  
 message C2S_ChestData
@@ -724,6 +882,10 @@ message S2C_ChestData
 {
     int32 type = 1;  // 1内存修改 2加速器    
 }
+
+
+
+
 
 
 

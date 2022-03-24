@@ -156,6 +156,21 @@ public class SaveView : View
         // }                
     }
 
+    public void AddItem(PB_ParamStrDict rstData)
+    {               
+        // RecordItem item = new RecordItem();
+        // item.rstData = rstData;
+        // item.Create();
+        // item.view.SetParent(Content);
+        // item.view.transform.localScale = Vector3.one;
+        // item.Show();   
+
+        // itemNum += 1;  
+
+        // RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        // rect.sizeDelta = new Vector2(0, (float)itemNum * (float)73.6 );             
+    }    
+
     private void onDropDownHandle(int index)
     {
         Logger.Log("onDropDownHandle  "+dropdown.options[index].text);

@@ -62,7 +62,7 @@ public class GuideView : View
 
     }
 
-    override public void DoClickQuery()
+    override public void DoClickQuery(int start, int end)
     {
         C2S_GMQueryTaskMain pb = new C2S_GMQueryTaskMain();
         pb.Type = 1;

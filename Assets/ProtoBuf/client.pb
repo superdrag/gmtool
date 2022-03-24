@@ -1,5 +1,5 @@
 
-◊H
+çX
 client.protoPClientcommon.proto")
 S2C_ErrorCode
 errcode (Rerrcode"
@@ -8,7 +8,7 @@
 curtime (Rcurtime"(
 S2C_ShutDwon
 leftsec (Rleftsec"
-S2C_ReloginKick"ˇ
+S2C_ReloginKick"ï
 	C2S_Login
 account (	Raccount
 passwd (	Rpasswd
@@ -19,7 +19,8 @@
 platform (	Rplatform
 country (	Rcountry
 sign (	Rsign
-time (Rtime"ﬂ
+time (Rtime
+token (	Rtoken"µ
 	S2C_Login
 account (	Raccount
 accdbid (Raccdbid
@@ -29,7 +30,13 @@
 time (Rtime
 acccode (	Racccode
 ret (Rret
-retarg	 (Rretarg"Õ
+retarg	 (Rretarg
+
+upsavetime
+ (R
+upsavetime
+newuser (Rnewuser
+startmin (Rstartmin"Õ
 C2S_LoginGate
 account (	Raccount
 name (	Rname
@@ -55,7 +62,7 @@ firstlogin
 dayRefresh (R
 dayRefresh
 nickname (	Rnickname
-ret (Rret"ñ
+ret (Rret"∂
 S2C_LoginRoleData
 reconn (Rreconn
 diamond (Rdiamond
@@ -73,7 +80,12 @@ sevenlogin
 	sevengain (R	sevengainS
 monthcardinfo (2-.PClient.S2C_LoginRoleData.MonthcardinfoEntryRmonthcardinfo
 paylevel (RpaylevelV
-activegitflist (2..PClient.S2C_LoginRoleData.ActivegitflistEntryRactivegitflistT
+activegitflist (2..PClient.S2C_LoginRoleData.ActivegitflistEntryRactivegitflist 
+bigtasklist (Rbigtasklist
+zerotime (Rzerotime 
+rankgroupid (	Rrankgroupid"
+areasteplist (Rareasteplist
+headicon (	RheadiconT
 FirstgiftlistEntry
 key (Rkey(
 value (2.PBase.PB_GiftPackRvalue:8@
@@ -115,7 +127,12 @@ sevenlogin
 name (	Rname"7
 S2C_SetNickName
 ret (Rret
-name (	Rname"
+name (	Rname"%
+C2S_SetHeadIcon
+icon (	Ricon"7
+S2C_SetHeadIcon
+ret (Rret
+icon (	Ricon"
 C2S_GetMailNew"*
 S2C_GetMailNew
 newmail (Rnewmail"
@@ -144,7 +161,7 @@ sevenlogin
 C2S_ShowTeamCardList"R
 S2C_ShowTeamCardList:
 teamcardlist (2.PBase.PB_TeamCardInfoRteamcardlist"
-C2S_DrawCardInfo"‰
+C2S_DrawCardInfo"Ä
 S2C_DrawCardInfo"
 drawfreetime (Rdrawfreetime
 
@@ -155,7 +172,8 @@ unlocktime,
 drawcountleaflet3 (Rdrawcountleaflet3*
 drawgainleaflet1 (Rdrawgainleaflet1*
 drawgainleaflet2 (Rdrawgainleaflet2*
-drawgainleaflet3 (Rdrawgainleaflet3"<
+drawgainleaflet3 (Rdrawgainleaflet3
+lefttime (Rlefttime"<
 C2S_DrawCard
 boxid (Rboxid
 cardid (Rcardid"h
@@ -297,41 +315,93 @@ unlocktime"(
 S2C_GainDrawSumRewards
 ret (Rret
 id (Rid
-rewards (	Rrewards"y
+rewards (	Rrewards"t
+C2S_TimeTask
+taskid (Rtaskid
+vpcard (Rvpcard
+isdouble (Risdouble
+timeout (Rtimeout"p
+S2C_TimeTask
+ret (Rret
+rewards (	Rrewards
+isdouble (Risdouble
+timeout (Rtimeout"
+C2S_GetRankList"
+S2C_GetRankList3
+rankobjlist (2.PBase.PB_RankObjRrankobjlist
+	rewardsec (R	rewardsec 
+rewardcount (Rrewardcount
+	rankclose (R	rankclose&
+rewardfinalsec (Rrewardfinalsec"
+rewardendsec (Rrewardendsec"4
+S2C_JoinRankList 
+rankgroupid (	Rrankgroupid",
+C2S_AreaStepReward
+taskid (Rtaskid">
+S2C_AreaStepReward
+ret (Rret
+taskid (Rtaskid"ë
 C2S_IOSPayCheck
 payid (Rpayid
 paycode (	Rpaycode
 platform	 (	Rplatform
 payorder
- (	Rpayorder"ã
+ (	Rpayorder
+repair (Rrepair"·
 S2C_IOSPayCheck
 ret (Rret
 payid (Rpayid
 paytype (Rpaytype
 platform	 (	Rplatform
 payorder
- (	Rpayorder"B
+ (	Rpayorder
+repair (Rrepair
+paycode (	Rpaycode"
+purchasetype (Rpurchasetype"B
 C2S_IOSPayFree
 payid (Rpayid
 platform (	Rplatform"R
 S2C_IOSPayFree
 ret (Rret
 payid (Rpayid
-paytype (Rpaytype"G
+paytype (Rpaytype"u
+S2C_PayNoUseToken
+account (	Raccount
+payorder (	Rpayorder
+token (	Rtoken
+payid (Rpayid"{
+C2S_PayCheckOrder
+payorder (	Rpayorder
+payid (Rpayid
+token (	Rtoken
+
+playerdbid	 (R
+playerdbid"m
+S2C_PayCheckOrder
+ret (Rret
+payorder (	Rpayorder
+payid (Rpayid
+token (	Rtoken"G
 C2S_IOSPayCondition
 payid (Rpayid
 platform (	Rplatform"W
 S2C_IOSPayCondition
 ret (Rret
 payid (Rpayid
-paytype (Rpaytype"Z
+paytype (Rpaytype")
+C2S_DeleteAcc
+account (	Raccount";
+S2C_DeleteAcc
+ret (Rret
+account (	Raccount"Z
 C2S_SaveUpload
 filename (	Rfilename
 data (Rdata
-datastr (	Rdatastr">
+datastr (	Rdatastr"R
 S2C_SaveUpload
 ret (Rret
-filename (	Rfilename".
+filename (	Rfilename
+time (Rtime".
 C2S_SaveDownload
 filename (	Rfilename"n
 S2C_SaveDownload
@@ -345,7 +415,21 @@ unlocktime"(
 S2C_UploadMainTask
 ret (Rret
 taskid (Rtaskid
-taskarg (Rtaskarg"Y
+taskarg (Rtaskarg"E
+C2S_UploadBigTask
+taskid (Rtaskid
+taskarg (Rtaskarg"W
+S2C_UploadBigTask
+ret (Rret
+taskid (Rtaskid
+taskarg (Rtaskarg"L
+C2S_UploadPlayerInfo
+typeid (Rtypeid
+	paramlist (R	paramlist"^
+S2C_UploadPlayerInfo
+ret (Rret
+typeid (Rtypeid
+	paramlist (R	paramlist"Y
 C2S_ChestData
 type (Rtype
 param (	Rparam

@@ -1,5 +1,5 @@
 
-©
+Ú
 common.protoPBase"'
 PB_ParamIntList
 value (Rvalue"'
@@ -17,7 +17,7 @@
 value (Rvalue:8"0
 PB_Money
 type (Rtype
-num (Rnum"’
+num (Rnum"è
 PB_MailItem
 mid (	Rmid
 title (	Rtitle
@@ -26,7 +26,10 @@
 sendtime (Rsendtime
 readtime (Rreadtime
 pasttime (Rpasttime
-state (Rstate"ª
+state (Rstate
+configid	 (Rconfigid
+	paramlist
+ (	R	paramlist"ª
 PB_MailItemEx
 mid (	Rmid
 title (	Rtitle
@@ -56,7 +59,15 @@ PB_RanCard
 shopid (Rshopid
 cardid (Rcardid
 cardnum (Rcardnum
-count (Rcount"q
+count (Rcount"å
+
+PB_RankObj
+id (Rid
+account (	Raccount
+name (	Rname
+vipcard (Rvipcard
+rank (Rrank
+icon (	Ricon"q
 PB_Item
 itemGuid (	RitemGuid
 itemId (RitemId

@@ -111,10 +111,10 @@ public class CoreSumView : View
         //}
     }
 
-    override public void DoClickQuery()
+    override public void DoClickQuery(int start, int end)
     {
         RecordModel.resetCoreSumData();        
-        RecordModel.analyseAllCoreData(TitleView.country,TitleView.platform);
+        RecordModel.analyseAllCoreData(start,end,TitleView.country,TitleView.platform);
         //ClearCoreItem();
         //UIMgr.RefreshUI(VIEWID.CoreSumView);
 

@@ -93,7 +93,7 @@ public class FuncView : View
 
     }
 
-    override public void DoClickQuery()
+    override public void DoClickQuery(int start, int end)
     {
 
     }

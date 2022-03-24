@@ -50,8 +50,7 @@ public class LimitView : View
 
     override public void OnShow(params object[] args)
     {        
-        ClearItem();
-        GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("",(int)PHP_QUERY.BLACKUSER,66);
+        ClearItem();        
     }
 
     private void onClickNew(GameObject go)
@@ -59,9 +58,10 @@ public class LimitView : View
         UIMgr.ShowUI( VIEWID.LimitNew, 1 );
     }
 
-    private void onClickSend()
+    override public void DoClickQuery(int start, int end)
     {
-        Logger.Log("onClickSend ...........");
+        ClearItem();
+        GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("",(int)PHP_QUERY.BLACKUSER,66);
     }
     
     public void ClearItem()

@@ -104,12 +104,12 @@ public class AdsLTVView : View
         //Logger.Log("AddCoreItem....",dayIndex,coreItem.view.GetComponent<RectTransform>().anchoredPosition);
     }
 
-    override public void DoClickQuery()
+    override public void DoClickQuery(int start, int end)
     {
         //Debug.Log("DoClickQuery core");
         // string curCountry = TitleView.country;
         // Logger.Log("1111111111111 "+ curCountry);
-        RecordModel.analyseAllCoreData(TitleView.country,TitleView.platform);
+        RecordModel.analyseAllCoreData(start,end,TitleView.country,TitleView.platform);
 
         ClearCoreItem();
         

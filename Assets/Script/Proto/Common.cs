@@ -31,43 +31,47 @@ namespace PBase {
             "KAkSDQoFdmFsdWUYAiABKAk6AjgBIm4KD1BCX1BhcmFtSW50RGljdBIuCgRk",
             "aWN0GAEgAygLMiAuUEJhc2UuUEJfUGFyYW1JbnREaWN0LkRpY3RFbnRyeRor",
             "CglEaWN0RW50cnkSCwoDa2V5GAEgASgFEg0KBXZhbHVlGAIgASgFOgI4ASIl",
-            "CghQQl9Nb25leRIMCgR0eXBlGAEgASgFEgsKA251bRgCIAEoBSKRAQoLUEJf",
+            "CghQQl9Nb25leRIMCgR0eXBlGAEgASgFEgsKA251bRgCIAEoBSK2AQoLUEJf",
             "TWFpbEl0ZW0SCwoDbWlkGAEgASgJEg0KBXRpdGxlGAIgASgJEg8KB2NvbnRl",
             "bnQYAyABKAkSEAoIaXRlbWxpc3QYBCABKAkSEAoIc2VuZHRpbWUYBSABKAUS",
             "EAoIcmVhZHRpbWUYBiABKAUSEAoIcGFzdHRpbWUYByABKAUSDQoFc3RhdGUY",
-            "CCABKAUi1QEKDVBCX01haWxJdGVtRXgSCwoDbWlkGAEgASgJEg0KBXRpdGxl",
-            "GAIgASgJEg8KB2NvbnRlbnQYAyABKAkSEAoIaXRlbWxpc3QYBCABKAkSEAoI",
-            "c2VuZHRpbWUYBSABKAUSEAoIcmVhZHRpbWUYBiABKAUSEAoIcGFzdHRpbWUY",
-            "ByABKAUSDQoFc3RhdGUYCCABKAUSEgoKcGxheWVyZGJpZBgJIAEoBRIPCgdh",
-            "Y2NvdW50GAogASgJEgwKBHR5cGUYCyABKAUSDQoFYWdyZWUYDCABKAUiOQoP",
-            "UEJfVGVhbUNhcmRJbmZvEgoKAmlkGAEgASgFEgsKA251bRgCIAEoBRINCgVs",
-            "ZXZlbBgDIAEoBSI2CgtQQl9HaWZ0UGFjaxIKCgJpZBgBIAEoBRINCgVjb3Vu",
-            "dBgCIAEoBRIMCgR0aW1lGAMgASgFIkwKClBCX1JhbkNhcmQSDgoGc2hvcGlk",
-            "GAEgASgFEg4KBmNhcmRpZBgCIAEoBRIPCgdjYXJkbnVtGAMgASgFEg0KBWNv",
-            "dW50GAQgASgFIk0KB1BCX0l0ZW0SEAoIaXRlbUd1aWQYASABKAkSDgoGaXRl",
-            "bUlkGAIgASgFEg8KB2l0ZW1Qb3MYAyABKAUSDwoHaXRlbU51bRgEIAEoBSIv",
-            "CgtQQl9JdGVtTGlzdBIgCghpdGVtTGlzdBgBIAMoCzIOLlBCYXNlLlBCX0l0",
-            "ZW0iOQoOUEJfVGFza0NvdW50ZXISCwoDY0lkGAEgASgFEgwKBGNBcmcYAiAB",
-            "KAUSDAoEY051bRgDIAEoBSJ9CgdQQl9UYXNrEg4KBnRhc2tJZBgBIAEoBRIR",
-            "Cgl0YXNrU3RhdGUYAiABKAUSEgoKYWNjZXB0VGltZRgDIAEoBRISCgpzdWJt",
-            "aXRUaW1lGAQgASgFEicKCGNvdW50ZXJzGAUgAygLMhUuUEJhc2UuUEJfVGFz",
-            "a0NvdW50ZXIiLwoLUEJfVGFza0xpc3QSIAoIdGFza0xpc3QYASADKAsyDi5Q",
-            "QmFzZS5QQl9UYXNrIkgKClBCX0NvdW50ZXISEQoJY291bnRlcklkGAEgASgF",
-            "EhIKCmNvdW50ZXJOdW0YAiABKAUSEwoLY291bnRlckFyZ3MYAyADKAUiOAoO",
-            "UEJfQ291bnRlckxpc3QSJgoLY291bnRlckxpc3QYASADKAsyES5QQmFzZS5Q",
-            "Ql9Db3VudGVyIp0CCgtQQl9Vbmlvbk9iahIPCgd1bmlvbklkGAEgASgFEhEK",
-            "CXVuaW9uTmFtZRgCIAEoCRIRCgl1bmlvblR5cGUYAyABKAUSDwoHbnBjTGlz",
-            "dBgEIAMoBRIRCglza2lsbExpc3QYBSADKAUSEgoKdW5pb25MZXZlbBgGIAEo",
-            "BRIQCgh1bmlvbkVYUBgHIAEoAxISCgp1bmlvbk1vbmV5GAggASgDEhEKCW1h",
-            "eE1lbWJlchgJIAEoBRIRCgltYXhWQ2hhaXIYCiABKAUSEAoIbWF4RWxkZXIY",
-            "CyABKAUSEwoLdW5pb25Ob3RpY2UYDCABKAkSFwoPdW5pb25DcmVhdGVUaW1l",
-            "GA0gASgFEhMKC2NyZWF0b3JOYW1lGA4gASgJIqkBCg5QQl9Vbmlvbk1lbWJl",
-            "chIMCgRkYmlkGAEgASgFEhEKCXVuaW9uRGJpZBgCIAEoBRIRCglwbHllckRC",
-            "aWQYAyABKAUSEgoKbWVtYmVyTmFtZRgEIAEoCRIMCgRyYW5rGAUgASgFEg0K",
-            "BW9mZmVyGAYgASgFEhAKCGpvaW5UaW1lGAcgASgFEhAKCGV4aXRUaW1lGAgg",
-            "ASgFEg4KBm9ubGluZRgJIAEoBSI6ChFQQl9VbmlvbkFwcGx5SW5mbxISCgpw",
-            "bGF5ZXJEYmlkGAEgASgFEhEKCWFwcGx5VGltZRgCIAEoBSItCg9QQl9Vbmlv",
-            "bkxvZ0luZm8SDAoEdGltZRgBIAEoBRIMCgR0ZXh0GAIgASgJYgZwcm90bzM="));
+            "CCABKAUSEAoIY29uZmlnaWQYCSABKAUSEQoJcGFyYW1saXN0GAogASgJItUB",
+            "Cg1QQl9NYWlsSXRlbUV4EgsKA21pZBgBIAEoCRINCgV0aXRsZRgCIAEoCRIP",
+            "Cgdjb250ZW50GAMgASgJEhAKCGl0ZW1saXN0GAQgASgJEhAKCHNlbmR0aW1l",
+            "GAUgASgFEhAKCHJlYWR0aW1lGAYgASgFEhAKCHBhc3R0aW1lGAcgASgFEg0K",
+            "BXN0YXRlGAggASgFEhIKCnBsYXllcmRiaWQYCSABKAUSDwoHYWNjb3VudBgK",
+            "IAEoCRIMCgR0eXBlGAsgASgFEg0KBWFncmVlGAwgASgFIjkKD1BCX1RlYW1D",
+            "YXJkSW5mbxIKCgJpZBgBIAEoBRILCgNudW0YAiABKAUSDQoFbGV2ZWwYAyAB",
+            "KAUiNgoLUEJfR2lmdFBhY2sSCgoCaWQYASABKAUSDQoFY291bnQYAiABKAUS",
+            "DAoEdGltZRgDIAEoBSJMCgpQQl9SYW5DYXJkEg4KBnNob3BpZBgBIAEoBRIO",
+            "CgZjYXJkaWQYAiABKAUSDwoHY2FyZG51bRgDIAEoBRINCgVjb3VudBgEIAEo",
+            "BSJkCgpQQl9SYW5rT2JqEgoKAmlkGAEgASgFEg8KB2FjY291bnQYAiABKAkS",
+            "DAoEbmFtZRgDIAEoCRIPCgd2aXBjYXJkGAQgASgFEgwKBHJhbmsYBSABKAUS",
+            "DAoEaWNvbhgGIAEoCSJNCgdQQl9JdGVtEhAKCGl0ZW1HdWlkGAEgASgJEg4K",
+            "Bml0ZW1JZBgCIAEoBRIPCgdpdGVtUG9zGAMgASgFEg8KB2l0ZW1OdW0YBCAB",
+            "KAUiLwoLUEJfSXRlbUxpc3QSIAoIaXRlbUxpc3QYASADKAsyDi5QQmFzZS5Q",
+            "Ql9JdGVtIjkKDlBCX1Rhc2tDb3VudGVyEgsKA2NJZBgBIAEoBRIMCgRjQXJn",
+            "GAIgASgFEgwKBGNOdW0YAyABKAUifQoHUEJfVGFzaxIOCgZ0YXNrSWQYASAB",
+            "KAUSEQoJdGFza1N0YXRlGAIgASgFEhIKCmFjY2VwdFRpbWUYAyABKAUSEgoK",
+            "c3VibWl0VGltZRgEIAEoBRInCghjb3VudGVycxgFIAMoCzIVLlBCYXNlLlBC",
+            "X1Rhc2tDb3VudGVyIi8KC1BCX1Rhc2tMaXN0EiAKCHRhc2tMaXN0GAEgAygL",
+            "Mg4uUEJhc2UuUEJfVGFzayJICgpQQl9Db3VudGVyEhEKCWNvdW50ZXJJZBgB",
+            "IAEoBRISCgpjb3VudGVyTnVtGAIgASgFEhMKC2NvdW50ZXJBcmdzGAMgAygF",
+            "IjgKDlBCX0NvdW50ZXJMaXN0EiYKC2NvdW50ZXJMaXN0GAEgAygLMhEuUEJh",
+            "c2UuUEJfQ291bnRlciKdAgoLUEJfVW5pb25PYmoSDwoHdW5pb25JZBgBIAEo",
+            "BRIRCgl1bmlvbk5hbWUYAiABKAkSEQoJdW5pb25UeXBlGAMgASgFEg8KB25w",
+            "Y0xpc3QYBCADKAUSEQoJc2tpbGxMaXN0GAUgAygFEhIKCnVuaW9uTGV2ZWwY",
+            "BiABKAUSEAoIdW5pb25FWFAYByABKAMSEgoKdW5pb25Nb25leRgIIAEoAxIR",
+            "CgltYXhNZW1iZXIYCSABKAUSEQoJbWF4VkNoYWlyGAogASgFEhAKCG1heEVs",
+            "ZGVyGAsgASgFEhMKC3VuaW9uTm90aWNlGAwgASgJEhcKD3VuaW9uQ3JlYXRl",
+            "VGltZRgNIAEoBRITCgtjcmVhdG9yTmFtZRgOIAEoCSKpAQoOUEJfVW5pb25N",
+            "ZW1iZXISDAoEZGJpZBgBIAEoBRIRCgl1bmlvbkRiaWQYAiABKAUSEQoJcGx5",
+            "ZXJEQmlkGAMgASgFEhIKCm1lbWJlck5hbWUYBCABKAkSDAoEcmFuaxgFIAEo",
+            "BRINCgVvZmZlchgGIAEoBRIQCghqb2luVGltZRgHIAEoBRIQCghleGl0VGlt",
+            "ZRgIIAEoBRIOCgZvbmxpbmUYCSABKAUiOgoRUEJfVW5pb25BcHBseUluZm8S",
+            "EgoKcGxheWVyRGJpZBgBIAEoBRIRCglhcHBseVRpbWUYAiABKAUiLQoPUEJf",
+            "VW5pb25Mb2dJbmZvEgwKBHRpbWUYASABKAUSDAoEdGV4dBgCIAEoCWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -76,11 +80,12 @@ namespace PBase {
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_ParamStrDict), global::PBase.PB_ParamStrDict.Parser, new[]{ "Dict" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_ParamIntDict), global::PBase.PB_ParamIntDict.Parser, new[]{ "Dict" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_Money), global::PBase.PB_Money.Parser, new[]{ "Type", "Num" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItem), global::PBase.PB_MailItem.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "Sendtime", "Readtime", "Pasttime", "State" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItem), global::PBase.PB_MailItem.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "Sendtime", "Readtime", "Pasttime", "State", "Configid", "Paramlist" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItemEx), global::PBase.PB_MailItemEx.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "Sendtime", "Readtime", "Pasttime", "State", "Playerdbid", "Account", "Type", "Agree" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_TeamCardInfo), global::PBase.PB_TeamCardInfo.Parser, new[]{ "Id", "Num", "Level" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_GiftPack), global::PBase.PB_GiftPack.Parser, new[]{ "Id", "Count", "Time" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_RanCard), global::PBase.PB_RanCard.Parser, new[]{ "Shopid", "Cardid", "Cardnum", "Count" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_RankObj), global::PBase.PB_RankObj.Parser, new[]{ "Id", "Account", "Name", "Vipcard", "Rank", "Icon" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_Item), global::PBase.PB_Item.Parser, new[]{ "ItemGuid", "ItemId", "ItemPos", "ItemNum" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_ItemList), global::PBase.PB_ItemList.Parser, new[]{ "ItemList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_TaskCounter), global::PBase.PB_TaskCounter.Parser, new[]{ "CId", "CArg", "CNum" }, null, null, null),
@@ -785,6 +790,8 @@ namespace PBase {
       readtime_ = other.readtime_;
       pasttime_ = other.pasttime_;
       state_ = other.state_;
+      configid_ = other.configid_;
+      paramlist_ = other.paramlist_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -902,6 +909,34 @@ namespace PBase {
       }
     }
 
+    /// <summary>Field number for the "configid" field.</summary>
+    public const int ConfigidFieldNumber = 9;
+    private int configid_;
+    /// <summary>
+    ///配置id
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Configid {
+      get { return configid_; }
+      set {
+        configid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "paramlist" field.</summary>
+    public const int ParamlistFieldNumber = 10;
+    private string paramlist_ = "";
+    /// <summary>
+    ///参数列表 分割符号";"
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Paramlist {
+      get { return paramlist_; }
+      set {
+        paramlist_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PB_MailItem);
@@ -923,6 +958,8 @@ namespace PBase {
       if (Readtime != other.Readtime) return false;
       if (Pasttime != other.Pasttime) return false;
       if (State != other.State) return false;
+      if (Configid != other.Configid) return false;
+      if (Paramlist != other.Paramlist) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -937,6 +974,8 @@ namespace PBase {
       if (Readtime != 0) hash ^= Readtime.GetHashCode();
       if (Pasttime != 0) hash ^= Pasttime.GetHashCode();
       if (State != 0) hash ^= State.GetHashCode();
+      if (Configid != 0) hash ^= Configid.GetHashCode();
+      if (Paramlist.Length != 0) hash ^= Paramlist.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -982,6 +1021,14 @@ namespace PBase {
         output.WriteRawTag(64);
         output.WriteInt32(State);
       }
+      if (Configid != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Configid);
+      }
+      if (Paramlist.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(Paramlist);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1013,6 +1060,12 @@ namespace PBase {
       }
       if (State != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(State);
+      }
+      if (Configid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Configid);
+      }
+      if (Paramlist.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Paramlist);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1048,6 +1101,12 @@ namespace PBase {
       }
       if (other.State != 0) {
         State = other.State;
+      }
+      if (other.Configid != 0) {
+        Configid = other.Configid;
+      }
+      if (other.Paramlist.Length != 0) {
+        Paramlist = other.Paramlist;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1090,6 +1149,14 @@ namespace PBase {
           }
           case 64: {
             State = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            Configid = input.ReadInt32();
+            break;
+          }
+          case 82: {
+            Paramlist = input.ReadString();
             break;
           }
         }
@@ -2179,6 +2246,290 @@ namespace PBase {
   }
 
   /// <summary>
+  ///排行榜成员
+  /// </summary>
+  public sealed partial class PB_RankObj : pb::IMessage<PB_RankObj> {
+    private static readonly pb::MessageParser<PB_RankObj> _parser = new pb::MessageParser<PB_RankObj>(() => new PB_RankObj());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<PB_RankObj> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PB_RankObj() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PB_RankObj(PB_RankObj other) : this() {
+      id_ = other.id_;
+      account_ = other.account_;
+      name_ = other.name_;
+      vipcard_ = other.vipcard_;
+      rank_ = other.rank_;
+      icon_ = other.icon_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PB_RankObj Clone() {
+      return new PB_RankObj(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    /// <summary>
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "account" field.</summary>
+    public const int AccountFieldNumber = 2;
+    private string account_ = "";
+    /// <summary>
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Account {
+      get { return account_; }
+      set {
+        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 3;
+    private string name_ = "";
+    /// <summary>
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "vipcard" field.</summary>
+    public const int VipcardFieldNumber = 4;
+    private int vipcard_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Vipcard {
+      get { return vipcard_; }
+      set {
+        vipcard_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rank" field.</summary>
+    public const int RankFieldNumber = 5;
+    private int rank_;
+    /// <summary>
+    ///当前排名
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Rank {
+      get { return rank_; }
+      set {
+        rank_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 6;
+    private string icon_ = "";
+    /// <summary>
+    ///头像
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Icon {
+      get { return icon_; }
+      set {
+        icon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as PB_RankObj);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(PB_RankObj other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Account != other.Account) return false;
+      if (Name != other.Name) return false;
+      if (Vipcard != other.Vipcard) return false;
+      if (Rank != other.Rank) return false;
+      if (Icon != other.Icon) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Vipcard != 0) hash ^= Vipcard.GetHashCode();
+      if (Rank != 0) hash ^= Rank.GetHashCode();
+      if (Icon.Length != 0) hash ^= Icon.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (Account.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Account);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Name);
+      }
+      if (Vipcard != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Vipcard);
+      }
+      if (Rank != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Rank);
+      }
+      if (Icon.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Icon);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (Account.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Vipcard != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Vipcard);
+      }
+      if (Rank != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Rank);
+      }
+      if (Icon.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Icon);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(PB_RankObj other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.Account.Length != 0) {
+        Account = other.Account;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Vipcard != 0) {
+        Vipcard = other.Vipcard;
+      }
+      if (other.Rank != 0) {
+        Rank = other.Rank;
+      }
+      if (other.Icon.Length != 0) {
+        Icon = other.Icon;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Account = input.ReadString();
+            break;
+          }
+          case 26: {
+            Name = input.ReadString();
+            break;
+          }
+          case 32: {
+            Vipcard = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            Rank = input.ReadInt32();
+            break;
+          }
+          case 50: {
+            Icon = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
   ///物品
   /// </summary>
   public sealed partial class PB_Item : pb::IMessage<PB_Item> {
@@ -2189,7 +2540,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[10]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2414,7 +2765,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[11]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2538,7 +2889,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[12]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2730,7 +3081,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[13]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2975,7 +3326,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[14]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3099,7 +3450,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[15]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3283,7 +3634,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[16]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3407,7 +3758,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[17]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3931,7 +4282,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[18]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4314,7 +4665,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[19]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4478,7 +4829,7 @@ namespace PBase {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[20]; }
+      get { return global::PBase.CommonReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

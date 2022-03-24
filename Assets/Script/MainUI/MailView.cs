@@ -67,18 +67,18 @@ public class MailView : View
     {        
         //ClearMailItem();
 
-        if (curPage == 1)
-        {
-            onClickQuery(allBtn.gameObject);
-        }
-        else if(curPage == 2)
-        {
-            onClickQuery(serverBtn.gameObject);
-        }
-        else if(curPage == 3)
-        {
-            onClickQuery(personalBtn.gameObject);
-        }
+        // if (curPage == 1)
+        // {
+        //     onClickQuery(allBtn.gameObject);
+        // }
+        // else if(curPage == 2)
+        // {
+        //     onClickQuery(serverBtn.gameObject);
+        // }
+        // else if(curPage == 3)
+        // {
+        //     onClickQuery(personalBtn.gameObject);
+        // }
     }
     private void onClickQuery(GameObject go)
     {

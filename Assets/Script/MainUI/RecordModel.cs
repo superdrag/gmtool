@@ -115,6 +115,8 @@ public class RecordModel {
     public static int sumRegAccNum = 0;
     public static int sumDauNum = 0;
 
+    public static Dictionary<int,string> FileDict = new Dictionary<int, string>();
+
     public void Init()
     {
         resetCoreSumData();    
@@ -124,12 +126,12 @@ public class RecordModel {
     {
         if (coreSumList.Count <= 0)
         {
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 30; i++)
             {
                 coreSumList.Add(0);
             }      
         }
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 30; i++)
         {
             coreSumList[i] = 0;
         }  
@@ -147,15 +149,34 @@ public class RecordModel {
         }
 
         List<string> filelist = GFunc.GetDirFiles(ResMgr.recordDir);
-
-        if (filelist.Count > 0)
+        for (int i = 0; i < filelist.Count; i++)
         {
-            for (int i = 0; i < filelist.Count; i++)
-            {              
-                if (GFunc.DEBUGMODE()) Logger.Log("file.........",filelist[i]);
-                if (filelist[i].EndsWith("meta")) continue;
-                if (filelist[i].EndsWith("txt")) continue;
-                string[] lineAry = File.ReadAllLines(filelist[i]);
+            if (filelist[i].EndsWith("meta")) continue;
+            if (filelist[i].EndsWith("txt")) continue;
+
+            string[] ary1 = filelist[i].Split('/');    
+
+            int filetime = Convert.ToInt32(ary1[ary1.Length-1].Split('_')[1]); 
+            FileDict[filetime] = filelist[i];
+            //Logger.Log("all file dir.........",filelist[i]);
+
+            foreach (var item in FileDict)
+            {
+                Logger.Log("all file dir.........",item.Key,item.Value);
+            }
+        }
+
+        return true;
+    }
+
+    public static void chooseDayFile(int start, int end)
+    {
+        foreach (var item in FileDict)
+        {
+            if (item.Key >= start && item.Key <= end )
+            {
+                string[] lineAry = File.ReadAllLines(item.Value);
+                Logger.Log("all file dir.........",item.Key,item.Value);
 
                 List<string> tmpary=new List<string>();                   
                 for (int j = 0; j < lineAry.Length; j++)
@@ -168,50 +189,18 @@ public class RecordModel {
                     }
                 }
 
-                dayDataList.Add(tmpary);
+                dayDataList.Add(tmpary);   
             }
-            analyseAllCoreData("ALL","ALL");            
-        }
-
-
-
-        // for (int i = 0; i < coreList.Count; i++)
-        // {
-        //     CoreData coreData = coreList[i];
-        //     foreach (var item in coreData.remainDict)
-        //     {
-        //         int _day = item.Key;
-        //         int _loginNum = item.Value;
-
-        //         if (_loginNum > 0)
-        //         {
-        //             Logger.Warn("1111111111111 " +i + "  "+_day+"   "+_loginNum);
-        //         }
-
-        //         int dindex = i + _day; 
-        //         coreData.remainPectDict[_day] = 0;
-
-        //         if (dindex < coreList.Count)
-        //         {
-        //             CoreData nextData = coreList[dindex];  
-        //             if (nextData.regAccDict.Count > 0)
-        //             {                    
-        //                 coreData.remainPectDict[_day] = _loginNum / (float)coreData.regAccDict.Count * 100.0; 
-
-        //                 //coreData.remainPayPectDict[_day] = _loginPayNum / (float)preData.regAccDict.Count * 100.0;
-        //                 //Logger.Warn("xxxxxxxxxxxxx ",coreData.remainPectDict[_day],_loginNum ,preData.regAccDict.Count);
-        //             }                
-        //         }
-        //     }
-        // }
-
-        return true;
+        }          
     }
+    
 
-    public static void analyseAllCoreData(string country, string platform)
+    public static void analyseAllCoreData(int start, int end, string country, string platform)
     {
         coreList.Clear();
-
+        dayDataList.Clear();
+        chooseDayFile(start,end);
+        
         //分析每天
         for (int i = 0; i < dayDataList.Count; i++)
         {
@@ -352,6 +341,8 @@ public class RecordModel {
             }
         } 
 
+        
+
         //分析总数
         coreSumList[0] = coreList[coreList.Count-1].timetv;
 
@@ -452,6 +443,7 @@ public class RecordModel {
         //     coreSumList[i] = ( coreSumList[i] / (float)coreList.Count ) ;
         // }
         
+    
     }
 
     public static void analyseDayCoreData(string[] dayData, int dayIndex, string country, string platform)

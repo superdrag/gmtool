@@ -106,9 +106,13 @@ public class RechargeView : View
     public void SetDataText(S2C_GMQueryNormalInfo _pb)
     {
         dataIF.text = "";
-        foreach (var item in _pb.Result[0].Dict)
+
+        foreach (var item in _pb.Result)
         {
-            dataIF.text = dataIF.text + item.Key + ":" + item.Value + "\n";
+            foreach (var item2 in item.Dict)
+            {
+                dataIF.text = dataIF.text + item2.Key + ":" + item2.Value + "\n";
+            }
         }
     }
     

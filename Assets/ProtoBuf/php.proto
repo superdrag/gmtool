@@ -194,6 +194,7 @@ message S2C_GMQueryNormalInfo
     string account = 3;
     repeated PBase.PB_ParamStrDict result = 4;
     map<string,string> mapdata = 5;
+    map<int32,int32> mapdata2 = 6;
     bytes data = 9;
 }
 
@@ -266,6 +267,7 @@ message S2C_GMPayData
     int32 payid = 9;
     int32 event = 10;
     string paycode = 11;
+    int32 usetoken = 12;
 }
 
 // MsgId.MSG_CL2PHP_GMPAYREPAIR                = 1862    --[[GM支付补发]]  

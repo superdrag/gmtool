@@ -96,25 +96,44 @@ public class TitleView : View
             dropdown_platform.options.Add(od1); 
         }         
 
-        dropdown_date1.ClearOptions();
-        for (int i = 0; i < RecordModel.coreList.Count; i++)
+        List<int> list = new List<int>();
+        foreach (var item in RecordModel.FileDict)
         {
-            Dropdown.OptionData od1 = new Dropdown.OptionData();
-            od1.text = RecordModel.coreList[i].date;
-            dropdown_date1.options.Add(od1); 
-        }  
+            list.Add(item.Key);
+        }
 
-        dropdown_date2.ClearOptions();
-        for (int i = RecordModel.coreList.Count-1; i >= 0; i--)
+        if (list.Count > 0)
         {
-            Dropdown.OptionData od2 = new Dropdown.OptionData();
-            od2.text = RecordModel.coreList[i].date;
-            dropdown_date2.options.Add(od2); 
-        }          
+            dropdown_date1.ClearOptions();
+            for (int i = 0; i < list.Count; i++)
+            {
+                Dropdown.OptionData od1 = new Dropdown.OptionData();
+                od1.text = list[i].ToString();
+                dropdown_date1.options.Add(od1);             
+            }
 
-        onChooseDate1(0);  
-        onChooseDate2(0);          
+            //onChooseDate1(0);
 
+            int revIndex = 0;
+            dropdown_date2.ClearOptions();
+            for (int i = list.Count - 1; i >= 0 ; i--)
+            {
+                Dropdown.OptionData od2 = new Dropdown.OptionData();
+                od2.text = list[i].ToString();
+                dropdown_date2.options.Add(od2);    
+
+                revIndex++;
+                if (revIndex == 9)
+                {
+                    onChooseDate1(i);                 
+                }                    
+            }
+           
+            onChooseDate2(0);          
+
+            // startTime = list[0];
+            // endTime = list[list.Count-1];            
+        }
 
         //dropdown_date2.options[0].text = "aaaaaaaaaaaaa"; 
 
@@ -127,19 +146,19 @@ public class TitleView : View
 
     public void SetInitDate(int start, int end)
     {
-        onChooseDate1(start);  
+        // onChooseDate1(start);  
 
-        dropdown_date1.value = start;
+        // dropdown_date1.value = start;
 
-        onChooseDate2(end);
+        // onChooseDate2(end);
 
-        dropdown_date2.value = end;
+        // dropdown_date2.value = end;
     }
 
     private void onClickQuery(GameObject go)
     {
         View view = UIMgr.GetUI(MenuView.curViewId);
-        view.DoClickQuery();
+        view.DoClickQuery(startTime,endTime);
     }
 
     private void onClickExport(GameObject go)
@@ -168,21 +187,13 @@ public class TitleView : View
 
     private void onChooseDate1(int index)
     {
-        if (RecordModel.coreList.Count <= 0)
-        {
-            return;
-        }        
-        startTime = RecordModel.coreList[index].timetv;
+       startTime = Convert.ToInt32(dropdown_date1.options[index].text);
+       dropdown_date1.value = index;
     }
     private void onChooseDate2(int index)
     {
-        if (RecordModel.coreList.Count <= 0)
-        {
-            return;
-        }      
-
-        int _index = RecordModel.coreList.Count - 1 - index;
-        endTime = RecordModel.coreList[_index].timetv;
+        endTime = Convert.ToInt32(dropdown_date2.options[index].text);
+        dropdown_date2.value = index;
     }
 
 

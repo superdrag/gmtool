@@ -66,9 +66,9 @@ public abstract class View
         viewRoot.localPosition = pos;            
     }
 
-    public virtual void DoClickQuery()
+    public virtual void DoClickQuery(int start, int end)
     {
-
+        Logger.Log("title cholse ",start,end);
     }
 
     public virtual void DoClickExport()
