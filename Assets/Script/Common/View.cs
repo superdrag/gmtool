@@ -44,7 +44,7 @@ public abstract class View
 
     public virtual void OnFixedUpdate()
     {
-
+        
     }
 
     public virtual void OnDestroy()

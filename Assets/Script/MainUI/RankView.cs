@@ -69,11 +69,12 @@ public class RankView : View
         ClearItem();
         itemNum = 0;
 
+        RecordModel.analyseAllCoreData(start,end,TitleView.country,TitleView.platform);
+
         for (int i = 0; i < RecordModel.coreList.Count; i++)
         {
             AddRankItem(i);        
         }
-
 
         // itemNum = 0;
         // ClearItem();
@@ -92,7 +93,9 @@ public class RankView : View
             List<string> _date = new List<string>();
             for (int i = 0; i < RankItemsList[index].infoList.Count; i++)
             {
-                _date.Add( RankItemsList[index].infoList[i].text.ToString());     
+                string member = RankItemsList[index].infoList[i].text;
+                member = member.Replace('*',',');
+                _date.Add( member);     
             }    
             itemDataList.Add(_date);
         }
@@ -108,37 +111,21 @@ public class RankView : View
     {
         titleItem = new RankItem();
         titleItem.Create();
-        titleItem.view.SetParent(bg);
+        titleItem.root.SetParent(bg);
 
-        RectTransform rect = titleItem.view.transform.GetComponent<RectTransform>();
+        RectTransform rect = titleItem.root.transform.GetComponent<RectTransform>();
         rect.anchoredPosition = new Vector2(648,-39);
 
-        titleItem.view.transform.localScale = Vector3.one;
+        titleItem.root.transform.localScale = Vector3.one;
         titleItem.SetTittle();     
     }
-
-    public void analyzeData(int dayIndex)
-    {
-        List<RankData> rankDataList = new List<RankData>();
-        CoreData dayData = RecordModel.coreList[dayIndex];
-        foreach (var item in dayData.rankListDict)
-        {
-            RankData rankData = item.Value;
-            if (rankData.rewardcount == 0)
-            {
-                rankDataList.Add(rankData);
-            } 
-            else
-            {
-
-            }
-        }
-    } 
 
     public void AddRankItem(int dayIndex)
     {
         List<RankData> rankDataList = new List<RankData>();
         CoreData dayData = RecordModel.coreList[dayIndex];
+
+        int count = 0;
         foreach (var item in dayData.rankListDict)
         {
             RankData rankData = item.Value;
@@ -147,22 +134,30 @@ public class RankView : View
 
             RankItem itemUI = new RankItem();
             itemUI.Create();
-            itemUI.view.SetParent(Content);
-            itemUI.view.transform.localScale = Vector3.one;
+            itemUI.root.SetParent(Content);
+            itemUI.root.transform.localScale = Vector3.one;
+            itemUI.SetGoName(rankData.id);
 
-            itemUI.view.GetComponent<RectTransform>().localPosition = new Vector3( itemUI.view.GetComponent<RectTransform>().localPosition.x, itemUI.view.GetComponent<RectTransform>().localPosition.y, 0 );
+            itemUI.root.GetComponent<RectTransform>().localPosition = new Vector3( itemUI.root.GetComponent<RectTransform>().localPosition.x, itemUI.root.GetComponent<RectTransform>().localPosition.y, 0 );
 
             itemUI.Show(rankData);
             
             RankItemsList.Add(itemUI);
 
             itemNum += 1;
+
+            count++;
+
+            if(count == dayData.rankListDict.Count)
+            {
+                itemUI.ShowLine();
+            }
         }
 
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
         rect.sizeDelta = new Vector2(0, (float)itemNum * (float)76 );        
     }
 
-   
+
     
 }

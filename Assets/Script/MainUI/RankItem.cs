@@ -9,20 +9,24 @@ using Net;
 using PPhp;
 using PBase;
 
-public class RankItem
+public class RankItem : ItemBase
 {
-    public Transform view;
     public List<Text> infoList = new List<Text>();
+    public Image line;
 
-    public void Create()
+    public override void Create()
     {        
-        view = ResMgr.CreateGo("Prefab/RankItem").transform;
-        Transform bg = view.Find("bg");
+        base.Create();
+        root = ResMgr.CreateGo("Prefab/RankItem").transform;
+        Transform bg = root.Find("bg");
+        line = root.Find("line").GetComponent<Image>();
+        line.gameObject.SetActive(false);
 
         for (int i = 0; i < bg.childCount; i++)
         {
             infoList.Add(bg.GetChild(i).GetComponent<Text>());
         }
+        SetOnClick();
     }
 
     public void Show(RankData data)
@@ -32,7 +36,12 @@ public class RankItem
         string[] ary1 = data.member.Split('|');
         for (int i = 0; i < ary1.Length; i++)
         {
-            string[] ary2 = ary1[i].Split(':');
+            if (ary1[i].IndexOf('*') == -1)
+            {
+                continue;
+            }
+
+            string[] ary2 = ary1[i].Split('*');
             
             int id = Convert.ToInt32(ary2[0]); 
             if (id > 0)
@@ -73,5 +82,72 @@ public class RankItem
         infoList[10].text = "成员信息";
     }    
 
+    public override void OnClickItem(GameObject go)
+    {
+        //UIMgr.ShowUI(VIEWID.ITEMINFO,infoList[10].text);
 
+        UIMgr.ShowUI(VIEWID.ITEMINFO);
+
+        List<RankMember> memberlist = Str2Memberlist(infoList[10].text);
+
+        for (int i = 0; i < memberlist.Count; i++)
+        {
+            RankMember member = memberlist[i];
+
+            string objtype = "玩家";
+            if (Convert.ToInt32(member.dbid) < 0)
+            {
+                objtype = "  AI  ";
+            }
+
+            string rankIndex = "第" + (i+1) + "名";
+
+            //string lineStr = string.Format("{0,-8},{1,-10},{2,-10},{3,-50}",dbid,name,vipcard,acc);
+
+            string lineStr = string.Format("{0},{1},{2},{3},{4},{5}",rankIndex,objtype,member.dbid,member.name,member.vipcard,member.acc);
+
+            UIMgr.GetUI<ItemInfoView>(VIEWID.ITEMINFO).AddItemInfo(lineStr);
+        }
+
+        // for (int i = 0; i < list.Length; i++)
+        // {
+        //     string s = "第" + (i+1) + "名 -> " + list[i];
+        //     UIMgr.GetUI<ItemInfoView>(VIEWID.ITEMINFO).AddItemInfo(s);
+        // }        
+                
+    }
+
+    public List<RankMember> Str2Memberlist(string strData)
+    {
+        List<RankMember> memberlist = new List<RankMember>();
+        string[] list = strData.Split('|');
+        for (int i = 0; i < list.Length; i++)
+        {
+            string s = list[i];
+            if (s.IndexOf('*') == -1)
+            {
+                continue;
+            }
+
+            string[] list2 = list[i].Split('*');  
+            RankMember member = new RankMember();
+            member.dbid = Convert.ToInt32(list2[0]);
+            member.acc = list2[1];
+            member.name = list2[2];
+            if (member.name == "")
+            {
+                member.name = "未取名";
+            }
+            member.vipcard = Convert.ToInt32(list2[3]);  
+            memberlist.Add(member);
+        }
+
+        memberlist.Sort(new RankMemberComparer());
+        return memberlist;
+    }
+
+    public void ShowLine()
+    {
+        line.gameObject.SetActive(true);
+    }
 }

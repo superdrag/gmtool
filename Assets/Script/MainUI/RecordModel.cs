@@ -86,6 +86,26 @@ public class RankData
     public int maxnum;
 }
 
+public class RankMember
+{
+    public int dbid;
+    public string name;
+    public string acc;
+    public int rank;
+    public int vipcard;
+    public int param1; 
+    public int param2; 
+    public int param3; 
+}
+
+public class RankMemberComparer : IComparer<RankMember>
+{
+    public int Compare(RankMember p1, RankMember p2)
+    {
+        return p2.vipcard.CompareTo(p1.vipcard);
+    }
+}
+
 
 public class RecordModel {
 
@@ -197,6 +217,8 @@ public class RecordModel {
 
     public static void analyseAllCoreData(int start, int end, string country, string platform)
     {
+        operateList.Clear();
+        useDiamondDict.Clear();
         coreList.Clear();
         dayDataList.Clear();
         chooseDayFile(start,end);

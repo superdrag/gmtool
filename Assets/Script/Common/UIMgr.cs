@@ -9,6 +9,7 @@ public enum VIEWID
     //-------------------------------
     ALERTINFO = 1,
     BLANK = 2,
+    ITEMINFO = 3,
     //-------------------------------
     LOGIN   = 11, 
     
@@ -64,6 +65,7 @@ public static class UIMgr
     {
         //COMMON        
         RegisterUI(VIEWID.ALERTINFO,AlertInfoView.Instance);
+        RegisterUI(VIEWID.ITEMINFO,ItemInfoView.Instance);
         RegisterUI(VIEWID.BLANK,BlankView.Instance);
         //LOGIN
         RegisterUI(VIEWID.LOGIN,LoginView.Instance);

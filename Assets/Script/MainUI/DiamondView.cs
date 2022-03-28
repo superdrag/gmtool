@@ -58,11 +58,14 @@ public class DiamondView : View
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
         //rect.sizeDelta = new Vector2(0, (float)RecordModel.Instance.coreList.Count * (float)73.6 );
 
-
     }
 
     override public void DoClickQuery(int start, int end)
     {
+        ClearAllItem();
+        AddItemTitle();
+
+        RecordModel.analyseAllCoreData(start,end,TitleView.country,TitleView.platform);
         SetDataText();
     }
 
@@ -123,15 +126,11 @@ public class DiamondView : View
 
     public void SetDataText()
     {
-        ClearAllItem();
-        AddItemTitle();
-
         List<KeyValuePair<int,DiaData>> lst = new List<KeyValuePair<int,DiaData>>(RecordModel.useDiamondDict);
-　　　　 lst.Sort(delegate(KeyValuePair<int,DiaData> s1, KeyValuePair<int,DiaData> s2)  
-　　　　　　{
-　　　　　　　　return s1.Key.CompareTo(s2.Key);
-　　　　　　});        
-
+        lst.Sort(delegate(KeyValuePair<int,DiaData> s1, KeyValuePair<int,DiaData> s2)  
+        {
+            return s1.Key.CompareTo(s2.Key);
+        });        
 
         foreach (var item in lst)
         {
