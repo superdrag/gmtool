@@ -98,7 +98,7 @@ public class LoginView : View
                 list.Add(item);
             }
 
-            for (int i = list.Count - 1; i >= 0 ; i--)
+            for (int i = 0; i < list.Count; i++)
             {
                 if (GData.DebugMode == list[i].debug)
                 {
@@ -107,8 +107,20 @@ public class LoginView : View
                     dropdown.options.Add(od1);
 
                     selectServerList.Add(list[i]);   
-                }                 
+                } 
             }
+
+            // for (int i = list.Count - 1; i >= 0 ; i--)
+            // {
+            //     if (GData.DebugMode == list[i].debug)
+            //     {
+            //         Dropdown.OptionData od1 = new Dropdown.OptionData();
+            //         od1.text = list[i].name;     
+            //         dropdown.options.Add(od1);
+
+            //         selectServerList.Add(list[i]);   
+            //     }                 
+            // }
         }
 
         if (PlayerPrefs.GetString("login_acc") != "")

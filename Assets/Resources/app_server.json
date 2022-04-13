@@ -46,5 +46,21 @@
         "php_ip":"47.254.41.189",    
         "php_port":8101,
         "record_url":"http://47.254.41.189/record/"
-    }        
+    }, 
+    {       
+        "server_id":7,      
+        "server_name":"深圳正式服务器",
+        "debug":0,
+        "php_ip":"43.153.74.73",    
+        "php_port":8101,
+        "record_url":"http://43.153.74.73/record_sz/"
+    },    
+    {       
+        "server_id":8,      
+        "server_name":"深圳测试",
+        "debug":1,
+        "php_ip":"43.153.74.220",    
+        "php_port":8101,
+        "record_url":"http://43.153.74.220/record/"
+    }             
 ]
