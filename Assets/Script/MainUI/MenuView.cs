@@ -61,6 +61,7 @@ public class MenuView : View
         Button guideBtn = viewRoot.Find("guide").GetComponent<Button>();
         Button rankBtn = viewRoot.Find("rank").GetComponent<Button>();
         Button payCoreBtn = viewRoot.Find("paycore").GetComponent<Button>();
+        Button cheatBtn = viewRoot.Find("cheat").GetComponent<Button>();
 
         btnViewDict[VIEWID.Mail] = youjianBtn;
         btnViewDict[VIEWID.CoreView] = hexinBtn;
@@ -80,6 +81,7 @@ public class MenuView : View
         btnViewDict[VIEWID.GuideView] = guideBtn;
         btnViewDict[VIEWID.RankView] = rankBtn;
         btnViewDict[VIEWID.PayCoreView] = payCoreBtn;
+        btnViewDict[VIEWID.CheatView] = cheatBtn;
         
         foreach (var item in btnViewDict)
         {
@@ -98,6 +100,7 @@ public class MenuView : View
         if( LoginModel.Instance.Account == "liuhaichao" )
         {
             funcBtn.gameObject.SetActive(true);
+            cardBtn.gameObject.SetActive(true);
         }
 
         if( LoginModel.Instance.Permission == 1 )
@@ -124,14 +127,15 @@ public class MenuView : View
 
         curViewId = (VIEWID.CoreView);
 
-
         //暂时屏蔽
         //rankBtn.gameObject.SetActive(false);
 
         if (Application.isEditor == false)
         {
-            //rankBtn.gameObject.SetActive(false);
+            cheatBtn.gameObject.SetActive(false);
         }
+
+        saveBtn.gameObject.SetActive(false);
         
     }
 

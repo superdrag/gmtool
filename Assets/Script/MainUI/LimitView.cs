@@ -66,10 +66,13 @@ public class LimitView : View
     
     public void ClearItem()
     {
-        for (int i = 0; i < Content.childCount; i++)
+        if (Content)
         {
-            Transform obj = Content.GetChild(i);
-            GameObject.Destroy(obj.gameObject);
+            for (int i = 0; i < Content.childCount; i++)
+            {
+                Transform obj = Content.GetChild(i);
+                GameObject.Destroy(obj.gameObject);
+            }
         }
     }
 

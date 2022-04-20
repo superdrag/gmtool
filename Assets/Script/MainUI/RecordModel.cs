@@ -27,6 +27,7 @@ public enum RECORD_TYPE
     RECORD_RANKLIST	  		= 1015,		//ranklist
 
     RECORD_GMOPERATE = 1020,
+    RECORD_CHEAT     = 1070,
 }
 
 public class CoreData
@@ -127,6 +128,7 @@ public class RecordModel {
     public static List<List<string>> dayDataList = new List<List<string>>(); //一天数据
     public static List<CoreData> coreList = new List<CoreData>();  //每天全部数据
     public static List<string[]> operateList = new List<string[]>(); //操作记录
+    public static List<string[]> cheatList = new List<string[]>(); //作弊
     public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","AU","PH","ID","MY","TH","other"};
     public static List<string> platformList = new List<string>{"ALL", "ios","android","unity","other"};
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
@@ -157,7 +159,8 @@ public class RecordModel {
         }  
         sumWatchAds = 0;
         sumRegAccNum = 0;
-        sumDauNum = 0;         
+        sumDauNum = 0;   
+        cheatList.Clear();      
     }
 
     public static bool loadFile()
@@ -196,7 +199,7 @@ public class RecordModel {
             if (item.Key >= start && item.Key <= end )
             {
                 string[] lineAry = File.ReadAllLines(item.Value);
-                Logger.Log("all file dir.........",item.Key,item.Value);
+                //Logger.Log("chooseDayFile.........",item.Key,item.Value);
 
                 List<string> tmpary=new List<string>();                   
                 for (int j = 0; j < lineAry.Length; j++)
@@ -222,6 +225,7 @@ public class RecordModel {
         coreList.Clear();
         dayDataList.Clear();
         chooseDayFile(start,end);
+        cheatList.Clear();
         
         //分析每天
         for (int i = 0; i < dayDataList.Count; i++)
@@ -757,7 +761,7 @@ public class RecordModel {
 
             if (recordType == RECORD_TYPE.RECORD_RANKLIST)
             {        
-                Logger.Log("rankgroup data -- "+lineData);   
+                //Logger.Log("rankgroup data -- "+lineData);   
 
                 RankData rankData = new RankData();
                 rankData.id = fields[2];
@@ -776,7 +780,7 @@ public class RecordModel {
             if (recordType == RECORD_TYPE.RECORD_GUIDETASk)
             {
 
-            }
+            }            
 
             if (recordType == RECORD_TYPE.RECORD_MAINTASK)
             {
@@ -810,7 +814,12 @@ public class RecordModel {
                 // {
                 //     coreData.mainTaskDict[_taskid][1] += 1;
                 // }                
-            }            
+            }  
+
+            if (recordType == RECORD_TYPE.RECORD_CHEAT)
+            {
+                cheatList.Add(fields);                
+            }                      
         }   
 
 

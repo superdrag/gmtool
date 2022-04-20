@@ -22,6 +22,7 @@ public enum VIEWID
 
     Limit = 35,
     LimitNew = 36,  
+    CheatView = 37, 
 
     GMAcc = 38,
     GMAccNew = 39, 
@@ -85,6 +86,7 @@ public static class UIMgr
 
         RegisterUI(VIEWID.Limit,LimitView.Instance);
         RegisterUI(VIEWID.LimitNew,LimitNewView.Instance);
+        RegisterUI(VIEWID.CheatView,CheatView.Instance);
 
         RegisterUI(VIEWID.GMAcc,GMAccView.Instance);
         RegisterUI(VIEWID.GMAccNew,GMAccNewView.Instance);    

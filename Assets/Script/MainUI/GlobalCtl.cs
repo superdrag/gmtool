@@ -228,6 +228,8 @@ public class GlobalCtl
             LimitView view = (LimitView)UIMgr.GetUI(VIEWID.Limit) ;
             view.ClearItem();
 
+            Dictionary<string,int> accDict = new Dictionary<string, int>();
+
             for (int i = 0; i < _pb.Result.Count; i++)
             {
                 PB_ParamStrDict rst =  _pb.Result[i];
@@ -236,7 +238,13 @@ public class GlobalCtl
                 item.Create();
 
                 view.AddItem( item );
-            }            
+
+                accDict[rst.Dict["account"]] = 1;
+            } 
+
+            CheatView cView = (CheatView)UIMgr.GetUI(VIEWID.CheatView) ;   
+            cView.SetStataData(accDict);
+
         }
         else if (_pb.Querytype == (int)PHP_QUERY.GMACCLIST)
         {
