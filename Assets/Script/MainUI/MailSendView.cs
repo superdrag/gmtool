@@ -163,17 +163,21 @@ public class MailSendView : View
             return;
         }
 
-        if ( itemListText.text.IndexOf("'") != -1)
+        if (itemListText.text != "")
         {
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"错误字符");
-            return;
+            if ( itemListText.text.IndexOf("'") != -1)
+            {
+                UIMgr.ShowUI(VIEWID.ALERTINFO,"错误字符");
+                return;
+            }
+
+            if ( itemListText.text.IndexOf(";") == -1)
+            {
+                UIMgr.ShowUI(VIEWID.ALERTINFO,"格式错误");
+                return;
+            }
         }
 
-        if ( itemListText.text.IndexOf(";") == -1)
-        {
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"格式错误");
-            return;
-        }
 
         int mailType = 1; //查询个人邮件
         if( allTog.isOn ) 
@@ -236,6 +240,13 @@ public class MailSendView : View
     private void onClickClose()
     {
         UIMgr.HideUI(VIEWID.MailSend);
+
+        UIMgr.GetUI<MailView>(VIEWID.Mail).reFresh();
+        // C2S_GMQueryAllMail pb = new C2S_GMQueryAllMail();
+        // pb.Type = 1;
+        // pb.Account = "";
+        // NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYALLMAIL,pb);  
+        
     }
 
 

@@ -65,21 +65,27 @@ public class MailView : View
 
     override public void OnShow(params object[] args)
     {        
-        //ClearMailItem();
 
-        // if (curPage == 1)
-        // {
-        //     onClickQuery(allBtn.gameObject);
-        // }
-        // else if(curPage == 2)
-        // {
-        //     onClickQuery(serverBtn.gameObject);
-        // }
-        // else if(curPage == 3)
-        // {
-        //     onClickQuery(personalBtn.gameObject);
-        // }
     }
+
+    public void reFresh()
+    {
+        ClearMailItem();
+
+        if (curPage == 1)
+        {
+            onClickQuery(allBtn.gameObject);
+        }
+        else if(curPage == 2)
+        {
+            onClickQuery(serverBtn.gameObject);
+        }
+        else if(curPage == 3)
+        {
+            onClickQuery(personalBtn.gameObject);
+        }
+    }
+
     private void onClickQuery(GameObject go)
     {
         if( go.name == "allBtn" )
