@@ -53,7 +53,7 @@
         "debug":0,
         "php_ip":"43.153.74.73",    
         "php_port":8101,
-        "record_url":"http://43.153.74.73/record_sz/"
+        "record_url":"http://150.158.85.139/record_sz/"
     },    
     {       
         "server_id":8,      
