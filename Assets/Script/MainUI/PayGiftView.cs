@@ -62,9 +62,28 @@ public class PayGiftView : View
 
     override public void DoClickQuery(int start, int end)
     {
-        C2S_GMQueryNormalInfo pb = new C2S_GMQueryNormalInfo();
-        pb.Querytype = (int)PHP_QUERY.PAYGIFT;
-        NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYNORMALINFO,pb);  
+        ClearAllItem();
+
+        AddItemTitle();
+
+        RecordModel.analyseAllCoreData(start,end,TitleView.country,TitleView.platform);
+
+        List<KeyValuePair<int, List<int>>> lst = new List<KeyValuePair<int, List<int>>>(RecordModel.payIdDict);
+        lst.Sort(delegate(KeyValuePair<int, List<int>> s1, KeyValuePair<int, List<int>> s2) 
+        {
+            return s1.Key.CompareTo(s2.Key);
+        });
+
+
+        for (int i = 0; i < lst.Count; i++)
+        {
+            AddItem(lst[i].Value);
+        }
+
+        RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(0, (float)dataItemList.Count * (float)73.6 );                
+
+        //GlobalCtl.MSG_CL2PHP_QUERYNORMALINFO("",(int)PHP_QUERY.BLACKUSER,66);       
     }
 
     override public void DoClickExport()
@@ -90,7 +109,7 @@ public class PayGiftView : View
         itemDataList.Clear();        
     }   
 
-    public void AddItem(string data)
+    public void AddItem(List<int> data)
     {               
         PayGiftItem item = new PayGiftItem();
         item.Create();
@@ -124,29 +143,29 @@ public class PayGiftView : View
 
     public void SetDataText(S2C_GMQueryNormalInfo _pb)
     {
-        ClearAllItem();
+        // ClearAllItem();
 
-        AddItemTitle();
+        // AddItemTitle();
 
-        Dictionary<string,int> _dict2 = new Dictionary<string,int>(); 
-        foreach (var item in _pb.Mapdata)
-        {            
-            _dict2.Add( item.Value,Convert.ToInt32(item.Key));
-        }
+        // Dictionary<string,int> _dict2 = new Dictionary<string,int>(); 
+        // foreach (var item in _pb.Mapdata)
+        // {            
+        //     _dict2.Add( item.Value,Convert.ToInt32(item.Key));
+        // }
 
-        List<KeyValuePair<string, int>> lst = new List<KeyValuePair<string, int>>(_dict2);
-        lst.Sort(delegate(KeyValuePair<string, int> s1, KeyValuePair<string, int> s2) 
-        {
-            return s1.Value.CompareTo(s2.Value);
-        });
+        // List<KeyValuePair<string, int>> lst = new List<KeyValuePair<string, int>>(_dict2);
+        // lst.Sort(delegate(KeyValuePair<string, int> s1, KeyValuePair<string, int> s2) 
+        // {
+        //     return s1.Value.CompareTo(s2.Value);
+        // });
 
-        for (int i = 0; i < lst.Count; i++)
-        {
-            AddItem(lst[i].Key);
-        }
+        // for (int i = 0; i < lst.Count; i++)
+        // {
+        //     AddItem(lst[i].Key);
+        // }
 
-        RectTransform rect = Content.transform.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(0, (float)_pb.Mapdata.Count * (float)73.6 );                
+        // RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        // rect.sizeDelta = new Vector2(0, (float)_pb.Mapdata.Count * (float)73.6 );                
 
         //Logger.Log("SetDataTex sumacc " + _pb.Sumacc);             
     }

@@ -25,17 +25,19 @@ public class PayGiftItem
         }
     }
 
-    public void Show(string data)
+    public void Show(List<int> data)
     {
-        string[] slist =  data.Split(',');
-
-        for (int i = 0; i < slist.Length; i++)
+        for (int i = 0; i < data.Count; i++)
         {
-            infoList[i].text = slist[i];
+            infoList[i].text = data[i].ToString();
             if (i == 0)
             {
-                infoList[i].text = GFunc.ToShopName(Convert.ToInt32(slist[i]) );
+                infoList[i].text = GFunc.ToShopName(Convert.ToInt32(data[i]) );
             }
+            if (i == 2 || i == 3 )
+            {
+                infoList[i].text = GFunc.US2Cent(Convert.ToInt32(data[i]) );
+            }  
         }
     }
 
@@ -43,7 +45,7 @@ public class PayGiftItem
     {
         infoList[0].text = "商品id";
         infoList[1].text = "充值次数";
-        infoList[2].text = "充值人数";
-        infoList[3].text = "仅充值一次人数";
+        infoList[2].text = "单价";
+        infoList[3].text = "总额";
     }
 }

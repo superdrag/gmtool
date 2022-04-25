@@ -379,8 +379,9 @@ public class GFunc
         catch (System.Exception err)
         {
             Logger.Error("ToShopName err",err.ToString());
-            throw;
+            return "";
         }
+        
     }      
 
     public static string ToUseDiamondName(int eventid)

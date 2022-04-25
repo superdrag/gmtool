@@ -133,6 +133,8 @@ public class RecordModel {
     public static List<string> platformList = new List<string>{"ALL", "ios","android","unity","other"};
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
     public static List<double> coreSumList = new List<double>();
+    public static Dictionary<int,List<int>> payIdDict = new Dictionary<int, List<int>>();
+
     public static int sumWatchAds = 0;
     public static int sumRegAccNum = 0;
     public static int sumDauNum = 0;
@@ -160,7 +162,8 @@ public class RecordModel {
         sumWatchAds = 0;
         sumRegAccNum = 0;
         sumDauNum = 0;   
-        cheatList.Clear();      
+        cheatList.Clear();   
+        payIdDict.Clear();   
     }
 
     public static bool loadFile()
@@ -226,6 +229,7 @@ public class RecordModel {
         dayDataList.Clear();
         chooseDayFile(start,end);
         cheatList.Clear();
+        payIdDict.Clear();
         
         //分析每天
         for (int i = 0; i < dayDataList.Count; i++)
@@ -710,6 +714,20 @@ public class RecordModel {
                     {
                         coreData.payAccDict[_acc] = _num;                    
                     } 
+
+                    if (fields.Length >=12)
+                    {
+                        int pid = System.Convert.ToInt32(fields[11]);
+                        if ( payIdDict.ContainsKey(pid) )
+                        {
+                            payIdDict[pid][1] ++;
+                            payIdDict[pid][3] += _num;   
+                        }   
+                        else
+                        {
+                            payIdDict[pid] = new List<int> {pid,1,_num,_num};                    
+                        }                         
+                    }
                 }        
             }
 
