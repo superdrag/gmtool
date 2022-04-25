@@ -4,7 +4,7 @@ local function New(a0,a2,a3,a4)
 	return {id=a0,animatName=a2,leftHandTool=a3,rightHandTool=a4,}
 end
 LuaConfig["HandToolConfig"] = {
-["1001"] = New("1001","Drink","",""),
+["1001"] = New("1001","Drink","","Role/Other/F_Cup"),
 ["1002"] = New("1002","Walk3","","Role/Other/Phone"),
 ["1003"] = New("1003","StandPad","","Role/Other/Pad"),
 ["2001"] = New("2001","Attack","","Role/Other/Baton"),

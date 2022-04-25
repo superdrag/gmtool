@@ -13,5 +13,9 @@ LuaConfig["WorldNewsConfig"] = {
 ["1009"] = New("1009","Worldnews/title_room08","worldnews_title_1006","worldnews_describe_1009",{"vpcard_count",2500,},"BasicFunctions/title_ArenaUnlocked"),
 ["1010"] = New("1010","Worldnews/title_room10","worldnews_title_1006","worldnews_describe_1010",{"vpcard_count",4500,},"BasicFunctions/title_ArenaUnlocked"),
 ["1011"] = New("1011","Worldnews/title_room09","worldnews_title_1006","worldnews_describe_1011",{"vpcard_count",2000,},"BasicFunctions/title_ArenaUnlocked"),
+["1012"] = New("1012","Worldnews/title_room13","worldnews_title_1007","worldnews_describe_1012",nil,"BasicFunctions/title_ArenaUnlocked"),
+["1013"] = New("1013","Worldnews/title_room06","title_arenaunlock","arena_des",nil,"BasicFunctions/title_ArenaUnlocked"),
+["1014"] = New("1014","Worldnews/title_room13","worldnews_title_1007","worldnews_describe_1012",{"vpcard_count",3500,},"BasicFunctions/title_ArenaUnlocked"),
+["1015"] = New("1015","","","",{"vpcard_count",1000,},""),
 }
 end

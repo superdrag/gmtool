@@ -24,5 +24,7 @@ LuaConfig["ItemConfig"] = {
 [3003] = New(3003,"item_name_3003","Currency/currency_card03","description_name_3003","source_name_3003","random_card",0,0,0,50003,0),
 [3004] = New(3004,"item_name_3004","Currency/currency_card04","description_name_3004","source_name_3004","random_card",0,0,0,50004,0),
 [4001] = New(4001,"item_name_3005","Currency/currency_turbo03","description_name_3005","description_name_3005","hourglass",0,0,5,0,0),
+[3005] = New(3005,"item_name_3002","Currency/currency_card02","description_name_3002","source_name_3002","random_card",0,0,0,50005,0),
+[5001] = New(5001,"next_battlepass","Menu/idle_Goldpass01","battlepass_nextfree","","battlepass",0,0,0,0,0),
 }
 end

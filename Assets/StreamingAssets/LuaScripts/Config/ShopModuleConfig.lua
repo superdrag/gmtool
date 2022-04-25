@@ -15,9 +15,10 @@ LuaConfig["ShopModuleConfig"] = {
 [5004] = New(5004,"name_45001","Shop01/tag02crown","Shop01/title_BestSale",{{"unlock_room",100401,},},"assistant",3,{45001,},"",""),
 [5005] = New(5005,"name_43001","Shop01/tag02crown","Shop01/title_BestSale",{{"unlock_room",102001,},},"assistant",6,{43001,},"",""),
 [5006] = New(5006,"name_46001","Shop01/tag02crown","Shop01/title_BestSale",{{"vpcard_count",1500,},{"user_layering",1,},},"assistant",5,{46001,},"",""),
-[5007] = New(5007,"name_48001","Shop01/tag02crown","Shop01/title_BestSale",{{"unlock_room",102201,},{"user_layering",1,},},"assistant",7,{48001,},"",""),
+[5007] = New(5007,"name_48001","Shop01/tag02crown","Shop01/title_BestSale",{{"unlock_room",102201,},{"user_layering",0,},},"assistant",7,{48001,},"",""),
 [5008] = New(5008,"name_42001","Shop01/tag02crown","Shop01/title_BestSale",{{"user_layering",1,},},"assistant",8,{42001,},"",""),
 [5009] = New(5009,"name_49001","Shop01/tag02crown","Shop01/title_BestSale",{{"always",},},"assistant",9,{49001,},"",""),
+[5010] = New(5010,"name_49001","Shop01/tag02crown","Shop01/title_BestSale",{{"always",},},"assistant",10,{41101,},"",""),
 [6001] = New(6001,"shop_name_6001","Shop01/tag03card","Shop01/title_HotSale",{{"vpcard_count",180,},},"cardshop",1,{140001,140002,140003,140004,140005,140006,},"daily",""),
 [7001] = New(7001,"shop_name_7001","Shop01/title_cash03","Shop01/title_cash",{{"always",},},"time_machine",1,{70001,70002,70003,},"",""),
 [8001] = New(8001,"shop_name_8001","Shop01/tag05diamond","Shop01/title_Diamonds",{{"always",},},"diamond_shop",1,nil,"",""),
@@ -28,5 +29,8 @@ LuaConfig["ShopModuleConfig"] = {
 [10004] = New(10004,"shop_name_10004","","",{{"vpcard_count",220,},},"flash_Sale",4,{73001,73002,73003,},"","28800"),
 [10005] = New(10005,"shop_name_10005","","",{{"vpcard_count",220,},},"flash_Sale",5,{74001,74002,74003,},"","28800"),
 [10006] = New(10006,"shop_name_10006","","",{{"vpcard_count",220,},},"flash_Sale",6,{75001,75002,75003,},"SeasonStar","28800"),
+[10007] = New(10007,"shop_name_10007","","",{{"vpcard_count",220,},},"flash_Sale",7,{76001,76002,},"","28800"),
+[10008] = New(10008,"shop_name_10007","","",{{"vpcard_count",220,},},"flash_Sale",8,{77001,77002,},"","28800"),
+[10009] = New(10009,"shop_name_10007","","",{{"vpcard_count",220,},},"flash_Sale",9,{78001,78002,78003,},"","28800"),
 }
 end

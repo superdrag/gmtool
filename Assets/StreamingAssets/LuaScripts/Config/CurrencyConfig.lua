@@ -14,7 +14,7 @@ LuaConfig["CurrencyConfig"] = {
 ["honor"] = New("honor",8,"Currency/currency_coin","currency_name_10006","currency_intro_0006","currency_func_0001","currency_get","",0,99999999,0),
 ["shop_card"] = New("shop_card",9,"Currency/currency_bitcoin","currency_name_10007","currency_intro_0007","currency_func_0001","currency_get","",0,9.99999999999999E+17,10),
 ["energy"] = New("energy",10,"Currency/currency_energy","currency_name_10008","currency_intro_0008","currency_func_0001","currency_get","",0,999999,0),
-["plastic"] = New("plastic",11,"Currency/currency_plastic01","currency_name_10009","currency_intro_0009","currency_func_0003","currency_get_0003","base",19,999999,50),
+["plastic"] = New("plastic",11,"Currency/currency_plastic01","currency_name_10009","currency_intro_0009","currency_func_0003","currency_get_0003","base",19,999999,0),
 ["wood"] = New("wood",12,"Currency/currency_wood","currency_name_10010","currency_intro_0009","currency_func_0003","currency_get_0003","base",20,999999,0),
 ["iron"] = New("iron",13,"Currency/currency_iron","currency_name_10011","currency_intro_0009","currency_func_0003","currency_get_0003","base",21,999999,0),
 ["fabric"] = New("fabric",14,"Currency/currency_cloth","currency_name_10012","currency_intro_0009","currency_func_0003","currency_get_0003","base",22,999999,0),
@@ -46,8 +46,8 @@ LuaConfig["CurrencyConfig"] = {
 ["star_frag"] = New("star_frag",40,"Currency/currency_paper","currency_name_10038","currency_intro_0038","currency_func_0001","currency_get","",0,999999,0),
 ["gold_coin"] = New("gold_coin",41,"Currency/currency_gold","currency_name_10039","currency_intro_0039","currency_func_0001","currency_get","",0,999999,0),
 ["gemstone"] = New("gemstone",42,"Currency/currency_gem","currency_name_10040","currency_intro_0040","currency_func_0001","currency_get","",0,999999,0),
-["BattlePass"] = New("BattlePass",43,"Currency/currency_passport","currency_name_10042","currency_intro_0041","currency_func_0001","currency_get","",0,999999,0),
-["PassEXP"] = New("PassEXP",44,"Currency/currency_passportexp","currency_name_10043","currency_intro_0041","currency_func_0001","currency_get","",0,999999,0),
+["BattlePassCoin"] = New("BattlePassCoin",43,"Currency/currency_pass","battlepass_goldtoken","battlepass_goldtoken_tips","battlepass_goldtoken_tips","currency_get","",0,999999,0),
+["PassEXP"] = New("PassEXP",44,"Currency/currency_ex","battlepass_exp","battlepass_getexp_tips","battlepass_getexp_tips","currency_get","",0,999999,0),
 ["Activeness"] = New("Activeness",45,"Shop/C_idle_PassCheck","currency_name_10044","currency_intro_0041","currency_func_0001","currency_get","",0,999999,0),
 ["Rune"] = New("Rune",49,"Currency/currency_additives0202","currency_name_10045","currency_intro_0006","currency_func_0001","currency_get","",0,999999,0),
 ["refTimes"] = New("refTimes",50,"Currency/currency_additives0202","currency_name_10046","currency_intro_0006","currency_func_0001","currency_get","",0,10,10),
@@ -55,5 +55,6 @@ LuaConfig["CurrencyConfig"] = {
 ["HamburgerPower"] = New("HamburgerPower",52,"Currency/currency_passportexp","currency_name_10041","currency_intro_0041","currency_func_0001","currency_get","",0,999999,0),
 ["Hamburger"] = New("Hamburger",53,"Currency/currency_hamburger","currency_name_10041","currency_intro_0041","currency_func_0001","currency_get","",0,999999,0),
 ["TimeMachine"] = New("TimeMachine",54,"Currency/currency_cash","currency_name_10032","currency_intro_0032","currency_func_0001","currency_get","TimeJump",0,0,0),
+["BattlePass"] = New("BattlePass",43,"Currency/currency_passport","currency_name_10042","currency_intro_0041","currency_func_0001","currency_get","",0,999999,0),
 }
 end
