@@ -134,6 +134,7 @@ public class RecordModel {
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
     public static List<double> coreSumList = new List<double>();
     public static Dictionary<int,List<int>> payIdDict = new Dictionary<int, List<int>>();
+    public static Dictionary<int,List<int>> diamodTypeDict = new Dictionary<int, List<int>>();
 
     public static int sumWatchAds = 0;
     public static int sumRegAccNum = 0;
@@ -761,6 +762,9 @@ public class RecordModel {
                 _data.eventid = _event;
                 _data.count ++;
                 _data.num += _num;
+
+
+                //diamodTypeDict
             }
 
             if (recordType == RECORD_TYPE.RECORD_WATCHADV)

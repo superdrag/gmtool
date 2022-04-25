@@ -16,6 +16,10 @@ public class PayView : View
 
     public Transform TitleNote;
 
+    private Button chaxunBtn;
+    private InputField zhanghaoIF;
+    private Text zhanghaoText;
+
     public List<PayItem> PayItemsList = new List<PayItem>();
 
     public int itemNum = 0;
@@ -47,6 +51,12 @@ public class PayView : View
         Content = bg.Find("Scroll View/Viewport/Content");
 
         TitleNote = bg.Find("title");
+
+        chaxunBtn = bg.Find("chaxun/cha").GetComponent<Button>();  
+        chaxunBtn.onClick.AddListener(onClickCha); 
+        zhanghaoIF = bg.Find("chaxun/shuru").GetComponent<InputField>();
+        zhanghaoText = bg.Find("chaxun/shuru/Text").GetComponent<Text>();
+
     }
 
     override public void OnShow(params object[] args)
@@ -69,6 +79,21 @@ public class PayView : View
         itemNum = 0;
         ClearItem();
         GlobalCtl.MSG_CL2PHP_GMPAYDATA("");
+    }
+
+    private void onClickCha()
+    {
+        Logger.Log("onClickCha ...........");
+      
+        if( string.IsNullOrEmpty(zhanghaoIF.text) )
+        {            
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"账号不能为空");
+            return;
+        }
+
+        itemNum = 0;
+        ClearItem();  
+        GlobalCtl.MSG_CL2PHP_GMPAYDATA(zhanghaoIF.text);
     }
 
     override public void DoClickExport()
