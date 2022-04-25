@@ -61,8 +61,8 @@ public class LimitNewView : View
     {        
         if ((int)args[0] == 1)  //新建
         {
-            accountText.text = "AAA123"; 
-            timeText.text = "30";
+            accountText.text = ""; 
+            timeText.text = "7";
             reasonText.text = "作弊";
         }
         else if ((int)args[0] == 2) //编辑
