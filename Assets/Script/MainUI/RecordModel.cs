@@ -68,15 +68,6 @@ public class CoreData
     public Dictionary<int,int> adsAccLTV = new Dictionary<int, int>();
 }
 
-
-
-public class DiaData
-{
-    public int eventid;
-    public int count;
-    public int num;
-}
-
 public class RankData
 {
     public string daytime;
@@ -106,6 +97,7 @@ public class RankMember
 public class AccData
 {
     public Dictionary<int,List<int>> payIdDict = new Dictionary<int, List<int>>();
+    public Dictionary<int,List<int>> diamodTypeDict = new Dictionary<int, List<int>>();
     public bool newUser = false;
     public int income = 0;
 
@@ -149,7 +141,6 @@ public class RecordModel {
     public static List<string[]> cheatList = new List<string[]>(); //作弊
     public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","BE","KR","GB","AU","PH","ID","MY","TH","other"};
     public static List<string> platformList = new List<string>{"ALL", "ios","android","unity","other"};
-    public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
     public static List<double> coreSumList = new List<double>();
     public static Dictionary<string,AccData> accDataDict = new Dictionary<string, AccData>();
 
@@ -242,7 +233,6 @@ public class RecordModel {
     public static void analyseAllCoreData(int start, int end, string country, string platform)
     {
         operateList.Clear();
-        useDiamondDict.Clear();
         coreList.Clear();
         dayDataList.Clear();
         chooseDayFile(start,end);
@@ -781,23 +771,15 @@ public class RecordModel {
                 
                 //Logger.Log("111111111111111111111111111111111 "+_event);
 
-                DiaData _data;
-                if (useDiamondDict.TryGetValue(_event,out _data))
+                if ( accDataDict[_acc].diamodTypeDict.ContainsKey(_event) )
                 {
-                    
-                }
+                    accDataDict[_acc].diamodTypeDict[_event][1] ++;
+                    accDataDict[_acc].diamodTypeDict[_event][2] += _num;   
+                }   
                 else
                 {
-                    _data = new DiaData();
-                    useDiamondDict.Add(_event,_data);
-                }
-
-                _data.eventid = _event;
-                _data.count ++;
-                _data.num += _num;
-
-
-                //diamodTypeDict
+                    accDataDict[_acc].diamodTypeDict[_event] = new List<int> {_event,1,_num};                    
+                } 
             }
 
             if (recordType == RECORD_TYPE.RECORD_WATCHADV)
