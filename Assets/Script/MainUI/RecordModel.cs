@@ -36,7 +36,8 @@ public class CoreData
     public int timetv;
     public int DAU;
     public int newUser;
-    public int income; //流水
+    public int income; //每日总流水
+    public int incomeNew; //新用户流水
     public int sumPayUser;
     public int newPayUser; //新增付费用户
     public float ARPPU; ////时间段内，消费额除以付费用户数。
@@ -48,6 +49,9 @@ public class CoreData
     public int watchAds; //看广告
     public Dictionary<string,int> loginAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> payAccDict = new Dictionary<string, int>();
+
+    public Dictionary<string,List<int>> vipAccDict = new Dictionary<string, List<int>>();
+
     public Dictionary<string,int> adsAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> regAccDict = new Dictionary<string, int>();
     public Dictionary<int,int> hourOnlineNumDict = new Dictionary<int, int>();
@@ -99,6 +103,20 @@ public class RankMember
     public int param3; 
 }
 
+public class AccData
+{
+    public Dictionary<int,List<int>> payIdDict = new Dictionary<int, List<int>>();
+    public bool newUser = false;
+    public int income = 0;
+
+    public void Reset()
+    {
+        newUser = false;
+        payIdDict.Clear();
+    }
+}
+
+
 public class RankMemberComparer : IComparer<RankMember>
 {
     public int Compare(RankMember p1, RankMember p2)
@@ -129,12 +147,11 @@ public class RecordModel {
     public static List<CoreData> coreList = new List<CoreData>();  //每天全部数据
     public static List<string[]> operateList = new List<string[]>(); //操作记录
     public static List<string[]> cheatList = new List<string[]>(); //作弊
-    public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","AU","PH","ID","MY","TH","other"};
+    public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","BE","KR","GB","AU","PH","ID","MY","TH","other"};
     public static List<string> platformList = new List<string>{"ALL", "ios","android","unity","other"};
     public static Dictionary<int,DiaData> useDiamondDict = new Dictionary<int, DiaData>();
     public static List<double> coreSumList = new List<double>();
-    public static Dictionary<int,List<int>> payIdDict = new Dictionary<int, List<int>>();
-    public static Dictionary<int,List<int>> diamodTypeDict = new Dictionary<int, List<int>>();
+    public static Dictionary<string,AccData> accDataDict = new Dictionary<string, AccData>();
 
     public static int sumWatchAds = 0;
     public static int sumRegAccNum = 0;
@@ -164,7 +181,7 @@ public class RecordModel {
         sumRegAccNum = 0;
         sumDauNum = 0;   
         cheatList.Clear();   
-        payIdDict.Clear();   
+        accDataDict.Clear();   
     }
 
     public static bool loadFile()
@@ -230,13 +247,21 @@ public class RecordModel {
         dayDataList.Clear();
         chooseDayFile(start,end);
         cheatList.Clear();
-        payIdDict.Clear();
+        accDataDict.Clear();
         
         //分析每天
         for (int i = 0; i < dayDataList.Count; i++)
         {
             List<string> _dayData = dayDataList[i];
             analyseDayCoreData(_dayData.ToArray(),i,country,platform);
+        }
+
+        foreach (var item in accDataDict)
+        {
+            if (item.Value.newUser)
+            {
+                
+            }
         }
 
         //留存
@@ -467,13 +492,6 @@ public class RecordModel {
         //Logger.Warn("00000000000000 ",coreSumList[2],sumRegAccNum);
         coreSumList[4] = coreSumList[2] / sumRegAccNum;
         //Logger.Warn("11111111111111 ",coreSumList[4]);
-
-        //remain
-        // for (int i = 5; i <= 9; i++)
-        // {
-        //     coreSumList[i] = ( coreSumList[i] / (float)coreList.Count ) ;
-        // }
-        
     
     }
 
@@ -614,12 +632,22 @@ public class RecordModel {
             //     //Logger.Log("11111111111111111  ",_platform,platform);    
             // }    
 
+            if (_acc != "")
+            {
+                if (!accDataDict.ContainsKey(_acc))
+                {
+                    accDataDict[_acc] = new AccData();
+                    //Logger.Warn("11111111 ",_acc);
+                }                
+            }
             
             if (recordType == RECORD_TYPE.RECORD_USERREG)
             {
                 coreData.regAccDict[_acc] = 1;
                 //Logger.Log("000000000000000 ",fields[2]);
                 coreData.newUser++;
+                accDataDict[_acc].newUser = true;
+                //Logger.Warn("2222 ",_acc);
             }
 
             if (recordType == RECORD_TYPE.RECORD_USERLOGIN)
@@ -706,7 +734,8 @@ public class RecordModel {
 
                 if( _purchaseType > 0 )
                 {                    
-                    coreData.income += Convert.ToInt32( _num );    
+                    coreData.income += Convert.ToInt32( _num );   
+                    accDataDict[_acc].income +=  Convert.ToInt32( _num );
                     if ( coreData.payAccDict.ContainsKey(_acc) )
                     {
                         coreData.payAccDict[_acc] += _num;
@@ -719,14 +748,18 @@ public class RecordModel {
                     if (fields.Length >=12)
                     {
                         int pid = System.Convert.ToInt32(fields[11]);
-                        if ( payIdDict.ContainsKey(pid) )
+                        // if (accData == null)
+                        // {
+                        //     Logger.Warn("3333333333333333  ",_acc);
+                        // }
+                        if ( accDataDict[_acc].payIdDict.ContainsKey(pid) )
                         {
-                            payIdDict[pid][1] ++;
-                            payIdDict[pid][3] += _num;   
+                            accDataDict[_acc].payIdDict[pid][1] ++;
+                            accDataDict[_acc].payIdDict[pid][3] += _num;   
                         }   
                         else
                         {
-                            payIdDict[pid] = new List<int> {pid,1,_num,_num};                    
+                            accDataDict[_acc].payIdDict[pid] = new List<int> {pid,1,_num,_num};                    
                         }                         
                     }
                 }        
@@ -799,6 +832,24 @@ public class RecordModel {
                 coreData.rankListDict[rankData.id] = rankData;
             }
 
+            if (recordType == RECORD_TYPE.RECORD_VIPCARD)
+            {
+                string str = fields[5].Trim();
+                string[] slist = str.Split(',');
+
+                if ( coreData.vipAccDict.ContainsKey(_acc) )
+                {
+                    for (int i = 0; i < slist.Length; i++)
+                    {
+                        coreData.vipAccDict[_acc].Add( Convert.ToInt32(slist[i])  );
+                    }                
+                }   
+                else
+                {
+                    coreData.vipAccDict[_acc] = new List<int>();                    
+                }                
+            }    
+
             if (recordType == RECORD_TYPE.RECORD_GUIDETASk)
             {
 
@@ -862,6 +913,7 @@ public class RecordModel {
             if (coreData.payAccDict.ContainsKey(item.Key))
             {
                 coreData.newPayUser++;
+                coreData.incomeNew += coreData.payAccDict[item.Key];
             }     
         }
 

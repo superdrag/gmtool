@@ -125,6 +125,29 @@ public class GMApp : MonoBehaviour {
 
     private void test()
     {
+        // Dictionary<int,string> aa = new Dictionary<int, string>();
+        // Dictionary<int,string> bb = new Dictionary<int, string>();
+        // Dictionary<int,string> cc = new Dictionary<int, string>();
+
+        // aa[11] = "aa1";
+        // aa[12] = "aa2";
+
+        // bb[11] = "bb1";
+
+        // foreach (var item in aa)
+        // {
+        //     cc.Add(item.Key,item.Value  );
+        // }
+        // foreach (var item in bb)
+        // {
+        //     cc.Add(item.Key,item.Value  );
+        // }     
+
+        // foreach (var item in cc)
+        // {
+        //     Logger.Log("ccccccc ",item.Key,item.Value);
+        // }   
+
         // float aa = (float)10.22473 + 1637921848 -1637921858;
         // Logger.Log("111111111111111 aaa",aa);
 

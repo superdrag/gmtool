@@ -35,7 +35,7 @@ public class CoreItem
         infoList[3].text = coreData.newUser.ToString();
         infoList[4].text = GFunc.US2Cent(coreData.income);
         infoList[5].text = coreData.sumPayUser.ToString();
-        infoList[6].text = coreData.newPayUser.ToString();
+        infoList[6].text = coreData.newPayUser.ToString() + "\n(" + GFunc.US2Cent(coreData.incomeNew).ToString() + ")";
         infoList[7].text = GFunc.US2Cent(coreData.ARPPU); 
         infoList[8].text = GFunc.US2Cent(coreData.ARPPDAU);
         infoList[9].text = coreData.PCU.ToString();

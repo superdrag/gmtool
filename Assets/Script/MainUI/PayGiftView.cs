@@ -68,7 +68,29 @@ public class PayGiftView : View
 
         RecordModel.analyseAllCoreData(start,end,TitleView.country,TitleView.platform);
 
-        List<KeyValuePair<int, List<int>>> lst = new List<KeyValuePair<int, List<int>>>(RecordModel.payIdDict);
+        Dictionary<int,List<int>> _payIdDict = new Dictionary<int, List<int>>();
+        foreach (var item in RecordModel.accDataDict)
+        {
+            if (item.Value.newUser == true)
+            {                
+                foreach (var item2 in item.Value.payIdDict)
+                {
+                    if (_payIdDict.ContainsKey(item2.Key) )
+                    {
+                        _payIdDict[item2.Key][1] += item2.Value[1];
+                        _payIdDict[item2.Key][3] += item2.Value[3];
+                    }   
+                    else
+                    {
+                        _payIdDict[item2.Key] = item2.Value;           
+                    }   
+
+                    //Logger.Log("111111111111111111111111111 ",item2.Key);
+                }                
+            }
+        }
+
+        List<KeyValuePair<int, List<int>>> lst = new List<KeyValuePair<int, List<int>>>(_payIdDict);
         lst.Sort(delegate(KeyValuePair<int, List<int>> s1, KeyValuePair<int, List<int>> s2) 
         {
             return s1.Key.CompareTo(s2.Key);
