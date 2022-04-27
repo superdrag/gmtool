@@ -27,14 +27,14 @@ public class DiamondItem
         }
     }
 
-    public void Show(DiaData data)
+    public void Show(List<int> data)
     {
-        infoList[0].text = data.eventid.ToString();
+        infoList[0].text = data[0].ToString();
 
-        infoList[0].text = GFunc.ToUseDiamondName( data.eventid);
+        infoList[0].text = GFunc.ToUseDiamondName( data[0]);
 
-        infoList[1].text = data.count.ToString();
-        infoList[2].text = data.num.ToString();        
+        infoList[1].text = data[1].ToString();
+        infoList[2].text = data[2].ToString();        
     }
 
     public void SetTitle()

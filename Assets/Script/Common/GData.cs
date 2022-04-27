@@ -47,6 +47,8 @@ public enum DIA_EVENT
     EVENT_DIAMOND_ROOMBUILDCD         = 206,   //秒房间建造CD
     EVENT_DIAMOND_BUYRADIO            = 207,   //购买收音机
     EVENT_DIAMOND_BUYPASSLEVEL        = 208,   //通行证等级购买    
+    EVENT_DIAMOND_REFRESHTIMETASK        = 209,   //刷新限时任务   
+    EVENT_DIAMOND_ADDMAKECELL        = 210,   //增加制作栏位   
 }
 
 

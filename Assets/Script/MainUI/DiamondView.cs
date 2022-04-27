@@ -66,7 +66,39 @@ public class DiamondView : View
         AddItemTitle();
 
         RecordModel.analyseAllCoreData(start,end,TitleView.country,TitleView.platform);
-        SetDataText();
+
+        Dictionary<int,List<int>> _dict = new Dictionary<int, List<int>>();
+        foreach (var item in RecordModel.accDataDict)
+        {
+            if (item.Value.newUser == true)
+            {                
+                foreach (var item2 in item.Value.diamodTypeDict)
+                {
+                    if (_dict.ContainsKey(item2.Key) )
+                    {
+                        _dict[item2.Key][1] += item2.Value[1];
+                        _dict[item2.Key][2] += item2.Value[2];
+                    }   
+                    else
+                    {
+                        _dict[item2.Key] = item2.Value;           
+                    }   
+
+                    //Logger.Log("111111111111111111111111111 ",item2.Key);
+                }                
+            }
+        }
+
+        List<KeyValuePair<int,List<int>>> lst = new List<KeyValuePair<int,List<int>>>(_dict);
+        lst.Sort(delegate(KeyValuePair<int,List<int>> s1, KeyValuePair<int,List<int>> s2)  
+        {
+            return s1.Key.CompareTo(s2.Key);
+        });        
+
+        foreach (var item in lst)
+        {
+            AddItem(item.Value);
+        }
     }
 
     override public void DoClickExport()
@@ -92,7 +124,7 @@ public class DiamondView : View
         itemDataList.Clear();  
     }   
 
-    public void AddItem(DiaData data)
+    public void AddItem(List<int> data)
     {               
         DiamondItem item = new DiamondItem();
         item.Create();
@@ -124,21 +156,5 @@ public class DiamondView : View
         }
     }    
 
-    public void SetDataText()
-    {
-        List<KeyValuePair<int,DiaData>> lst = new List<KeyValuePair<int,DiaData>>(RecordModel.useDiamondDict);
-        lst.Sort(delegate(KeyValuePair<int,DiaData> s1, KeyValuePair<int,DiaData> s2)  
-        {
-            return s1.Key.CompareTo(s2.Key);
-        });        
-
-        foreach (var item in lst)
-        {
-            AddItem(item.Value);
-        }
-
-        Logger.Log("SetDataTex " + RecordModel.useDiamondDict.Count);
-              
-    }
 
 }

@@ -39,6 +39,9 @@ public class GFunc
         dia_event_name_dict[(int)DIA_EVENT.EVENT_DIAMOND_ROOMBUILDCD] = "秒房间建造CD";
         dia_event_name_dict[(int)DIA_EVENT.EVENT_DIAMOND_BUYRADIO] = "购买收音机";
         dia_event_name_dict[(int)DIA_EVENT.EVENT_DIAMOND_BUYPASSLEVEL] = "通行证等级购买";
+
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_DIAMOND_REFRESHTIMETASK] = "刷新限时任务";
+        dia_event_name_dict[(int)DIA_EVENT.EVENT_DIAMOND_ADDMAKECELL] = "增加制作栏位";
         
         return true;
     }
