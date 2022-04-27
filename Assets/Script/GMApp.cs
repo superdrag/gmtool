@@ -11,6 +11,9 @@ public class GMApp : MonoBehaviour {
 
     // Use this for initialization
   
+    public bool opt_debug_mode = false;
+    public PUBLISH_ID opt_publishid = PUBLISH_ID.NONE;
+
     private static GMApp instance;    
 
     public static GMApp Instance
@@ -29,6 +32,9 @@ public class GMApp : MonoBehaviour {
 
     private void AppInit()
     {
+        GData.DebugMode = this.opt_debug_mode;
+        GData.PublishId = this.opt_publishid;
+
         Logger.Init(GFunc.AppLogPath());
     
         DontDestroyOnLoad(this);

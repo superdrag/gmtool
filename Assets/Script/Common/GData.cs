@@ -21,6 +21,13 @@ public enum UI_DIALOG_TYPE
     CONFIRM = 2,
 }
 
+public enum PUBLISH_ID
+{
+    NONE = 0,
+    CHENGDU = 1,
+    SHENZHEN = 2,
+}
+
 
 public enum DIA_EVENT
 {
@@ -117,8 +124,8 @@ public class GData
 
     //游戏名称
     public static string AppName = "gmtool";
-
     public static bool DebugMode = false;
+    public static PUBLISH_ID PublishId = PUBLISH_ID.NONE;
 
     //PC测试模式 会用到C盘目录资源模拟热更新
     public static bool DebugHotFix = false;

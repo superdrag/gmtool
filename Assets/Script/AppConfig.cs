@@ -13,7 +13,7 @@ using LitJson;
 
 public class ServerInfo
 {    
-    public int index;
+    public int id;
     public string name;
     public string ip;
     public int port;
@@ -65,7 +65,7 @@ public class AppConfig
         foreach (var json in jsons)
         {
             ServerInfo  info = new ServerInfo();
-            info.index = JsonConfig.ReadInt32(json,"server_id");
+            info.id = JsonConfig.ReadInt32(json,"server_id");
             info.name = JsonConfig.ReadString(json,"server_name");
             info.ip = JsonConfig.ReadString(json,"php_ip");
             info.port = JsonConfig.ReadInt32(json,"php_port");

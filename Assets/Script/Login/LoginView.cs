@@ -98,29 +98,52 @@ public class LoginView : View
                 list.Add(item);
             }
 
-            for (int i = 0; i < list.Count; i++)
+            if (GData.PublishId > PUBLISH_ID.NONE)
             {
-                if (GData.DebugMode == list[i].debug)
+                if (GData.PublishId == PUBLISH_ID.CHENGDU)
                 {
-                    Dropdown.OptionData od1 = new Dropdown.OptionData();
-                    od1.text = list[i].name;     
-                    dropdown.options.Add(od1);
-
-                    selectServerList.Add(list[i]);   
-                } 
+                    for (int i = 0; i < list.Count; i++)
+                    {         
+                        if (list[i].id == 5) 
+                        {
+                            Dropdown.OptionData od1 = new Dropdown.OptionData();
+                            od1.text = list[i].name;     
+                            dropdown.options.Add(od1);
+                            selectServerList.Add(list[i]);
+                            break;                             
+                        }        
+                    }
+                }
+                else if (GData.PublishId == PUBLISH_ID.SHENZHEN)
+                {
+                    for (int i = 0; i < list.Count; i++)
+                    {         
+                        if (list[i].id == 7)
+                        {
+                            Dropdown.OptionData od1 = new Dropdown.OptionData();
+                            od1.text = list[i].name;     
+                            dropdown.options.Add(od1);
+                            selectServerList.Add(list[i]);
+                            break;                             
+                        }        
+                    }
+                }                
             }
+            else
+            {
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (GData.DebugMode == list[i].debug)
+                    {       
 
-            // for (int i = list.Count - 1; i >= 0 ; i--)
-            // {
-            //     if (GData.DebugMode == list[i].debug)
-            //     {
-            //         Dropdown.OptionData od1 = new Dropdown.OptionData();
-            //         od1.text = list[i].name;     
-            //         dropdown.options.Add(od1);
+                        Dropdown.OptionData od1 = new Dropdown.OptionData();
+                        od1.text = list[i].name;     
+                        dropdown.options.Add(od1);
 
-            //         selectServerList.Add(list[i]);   
-            //     }                 
-            // }
+                        selectServerList.Add(list[i]);   
+                    } 
+                }
+            }
         }
 
         if (PlayerPrefs.GetString("login_acc") != "")
