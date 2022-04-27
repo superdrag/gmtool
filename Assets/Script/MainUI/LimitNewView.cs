@@ -79,7 +79,7 @@ public class LimitNewView : View
 
         if( String.IsNullOrEmpty(accountText.text) )
         {            
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"账号为空");
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"账号/IP为空");
             return;
         }
 
@@ -90,7 +90,14 @@ public class LimitNewView : View
             return;
         }
 
-        GlobalCtl.MSG_CL2PHP_GMCOMMAND( accountText.text, (int)PHP_COMMAMD.BLACKUSER, timeText.text,reasonText.text,LoginModel.Instance.Account );
+        int isIp = 0;
+        string[] ipstr = accountText.text.Split('.');
+        if (ipstr.Length == 4)
+        {
+            isIp = 1;
+        }
+
+        GlobalCtl.MSG_CL2PHP_GMCOMMAND( accountText.text, (int)PHP_COMMAMD.BLACKUSER, timeText.text,reasonText.text,LoginModel.Instance.Account,isIp.ToString() );
     } 
 
     private void onClickClose()

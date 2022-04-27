@@ -172,7 +172,7 @@ public class GFunc
     //时间戳转DateTime
     public static DateTime TimeStamp2DateTime(int timeStamp)
     {
-        if (GData.DebugMode == false)
+        if (GData.LoginServerId == 5)
         {
             timeStamp = timeStamp -12*3600; //美国时间
         }        

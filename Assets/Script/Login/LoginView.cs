@@ -181,10 +181,12 @@ public class LoginView : View
     private void OnBtnClick()
     {            
         //ViewRoot.SetActive(false);     
-
+    
+        
         ServerInfo sinfo = selectServerList[curServer];
+        GData.LoginServerId = sinfo.id;
 
-        Logger.Log("BtnLogin click.........." + sinfo.ip);
+        Logger.Log("OnBtnClick ..........",sinfo.ip,GData.LoginServerId);
         LoginModel.Instance.record_url = sinfo.record_url;
         LoginCtl.Instance.StartConnetServer(sinfo.ip, sinfo.port);   
 
