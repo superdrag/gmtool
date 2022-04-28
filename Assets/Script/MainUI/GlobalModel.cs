@@ -88,7 +88,7 @@ public class GlobalModel {
             cfg.taskId = id;
             tb2.Get<string,string>("mask",out cfg.name);
             tb2.Get<string,int>("sort",out cfg.sortId); 
-            Logger.Warn("guideTaskCfg info ",id,cfg.name);    
+            //Logger.Warn("guideTaskCfg info ",id,cfg.name);    
             guideTaskCfg[id] = cfg;
             } 
         );
