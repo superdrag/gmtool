@@ -262,6 +262,11 @@ LuaConfig["ConstConfig"] = {
 	["Bunny_Data"] = "5",
 	["MoneyCar_Data"] = "100/50",
 	["ArmoredCar_Data"] = "200",
-	["ShareData"] = "Currency;diamond;50",
+	["ShareData"] = "Currency;diamond;10",
+	["LeaftShare"] = ";ShareImage/share_cd",
+	["TaskShare"] = ";ShareImage/share_cd",
+	["ShareTimeLimit"] = "3",
+	["LeaftShare_SZ"] = ";ShareImage/share_sz",
+	["TaskShare_SZ"] = ";ShareImage/share_sz",
 }
 end

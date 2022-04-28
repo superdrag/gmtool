@@ -68,6 +68,8 @@ public class GMApp : MonoBehaviour {
         LuaMgr.Init();
         LuaCall.Test1();
 
+        GlobalModel.InitConfig();
+
         AllRigstMsgRegedit();
         OnInitFinish();         
     }

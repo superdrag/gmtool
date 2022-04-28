@@ -67,13 +67,6 @@ public class LuaCall
         func();
     }
 
-    public static void GetMainTaskInfo()
-    {
-        FuncDelegateTable func = LuaMgr.LuaEnv.Global.Get<FuncDelegateTable>("GetTaskInfo");
-        //List<string> list =  func();
-        XLua.LuaTable tb = func();
-    }  
-
     public static void Test1()
     {        
         SimpleFuncDelegate func = LuaMgr.LuaEnv.Global.Get<SimpleFuncDelegate>("Test1");

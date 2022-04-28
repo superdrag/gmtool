@@ -61,10 +61,12 @@ LuaConfig["PurchaseConfig"] = {
 [75003] = New(75003,10,68,9.99,"活动礼包","赛季礼包-中R","赛季礼包3","每赛季只可购买一次的礼包","info.zencat.baseballtycoon.sku.9.99.75003","com.yugu.baseballtycoon.sku.9.99.75003"),
 [76001] = New(76001,1,6,0.99,"活动礼包","排行榜礼包（次日）-白嫖","排行榜礼包（次日）-白嫖","","info.zencat.baseballtycoon.sku.4.99.76001","com.yugu.baseballtycoon.sku.4.99.76001"),
 [76002] = New(76002,5,30,4.99,"活动礼包","排行榜礼包（次日）-小R","排行榜礼包（次日）-小R","","info.zencat.baseballtycoon.sku.9.99.76002","com.yugu.baseballtycoon.sku.9.99.76002"),
-[77001] = New(77001,5,30,4.99,"活动礼包","排行榜礼包（五日）-白嫖","排行榜礼包（五日）-白嫖","","info.zencat.baseballtycoon.sku.4.99.77001","com.yugu.baseballtycoon.sku.4.99.77001"),
-[77002] = New(77002,10,68,9.99,"活动礼包","排行榜礼包（五日）-小R","排行榜礼包（五日）-小R","","info.zencat.baseballtycoon.sku.9.99.77002","com.yugu.baseballtycoon.sku.9.99.77002"),
+[77001] = New(77001,1,6,0.99,"活动礼包","排行榜礼包（五日）-白嫖","排行榜礼包（五日）-白嫖","","info.zencat.baseballtycoon.sku.4.99.77001","com.yugu.baseballtycoon.sku.4.99.77001"),
+[77002] = New(77002,5,30,4.99,"活动礼包","排行榜礼包（五日）-小R","排行榜礼包（五日）-小R","","info.zencat.baseballtycoon.sku.4.99.77002","com.yugu.baseballtycoon.sku.4.99.77002"),
+[77003] = New(77003,10,68,9.99,"活动礼包","排行榜礼包（五日）-中R","排行榜礼包（五日）-中R","","info.zencat.baseballtycoon.sku.9.99.77003","com.yugu.baseballtycoon.sku.9.99.77003"),
 [78001] = New(78001,5,30,4.99,"活动礼包","排行榜礼包（七日）-白嫖","排行榜礼包（七日）-白嫖","","info.zencat.baseballtycoon.sku.4.99.78001","com.yugu.baseballtycoon.sku.4.99.78001"),
 [78002] = New(78002,10,68,9.99,"活动礼包","排行榜礼包（七日）-小R","排行榜礼包（七日）-小R","","info.zencat.baseballtycoon.sku.9.99.78002","com.yugu.baseballtycoon.sku.9.99.78002"),
-[78003] = New(78003,20,128,19.99,"活动礼包","排行榜礼包（七日）-中R","排行榜礼包（七日）-中R","","info.zencat.baseballtycoon.sku.19.99.78003","com.yugu.baseballtycoon.sku.19.99.78003"),
+[78003] = New(78003,10,68,9.99,"活动礼包","排行榜礼包（七日）-中R","排行榜礼包（七日）-中R","","info.zencat.baseballtycoon.sku.9.99.78003","com.yugu.baseballtycoon.sku.9.99.78003"),
+[78004] = New(78004,20,128,19.99,"活动礼包","排行榜礼包（七日）-中R","排行榜礼包（七日）-大R","","info.zencat.baseballtycoon.sku.19.99.78004","com.yugu.baseballtycoon.sku.19.99.78004"),
 }
 end

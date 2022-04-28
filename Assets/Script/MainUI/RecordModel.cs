@@ -59,9 +59,6 @@ public class CoreData
     public Dictionary<int,double> remainPectDict = new Dictionary<int, double>(); //留存百分比  //次留是 i+ 1 = 2 开始   
     public Dictionary<int,int> remainPayDict = new Dictionary<int, int>(); //付费留存  //次留是 i+ 1 = 2 开始
     public Dictionary<int,double> remainPayPectDict = new Dictionary<int, double>(); //留存百分比  //次留是 i+ 1 = 2 开始    
-
-    public Dictionary<int,List<int>> guideTaskDict = new Dictionary<int, List<int>>(); //新手引导
-    public Dictionary<int,List<int>> mainTaskDict = new Dictionary<int, List<int>>();   //主线任务
     public Dictionary<string,RankData> rankListDict = new Dictionary<string, RankData>();   //排行榜
 
     public Dictionary<int,int> payAccLTV = new Dictionary<int, int>();

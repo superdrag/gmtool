@@ -47,5 +47,6 @@ LuaConfig["DailyTaskConfig"] = {
 [141] = New(141,"sell_equip",0,3,400,"dailytask_sell_equip",20,40000,59999),
 [142] = New(142,"sell_equip",0,5,800,"dailytask_sell_equip",20,60000,79999),
 [143] = New(143,"sell_equip",0,10,1600,"dailytask_sell_equip",20,80000,999999999),
+[144] = New(144,"dailytask_share",0,1,-1,"dailytask_sharegames",20,0,999999999),
 }
 end

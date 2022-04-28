@@ -106,6 +106,8 @@ local WordArenaConfig =
 ["reching_place"] = New("reching_place","到达指定名次后可领取","You can get it after reaching the designated place.","指定ランクに到達できたら受領可能","到達指定名次後可領取","Du bekommst ihn, wenn du den angegebenen Ort erreicht hast.","Вы можете получить его после достижения указанного места.","Vous pouvez l\'obtenir après avoir atteint l\'endroit désigné.","Puoi ottenerlo dopo aver raggiunto il luogo designato.","Puedes conseguirlo después de alcanzar el lugar designado.","Pode obtê-lo depois de chegar ao local designado.",""),
 ["Road_Champions"] = New("Road_Champions","冠军之路","Path to Champion","チャンピオンへの道","冠軍之路","Weg zum Champion","Путь к чемпиону","La voie du champion","Percorso verso il campione","Camino al Campeón","Caminho para o campeão",""),
 ["Road_Champions_tips"] = New("Road_Champions_tips","赢取比赛，获得豪华大礼！","Win game matches, get luxurious rewards!","試合を勝って豪華なボーナスをもらいましょう！","贏取比賽，獲得豪華大禮！","Gewinne Spiele, erhalte luxuriöse Belohnungen!","Выигрывайте игровые матчи, получайте роскошные награды!","Gagnez des matchs, obtenez des récompenses luxueuses !","Vinci le partite, ottieni ricompense di lusso!","Gana partidas y obtén recompensas de lujo.","Ganhe jogos, receba recompensas luxuosas!",""),
+["tip_nofull"] = New("tip_nofull","已补满","FULL","フル","已補滿","vollständig","полный","complet","completo","completo","completo",""),
+["tip_auto"] = New("tip_auto","自动","AUTO","オート","自動","AUTO","авто","AUTO","AUTO","AUTO","AUTO",""),
 }
 TableMerge(WordConfig,WordArenaConfig)
 end

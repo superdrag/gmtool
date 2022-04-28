@@ -38,13 +38,31 @@ function GetShopName( payId )
 	return cfg.name_display
 end
 
-function GetTaskInfo()
+function GetGuideCfg()
+	local tb = {}
+	for k,v in pairs(LuaConfig["GuideConfig"]) do
+		tb[k] = v
+	end
+
+	local count = 0
+	for key, value in pairs(tb) do
+		count = count + 1
+	end
+	print('GetGuideCfg',count)
+	--DEBUG_LOG("GetGuideCfg %s",PrintTable(tb)) 
+	return tb;
+end
+
+function GetTaskCfg()
 	local tb = {}
 	for k,v in pairs(LuaConfig["TaskConfig"]) do
-		table.insert( tb, k )		
+		tb[k] = v.task
 	end
-	table.sort( tb )
-	--DEBUG_LOG("11111111111111 %s",PrintTable(tb)) 
+	local count = 0
+	for key, value in pairs(tb) do
+		count = count + 1
+	end
+	print('GetTaskCfg',count)
 	return tb;
 end
 
@@ -60,7 +78,6 @@ local function init()
 
 	math.randomseed(tostring(os.time()):reverse():sub(1, 6))
 
-	GetTaskInfo()
 end
 
 init()
