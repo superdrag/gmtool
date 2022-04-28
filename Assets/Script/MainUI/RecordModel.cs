@@ -49,9 +49,6 @@ public class CoreData
     public int watchAds; //看广告
     public Dictionary<string,int> loginAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> payAccDict = new Dictionary<string, int>();
-
-    public Dictionary<string,List<int>> vipAccDict = new Dictionary<string, List<int>>();
-
     public Dictionary<string,int> adsAccDict = new Dictionary<string, int>();
     public Dictionary<string,int> regAccDict = new Dictionary<string, int>();
     public Dictionary<int,int> hourOnlineNumDict = new Dictionary<int, int>();
@@ -97,6 +94,11 @@ public class AccData
     public Dictionary<int,List<int>> diamodTypeDict = new Dictionary<int, List<int>>();
     public bool newUser = false;
     public int income = 0;
+    public int mainTaskId = 0;
+
+    public int vipcard = 0;
+
+    public List<int> guideTaskList = new List<int>();
 
     public void Reset()
     {
@@ -816,26 +818,46 @@ public class RecordModel {
                 string str = fields[5].Trim();
                 string[] slist = str.Split(',');
 
-                if ( coreData.vipAccDict.ContainsKey(_acc) )
+                for (int i = 0; i < slist.Length; i++)
                 {
-                    for (int i = 0; i < slist.Length; i++)
+                    if ( slist[i] == "" ) continue;
+                    int vip =  Convert.ToInt32(slist[i]);
+                    if ( accDataDict[_acc].vipcard < vip )
                     {
-                        coreData.vipAccDict[_acc].Add( Convert.ToInt32(slist[i])  );
-                    }                
-                }   
-                else
-                {
-                    coreData.vipAccDict[_acc] = new List<int>();                    
-                }                
+                        accDataDict[_acc].vipcard = vip;
+                    }                        
+                }                       
             }    
 
             if (recordType == RECORD_TYPE.RECORD_GUIDETASk)
             {
+                string str = fields[5].Trim();
+                string[] slist = str.Split(',');
 
+                for (int i = 0; i < slist.Length; i++)
+                {
+                    if ( slist[i] == "" ) continue;
+                    int gid =  Convert.ToInt32(slist[i]);
+                    accDataDict[_acc].guideTaskList.Add(gid);
+                }
             }            
 
             if (recordType == RECORD_TYPE.RECORD_MAINTASK)
             {
+                string str = fields[5].Trim();
+                string[] slist = str.Split(',');
+                if (slist.Length > 0)
+                {
+                    if ( slist[0] != "" )
+                    {
+                        int curTaskId = Convert.ToInt32(slist[0]);
+                        if ( accDataDict[_acc].mainTaskId < curTaskId )
+                        {
+                            accDataDict[_acc].mainTaskId = curTaskId;
+                        }
+                    }
+                }
+
                 //Logger.Log("11111111111111111");
                 //int _taskid = System.Convert.ToInt32(fields[5].Trim());
 
