@@ -97,6 +97,7 @@ public class AccData
     public int mainTaskId = 0;
 
     public int vipcard = 0;
+    public int lastLoginTime = 0;
 
     public List<int> guideTaskList = new List<int>();
 
@@ -215,9 +216,9 @@ public class RecordModel {
                 List<string> tmpary=new List<string>();                   
                 for (int j = 0; j < lineAry.Length; j++)
                 {
-                    int findindex = lineAry[j].IndexOf(",1012,");
-                    int findindex2 = lineAry[j].IndexOf(",1013,");
-                    if (findindex == -1 && findindex2 == -1)
+                    // int findindex = lineAry[j].IndexOf(",1012,");
+                    // int findindex2 = lineAry[j].IndexOf(",1013,");
+                    //if (findindex == -1 && findindex2 == -1)
                     {
                         tmpary.Add(lineAry[j]);
                     }
@@ -243,14 +244,6 @@ public class RecordModel {
         {
             List<string> _dayData = dayDataList[i];
             analyseDayCoreData(_dayData.ToArray(),i,country,platform);
-        }
-
-        foreach (var item in accDataDict)
-        {
-            if (item.Value.newUser)
-            {
-                
-            }
         }
 
         //留存
@@ -642,6 +635,7 @@ public class RecordModel {
             if (recordType == RECORD_TYPE.RECORD_USERLOGIN)
             {
                 coreData.loginAccDict[_acc] = 1;
+                accDataDict[_acc].lastLoginTime = coreData.timetv;
                 //Logger.Log("day login acc.............",fields[2]);           
             }
 
@@ -797,7 +791,7 @@ public class RecordModel {
 
             if (recordType == RECORD_TYPE.RECORD_RANKLIST)
             {        
-                //Logger.Log("rankgroup data -- "+lineData);   
+                //Logger.Warn("rankgroup data -- "+lineData);   
 
                 RankData rankData = new RankData();
                 rankData.id = fields[2];
@@ -856,38 +850,7 @@ public class RecordModel {
                             accDataDict[_acc].mainTaskId = curTaskId;
                         }
                     }
-                }
-
-                //Logger.Log("11111111111111111");
-                //int _taskid = System.Convert.ToInt32(fields[5].Trim());
-
-                // List<int> list = null;
-                // if (coreData.mainTaskDict.TryGetValue(_taskid,out list) == false)
-                // {
-                //     list = new List<int>{0,0};
-                //     coreData.mainTaskDict[_taskid] = list;
-                // }
-
-                // bool lost = true;
-                // for (int day = 1; day <= 7; day++)
-                // {
-                //     int dindex = dayIndex - day; 
-                //     if (dindex >= 0 && dindex < coreList.Count) 
-                //     {
-                //         CoreData preData = coreList[dindex];           
-                //         if (preData.loginAccDict.ContainsKey(_acc))
-                //         {
-                //             lost = false;
-                //             break;
-                //         }
-                //     }  
-                // }
-
-                // coreData.mainTaskDict[_taskid][0] += 1;
-                // if(lost == true)
-                // {
-                //     coreData.mainTaskDict[_taskid][1] += 1;
-                // }                
+                }          
             }  
 
             if (recordType == RECORD_TYPE.RECORD_CHEAT)
@@ -940,7 +903,7 @@ public class RecordModel {
 
         coreList.Add(coreData);
 
-        if (GFunc.DEBUGMODE()) Logger.Log("day core end.............",coreData.date,coreData.DAU,coreData.PCU,coreData.newUser,coreData.avgOnlineSec,coreData.newPayUser);
+        Logger.Log("day core end.............",coreData.date,coreData.DAU,coreData.PCU,coreData.newUser,coreData.avgOnlineSec,coreData.newPayUser);
     }
 
 }

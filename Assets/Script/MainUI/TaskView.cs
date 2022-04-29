@@ -55,7 +55,7 @@ public class TaskView : View
     {        
         //onClickQuery(queryBtn.gameObject);
 
-        RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        //RectTransform rect = Content.transform.GetComponent<RectTransform>();
         //rect.sizeDelta = new Vector2(0, (float)RecordModel.Instance.coreList.Count * (float)73.6 );
 
 
@@ -63,11 +63,62 @@ public class TaskView : View
 
     override public void DoClickQuery(int start, int end)
     {
-        C2S_GMQueryTaskMain pb = new C2S_GMQueryTaskMain();
-        pb.Type = 2;
-        NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYTASKMAIN,pb);  
+        // C2S_GMQueryTaskMain pb = new C2S_GMQueryTaskMain();
+        // pb.Type = 2;
+        // NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYTASKMAIN,pb);  
 
         //SetDataText2();
+
+        GlobalModel.taskDataDict.Clear();
+        ClearAllItem();
+
+        RecordModel.analyseAllCoreData(start,end,TitleView.country,TitleView.platform);
+
+        //Logger.Log("111111111111111111111111 "+_pb.Data.Count);
+        AddItemTitle();
+
+        List<KeyValuePair<int,TaskCfg>> lst = new List<KeyValuePair<int,TaskCfg>>(GlobalModel.mainTaskCfg);
+
+        lst.Sort(delegate(KeyValuePair<int,TaskCfg> s1, KeyValuePair<int,TaskCfg> s2)  
+        {
+                return s1.Key.CompareTo(s2.Key);
+        }
+        );
+
+        Logger.Warn("RecordModel.accDataDict.Count  ",RecordModel.accDataDict.Count);
+        
+        List<List<string>> showDataList = new List<List<string>>();
+        foreach (var item in RecordModel.accDataDict)
+        {           
+            int hasTask = item.Value.mainTaskId;            
+            if (hasTask > 0)
+            {
+                if (item.Value.newUser == true)
+                {                
+                    List<string> _itemData = new List<string>(){"","","","","",""};  
+                    _itemData[0] = hasTask.ToString();             
+                    for (int i = 0; i < lst.Count; i++)
+                    {
+                        if (lst[i].Key <= hasTask)
+                        {
+                            lst[i].Value.param1 ++;
+                        } 
+                    }
+                    showDataList.Add(_itemData);
+                }                  
+            }
+        }
+
+        foreach (var item in lst)
+        {
+            AddItem(item.Value);
+        }        
+        
+        RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(0, (float)dataItemList.Count * (float)73.6 );                
+
+        //Logger.Log("SetDataTex sumacc " + _pb.Sumacc);
+
     }
 
     override public void DoClickExport()
@@ -93,7 +144,7 @@ public class TaskView : View
         itemDataList.Clear();
     }   
 
-    public void AddItem(QueryTaskData taskData)
+    public void AddItem(TaskCfg taskData)
     {               
         TaskItem item = new TaskItem();
         item.Create();
@@ -123,88 +174,56 @@ public class TaskView : View
             Transform obj = Content.GetChild(i);
             GameObject.Destroy(obj.gameObject);
         }
-    }
-
-    public void SetDataText2()
-    {
-        ClearAllItem();
-
-        // Dictionary<int,QueryTaskData> dict = new Dictionary<int, QueryTaskData>();
-
-        // for (int i = 0; i < RecordModel.coreList.Count; i++)
-        // {
-        //     foreach (var item in RecordModel.coreList[i].mainTaskDict)
-        //     {
-        //         QueryTaskData data = null;
-        //         if (dict.TryGetValue( item.Key, out data) == false)
-        //         {
-        //             data = new QueryTaskData();
-        //             data.taskId = item.Key;
-        //             dict[item.Key] = data;
-        //         }
-                
-        //         dict[item.Key].curNum += item.Value[0];
-        //         dict[item.Key].lostNum += item.Value[1];
-        //         dict[item.Key].percent = "100%";
-        //     }            
-        // }
-
-        // AddItemTitle();
-
-        // foreach (var item in dict)
-        // {
-        //     AddItem(item.Value);
-        // }        
-    }    
+    } 
 
     public void SetDataText(S2C_GMQueryTaskMain _pb)
     {
-        GlobalModel.taskDataDict.Clear();
-        ClearAllItem();
+        // GlobalModel.taskDataDict.Clear();
+        // ClearAllItem();
 
-        //Logger.Log("111111111111111111111111 "+_pb.Data.Count);
+        // //Logger.Log("111111111111111111111111 "+_pb.Data.Count);
 
-        foreach (var item in _pb.Data)
-        {
-            QueryTaskData data = new QueryTaskData();
-            data.taskId = item.Value.Taskid;
-            data.curNum = item.Value.Stop;
-            data.lostNum = item.Value.Lost;
-            //data.percent = (item.Value.Pass * 100).ToString("F2") + "%";
-            if (data.curNum > 0)
-            {
-                double pect = Convert.ToDouble(_pb.Sumacc - data.curNum ) / _pb.Sumacc * 100 ;
-                //Logger.Log("1111111111111 " +pect );
-                data.percent = pect.ToString("F2") + "%";
-            }
-            else
-            {
-                data.percent = "100%";
-            }    
+        // foreach (var item in _pb.Data)
+        // {
+        //     QueryTaskData data = new QueryTaskData();
+        //     data.taskId = item.Value.Taskid;
+        //     data.curNum = item.Value.Stop;
+        //     data.lostNum = item.Value.Lost;
+        //     //data.percent = (item.Value.Pass * 100).ToString("F2") + "%";
+        //     if (data.curNum > 0)
+        //     {
+        //         double pect = Convert.ToDouble(_pb.Sumacc - data.curNum ) / _pb.Sumacc * 100 ;
+        //         //Logger.Log("1111111111111 " +pect );
+        //         data.percent = pect.ToString("F2") + "%";
+        //     }
+        //     else
+        //     {
+        //         data.percent = "100%";
+        //     }    
     
-            GlobalModel.taskDataDict.Add(data.taskId,data);
-        }
+        //     GlobalModel.taskDataDict.Add(data.taskId,data);
+        // }
 
-        List<KeyValuePair<int,QueryTaskData>> lst = new List<KeyValuePair<int,QueryTaskData>>(GlobalModel.taskDataDict);
+        // List<KeyValuePair<int,QueryTaskData>> lst = new List<KeyValuePair<int,QueryTaskData>>(GlobalModel.taskDataDict);
 
-        lst.Sort(delegate(KeyValuePair<int,QueryTaskData> s1, KeyValuePair<int,QueryTaskData> s2)  
-        {
-                return s1.Key.CompareTo(s2.Key);
-        }
-        );
+        // lst.Sort(delegate(KeyValuePair<int,QueryTaskData> s1, KeyValuePair<int,QueryTaskData> s2)  
+        // {
+        //         return s1.Key.CompareTo(s2.Key);
+        // }
+        // );
 
-        Logger.Log("SetDataTex " + GlobalModel.taskDataDict.Count);
+        // Logger.Log("SetDataTex " + GlobalModel.taskDataDict.Count);
 
-        RectTransform rect = Content.transform.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(0, (float)GlobalModel.taskDataDict.Count * (float)73.6 );                
+        // RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        // rect.sizeDelta = new Vector2(0, (float)GlobalModel.taskDataDict.Count * (float)73.6 );                
 
         //Logger.Log("SetDataTex sumacc " + _pb.Sumacc);
 
-        AddItemTitle();
-        foreach (var item in lst)
-        {
-            AddItem(item.Value);
-        }
+        // AddItemTitle();
+        // foreach (var item in lst)
+        // {
+        //     AddItem(item.Value);
+        // }
 
         // if (file == "Currency" )
         // {
