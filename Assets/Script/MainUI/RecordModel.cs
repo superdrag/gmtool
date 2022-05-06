@@ -30,6 +30,8 @@ public enum RECORD_TYPE
     RECORD_CHEAT     = 1070,
 }
 
+
+//一天的数据
 public class CoreData
 {
     public string date;
@@ -92,7 +94,7 @@ public class AccData
 {
     public Dictionary<int,List<int>> payIdDict = new Dictionary<int, List<int>>();
     public Dictionary<int,List<int>> diamodTypeDict = new Dictionary<int, List<int>>();
-    public bool newUser = false;
+    public bool newReg = false;
     public int income = 0;
     public int mainTaskId = 0;
 
@@ -103,7 +105,7 @@ public class AccData
 
     public void Reset()
     {
-        newUser = false;
+        newReg = false;
         payIdDict.Clear();
     }
 }
@@ -197,7 +199,7 @@ public class RecordModel {
 
             foreach (var item in FileDict)
             {
-                Logger.Log("all file dir.........",item.Key,item.Value);
+                //Logger.Log("all file dir.........",item.Key,item.Value);
             }
         }
 
@@ -620,6 +622,7 @@ public class RecordModel {
                 {
                     accDataDict[_acc] = new AccData();
                     //Logger.Warn("11111111 ",_acc);
+
                 }                
             }
             
@@ -628,7 +631,7 @@ public class RecordModel {
                 coreData.regAccDict[_acc] = 1;
                 //Logger.Log("000000000000000 ",fields[2]);
                 coreData.newUser++;
-                accDataDict[_acc].newUser = true;
+                accDataDict[_acc].newReg = true;
                 //Logger.Warn("2222 ",_acc);
             }
 
@@ -847,6 +850,7 @@ public class RecordModel {
                         int curTaskId = Convert.ToInt32(slist[0]);
                         if ( accDataDict[_acc].mainTaskId < curTaskId )
                         {
+                            Logger.Log("11111",curTaskId);
                             accDataDict[_acc].mainTaskId = curTaskId;
                         }
                     }

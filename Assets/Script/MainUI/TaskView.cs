@@ -77,43 +77,53 @@ public class TaskView : View
         //Logger.Log("111111111111111111111111 "+_pb.Data.Count);
         AddItemTitle();
 
-        List<KeyValuePair<int,TaskCfg>> lst = new List<KeyValuePair<int,TaskCfg>>(GlobalModel.mainTaskCfg);
+        // List<KeyValuePair<int,TaskCfg>> lst = new List<KeyValuePair<int,TaskCfg>>(GlobalModel.mainTaskCfg);
 
-        lst.Sort(delegate(KeyValuePair<int,TaskCfg> s1, KeyValuePair<int,TaskCfg> s2)  
+        // lst.Sort(delegate(KeyValuePair<int,TaskCfg> s1, KeyValuePair<int,TaskCfg> s2)  
+        // {
+        //         return s1.Key.CompareTo(s2.Key);
+        // }
+        // );
+
+        List<QueryTaskData> showDataList = new List<QueryTaskData>();
+        foreach (var item in GlobalModel.mainTaskCfg)
         {
-                return s1.Key.CompareTo(s2.Key);
+            QueryTaskData _data = new QueryTaskData();
+            _data.taskId = item.Value.taskId;
+            _data.taskName = item.Value.name;
+            showDataList.Add(_data);
         }
-        );
+        showDataList.Sort( (x,y) => x.taskId.CompareTo(y.taskId));
 
-        Logger.Warn("RecordModel.accDataDict.Count  ",RecordModel.accDataDict.Count);
+        Logger.Warn("showDataList.Count  ",showDataList.Count,RecordModel.accDataDict.Count);
         
-        List<List<string>> showDataList = new List<List<string>>();
         foreach (var item in RecordModel.accDataDict)
         {           
             int hasTask = item.Value.mainTaskId;            
             if (hasTask > 0)
             {
-                if (item.Value.newUser == true)
-                {                
-                    List<string> _itemData = new List<string>(){"","","","","",""};  
-                    _itemData[0] = hasTask.ToString();             
-                    for (int i = 0; i < lst.Count; i++)
+                //Logger.Log("000000000000000",hasTask);
+                if (item.Value.newReg == true)
+                {          
+                    //Logger.Log("11111111111111111111111111 "+item.Key);
+                    for (int i = 0; i < showDataList.Count; i++)
                     {
-                        if (lst[i].Key <= hasTask)
+                        QueryTaskData sd = showDataList[i];
+                        if (sd.taskId <= hasTask)
                         {
-                            lst[i].Value.param1 ++;
+                            //Logger.Log("222222222222222222222222222222 "+sd.taskId);
+                            sd.curNum++;
                         } 
                     }
-                    showDataList.Add(_itemData);
                 }                  
             }
         }
 
-        foreach (var item in lst)
+        for (int i = 0; i < showDataList.Count; i++)
         {
-            AddItem(item.Value);
-        }        
-        
+            AddItem(showDataList[i]); 
+        }
+
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
         rect.sizeDelta = new Vector2(0, (float)dataItemList.Count * (float)73.6 );                
 
@@ -144,7 +154,7 @@ public class TaskView : View
         itemDataList.Clear();
     }   
 
-    public void AddItem(TaskCfg taskData)
+    public void AddItem(QueryTaskData taskData)
     {               
         TaskItem item = new TaskItem();
         item.Create();

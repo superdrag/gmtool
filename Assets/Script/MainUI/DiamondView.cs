@@ -70,7 +70,7 @@ public class DiamondView : View
         Dictionary<int,List<int>> _dict = new Dictionary<int, List<int>>();
         foreach (var item in RecordModel.accDataDict)
         {
-            if (item.Value.newUser == true)
+            if (item.Value.newReg == true)
             {                
                 foreach (var item2 in item.Value.diamodTypeDict)
                 {

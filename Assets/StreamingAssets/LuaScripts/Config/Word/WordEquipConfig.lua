@@ -132,6 +132,8 @@ local WordEquipConfig =
 ["equip_cancelcollect"] = New("equip_cancelcollect","已取消收藏","Bookmark canceled","お気に入り削除済み","已取消收藏","Lesezeichen storniert","Закладка отменена","Signet annulé","Segnalibro cancellato","Marcador cancelado","Marcador de livros cancelado",""),
 ["equip_enoughstar"] = New("equip_enoughstar","未达到此星级","Insufficient star level.","星lv未到達","未達到此星級","Unzureichende Sternstufe.","Недостаточный уровень звезды.","Niveau d\'étoile insuffisant.","Livello di stelle insufficiente.","Nivel de estrellas insuficiente.","Nível estelar insuficiente.",""),
 ["equip_getstar"] = New("equip_getstar","已领取过该奖励","Rewards obtained already.","受領済み","已領取過該獎勵","Belohnungen bereits erhalten.","Награды уже получены.","Récompenses déjà obtenues.","Ricompense già ottenute.","Recompensas ya obtenidas.","Recompensas já obtidas.",""),
+["equip_takeoff"] = New("equip_takeoff","脱下","Take off","テイクオフ","脫下","Abnehmen","Снять","Enlever","Togliere","Quitar","Descolar",""),
+["equip_replace"] = New("equip_replace","替换","Replace","交換","替換","Ersetzen Sie","Заменить","Remplacer","Sostituire","Reemplazar","Substituir",""),
 }
 TableMerge(WordConfig,WordEquipConfig)
 end

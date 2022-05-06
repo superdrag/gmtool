@@ -31,7 +31,7 @@ local WordCardAchieveConfig =
 ["Btn_CardAchieve_more"] = New("Btn_CardAchieve_more","更多","more","更なる内容","更多","mehr","больше","plus","più","más","mais",""),
 ["Title_CardAchieve_detail"] = New("Title_CardAchieve_detail","加成汇总","detail","バッファサマリー","加成匯總","Detail","подробнее","détail","dettaglio","detalle","pormenor",""),
 ["Tips_CardAchieve_activated"] = New("Tips_CardAchieve_activated","%s已激活","%s has been activated!","%s開放済み","%s已激活","%s wurde aktiviert!","%s был активирован!","%s a été activé !","%s è stato attivato!","%s ha sido activado!","%s foi activada!",""),
-["cardAchieve_extra_conditions_115001"] = New("cardAchieve_extra_conditions_115001","获得高级投资钱老板（Oildullah ）","Unlock senior investor Oildullah ","アブラデュラを獲得","獲得高級投資錢老闆（Oildullah ）","Senior-Investor Oildullah freischalten ","Разблокировать старшего инвестора Оилдуллаха ","Débloquer l\'investisseur senior Oildullah ","Sblocca l\'investitore senior Oildullah ","Desbloquear el inversor senior Oildullah ","Desbloquear investidor sénior Oildullah ",""),
+["Achieve_extra_factor_115001"] = New("Achieve_extra_factor_115001","获得高级投资钱老板（Oildullah ）","Unlock senior investor Oildullah ","アブラデュラを獲得","獲得高級投資錢老闆（Oildullah ）","Senior-Investor Oildullah freischalten ","Разблокировать старшего инвестора Оилдуллаха ","Débloquer l\'investisseur senior Oildullah ","Sblocca l\'investitore senior Oildullah ","Desbloquear el inversor senior Oildullah ","Desbloquear investidor sénior Oildullah ",""),
 ["Achieve_factor1"] = New("Achieve_factor1","拥有","own","所持済み","擁有","eigene","собственный","propre","proprio","propio","próprio",""),
 ["Achieve_factor2"] = New("Achieve_factor2","球员达到","players of","選手が到達","球員達到","Spieler von","игроки","joueurs de","giocatori di","jugadores de","jogadores de",""),
 }

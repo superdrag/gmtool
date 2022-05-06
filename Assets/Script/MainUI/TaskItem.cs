@@ -25,15 +25,15 @@ public class TaskItem
         }
     }
 
-    public void Show(TaskCfg taskData)
+    public void Show(QueryTaskData taskData)
     {
         infoList[0].text = taskData.taskId.ToString();
         if ( taskData.taskId == 10000)
         {
             infoList[0].text = "新手任务阶段";
         }
-        infoList[1].text = taskData.name.ToString();
-        infoList[2].text = taskData.param1.ToString();
+        infoList[1].text = taskData.taskName.ToString();
+        infoList[2].text = taskData.curNum.ToString();
     }
 
     public void SetTitle()

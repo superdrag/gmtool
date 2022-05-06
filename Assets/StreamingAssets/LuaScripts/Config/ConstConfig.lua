@@ -5,8 +5,8 @@ local function New(a0,a1)
 end
 LuaConfig["ConstConfig"] = {
 	["version"] = "0.1.211217",
-	["version_chengdu"] = "0.1.220415",
-	["version_shenzhen"] = "0.1.220415",
+	["version_chengdu"] = "0.1.220428",
+	["version_shenzhen"] = "0.1.220428",
 	["account_url_5xgames_test"] = "https://test-baseball-api.5xgames.com",
 	["account_url_5xgames"] = "https://baseball-api.5xgames.com",
 	["rubbishRoomID"] = "100201/100901/101301/102601/102701/102901",
@@ -257,7 +257,7 @@ LuaConfig["ConstConfig"] = {
 	["yieldInitialValue"] = "500",
 	["DrawCard_Parameter"] = "ordinary;80;0.96/rare;90;0.96/epic;80;0.96/legend;45;0.95",
 	["Card_Max"] = "220",
-	["VPCheat_Value"] = "10000;1;1.1;1.2;1.3/25000;1;1.2;1.4;1.6/50000;1;1.3;1.6;2/100000;1;1.1;1.2;1.3",
+	["VPCheat_Value"] = "10000;1;1.1;1.2;1.3/25000;1;1.2;1.4;1.6/50000;1;1.3;1.6;2/10000000;1;1.1;1.2;1.3",
 	["VPAfter_ban"] = "1000",
 	["Bunny_Data"] = "5",
 	["MoneyCar_Data"] = "100/50",

@@ -71,7 +71,7 @@ public class PayGiftView : View
         Dictionary<int,List<int>> _payIdDict = new Dictionary<int, List<int>>();
         foreach (var item in RecordModel.accDataDict)
         {
-            if (item.Value.newUser == true)
+            if (item.Value.newReg == true)
             {                
                 foreach (var item2 in item.Value.payIdDict)
                 {
