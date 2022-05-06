@@ -161,6 +161,18 @@ public class GFunc
         }
     }
 
+
+ /// <summary>
+    /// 获取时间戳
+    /// </summary>
+    /// <returns></returns>
+    public static int GetTimeStamp()
+    {
+        //DateTime.Now获取的是电脑上的当前时间
+           TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+        return Convert.ToInt32(ts.TotalSeconds);//精确到秒
+    }
+
     //DateTime转时间戳
     public static int DateTime2TimeStamp(DateTime dt)
     {

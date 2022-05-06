@@ -34,6 +34,9 @@ public class TaskItem
         }
         infoList[1].text = taskData.taskName.ToString();
         infoList[2].text = taskData.curNum.ToString();
+        infoList[3].text = taskData.lostNum.ToString();
+        infoList[4].text = taskData.percent.ToString("F2") + "%";
+        infoList[5].text = taskData.percent2.ToString("F2") + "%";
     }
 
     public void SetTitle()

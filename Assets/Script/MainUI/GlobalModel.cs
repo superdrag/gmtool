@@ -20,8 +20,8 @@ public class QueryTaskData
     public string taskName;
     public int curNum;
     public int lostNum;
-    public string percent;
-    public string percent2;
+    public double percent;
+    public double percent2;
 }
 
 public class TaskCfg

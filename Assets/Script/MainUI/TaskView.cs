@@ -97,6 +97,7 @@ public class TaskView : View
 
         Logger.Warn("showDataList.Count  ",showDataList.Count,RecordModel.accDataDict.Count);
         
+        int sumUser = 0;
         foreach (var item in RecordModel.accDataDict)
         {           
             int hasTask = item.Value.mainTaskId;            
@@ -104,7 +105,8 @@ public class TaskView : View
             {
                 //Logger.Log("000000000000000",hasTask);
                 if (item.Value.newReg == true)
-                {          
+                {       
+                    sumUser++;   
                     //Logger.Log("11111111111111111111111111 "+item.Key);
                     for (int i = 0; i < showDataList.Count; i++)
                     {
@@ -113,11 +115,31 @@ public class TaskView : View
                         {
                             //Logger.Log("222222222222222222222222222222 "+sd.taskId);
                             sd.curNum++;
-                        } 
+                        }
+                        if (sd.taskId == hasTask)
+                        {
+                            if (GFunc.GetTimeStamp() - item.Value.lastLoginTime >= 7*3600 )
+                            {
+                                sd.lostNum++;
+                            } 
+                        }
                     }
                 }                  
             }
         }
+
+        for (int i = 0; i < showDataList.Count - 1; i++)
+        {
+           QueryTaskData sd = showDataList[i];
+           QueryTaskData next_sd = showDataList[i+1];
+           sd.percent = (sd.curNum - next_sd.curNum)*1.0 / sumUser ;
+        }
+
+        for (int i = 0; i < showDataList.Count; i++)
+        {
+           QueryTaskData sd = showDataList[i];
+           sd.percent2 = sd.lostNum*1.0 / sumUser;
+        }        
 
         for (int i = 0; i < showDataList.Count; i++)
         {

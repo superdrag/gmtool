@@ -139,13 +139,12 @@ public class GuideView : View
             //data.percent = (item.Value.Pass * 100).ToString("F2") + "%";
             if (data.curNum > 0)
             {
-                double pect = Convert.ToDouble(_pb.Sumacc - data.curNum ) / _pb.Sumacc * 100 ;
+                data.percent = Convert.ToDouble(_pb.Sumacc - data.curNum ) / _pb.Sumacc * 100 ;
                 //Logger.Log("1111111111111 " +pect );
-                data.percent = pect.ToString("F2") + "%";
             }
             else
             {
-                data.percent = "100%";
+                data.percent = 100.0;
             }    
     
             GlobalModel.taskDataDict.Add(data.taskId,data);

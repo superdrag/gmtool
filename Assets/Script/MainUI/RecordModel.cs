@@ -89,7 +89,7 @@ public class RankMember
     public int param2; 
     public int param3; 
 }
-
+//====================================
 public class AccData
 {
     public Dictionary<int,List<int>> payIdDict = new Dictionary<int, List<int>>();
@@ -97,6 +97,7 @@ public class AccData
     public bool newReg = false;
     public int income = 0;
     public int mainTaskId = 0;
+    public int mainTaskTime = 0;
 
     public int vipcard = 0;
     public int lastLoginTime = 0;
@@ -850,8 +851,9 @@ public class RecordModel {
                         int curTaskId = Convert.ToInt32(slist[0]);
                         if ( accDataDict[_acc].mainTaskId < curTaskId )
                         {
-                            Logger.Log("11111",curTaskId);
+                            //Logger.Log("11111",curTaskId);
                             accDataDict[_acc].mainTaskId = curTaskId;
+                            accDataDict[_acc].mainTaskTime = coreData.timetv;
                         }
                     }
                 }          
