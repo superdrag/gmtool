@@ -142,7 +142,7 @@ public class RecordModel {
     public static List<CoreData> coreList = new List<CoreData>();  //每天全部数据
     public static List<string[]> operateList = new List<string[]>(); //操作记录
     public static List<string[]> cheatList = new List<string[]>(); //作弊
-    public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","BE","KR","GB","AU","PH","ID","MY","TH","other"};
+    public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","TW","GB","BE","NZ","KR","IT","DE","ES","FR","RU","HK","NL","other"};
     public static List<string> platformList = new List<string>{"ALL", "ios","android","unity","other"};
     public static List<double> coreSumList = new List<double>();
     public static Dictionary<string,AccData> accDataDict = new Dictionary<string, AccData>();
@@ -702,6 +702,13 @@ public class RecordModel {
 
             if (recordType == RECORD_TYPE.RECORD_RECHARGE)
             {
+                if (_acc == "a4771bf6-ab35-462a-9b37-a0b6c946fdd1" 
+                || _acc == "8cca97e7-781c-4d35-ab27-86270633f167"
+                || _acc == "bbee5be4-eb41-453b-b5b0-5aeeba8fe4ba")
+                {
+                    continue;
+                }
+
                 int _num = Convert.ToInt32( fields[6] );
                 int _purchaseType = 0;
                 if (fields.Length >= 11)

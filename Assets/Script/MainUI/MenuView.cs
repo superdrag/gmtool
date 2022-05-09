@@ -132,7 +132,8 @@ public class MenuView : View
 
         if (Application.isEditor == false)
         {
-            //cheatBtn.gameObject.SetActive(false);
+            taskBtn.gameObject.SetActive(false);
+            guideBtn.gameObject.SetActive(false);
         }
 
         saveBtn.gameObject.SetActive(false);
