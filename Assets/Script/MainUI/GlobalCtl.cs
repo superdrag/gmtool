@@ -328,15 +328,15 @@ public class GlobalCtl
 
         if (_pb.Type == 1)
         {
-            GuideView view = UIMgr.GetUI<GuideView>(VIEWID.GuideView);  
-            Dictionary<int,int> dict = new Dictionary<int,int>(); 
-            view.SetDataText(_pb);            
+            // GuideView view = UIMgr.GetUI<GuideView>(VIEWID.GuideView);  
+            // Dictionary<int,int> dict = new Dictionary<int,int>(); 
+            // view.SetDataText(_pb);            
         }
         else if (_pb.Type == 2)
         {
-            TaskView view = UIMgr.GetUI<TaskView>(VIEWID.TaskView);  
+            // TaskView view = UIMgr.GetUI<TaskView>(VIEWID.TaskView);  
 
-            view.SetDataText(_pb);
+            // view.SetDataText(_pb);
         }
         else if (_pb.Type == 3)
         {

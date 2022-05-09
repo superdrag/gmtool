@@ -19,9 +19,12 @@ public class QueryTaskData
     public int taskId;
     public string taskName;
     public int curNum;
+    public int finishNum;
     public int lostNum;
+    public int sortId;
     public double percent;
     public double percent2;
+    public double percent3;
 }
 
 public class TaskCfg

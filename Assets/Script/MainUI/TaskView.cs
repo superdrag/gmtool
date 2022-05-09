@@ -95,7 +95,7 @@ public class TaskView : View
         }
         showDataList.Sort( (x,y) => x.taskId.CompareTo(y.taskId));
 
-        Logger.Warn("showDataList.Count  ",showDataList.Count,RecordModel.accDataDict.Count);
+        Logger.Warn("task showDataList.Count  ",showDataList.Count,RecordModel.accDataDict.Count);
         
         int sumUser = 0;
         foreach (var item in RecordModel.accDataDict)
@@ -132,13 +132,13 @@ public class TaskView : View
         {
            QueryTaskData sd = showDataList[i];
            QueryTaskData next_sd = showDataList[i+1];
-           sd.percent = (sd.curNum - next_sd.curNum)*1.0 / sumUser ;
+           sd.percent = (sd.curNum - next_sd.curNum)*1.0 / sumUser * 100.0 ;
         }
 
         for (int i = 0; i < showDataList.Count; i++)
         {
            QueryTaskData sd = showDataList[i];
-           sd.percent2 = sd.lostNum*1.0 / sumUser;
+           sd.percent2 = sd.lostNum*1.0 / sumUser * 100.0;
         }        
 
         for (int i = 0; i < showDataList.Count; i++)
@@ -196,6 +196,8 @@ public class TaskView : View
         item.SetTitle();   
 
         titleItem = item;
+
+        dataItemList.Add(item); 
     }
 
     public void ClearAllItem()
@@ -207,76 +209,5 @@ public class TaskView : View
             GameObject.Destroy(obj.gameObject);
         }
     } 
-
-    public void SetDataText(S2C_GMQueryTaskMain _pb)
-    {
-        // GlobalModel.taskDataDict.Clear();
-        // ClearAllItem();
-
-        // //Logger.Log("111111111111111111111111 "+_pb.Data.Count);
-
-        // foreach (var item in _pb.Data)
-        // {
-        //     QueryTaskData data = new QueryTaskData();
-        //     data.taskId = item.Value.Taskid;
-        //     data.curNum = item.Value.Stop;
-        //     data.lostNum = item.Value.Lost;
-        //     //data.percent = (item.Value.Pass * 100).ToString("F2") + "%";
-        //     if (data.curNum > 0)
-        //     {
-        //         double pect = Convert.ToDouble(_pb.Sumacc - data.curNum ) / _pb.Sumacc * 100 ;
-        //         //Logger.Log("1111111111111 " +pect );
-        //         data.percent = pect.ToString("F2") + "%";
-        //     }
-        //     else
-        //     {
-        //         data.percent = "100%";
-        //     }    
-    
-        //     GlobalModel.taskDataDict.Add(data.taskId,data);
-        // }
-
-        // List<KeyValuePair<int,QueryTaskData>> lst = new List<KeyValuePair<int,QueryTaskData>>(GlobalModel.taskDataDict);
-
-        // lst.Sort(delegate(KeyValuePair<int,QueryTaskData> s1, KeyValuePair<int,QueryTaskData> s2)  
-        // {
-        //         return s1.Key.CompareTo(s2.Key);
-        // }
-        // );
-
-        // Logger.Log("SetDataTex " + GlobalModel.taskDataDict.Count);
-
-        // RectTransform rect = Content.transform.GetComponent<RectTransform>();
-        // rect.sizeDelta = new Vector2(0, (float)GlobalModel.taskDataDict.Count * (float)73.6 );                
-
-        //Logger.Log("SetDataTex sumacc " + _pb.Sumacc);
-
-        // AddItemTitle();
-        // foreach (var item in lst)
-        // {
-        //     AddItem(item.Value);
-        // }
-
-        // if (file == "Currency" )
-        // {
-        //     Currency cy = new Currency();
-        //     //byte[] bytes = System.Text.Encoding.Default.GetBytes(s);
-        //     Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
-        //     cy.MergeFrom(pbStream);
-        //     //Output.Log("unpack pb <--- ",msgid, pb.ToString());
-        //     Logger.Log("SetDataTex" + cy.ToString());
-        //     dataText.text = cy.ToString();
-        // }   
-        // if (file == "OwnEquipInfo" )
-        // {
-        //     OwnEquipInfo cy = new OwnEquipInfo();
-        //     //byte[] bytes = System.Text.Encoding.Default.GetBytes(s);
-        //     Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
-        //     cy.MergeFrom(pbStream);
-        //     //Output.Log("unpack pb <--- ",msgid, pb.ToString());
-        //     Logger.Log("SetDataTex" + cy.ToString());
-        //     dataText.text = cy.ToString();
-        // }                
-    }
 
 }

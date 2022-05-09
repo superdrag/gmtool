@@ -249,6 +249,11 @@ public class RecordModel {
             analyseDayCoreData(_dayData.ToArray(),i,country,platform);
         }
 
+        foreach (var item in RecordModel.accDataDict)
+        {                
+            item.Value.guideTaskList.Sort();
+        }
+
         //留存
         for (int i = 0; i < coreList.Count; i++)
         {
@@ -836,14 +841,14 @@ public class RecordModel {
 
             if (recordType == RECORD_TYPE.RECORD_GUIDETASk)
             {
-                string str = fields[5].Trim();
-                string[] slist = str.Split(',');
-
-                for (int i = 0; i < slist.Length; i++)
+                if (fields.Length >= 6)
                 {
-                    if ( slist[i] == "" ) continue;
-                    int gid =  Convert.ToInt32(slist[i]);
-                    accDataDict[_acc].guideTaskList.Add(gid);
+                    for (int i = 5; i < fields.Length; i++)
+                    {
+                        if ( fields[i] == "" ) continue;
+                        int gid =  Convert.ToInt32(fields[i]);
+                        accDataDict[_acc].guideTaskList.Add(gid);                        
+                    }
                 }
             }            
 

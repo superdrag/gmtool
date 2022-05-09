@@ -64,9 +64,92 @@ public class GuideView : View
 
     override public void DoClickQuery(int start, int end)
     {
-        C2S_GMQueryTaskMain pb = new C2S_GMQueryTaskMain();
-        pb.Type = 1;
-        NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYTASKMAIN,pb);  
+   GlobalModel.taskDataDict.Clear();
+        ClearAllItem();
+
+        RecordModel.analyseAllCoreData(start,end,TitleView.country,TitleView.platform);
+
+        //Logger.Log("111111111111111111111111 "+_pb.Data.Count);
+        AddItemTitle();
+
+        List<QueryTaskData> showDataList = new List<QueryTaskData>();
+        foreach (var item in GlobalModel.guideTaskCfg)
+        {
+            QueryTaskData _data = new QueryTaskData();
+            _data.taskId = item.Value.taskId;
+            _data.taskName = item.Value.name;
+            _data.sortId = item.Value.sortId;
+            showDataList.Add(_data);
+        }
+        showDataList.Sort( (x,y) => x.sortId.CompareTo(y.sortId));
+
+        Logger.Warn("guide showDataList.Count  ",showDataList.Count,RecordModel.accDataDict.Count);
+        
+        int sumUser = 0;
+
+        foreach (var item in RecordModel.accDataDict)
+        {                
+            if (item.Value.guideTaskList.Count > 0)
+            {
+//                Logger.Log("000000000000000 ",item.Value.guideTaskList.Count);
+                if (item.Value.newReg == true)
+                {       
+                    sumUser++;
+                    for (int i = 0; i < item.Value.guideTaskList.Count; i++)
+                    {
+                        int hasGuideId = item.Value.guideTaskList[i];
+                        for (int j = 0; j < showDataList.Count; j++)
+                        {
+                            QueryTaskData sd = showDataList[j];
+                            if (sd.taskId == hasGuideId)
+                            {
+                                sd.curNum++;
+
+                                if( i == item.Value.guideTaskList.Count - 1 ) //停留
+                                {
+                                    //sd.lostNum++;
+                                    if (GFunc.GetTimeStamp() - item.Value.lastLoginTime >= 7*3600 )
+                                    {
+                                        sd.lostNum++;
+                                    }                                
+                                }
+                                else
+                                {
+                                    sd.finishNum++;  
+                                }                                
+                            }
+                        } 
+                    }   
+                }                  
+            }
+        }
+
+        for (int i = 0; i < showDataList.Count - 1; i++)
+        {
+           QueryTaskData sd = showDataList[i];
+           sd.percent = sd.finishNum*1.0 / sd.curNum * 100.0;
+        }
+
+        for (int i = 0; i < showDataList.Count - 1; i++)
+        {
+           QueryTaskData sd = showDataList[i];
+           QueryTaskData next_sd = showDataList[i+1];
+           sd.percent2 = (sd.curNum - next_sd.curNum)*1.0 / sumUser * 100.0;
+        }
+
+        for (int i = 0; i < showDataList.Count; i++)
+        {
+           QueryTaskData sd = showDataList[i];
+           sd.percent3 = sd.lostNum*1.0 / sumUser * 100.0;
+        }        
+
+        for (int i = 0; i < showDataList.Count; i++)
+        {
+            AddItem(showDataList[i]); 
+        }
+
+        RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(0, (float)dataItemList.Count * (float)73.6 );    
     }
 
     override public void DoClickExport()
@@ -112,6 +195,8 @@ public class GuideView : View
         item.SetTitle();   
 
         titleItem = item;   
+
+        dataItemList.Add(item); 
     }
 
     public void ClearAllItem()
@@ -123,73 +208,6 @@ public class GuideView : View
             GameObject.Destroy(obj.gameObject);
         }
         
-    }    
-
-    public void SetDataText(S2C_GMQueryTaskMain _pb)
-    {
-        GlobalModel.taskDataDict.Clear();
-        ClearAllItem();
-
-        foreach (var item in _pb.Data)
-        {
-            QueryTaskData data = new QueryTaskData();
-            data.taskId = item.Value.Taskid;
-            data.curNum = item.Value.Stop;
-            data.lostNum = item.Value.Lost;
-            //data.percent = (item.Value.Pass * 100).ToString("F2") + "%";
-            if (data.curNum > 0)
-            {
-                data.percent = Convert.ToDouble(_pb.Sumacc - data.curNum ) / _pb.Sumacc * 100 ;
-                //Logger.Log("1111111111111 " +pect );
-            }
-            else
-            {
-                data.percent = 100.0;
-            }    
-    
-            GlobalModel.taskDataDict.Add(data.taskId,data);
-        }
-
-        List<KeyValuePair<int,QueryTaskData>> lst = new List<KeyValuePair<int,QueryTaskData>>(GlobalModel.taskDataDict);
-
-        lst.Sort(delegate(KeyValuePair<int,QueryTaskData> s1, KeyValuePair<int,QueryTaskData> s2)  
-　　　　　　{
-　　　　　　　　return s1.Key.CompareTo(s2.Key);
-　　　　　　});
-
-        Logger.Log("SetDataTex " + GlobalModel.taskDataDict.Count);
-
-        RectTransform rect = Content.transform.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(0, (float)GlobalModel.taskDataDict.Count * (float)73.6 );                
-
-        //Logger.Log("SetDataTex sumacc " + _pb.Sumacc);
-
-        AddItemTitle();
-        foreach (var item in lst)
-        {
-            AddItem(item.Value);
-        }
-
-        // if (file == "Currency" )
-        // {
-        //     Currency cy = new Currency();
-        //     //byte[] bytes = System.Text.Encoding.Default.GetBytes(s);
-        //     Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
-        //     cy.MergeFrom(pbStream);
-        //     //Output.Log("unpack pb <--- ",msgid, pb.ToString());
-        //     Logger.Log("SetDataTex" + cy.ToString());
-        //     dataText.text = cy.ToString();
-        // }   
-        // if (file == "OwnEquipInfo" )
-        // {
-        //     OwnEquipInfo cy = new OwnEquipInfo();
-        //     //byte[] bytes = System.Text.Encoding.Default.GetBytes(s);
-        //     Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
-        //     cy.MergeFrom(pbStream);
-        //     //Output.Log("unpack pb <--- ",msgid, pb.ToString());
-        //     Logger.Log("SetDataTex" + cy.ToString());
-        //     dataText.text = cy.ToString();
-        // }                
-    }
+    }   
 
 }

@@ -41,7 +41,9 @@ end
 function GetGuideCfg()
 	local tb = {}
 	for k,v in pairs(LuaConfig["GuideConfig"]) do
-		tb[k] = v
+		if v.triggerType ~= "" then
+			tb[k] = v
+		end		
 	end
 
 	local count = 0
