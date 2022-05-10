@@ -66,6 +66,8 @@ public class GlobalModel {
 
     public static Dictionary<int,TaskCfg> guideTaskCfg = new Dictionary<int, TaskCfg>();
     public static Dictionary<int,TaskCfg> mainTaskCfg = new Dictionary<int, TaskCfg>();
+    public static Dictionary<int,int> vipCfg = new Dictionary<int, int>();
+
 
     public void Init()
     {
@@ -78,6 +80,7 @@ public class GlobalModel {
     {
         InitCfgGuideTask();
         InitCfgMainTask();
+        InitCfgVipCard();
     }
 
     public static void InitCfgGuideTask()
@@ -106,7 +109,7 @@ public class GlobalModel {
         //List<string> list =  func();
         XLua.LuaTable tb = func();
 
-        //Logger.Warn("InitCfgMainTask count ",tb.Length);
+        Logger.Warn("InitCfgMainTask count ",tb.Length);
 
         tb.ForEach<int,string>( (id,data) => { 
             //Logger.Warn("mainTaskCfg ",id); 
@@ -115,12 +118,26 @@ public class GlobalModel {
             cfg.name = data;
             mainTaskCfg[id] = cfg;
             } 
+        );        
+    }
+
+
+    public static void InitCfgVipCard()
+    {
+        FuncDelegateTable func = LuaMgr.LuaEnv.Global.Get<FuncDelegateTable>("GetVipCfg");
+        //List<string> list =  func();
+        XLua.LuaTable tb = func();
+
+        Logger.Warn("InitCfgVipCard count ",tb.Length);
+
+        tb.ForEach<int,int>( (id,data) => { 
+            //Logger.Warn("init vip cfg ",id); 
+            vipCfg[id] = data;
+            } 
         );
 
         
     }  
-
-
 
 
 

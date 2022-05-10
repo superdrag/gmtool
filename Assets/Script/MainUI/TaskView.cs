@@ -118,7 +118,7 @@ public class TaskView : View
                         }
                         if (sd.taskId == hasTask)
                         {
-                            if (GFunc.GetTimeStamp() - item.Value.lastLoginTime >= 7*3600 )
+                            if (GFunc.GetTimeStamp() - item.Value.lastLoginTime >= 7*24*3600 )
                             {
                                 sd.lostNum++;
                             } 

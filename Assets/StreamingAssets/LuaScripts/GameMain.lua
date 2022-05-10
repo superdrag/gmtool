@@ -68,6 +68,19 @@ function GetTaskCfg()
 	return tb;
 end
 
+function GetVipCfg()
+	local tb = {}
+	for k,v in pairs(LuaConfig["VpcardConfig"]) do
+		tb[v.vpcard] = v.vpcard
+	end
+	local count = 0
+	for key, value in pairs(tb) do
+		count = count + 1
+	end
+	print('VpcardConfig',count)
+	return tb;
+end
+
 function Test1()
 	print('-------------------call lua func test1()--------------')
 

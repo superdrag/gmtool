@@ -30,7 +30,7 @@ public class VipItem
         infoList[0].text = taskData.taskId.ToString();
         infoList[1].text = taskData.curNum.ToString();
         infoList[2].text = taskData.lostNum.ToString();
-        //infoList[3].text = taskData.percent.ToString();
+        infoList[3].text = taskData.percent.ToString("F2") + "%";
     }
 
     public void SetTitle()
@@ -38,6 +38,6 @@ public class VipItem
         infoList[0].text = "vpcard区间";
         infoList[1].text = "人数";
         infoList[2].text = "流失";
-        //infoList[3].text = "通过率";
+        infoList[3].text = "流失率";
     }
 }

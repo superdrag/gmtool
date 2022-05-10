@@ -825,18 +825,18 @@ public class RecordModel {
 
             if (recordType == RECORD_TYPE.RECORD_VIPCARD)
             {
-                string str = fields[5].Trim();
-                string[] slist = str.Split(',');
-
-                for (int i = 0; i < slist.Length; i++)
+                if (fields.Length >= 6)
                 {
-                    if ( slist[i] == "" ) continue;
-                    int vip =  Convert.ToInt32(slist[i]);
-                    if ( accDataDict[_acc].vipcard < vip )
+                    for (int i = 5; i < fields.Length; i++)
                     {
-                        accDataDict[_acc].vipcard = vip;
-                    }                        
-                }                       
+                        if ( fields[i] == "" ) continue;
+                        int vip = Convert.ToInt32(fields[i]);
+                        if ( accDataDict[_acc].vipcard < vip )
+                        {
+                            accDataDict[_acc].vipcard = vip;
+                        }                        
+                    }
+                }
             }    
 
             if (recordType == RECORD_TYPE.RECORD_GUIDETASk)

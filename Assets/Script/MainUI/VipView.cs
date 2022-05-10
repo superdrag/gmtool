@@ -61,9 +61,78 @@ public class VipView : View
 
     override public void DoClickQuery(int start, int end)
     {
-        C2S_GMQueryTaskMain pb = new C2S_GMQueryTaskMain();
-        pb.Type = 3;
-        NetMgr.SendMsg(MSGID.MSG_CL2PHP_QUERYTASKMAIN,pb);  
+
+        GlobalModel.taskDataDict.Clear();
+        ClearAllItem();
+
+        RecordModel.analyseAllCoreData(start,end,TitleView.country,TitleView.platform);
+
+        //Logger.Log("111111111111111111111111 "+_pb.Data.Count);
+        AddItemTitle();
+
+        // List<KeyValuePair<int,TaskCfg>> lst = new List<KeyValuePair<int,TaskCfg>>(GlobalModel.mainTaskCfg);
+
+        // lst.Sort(delegate(KeyValuePair<int,TaskCfg> s1, KeyValuePair<int,TaskCfg> s2)  
+        // {
+        //         return s1.Key.CompareTo(s2.Key);
+        // }
+        // );
+
+        List<QueryTaskData> showDataList = new List<QueryTaskData>();
+
+        foreach (var item in GlobalModel.vipCfg)
+        {
+            QueryTaskData _data = new QueryTaskData();
+            _data.taskId = item.Key;
+            showDataList.Add(_data);
+        }
+        showDataList.Sort( (x,y) => x.taskId.CompareTo(y.taskId));
+
+        Logger.Warn("vip showDataList.Count  ",showDataList.Count,RecordModel.accDataDict.Count);
+        
+        int sumUser = 0;
+        foreach (var item in RecordModel.accDataDict)
+        {           
+            int hasVip = item.Value.vipcard;            
+            if (hasVip > 0)
+            {
+                //Logger.Log("000000000000000",hasTask);
+                if (item.Value.newReg == true)
+                {       
+                    sumUser++;   
+                    //Logger.Log("11111111111111111111111111 "+item.Key);
+                    for (int i = 0; i < showDataList.Count; i++)
+                    {
+                        QueryTaskData sd = showDataList[i];
+                        if (sd.taskId == hasVip)
+                        {
+                            //Logger.Log("222222222222222222222222222222 "+sd.taskId);
+                            sd.curNum++;
+                            if (GFunc.GetTimeStamp() - item.Value.lastLoginTime >= 7*24*3600 )
+                            {
+                                sd.lostNum++;
+                            }                             
+                        }
+                    }
+                }                  
+            }
+        }
+
+        for (int i = 0; i < showDataList.Count; i++)
+        {
+           QueryTaskData sd = showDataList[i];
+           sd.percent = sd.lostNum*1.0 / sumUser * 100.0;
+        }        
+
+        for (int i = 0; i < showDataList.Count; i++)
+        {
+            AddItem(showDataList[i]); 
+        }
+
+        RectTransform rect = Content.transform.GetComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(0, (float)dataItemList.Count * (float)73.6 );                
+
+        //Logger.Log("SetDataTex sumacc " + _pb.Sumacc);
     }
 
     override public void DoClickExport()
@@ -108,7 +177,8 @@ public class VipView : View
         item.view.transform.localScale = Vector3.one;
         item.SetTitle(); 
 
-        titleItem = item;     
+        titleItem = item; 
+        dataItemList.Add(item);    
     }
 
     public void ClearAllItem()
@@ -120,72 +190,5 @@ public class VipView : View
             GameObject.Destroy(obj.gameObject);
         }
     }    
-
-    public void SetDataText(S2C_GMQueryTaskMain _pb)
-    {
-        GlobalModel.taskDataDict.Clear();
-        ClearAllItem();
-
-        foreach (var item in _pb.Data)
-        {
-            QueryTaskData data = new QueryTaskData();
-            data.taskId = item.Value.Taskid;
-            data.curNum = item.Value.Stop;
-            data.lostNum = item.Value.Lost;
-            //data.percent = (item.Value.Pass * 100).ToString("F2") + "%";
-            if (data.curNum > 0)
-            {
-                data.percent = Convert.ToDouble(_pb.Sumacc - data.curNum ) / _pb.Sumacc * 100 ;
-                //Logger.Log("1111111111111 " +pect );
-            }
-            else
-            {
-                data.percent = 100.0;
-            }    
-    
-            GlobalModel.taskDataDict.Add(data.taskId,data);
-        }
-
-        List<KeyValuePair<int,QueryTaskData>> lst = new List<KeyValuePair<int,QueryTaskData>>(GlobalModel.taskDataDict);
-
-　　　　 lst.Sort(delegate(KeyValuePair<int,QueryTaskData> s1, KeyValuePair<int,QueryTaskData> s2)  
-　　　　　　{
-　　　　　　　　return s1.Key.CompareTo(s2.Key);
-　　　　　　});
-
-        Logger.Log("SetDataTex " + GlobalModel.taskDataDict.Count);
-
-        RectTransform rect = Content.transform.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(0, (float)GlobalModel.taskDataDict.Count * (float)73.6 );                
-
-        //Logger.Log("SetDataTex sumacc " + _pb.Sumacc);
-
-        AddItemTitle();
-        foreach (var item in lst)
-        {
-            AddItem(item.Value);
-        }
-
-        // if (file == "Currency" )
-        // {
-        //     Currency cy = new Currency();
-        //     //byte[] bytes = System.Text.Encoding.Default.GetBytes(s);
-        //     Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
-        //     cy.MergeFrom(pbStream);
-        //     //Output.Log("unpack pb <--- ",msgid, pb.ToString());
-        //     Logger.Log("SetDataTex" + cy.ToString());
-        //     dataText.text = cy.ToString();
-        // }   
-        // if (file == "OwnEquipInfo" )
-        // {
-        //     OwnEquipInfo cy = new OwnEquipInfo();
-        //     //byte[] bytes = System.Text.Encoding.Default.GetBytes(s);
-        //     Google.Protobuf.CodedInputStream pbStream = new Google.Protobuf.CodedInputStream(bytes);
-        //     cy.MergeFrom(pbStream);
-        //     //Output.Log("unpack pb <--- ",msgid, pb.ToString());
-        //     Logger.Log("SetDataTex" + cy.ToString());
-        //     dataText.text = cy.ToString();
-        // }                
-    }
 
 }

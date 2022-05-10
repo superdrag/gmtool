@@ -108,7 +108,7 @@ public class GuideView : View
                                 if( i == item.Value.guideTaskList.Count - 1 ) //停留
                                 {
                                     //sd.lostNum++;
-                                    if (GFunc.GetTimeStamp() - item.Value.lastLoginTime >= 7*3600 )
+                                    if (GFunc.GetTimeStamp() - item.Value.lastLoginTime >= 7*24*3600 )
                                     {
                                         sd.lostNum++;
                                     }                                
