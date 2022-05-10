@@ -90,6 +90,11 @@ public class VipView : View
 
         Logger.Warn("vip showDataList.Count  ",showDataList.Count,RecordModel.accDataDict.Count);
         
+        for (int i = 0; i < showDataList.Count -1; i++)
+        {
+            showDataList[i].taskId2 = showDataList[i+1].taskId;
+        }
+
         int sumUser = 0;
         foreach (var item in RecordModel.accDataDict)
         {           
@@ -101,10 +106,11 @@ public class VipView : View
                 {       
                     sumUser++;   
                     //Logger.Log("11111111111111111111111111 "+item.Key);
-                    for (int i = 0; i < showDataList.Count; i++)
+                    for (int i = 0; i < showDataList.Count-1; i++)
                     {
                         QueryTaskData sd = showDataList[i];
-                        if (sd.taskId == hasVip)
+                        QueryTaskData next_sd = showDataList[i+1];
+                        if (hasVip >= sd.taskId && hasVip <= next_sd.taskId)
                         {
                             //Logger.Log("222222222222222222222222222222 "+sd.taskId);
                             sd.curNum++;

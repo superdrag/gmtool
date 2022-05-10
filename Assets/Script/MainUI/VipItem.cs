@@ -27,7 +27,7 @@ public class VipItem
 
     public void Show(QueryTaskData taskData)
     {
-        infoList[0].text = taskData.taskId.ToString();
+        infoList[0].text = taskData.taskId.ToString() + " ~ " + taskData.taskId2.ToString()  ;
         infoList[1].text = taskData.curNum.ToString();
         infoList[2].text = taskData.lostNum.ToString();
         infoList[3].text = taskData.percent.ToString("F2") + "%";

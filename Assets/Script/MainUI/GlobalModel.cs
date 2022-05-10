@@ -17,6 +17,7 @@ public class QueryUserData
 public class QueryTaskData
 {
     public int taskId;
+    public int taskId2;
     public string taskName;
     public int curNum;
     public int finishNum;
