@@ -142,7 +142,8 @@ public class RecordModel {
     public static List<CoreData> coreList = new List<CoreData>();  //每天全部数据
     public static List<string[]> operateList = new List<string[]>(); //操作记录
     public static List<string[]> cheatList = new List<string[]>(); //作弊
-    public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","TW","GB","BE","NZ","KR","IT","DE","ES","FR","RU","HK","NL","other"};
+    public static List<string> countryList = new List<string>{"ALL", "CN","US","CA","TW","GB","BE","NZ","JP","KR","AU","IT","DE"
+    ,"ES","FR","RU","HK","NL","AE","IN","TH","AT","VN","DK","PL","MX","CH","BR","BG","PH","other"};
     public static List<string> platformList = new List<string>{"ALL", "ios","android","unity","other"};
     public static List<double> coreSumList = new List<double>();
     public static Dictionary<string,AccData> accDataDict = new Dictionary<string, AccData>();
@@ -580,10 +581,14 @@ public class RecordModel {
                 {
                     if (_country == countryList[i])
                     {
-                        _flag = true;
+                        _flag = true;                        
                         break;
                     }
                 }  
+                if (_flag == false && _country != "")
+                {
+                    Logger.Warn("oher country ",_country);
+                }
                 if( _flag ) continue; 
             }
             else
