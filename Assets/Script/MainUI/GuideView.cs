@@ -58,13 +58,18 @@ public class GuideView : View
 
         RectTransform rect = Content.transform.GetComponent<RectTransform>();
         //rect.sizeDelta = new Vector2(0, (float)RecordModel.Instance.coreList.Count * (float)73.6 );
-
-
     }
+
+    override public void OnHide()
+    {
+        GlobalModel.taskDataDict.Clear();
+        ClearAllItem();        
+    }
+
 
     override public void DoClickQuery(int start, int end)
     {
-   GlobalModel.taskDataDict.Clear();
+        GlobalModel.taskDataDict.Clear();
         ClearAllItem();
 
         RecordModel.analyseAllCoreData(start,end,TitleView.country,TitleView.platform);

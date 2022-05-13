@@ -75,4 +75,9 @@ public abstract class View
     {
 
     }    
+
+    public virtual void OnNoShow()
+    {
+        
+    }       
 }

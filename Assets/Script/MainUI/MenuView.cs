@@ -152,6 +152,11 @@ public class MenuView : View
 
         UIMgr.ShowUI(curViewId);
 
+        // if (true)
+        // {
+        //     UIMgr.GetUI(curViewId).OnNoShow();
+        // }
+
         foreach (var item in btnViewDict)
         {
             Image img = item.Value.GetComponent<Image>();

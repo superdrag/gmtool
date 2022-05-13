@@ -60,6 +60,12 @@ public class DiamondView : View
 
     }
 
+    override public void OnHide()
+    {
+        ClearAllItem();        
+    }
+
+
     override public void DoClickQuery(int start, int end)
     {
         ClearAllItem();
