@@ -132,8 +132,9 @@ public class MenuView : View
 
         if (Application.isEditor == false)
         {
-            taskBtn.gameObject.SetActive(false);
-            guideBtn.gameObject.SetActive(false);
+            // vipBtn.gameObject.SetActive(false);
+            // taskBtn.gameObject.SetActive(false);
+            // guideBtn.gameObject.SetActive(false);
         }
 
         saveBtn.gameObject.SetActive(false);

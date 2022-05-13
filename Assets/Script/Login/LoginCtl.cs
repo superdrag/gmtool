@@ -45,7 +45,7 @@ public class LoginCtl
         if( _pb.Ret == (int)ERROR_CODE.ERROR_LOGIN_VERSION )
         {
             //Logger.Error("account or passwd fail! " + _pb.Account);
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"版本错误");
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"版本错误,需升级新客户端");
             UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginButtonVis(true);
             UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("登录失败");
             return;
@@ -63,7 +63,7 @@ public class LoginCtl
         if( _pb.Ret != 0)
         {
             //Logger.Error("account or passwd fail! " + _pb.Account);
-            UIMgr.ShowUI(VIEWID.ALERTINFO,"登录错误码：" +  _pb.Ret);
+            UIMgr.ShowUI(VIEWID.ALERTINFO,"登录失败,错误码：" +  _pb.Ret);
             UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginButtonVis(true);
             UIMgr.GetUI<LoginView>(VIEWID.LOGIN).SetLoginInfo("登录失败");
             return;
@@ -133,7 +133,7 @@ public class LoginCtl
         pb.Account = account;
         pb.Passwd = passwd;
         //pb.Version = "0.1.2021-12-17";
-        pb.Version = "0.1.2022-03-09";
+        pb.Version = GData.ServerVer;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMLOGINACCOUNT, pb);
     }
 

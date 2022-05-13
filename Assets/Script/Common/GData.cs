@@ -129,15 +129,14 @@ public class GData
 
     //PC测试模式 会用到C盘目录资源模拟热更新
     public static bool DebugHotFix = false;
-
+    public static string ServerVer = "0513";
     public static int LoginServerId = 0;
-    
     /// 当前平台
     public static SDKPlatform sdkPlatform = SDKPlatform.LOCAL;
     public static string ResABExName = ".bundle";
     
     //服务器版本号
-    public static string ServerVer = "1.0.0.1";
+
     /// 登录ip
     public static string LoginIP = "";
     

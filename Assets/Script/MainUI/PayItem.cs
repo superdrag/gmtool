@@ -15,6 +15,7 @@ public class PayItem
     public List<Text> infoList = new List<Text>();
 
     private Button repairBtn;
+    private Button copyBtn;
 
     public S2C_GMPayData pbData;
 
@@ -30,6 +31,9 @@ public class PayItem
 
         repairBtn = bg.Find("Button").GetComponent<Button>(); 
         EventTriggerListener.Get(repairBtn.gameObject).onClick = onClickRepair;
+
+        copyBtn = bg.Find("btnCopy").GetComponent<Button>(); 
+        EventTriggerListener.Get(copyBtn.gameObject).onClick = onClickCopy;        
     }
 
     public void Show()
@@ -72,5 +76,10 @@ public class PayItem
         pb.Payorder = pbData.Payorder;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMPAYREPAIR,pb);  
     }
+
+    private void onClickCopy(GameObject go)
+    {
+        GUIUtility.systemCopyBuffer = infoList[3].text;
+    }    
 
 }
