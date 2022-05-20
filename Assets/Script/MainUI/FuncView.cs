@@ -20,6 +20,7 @@ public class FuncView : View
     private Button restartBtn;
     private Button shutdownBtn;
     private Button stopBtn;
+    private InputField stopIF;
     private Button tickoffBtn;
     private Button upConifgBtn;
 
@@ -71,6 +72,7 @@ public class FuncView : View
 
         stopBtn = bg.Find("stopserver/Button").GetComponent<Button>();
         stopBtn.onClick.AddListener(onClickStop); 
+        stopIF = bg.Find("stopserver/IF1").GetComponent<InputField>();
 
         tickoffBtn = bg.Find("tickoff/Button").GetComponent<Button>();
         tickoffBtn.onClick.AddListener(onClickTick); 
@@ -131,7 +133,8 @@ public class FuncView : View
       
     private void onClickStop()
     {
-        GlobalCtl.MSG_CL2PHP_GMCOMMAND( "gm", (int)PHP_COMMAMD.STOPSERVER);      
+        string[] slist = stopIF.text.Split(',');
+        GlobalCtl.MSG_CL2PHP_GMCOMMAND( "gm", (int)PHP_COMMAMD.STOPSERVER,slist[0],slist[1]);      
     }        
 
     private void onClickRecord()

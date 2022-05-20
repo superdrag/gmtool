@@ -32,11 +32,19 @@ public class GMApp : MonoBehaviour {
 
     private void AppInit()
     {
+        Logger.Init(GFunc.AppLogPath());
+
         GData.DebugMode = this.opt_debug_mode;
         GData.PublishId = this.opt_publishid;
 
-        Logger.Init(GFunc.AppLogPath());
-    
+        string _deviceModel = SystemInfo.deviceModel;
+        string _deviceName = SystemInfo.deviceName;
+        string _deviceUniqueIdentifier = SystemInfo.deviceUniqueIdentifier;
+        int _systemMemorySize =SystemInfo.systemMemorySize; //系统内存大小MB(int)
+        string _operatingSystem  =SystemInfo.operatingSystem;   //操作系统(string)     
+        DeviceType _deviceType = SystemInfo.deviceType;
+        Logger.Log("device info ",_deviceModel,_deviceName,_deviceUniqueIdentifier,_systemMemorySize,_operatingSystem);
+
         DontDestroyOnLoad(this);
         //DontDestroyOnLoad(Camera.main);
         //DontDestroyOnLoad(GameObject.Find("Directional Light"));
@@ -51,7 +59,6 @@ public class GMApp : MonoBehaviour {
         GlobalModel.Instance.Init();
         RecordModel.Instance.Init();
         GFunc.Init();
-  
 
         // LuaCall.Test1();
         // string aa=  LuaCall.GetShopNameById(11001);
@@ -59,7 +66,6 @@ public class GMApp : MonoBehaviour {
  
         ResMgr.Instance.Init();
         ResMgr.Instance.StartAppResCheck(OnResLoadOver);//LUA代码必须
-        
     }
 
     public void OnResLoadOver()
