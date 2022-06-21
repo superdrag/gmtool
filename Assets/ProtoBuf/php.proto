@@ -236,6 +236,21 @@ message S2C_GMQueryTaskMain
     int32 sumacc = 4;   
 }
 
+
+// MsgId.MSG_CL2PHP_REPLACEACC                 = 1872    --[[账号替换]]  
+message C2S_ReplaceAcc
+{
+    string account1 = 1; //需要绑定的平台账号
+    string account2 = 2; //游客账号
+}
+// MsgId.MSG_PHP2CL_REPLACEACC                 = 2872    --[[账号替换]] 
+message S2C_ReplaceAcc
+{
+    int32 ret = 1;
+    string account1 = 2;
+    string account2 = 3;
+}
+
 // MsgId.MSG_CL2PHP_GMCOREDATA                 = 1851    --[[GM请求核心数据]]  ProtoDict[MsgId.MSG_CL2PHP_GMCOREDATA] = "PPhp.C2S_GMCoreData"
 message C2S_GMCoreData
 {
@@ -268,6 +283,7 @@ message S2C_GMPayData
     int32 event = 10;
     string paycode = 11;
     int32 usetoken = 12;
+    int32 payrepair = 13;
 }
 
 // MsgId.MSG_CL2PHP_GMPAYREPAIR                = 1862    --[[GM支付补发]]  
@@ -277,13 +293,18 @@ message C2S_GMPayRepair
     string paycode = 2;
     string payorder = 3;
     int32 payid = 4;
+    int32 repirtype = 5; // 2 验证补发 3直接补货
+    string platform = 9; //平台
 
 }
 // MsgId.MSG_PHP2CL_GMPAYREPAIR                = 2862    --[[GM支付补发]]  
 message S2C_GMPayRepair
 {
     int32 ret = 1;
-    string paycode = 2;
-    string payorder = 3;
-    int32 payid = 4;
+    string account = 2;
+    string paycode = 3;
+    string payorder = 4;
+    int32 payid = 5;
+    int32 repirtype =6;
+    string platform = 9; //平台
 }

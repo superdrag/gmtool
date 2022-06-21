@@ -119,8 +119,20 @@ public class MailItem
     private void OnBtnEditClick()
     {    
         Logger.Log("OnBtnEditClick click..........");
-        UIMgr.ShowUI( VIEWID.MailSend, 2, mailData );
+        if (mailData.Configid == 0)
+        {
+            UIMgr.ShowUI( VIEWID.MailSend, 2, mailData );
+        }
+        else
+        {
+            UIMgr.ShowUI( VIEWID.MailSend2, 2, mailData );
+        }
     }
+
+    private void OnBtnEditClick2()
+    {    
+        Logger.Log("OnBtnEditClick click..........");        
+    }    
  
     private void OnBtnDelClick()
     {    
@@ -148,6 +160,7 @@ public class MailItem
         item.Mid = mailData.Mid;
         item.Itemlist = mailData.Itemlist;
         pb.Maildata = item;
+        pb.Maildata.Configid = mailData.Configid;
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_SENDMAIL,pb); 
     }
 

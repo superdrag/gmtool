@@ -50,10 +50,18 @@ public class PayItem
         if (pbData.State == 0)
         {
             infoList[7].text = "成功"; 
+            if (pbData.Payrepair > 0)
+            {
+                infoList[7].text = "补单成功"; 
+            }
         }
         else
         {
             infoList[7].text = "失败:"+pbData.State; 
+            if (pbData.Payrepair > 0)
+            {
+                infoList[7].text = "补单失败"; 
+            }            
         }
         
         if (pbData.State == 0)

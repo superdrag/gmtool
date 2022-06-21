@@ -72,25 +72,25 @@
      <None Include="Assets\XLua\Src\Editor\Template\LuaEnumWrapGCM.tpl.txt" />
      <None Include="Assets\XLua\Src\Editor\Template\PackUnpack.tpl.txt" />
  <Reference Include="UnityEngine.Purchasing">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -330,49 +330,49 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Compress.Info">
- <HintPath>D:/git/gmtool/Assets/Plugins/Compress.Info.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Plugins/Compress.Info.dll</HintPath>
  </Reference>
  <Reference Include="Google.Protobuf">
- <HintPath>D:/git/gmtool/Assets/Plugins/protobuf/Google.Protobuf.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Plugins/protobuf/Google.Protobuf.dll</HintPath>
  </Reference>
  <Reference Include="NPOI">
- <HintPath>D:/git/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.dll</HintPath>
  </Reference>
  <Reference Include="NPOI.OOXML">
- <HintPath>D:/git/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.OOXML.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.OOXML.dll</HintPath>
  </Reference>
  <Reference Include="NPOI.OpenXml4Net">
- <HintPath>D:/git/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.OpenXml4Net.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.OpenXml4Net.dll</HintPath>
  </Reference>
  <Reference Include="NPOI.OpenXmlFormats">
- <HintPath>D:/git/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.OpenXmlFormats.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.OpenXmlFormats.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>D:/git/gmtool/Assets/Script/ThirdParty/DOTween/DOTween.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Script/ThirdParty/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="DOTween43">
- <HintPath>D:/git/gmtool/Assets/Script/ThirdParty/DOTween/DOTween43.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Script/ThirdParty/DOTween/DOTween43.dll</HintPath>
  </Reference>
  <Reference Include="DOTween46">
- <HintPath>D:/git/gmtool/Assets/Script/ThirdParty/DOTween/DOTween46.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Script/ThirdParty/DOTween/DOTween46.dll</HintPath>
  </Reference>
  <Reference Include="DOTween50">
- <HintPath>D:/git/gmtool/Assets/Script/ThirdParty/DOTween/DOTween50.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Script/ThirdParty/DOTween/DOTween50.dll</HintPath>
  </Reference>
  <Reference Include="DOTweenEditor">
- <HintPath>D:/git/gmtool/Assets/Script/ThirdParty/DOTween/Editor/DOTweenEditor.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Script/ThirdParty/DOTween/Editor/DOTweenEditor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
- <HintPath>D:/git/gmtool/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>D:/git/gmtool/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>D:/git/gmtool/Library/PackageCache/com.unity.analytics@3.2.3/Editor/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/PackageCache/com.unity.analytics@3.2.3/Editor/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>D:/git/gmtool/Library/PackageCache/com.unity.analytics@3.2.3/Editor/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/PackageCache/com.unity.analytics@3.2.3/Editor/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

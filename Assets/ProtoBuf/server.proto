@@ -46,17 +46,29 @@ message WD2DB_SaveInitDB
     string rankrobotlist3 = 14;
 }
 
+//MsgId.MSG_PHP2SS_BLACKIP                = 211       --[[设置IP黑名单]]
+message PHP2SS_SetBlackIP
+{
+    repeated string iplist = 1;
+}
+
 //MsgId.MSG_LN2DB_LOGINCHECKACC           = 301       --[[login发送db检测帐号]]
 message LN2DB_LoginCheckAcc
 {
     string account = 1;
     string passwd = 2;
-    string nickname = 3;
 	string headicon = 4;
     string token = 5;
     int32 guest =9;  
     string platform = 11; //平台IOS,GOOGLE
     string country = 12;    //国家
+    string ip = 13;    //ip
+    string mail = 14;    //mail
+    string acctype = 15;//登录的账号种类，google，facbook，gamecenter等等
+    string born = 21; //生日
+    string address = 22; //住址
+    string phoneuid = 23; //手机唯一标识符
+    string nickname = 24; //昵称
 }
 
 //MsgId.MSG_DB2LN_LOGINBACKRST            = 302       --[[db返回login帐号信息]]
@@ -70,6 +82,7 @@ message DB2LN_LoginBcakRet
     string country = 6;    //国家    
     string token = 7;     
     int32 upsavetime = 8;
+    string plataccount = 9;//平台账号
 }
 
 //MsgId.MSG_LN2MT_GETLOWGATE              = 303       --[[login请求master分配gate]]
@@ -79,6 +92,7 @@ message LN2MT_GetLowGate
 	int32 accdbid = 2;  
     int32 upsavetime = 3;
     bool newuser = 4;
+    string plataccount = 5;//平台账号
 }
 
 //MsgId.MSG_MT2LN_BACKLOWGATE             = 304       --[[master分配gate信息给login]]
@@ -91,6 +105,7 @@ message MT2LN_BackLowGate
     int32 ret = 5;
     int32 upsavetime = 6;
     bool newuser = 7;
+    string plataccount = 8;//平台账号
 }
 
 
@@ -195,12 +210,14 @@ message DB2WD_DBLoadInitRoleData
     int32 drawcardcount = 26;
     int32 leaflet2 = 27;
     int32 leaflet3 = 28;
+    int32 leaflet2sec = 29;
 
     string counterstr = 30;
     string cardstr = 31; 
     string fundstr = 32; 
     string passstr = 33;
     string gmailstr = 34;
+    string passlimitstr = 35;
 
     string firstgiftstr = 41;
     string daygiftstr = 42;
@@ -222,7 +239,16 @@ message DB2WD_DBLoadInitRoleData
 
     int32 paytop = 81;
     int32 paysum = 82;
-    int32 adssum = 83;    
+    int32 adssum = 83;   
+
+    int32 battlepasstime = 91; 
+    int32 battlepasscount = 92; 
+    int32 battlepassexp = 93; 
+    int32 battlepasslevel = 94; 
+    int32 battlepasscoin = 95; 
+    int32 battlepassspl = 96;  
+    int32 battlepassendtime = 97;     
+
 }
 
 //MsgId.MSG_DB2WD_BACKINITROLEMAIL        = 315       --db发送world返回玩家mail
@@ -258,6 +284,7 @@ message LG2DB_SavePlayerData
     string fundstr = 24;
     string passstr = 25;
     string gmailstr = 26;
+    string passlimitstr = 27;
 
     string firstgiftstr = 31;
     string daygiftstr = 32;
@@ -277,6 +304,7 @@ message LG2DB_SavePlayerData
     int32 vipcard = 53;//
     int32 leaflet2 = 54;//
     int32 leaflet3 = 55;//
+    int32 leaflet2sec = 56;
 
     int32 maintaskid = 61;
     int32 maintaskarg = 62;
@@ -285,7 +313,16 @@ message LG2DB_SavePlayerData
 
     int32 paytop = 81;
     int32 paysum = 82;
-    int32 adssum = 83;        
+    int32 adssum = 83;   
+    
+    int32 battlepasstime = 91; 
+    int32 battlepasscount = 92; 
+    int32 battlepassexp = 93; 
+    int32 battlepasslevel = 94;   
+    int32 battlepasscoin = 95; 
+    int32 battlepassspl = 96;   
+    int32 battlepassendtime = 97;   
+         
 }
 
 //MsgId.MSG_LG2DB_SAVEPLAYRDATA2          = 502       --[[玩家数据db存盘部分]]  
@@ -386,9 +423,18 @@ message WD2DB_IOSPayRecord
 //MsgId.MSG_WD2DB_IOSPAYREPAIR            = 551      --[[支付补单]]    
 message WD2DB_IOSPayRepair
 {
-    string order = 1;
-    string paycode = 2;    
-    int32 payid = 3;
+    int32 ret = 1;
+    string account = 2;
+    string order = 3;
+    string paycode = 4;    
+    string platform = 5;
+    string country = 6;
+    int32 paynum = 7;
+    int32 paytime = 8;
+    int32 purchtype = 10;
+    int32 payrepair = 11;
+    int32 event = 12;
+    int32 payid = 13;
 }
 
 
@@ -418,6 +464,20 @@ message WD2DB_SaveRank
     int32 addRobotInterval = 8;
     int32 endtime = 9;
 }
+
+
+//MsgId.MSG_DB2WD_INITRANDNAME        = 562       --[[初始化随机名字]]      
+message WD2DB_InitRandName
+{
+    repeated string namelist = 1;//
+}
+
+//MsgId.MSG_DB2WD_INITPAYORDER        = 563       --[[初始化订单]]          
+message WD2DB_InitPayOrder
+{
+    repeated string orderlist = 1;//
+}
+
 
 //-----------------------------------
 

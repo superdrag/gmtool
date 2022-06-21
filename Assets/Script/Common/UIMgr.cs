@@ -19,6 +19,7 @@ public enum VIEWID
     Recharge = 31,
     Mail = 32,
     MailSend = 33,
+    MailSend2 = 34,
 
     Limit = 35,
     LimitNew = 36,  
@@ -43,7 +44,8 @@ public enum VIEWID
     VipView = 54,
     RankView = 55,
 
-
+    PlayerAcc = 56,
+    Ads = 57,
 
     //-------------------------------
 }
@@ -77,6 +79,7 @@ public static class UIMgr
         RegisterUI(VIEWID.Recharge,RechargeView.Instance);    
         RegisterUI(VIEWID.Mail,MailView.Instance);
         RegisterUI(VIEWID.MailSend,MailSendView.Instance);
+        RegisterUI(VIEWID.MailSend2,MailSendView2.Instance);
 
         RegisterUI(VIEWID.CoreView,CoreView.Instance);
         RegisterUI(VIEWID.CoreSumView,CoreSumView.Instance);   
@@ -106,6 +109,9 @@ public static class UIMgr
         RegisterUI(VIEWID.CardView,CardView.Instance);
 
         RegisterUI(VIEWID.RankView,RankView.Instance);
+
+        RegisterUI(VIEWID.PlayerAcc,PlayerAccView.Instance);
+        RegisterUI(VIEWID.Ads,AdsView.Instance);
         
     }    
 

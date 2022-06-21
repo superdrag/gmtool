@@ -11,17 +11,17 @@
         "server_id":2,      
         "server_name":"内网服务器2",
         "debug":1,
-        "php_ip":"192.168.110.80",    
+        "php_ip":"192.168.110.46",    
         "php_port":8101,
-        "record_url":"http://192.168.110.80/record/"
+        "record_url":"http://192.168.110.46/record/"
     },    
     {           
         "server_id":3,  
         "server_name":"刘海超服务器",
         "debug":1,
-        "php_ip":"192.168.110.40",    
+        "php_ip":"192.168.110.44",    
         "php_port":8101,
-        "record_url":"http://192.168.110.40/record/"
+        "record_url":"http://192.168.110.44/record/"
     },
     {       
         "server_id":4,      

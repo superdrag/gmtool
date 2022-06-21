@@ -62,7 +62,8 @@ public enum MSGID
     MSG_CL2PHP_QUERYTASKMAIN              = 1871,    //--[[主线任务查询]] 
     MSG_PHP2CL_QUERYTASKMAIN              = 2871,    //--[[主线任务查询]]  
 
-
+    MSG_CL2PHP_REPLACEACC                 = 1872,   //[[账号替换]]  ProtoDict[MsgId.MSG_CL2PHP_REPLACEACC] = "PPhp.C2S_ReplaceAcc"
+    MSG_PHP2CL_REPLACEACC                 = 2872,    //[[账号替换]]  ProtoDict[MsgId.MSG_PHP2CL_REPLACEACC] = "PPhp.S2C_ReplaceAcc"
 
 }
 

@@ -179,10 +179,10 @@ public class MailSendView : View
         }
 
 
-        int mailType = 1; //查询个人邮件
+        int mailType = 1; //个人邮件
         if( allTog.isOn ) 
         {
-            mailType = 2; //查询全局邮件     
+            mailType = 2; //全局邮件     
             accountText.text = "";
         }
 
@@ -205,6 +205,7 @@ public class MailSendView : View
         item.Itemlist = itemListText.text;
         item.Pasttime = passDay;
         item.Account = accountText.text;
+
 
         item.Type = mailType;
         item.Agree = 0;

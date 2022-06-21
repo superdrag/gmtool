@@ -16,6 +16,7 @@ public class MailView : View
     private Button serverBtn;
     private Button personalBtn;
     private Button newMailBtn;
+    private Button newMailBtn2;
     private InputField accText;
 
     public Transform Content;
@@ -57,6 +58,8 @@ public class MailView : View
         newMailBtn = bg.Find("btnGroup/newMailBtn").GetComponent<Button>();  
         EventTriggerListener.Get(newMailBtn.gameObject).onClick = onClickNewMail;
 
+        newMailBtn2 = bg.Find("btnGroup/newMailBtn2").GetComponent<Button>();  
+        EventTriggerListener.Get(newMailBtn2.gameObject).onClick = onClickNewMail2;
 
         accText = bg.Find("btnGroup/InputField").GetComponent<InputField>();
 
@@ -117,6 +120,11 @@ public class MailView : View
     private void onClickNewMail(GameObject go)
     {
         UIMgr.ShowUI( VIEWID.MailSend, 1 );
+    }
+
+    private void onClickNewMail2(GameObject go)
+    {
+        UIMgr.ShowUI( VIEWID.MailSend2, 1 );
     }
 
     private void onClickSend()

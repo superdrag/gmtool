@@ -50,6 +50,7 @@ public class MenuView : View
         Button paydataBtn = viewRoot.Find("paydata").GetComponent<Button>();
         Button limitBtn = viewRoot.Find("limit").GetComponent<Button>();
         Button gmaccBtn = viewRoot.Find("gmacc").GetComponent<Button>();
+        Button playeraccBtn = viewRoot.Find("playeracc").GetComponent<Button>();
         Button recordBtn = viewRoot.Find("record").GetComponent<Button>();
         Button saveBtn = viewRoot.Find("save").GetComponent<Button>();
         Button funcBtn = viewRoot.Find("func").GetComponent<Button>();
@@ -62,6 +63,7 @@ public class MenuView : View
         Button rankBtn = viewRoot.Find("rank").GetComponent<Button>();
         Button payCoreBtn = viewRoot.Find("paycore").GetComponent<Button>();
         Button cheatBtn = viewRoot.Find("cheat").GetComponent<Button>();
+        Button adsBtn = viewRoot.Find("ads").GetComponent<Button>();
 
         btnViewDict[VIEWID.Mail] = youjianBtn;
         btnViewDict[VIEWID.CoreView] = hexinBtn;
@@ -82,6 +84,8 @@ public class MenuView : View
         btnViewDict[VIEWID.RankView] = rankBtn;
         btnViewDict[VIEWID.PayCoreView] = payCoreBtn;
         btnViewDict[VIEWID.CheatView] = cheatBtn;
+        btnViewDict[VIEWID.PlayerAcc] = playeraccBtn;
+        btnViewDict[VIEWID.Ads] = adsBtn;
         
         foreach (var item in btnViewDict)
         {
@@ -123,6 +127,7 @@ public class MenuView : View
             funcBtn.gameObject.SetActive(false);
             limitBtn.gameObject.SetActive(false);
             saveBtn.gameObject.SetActive(false);
+            //playeraccBtn.gameObject.SetActive(false);            
         }
 
         curViewId = (VIEWID.CoreView);
@@ -132,7 +137,7 @@ public class MenuView : View
 
         if (Application.isEditor == false)
         {
-            // vipBtn.gameObject.SetActive(false);
+            //playeraccBtn.gameObject.SetActive(false);
             // taskBtn.gameObject.SetActive(false);
             // guideBtn.gameObject.SetActive(false);
         }

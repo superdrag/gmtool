@@ -90,8 +90,10 @@
      <Compile Include="Assets\Script\LuaMgr\LuaComponent.cs" />
      <Compile Include="Assets\Script\LuaMgr\luaMgr.cs" />
      <Compile Include="Assets\Script\LuaMgr\LuaReg.cs" />
+     <Compile Include="Assets\Script\MainUI\AdsItem.cs" />
      <Compile Include="Assets\Script\MainUI\AdsLTVitem.cs" />
      <Compile Include="Assets\Script\MainUI\AdsLTVView.cs" />
+     <Compile Include="Assets\Script\MainUI\AdsView.cs" />
      <Compile Include="Assets\Script\MainUI\AlertInfoView.cs" />
      <Compile Include="Assets\Script\MainUI\BlankView.cs" />
      <Compile Include="Assets\Script\MainUI\CardView.cs" />
@@ -116,6 +118,7 @@
      <Compile Include="Assets\Script\MainUI\LimitView.cs" />
      <Compile Include="Assets\Script\MainUI\MailItem.cs" />
      <Compile Include="Assets\Script\MainUI\MailSendView.cs" />
+     <Compile Include="Assets\Script\MainUI\MailSendView2.cs" />
      <Compile Include="Assets\Script\MainUI\MailView.cs" />
      <Compile Include="Assets\Script\MainUI\MenuView.cs" />
      <Compile Include="Assets\Script\MainUI\PayCoreItem.cs" />
@@ -124,6 +127,7 @@
      <Compile Include="Assets\Script\MainUI\PayGiftView.cs" />
      <Compile Include="Assets\Script\MainUI\PayItem.cs" />
      <Compile Include="Assets\Script\MainUI\PayView.cs" />
+     <Compile Include="Assets\Script\MainUI\PlayerAccView.cs" />
      <Compile Include="Assets\Script\MainUI\RankItem.cs" />
      <Compile Include="Assets\Script\MainUI\RankView.cs" />
      <Compile Include="Assets\Script\MainUI\RechargeView.cs" />
@@ -138,6 +142,7 @@
      <Compile Include="Assets\Script\MainUI\VipView.cs" />
      <Compile Include="Assets\Script\MsgId.cs" />
      <Compile Include="Assets\Script\MsgReg.cs" />
+     <Compile Include="Assets\Script\Proto\Client.cs" />
      <Compile Include="Assets\Script\Proto\Common.cs" />
      <Compile Include="Assets\Script\Proto\LocalData.cs" />
      <Compile Include="Assets\Script\Proto\Php.cs" />
@@ -183,46 +188,41 @@
      <Compile Include="Assets\XLua\Src\TemplateEngine\TemplateEngine.cs" />
      <Compile Include="Assets\XLua\Src\TypeExtensions.cs" />
      <Compile Include="Assets\XLua\Src\Utils.cs" />
-     <None Include="Assets\record\192.168.110.45\list.txt" />
      <None Include="Assets\Script\ThirdParty\DOTween\DOTween46.xml" />
      <None Include="Assets\Script\ThirdParty\DOTween\readme.txt" />
+     <None Include="Assets\record\43.153.74.73\list.txt" />
      <None Include="Assets\XLua\Resources\xlua\util.lua.txt" />
      <None Include="Assets\record\47.88.11.49\list.txt" />
-     <None Include="Assets\record\47.254.90.181\list.txt" />
-     <None Include="Assets\record\192.168.110.80\list.txt" />
-     <None Include="Assets\record\43.153.74.220\list.txt" />
+     <None Include="Assets\record\192.168.110.45\list.txt" />
      <None Include="Assets\XLua\Resources\perf\profiler.lua.txt" />
-     <None Include="Assets\record\192.168.110.40\list.txt" />
-     <None Include="Assets\record\43.153.74.73\list.txt" />
-     <None Include="Assets\record\47.254.41.189\list.txt" />
      <None Include="Assets\Resources\protoc.lua.txt" />
-     <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />
      <None Include="Assets\XLua\Gen\link.xml" />
+     <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />
      <None Include="Assets\Script\ThirdParty\DOTween\DOTween43.xml" />
      <None Include="Assets\Script\ThirdParty\DOTween\DOTween50.xml" />
      <None Include="Assets\StreamingAssets\LuaScripts\Config\LuaList.txt" />
      <None Include="Assets\XLua\CHANGELOG.txt" />
      <None Include="Assets\XLua\Resources\tdr\tdr.lua.txt" />
  <Reference Include="UnityEngine.Purchasing">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>D:/git/gmtool/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -426,37 +426,37 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="Compress.Info">
- <HintPath>D:/git/gmtool/Assets/Plugins/Compress.Info.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Plugins/Compress.Info.dll</HintPath>
  </Reference>
  <Reference Include="Google.Protobuf">
- <HintPath>D:/git/gmtool/Assets/Plugins/protobuf/Google.Protobuf.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Plugins/protobuf/Google.Protobuf.dll</HintPath>
  </Reference>
  <Reference Include="NPOI">
- <HintPath>D:/git/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.dll</HintPath>
  </Reference>
  <Reference Include="NPOI.OOXML">
- <HintPath>D:/git/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.OOXML.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.OOXML.dll</HintPath>
  </Reference>
  <Reference Include="NPOI.OpenXml4Net">
- <HintPath>D:/git/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.OpenXml4Net.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.OpenXml4Net.dll</HintPath>
  </Reference>
  <Reference Include="NPOI.OpenXmlFormats">
- <HintPath>D:/git/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.OpenXmlFormats.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Plugins/x86_64/NPOI/NPOI.OpenXmlFormats.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>D:/git/gmtool/Assets/Script/ThirdParty/DOTween/DOTween.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Script/ThirdParty/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="DOTween43">
- <HintPath>D:/git/gmtool/Assets/Script/ThirdParty/DOTween/DOTween43.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Script/ThirdParty/DOTween/DOTween43.dll</HintPath>
  </Reference>
  <Reference Include="DOTween46">
- <HintPath>D:/git/gmtool/Assets/Script/ThirdParty/DOTween/DOTween46.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Script/ThirdParty/DOTween/DOTween46.dll</HintPath>
  </Reference>
  <Reference Include="DOTween50">
- <HintPath>D:/git/gmtool/Assets/Script/ThirdParty/DOTween/DOTween50.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Assets/Script/ThirdParty/DOTween/DOTween50.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>D:/git/gmtool/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>D:/svn/BaseBall/trunk/net/gmtool/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

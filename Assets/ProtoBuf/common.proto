@@ -72,6 +72,7 @@ message PB_MailItemEx
     string account = 10;
     int32 type = 11; // 1个人 2全局
     int32 agree = 12; // 0 待批准 1同意 2拒绝 
+    int32 configid = 13; //配置id
 }
 
 //卡牌

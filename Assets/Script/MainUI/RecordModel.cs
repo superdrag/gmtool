@@ -103,6 +103,7 @@ public class AccData
     public int lastLoginTime = 0;
 
     public List<int> guideTaskList = new List<int>();
+    public int adsNum = 0;
 
     public void Reset()
     {
@@ -798,16 +799,24 @@ public class RecordModel {
 
             if (recordType == RECORD_TYPE.RECORD_WATCHADV)
             {
-                coreData.watchAds++;
+                int _adv_count = 1;
+                if (fields.Length >= 7)
+                {
+                    _adv_count = Convert.ToInt32( fields[6] );
+                }   
+                coreData.watchAds+=_adv_count;
 
                 if ( coreData.adsAccDict.ContainsKey(_acc) )
                 {
-                    coreData.adsAccDict[_acc] += 1;
+                    coreData.adsAccDict[_acc] += _adv_count;
                 }   
                 else
                 {
-                    coreData.adsAccDict[_acc] = 1;                    
-                }                 
+                    coreData.adsAccDict[_acc] = _adv_count;                    
+                }
+
+                accDataDict[_acc].adsNum += _adv_count;
+                
             }
 
             if (recordType == RECORD_TYPE.RECORD_RANKLIST)

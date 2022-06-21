@@ -35,43 +35,43 @@ namespace PBase {
             "TWFpbEl0ZW0SCwoDbWlkGAEgASgJEg0KBXRpdGxlGAIgASgJEg8KB2NvbnRl",
             "bnQYAyABKAkSEAoIaXRlbWxpc3QYBCABKAkSEAoIc2VuZHRpbWUYBSABKAUS",
             "EAoIcmVhZHRpbWUYBiABKAUSEAoIcGFzdHRpbWUYByABKAUSDQoFc3RhdGUY",
-            "CCABKAUSEAoIY29uZmlnaWQYCSABKAUSEQoJcGFyYW1saXN0GAogASgJItUB",
+            "CCABKAUSEAoIY29uZmlnaWQYCSABKAUSEQoJcGFyYW1saXN0GAogASgJIucB",
             "Cg1QQl9NYWlsSXRlbUV4EgsKA21pZBgBIAEoCRINCgV0aXRsZRgCIAEoCRIP",
             "Cgdjb250ZW50GAMgASgJEhAKCGl0ZW1saXN0GAQgASgJEhAKCHNlbmR0aW1l",
             "GAUgASgFEhAKCHJlYWR0aW1lGAYgASgFEhAKCHBhc3R0aW1lGAcgASgFEg0K",
             "BXN0YXRlGAggASgFEhIKCnBsYXllcmRiaWQYCSABKAUSDwoHYWNjb3VudBgK",
-            "IAEoCRIMCgR0eXBlGAsgASgFEg0KBWFncmVlGAwgASgFIjkKD1BCX1RlYW1D",
-            "YXJkSW5mbxIKCgJpZBgBIAEoBRILCgNudW0YAiABKAUSDQoFbGV2ZWwYAyAB",
-            "KAUiNgoLUEJfR2lmdFBhY2sSCgoCaWQYASABKAUSDQoFY291bnQYAiABKAUS",
-            "DAoEdGltZRgDIAEoBSJMCgpQQl9SYW5DYXJkEg4KBnNob3BpZBgBIAEoBRIO",
-            "CgZjYXJkaWQYAiABKAUSDwoHY2FyZG51bRgDIAEoBRINCgVjb3VudBgEIAEo",
-            "BSJkCgpQQl9SYW5rT2JqEgoKAmlkGAEgASgFEg8KB2FjY291bnQYAiABKAkS",
-            "DAoEbmFtZRgDIAEoCRIPCgd2aXBjYXJkGAQgASgFEgwKBHJhbmsYBSABKAUS",
-            "DAoEaWNvbhgGIAEoCSJNCgdQQl9JdGVtEhAKCGl0ZW1HdWlkGAEgASgJEg4K",
-            "Bml0ZW1JZBgCIAEoBRIPCgdpdGVtUG9zGAMgASgFEg8KB2l0ZW1OdW0YBCAB",
-            "KAUiLwoLUEJfSXRlbUxpc3QSIAoIaXRlbUxpc3QYASADKAsyDi5QQmFzZS5Q",
-            "Ql9JdGVtIjkKDlBCX1Rhc2tDb3VudGVyEgsKA2NJZBgBIAEoBRIMCgRjQXJn",
-            "GAIgASgFEgwKBGNOdW0YAyABKAUifQoHUEJfVGFzaxIOCgZ0YXNrSWQYASAB",
-            "KAUSEQoJdGFza1N0YXRlGAIgASgFEhIKCmFjY2VwdFRpbWUYAyABKAUSEgoK",
-            "c3VibWl0VGltZRgEIAEoBRInCghjb3VudGVycxgFIAMoCzIVLlBCYXNlLlBC",
-            "X1Rhc2tDb3VudGVyIi8KC1BCX1Rhc2tMaXN0EiAKCHRhc2tMaXN0GAEgAygL",
-            "Mg4uUEJhc2UuUEJfVGFzayJICgpQQl9Db3VudGVyEhEKCWNvdW50ZXJJZBgB",
-            "IAEoBRISCgpjb3VudGVyTnVtGAIgASgFEhMKC2NvdW50ZXJBcmdzGAMgAygF",
-            "IjgKDlBCX0NvdW50ZXJMaXN0EiYKC2NvdW50ZXJMaXN0GAEgAygLMhEuUEJh",
-            "c2UuUEJfQ291bnRlciKdAgoLUEJfVW5pb25PYmoSDwoHdW5pb25JZBgBIAEo",
-            "BRIRCgl1bmlvbk5hbWUYAiABKAkSEQoJdW5pb25UeXBlGAMgASgFEg8KB25w",
-            "Y0xpc3QYBCADKAUSEQoJc2tpbGxMaXN0GAUgAygFEhIKCnVuaW9uTGV2ZWwY",
-            "BiABKAUSEAoIdW5pb25FWFAYByABKAMSEgoKdW5pb25Nb25leRgIIAEoAxIR",
-            "CgltYXhNZW1iZXIYCSABKAUSEQoJbWF4VkNoYWlyGAogASgFEhAKCG1heEVs",
-            "ZGVyGAsgASgFEhMKC3VuaW9uTm90aWNlGAwgASgJEhcKD3VuaW9uQ3JlYXRl",
-            "VGltZRgNIAEoBRITCgtjcmVhdG9yTmFtZRgOIAEoCSKpAQoOUEJfVW5pb25N",
-            "ZW1iZXISDAoEZGJpZBgBIAEoBRIRCgl1bmlvbkRiaWQYAiABKAUSEQoJcGx5",
-            "ZXJEQmlkGAMgASgFEhIKCm1lbWJlck5hbWUYBCABKAkSDAoEcmFuaxgFIAEo",
-            "BRINCgVvZmZlchgGIAEoBRIQCghqb2luVGltZRgHIAEoBRIQCghleGl0VGlt",
-            "ZRgIIAEoBRIOCgZvbmxpbmUYCSABKAUiOgoRUEJfVW5pb25BcHBseUluZm8S",
-            "EgoKcGxheWVyRGJpZBgBIAEoBRIRCglhcHBseVRpbWUYAiABKAUiLQoPUEJf",
-            "VW5pb25Mb2dJbmZvEgwKBHRpbWUYASABKAUSDAoEdGV4dBgCIAEoCWIGcHJv",
-            "dG8z"));
+            "IAEoCRIMCgR0eXBlGAsgASgFEg0KBWFncmVlGAwgASgFEhAKCGNvbmZpZ2lk",
+            "GA0gASgFIjkKD1BCX1RlYW1DYXJkSW5mbxIKCgJpZBgBIAEoBRILCgNudW0Y",
+            "AiABKAUSDQoFbGV2ZWwYAyABKAUiNgoLUEJfR2lmdFBhY2sSCgoCaWQYASAB",
+            "KAUSDQoFY291bnQYAiABKAUSDAoEdGltZRgDIAEoBSJMCgpQQl9SYW5DYXJk",
+            "Eg4KBnNob3BpZBgBIAEoBRIOCgZjYXJkaWQYAiABKAUSDwoHY2FyZG51bRgD",
+            "IAEoBRINCgVjb3VudBgEIAEoBSJkCgpQQl9SYW5rT2JqEgoKAmlkGAEgASgF",
+            "Eg8KB2FjY291bnQYAiABKAkSDAoEbmFtZRgDIAEoCRIPCgd2aXBjYXJkGAQg",
+            "ASgFEgwKBHJhbmsYBSABKAUSDAoEaWNvbhgGIAEoCSJNCgdQQl9JdGVtEhAK",
+            "CGl0ZW1HdWlkGAEgASgJEg4KBml0ZW1JZBgCIAEoBRIPCgdpdGVtUG9zGAMg",
+            "ASgFEg8KB2l0ZW1OdW0YBCABKAUiLwoLUEJfSXRlbUxpc3QSIAoIaXRlbUxp",
+            "c3QYASADKAsyDi5QQmFzZS5QQl9JdGVtIjkKDlBCX1Rhc2tDb3VudGVyEgsK",
+            "A2NJZBgBIAEoBRIMCgRjQXJnGAIgASgFEgwKBGNOdW0YAyABKAUifQoHUEJf",
+            "VGFzaxIOCgZ0YXNrSWQYASABKAUSEQoJdGFza1N0YXRlGAIgASgFEhIKCmFj",
+            "Y2VwdFRpbWUYAyABKAUSEgoKc3VibWl0VGltZRgEIAEoBRInCghjb3VudGVy",
+            "cxgFIAMoCzIVLlBCYXNlLlBCX1Rhc2tDb3VudGVyIi8KC1BCX1Rhc2tMaXN0",
+            "EiAKCHRhc2tMaXN0GAEgAygLMg4uUEJhc2UuUEJfVGFzayJICgpQQl9Db3Vu",
+            "dGVyEhEKCWNvdW50ZXJJZBgBIAEoBRISCgpjb3VudGVyTnVtGAIgASgFEhMK",
+            "C2NvdW50ZXJBcmdzGAMgAygFIjgKDlBCX0NvdW50ZXJMaXN0EiYKC2NvdW50",
+            "ZXJMaXN0GAEgAygLMhEuUEJhc2UuUEJfQ291bnRlciKdAgoLUEJfVW5pb25P",
+            "YmoSDwoHdW5pb25JZBgBIAEoBRIRCgl1bmlvbk5hbWUYAiABKAkSEQoJdW5p",
+            "b25UeXBlGAMgASgFEg8KB25wY0xpc3QYBCADKAUSEQoJc2tpbGxMaXN0GAUg",
+            "AygFEhIKCnVuaW9uTGV2ZWwYBiABKAUSEAoIdW5pb25FWFAYByABKAMSEgoK",
+            "dW5pb25Nb25leRgIIAEoAxIRCgltYXhNZW1iZXIYCSABKAUSEQoJbWF4VkNo",
+            "YWlyGAogASgFEhAKCG1heEVsZGVyGAsgASgFEhMKC3VuaW9uTm90aWNlGAwg",
+            "ASgJEhcKD3VuaW9uQ3JlYXRlVGltZRgNIAEoBRITCgtjcmVhdG9yTmFtZRgO",
+            "IAEoCSKpAQoOUEJfVW5pb25NZW1iZXISDAoEZGJpZBgBIAEoBRIRCgl1bmlv",
+            "bkRiaWQYAiABKAUSEQoJcGx5ZXJEQmlkGAMgASgFEhIKCm1lbWJlck5hbWUY",
+            "BCABKAkSDAoEcmFuaxgFIAEoBRINCgVvZmZlchgGIAEoBRIQCghqb2luVGlt",
+            "ZRgHIAEoBRIQCghleGl0VGltZRgIIAEoBRIOCgZvbmxpbmUYCSABKAUiOgoR",
+            "UEJfVW5pb25BcHBseUluZm8SEgoKcGxheWVyRGJpZBgBIAEoBRIRCglhcHBs",
+            "eVRpbWUYAiABKAUiLQoPUEJfVW5pb25Mb2dJbmZvEgwKBHRpbWUYASABKAUS",
+            "DAoEdGV4dBgCIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -81,7 +81,7 @@ namespace PBase {
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_ParamIntDict), global::PBase.PB_ParamIntDict.Parser, new[]{ "Dict" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_Money), global::PBase.PB_Money.Parser, new[]{ "Type", "Num" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItem), global::PBase.PB_MailItem.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "Sendtime", "Readtime", "Pasttime", "State", "Configid", "Paramlist" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItemEx), global::PBase.PB_MailItemEx.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "Sendtime", "Readtime", "Pasttime", "State", "Playerdbid", "Account", "Type", "Agree" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_MailItemEx), global::PBase.PB_MailItemEx.Parser, new[]{ "Mid", "Title", "Content", "Itemlist", "Sendtime", "Readtime", "Pasttime", "State", "Playerdbid", "Account", "Type", "Agree", "Configid" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_TeamCardInfo), global::PBase.PB_TeamCardInfo.Parser, new[]{ "Id", "Num", "Level" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_GiftPack), global::PBase.PB_GiftPack.Parser, new[]{ "Id", "Count", "Time" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::PBase.PB_RanCard), global::PBase.PB_RanCard.Parser, new[]{ "Shopid", "Cardid", "Cardnum", "Count" }, null, null, null),
@@ -1202,6 +1202,7 @@ namespace PBase {
       account_ = other.account_;
       type_ = other.type_;
       agree_ = other.agree_;
+      configid_ = other.configid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1369,6 +1370,20 @@ namespace PBase {
       }
     }
 
+    /// <summary>Field number for the "configid" field.</summary>
+    public const int ConfigidFieldNumber = 13;
+    private int configid_;
+    /// <summary>
+    ///配置id
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Configid {
+      get { return configid_; }
+      set {
+        configid_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PB_MailItemEx);
@@ -1394,6 +1409,7 @@ namespace PBase {
       if (Account != other.Account) return false;
       if (Type != other.Type) return false;
       if (Agree != other.Agree) return false;
+      if (Configid != other.Configid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1412,6 +1428,7 @@ namespace PBase {
       if (Account.Length != 0) hash ^= Account.GetHashCode();
       if (Type != 0) hash ^= Type.GetHashCode();
       if (Agree != 0) hash ^= Agree.GetHashCode();
+      if (Configid != 0) hash ^= Configid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1473,6 +1490,10 @@ namespace PBase {
         output.WriteRawTag(96);
         output.WriteInt32(Agree);
       }
+      if (Configid != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Configid);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1516,6 +1537,9 @@ namespace PBase {
       }
       if (Agree != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Agree);
+      }
+      if (Configid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Configid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1563,6 +1587,9 @@ namespace PBase {
       }
       if (other.Agree != 0) {
         Agree = other.Agree;
+      }
+      if (other.Configid != 0) {
+        Configid = other.Configid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1621,6 +1648,10 @@ namespace PBase {
           }
           case 96: {
             Agree = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            Configid = input.ReadInt32();
             break;
           }
         }

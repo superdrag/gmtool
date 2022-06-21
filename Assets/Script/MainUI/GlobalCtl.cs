@@ -39,18 +39,15 @@ public class GlobalCtl
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_QUERYALLMAIL, MSG_PHP2CL_QUERYALLMAIL,new S2C_GMQueryAllMail());
 
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_DELETEMAIL, MSG_PHP2CL_DELETEMAIL,new S2C_GMDeleteMail());
-        NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_MODMAIL, MSG_PHP2CL_MODMAIL,new S2C_GMModMail());
-        
-
-        
+        NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_MODMAIL, MSG_PHP2CL_MODMAIL,new S2C_GMModMail());        
 
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_GMCOMMAND, MSG_PHP2CL_GMCOMMAND,new S2C_GMCommand());
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_GMPAYDATA, MSG_PHP2CL_GMPAYDATA,new S2C_GMPayData());
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_GMPAYREPAIR, MSG_PHP2CL_GMPAYREPAIR,new S2C_GMPayRepair());
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_QUERYNORMALINFO, MSG_PHP2CL_QUERYNORMALINFO,new S2C_GMQueryNormalInfo()); 
         NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_QUERYTASKMAIN, MSG_PHP2CL_QUERYTASKMAIN,new S2C_GMQueryTaskMain()); 
-         
-        
+        NetMgr.RegisterMsgHandler((int)MSGID.MSG_PHP2CL_REPLACEACC, MSG_PHP2CL_REPLACEACC,new S2C_ReplaceAcc()); 
+                 
     }
 
     public void MSG_SS2CL_ERRORCODE(MsgPack msg)
@@ -346,6 +343,13 @@ public class GlobalCtl
         }
         
     }
+
+    public static void MSG_PHP2CL_REPLACEACC(MsgPack msg)
+    {
+        S2C_ReplaceAcc _pb = msg.UnpackProtoBuf<S2C_ReplaceAcc>( new S2C_ReplaceAcc() );  
+        PlayerAccView playerAccView = UIMgr.GetUI<PlayerAccView>(VIEWID.PlayerAcc);
+        playerAccView.OnBangAcc( _pb );
+    }    
     
 
 //////////////////////////////////////// 发送
@@ -406,5 +410,5 @@ public class GlobalCtl
         NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMPAYDATA,pb);  
     }
 
-    
+
 }
