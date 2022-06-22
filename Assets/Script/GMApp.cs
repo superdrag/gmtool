@@ -51,7 +51,7 @@ public class GMApp : MonoBehaviour {
         DontDestroyOnLoad(GameObject.Find("UICamera"));
         DontDestroyOnLoad(GameObject.Find("UICanvas"));
         DontDestroyOnLoad(GameObject.Find("LocalCache"));        
-        instance = this; 
+        instance = this;
 
         AppConfig.Instance.InitLoad();
         Timer.Instance.Init();

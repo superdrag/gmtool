@@ -29,8 +29,8 @@ public class PayItem
             infoList.Add(bg.GetChild(i).GetComponent<Text>());
         }
 
-        repairBtn = bg.Find("Button").GetComponent<Button>(); 
-        EventTriggerListener.Get(repairBtn.gameObject).onClick = onClickRepair;
+        // repairBtn = bg.Find("Button").GetComponent<Button>(); 
+        // EventTriggerListener.Get(repairBtn.gameObject).onClick = onClickRepair;
 
         copyBtn = bg.Find("btnCopy").GetComponent<Button>(); 
         EventTriggerListener.Get(copyBtn.gameObject).onClick = onClickCopy;        
@@ -64,26 +64,26 @@ public class PayItem
             }            
         }
         
-        if (pbData.State == 0)
-        {
-            repairBtn.gameObject.SetActive(false);
-        }
-        else
-        {
-            repairBtn.gameObject.SetActive(true);
-        }
+        // if (pbData.State == 0)
+        // {
+        //     repairBtn.gameObject.SetActive(false);
+        // }
+        // else
+        // {
+        //     repairBtn.gameObject.SetActive(true);
+        // }
         infoList[6].text = GFunc.TimeStamp2DateTime(Convert.ToInt32(infoList[6].text) ).ToString(); 
     }
 
-    private void onClickRepair(GameObject go)
-    {
-        C2S_GMPayRepair pb = new C2S_GMPayRepair();
-        pb.Payid = pbData.Payid;
-        pb.Account = pbData.Account;
-        pb.Paycode = pbData.Paycode;
-        pb.Payorder = pbData.Payorder;
-        NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMPAYREPAIR,pb);  
-    }
+    // private void onClickRepair(GameObject go)
+    // {
+    //     C2S_GMPayRepair pb = new C2S_GMPayRepair();
+    //     pb.Payid = pbData.Payid;
+    //     pb.Account = pbData.Account;
+    //     pb.Paycode = pbData.Paycode;
+    //     pb.Payorder = pbData.Payorder;
+    //     NetMgr.SendMsg(MSGID.MSG_CL2PHP_GMPAYREPAIR,pb);  
+    // }
 
     private void onClickCopy(GameObject go)
     {
